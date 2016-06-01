@@ -210,9 +210,9 @@ $(function() {
 		$( "#comparaMeuPerfil" ).bind( "click", function() {
 			carregaMeuPerfil (cy, objJson)
 		});
-		$( "#comparaCarreira" ).bind( "click", function() {
-			comparaCarreira (cy, objJson)
-		});
+//		
+//		carrega habilidades
+//				
 		$( "#carregaHabilidades" ).bind( "click", function() {
 			cy.destroy();
 			cy = createDiagram ("cy");
@@ -221,6 +221,66 @@ $(function() {
 			};			
 			drawElements (cy, objJson, actionMove, '');
 		});
+//		
+//		carrega carreiras
+//
+		/**
+		 * 	carrega lista de carreiras
+		 */
+		objJson  = JSON.parse(
+			'[' +
+				'{' +
+			    '"nome" : "Administrador",' +
+			    '"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    '"wiki" : "https://pt.wikipedia.org/wiki/Administração_de_Empresas",' +
+			    '"salario" : "12222,21",' +
+			    '"salarioMedio" : "9865,50",' +
+			    '"funcao" : "Administrativa",' +
+				'"elements" : ' +
+			    	'[' +
+			                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "g2",' +
+			        			'"color" : "blue"' +
+			        		'},' +
+			                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "j4",' +
+			        			'"color" : "blue"' +
+			        		'},' +
+			                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "j6",' +
+			        			'"color" : "blue"' +
+		        		'}' +
+		        	']' +
+			    '},' +
+				'{' +
+			    '"nome" : "Fisico",' +
+			    '"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    '"wiki" : "https://pt.wikipedia.org/wiki/Administração_de_Empresas",' +
+			    '"salario" : "12222,21",' +
+			    '"salarioMedio" : "9865,50",' +
+			    '"funcao" : "Administrativa",' +
+				'"elements" : ' +
+			    	'[' +
+			                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "j5",' +
+			        			'"color" : "blue"' +
+			        		'},' +
+			                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "j2",' +
+			        			'"color" : "blue"' +
+		        		'}' +
+		        	']' +
+			    '}' +
+        	']'
+		);
+		
+		carregaCarreiras (objJson, cy);	
+
 
 });
 
@@ -323,53 +383,53 @@ function carregaMeuPerfil (cy, objJson){
 		var selector = '#' + element.id;
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
-			console.log ("node:" + element.id + " is parent")
 			var nodes = node.parent();
 			var descendants = node.descendants();
 			$.each( descendants, function( i, descendant ) {
-				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'green');				
+				montaComparacao(cy, descendant.id(), 'perfilUsuario', 'perfilCarreira', 'green', 'green');				
 			});
 		}else{
-			montaComparacao(cy, element.id, 'perfilCarreira', 'perfilUsuario', 'green', 'green');				
+			montaComparacao(cy, element.id, 'perfilUsuario', 'perfilCarreira', 'green', 'green');				
 		}
 	});
 };
 
 function comparaCarreira (cy, objJson){
-	objJson  = JSON.parse(
-			'{' +
-		    '"name" : "",' +
-			    '"elements" : ' +
-		    	'[' +
-		                '{' +
-		    				'"type" : "nodes",' +
-		    				'"id" : "g2",' +
-		        			'"color" : "blue"' +
-		        		'},' +
-		                '{' +
-		    				'"type" : "nodes",' +
-		    				'"id" : "j4",' +
-		        			'"color" : "blue"' +
-		        		'},' +
-		                '{' +
-		    				'"type" : "nodes",' +
-		    				'"id" : "j6",' +
-		        			'"color" : "blue"' +
-	        		'}' +
-		        ']' +
-	'}');
+	
+	var elementsCarreira = cy.nodes('.perfilCarreira');
+
+	$.each( elementsCarreira, function( i, element ) {
+		var selector = '#' + element.id();
+		if (element.hasClass('perfilUsuario')){
+			cy.style()
+			  .selector(selector)
+			    .style({
+			      'background-color': 'green',
+			      'background-opacity': 0.3
+			    })
+			  .update()				
+		}else{
+			cy.style()
+			  .selector(selector)
+			    .style({
+			      'background-color': 'blue',
+			      'background-opacity': 0.3
+			    })
+			  .update()							
+		}
+	});
+	
 	$.each( objJson.elements, function( i, element ) {
 		var selector = '#' + element.id;
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
-			console.log ("node:" + element.id + " is parent")
 			var nodes = node.parent();
 			var descendants = node.descendants();
 			$.each( descendants, function( i, descendant ) {
-				montaComparacao(cy, descendant.id(), 'perfilUsuario', 'perfilCarreira', 'green', 'orange');				
+				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange');				
 			});
 		}else{
-			montaComparacao(cy, element.id, 'perfilUsuario', 'perfilCarreira', 'green', 'orange');				
+			montaComparacao(cy, element.id, 'perfilCarreira', 'perfilUsuario', 'green', 'orange');				
 		}
 	});
 };

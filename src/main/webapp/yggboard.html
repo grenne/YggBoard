@@ -576,31 +576,28 @@
 										<!--===================================================-->
 										<h3 class="panel-title">Carreiras</h3>
 										<div class="panel-body">
-											<div class="pad-btm col-sm-7">
-												<button id="collapseCarreiras" class="btn-xs btn-success">Collapse</button>
-												<button id="expandCarreiras" class="btn-xs btn-warning">Expand</button>
+											<div class="pad-btm col-sm-5">
+												<button id="collapseCarreiras" class="btn-xs btn-success hide">Collapse</button>
+												<button id="expandCarreiras" class="btn-xs btn-warning">Expand All</button>
 											</div>
-											<div class="col-sm-5 text-xs-center text-right">
+											<div class="col-sm-7 text-xs-center text-right">
 												<div class="form-group">
 													<input id="searchCarreiras" type="text" placeholder="Search" class="form-control" autocomplete="on">
 												</div>
 											</div>
-											<table id="tabCarreiras" class="table toggle-circle">
+											<table id="carreira_list" class="table toggle-circle">
 												<thead>
 													<tr>
 														<th data-toggle="true">Carreiras</th>
 														<th>Ação</th>
 														<th data-hide="all">Descrição</th>
-														<th data-hide="all">wiki</th>
+														<th data-hide="all">Wiki</th>
+														<th data-hide="all">Salário</th>
+														<th data-hide="all">Salário Médio</th>
+														<th data-hide="all">Função</th>
 													</tr>
 												</thead>
-												<tbody>
-													<tr>
-														<td>Isidra</td>
-														<td><button id="comparaCarreira" class="label label-table btn-xs label-success">Comparar</button></td>
-														<td>Traffic Court Referee</td>
-														<td>22 Jun 1972</td>
-													</tr>
+												<tbody id="carreira_tbody">
 												</tbody>
 												<tfoot>
 													<tr>
@@ -1959,6 +1956,7 @@
 	<script src="js-cytoscape/cytoscape-panzoom.js"></script>
 	<script src="js-cytoscape/cytoscape-qtip.js"></script>
 	<script src="js-cytoscape/draw-diagram.js"></script>
+	<script src="js-datatables/carreiras.js"></script>
 
     <!--Yggboard-->
     <script src="js/yggboard.js"></script>
