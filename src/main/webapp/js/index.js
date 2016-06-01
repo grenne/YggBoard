@@ -1,0 +1,4 @@
+/**
+ * 
+ */
+    window.location="yggboard.html"; 

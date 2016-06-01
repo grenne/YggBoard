@@ -1,0 +1,9 @@
+@CHARSET "ISO-8859-1";
+
+.cy {
+  display: block;
+}
+
+.colorYellow {
+	background-color: yellow
+}
