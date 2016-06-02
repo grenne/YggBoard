@@ -165,6 +165,116 @@ $(function() {
 			        			'"targetArrowShape" : ""' +
 				        		'},' +
 				                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "j6a",' +
+			    				'"name" : "j6a",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"parent" : "g1",' +
+			    				'"classes" : "elemento",' +
+			    				'"weight" : "70",' +
+			    				'"positionX" : "275",' +
+			    				'"positionY" : "317",' +
+			        			'"opacity" : "0.7",' +
+			        			'"color" : "blue",' +
+			        			'"shape" : "ellipse",' +
+			    		    	'"width" : "100",' +
+			    		    	'"lineColor" : "blue",' +
+			        			'"targetArrowColor" : "",' +
+			        			'"targetArrowShape" : ""' +
+				        		'},' +
+				                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "j7",' +
+			    				'"name" : "j7",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"parent" : "g2",' +
+			    				'"classes" : "elemento",' +
+			    				'"weight" : "70",' +
+			    				'"positionX" : "275",' +
+			    				'"positionY" : "317",' +
+			        			'"opacity" : "0.7",' +
+			        			'"color" : "blue",' +
+			        			'"shape" : "ellipse",' +
+			    		    	'"width" : "100",' +
+			    		    	'"lineColor" : "blue",' +
+			        			'"targetArrowColor" : "",' +
+			        			'"targetArrowShape" : ""' +
+				        		'},' +
+				                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "j8",' +
+			    				'"name" : "j8",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"parent" : "g3",' +
+			    				'"classes" : "elemento",' +
+			    				'"weight" : "70",' +
+			    				'"positionX" : "275",' +
+			    				'"positionY" : "317",' +
+			        			'"opacity" : "0.7",' +
+			        			'"color" : "blue",' +
+			        			'"shape" : "ellipse",' +
+			    		    	'"width" : "100",' +
+			    		    	'"lineColor" : "blue",' +
+			        			'"targetArrowColor" : "",' +
+			        			'"targetArrowShape" : ""' +
+				        		'},' +
+				                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "j9",' +
+			    				'"name" : "j9",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"parent" : "g3",' +
+			    				'"classes" : "elemento",' +
+			    				'"weight" : "70",' +
+			    				'"positionX" : "275",' +
+			    				'"positionY" : "317",' +
+			        			'"opacity" : "0.7",' +
+			        			'"color" : "blue",' +
+			        			'"shape" : "ellipse",' +
+			    		    	'"width" : "100",' +
+			    		    	'"lineColor" : "blue",' +
+			        			'"targetArrowColor" : "",' +
+			        			'"targetArrowShape" : ""' +
+				        		'},' +
+				                '{' +
+			    				'"type" : "nodes",' +
+			    				'"id" : "j10",' +
+			    				'"name" : "j10",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"parent" : "",' +
+			    				'"classes" : "elemento",' +
+			    				'"weight" : "70",' +
+			    				'"positionX" : "275",' +
+			    				'"positionY" : "317",' +
+			        			'"opacity" : "0.7",' +
+			        			'"color" : "blue",' +
+			        			'"shape" : "ellipse",' +
+			    		    	'"width" : "100",' +
+			    		    	'"lineColor" : "blue",' +
+			        			'"targetArrowColor" : "",' +
+			        			'"targetArrowShape" : ""' +
+				        		'},' +
+				                '{' +
 			    				'"type" : "edges",' +
 			    				'"id" : "a6",' +
 			    				'"name" : "a6",' +
@@ -235,6 +345,78 @@ $(function() {
 			        			'"targetArrowShape" : "",' +
 			        			'"source" : "j5",' +
 			        			'"target" : "j6"' +
+				        		'},' +
+				                '{' +
+			    				'"type" : "edges",' +
+			    				'"id" : "a9",' +
+			    				'"name" : "a9",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"parent" : "",' +
+			    				'"classes" : "ligacao",' +
+			    				'"weight" : "70",' +
+			    				'"positionX" : "",' +
+			    				'"positionY" : "",' +
+			        			'"opacity" : "",' +
+			        			'"color" : "blue",' +
+			        			'"shape" : "",' +
+			    		    	'"width" : "",' +
+			    		    	'"lineColor" : "blue",' +
+			        			'"targetArrowColor" : "blue",' +
+			        			'"targetArrowShape" : "",' +
+			        			'"source" : "j7",' +
+			        			'"target" : "j6"' +
+				        		'},' +
+				                '{' +
+			    				'"type" : "edges",' +
+			    				'"id" : "a10",' +
+			    				'"name" : "a10",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"parent" : "",' +
+			    				'"classes" : "ligacao",' +
+			    				'"weight" : "70",' +
+			    				'"positionX" : "",' +
+			    				'"positionY" : "",' +
+			        			'"opacity" : "",' +
+			        			'"color" : "blue",' +
+			        			'"shape" : "",' +
+			    		    	'"width" : "",' +
+			    		    	'"lineColor" : "blue",' +
+			        			'"targetArrowColor" : "blue",' +
+			        			'"targetArrowShape" : "",' +
+			        			'"source" : "j5",' +
+			        			'"target" : "j9"' +
+				        		'},' +
+				                '{' +
+			    				'"type" : "edges",' +
+			    				'"id" : "a11",' +
+			    				'"name" : "a11",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"parent" : "",' +
+			    				'"classes" : "ligacao",' +
+			    				'"weight" : "70",' +
+			    				'"positionX" : "",' +
+			    				'"positionY" : "",' +
+			        			'"opacity" : "",' +
+			        			'"color" : "blue",' +
+			        			'"shape" : "",' +
+			    		    	'"width" : "",' +
+			    		    	'"lineColor" : "blue",' +
+			        			'"targetArrowColor" : "blue",' +
+			        			'"targetArrowShape" : "",' +
+			        			'"source" : "j9",' +
+			        			'"target" : "j4"' +
 			        		'}' +
 				        ']' +
 			'}');
@@ -439,7 +621,7 @@ function comparaCarreira (cy, objJson){
 		cy.$(selector).removeClass('perfilCarreira');
 	});
 	
-	$.each( objJson.elements, function( i, element ) {
+	$.each( objJson.necessarios, function( i, element ) {
 		var selector = '#' + element.id;
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
@@ -548,12 +730,12 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 			actionMove(evt.cyTarget.id(), evt.cyPosition.x, evt.cyPosition.y);
 		};
 	});
-	if (typeLayout){
+//	if (typeLayout){
 		var layout = cy.makeLayout({
-			  name: typeLayout
+			  name: "random"
 		});
 		layout.run();
-	};
+//	};
 
 };
 
