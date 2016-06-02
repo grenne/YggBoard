@@ -3,8 +3,8 @@
  */
 $(function() {
 	if (JSON.parse(localStorage.getItem("elements"))){
-		objJson = JSON.parse(localStorage.getItem("elements"));
-	}else{
+//		objJson = JSON.parse(localStorage.getItem("elements"));
+//	}else{
 		var objJson  = JSON.parse(
 			'{' +
 				    '"name" : "",' +
@@ -14,7 +14,11 @@ $(function() {
 				    				'"type" : "nodes",' +
 				    				'"id" : "g1",' +
 				    				'"name" : "grupo",' +
-				    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+				    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+				    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+				    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+				    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+				    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 				    				'"parent" : "",' +
 				    				'"classes" : "agrupamento",' +
 				    				'"weight" : "70",' +
@@ -32,7 +36,11 @@ $(function() {
 			    				'"type" : "nodes",' +
 			    				'"id" : "g2",' +
 			    				'"name" : "grupo",' +
-			    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 			    				'"parent" : "g1",' +
 			    				'"classes" : "agrupamento",' +
 			    				'"weight" : "70",' +
@@ -50,7 +58,11 @@ $(function() {
 			    				'"type" : "nodes",' +
 			    				'"id" : "j2",' +
 			    				'"name" : "j2",' +
-			    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 			    				'"parent" : "g1",' +
 			    				'"classes" : "elemento",' +
 			    				'"weight" : "70",' +
@@ -68,7 +80,11 @@ $(function() {
 			    				'"type" : "nodes",' +
 			    				'"id" : "j3",' +
 			    				'"name" : "j3",' +
-			    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 			    				'"parent" : "g2",' +
 			    				'"classes" : "elemento",' +
 			    				'"weight" : "70",' +
@@ -86,7 +102,11 @@ $(function() {
 			    				'"type" : "nodes",' +
 			    				'"id" : "j4",' +
 			    				'"name" : "j4",' +
-			    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 			    				'"parent" : "",' +
 			    				'"classes" : "elemento",' +
 			    				'"weight" : "70",' +
@@ -104,7 +124,11 @@ $(function() {
 			    				'"type" : "nodes",' +
 			    				'"id" : "j5",' +
 			    				'"name" : "j5",' +
-			    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 			    				'"parent" : "",' +
 			    				'"classes" : "elemento",' +
 			    				'"weight" : "70",' +
@@ -122,7 +146,11 @@ $(function() {
 			    				'"type" : "nodes",' +
 			    				'"id" : "j6",' +
 			    				'"name" : "j6",' +
-			    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 			    				'"parent" : "g1",' +
 			    				'"classes" : "elemento",' +
 			    				'"weight" : "70",' +
@@ -140,7 +168,11 @@ $(function() {
 			    				'"type" : "edges",' +
 			    				'"id" : "a6",' +
 			    				'"name" : "a6",' +
-			    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 			    				'"parent" : "",' +
 			    				'"classes" : "ligacao",' +
 			    				'"weight" : "70",' +
@@ -160,7 +192,11 @@ $(function() {
 			    				'"type" : "edges",' +
 			    				'"id" : "a7",' +
 			    				'"name" : "a7",' +
-			    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 			    				'"parent" : "",' +
 			    				'"classes" : "ligacao",' +
 			    				'"weight" : "70",' +
@@ -180,7 +216,11 @@ $(function() {
 			    				'"type" : "edges",' +
 			    				'"id" : "a8",' +
 			    				'"name" : "a8",' +
-			    				'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
+			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
 			    				'"parent" : "",' +
 			    				'"classes" : "ligacao",' +
 			    				'"weight" : "70",' +
@@ -202,16 +242,25 @@ $(function() {
 	};
 
 		var cy = createDiagram ("cy");	
+		if (localStorage.usuario){
+			cy.autolock( true );
+		};
 		drawElements (cy, objJson, actionMove, '');
 		cy.on('tap', function(evt){
 			if (evt.cyTarget.id) {
 			};
 		});
 		$( "#comparaMeuPerfil" ).bind( "click", function() {
-			carregaMeuPerfil (cy, objJson)
+			carregaMeuPerfil (cy, objJson);
+        	$('.habilidade').addClass('hide');
+			$('.cursos').addClass('hide');
 		});
 //		
-//		carrega habilidades
+//		carrega carreiras
+//
+		obterCarreiras (cy);
+//		
+//		recarrega habilidades
 //				
 		$( "#carregaHabilidades" ).bind( "click", function() {
 			cy.destroy();
@@ -219,69 +268,34 @@ $(function() {
 			if (JSON.parse(localStorage.getItem("elements"))){
 				objJson = JSON.parse(localStorage.getItem("elements"));
 			};			
+			$( "#comparaMeuPerfil" ).bind( "click", function() {
+				carregaMeuPerfil (cy, objJson)
+			});
+			if (localStorage.usuario){
+				cy.autolock( true );
+			};
 			drawElements (cy, objJson, actionMove, '');
+			$('.cursos').addClass('hide');
+        	$('.habilidade').addClass('hide');
+        	obterCarreiras (cy);
 		});
-//		
-//		carrega carreiras
-//
-		/**
-		 * 	carrega lista de carreiras
-		 */
-		objJson  = JSON.parse(
-			'[' +
-				'{' +
-			    '"nome" : "Administrador",' +
-			    '"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    '"wiki" : "https://pt.wikipedia.org/wiki/Administração_de_Empresas",' +
-			    '"salario" : "12222,21",' +
-			    '"salarioMedio" : "9865,50",' +
-			    '"funcao" : "Administrativa",' +
-				'"elements" : ' +
-			    	'[' +
-			                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "g2",' +
-			        			'"color" : "blue"' +
-			        		'},' +
-			                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j4",' +
-			        			'"color" : "blue"' +
-			        		'},' +
-			                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j6",' +
-			        			'"color" : "blue"' +
-		        		'}' +
-		        	']' +
-			    '},' +
-				'{' +
-			    '"nome" : "Fisico",' +
-			    '"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    '"wiki" : "https://pt.wikipedia.org/wiki/Administração_de_Empresas",' +
-			    '"salario" : "12222,21",' +
-			    '"salarioMedio" : "9865,50",' +
-			    '"funcao" : "Administrativa",' +
-				'"elements" : ' +
-			    	'[' +
-			                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j5",' +
-			        			'"color" : "blue"' +
-			        		'},' +
-			                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j2",' +
-			        			'"color" : "blue"' +
-		        		'}' +
-		        	']' +
-			    '}' +
-        	']'
-		);
-		
-		carregaCarreiras (objJson, cy);	
 
-
+		$( "#fechaCursos" ).bind( "click", function() {
+			cy.destroy();
+			cy = createDiagram ("cy");
+			if (JSON.parse(localStorage.getItem("elements"))){
+				objJson = JSON.parse(localStorage.getItem("elements"));
+			};			
+			$( "#comparaMeuPerfil" ).bind( "click", function() {
+				carregaMeuPerfil (cy, objJson)
+			});
+			if (localStorage.usuario){
+				cy.autolock( true );
+			};
+			drawElements (cy, objJson, actionMove, '');
+			$('.cursos').addClass('hide');
+			obterCarreiras (cy);
+		});
 });
 
 function actionMove (id, x,y){
@@ -400,12 +414,17 @@ function comparaCarreira (cy, objJson){
 
 	$.each( elementsCarreira, function( i, element ) {
 		var selector = '#' + element.id();
+		var node = cy.$(selector);
+		var opacity = 0.3;
+		if (!node.isChild() && !cy.$(selector).hasClass("agrupamento")){
+			var opacity = 0.4;
+		};
 		if (element.hasClass('perfilUsuario')){
 			cy.style()
 			  .selector(selector)
 			    .style({
 			      'background-color': 'green',
-			      'background-opacity': 0.3
+			      'background-opacity': opacity
 			    })
 			  .update()				
 		}else{
@@ -413,10 +432,11 @@ function comparaCarreira (cy, objJson){
 			  .selector(selector)
 			    .style({
 			      'background-color': 'blue',
-			      'background-opacity': 0.3
+			      'background-opacity': opacity
 			    })
 			  .update()							
-		}
+		};
+		cy.$(selector).removeClass('perfilCarreira');
 	});
 	
 	$.each( objJson.elements, function( i, element ) {
@@ -467,6 +487,10 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 		    	id : element.id,
 		    	name : element.name,  
 		    	descricao : element.descricao,
+		    	wiki : element.wiki,
+		    	area : element.area,
+		    	campo : element.campo,
+		    	categoria : element.categoria,
 		    	parent : element.parent,
 		    	weight: element.weight,
 		    	source : element.source,
@@ -499,43 +523,25 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 			  .update()						  
 		};
 	});
-	// just use the regular qtip api but on cy elements
-	cy.elements().qtip({
-		content: function(){
-			return this.data ('name')  
-					+ '<br><br>'
-					+ this.data('descricao') 
-			},
-		position: {
-			my: 'top center',
-			at: 'bottom center'
-		},
-		style: {
-			classes: 'qtip-bootstrap ',
-			tip: {
-				width: 20,
-				height: 10
-			}
-		}
-	});
-
-	// call on core
-	cy.qtip({
-		content: 'Click no item para obter informações',
-		position: {
-			my: 'top center',
-			at: 'bottom center'
-		},
-		show: {
-			cyBgOnly: true
-		},
-		style: {
-			classes: 'qtip-bootstrap',
-			tip: {
-				width: 16,
-				height: 8
-			}
-		}
+	cy.on('tap', function(evt){
+		var selector = '#' + evt.cyTarget.id();
+		var node = cy.$(selector);
+		var opacity = 0.3;
+		if (evt.cyTarget.id) {
+			$('#habilidadeName').html(evt.cyTarget.data('name'));  
+			$('#habilidadeDescricao').html(evt.cyTarget.data('descricao'));
+			$('#habilidadeWiki').html(evt.cyTarget.data('wiki'));
+			$('#habilidadeArea').html(evt.cyTarget.data('area'));
+			$('#habilidadeCampo').html(evt.cyTarget.data('campo'));
+			$('#habilidadeCategoria').html(evt.cyTarget.data('categoria'));
+			$('.habilidade').removeClass('hide');
+			if (cy.$(selector).hasClass("perfilCarreira")){
+				obterCursos (cy, evt.cyTarget.id());
+				$('.cursos').removeClass('hide');
+				obterCursos (cy, evt.cyTarget.id());
+				$('.cursos').removeClass('hide');
+			};
+		};
 	});
 	cy.bind('tapend', function(evt){
 		if (evt.cyTarget.id) {

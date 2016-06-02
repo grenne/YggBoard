@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard | Yggboard - Responsive admin template.</title>
+    <link rel="shortcut icon" href="img/logo/logo-yggboard.png" >
 
 
     <!--STYLESHEET-->
@@ -567,6 +568,49 @@
 					
 					    </div>
 					    <div class="col-lg-3">
+					        <div class="row cursos hide">
+					            <div class="col-sm-6 col-lg-12">
+					
+					                <!--Sparkline Line Chart-->
+					                <div class="panel panel-warning panel-colorful">
+										<!-- Carreiras -->
+										<!--===================================================-->
+										<div class="pad-btm col-sm-12">
+											<h3 class="panel-title col-sm-10">Cursos</h3>
+						                    <button id="fechaCursos"  class="btn"><i class="fa fa-close"></i></button>
+						                </div>
+										<div id="curso_theader" class="panel-body">
+											<div class="pad-btm col-sm-5">
+												<button id="collapseCursos" class="btn-xs btn-success hide">Collapse All</button>
+												<button id="expandCursos" class="btn-xs btn-warning">Expand All</button>
+											</div>
+											<div class="col-sm-7 text-xs-center text-right">
+												<div class="form-group">
+													<input id="searchCursos" type="text" placeholder="Search" class="form-control" autocomplete="on">
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<!-- End Foo Table - Expand / Collapse Rows -->
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row habilidade hide">
+					            <div class="col-sm-6 col-lg-12">
+					
+					                <div id="habilidade" class="panel panel-mint panel-colorful panel-body">
+										<div class="col-sm-12 text-xs-center text-right">
+											<h3 id="habilidadeName" class="panel-title text-center"></h3>
+											<em class="text-mutted text-justify col-sm-12" id="habilidadeDescricao" ></em><br>
+											<em class="text-mutted text-left col-sm-12" id="habilidadeWiki" ></em><br>
+											<em class="text-mutted text-left col-sm-12" id="habilidadeArea" ></em><br>
+											<em class="text-mutted text-left col-sm-12" id="habilidadeCampo" ></em><br>
+											<em class="text-mutted text-left col-sm-12" id="habilidadeCategoria" ></em><br>
+										</div>
+										<!--===================================================-->
+					                </div>
+					            </div>
+					        </div>
 					        <div class="row">
 					            <div class="col-sm-6 col-lg-12">
 					
@@ -575,7 +619,7 @@
 										<!-- Carreiras -->
 										<!--===================================================-->
 										<h3 class="panel-title">Carreiras</h3>
-										<div class="panel-body">
+										<div id="carreira_theader" class="panel-body">
 											<div class="pad-btm col-sm-5">
 												<button id="collapseCarreiras" class="btn-xs btn-success hide">Collapse</button>
 												<button id="expandCarreiras" class="btn-xs btn-warning">Expand All</button>
@@ -585,181 +629,6 @@
 													<input id="searchCarreiras" type="text" placeholder="Search" class="form-control" autocomplete="on">
 												</div>
 											</div>
-											<table id="carreira_list" class="table toggle-circle">
-												<thead>
-													<tr>
-														<th data-toggle="true">Carreiras</th>
-														<th>Ação</th>
-														<th data-hide="all">Descrição</th>
-														<th data-hide="all">Wiki</th>
-														<th data-hide="all">Salário</th>
-														<th data-hide="all">Salário Médio</th>
-														<th data-hide="all">Função</th>
-													</tr>
-												</thead>
-												<tbody id="carreira_tbody">
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="5">
-															<div class="text-right">
-																<ul class="pagination"></ul>
-															</div>
-														</td>
-													</tr>
-												</tfoot>
-											</table>
-										</div>
-										<!--===================================================-->
-										<!-- End Foo Table - Expand / Collapse Rows -->
-					                </div>
-					            </div>
-					        </div>
-					        <div class="row">
-					            <div class="col-sm-6 col-lg-12">
-					
-					                <div class="panel panel-warning panel-colorful">
-										<!-- Cursos
-										<!--===================================================-->
-										<div class="panel-body">
-											<div class="pad-btm col-sm-7">
-												<button id="collapseCursos" class="btn-xs btn-success">Collapse</button>
-												<button id="expandCursos" class="btn-xs btn-info">Expand</button>
-											</div>
-											<div class="col-sm-5 text-xs-center text-right">
-												<div class="form-group">
-													<input id="searchCursos" type="text" placeholder="Search" class="form-control" autocomplete="on">
-												</div>
-											</div>
-											<table id="tabCursos" class="table toggle-circle">
-												<thead>
-													<tr>
-														<th data-toggle="true">Cursos</th>
-														<th data-hide="all">Descrição</th>
-														<th data-hide="all">wiki</th>
-														<th data-hide="all">Status</th>
-													</tr>
-												</thead>
-												<tbody>
-													<tr>
-														<td>Isidra</td>
-														<td>Traffic Court Referee</td>
-														<td>22 Jun 1972</td>
-														<td><span class="label label-table label-success">Active</span></td>
-													</tr>
-													<tr>
-														<td>Shona</td>
-														<td>Airline Transport Pilot</td>
-														<td>3 Oct 1981</td>
-														<td><span class="label label-table label-dark">Disabled</span></td>
-													</tr>
-													<tr>
-														<td>Granville</td>
-														<td>Business Services Sales Representative</td>
-														<td>19 Apr 1969</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Easer</td>
-														<td>Drywall Stripper</td>
-														<td>13 Dec 1977</td>
-														<td><span class="label label-table label-success">Active</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-													<tr>
-														<td>Maple</td>
-														<td>Aviation Tactical Readiness Officer</td>
-														<td>30 Dec 1991</td>
-														<td><span class="label label-table label-danger">Suspended</span></td>
-													</tr>
-												</tbody>
-												<tfoot>
-													<tr>
-														<td colspan="5">
-															<div class="text-right">
-																<ul class="pagination"></ul>
-															</div>
-														</td>
-													</tr>
-												</tfoot>
-											</table>
 										</div>
 										<!--===================================================-->
 										<!-- End Foo Table - Expand / Collapse Rows -->
@@ -1950,13 +1819,13 @@
     <script src="js/demo/tables-footable.js"></script>
 
     <!--cytoscape-->
-	<script src="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.js"></script>
 	<script	src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
 	<script src="js-cytoscape/cytoscape-cose-bilkent.js"></script>
 	<script src="js-cytoscape/cytoscape-panzoom.js"></script>
 	<script src="js-cytoscape/cytoscape-qtip.js"></script>
 	<script src="js-cytoscape/draw-diagram.js"></script>
 	<script src="js-datatables/carreiras.js"></script>
+	<script src="js-datatables/cursos.js"></script>
 
     <!--Yggboard-->
     <script src="js/yggboard.js"></script>
