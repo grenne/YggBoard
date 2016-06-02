@@ -3,8 +3,8 @@
  */
 $(function() {
 	if (JSON.parse(localStorage.getItem("elements"))){
-//		objJson = JSON.parse(localStorage.getItem("elements"));
-//	}else{
+		objJson = JSON.parse(localStorage.getItem("elements"));
+	}else{
 		var objJson  = JSON.parse(
 			'{' +
 				    '"name" : "",' +
@@ -424,7 +424,7 @@ $(function() {
 	};
 
 		var cy = createDiagram ("cy");	
-		if (localStorage.usuario){
+		if (localStorage.usuario == "true"){
 			cy.autolock( true );
 		};
 		drawElements (cy, objJson, actionMove, '');
@@ -453,12 +453,14 @@ $(function() {
 			$( "#comparaMeuPerfil" ).bind( "click", function() {
 				carregaMeuPerfil (cy, objJson)
 			});
-			if (localStorage.usuario){
+			if (localStorage.usuario == "true"){
 				cy.autolock( true );
 			};
 			drawElements (cy, objJson, actionMove, '');
 			$('.cursos').addClass('hide');
         	$('.habilidade').addClass('hide');
+        	$('.carreiras').removeClass('hide');
+
         	obterCarreiras (cy);
 		});
 
@@ -471,12 +473,13 @@ $(function() {
 			$( "#comparaMeuPerfil" ).bind( "click", function() {
 				carregaMeuPerfil (cy, objJson)
 			});
-			if (localStorage.usuario){
+			if (localStorage.usuario == "true"){
 				cy.autolock( true );
 			};
 			drawElements (cy, objJson, actionMove, '');
 			$('.cursos').addClass('hide');
 			obterCarreiras (cy);
+        	$('.carreiras').removeClass('hide');
 		});
 });
 
@@ -628,15 +631,28 @@ function comparaCarreira (cy, objJson){
 			var nodes = node.parent();
 			var descendants = node.descendants();
 			$.each( descendants, function( i, descendant ) {
-				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange');				
+				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange', 0.2);				
 			});
 		}else{
-			montaComparacao(cy, element.id, 'perfilCarreira', 'perfilUsuario', 'green', 'orange');				
+			montaComparacao(cy, element.id, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', 0.2);				
+		}
+	});
+	$.each( objJson.recomendados, function( i, element ) {
+		var selector = '#' + element.id;
+		var node = cy.$(selector);
+		if (node.isParent(selector)){
+			var nodes = node.parent();
+			var descendants = node.descendants();
+			$.each( descendants, function( i, descendant ) {
+				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange', -0.1);				
+			});
+		}else{
+			montaComparacao(cy, element.id, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', -0.1);				
 		}
 	});
 };
 
-function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02){
+function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opacity){
 	var selector = '#' + element;
 	var node = cy.$(selector);
 	if (!node.isParent(selector)){
@@ -646,14 +662,15 @@ function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02){
 			  .selector(selector)
 			    .style({
 			      'background-color': cor_01,
-			      'background-opacity': 0.8
+			      'background-opacity': 0.8 + opacity
 			    })
 			  .update()				
 		}else{
 			cy.style()
 			  .selector(selector)
 			    .style({
-			      'background-color': cor_02
+			      'background-color': cor_02,
+			      'background-opacity': 0.3 + opacity
 			    })
 			  .update()										
 		};
@@ -706,22 +723,24 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 		};
 	});
 	cy.on('tap', function(evt){
-		var selector = '#' + evt.cyTarget.id();
-		var node = cy.$(selector);
-		var opacity = 0.3;
-		if (evt.cyTarget.id) {
-			$('#habilidadeName').html(evt.cyTarget.data('name'));  
-			$('#habilidadeDescricao').html(evt.cyTarget.data('descricao'));
-			$('#habilidadeWiki').html(evt.cyTarget.data('wiki'));
-			$('#habilidadeArea').html(evt.cyTarget.data('area'));
-			$('#habilidadeCampo').html(evt.cyTarget.data('campo'));
-			$('#habilidadeCategoria').html(evt.cyTarget.data('categoria'));
-			$('.habilidade').removeClass('hide');
-			if (cy.$(selector).hasClass("perfilCarreira")){
-				obterCursos (cy, evt.cyTarget.id());
-				$('.cursos').removeClass('hide');
-				obterCursos (cy, evt.cyTarget.id());
-				$('.cursos').removeClass('hide');
+		if (evt.cyTarget.id){
+			var selector = '#' + evt.cyTarget.id();
+			var node = cy.$(selector);
+			var opacity = 0.3;
+			if (evt.cyTarget.id) {
+				$('#habilidadeName').html(evt.cyTarget.data('name'));  
+				$('#habilidadeDescricao').html(evt.cyTarget.data('descricao'));
+				$('#habilidadeWiki').html(evt.cyTarget.data('wiki'));
+				$('#habilidadeArea').html(evt.cyTarget.data('area'));
+				$('#habilidadeCampo').html(evt.cyTarget.data('campo'));
+				$('#habilidadeCategoria').html(evt.cyTarget.data('categoria'));
+				$('.habilidade').removeClass('hide');
+				if (cy.$(selector).hasClass("perfilCarreira")){
+					obterCursos (cy, evt.cyTarget.id());
+					$('.cursos').removeClass('hide');
+					obterCursos (cy, evt.cyTarget.id());
+					$('.cursos').removeClass('hide');
+				};
 			};
 		};
 	});
@@ -730,12 +749,13 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 			actionMove(evt.cyTarget.id(), evt.cyPosition.x, evt.cyPosition.y);
 		};
 	});
-//	if (typeLayout){
+	if (typeLayout){
 		var layout = cy.makeLayout({
-			  name: "random"
+			  name: typeLayout
+//			  name: "breadthfirst"
 		});
 		layout.run();
-//	};
+	};
 
 };
 

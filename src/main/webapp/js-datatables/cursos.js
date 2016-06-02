@@ -216,22 +216,189 @@
 			    '"curso" : "MBM (Master in business management)",' +
 			    '"preRequisito" : "Fundamental Completo",' +
 				'"elements" : ' +
-			    	'[' +
-			                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "g2",' +
-			        			'"color" : "blue"' +
-			        		'},' +
-			                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j4",' +
-			        			'"color" : "blue"' +
-			        		'},' +
-			                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j6",' +
-			        			'"color" : "blue"' +
-		        		'}' +
+				    	'[' +
+		                '{' +
+						'"type" : "nodes",' +
+						'"id" : "j2",' +
+						'"name" : "j2",' +
+						'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+						'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+						'"area" : "xxxxxxxxxxxxxxxxxx",' +
+						'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+						'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+						'"parent" : "",' +
+						'"classes" : "elemento",' +
+						'"weight" : "70",' +
+						'"positionX" : "411",' +
+						'"positionY" : "422",' +
+		    			'"opacity" : "0.1",' +
+		    			'"color" : "blue",' +
+		    			'"shape" : "ellipse",' +
+				    	'"width" : "100",' +
+				    	'"lineColor" : "blue",' +
+		    			'"targetArrowColor" : "",' +
+		    			'"targetArrowShape" : ""' +
+		        		'},' +
+		                '{' +
+						'"type" : "nodes",' +
+						'"id" : "j3",' +
+						'"name" : "j3",' +
+						'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+						'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+						'"area" : "xxxxxxxxxxxxxxxxxx",' +
+						'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+						'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+						'"parent" : "",' +
+						'"classes" : "elemento",' +
+						'"weight" : "70",' +
+						'"positionX" : "138",' +
+						'"positionY" : "221",' +
+		    			'"opacity" : "0.7",' +
+		    			'"color" : "blue",' +
+		    			'"shape" : "ellipse",' +
+				    	'"width" : "100",' +
+				    	'"lineColor" : "blue",' +
+		    			'"targetArrowColor" : "",' +
+		    			'"targetArrowShape" : ""' +
+		        		'},' +
+		                '{' +
+						'"type" : "nodes",' +
+						'"id" : "j4",' +
+						'"name" : "j4",' +
+						'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+						'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+						'"area" : "xxxxxxxxxxxxxxxxxx",' +
+						'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+						'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+						'"parent" : "",' +
+						'"classes" : "elemento",' +
+						'"weight" : "70",' +
+						'"positionX" : "246",' +
+						'"positionY" : "101",' +
+		    			'"opacity" : "0.7",' +
+		    			'"color" : "blue",' +
+		    			'"shape" : "ellipse",' +
+				    	'"width" : "100",' +
+				    	'"lineColor" : "blue",' +
+		    			'"targetArrowColor" : "",' +
+		    			'"targetArrowShape" : ""' +
+		        		'},' +
+		                '{' +
+						'"type" : "nodes",' +
+						'"id" : "j5",' +
+						'"name" : "j5",' +
+						'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+						'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+						'"area" : "xxxxxxxxxxxxxxxxxx",' +
+						'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+						'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+						'"parent" : "",' +
+						'"classes" : "elemento",' +
+						'"weight" : "70",' +
+						'"positionX" : "396",' +
+						'"positionY" : "215",' +
+		    			'"opacity" : "0.7",' +
+		    			'"color" : "blue",' +
+		    			'"shape" : "ellipse",' +
+				    	'"width" : "100",' +
+				    	'"lineColor" : "blue",' +
+		    			'"targetArrowColor" : "",' +
+		    			'"targetArrowShape" : ""' +
+		        		'},' +
+		                '{' +
+						'"type" : "nodes",' +
+						'"id" : "j6",' +
+						'"name" : "j6",' +
+						'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+						'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+						'"area" : "xxxxxxxxxxxxxxxxxx",' +
+						'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+						'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+						'"parent" : "",' +
+						'"classes" : "elemento",' +
+						'"weight" : "70",' +
+						'"positionX" : "275",' +
+						'"positionY" : "317",' +
+		    			'"opacity" : "0.7",' +
+		    			'"color" : "blue",' +
+		    			'"shape" : "ellipse",' +
+				    	'"width" : "100",' +
+				    	'"lineColor" : "blue",' +
+		    			'"targetArrowColor" : "",' +
+		    			'"targetArrowShape" : ""' +
+		        		'},' +
+		                '{' +
+						'"type" : "edges",' +
+						'"id" : "a6",' +
+						'"name" : "a6",' +
+						'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+						'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+						'"area" : "xxxxxxxxxxxxxxxxxx",' +
+						'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+						'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+						'"parent" : "",' +
+						'"classes" : "ligacao",' +
+						'"weight" : "70",' +
+						'"positionX" : "",' +
+						'"positionY" : "",' +
+		    			'"opacity" : "",' +
+		    			'"color" : "blue",' +
+		    			'"shape" : "",' +
+				    	'"width" : "",' +
+				    	'"lineColor" : "blue",' +
+		    			'"targetArrowColor" : "blue",' +
+		    			'"targetArrowShape" : "",' +
+		    			'"source" : "j4",' +
+		    			'"target" : "j2"' +
+		        		'},' +
+		                '{' +
+						'"type" : "edges",' +
+						'"id" : "a7",' +
+						'"name" : "a7",' +
+						'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+						'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+						'"area" : "xxxxxxxxxxxxxxxxxx",' +
+						'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+						'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+						'"parent" : "",' +
+						'"classes" : "ligacao",' +
+						'"weight" : "70",' +
+						'"positionX" : "",' +
+						'"positionY" : "",' +
+		    			'"opacity" : "",' +
+		    			'"color" : "blue",' +
+		    			'"shape" : "",' +
+				    	'"width" : "",' +
+				    	'"lineColor" : "blue",' +
+		    			'"targetArrowColor" : "blue",' +
+		    			'"targetArrowShape" : "",' +
+		    			'"source" : "j6",' +
+		    			'"target" : "j4"' +
+		        		'},' +
+		                '{' +
+						'"type" : "edges",' +
+						'"id" : "a8",' +
+						'"name" : "a8",' +
+						'"descricao" : "xxxxxxxxxxxxxxxxxx",' +
+						'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
+						'"area" : "xxxxxxxxxxxxxxxxxx",' +
+						'"campo" : "xxxxxxxxxxxxxxxxxx",' +
+						'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
+						'"parent" : "",' +
+						'"classes" : "ligacao",' +
+						'"weight" : "70",' +
+						'"positionX" : "",' +
+						'"positionY" : "",' +
+		    			'"opacity" : "",' +
+		    			'"color" : "blue",' +
+		    			'"shape" : "",' +
+				    	'"width" : "",' +
+				    	'"lineColor" : "blue",' +
+		    			'"targetArrowColor" : "blue",' +
+		    			'"targetArrowShape" : "",' +
+		    			'"source" : "j5",' +
+		    			'"target" : "j6"' +
+		    		'}' +
 		        	']' +
 			    '}' +
         	']'
@@ -289,6 +456,7 @@
             $('#acaoCurso_' + i).bind('click', function () {
             	gradeCurso (cy, curso);
             	$('.habilidade').addClass('hide');
+            	$('.carreiras').addClass('hide');
             });
         });
 
