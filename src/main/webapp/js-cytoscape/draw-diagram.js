@@ -505,7 +505,7 @@ function createDiagram (name, readyFunction, par1, par2){
 				{
 					selector: 'node',
 					style: {
-						'background-opacity' : 0.3,
+						'background-opacity' : 0.2,
 						'background-color' : 'blue',
 						'content': 'data(name)',
 						'shape':'ellipse'
@@ -602,7 +602,7 @@ function comparaCarreira (cy, objJson){
 		var node = cy.$(selector);
 		var opacity = 0.3;
 		if (!node.isChild() && !cy.$(selector).hasClass("agrupamento")){
-			var opacity = 0.4;
+			var opacity = 0.2;
 		};
 		if (element.hasClass('perfilUsuario')){
 			cy.style()
@@ -662,7 +662,7 @@ function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opac
 			  .selector(selector)
 			    .style({
 			      'background-color': cor_01,
-			      'background-opacity': 0.8 + opacity
+			      'background-opacity': 0.4 + opacity
 			    })
 			  .update()				
 		}else{
@@ -670,7 +670,7 @@ function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opac
 			  .selector(selector)
 			    .style({
 			      'background-color': cor_02,
-			      'background-opacity': 0.3 + opacity
+			      'background-opacity': 0.2 + opacity
 			    })
 			  .update()										
 		};
@@ -717,7 +717,7 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 			cy.style()
 			  .selector(selector)
 			    .style({
-			      'background-opacity': 0.4
+			      'background-opacity': 0.2
 			    })
 			  .update()						  
 		};
@@ -751,8 +751,8 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 	});
 	if (typeLayout){
 		var layout = cy.makeLayout({
-			  name: typeLayout
-//			  name: "breadthfirst"
+//			  name: typeLayout
+			  name: "breadthfirst"
 		});
 		layout.run();
 	};
