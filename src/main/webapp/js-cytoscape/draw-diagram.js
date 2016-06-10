@@ -1,494 +1,94 @@
 /**
  * **   criar diagrama a partir de um arquivo json
  */
-$(function() {
-	if (JSON.parse(localStorage.getItem("elements"))){
-		objJson = JSON.parse(localStorage.getItem("elements"));
-	}else{
-		var objJson  = JSON.parse(
-			'{' +
-				    '"name" : "",' +
-					    '"elements" : ' +
-				    	'[' +
-				                '{' +
-				    				'"type" : "nodes",' +
-				    				'"id" : "g1",' +
-				    				'"name" : "grupo",' +
-				    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-				    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-				    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-				    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-				    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-				    				'"parent" : "",' +
-				    				'"classes" : "agrupamento",' +
-				    				'"weight" : "70",' +
-				    				'"positionX" : "311",' +
-				    				'"positionY" : "201",' +
-				        			'"opacity" : "0.2",' +
-				        			'"color" : "blue",' +
-				        			'"shape" : "ellipse",' +
-				    		    	'"width" : "",' +
-				    		    	'"lineColor" : "blue",' +
-				        			'"targetArrowColor" : "",' +
-				        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "g2",' +
-			    				'"name" : "grupo",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "g1",' +
-			    				'"classes" : "agrupamento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "400",' +
-			    				'"positionY" : "180",' +
-			        			'"opacity" : "0.2",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "",' +
-			    		    	'"lineColor" : "red",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j2",' +
-			    				'"name" : "j2",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "g1",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "411",' +
-			    				'"positionY" : "422",' +
-			        			'"opacity" : "0.1",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j3",' +
-			    				'"name" : "j3",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "g2",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "138",' +
-			    				'"positionY" : "221",' +
-			        			'"opacity" : "0.7",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j4",' +
-			    				'"name" : "j4",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "246",' +
-			    				'"positionY" : "101",' +
-			        			'"opacity" : "0.7",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j5",' +
-			    				'"name" : "j5",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "396",' +
-			    				'"positionY" : "215",' +
-			        			'"opacity" : "0.7",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j6",' +
-			    				'"name" : "j6",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "g1",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "275",' +
-			    				'"positionY" : "317",' +
-			        			'"opacity" : "0.7",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j6a",' +
-			    				'"name" : "j6a",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "g1",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "275",' +
-			    				'"positionY" : "317",' +
-			        			'"opacity" : "0.7",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j7",' +
-			    				'"name" : "j7",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "g2",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "275",' +
-			    				'"positionY" : "317",' +
-			        			'"opacity" : "0.7",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j8",' +
-			    				'"name" : "j8",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "g3",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "275",' +
-			    				'"positionY" : "317",' +
-			        			'"opacity" : "0.7",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j9",' +
-			    				'"name" : "j9",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "g3",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "275",' +
-			    				'"positionY" : "317",' +
-			        			'"opacity" : "0.7",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "nodes",' +
-			    				'"id" : "j10",' +
-			    				'"name" : "j10",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "",' +
-			    				'"classes" : "elemento",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "275",' +
-			    				'"positionY" : "317",' +
-			        			'"opacity" : "0.7",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "ellipse",' +
-			    		    	'"width" : "100",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "",' +
-			        			'"targetArrowShape" : ""' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "edges",' +
-			    				'"id" : "a6",' +
-			    				'"name" : "a6",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "",' +
-			    				'"classes" : "ligacao",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "",' +
-			    				'"positionY" : "",' +
-			        			'"opacity" : "",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "",' +
-			    		    	'"width" : "",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "blue",' +
-			        			'"targetArrowShape" : "",' +
-			        			'"source" : "j4",' +
-			        			'"target" : "g2"' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "edges",' +
-			    				'"id" : "a7",' +
-			    				'"name" : "a7",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "",' +
-			    				'"classes" : "ligacao",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "",' +
-			    				'"positionY" : "",' +
-			        			'"opacity" : "",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "",' +
-			    		    	'"width" : "",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "blue",' +
-			        			'"targetArrowShape" : "",' +
-			        			'"source" : "g1",' +
-			        			'"target" : "j4"' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "edges",' +
-			    				'"id" : "a8",' +
-			    				'"name" : "a8",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "",' +
-			    				'"classes" : "ligacao",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "",' +
-			    				'"positionY" : "",' +
-			        			'"opacity" : "",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "",' +
-			    		    	'"width" : "",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "blue",' +
-			        			'"targetArrowShape" : "",' +
-			        			'"source" : "j5",' +
-			        			'"target" : "j6"' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "edges",' +
-			    				'"id" : "a9",' +
-			    				'"name" : "a9",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "",' +
-			    				'"classes" : "ligacao",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "",' +
-			    				'"positionY" : "",' +
-			        			'"opacity" : "",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "",' +
-			    		    	'"width" : "",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "blue",' +
-			        			'"targetArrowShape" : "",' +
-			        			'"source" : "j7",' +
-			        			'"target" : "j6"' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "edges",' +
-			    				'"id" : "a10",' +
-			    				'"name" : "a10",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "",' +
-			    				'"classes" : "ligacao",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "",' +
-			    				'"positionY" : "",' +
-			        			'"opacity" : "",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "",' +
-			    		    	'"width" : "",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "blue",' +
-			        			'"targetArrowShape" : "",' +
-			        			'"source" : "j5",' +
-			        			'"target" : "j9"' +
-				        		'},' +
-				                '{' +
-			    				'"type" : "edges",' +
-			    				'"id" : "a11",' +
-			    				'"name" : "a11",' +
-			    				'"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    				'"wiki" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"area" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"campo" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"categoria" : "xxxxxxxxxxxxxxxxxx",' +
-			    				'"parent" : "",' +
-			    				'"classes" : "ligacao",' +
-			    				'"weight" : "70",' +
-			    				'"positionX" : "",' +
-			    				'"positionY" : "",' +
-			        			'"opacity" : "",' +
-			        			'"color" : "blue",' +
-			        			'"shape" : "",' +
-			    		    	'"width" : "",' +
-			    		    	'"lineColor" : "blue",' +
-			        			'"targetArrowColor" : "blue",' +
-			        			'"targetArrowShape" : "",' +
-			        			'"source" : "j9",' +
-			        			'"target" : "j4"' +
-			        		'}' +
-				        ']' +
-			'}');
-		localStorage.setItem("elements", JSON.stringify(objJson));
-	};
+$(function () {
+	
+		$.ajax({
+	        url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidade/lista?diagrama=habilidades",
+	        contentType: "application/json; charset=utf-8",
+	        dataType: 'json'
+		})
+		.done(function( data ) {
+		})
+		.fail(function(data) {
+		})
+		.always(function(data) {
+	    	if (data.status = 200) {
+	    		var cy = createDiagram ("cy");	
+	    		if (localStorage.usuario == "true"){
+	    			cy.autolock( true );
+	    		};
+//	    		objJson = templateHabilidades ();
+	    		objJson = data;
+//	    		objJson = JSON.parse(localStorage.getItem("elements"));
+	    		localStorage.setItem("elements", JSON.stringify(objJson));
+	    		drawElements (cy, objJson, actionMove, 'grid');
+	    		cy.on('tap', function(evt){
+	    			if (evt.cyTarget.id) {
+	    			};
+	    		});
+	    		$( "#comparaMeuPerfil" ).bind( "click", function() {
+	    			carregaMeuPerfil (cy, objJson);
+	            	$('.habilidade').addClass('hide');
+	    			$('.cursos').addClass('hide');
+	    		});
+	    		obterCarreiras (cy);
+	    		$( "#carregaHabilidades" ).bind( "click", function() {
+	    			cy.destroy();
+	    			cy = createDiagram ("cy");
+	    			if (JSON.parse(localStorage.getItem("elements"))){
+	    				objJson = JSON.parse(localStorage.getItem("elements"));
+	    			};			
+	    			$( "#comparaMeuPerfil" ).bind( "click", function() {
+	    				carregaMeuPerfil (cy, objJson)
+	    			});
+	    			if (localStorage.usuario == "true"){
+	    				cy.autolock( true );
+	    			};
+	    			drawElements (cy, objJson, actionMove, '');
+	    			$('.cursos').addClass('hide');
+	            	$('.habilidade').addClass('hide');
+	            	$('.carreiras').removeClass('hide');
 
-		var cy = createDiagram ("cy");	
-		if (localStorage.usuario == "true"){
-			cy.autolock( true );
-		};
-		drawElements (cy, objJson, actionMove, '');
-		cy.on('tap', function(evt){
-			if (evt.cyTarget.id) {
-			};
+	            	obterCarreiras (cy);
+	    		});
+	    		$( "#fechaCursos" ).bind( "click", function() {
+	    			cy.destroy();
+	    			cy = createDiagram ("cy");
+	    			if (JSON.parse(localStorage.getItem("elements"))){
+	    				objJson = JSON.parse(localStorage.getItem("elements"));
+	    			};			
+	    			$( "#comparaMeuPerfil" ).bind( "click", function() {
+	    				carregaMeuPerfil (cy, objJson)
+	    			});
+	    			if (localStorage.usuario == "true"){
+	    				cy.autolock( true );
+	    			};
+	    			drawElements (cy, objJson, actionMove, '');
+	    			$('.cursos').addClass('hide');
+	    			obterCarreiras (cy);
+	            	$('.carreiras').removeClass('hide');
+	    		});
+	    	}else{
+	    		actio_not_ok()
+	    	};
 		});
-		$( "#comparaMeuPerfil" ).bind( "click", function() {
-			carregaMeuPerfil (cy, objJson);
-        	$('.habilidade').addClass('hide');
-			$('.cursos').addClass('hide');
-		});
-//		
-//		carrega carreiras
-//
-		obterCarreiras (cy);
-//		
-//		recarrega habilidades
-//				
-		$( "#carregaHabilidades" ).bind( "click", function() {
-			cy.destroy();
-			cy = createDiagram ("cy");
-			if (JSON.parse(localStorage.getItem("elements"))){
-				objJson = JSON.parse(localStorage.getItem("elements"));
-			};			
-			$( "#comparaMeuPerfil" ).bind( "click", function() {
-				carregaMeuPerfil (cy, objJson)
-			});
-			if (localStorage.usuario == "true"){
-				cy.autolock( true );
-			};
-			drawElements (cy, objJson, actionMove, '');
-			$('.cursos').addClass('hide');
-        	$('.habilidade').addClass('hide');
-        	$('.carreiras').removeClass('hide');
-
-        	obterCarreiras (cy);
-		});
-
-		$( "#fechaCursos" ).bind( "click", function() {
-			cy.destroy();
-			cy = createDiagram ("cy");
-			if (JSON.parse(localStorage.getItem("elements"))){
-				objJson = JSON.parse(localStorage.getItem("elements"));
-			};			
-			$( "#comparaMeuPerfil" ).bind( "click", function() {
-				carregaMeuPerfil (cy, objJson)
-			});
-			if (localStorage.usuario == "true"){
-				cy.autolock( true );
-			};
-			drawElements (cy, objJson, actionMove, '');
-			$('.cursos').addClass('hide');
-			obterCarreiras (cy);
-        	$('.carreiras').removeClass('hide');
-		});
+	
 });
 
-function actionMove (id, x,y){
+function actionMove (cy, id, x,y){
+	
 	objJson = JSON.parse(localStorage.getItem("elements"));
-	$.each( objJson.elements, function( i, element ) {
-		if (id == element.id){
-	    	element.positionX = x; 
-	    	element.positionY =	y;		
+	$.each( objJson, function( i, element ) {
+		if (element.documento.type == "nodes"){
+			var selector = '#' + i;
+			var x1 = cy.$(selector).position('x');
+			var y1 = cy.$(selector).position('y');
+			if (x1 != element.documento.positionX){
+				console.log ("mudou " + element.documento.name)
+			};
+	    	element.documento.positionX = x1; 
+	    	element.documento.positionY = y1;		
 		};
 	});
 	localStorage.setItem("elements", JSON.stringify(objJson));
@@ -508,23 +108,26 @@ function createDiagram (name, readyFunction, par1, par2){
 						'background-opacity' : 0.2,
 						'background-color' : 'blue',
 						'content': 'data(name)',
+						'width': 100,
 						'shape':'ellipse'
 					}
 				},
 				{
 					selector : ':parent',
 					style : {
-						'background-opacity' : 0.05,
+						'background-opacity' : 0.03,
 						'background-color' : 'blue'
 					}
 				},
 				{
 				     selector: 'edge',
 				      style: {
-				        'width': 3,
-				        'line-color': '#ccc',
-				        'target-arrow-color': '#ccc',
-				        'target-arrow-shape': 'triangle'					}
+				        'width': 2,
+				        'line-color': 'blue',
+				        'target-arrow-color': 'blue',
+				        'target-arrow-shape': 'triangle',
+				        'target-arrow-fill':"filled "
+				        	}
 				}
 			],
 
@@ -625,7 +228,7 @@ function comparaCarreira (cy, objJson){
 	});
 	
 	$.each( objJson.necessarios, function( i, element ) {
-		var selector = '#' + element.id;
+		var selector = '#' + element;
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
 			var nodes = node.parent();
@@ -634,11 +237,11 @@ function comparaCarreira (cy, objJson){
 				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange', 0.2);				
 			});
 		}else{
-			montaComparacao(cy, element.id, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', 0.2);				
+			montaComparacao(cy, element, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', 0.2);				
 		}
 	});
 	$.each( objJson.recomendados, function( i, element ) {
-		var selector = '#' + element.id;
+		var selector = '#' + element;
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
 			var nodes = node.parent();
@@ -647,7 +250,7 @@ function comparaCarreira (cy, objJson){
 				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange', -0.1);				
 			});
 		}else{
-			montaComparacao(cy, element.id, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', -0.1);				
+			montaComparacao(cy, element, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', -0.1);				
 		}
 	});
 };
@@ -679,49 +282,16 @@ function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opac
 
 function drawElements (cy, objJson, actionMove, typeLayout){
 	
-	$.each( objJson.elements, function( i, element ) {
-		cy.add({
-		    group: element.type,
-		    data: { 
-		    	id : element.id,
-		    	name : element.name,  
-		    	descricao : element.descricao,
-		    	wiki : element.wiki,
-		    	area : element.area,
-		    	campo : element.campo,
-		    	categoria : element.categoria,
-		    	parent : element.parent,
-		    	weight: element.weight,
-		    	source : element.source,
-		    	target : element.target
-		    	},
-		    position: {
-		    	x: parseInt(element.positionX), 
-		    	y: parseInt(element.positionY) 
-		    	},
-		    width : parseInt(element.width),
-			style : {
-//		    	'background-opacity' : parseFloat(element.opacity),
-//		    	'background-color' : element.color,
-		    	'shape' : element.shape,
-		    	'width' : parseInt(element.width),
-//		    	'line-color' : element.lineColor
-		    	'target-arrow-color': 'blue',
-		    	'target-arrow-shape': 'triangle'
-			}
-		});
-		var selector = '#' + element.id;
-		cy.$(selector).addClass(element.classes);
-		var node = cy.$(selector);
-		if (!node.isChild() && !cy.$(selector).hasClass("agrupamento")){
-			cy.style()
-			  .selector(selector)
-			    .style({
-			      'background-opacity': 0.2
-			    })
-			  .update()						  
-		};
-	});
+	addElements (cy, objJson,"area", 30);
+	
+	addElements (cy, objJson,"campo", 30);
+
+	addElements (cy, objJson,"categoria");
+
+	addElements (cy, objJson,"habilidade");
+	
+	addEdges (cy, objJson);
+
 	cy.on('tap', function(evt){
 		if (evt.cyTarget.id){
 			var selector = '#' + evt.cyTarget.id();
@@ -746,16 +316,119 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 	});
 	cy.bind('tapend', function(evt){
 		if (evt.cyTarget.id) {
-			actionMove(evt.cyTarget.id(), evt.cyPosition.x, evt.cyPosition.y);
+			actionMove(cy, evt.cyTarget.id(), evt.cyPosition.x, evt.cyPosition.y);
 		};
 	});
-	if (typeLayout){
-		var layout = cy.makeLayout({
-//			  name: typeLayout
-			  name: "breadthfirst"
-		});
-		layout.run();
-	};
+
+	var layout = cy.makeLayout({
+		name: "preset"
+	});
+		
+	layout.run();
 
 };
 
+
+function 	addElements (cy, objJson, tipo, widthElement){
+
+	console.log ("carrega " + tipo );
+	
+	$.each( objJson, function( i, element ) {
+		var par = "";
+		if (element.documento.parent != ""){
+			$.each( objJson, function( w, parent ) {
+				if (element.documento.parent == parent.documento.idHabilidade){
+					par = w;
+					return;
+				};
+			});
+		};
+		if (element.documento.classes == tipo){
+			if (element.documento.positionX == ""){
+				objJson = JSON.parse(localStorage.getItem("elements"));
+				element.documento.positionX = 100 + i;
+				element.documento.positionY = 100 - i;
+				objJson[i].documento.positionX = 100 + i;
+				objJson[i].documento.positionY = 100 - i;
+				localStorage.setItem("elements", JSON.stringify(objJson));
+			};
+			cy.add({
+			    group: element.documento.type,
+			    data: { 
+			    	id : i,
+			    	name : element.documento.name,  
+			    	descricao : element.documento.descricao,
+			    	wiki : element.documento.wiki,
+			    	area : element.documento.area,
+			    	campo : element.documento.campo,
+			    	categoria : element.documento.categoria,
+			    	parent : par,
+	//		    	weight: element.documento.weight,
+			    	},
+			    position: {
+			    	x: parseInt(element.documento.positionX), 
+			    	y: parseInt(element.documento.positionY) 
+			    	},
+	//		    width : parseInt(element.documento.width),
+	//		    width : 100,
+				style : {
+	//		    	'background-opacity' : parseFloat(element.documento.opacity),
+	//		    	'background-color' : element.documento.color,
+			    	'shape' : 'ellipse',
+	//		    	'width' : widthElement
+	//		    	'line-color' : element.documento.lineColor
+				}
+			});
+			var selector = '#' + i;
+			cy.$(selector).addClass(element.documento.classes);
+			var node = cy.$(selector);
+			if (!node.isChild() && !cy.$(selector).hasClass("agrupamento")){
+				cy.style()
+				  .selector(selector)
+				    .style({
+				      'background-opacity': 0.2
+				    })
+				  .update()						  
+			};
+			if (tipo == "area" || tipo == "campo" || tipo == "categoria"){
+				cy.$(selector).addClass('agrupamento');
+			};
+		};
+	});
+};
+
+function addEdges (cy, objJson) {
+	
+	console.log ("carrega ligacoes");
+
+	$.each( objJson, function( i, element ) {
+		var sou = "";
+		$.each( objJson, function( w, parent ) {
+			if (element.documento.source == parent.documento.idHabilidade){
+				sou = w;
+				return;
+			};
+		});
+		var tar = "";
+		$.each( objJson, function( w, parent ) {
+			if (element.documento.target == parent.documento.idHabilidade){
+				tar = w;
+				return;
+			};
+		});
+		if (element.documento.type == "edges" && sou != "" && tar != ""){
+			console.log (i);
+			cy.add({
+			    group: element.documento.type,
+			    data: { 
+			    	id : i,
+			    	name : element.documento.name,  
+			    	source : sou,
+			    	target : tar
+			    	}
+			});
+		};
+	});
+	
+	console.log ("termina carrega ligacoes");
+};

@@ -247,13 +247,13 @@ h6,
   margin-left: -10px;
   bottom: 0;
 }
-.cls-header.cls-header-lg .cls-brand .brand-icon {
-  width: 60px;
-  height: 60px;
-}
 .brand-icon {
   width: 260px;
   height: 160px;
+}
+.brand-icon-yggboard {
+  width: 160px !important;
+  height: 80px !important;
 }
 #container.cls-container .cls-header .cls-header.cls-header-lg .cls-brand .brand-title {
   font-size: 27px;

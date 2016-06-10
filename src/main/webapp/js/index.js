@@ -1,7 +1,6 @@
 /**
  * 
  */
-
-	localStorage.usuario = true;
+localStorage.usuario = true;
 	localStorage.administrador = false;
     window.location="yggboard.html"; 

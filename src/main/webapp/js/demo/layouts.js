@@ -32,4 +32,4 @@ $(document).ready(function() {
     }
 
 });
-window.demoLayout = true;
+window.demoLayout = false;

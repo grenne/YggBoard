@@ -10,45 +10,11 @@
 		/**
 		 * 	carrega lista de carreiras
 		 */
-		objJson  = JSON.parse(
-			'[' +
-				'{' +
-			    '"nome" : "Administrador",' +
-			    '"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    '"wiki" : "https://pt.wikipedia.org/wiki/Administração_de_Empresas",' +
-			    '"salario" : "12222,21",' +
-			    '"salarioMedio" : "9865,50",' +
-			    '"funcao" : "Administrativa",' +
-				'"necessarios" : ' +
-			    	'[' +
-						'{"id" : "g2"}, {"id" : "j4"},{"id" : "j6"}' +
-		        	'],' +
-				'"recomendados" : ' +
-			    	'[' +
-						'{"id" : "j7"}, {"id" : "j8"}' +
-		        	']' +
-			    '},' +
-				'{' +
-			    '"nome" : "Fisico",' +
-			    '"descricao" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque luctus, lorem et elementum consequat, felis quam malesuada ante, in rhoncus orci est nec felis. Nulla blandit nulla odio, eu fringilla.",' +
-			    '"wiki" : "https://pt.wikipedia.org/wiki/Administração_de_Empresas",' +
-			    '"salario" : "12222,21",' +
-			    '"salarioMedio" : "9865,50",' +
-			    '"funcao" : "Administrativa",' +
-				'"necessarios" : ' +
-					'[' +
-						'{"id" : "j5"}, {"id" : "j2"}' +
-			        	'],' +
-				'"recomendados" : ' +
-			    	'[' +
-						'{"id" : "j7"}, {"id" : "j10"}' +
-					']' +
-			    '}' +
-        	']'
-		);
+//		objJson  = templateCarreiras ();
 		
-		carregaCarreiras (objJson, cy);	
+//		carregaCarreiras (objJson, cy);	
 
+		rest_obterCarreiras(carregaCarreiras, cy)
 	};
 		
 	function carregaCarreiras (objJson, cy) {	
