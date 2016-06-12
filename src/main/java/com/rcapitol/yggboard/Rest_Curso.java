@@ -100,7 +100,7 @@ public class Rest_Curso {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response AtualizarDocumento(Habilidade doc) throws MongoException, JsonParseException, JsonMappingException, IOException {
-		String mail = doc.documento.mail;
+		String name = doc.documento.name;
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
 		DBCollection collection = db.getCollection("student");
@@ -112,7 +112,7 @@ public class Rest_Curso {
 		JSONObject documento = new JSONObject();
 		documento.putAll(mapJson);
 		BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(documento));
-		BasicDBObject searchQuery = new BasicDBObject("documento.mail", mail);
+		BasicDBObject searchQuery = new BasicDBObject("documento.mail", name);
 		DBObject cursor = collection.findAndModify(searchQuery,
                 null,
                 null,

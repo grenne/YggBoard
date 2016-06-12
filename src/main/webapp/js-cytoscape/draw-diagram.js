@@ -76,24 +76,6 @@ $(function () {
 	
 });
 
-function actionMove (cy, id, x,y){
-	
-	objJson = JSON.parse(localStorage.getItem("elements"));
-	$.each( objJson, function( i, element ) {
-		if (element.documento.type == "nodes"){
-			var selector = '#' + i;
-			var x1 = cy.$(selector).position('x');
-			var y1 = cy.$(selector).position('y');
-			if (x1 != element.documento.positionX){
-				console.log ("mudou " + element.documento.name)
-			};
-	    	element.documento.positionX = x1; 
-	    	element.documento.positionY = y1;		
-		};
-	});
-	localStorage.setItem("elements", JSON.stringify(objJson));
-};
-
 function createDiagram (name, readyFunction, par1, par2){
 
 	var cy = window.cy = cytoscape({
@@ -115,8 +97,8 @@ function createDiagram (name, readyFunction, par1, par2){
 				{
 					selector : ':parent',
 					style : {
-						'background-opacity' : 0.03,
-						'background-color' : 'blue'
+						'background-opacity' : 0.02,
+						'background-color' : 'oramge'
 					}
 				},
 				{
@@ -166,32 +148,73 @@ function carregaMeuPerfil (cy, objJson){
 		    	'[' +
 		                '{' +
 		    				'"type" : "nodes",' +
-		    				'"id" : "g2",' +
+		    				'"id" : "Pesquisa mercadológica",' +
 		        			'"color" : "blue"' +
 		        		'},' +
 		                '{' +
 		    				'"type" : "nodes",' +
-		    				'"id" : "j4",' +
+		    				'"id" : "Atração retenção de clientes",' +
 		        			'"color" : "blue"' +
 		        		'},' +
 		                '{' +
 		    				'"type" : "nodes",' +
-		    				'"id" : "j5",' +
+		    				'"id" : "Criação de estratégia competitiva",' +
 		        			'"color" : "blue"' +
-	        		'}' +
+		        		'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "Gestão de comunicação mercadológica",' +
+		        			'"color" : "blue"' +
+			        	'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "Gestão de canais",' +
+		        			'"color" : "blue"' +
+			        	'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "Gestão de produtos",' +
+		        			'"color" : "blue"' +
+			        	'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "Gestão de propaganda e publicidade",' +
+		        			'"color" : "blue"' +
+			        	'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "Inteligência competitiva",' +
+		        			'"color" : "blue"' +
+			        	'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "Precificação de produtos e serviços",' +
+		        			'"color" : "blue"' +
+			        	'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "Desenvolvimento de novos produtos",' +
+		        			'"color" : "blue"' +
+				        	'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "Análises estratégicas",' +
+		        			'"color" : "blue"' +
+		        		'}' +
 		        ']' +
 	'}');
 	$.each( objJson.elements, function( i, element ) {
-		var selector = '#' + element.id;
+		var id = compoeId (element.id);
+		var selector = '#' + id
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
 			var nodes = node.parent();
 			var descendants = node.descendants();
 			$.each( descendants, function( i, descendant ) {
-				montaComparacao(cy, descendant.id(), 'perfilUsuario', 'perfilCarreira', 'green', 'green');				
+				montaComparacao(cy, descendant.id(), 'perfilUsuario', 'perfilCarreira', 'green', 'green', 1);				
 			});
 		}else{
-			montaComparacao(cy, element.id, 'perfilUsuario', 'perfilCarreira', 'green', 'green');				
+			montaComparacao(cy, id, 'perfilUsuario', 'perfilCarreira', 'green', 'green', 1);				
 		}
 	});
 };
@@ -205,7 +228,7 @@ function comparaCarreira (cy, objJson){
 		var node = cy.$(selector);
 		var opacity = 0.3;
 		if (!node.isChild() && !cy.$(selector).hasClass("agrupamento")){
-			var opacity = 0.2;
+			var opacity = 0.02;
 		};
 		if (element.hasClass('perfilUsuario')){
 			cy.style()
@@ -219,7 +242,7 @@ function comparaCarreira (cy, objJson){
 			cy.style()
 			  .selector(selector)
 			    .style({
-			      'background-color': 'blue',
+			      'background-color': 'orange',
 			      'background-opacity': opacity
 			    })
 			  .update()							
@@ -228,29 +251,30 @@ function comparaCarreira (cy, objJson){
 	});
 	
 	$.each( objJson.necessarios, function( i, element ) {
-		var selector = '#' + element;
+		objJsonElements = JSON.parse(localStorage.getItem("elements"));
+		var selector = '#' + compoeId (element);
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
 			var nodes = node.parent();
 			var descendants = node.descendants();
 			$.each( descendants, function( i, descendant ) {
-				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange', 0.2);				
+				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'red', 0.2);				
 			});
 		}else{
-			montaComparacao(cy, element, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', 0.2);				
+			montaComparacao(cy, compoeId (element), 'perfilCarreira', 'perfilUsuario', 'green', 'red', 0.2);				
 		}
 	});
 	$.each( objJson.recomendados, function( i, element ) {
-		var selector = '#' + element;
+		var selector = '#' + compoeId (element);
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
 			var nodes = node.parent();
 			var descendants = node.descendants();
 			$.each( descendants, function( i, descendant ) {
-				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange', -0.1);				
+				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'red', -0.1);				
 			});
 		}else{
-			montaComparacao(cy, element, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', -0.1);				
+			montaComparacao(cy, compoeId (element), 'perfilCarreira', 'perfilUsuario', 'green', 'red', -0.1);				
 		}
 	});
 };
@@ -265,7 +289,7 @@ function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opac
 			  .selector(selector)
 			    .style({
 			      'background-color': cor_01,
-			      'background-opacity': 0.4 + opacity
+			      'background-opacity': 0.7 + opacity
 			    })
 			  .update()				
 		}else{
@@ -273,7 +297,7 @@ function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opac
 			  .selector(selector)
 			    .style({
 			      'background-color': cor_02,
-			      'background-opacity': 0.2 + opacity
+			      'background-opacity': 0.8 + opacity
 			    })
 			  .update()										
 		};
@@ -311,7 +335,20 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 					obterCursos (cy, evt.cyTarget.id());
 					$('.cursos').removeClass('hide');
 				};
-			};
+				var x = cy.$(selector).position('x');
+				var y = cy.$(selector).position('y');
+				cy.animate(
+						{
+							fit: {
+								eles: node,
+								padding: 20
+							}
+						}, 
+						{
+							duration: 1000
+						});			
+				};
+				console.log ("tap: x:" + x + " y:" + y);
 		};
 	});
 	cy.bind('tapend', function(evt){
@@ -334,35 +371,47 @@ function 	addElements (cy, objJson, tipo, widthElement){
 	console.log ("carrega " + tipo );
 	
 	$.each( objJson, function( i, element ) {
-		var par = "";
-		if (element.documento.parent != ""){
-			$.each( objJson, function( w, parent ) {
-				if (element.documento.parent == parent.documento.idHabilidade){
-					par = w;
-					return;
-				};
-			});
-		};
 		if (element.documento.classes == tipo){
-			if (element.documento.positionX == ""){
-				objJson = JSON.parse(localStorage.getItem("elements"));
-				element.documento.positionX = 100 + i;
-				element.documento.positionY = 100 - i;
-				objJson[i].documento.positionX = 100 + i;
-				objJson[i].documento.positionY = 100 - i;
-				localStorage.setItem("elements", JSON.stringify(objJson));
+			if (element.documento.positionX == "") {
+				if (element.documento.parent == ""){
+					objJson = JSON.parse(localStorage.getItem("elements"));
+					element.documento.positionX = 100 + 200;
+					element.documento.positionY = 100 - 200;
+					objJson[i].documento.positionX = 100 + 200;
+					objJson[i].documento.positionY = 100 - 200;
+					localStorage.setItem("elements", JSON.stringify(objJson));
+				}else{
+					var selector = '#' + compoeId (element.documento.parent);
+					var x1 = cy.$(selector).position('x');
+					var y1 = cy.$(selector).position('y');
+					if (x1 > 0){
+						difX = 20
+					}else{
+						difX = -20
+					};
+					if (y1 > 0){
+						difY = 70
+					}else{
+						difY = -70
+					};
+					element.documento.positionX = x1 - difX;
+					element.documento.positionY = y1 - difY;
+					objJson[i].documento.positionX = x1 - difX;
+					objJson[i].documento.positionY = y1 - difY;
+				};
 			};
+			id = compoeId (element.documento.idHabilidade);
 			cy.add({
 			    group: element.documento.type,
 			    data: { 
-			    	id : i,
+			    	id : id,
 			    	name : element.documento.name,  
 			    	descricao : element.documento.descricao,
 			    	wiki : element.documento.wiki,
 			    	area : element.documento.area,
 			    	campo : element.documento.campo,
 			    	categoria : element.documento.categoria,
-			    	parent : par,
+			    	parent : compoeId (element.documento.parent),
 	//		    	weight: element.documento.weight,
 			    	},
 			    position: {
@@ -379,22 +428,44 @@ function 	addElements (cy, objJson, tipo, widthElement){
 	//		    	'line-color' : element.documento.lineColor
 				}
 			});
-			var selector = '#' + i;
+			var selector = '#' + id;
 			cy.$(selector).addClass(element.documento.classes);
 			var node = cy.$(selector);
-			if (!node.isChild() && !cy.$(selector).hasClass("agrupamento")){
+			if (tipo == "area" ){
 				cy.style()
 				  .selector(selector)
 				    .style({
-				      'background-opacity': 0.2
+				      'background-opacity': 0.02,
+				      'background-color': "orange"
 				    })
 				  .update()						  
-			};
-			if (tipo == "area" || tipo == "campo" || tipo == "categoria"){
 				cy.$(selector).addClass('agrupamento');
+			}else{
+				if (tipo == "campo" ){
+					cy.style()
+					  .selector(selector)
+					    .style({
+					      'background-opacity': 0.08,
+					      'background-color': "orange"
+					    })
+					  .update()						  
+					cy.$(selector).addClass('agrupamento');
+				}else{
+					if (tipo == "categoria"){
+						cy.style()
+						  .selector(selector)
+						    .style({
+						      'background-opacity': 0.12,
+						      'background-color': "orange"
+						    })
+						  .update()						  
+						cy.$(selector).addClass('agrupamento');
+					};
+				};
 			};
 		};
 	});
+	console.log ("carregou " + tipo );
 };
 
 function addEdges (cy, objJson) {
@@ -402,22 +473,9 @@ function addEdges (cy, objJson) {
 	console.log ("carrega ligacoes");
 
 	$.each( objJson, function( i, element ) {
-		var sou = "";
-		$.each( objJson, function( w, parent ) {
-			if (element.documento.source == parent.documento.idHabilidade){
-				sou = w;
-				return;
-			};
-		});
-		var tar = "";
-		$.each( objJson, function( w, parent ) {
-			if (element.documento.target == parent.documento.idHabilidade){
-				tar = w;
-				return;
-			};
-		});
-		if (element.documento.type == "edges" && sou != "" && tar != ""){
-			console.log (i);
+		if (element.documento.type == "edges" ){
+			sou = compoeId (element.documento.source);
+			tar = compoeId (element.documento.target);
 			cy.add({
 			    group: element.documento.type,
 			    data: { 
@@ -431,4 +489,39 @@ function addEdges (cy, objJson) {
 	});
 	
 	console.log ("termina carrega ligacoes");
+};
+
+function actionMove (cy, id, x,y){
+	
+	objJson = JSON.parse(localStorage.getItem("elements"));
+	$.each( objJson, function( i, element ) {
+		if (element.documento.type == "nodes"){
+			var selector = '#' + compoeId (element.documento.idHabilidade);
+			var x1 = cy.$(selector).position('x');
+			var y1 = cy.$(selector).position('y');
+			if (x1 != element.documento.positionX){
+				console.log ("mudou " + element.documento.name)
+			};
+			if (x1){
+				element.documento.positionX = x1; 
+				element.documento.positionY = y1;
+			};
+		};
+	});
+	localStorage.setItem("elements", JSON.stringify(objJson));
+};
+
+function compoeId (nome){
+
+	var id = 0;
+	for( var i=0; i < nome.length; i++ ){
+		var letter = nome.charAt(i); 
+		if (letter != " "){
+			var n = letter.charCodeAt(0);
+			id = parseInt(id)  + parseInt(n);	
+		};
+	};
+	
+	return id;
+	
 };
