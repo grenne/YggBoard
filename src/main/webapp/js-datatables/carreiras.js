@@ -3,7 +3,6 @@
  */
 
 	function obterCarreiras (cy) {
-//		rest_obterCarreiraAll(carregaCarreiras, noAction, cy);
 //		
 //		carrega carreiras
 //

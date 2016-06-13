@@ -30,9 +30,16 @@ $(function () {
 	    		$( "#comparaMeuPerfil" ).bind( "click", function() {
 	    			carregaMeuPerfil (cy, objJson);
 	            	$('.habilidade').addClass('hide');
+	            	$('.habilidades').addClass('hide');
 	    			$('.cursos').addClass('hide');
 	    		});
 	    		obterCarreiras (cy);
+	    		$( "#criaMeuPerfil" ).bind( "click", function() {
+	    			carregaHabilidadesLista (cy, objJson);
+	            	$('.habilidade').addClass('hide');
+	    			$('.cursos').addClass('hide');
+	    			$('.carreiras').addClass('hide');
+	    		});
 	    		$( "#carregaHabilidades" ).bind( "click", function() {
 	    			cy.destroy();
 	    			cy = createDiagram ("cy");
@@ -48,6 +55,7 @@ $(function () {
 	    			drawElements (cy, objJson, actionMove, '');
 	    			$('.cursos').addClass('hide');
 	            	$('.habilidade').addClass('hide');
+	            	$('.habilidades').addClass('hide');
 	            	$('.carreiras').removeClass('hide');
 
 	            	obterCarreiras (cy);
