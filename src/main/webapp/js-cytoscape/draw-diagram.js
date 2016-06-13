@@ -220,16 +220,12 @@ function carregaMeuPerfil (cy, objJson){
 };
 
 function comparaCarreira (cy, objJson){
-	
 	var elementsCarreira = cy.nodes('.perfilCarreira');
 
 	$.each( elementsCarreira, function( i, element ) {
 		var selector = '#' + element.id();
 		var node = cy.$(selector);
-		var opacity = 0.3;
-		if (!node.isChild() && !cy.$(selector).hasClass("agrupamento")){
-			var opacity = 0.02;
-		};
+		var opacity = 0.2;
 		if (element.hasClass('perfilUsuario')){
 			cy.style()
 			  .selector(selector)
@@ -242,14 +238,13 @@ function comparaCarreira (cy, objJson){
 			cy.style()
 			  .selector(selector)
 			    .style({
-			      'background-color': 'orange',
+			      'background-color': 'blue',
 			      'background-opacity': opacity
 			    })
 			  .update()							
 		};
 		cy.$(selector).removeClass('perfilCarreira');
 	});
-	
 	$.each( objJson.necessarios, function( i, element ) {
 		objJsonElements = JSON.parse(localStorage.getItem("elements"));
 		var selector = '#' + compoeId (element);
@@ -313,8 +308,21 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 	addElements (cy, objJson,"categoria");
 
 	addElements (cy, objJson,"habilidade");
-	
+		
 	addEdges (cy, objJson);
+
+	var selectorZoom = '#2670';
+	var nodeZoom = cy.$(selectorZoom);
+	cy.animate(
+			{
+				fit: {
+					eles: nodeZoom,
+					padding: 20
+				}
+			}, 
+			{
+				duration: 1000
+			});		
 
 	cy.on('tap', function(evt){
 		if (evt.cyTarget.id){
@@ -337,18 +345,27 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 				};
 				var x = cy.$(selector).position('x');
 				var y = cy.$(selector).position('y');
-				cy.animate(
-						{
-							fit: {
-								eles: node,
-								padding: 20
-							}
-						}, 
-						{
-							duration: 1000
-						});			
+				var parent = cy.$(selector).parent(node);
+				console.log ("parent:" + parent.id());
+				var selectorParent = '#' + parent.id();
+				var nodeZoom = cy.$(selectorParent);
+				if (cy.$(selector).isParent()){
+					nodeZoom = node;
 				};
-				console.log ("tap: x:" + x + " y:" + y);
+				if (nodeZoom){
+					cy.animate(
+							{
+								fit: {
+									eles: nodeZoom,
+									padding: 20
+								}
+							}, 
+							{
+								duration: 1000
+							});		
+					};
+			};
+				console.log ("tap element:" + node.id() + " x:" + x + " y:" + y);
 		};
 	});
 	cy.bind('tapend', function(evt){
