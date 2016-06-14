@@ -33,23 +33,25 @@
         $.each(objJson, function (i, element) {
         	habilidade_table_row = 
 				'<tr class="itemHabilidade">' +
-		   			'<td id="nome_' + i + '">' + element.documento.nome + '</td>' +
-					'<td id="acaoTd_' + i + '"><button id="acaoHabilidade_' + i + '" class="btn-xs btn-info">Comparar</button></td>' +
+		   			'<td id="nome_' + i + '">' + element.documento.name + '</td>' +
+					'<td id="acaoHabilidade' + i + '"><button id="acaoHabilidade_' + i + '" class="btn-xs btn-info">Incluir</button></td>' +
 					'<td id="descricao_' + i + '">' + element.documento.descricao + '</td>' +
 					'<td id="wiki_' + i + '" class="text-info"><a href="' + element.documento.wiki + '" target="_blank">Wiki</a></td>' +
-					'<td id="salario_' + i + '">' + element.documento.area + '</td>' +
-					'<td id="salarioMedio_' + i + '">' + element.documento.campo + '</td>' +
-					'<td id="funcao_' + i + '">' + element.documento.categoria + '</td>' +
+					'<td id="area' + i + '">' + element.documento.area + '</td>' +
+					'<td id="campo' + i + '">' + element.documento.campo + '</td>' +
+					'<td id="categoria' + i + '">' + element.documento.categoria + '</td>' +
 				'</tr>';
         	$( "#habilidade_tbody" ).append(habilidade_table_row);
             $('#acaoHabilidade_' + i).bind('click', function () {
-            	incluiHabilidadePerfil (cy, habilidade);
+            	incluiHabilidadePerfil (cy, element.documento.idHabilidade);
 				$('.cursos').addClass('hide');
 				$('.carreira').addClass('hide');
 				$('.habilidade').addClass('hide');
           });
         });
-
+        
+        $('.habilidades').removeClass('hide');
+        
         var habilidade_table = $('#habilidade_list');
 		habilidade_table.footable().trigger('footable_collapse_all');
 
@@ -69,4 +71,22 @@
 			e.preventDefault();
 			habilidade_table.trigger('footable_filter', {filter: $(this).val()});
 		});
+	};
+
+	function incluiHabilidadePerfil (cy, element) {
+		var selector = '#' + compoeId (element);
+		var node = cy.$(selector);
+		
+		if (node.isParent(selector)){
+		    if (confirm("Carrega agrupamento " + element + " no seu perfil?") == true) {
+				var nodes = node.parent();
+				var descendants = node.descendants();
+				$.each( descendants, function( i, descendant) {
+					console.log ("descedentes:" + descendant.data('name'));
+					montaPerfil(cy, descendant.id(), descendant.data('idOriginal'));				
+				});
+		    };
+		}else{
+			montaPerfil(cy, compoeId (element), element);
+		};
 	};

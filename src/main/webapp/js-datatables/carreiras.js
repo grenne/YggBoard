@@ -51,7 +51,7 @@
         	carreira_table_row = 
 				'<tr class="itemCarreira">' +
 		   			'<td id="nome_' + i + '">' + carreira.nome + '</td>' +
-					'<td id="acaoTd_' + i + '"><button id="acaoCarreira_' + i + '" class="btn-xs btn-info">Comparar</button></td>' +
+					'<td id="acaoCarreira' + i + '"><button id="acaoCarreira_' + i + '" class="btn-xs btn-info">Comparar</button></td>' +
 					'<td id="descricao_' + i + '">' + carreira.descricao + '</td>' +
 					'<td id="wiki_' + i + '" class="text-info"><a href="' + carreira.wiki + '" target="_blank">Wiki</a></td>' +
 					'<td id="salario_' + i + '">' + carreira.salario + '</td>' +

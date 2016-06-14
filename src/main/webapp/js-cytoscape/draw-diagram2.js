@@ -23,31 +23,34 @@ $(function () {
 //	    		objJson = JSON.parse(localStorage.getItem("elements"));
 	    		localStorage.setItem("elements", JSON.stringify(objJson));
 	    		drawElements (cy, objJson, actionMove, 'grid');
-	    		localStorage.criaPerfil = false;
+	    		cy.on('tap', function(evt){
+	    			if (evt.cyTarget.id) {
+	    			};
+	    		});
 	    		$( "#comparaMeuPerfil" ).bind( "click", function() {
 	    			carregaMeuPerfil (cy, objJson);
 	            	$('.habilidade').addClass('hide');
-	            	$('.habilidades').addClass('hide');
 	    			$('.cursos').addClass('hide');
-		    		localStorage.criaPerfil = false;
 	    		});
 	    		obterCarreiras (cy);
-	    		$( "#criarMeuPerfil" ).bind( "click", function() {
-	    			carregaHabilidadesLista (cy, objJson);
-	    			carregaMeuPerfil (cy, objJson);
-	            	$('.habilidade').addClass('hide');
-	    			$('.cursos').addClass('hide');
-	    			$('.carreiras').addClass('hide');
-	    			localStorage.criaPerfil = true;
-	    		});
 	    		$( "#carregaHabilidades" ).bind( "click", function() {
-	    			limpaDiagrama (cy, "blue", "blue", 0.2, "perfilCarreira");
-	    			limpaDiagrama (cy, "blue", "blue", 0.2, "perfilUsuario");
+	    			cy.destroy();
+	    			cy = createDiagram ("cy");
+	    			if (JSON.parse(localStorage.getItem("elements"))){
+	    				objJson = JSON.parse(localStorage.getItem("elements"));
+	    			};			
+	    			$( "#comparaMeuPerfil" ).bind( "click", function() {
+	    				carregaMeuPerfil (cy, objJson)
+	    			});
+	    			if (localStorage.usuario == "true"){
+	    				cy.autolock( true );
+	    			};
+	    			drawElements (cy, objJson, actionMove, '');
 	    			$('.cursos').addClass('hide');
 	            	$('.habilidade').addClass('hide');
-	            	$('.habilidades').addClass('hide');
 	            	$('.carreiras').removeClass('hide');
-	            	localStorage.criaPerfil = false;
+
+	            	obterCarreiras (cy);
 	    		});
 	    		$( "#fechaCursos" ).bind( "click", function() {
 	    			cy.destroy();
@@ -65,7 +68,6 @@ $(function () {
 	    			$('.cursos').addClass('hide');
 	    			obterCarreiras (cy);
 	            	$('.carreiras').removeClass('hide');
-	            	localStorage.criaPerfil = false;
 	    		});
 	    	}else{
 	    		actio_not_ok()
@@ -73,6 +75,24 @@ $(function () {
 		});
 	
 });
+
+function actionMove (cy, id, x,y){
+	
+	objJson = JSON.parse(localStorage.getItem("elements"));
+	$.each( objJson, function( i, element ) {
+		if (element.documento.type == "nodes"){
+			var selector = '#' + i;
+			var x1 = cy.$(selector).position('x');
+			var y1 = cy.$(selector).position('y');
+			if (x1 != element.documento.positionX){
+				console.log ("mudou " + element.documento.name)
+			};
+	    	element.documento.positionX = x1; 
+	    	element.documento.positionY = y1;		
+		};
+	});
+	localStorage.setItem("elements", JSON.stringify(objJson));
+};
 
 function createDiagram (name, readyFunction, par1, par2){
 
@@ -85,7 +105,7 @@ function createDiagram (name, readyFunction, par1, par2){
 				{
 					selector: 'node',
 					style: {
-						'background-opacity' : 0.002,
+						'background-opacity' : 0.2,
 						'background-color' : 'blue',
 						'content': 'data(name)',
 						'width': 100,
@@ -95,19 +115,18 @@ function createDiagram (name, readyFunction, par1, par2){
 				{
 					selector : ':parent',
 					style : {
-						'background-opacity' : 0.002,
-						'background-color' : 'oramge'
+						'background-opacity' : 0.03,
+						'background-color' : 'blue'
 					}
 				},
 				{
 				     selector: 'edge',
 				      style: {
-				        'width': 1,
-				        'line-color': 'gray',
-				        'target-arrow-color': 'lightgray',
+				        'width': 2,
+				        'line-color': 'blue',
+				        'target-arrow-color': 'blue',
 				        'target-arrow-shape': 'triangle',
-				        'target-arrow-fill':"filled ",
-				        'background-opacity' : 0.5,
+				        'target-arrow-fill':"filled "
 				        	}
 				}
 			],
@@ -139,17 +158,60 @@ function createDiagram (name, readyFunction, par1, par2){
 	
 	return cy;
 };
-function limpaDiagrama (cy, cor1, cor2, opacity, perfil){
-	var elementsCarreira = cy.nodes('.' + perfil);
+function carregaMeuPerfil (cy, objJson){
+	objJson  = JSON.parse(
+			'{' +
+		    '"name" : "",' +
+			    '"elements" : ' +
+		    	'[' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "g2",' +
+		        			'"color" : "blue"' +
+		        		'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "j4",' +
+		        			'"color" : "blue"' +
+		        		'},' +
+		                '{' +
+		    				'"type" : "nodes",' +
+		    				'"id" : "j5",' +
+		        			'"color" : "blue"' +
+	        		'}' +
+		        ']' +
+	'}');
+	$.each( objJson.elements, function( i, element ) {
+		var selector = '#' + element.id;
+		var node = cy.$(selector);
+		if (node.isParent(selector)){
+			var nodes = node.parent();
+			var descendants = node.descendants();
+			$.each( descendants, function( i, descendant ) {
+				montaComparacao(cy, descendant.id(), 'perfilUsuario', 'perfilCarreira', 'green', 'green');				
+			});
+		}else{
+			montaComparacao(cy, element.id, 'perfilUsuario', 'perfilCarreira', 'green', 'green');				
+		}
+	});
+};
+
+function comparaCarreira (cy, objJson){
+	
+	var elementsCarreira = cy.nodes('.perfilCarreira');
 
 	$.each( elementsCarreira, function( i, element ) {
 		var selector = '#' + element.id();
 		var node = cy.$(selector);
-		if (cy.$(selector).hasClass('perfilUsuario')){
+		var opacity = 0.3;
+		if (!node.isChild() && !cy.$(selector).hasClass("agrupamento")){
+			var opacity = 0.2;
+		};
+		if (element.hasClass('perfilUsuario')){
 			cy.style()
 			  .selector(selector)
 			    .style({
-			      'background-color': cor1,
+			      'background-color': 'green',
 			      'background-opacity': opacity
 			    })
 			  .update()				
@@ -157,43 +219,53 @@ function limpaDiagrama (cy, cor1, cor2, opacity, perfil){
 			cy.style()
 			  .selector(selector)
 			    .style({
-			      'background-color': cor2,
+			      'background-color': 'blue',
 			      'background-opacity': opacity
 			    })
 			  .update()							
 		};
-		cy.$(selector).removeClass(perfil);
+		cy.$(selector).removeClass('perfilCarreira');
 	});
-};
-function comparaCarreira (cy, objJson){
-
-	limpaDiagrama (cy, "green", "blue", 0.2, "perfilCarreira");
-
+	
 	$.each( objJson.necessarios, function( i, element ) {
 		objJsonElements = JSON.parse(localStorage.getItem("elements"));
-		var selector = '#' + compoeId (element);
+		var id = 0;
+		$.each( objJsonElements, function( w, parent ) {
+			if (element == parent.documento.idHabilidade){
+				id = w;
+				return;
+			};
+		});
+		var selector = '#' + id;
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
 			var nodes = node.parent();
 			var descendants = node.descendants();
 			$.each( descendants, function( i, descendant ) {
-				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'red', 0.2);				
+				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange', 0.2);				
 			});
 		}else{
-			montaComparacao(cy, compoeId (element), 'perfilCarreira', 'perfilUsuario', 'green', 'red', 0.2);				
+			montaComparacao(cy, element, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', 0.2);				
 		}
 	});
 	$.each( objJson.recomendados, function( i, element ) {
-		var selector = '#' + compoeId (element);
+		var id = 0;
+		$.each( objJson, function( w, parent ) {
+			if (element == parent.documento.idHabilidade){
+				id = w;
+				return;
+			};
+		});
+		var selector = '#' + id;
 		var node = cy.$(selector);
 		if (node.isParent(selector)){
 			var nodes = node.parent();
 			var descendants = node.descendants();
 			$.each( descendants, function( i, descendant ) {
-				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'red', -0.1);				
+				montaComparacao(cy, descendant.id(), 'perfilCarreira', 'perfilUsuario', 'green', 'orange', -0.1);				
 			});
 		}else{
-			montaComparacao(cy, compoeId (element), 'perfilCarreira', 'perfilUsuario', 'green', 'red', -0.1);				
+			montaComparacao(cy, element, 'perfilCarreira', 'perfilUsuario', 'green', 'orange', -0.1);				
 		}
 	});
 };
@@ -208,7 +280,7 @@ function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opac
 			  .selector(selector)
 			    .style({
 			      'background-color': cor_01,
-			      'background-opacity': 0.7 + opacity
+			      'background-opacity': 0.4 + opacity
 			    })
 			  .update()				
 		}else{
@@ -216,7 +288,7 @@ function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opac
 			  .selector(selector)
 			    .style({
 			      'background-color': cor_02,
-			      'background-opacity': 0.8 + opacity
+			      'background-opacity': 0.2 + opacity
 			    })
 			  .update()										
 		};
@@ -232,27 +304,14 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 	addElements (cy, objJson,"categoria");
 
 	addElements (cy, objJson,"habilidade");
-		
+	
 	addEdges (cy, objJson);
-
-	var selectorZoom = '#2670';
-	var nodeZoom = cy.$(selectorZoom);
-	cy.animate(
-			{
-				fit: {
-					eles: nodeZoom,
-					padding: 20
-				}
-			}, 
-			{
-				duration: 1000
-			});		
 
 	cy.on('tap', function(evt){
 		if (evt.cyTarget.id){
 			var selector = '#' + evt.cyTarget.id();
 			var node = cy.$(selector);
-			var opacity = 0.1;
+			var opacity = 0.3;
 			if (evt.cyTarget.id) {
 				$('#habilidadeName').html(evt.cyTarget.data('name'));  
 				$('#habilidadeDescricao').html(evt.cyTarget.data('descricao'));
@@ -269,31 +328,17 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 				};
 				var x = cy.$(selector).position('x');
 				var y = cy.$(selector).position('y');
-				var parent = cy.$(selector).parent(node);
-				console.log ("parent:" + parent.id());
-				var selectorParent = '#' + parent.id();
-				var nodeZoom = cy.$(selectorParent);
-				if (cy.$(selector).isParent()){
-					nodeZoom = node;
+				cy.animate(
+						{
+							fit: {
+								eles: node,
+								padding: 20
+							}
+						}, 
+						{
+							duration: 1000
+						});			
 				};
-				if (localStorage.criaPerfil == "true"){
-					incluiHabilidadePerfil (cy, evt.cyTarget.data('idOriginal'));
-				}else{
-					if (nodeZoom){
-						cy.animate(
-								{
-									fit: {
-										eles: nodeZoom,
-										padding: 20
-									}
-								}, 
-								{
-									duration: 1000
-								});		
-					};
-				};
-			};
-			console.log ("tap element:" + node.id() + " x:" + x + " y:" + y);
 		};
 	});
 	cy.bind('tapend', function(evt){
@@ -316,48 +361,35 @@ function 	addElements (cy, objJson, tipo, widthElement){
 	console.log ("carrega " + tipo );
 	
 	$.each( objJson, function( i, element ) {
-		if (element.documento.classes == tipo){
-			if (element.documento.positionX == "") {
-				if (element.documento.parent == ""){
-					objJson = JSON.parse(localStorage.getItem("elements"));
-					element.documento.positionX = 100 + 200;
-					element.documento.positionY = 100 - 200;
-					objJson[i].documento.positionX = 100 + 200;
-					objJson[i].documento.positionY = 100 - 200;
-					localStorage.setItem("elements", JSON.stringify(objJson));
-				}else{
-					var selector = '#' + compoeId (element.documento.parent);
-					var x1 = cy.$(selector).position('x');
-					var y1 = cy.$(selector).position('y');
-					if (x1 > 0){
-						difX = 20
-					}else{
-						difX = -20
-					};
-					if (y1 > 0){
-						difY = 70
-					}else{
-						difY = -70
-					};
-					element.documento.positionX = x1 - difX;
-					element.documento.positionY = y1 - difY;
-					objJson[i].documento.positionX = x1 - difX;
-					objJson[i].documento.positionY = y1 - difY;
+		var par = "";
+		if (element.documento.parent != ""){
+			$.each( objJson, function( w, parent ) {
+				if (element.documento.parent == parent.documento.idHabilidade){
+					par = w;
+					return;
 				};
+			});
+		};
+		if (element.documento.classes == tipo){
+			if (element.documento.positionX == ""){
+				objJson = JSON.parse(localStorage.getItem("elements"));
+				element.documento.positionX = 100 + i;
+				element.documento.positionY = 100 - i;
+				objJson[i].documento.positionX = 100 + i;
+				objJson[i].documento.positionY = 100 - i;
+				localStorage.setItem("elements", JSON.stringify(objJson));
 			};
-			id = compoeId (element.documento.idHabilidade);
 			cy.add({
 			    group: element.documento.type,
 			    data: { 
-			    	id : id,
-			    	idOriginal : element.documento.idHabilidade,  
-			    	name : element.documento.name,
+			    	id : i,
+			    	name : element.documento.name,  
 			    	descricao : element.documento.descricao,
 			    	wiki : element.documento.wiki,
 			    	area : element.documento.area,
 			    	campo : element.documento.campo,
 			    	categoria : element.documento.categoria,
-			    	parent : compoeId (element.documento.parent),
+			    	parent : par,
 	//		    	weight: element.documento.weight,
 			    	},
 			    position: {
@@ -374,44 +406,22 @@ function 	addElements (cy, objJson, tipo, widthElement){
 	//		    	'line-color' : element.documento.lineColor
 				}
 			});
-			var selector = '#' + id;
+			var selector = '#' + i;
 			cy.$(selector).addClass(element.documento.classes);
 			var node = cy.$(selector);
-			if (tipo == "area" ){
+			if (!node.isChild() && !cy.$(selector).hasClass("agrupamento")){
 				cy.style()
 				  .selector(selector)
 				    .style({
-				      'background-opacity': 0.02,
-				      'background-color': "orange"
+				      'background-opacity': 0.2
 				    })
 				  .update()						  
+			};
+			if (tipo == "area" || tipo == "campo" || tipo == "categoria"){
 				cy.$(selector).addClass('agrupamento');
-			}else{
-				if (tipo == "campo" ){
-					cy.style()
-					  .selector(selector)
-					    .style({
-					      'background-opacity': 0.08,
-					      'background-color': "orange"
-					    })
-					  .update()						  
-					cy.$(selector).addClass('agrupamento');
-				}else{
-					if (tipo == "categoria"){
-						cy.style()
-						  .selector(selector)
-						    .style({
-						      'background-opacity': 0.12,
-						      'background-color': "orange"
-						    })
-						  .update()						  
-						cy.$(selector).addClass('agrupamento');
-					};
-				};
 			};
 		};
 	});
-	console.log ("carregou " + tipo );
 };
 
 function addEdges (cy, objJson) {
@@ -419,9 +429,22 @@ function addEdges (cy, objJson) {
 	console.log ("carrega ligacoes");
 
 	$.each( objJson, function( i, element ) {
-		if (element.documento.type == "edges" ){
-			sou = compoeId (element.documento.source);
-			tar = compoeId (element.documento.target);
+		var sou = "";
+		$.each( objJson, function( w, parent ) {
+			if (element.documento.source == parent.documento.idHabilidade){
+				sou = w;
+				return;
+			};
+		});
+		var tar = "";
+		$.each( objJson, function( w, parent ) {
+			if (element.documento.target == parent.documento.idHabilidade){
+				tar = w;
+				return;
+			};
+		});
+		if (element.documento.type == "edges" && sou != "" && tar != ""){
+			console.log (i);
 			cy.add({
 			    group: element.documento.type,
 			    data: { 
@@ -435,39 +458,4 @@ function addEdges (cy, objJson) {
 	});
 	
 	console.log ("termina carrega ligacoes");
-};
-
-function actionMove (cy, id, x,y){
-	
-	objJson = JSON.parse(localStorage.getItem("elements"));
-	$.each( objJson, function( i, element ) {
-		if (element.documento.type == "nodes"){
-			var selector = '#' + compoeId (element.documento.idHabilidade);
-			var x1 = cy.$(selector).position('x');
-			var y1 = cy.$(selector).position('y');
-			if (x1 != element.documento.positionX){
-				console.log ("mudou " + element.documento.name)
-			};
-			if (x1){
-				element.documento.positionX = x1; 
-				element.documento.positionY = y1;
-			};
-		};
-	});
-	localStorage.setItem("elements", JSON.stringify(objJson));
-};
-
-function compoeId (nome){
-
-	var id = 0;
-	for( var i=0; i < nome.length; i++ ){
-		var letter = nome.charAt(i); 
-		if (letter != " "){
-			var n = letter.charCodeAt(0);
-			id = parseInt(id)  + parseInt(n);	
-		};
-	};
-	
-	return id;
-	
 };
