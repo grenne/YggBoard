@@ -41,8 +41,10 @@ $(function () {
 	    			localStorage.criaPerfil = true;
 	    		});
 	    		$( "#carregaHabilidades" ).bind( "click", function() {
-	    			limpaDiagrama (cy, "blue", "blue", 0.2, "perfilCarreira");
-	    			limpaDiagrama (cy, "blue", "blue", 0.2, "perfilUsuario");
+	    			cy.destroy();
+	    			cy = createDiagram ("cy");
+    				objJson = JSON.parse(localStorage.getItem("elements"));
+	    			drawElementsTotal (cy, objJson, actionMove, 'grid');
 	    			$('.cursos').addClass('hide');
 	            	$('.habilidade').addClass('hide');
 	            	$('.habilidades').addClass('hide');
@@ -235,10 +237,113 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 
 	addElements (cy, objJson,"categoria");
 
+//	addElements (cy, objJson,"habilidade");
+	
+	addMeuPerfil (cy);
+		
+	addEdges (cy, objJson);
+
+	if (JSON.parse(localStorage.getItem("meuPerfil"))){
+		var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+	}else{
+		var objJson  = JSON.parse(
+				'{' +
+				'"documento": {' +
+					'"usuario" : "",' +
+					'"elements" : ' +
+				    	'[' +
+				        ']' +
+		'}}');
+	};
+
+	if (objJson.documento.elements.length == 0){
+    	$('.habilidades').removeClass('hide');		
+	};
+
+	var selectorZoom = '#2';
+	var nodeZoom = cy.$(selectorZoom);
+	cy.animate(
+			{
+				fit: {
+					eles: nodeZoom,
+					padding: 20
+				}
+			}, 
+			{
+				duration: 1000
+			});		
+
+	cy.on('tap', function(evt){
+		if (evt.cyTarget.id){
+			var selector = '#' + evt.cyTarget.id();
+			var node = cy.$(selector);
+			var opacity = 0.1;
+			if (evt.cyTarget.id) {
+				$('#habilidadeName').html(evt.cyTarget.data('name'));  
+				$('#habilidadeDescricao').html(evt.cyTarget.data('descricao'));
+				$('#habilidadeWiki').html(evt.cyTarget.data('wiki'));
+				$('#habilidadeArea').html(evt.cyTarget.data('area'));
+				$('#habilidadeCampo').html(evt.cyTarget.data('campo'));
+				$('#habilidadeCategoria').html(evt.cyTarget.data('categoria'));
+				$('.habilidade').removeClass('hide');
+				if (cy.$(selector).hasClass("perfilCarreira")){
+					obterCursos (cy, evt.cyTarget.id());
+					$('.cursos').removeClass('hide');
+					obterCursos (cy, evt.cyTarget.id());
+					$('.cursos').removeClass('hide');
+				};
+				var x = cy.$(selector).position('x');
+				var y = cy.$(selector).position('y');
+				var parent = cy.$(selector).parent(node);
+				var selectorParent = '#' + parent.id();
+				var nodeZoom = cy.$(selectorParent);
+				if (cy.$(selector).isParent()){
+					nodeZoom = node;
+				};
+				if (localStorage.criaPerfil == "true"){
+					incluiHabilidadePerfil (cy, evt.cyTarget.data('idOriginal'));
+				}else{
+					if (nodeZoom){
+						cy.animate(
+								{
+									fit: {
+										eles: nodeZoom,
+										padding: 20
+									}
+								}, 
+								{
+									duration: 1000
+								});		
+					};
+				};
+			};
+			console.log ("tap element:" + node.id() + " x:" + x + " y:" + y);
+		};
+	});
+	cy.bind('tapend', function(evt){
+		if (evt.cyTarget.id) {
+			actionMove(cy, evt.cyTarget.id(), evt.cyPosition.x, evt.cyPosition.y);
+		};
+	});
+
+	var layout = cy.makeLayout({
+		name: "preset"
+	});
+		
+	layout.run();
+
+};
+
+function drawElementsTotal (cy, objJson, actionMove, typeLayout){
+	
+	addElements (cy, objJson,"area", 30);
+	
+	addElements (cy, objJson,"campo", 30);
+
+	addElements (cy, objJson,"categoria");
+
 	addElements (cy, objJson,"habilidade");
 	
-//	addMeuPerfil (cy);
-		
 	addEdges (cy, objJson);
 
 	var selectorZoom = '#2670';
@@ -314,7 +419,6 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 	layout.run();
 
 };
-
 
 function 	addElements (cy, objJson, tipo, widthElement){
 
@@ -489,16 +593,24 @@ function addEdges (cy, objJson) {
 		if (element.documento.type == "edges" ){
 			sou = compoeId (element.documento.source);
 			tar = compoeId (element.documento.target);
-			if (sou && tar){
-				cy.add({
-				    group: element.documento.type,
-				    data: { 
-				    	id : i,
-				    	name : element.documento.name,  
-				    	source : sou,
-				    	target : tar
-				    	}
-				});
+			var selectorSource = '#' + sou;
+			var nodeSource = cy.$(selector);
+			if (nodeSource.isNode()){
+				var selectorTarget = '#' + tar;
+				var nodeTarget = cy.$(selector);
+				if (nodeSource.isNode()){
+					if (sou && tar){
+							cy.add({
+							    group: element.documento.type,
+							    data: { 
+							    	id : i,
+							    	name : element.documento.name,  
+							    	source : sou,
+							    	target : tar
+							    	}
+							});
+					};
+				};
 			};
 		};
 	});
