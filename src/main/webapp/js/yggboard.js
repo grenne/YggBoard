@@ -6,6 +6,8 @@
 	console.log ("$(window).width():" + $(window).width());
 	console.log ("$(document).width():" + $(document).width());
 
+	localStorage.urlServidor = window.location.hostname;
+
 	var largura = 13;
 	if ($(window).width() > 1185){
 		largura = 9.8;

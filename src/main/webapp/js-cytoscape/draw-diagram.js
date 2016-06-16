@@ -85,7 +85,7 @@ function createDiagram (name, readyFunction, par1, par2){
 				{
 					selector: 'node',
 					style: {
-						'background-opacity' : 0.002,
+						'background-opacity' : 0.2,
 						'background-color' : 'blue',
 						'content': 'data(name)',
 						'width': 100,
@@ -95,7 +95,7 @@ function createDiagram (name, readyFunction, par1, par2){
 				{
 					selector : ':parent',
 					style : {
-						'background-opacity' : 0.002,
+						'background-opacity' : 0.1,
 						'background-color' : 'oramge'
 					}
 				},
@@ -107,7 +107,7 @@ function createDiagram (name, readyFunction, par1, par2){
 				        'target-arrow-color': 'lightgray',
 				        'target-arrow-shape': 'triangle',
 				        'target-arrow-fill':"filled ",
-				        'background-opacity' : 0.5,
+				        'background-opacity' : 0.1,
 				        	}
 				}
 			],
@@ -169,10 +169,12 @@ function comparaCarreira (cy, objJson){
 
 	limpaDiagrama (cy, "green", "blue", 0.2, "perfilCarreira");
 
+	objJsonElements = JSON.parse(localStorage.getItem("elements"));
+
 	$.each( objJson.necessarios, function( i, element ) {
-		objJsonElements = JSON.parse(localStorage.getItem("elements"));
 		var selector = '#' + compoeId (element);
 		var node = cy.$(selector);
+		addElementsGeral (cy, element, node.data('classes'));
 		if (node.isParent(selector)){
 			var nodes = node.parent();
 			var descendants = node.descendants();
@@ -186,6 +188,7 @@ function comparaCarreira (cy, objJson){
 	$.each( objJson.recomendados, function( i, element ) {
 		var selector = '#' + compoeId (element);
 		var node = cy.$(selector);
+		addElementsGeral (cy, element, node.data('classes'));
 		if (node.isParent(selector)){
 			var nodes = node.parent();
 			var descendants = node.descendants();
@@ -196,6 +199,7 @@ function comparaCarreira (cy, objJson){
 			montaComparacao(cy, compoeId (element), 'perfilCarreira', 'perfilUsuario', 'green', 'red', -0.1);				
 		}
 	});
+	addEdges (cy, objJsonElements);
 };
 
 function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opacity){
@@ -232,6 +236,8 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 	addElements (cy, objJson,"categoria");
 
 	addElements (cy, objJson,"habilidade");
+	
+//	addMeuPerfil (cy);
 		
 	addEdges (cy, objJson);
 
@@ -270,7 +276,6 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 				var x = cy.$(selector).position('x');
 				var y = cy.$(selector).position('y');
 				var parent = cy.$(selector).parent(node);
-				console.log ("parent:" + parent.id());
 				var selectorParent = '#' + parent.id();
 				var nodeZoom = cy.$(selectorParent);
 				if (cy.$(selector).isParent()){
@@ -320,7 +325,7 @@ function 	addElements (cy, objJson, tipo, widthElement){
 			if (element.documento.positionX == "") {
 				if (element.documento.parent == ""){
 					objJson = JSON.parse(localStorage.getItem("elements"));
-					element.documento.positionX = 100 + 200;
+					element.documento.positionX = 100 + xvar;
 					element.documento.positionY = 100 - 200;
 					objJson[i].documento.positionX = 100 + 200;
 					objJson[i].documento.positionY = 100 - 200;
@@ -329,20 +334,14 @@ function 	addElements (cy, objJson, tipo, widthElement){
 					var selector = '#' + compoeId (element.documento.parent);
 					var x1 = cy.$(selector).position('x');
 					var y1 = cy.$(selector).position('y');
-					if (x1 > 0){
-						difX = 20
-					}else{
-						difX = -20
-					};
-					if (y1 > 0){
-						difY = 70
-					}else{
-						difY = -70
-					};
-					element.documento.positionX = x1 - difX;
-					element.documento.positionY = y1 - difY;
-					objJson[i].documento.positionX = x1 - difX;
-					objJson[i].documento.positionY = y1 - difY;
+					var xvar = cy.$(selector).data('parentAddX') + 30;
+					var yvar = cy.$(selector).data('parentAddY') + 30;
+					cy.$(selector).data('parentAddX', xvar);
+					cy.$(selector).data('parentAddY', yvar);
+					element.documento.positionX = x1 - xvar;
+					element.documento.positionY = y1 - yvar;
+					objJson[i].documento.positionX = x1 - xvar;
+					objJson[i].documento.positionY = y1 - yvar;
 				};
 			};
 			id = compoeId (element.documento.idHabilidade);
@@ -358,6 +357,8 @@ function 	addElements (cy, objJson, tipo, widthElement){
 			    	campo : element.documento.campo,
 			    	categoria : element.documento.categoria,
 			    	parent : compoeId (element.documento.parent),
+			    	parentAddX : 0,
+			    	parentAddY : 0,
 	//		    	weight: element.documento.weight,
 			    	},
 			    position: {
@@ -381,8 +382,10 @@ function 	addElements (cy, objJson, tipo, widthElement){
 				cy.style()
 				  .selector(selector)
 				    .style({
-				      'background-opacity': 0.02,
-				      'background-color': "orange"
+				      'background-opacity': 0.06,
+				      'background-color': "orange",
+				       'width': 100,
+				       'shape':'rectangle'
 				    })
 				  .update()						  
 				cy.$(selector).addClass('agrupamento');
@@ -392,7 +395,9 @@ function 	addElements (cy, objJson, tipo, widthElement){
 					  .selector(selector)
 					    .style({
 					      'background-opacity': 0.08,
-					      'background-color': "orange"
+					      'background-color': "orange",
+					       'width': 100,
+					       'shape':'rectangle'
 					    })
 					  .update()						  
 					cy.$(selector).addClass('agrupamento');
@@ -401,8 +406,10 @@ function 	addElements (cy, objJson, tipo, widthElement){
 						cy.style()
 						  .selector(selector)
 						    .style({
-						      'background-opacity': 0.12,
-						      'background-color': "orange"
+						      'background-opacity': 0.1,
+						      'background-color': "orange",
+						       'width': 100,
+						       'shape':'rectangle'
 						    })
 						  .update()						  
 						cy.$(selector).addClass('agrupamento');
@@ -414,6 +421,66 @@ function 	addElements (cy, objJson, tipo, widthElement){
 	console.log ("carregou " + tipo );
 };
 
+function addElementsGeral (cy, elementAdd, tipo, widthElement){
+	
+	objJson = JSON.parse(localStorage.getItem("elements"));
+	
+	$.each( objJson, function( i, element ) {	
+		if (element.documento.idHabilidade == elementAdd){
+			var tipo = element.documento.classes;
+			if (element.documento.positionX == "") {
+				if (element.documento.parent == ""){
+					objJson = JSON.parse(localStorage.getItem("elements"));
+					element.documento.positionX = 100 + xvar;
+					element.documento.positionY = 100 - 200;
+					objJson[i].documento.positionX = 100 + 200;
+					objJson[i].documento.positionY = 100 - 200;
+					localStorage.setItem("elements", JSON.stringify(objJson));
+				}else{
+					var selector = '#' + compoeId (element.documento.parent);
+					var x1 = cy.$(selector).position('x');
+					var y1 = cy.$(selector).position('y');
+					var xvar = cy.$(selector).data('parentAddX') + 30;
+					var yvar = cy.$(selector).data('parentAddY') + 30;
+					cy.$(selector).data('parentAddX', xvar);
+					cy.$(selector).data('parentAddY', yvar);
+					element.documento.positionX = x1 - xvar;
+					element.documento.positionY = y1 - yvar;
+					objJson[i].documento.positionX = x1 - xvar;
+					objJson[i].documento.positionY = y1 - yvar;
+				};
+			};
+			id = compoeId (element.documento.idHabilidade);
+			var selector = '#' + id;
+			var node = cy.$(selector);
+			if (!node.isNode()){
+				cy.add({
+				    group: element.documento.type,
+				    data: { 
+				    	id : id,
+				    	idOriginal : element.documento.idHabilidade,  
+				    	name : element.documento.name,
+				    	descricao : element.documento.descricao,
+				    	wiki : element.documento.wiki,
+				    	area : element.documento.area,
+				    	campo : element.documento.campo,
+				    	categoria : element.documento.categoria,
+				    	parent : compoeId (element.documento.parent),
+				    	},
+				    position: {
+				    	x: parseInt(element.documento.positionX), 
+				    	y: parseInt(element.documento.positionY) 
+				    	},
+					style : {
+				    	'shape' : 'ellipse',
+					}
+				});
+			}
+			return;
+		};
+	});
+};
+
 function addEdges (cy, objJson) {
 	
 	console.log ("carrega ligacoes");
@@ -422,15 +489,17 @@ function addEdges (cy, objJson) {
 		if (element.documento.type == "edges" ){
 			sou = compoeId (element.documento.source);
 			tar = compoeId (element.documento.target);
-			cy.add({
-			    group: element.documento.type,
-			    data: { 
-			    	id : i,
-			    	name : element.documento.name,  
-			    	source : sou,
-			    	target : tar
-			    	}
-			});
+			if (sou && tar){
+				cy.add({
+				    group: element.documento.type,
+				    data: { 
+				    	id : i,
+				    	name : element.documento.name,  
+				    	source : sou,
+				    	target : tar
+				    	}
+				});
+			};
 		};
 	});
 	
@@ -445,9 +514,6 @@ function actionMove (cy, id, x,y){
 			var selector = '#' + compoeId (element.documento.idHabilidade);
 			var x1 = cy.$(selector).position('x');
 			var y1 = cy.$(selector).position('y');
-			if (x1 != element.documento.positionX){
-				console.log ("mudou " + element.documento.name)
-			};
 			if (x1){
 				element.documento.positionX = x1; 
 				element.documento.positionY = y1;
@@ -458,7 +524,7 @@ function actionMove (cy, id, x,y){
 };
 
 function compoeId (nome){
-
+/*
 	var id = 0;
 	for( var i=0; i < nome.length; i++ ){
 		var letter = nome.charAt(i); 
@@ -469,5 +535,6 @@ function compoeId (nome){
 	};
 	
 	return id;
-	
+*/
+	return nome;
 };
