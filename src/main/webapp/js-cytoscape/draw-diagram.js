@@ -167,9 +167,27 @@ function limpaDiagrama (cy, cor1, cor2, opacity, perfil){
 		cy.$(selector).removeClass(perfil);
 	});
 };
-function comparaCarreira (cy, objJson){
 
-	limpaDiagrama (cy, "green", "blue", 0.2, "perfilCarreira");
+function removeCarreira (cy){
+	
+	var elementsCarreira = cy.nodes('.perfilCarreira');
+
+	$.each( elementsCarreira, function( i, element ) {
+		var selector = '#' + element.id();
+		var node = cy.$(selector);
+		if (!cy.$(selector).hasClass('perfilUsuario')){
+			cy.remove(node);
+		};
+	});
+};
+
+function comparaCarreira (cy, objJson){
+	
+	if (localStorage.layoutPerfil == "true"){
+		removeCarreira (cy);
+	}else{
+		limpaDiagrama (cy, "green", "blue", 0.2, "perfilCarreira");
+	};
 
 	objJsonElements = JSON.parse(localStorage.getItem("elements"));
 
@@ -594,22 +612,20 @@ function addEdges (cy, objJson) {
 			sou = compoeId (element.documento.source);
 			tar = compoeId (element.documento.target);
 			var selectorSource = '#' + sou;
-			var nodeSource = cy.$(selector);
+			var nodeSource = cy.$(selectorSource);
 			if (nodeSource.isNode()){
 				var selectorTarget = '#' + tar;
-				var nodeTarget = cy.$(selector);
-				if (nodeSource.isNode()){
-					if (sou && tar){
-							cy.add({
-							    group: element.documento.type,
-							    data: { 
-							    	id : i,
-							    	name : element.documento.name,  
-							    	source : sou,
-							    	target : tar
-							    	}
-							});
-					};
+				var nodeTarget = cy.$(selectorTarget);
+				if (nodeTarget.isNode()){
+						cy.add({
+						    group: element.documento.type,
+						    data: { 
+						    	id : i,
+						    	name : element.documento.name,  
+						    	source : sou,
+						    	target : tar
+						    	}
+						});
 				};
 			};
 		};

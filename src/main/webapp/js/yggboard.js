@@ -16,6 +16,7 @@
 	$('.cy').css( "height", ($(window).height() / 12 * 9));
 	
 	localStorage.usuario = "false";
+	localStorage.layoutPerfil = "true";
 	
 	  
 	$( "#carregaHabilidadesTotal" ).bind( "click", function() {
