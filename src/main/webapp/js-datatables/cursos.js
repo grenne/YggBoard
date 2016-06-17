@@ -19,13 +19,13 @@
 					'<thead>' +
 						'<tr>' +
 							'<th data-toggle="true">Materias</th>' +
-							'<th>Ação</th>' +
-							'<th data-hide="all">Curso</th>' +
-							'<th data-hide="all">Descrição</th>' +
-							'<th data-hide="all">Tempo</th>' +
-							'<th data-hide="all">Custo</th>' +
-							'<th data-hide="all">Escola</th>' +
-							'<th data-hide="all">Pré requisito</th>' +
+//							'<th>Ação</th>' +
+							'<th data-hide="all" class="text-info">Curso</th>' +
+							'<th data-hide="all" class="text-info">Descrição</th>' +
+							'<th data-hide="all" class="text-info">Tempo</th>' +
+							'<th data-hide="all" class="text-info">Custo</th>' +
+							'<th data-hide="all" class="text-info">Escola</th>' +
+							'<th data-hide="all" class="text-info">Pré requisito</th>' +
 						'</tr>' +
 					'</thead>' +
 					'<tbody id="curso_tbody">' +
@@ -47,7 +47,7 @@
         	curso_table_row = 
 				'<tr class="itemCurso">' +
 		   			'<td id="nome_' + i + '">' + montaMaterias(curso.documento.materias) + '</td>' +
-					'<td id="acaoTd_' + i + '"><button id="acaoCurso_' + i + '" class="btn-xs btn-info">Grade</button></td>' +
+//					'<td id="acaoTd_' + i + '"><button id="acaoCurso_' + i + '" class="btn-xs btn-info">Grade</button></td>' +
 					'<td id="curso' + i + '">' + curso.documento.nome + '</td>' +
 					'<td id="descricao_' + i + '">' + curso.documento.descricao + '</td>' +
 					'<td id="tempo' + i + '">' + curso.documento.tempo + '</td>' +

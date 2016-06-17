@@ -426,70 +426,120 @@ function carregaCursosTotal (){
 	 */
 	
 	var cursos =
-		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Atividades Planejadas I                ///;' +
-		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Introdução ao Marketing           /10073,10072//;' +
-		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Sociologia I                   ///;' +
-		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Matemática I               /10138,10139//;' +
-		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Introdução à Tecnologia da Informação  /10158,10146//;' +
-		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Matemática Financeira                /10061,10060//;' +
-		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Gestão de Projetos /1002//;' +
-		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Introdução à Gestão                      /10021//;' +
-		'FGV EAESP/Graduação em administração de empresas//Experiência Empreendedora/10030//;' +
-		'FGV EAESP/Graduação em administração de empresas//Filosofia///;' +
-		'FGV EAESP/Graduação em administração de empresas//Psicologia I/10145//;' +
-		'FGV EAESP/Graduação em administração de empresas/Sociologia I/Sociologia II///;' +
-		'FGV EAESP/Graduação em administração de empresas//Direito Privado na Empresa/113,10117//;' +
-		'FGV EAESP/Graduação em administração de empresas/Matemática I/Matemática II///;' +
-		'FGV EAESP/Graduação em administração de empresas//Contabilidade Financeira/10106//;' +
-		'FGV EAESP/Graduação em administração de empresas//Estatística I/10137//;' +
-		'FGV EAESP/Graduação em administração de empresas//Estratégia Mercadológica/10075,10076//;' +
-		'FGV EAESP/Graduação em administração de empresas/Psicologia I/Psicologia II/122//;' +
-		'FGV EAESP/Graduação em administração de empresas//Ciência Política///;' +
-		'FGV EAESP/Graduação em administração de empresas//Controladoria/1033//;' +
-		'FGV EAESP/Graduação em administração de empresas/Estatística I/Estatística II/10140//;' +
-		'FGV EAESP/Graduação em administração de empresas//Gestão de Operações/1005//;' +
-		'FGV EAESP/Graduação em administração de empresas//Análise Estratégica/1029//;' +
-		'FGV EAESP/Graduação em administração de empresas//Oficina em Organizações///;' +
-		'FGV EAESP/Graduação em administração de empresas/Atividades planejadas I/Atividades Planejadas II///;' +
-		'FGV EAESP/Graduação em administração de empresas//Pesquisa de Mercado/1039//;' +
-		'FGV EAESP/Graduação em administração de empresas//Microeconomia Intermediária Aplicada/1011//;' +
-		'FGV EAESP/Graduação em administração de empresas//Finanças Corporativas I/10042,10043//;' +
-		'FGV EAESP/Graduação em administração de empresas//Modelagem para apoio à Tomada de Decisão/10016//;' +
-		'FGV EAESP/Graduação em administração de empresas//Organizações///;' +
-		'FGV EAESP/Graduação em administração de empresas//Marketing Mix/1038//;' +
-		'FGV EAESP/Graduação em administração de empresas//Direito Tributário/113//;' +
-		'FGV EAESP/Graduação em administração de empresas//Macroeconomia Intermediária Aplicada/1010//;' +
-		'FGV EAESP/Graduação em administração de empresas/Finanças Corporativas I/Finanças Corporativas II/10046,10052//;' +
-		'FGV EAESP/Graduação em administração de empresas//Logística Empresarial e SCM/10071//;' +
-		'FGV EAESP/Graduação em administração de empresas//Direito Trabalhista/114//;' +
-		'FGV EAESP/Graduação em administração de empresas//Administração da Tecnologia da Informação/124//;' +
-		'FGV EAESP/Graduação em administração de empresas//Oficina Comunicação/10019,10020//;' +
-		'FGV EAESP/Graduação em administração de empresas//Gestão de Pessoas/1044//;' +
-		'FGV EAESP/Graduação em administração de empresas//Orientação de Trabalho de Conclusão de Curso///;' +
-		'FGV EAESP/Graduação em administração de empresas/Atividades Planejadas II/Atividades Planejadas III///;' +
-		'FGV EAESP/Graduação em administração de empresas//Operações e Competitividade/1005//;' +
-		'FGV EAESP/Graduação em administração de empresas//Gestão Estratégica/10035,10037//;';
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Atividades Planejadas I                /////;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Introdução ao Marketing           /10073,10072////;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Sociologia I                   /////;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Matemática I               /10138 ,10139////;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Introdução à Tecnologia da Informação  /10158,10146////;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Matemática Financeira                /10061,10060////;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Gestão de Projetos /1002////;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Introdução à Gestão                      /10021////;' +
+		'FGV EAESP/Graduação em administração de empresas//Experiência Empreendedora/10030////;' +
+		'FGV EAESP/Graduação em administração de empresas//Filosofia/6////;' +
+		'FGV EAESP/Graduação em administração de empresas//Psicologia I/10145////;' +
+		'FGV EAESP/Graduação em administração de empresas/Sociologia I/Sociologia II/////;' +
+		'FGV EAESP/Graduação em administração de empresas//Direito Privado na Empresa/113,10117////;' +
+		'FGV EAESP/Graduação em administração de empresas/Matemática I/Matemática II/////;' +
+		'FGV EAESP/Graduação em administração de empresas//Contabilidade Financeira/10106////;' +
+		'FGV EAESP/Graduação em administração de empresas//Estatística I/10137////;' +
+		'FGV EAESP/Graduação em administração de empresas//Estratégia Mercadológica/10075,10076////;' +
+		'FGV EAESP/Graduação em administração de empresas/Psicologia I/Psicologia II/122////;' +
+		'FGV EAESP/Graduação em administração de empresas//Ciência Política/////;' +
+		'FGV EAESP/Graduação em administração de empresas//Controladoria/1033////;' +
+		'FGV EAESP/Graduação em administração de empresas/Estatística I/Estatística II/10140////;' +
+		'FGV EAESP/Graduação em administração de empresas//Gestão de Operações/1005////;' +
+		'FGV EAESP/Graduação em administração de empresas//Análise Estratégica/1029////;' +
+		'FGV EAESP/Graduação em administração de empresas//Oficina em Organizações/1046////;' +
+		'FGV EAESP/Graduação em administração de empresas/Atividades planejadas I/Atividades Planejadas II/////;' +
+		'FGV EAESP/Graduação em administração de empresas//Pesquisa de Mercado/1039////;' +
+		'FGV EAESP/Graduação em administração de empresas//Microeconomia Intermediária Aplicada/1011////;' +
+		'FGV EAESP/Graduação em administração de empresas//Finanças Corporativas I/10042,10043////;' +
+		'FGV EAESP/Graduação em administração de empresas//Modelagem para apoio à Tomada de Decisão/10016////;' +
+		'FGV EAESP/Graduação em administração de empresas//Organizações/////;' +
+		'FGV EAESP/Graduação em administração de empresas//Marketing Mix/1038////;' +
+		'FGV EAESP/Graduação em administração de empresas//Direito Tributário/113////;' +
+		'FGV EAESP/Graduação em administração de empresas//Macroeconomia Intermediária Aplicada/1010////;' +
+		'FGV EAESP/Graduação em administração de empresas/Finanças Corporativas I/Finanças Corporativas II/10046,10052////;' +
+		'FGV EAESP/Graduação em administração de empresas//Logística Empresarial e SCM/10071////;' +
+		'FGV EAESP/Graduação em administração de empresas//Direito Trabalhista/114////;' +
+		'FGV EAESP/Graduação em administração de empresas//Administração da Tecnologia da Informação/124////;' +
+		'FGV EAESP/Graduação em administração de empresas//Oficina Comunicação/10019,10020////;' +
+		'FGV EAESP/Graduação em administração de empresas//Gestão de Pessoas/1044////;' +
+		'FGV EAESP/Graduação em administração de empresas//Orientação de Trabalho de Conclusão de Curso/10000////;' +
+		'FGV EAESP/Graduação em administração de empresas/Atividades Planejadas II/Atividades Planejadas III/////;' +
+		'FGV EAESP/Graduação em administração de empresas//Operações e Competitividade/1005////;' +
+		'FGV EAESP/Graduação em administração de empresas//Gestão Estratégica/10035,10037////;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Pessoas na organização/10092,10088,10089/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Consumidores e produtos/10074,10078/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Fontes e aplicações de recursos/10048,10060/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Processos e sistemas/1005/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Análise de oportunidades de mercado/10032,10035/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Visão economica do mercado/1010/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Análise mercadológica/10072,10073/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Ética e sociedade/6/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Relações com o Governo/10022/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/A Empresa e sua cadeia de valor/10072/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Indicadores de desempenho da empresa/10043/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Análise de empreendimentos/10045/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Inteligência de negócios/10080/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Geração de valor na Empresa/10038,10046/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/Inovação e sustentabilidade/1007,1027/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/MBM (Master in business management)/Graduação, inglês/TCC - Trabalho de conclusão de curso/10000/Curso total 436 horas, 3 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Estatística aplicada/120/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Matemática financeira/1035/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Habilidades computacionais/10158,10146/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Comunicação para gestores/10020/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Relações interpessoais/10019/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Negociação Empresarial/10022/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Contabilidade/109/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Gestão de pessoas/1044/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Gestão de finanças/10043,10048,10045,10052/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Gestão de operações/1005/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Gestão de Marketing /1038/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Estratégia empresarial/104/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Aspectos jurídicos da Empresa/1024/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Economia aplicada/1010/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAG (Curso de especialização em administração para graduados)/Graduação, 3 anos experiência, inglês/Administração de Tecnologia de Informação/10158,10146/Curso total 512 horas, 4 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Mercado de saúde/10073,10083,10075/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Ética e Aspectos Jurídicos/118/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Economia da saúde/1011/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Comunicação para gestores/10020/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Negociação Empresarial/10022/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Processos e sistemas em Saúde/10011/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Produtos e serviços em Saúde/10078/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Pessoas na organização de saúde/1044/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Contabilidade e Matemática financeira/109,1035/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Análise exploratória//Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Habilidades computacionais/10158,10146/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Relações interpessoais e Gestão de pessoas/10092,10088,10089,10019/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Competitividade na Saúde/10080/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Resultados na Saúde/10043/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Operações em Saúde/1005/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Gestão da Informação em Saúde//Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Marketing para área de saúde/1038/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/Tópicos Emergentes//Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde)/Graduação, 3 anos experiência (saúde)/TCC - Trabalho de conclusão de curso/10000/Curso total 528 horas, 3 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Contabilidade e Análise financeira/109,10043/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Análise Estatística/120/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Microeconomia/1011/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Finanças corporativas/1032/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Economia de Empresas/1010/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Estratégia de Marketing/10073,10083,10075,/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Comportamento Organizacional/10088,10019/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Estratégia empresarial/104/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Gestão de Operações/1005/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Macroeconomia/1010/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Investimentos/1034/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Fusões e Aquisições/10047/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Mapeando Decisões complexas/10016/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Negociação/10022/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Inovação em Tecnologia da Informação/1027/Curso total 666 horas, 6 semestres///;' +
+		'FGV EAESP/MPA (Mestrado Profissional em Administração)/Graduação, 5 anos de experiência/Comportamento humano/10089,10092/Curso total 666 horas, 6 semestres///;';
 	
-	var objJson  = JSON.parse(
-				'{' +
-					'"documento": {' +
-				    	'"idCurso" : "",' +
-					    '"nome" : "",' +
-					    '"descricao" : "",' +
-					    '"tempo" : "",' +
-					    '"custo" : "",' +
-					    '"escola" : "",' +
-					    '"eletiva" : "",' +
-					    '"preRequisito" : "",' +
-						'"materias" : [],' +
-						'"habilidades" : []' +
-						'}' +
-					'}'
-		);
-
 	var arrayCursos = cursos.split(";");
 	var i = 0;
 	while (i < arrayCursos.length) {
+		console.log ("carregando curso:" + arrayCursos[i]);
 		var objJson  = JSON.parse(
 				'{' +
 					'"documento": {' +

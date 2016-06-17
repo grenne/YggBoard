@@ -53,7 +53,7 @@ $(function () {
 	            	localStorage.layoutPerfil = "false";
 	    		});
 	    		$( "#fechaCursos" ).bind( "click", function() {
-	    			cy.destroy();
+/*	    			cy.destroy();
 	    			cy = createDiagram ("cy");
 	    			if (JSON.parse(localStorage.getItem("elements"))){
 	    				objJson = JSON.parse(localStorage.getItem("elements"));
@@ -69,7 +69,7 @@ $(function () {
 	    			obterCarreiras (cy);
 	            	$('.carreiras').removeClass('hide');
 	            	localStorage.criaPerfil = false;
-	    		});
+*/	    		});
 	    	}else{
 	    		actio_not_ok()
 	    	};
