@@ -16,7 +16,7 @@
 	$('.cy').css( "height", ($(window).height() / 12 * 9));
 	
 	localStorage.usuario = "false";
-	localStorage.layoutPerfil = "true";
+	localStorage.layoutPerfil = "false";
 	
 	  
 	$( "#carregaHabilidadesTotal" ).bind( "click", function() {
@@ -25,6 +25,10 @@
 
 	$( "#carregaCarreirasTotal" ).bind( "click", function() {
 		carregaCarreirasTotal();
+	});
+
+	$( "#carregaCursosTotal" ).bind( "click", function() {
+		carregaCursosTotal();
 	});
 
 	$( "#gravaDiagrama" ).bind( "click", function() {

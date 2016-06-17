@@ -419,5 +419,113 @@ function carregaCarreirasTotal (){
 	};
 	
 };
+
+function carregaCursosTotal (){
+	/**
+	 * 	carrega lista de cursos
+	 */
 	
+	var cursos =
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Atividades Planejadas I                ///;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Introdução ao Marketing           /10073,10072//;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Sociologia I                   ///;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Matemática I               /10138,10139//;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Introdução à Tecnologia da Informação  /10158,10146//;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Matemática Financeira                /10061,10060//;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Gestão de Projetos /1002//;' +
+		'FGV EAESP/Graduação em administração de empresas/Aprovação no vestibular FGV EAESP - Adm. Empresas/Introdução à Gestão                      /10021//;' +
+		'FGV EAESP/Graduação em administração de empresas//Experiência Empreendedora/10030//;' +
+		'FGV EAESP/Graduação em administração de empresas//Filosofia///;' +
+		'FGV EAESP/Graduação em administração de empresas//Psicologia I/10145//;' +
+		'FGV EAESP/Graduação em administração de empresas/Sociologia I/Sociologia II///;' +
+		'FGV EAESP/Graduação em administração de empresas//Direito Privado na Empresa/113,10117//;' +
+		'FGV EAESP/Graduação em administração de empresas/Matemática I/Matemática II///;' +
+		'FGV EAESP/Graduação em administração de empresas//Contabilidade Financeira/10106//;' +
+		'FGV EAESP/Graduação em administração de empresas//Estatística I/10137//;' +
+		'FGV EAESP/Graduação em administração de empresas//Estratégia Mercadológica/10075,10076//;' +
+		'FGV EAESP/Graduação em administração de empresas/Psicologia I/Psicologia II/122//;' +
+		'FGV EAESP/Graduação em administração de empresas//Ciência Política///;' +
+		'FGV EAESP/Graduação em administração de empresas//Controladoria/1033//;' +
+		'FGV EAESP/Graduação em administração de empresas/Estatística I/Estatística II/10140//;' +
+		'FGV EAESP/Graduação em administração de empresas//Gestão de Operações/1005//;' +
+		'FGV EAESP/Graduação em administração de empresas//Análise Estratégica/1029//;' +
+		'FGV EAESP/Graduação em administração de empresas//Oficina em Organizações///;' +
+		'FGV EAESP/Graduação em administração de empresas/Atividades planejadas I/Atividades Planejadas II///;' +
+		'FGV EAESP/Graduação em administração de empresas//Pesquisa de Mercado/1039//;' +
+		'FGV EAESP/Graduação em administração de empresas//Microeconomia Intermediária Aplicada/1011//;' +
+		'FGV EAESP/Graduação em administração de empresas//Finanças Corporativas I/10042,10043//;' +
+		'FGV EAESP/Graduação em administração de empresas//Modelagem para apoio à Tomada de Decisão/10016//;' +
+		'FGV EAESP/Graduação em administração de empresas//Organizações///;' +
+		'FGV EAESP/Graduação em administração de empresas//Marketing Mix/1038//;' +
+		'FGV EAESP/Graduação em administração de empresas//Direito Tributário/113//;' +
+		'FGV EAESP/Graduação em administração de empresas//Macroeconomia Intermediária Aplicada/1010//;' +
+		'FGV EAESP/Graduação em administração de empresas/Finanças Corporativas I/Finanças Corporativas II/10046,10052//;' +
+		'FGV EAESP/Graduação em administração de empresas//Logística Empresarial e SCM/10071//;' +
+		'FGV EAESP/Graduação em administração de empresas//Direito Trabalhista/114//;' +
+		'FGV EAESP/Graduação em administração de empresas//Administração da Tecnologia da Informação/124//;' +
+		'FGV EAESP/Graduação em administração de empresas//Oficina Comunicação/10019,10020//;' +
+		'FGV EAESP/Graduação em administração de empresas//Gestão de Pessoas/1044//;' +
+		'FGV EAESP/Graduação em administração de empresas//Orientação de Trabalho de Conclusão de Curso///;' +
+		'FGV EAESP/Graduação em administração de empresas/Atividades Planejadas II/Atividades Planejadas III///;' +
+		'FGV EAESP/Graduação em administração de empresas//Operações e Competitividade/1005//;' +
+		'FGV EAESP/Graduação em administração de empresas//Gestão Estratégica/10035,10037//;';
 	
+	var objJson  = JSON.parse(
+				'{' +
+					'"documento": {' +
+				    	'"idCurso" : "",' +
+					    '"nome" : "",' +
+					    '"descricao" : "",' +
+					    '"tempo" : "",' +
+					    '"custo" : "",' +
+					    '"escola" : "",' +
+					    '"eletiva" : "",' +
+					    '"preRequisito" : "",' +
+						'"materiais" : [],' +
+						'"habilidades" : []' +
+						'}' +
+					'}'
+		);
+
+	var arrayCursos = cursos.split(";");
+	var i = 0;
+	while (i < arrayCursos.length) {
+		var objJson  = JSON.parse(
+				'{' +
+					'"documento": {' +
+				    	'"idCurso" : "",' +
+					    '"nome" : "",' +
+					    '"descricao" : "",' +
+					    '"tempo" : "",' +
+					    '"custo" : "",' +
+					    '"escola" : "",' +
+					    '"eletiva" : "",' +
+					    '"preRequisito" : "",' +
+						'"materiais" : [],' +
+						'"habilidades" : []' +
+						'}' +
+					'}'
+		);
+		var arrayCurso = arrayCursos[i].split("/");
+		objJson.documento.idCurso = i;
+		objJson.documento.nome = arrayCurso[1];
+		objJson.documento.descricao = "";
+//		objJson.documento.tempo = arrayCurso[5];
+//		objJson.documento.custo = arrayCurso[6];
+		objJson.documento.escola = arrayCurso[0];
+//		objJson.documento.eletiva = arrayCurso[7];
+		objJson.documento.preRequisito = arrayCurso[2];
+		if (arrayCurso[4]){
+			var arrayHabilidades = arrayCurso[4].split(",");
+			var w = 0;
+			while (w < arrayHabilidades.length) {
+				objJson.documento.habilidades.push(arrayHabilidades[w]);
+				w++;
+			};
+		};
+		
+		rest_incluiCursos(objJson, semAcao, semAcao);
+
+		i++;
+	};
+};

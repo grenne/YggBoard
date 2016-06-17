@@ -4,7 +4,7 @@
 $(function () {
 	
 		$.ajax({
-	        url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidade/lista?diagrama=habilidades",
+	        url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/lista?diagrama=habilidades",
 	        contentType: "application/json; charset=utf-8",
 	        dataType: 'json'
 		})
@@ -50,6 +50,7 @@ $(function () {
 	            	$('.habilidades').addClass('hide');
 	            	$('.carreiras').removeClass('hide');
 	            	localStorage.criaPerfil = false;
+	            	localStorage.layoutPerfil = "false";
 	    		});
 	    		$( "#fechaCursos" ).bind( "click", function() {
 	    			cy.destroy();
@@ -175,6 +176,15 @@ function removeCarreira (cy){
 	$.each( elementsCarreira, function( i, element ) {
 		var selector = '#' + element.id();
 		var node = cy.$(selector);
+		if (cy.$(selector).hasClass('perfilUsuario')){
+			cy.style()
+			  .selector(selector)
+			    .style({
+			      'background-color': "green",
+			      'background-opacity': 0.3
+			    })
+			  .update()				
+		};
 		if (!cy.$(selector).hasClass('perfilUsuario')){
 			cy.remove(node);
 		};
@@ -255,9 +265,9 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 
 	addElements (cy, objJson,"categoria");
 
-//	addElements (cy, objJson,"habilidade");
+	addElements (cy, objJson,"habilidade");
 	
-	addMeuPerfil (cy);
+//	addMeuPerfil (cy);
 		
 	addEdges (cy, objJson);
 
@@ -278,6 +288,7 @@ function drawElements (cy, objJson, actionMove, typeLayout){
     	$('.habilidades').removeClass('hide');		
 	};
 
+	/*
 	var selectorZoom = '#2';
 	var nodeZoom = cy.$(selectorZoom);
 	cy.animate(
@@ -290,7 +301,7 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 			{
 				duration: 1000
 			});		
-
+	*/
 	cy.on('tap', function(evt){
 		if (evt.cyTarget.id){
 			var selector = '#' + evt.cyTarget.id();

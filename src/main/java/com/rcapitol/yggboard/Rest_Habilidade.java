@@ -37,24 +37,41 @@ import com.mongodb.MongoException;
 	
 @Singleton
 // @Lock(LockType.READ)
-@Path("/habilidade")
+@Path("/habilidades")
 
 public class Rest_Habilidade {
 
 	@Path("/obter")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONObject ObterEmail(@QueryParam("mail") String mail) throws UnknownHostException, MongoException {
-		Mongo mongo = new Mongo();
-		DB db = (DB) mongo.getDB("documento");
-		DBCollection collection = db.getCollection("habilidade");
-		BasicDBObject searchQuery = new BasicDBObject("documento.mail", mail);
-		DBObject cursor = collection.findOne(searchQuery);
-		JSONObject documento = new JSONObject();
-		BasicDBObject obj = (BasicDBObject) cursor.get("documento");
-		documento.put("documento", obj);
-		mongo.close();
-		return documento;
+	public JSONObject ObterEmail(@QueryParam("idHabilidade") String idHabilidade, @QueryParam("name") String name)  {
+		BasicDBObject setQuery = new BasicDBObject();
+	    if (name != null){
+	    	setQuery.put("documento.name", name);
+	    };
+	    if (idHabilidade != null){
+	    	setQuery.put("documento.idHabilidade", idHabilidade);
+	    };
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("habilidade");
+			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", idHabilidade);
+			DBObject cursor = collection.findOne(searchQuery);
+			JSONObject documento = new JSONObject();
+			BasicDBObject obj = (BasicDBObject) cursor.get("documento");
+			documento.put("documento", obj);
+			mongo.close();
+			return documento;
+		} catch (UnknownHostException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (MongoException e) {
+			// TODO Auto-generated catch block
+			return null;
+		}
+		return null;
 	};
 	@Path("/incluir")
 	@POST
