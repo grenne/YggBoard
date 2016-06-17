@@ -34,7 +34,6 @@
 	$( "#gravaDiagrama" ).bind( "click", function() {
 		gravaDiagrama();
 	});
-
 	
 	function gravaDiagrama (){
 		

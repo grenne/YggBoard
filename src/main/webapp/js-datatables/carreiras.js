@@ -60,9 +60,14 @@
 				'</tr>';
         	$( "#carreira_tbody" ).append(carreira_table_row);
             $('#acaoCarreira_' + i).bind('click', function () {
+            	$("#labelYggmap").html("Montando carreira:" + carreira.nome + "...");
+            	$("#labelYggmap").removeClass("text-success");
+            	$("#labelYggmap").removeClass("text-warning");
+            	$("#labelYggmap").addClass("text-primary");
             	comparaCarreira (cy, carreira);
-				$('.cursos').addClass('hide');
+            	$('.cursos').addClass('hide');
 				$('.habilidade').addClass('hide');
+            	$("#labelYggmap").html("Carreira:" + carreira.nome);
           });
         });
 

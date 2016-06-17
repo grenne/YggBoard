@@ -23,16 +23,26 @@ $(function () {
 //	    		objJson = JSON.parse(localStorage.getItem("elements"));
 	    		localStorage.setItem("elements", JSON.stringify(objJson));
 	    		drawElements (cy, objJson, actionMove, 'grid');
+	    		$("#labelYggmap").html("");
 	    		localStorage.criaPerfil = false;
 	    		$( "#comparaMeuPerfil" ).bind( "click", function() {
+		    		$("#labelYggmap").html("Montando seu perfil...");
+		    		$("#labelYggmap").removeClass("text-warning");
+		    		$("#labelYggmap").addClass("text-success");
+		    		$("#labelYggmap").removeClass("text-primary");
 	    			carregaMeuPerfil (cy, objJson);
 	            	$('.habilidade').addClass('hide');
 	            	$('.habilidades').addClass('hide');
 	    			$('.cursos').addClass('hide');
 		    		localStorage.criaPerfil = false;
+		    		$("#labelYggmap").html("Seu perfil");
 	    		});
 	    		obterCarreiras (cy);
 	    		$( "#criarMeuPerfil" ).bind( "click", function() {
+		    		$("#labelYggmap").html("Criar seu perfil");
+		    		$("#labelYggmap").removeClass("text-warning");
+		    		$("#labelYggmap").addClass("text-success");
+		    		$("#labelYggmap").removeClass("text-primary");
 	    			carregaHabilidadesLista (cy, objJson);
 	    			carregaMeuPerfil (cy, objJson);
 	            	$('.habilidade').addClass('hide');
@@ -41,6 +51,16 @@ $(function () {
 	    			localStorage.criaPerfil = true;
 	    		});
 	    		$( "#carregaHabilidades" ).bind( "click", function() {
+	            	$("#labelYggmap").html("");
+	    			limpaDiagrama (cy, "blue", "blue", 0.2, "perfilCarreira");
+	    			limpaDiagrama (cy, "blue", "blue", 0.2, "perfilUsuario");
+	    			$('.cursos').addClass('hide');
+	            	$('.habilidade').addClass('hide');
+	            	$('.habilidades').addClass('hide');
+	            	$('.carreiras').removeClass('hide');
+	            	localStorage.criaPerfil = false;
+	    		});
+/*	    		$( "#carregaHabilidades" ).bind( "click", function() {
 	    			cy.destroy();
 	    			cy = createDiagram ("cy");
     				objJson = JSON.parse(localStorage.getItem("elements"));
@@ -52,7 +72,7 @@ $(function () {
 	            	localStorage.criaPerfil = false;
 	            	localStorage.layoutPerfil = "false";
 	    		});
-	    		$( "#fechaCursos" ).bind( "click", function() {
+*/	    		$( "#fechaCursos" ).bind( "click", function() {
 /*	    			cy.destroy();
 	    			cy = createDiagram ("cy");
 	    			if (JSON.parse(localStorage.getItem("elements"))){
