@@ -4,35 +4,14 @@
 
 	function obterCursos (cy, element_id) {
 
-//		rest_obterCursoAll(carregaCursos, noAction, cy);
-//		
-//		carrega cursos
-//
-		/**
-		 * 	carrega lista de cursos
-		 */
-		objJson  = JSON.parse(
-			'[' +
-				'{' +
-					'"documento": {' +
-					    '"nome" : "",' +
-					    '"descricao" : "",' +
-					    '"tempo" : "",' +
-					    '"custo" : "",' +
-					    '"escola" : "",' +
-					    '"curso" : "",' +
-					    '"preRequisito" : "",' +
-						'"materias" : []' +
-						'}' +
-					'}' +
-				']'
-		);
-		
-		carregaCursos (objJson, cy);	
+		rest_obterCursosHabilidade(element_id, carregaCursos, carregaCursos, cy);
 
 	};
 		
 	function carregaCursos (objJson, cy) {	
+//		
+//		carrega cursos
+//
 		$( ".curso_theader" ).remove();
 
 		var curso_table_header =
@@ -67,14 +46,13 @@
         $.each(objJson, function (i, curso) {
         	curso_table_row = 
 				'<tr class="itemCurso">' +
-		   			'<td id="nome_' + i + '">' + curso.nome + '</td>' +
+		   			'<td id="nome_' + i + '">' + curso.documento.nome + '</td>' +
 					'<td id="acaoTd_' + i + '"><button id="acaoCurso_' + i + '" class="btn-xs btn-info">Grade</button></td>' +
-					'<td id="descricao_' + i + '">' + curso.descricao + '</td>' +
-					'<td id="tempo' + i + '">' + curso.tempo + '</td>' +
-					'<td id="custo' + i + '">' + curso.custo + '</td>' +
-					'<td id="escola' + i + '">' + curso.escola + '</td>' +
-					'<td id="curso' + i + '">' + curso.curso + '</td>' +
-					'<td id="preRequisito' + i + '">' + curso.preRequisito + '</td>' +
+					'<td id="descricao_' + i + '">' + curso.documento.descricao + '</td>' +
+					'<td id="tempo' + i + '">' + curso.documento.tempo + '</td>' +
+					'<td id="custo' + i + '">' + curso.documento.custo + '</td>' +
+					'<td id="escola' + i + '">' + curso.documento.escola + '</td>' +
+					'<td id="preRequisito' + i + '">' + curso.documento.preRequisito + '</td>' +
 				'</tr>';
         	$( "#curso_tbody" ).append(curso_table_row);
             $('#acaoCurso_' + i).bind('click', function () {

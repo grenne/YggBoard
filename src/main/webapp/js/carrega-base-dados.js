@@ -519,6 +519,7 @@ function carregaCursosTotal (){
 			var arrayHabilidades = arrayCurso[4].split(",");
 			var w = 0;
 			while (w < arrayHabilidades.length) {
+//				objJson.documento.habilidades.push('"habilidade":"' + arrayHabilidades[w] + '"');
 				objJson.documento.habilidades.push(arrayHabilidades[w]);
 				w++;
 			};

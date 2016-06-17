@@ -67,9 +67,9 @@
     	});
     };
 
-    function rest_obterCursosName(nome, action_ok, actio_not_ok, var1, var2) {
+    function rest_obterCursosHabilidade(habilidade, action_ok, actio_not_ok, var1, var2) {
     	$.ajax({
-            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/cursos/obter?nome=" + nome,
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/cursos/lista?habilidade=" + habilidade,
             contentType: "application/json; charset=utf-8",
             dataType: 'json'
     	})

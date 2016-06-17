@@ -38,7 +38,7 @@ public class Curso {
 		public String eletiva;
 		public String preRequisito;
 		public String materiais[];
-		public String habilidades[];
+		public Habilidades habilidades[];
 
 
 		public Documento() {
@@ -56,7 +56,7 @@ public class Curso {
 						String eletiva,
 						String preRequisito,
 						String [] materiais,
-						String [] habilidades
+						Habilidades [] habilidades
 						) {
 						this.idCurso = idCurso;  
 						this.nome = nome; 
@@ -73,5 +73,18 @@ public class Curso {
 		public String toString() {
 			return new StringBuffer(" id : ").append(this.idCurso).append("  nome : ").append(this.nome).toString();
 		}
+		public static final class Habilidades {
+			public String habilidade;
+
+			public Habilidades() {
+
+			}
+
+			@JsonCreator
+			public Habilidades(String habilidade) {
+				this.habilidade = habilidade;
+			}
+		}
+
 	}
 } 

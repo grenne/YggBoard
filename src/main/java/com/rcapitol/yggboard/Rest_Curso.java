@@ -127,7 +127,7 @@ public class Rest_Curso {
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONArray ObterCursoss(@QueryParam("destination") String destination, @QueryParam("accommodation") String accommodation) {
+	public JSONArray ObterCursoss(@QueryParam("habilidade") String habilidade) {
 
 		Mongo mongo;
 		try {
@@ -135,15 +135,12 @@ public class Rest_Curso {
 			DB db = (DB) mongo.getDB("documento");
 
 			BasicDBObject setQuery = new BasicDBObject();
-		    if (destination != null){
-		    	setQuery.put("documento.trips.destination", destination);
-		    };
-		    if (accommodation != null){
-		    	setQuery.put("documento.trips.accommodation", accommodation);
+		    if (habilidade != null){
+		    	setQuery.put("documento.habilidades.habilidade", habilidade);
 		    };
 			DBCollection collection = db.getCollection("curso");
 			
-			DBCursor cursor = collection.find();
+			DBCursor cursor = collection.find(setQuery);
 			JSONArray documentos = new JSONArray();
 			while (((Iterator<DBObject>) cursor).hasNext()) {
 				JSONParser parser = new JSONParser(); 
