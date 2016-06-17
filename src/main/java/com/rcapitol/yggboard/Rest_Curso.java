@@ -47,7 +47,7 @@ public class Rest_Curso {
 	public JSONObject ObterEmail(@QueryParam("mail") String mail) throws UnknownHostException, MongoException {
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
-		DBCollection collection = db.getCollection("curso");
+		DBCollection collection = db.getCollection("cursos");
 		BasicDBObject searchQuery = new BasicDBObject("documento.mail", mail);
 		DBObject cursor = collection.findOne(searchQuery);
 		JSONObject documento = new JSONObject();
@@ -103,7 +103,7 @@ public class Rest_Curso {
 		String name = doc.documento.name;
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
-		DBCollection collection = db.getCollection("curso");
+		DBCollection collection = db.getCollection("cursos");
 		Gson gson = new Gson();
 		String jsonDocumento = gson.toJson(doc);
 		Map<String,String> mapJson = new HashMap<String,String>();
@@ -138,7 +138,7 @@ public class Rest_Curso {
 		    if (habilidade != null){
 		    	setQuery.put("documento.habilidades.habilidade", habilidade);
 		    };
-			DBCollection collection = db.getCollection("curso");
+			DBCollection collection = db.getCollection("cursos");
 			
 			DBCursor cursor = collection.find(setQuery);
 			JSONArray documentos = new JSONArray();

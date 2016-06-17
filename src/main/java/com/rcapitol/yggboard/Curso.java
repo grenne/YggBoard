@@ -37,7 +37,7 @@ public class Curso {
 		public String escola;
 		public String eletiva;
 		public String preRequisito;
-		public String materiais[];
+		public String materias[];
 		public Habilidades habilidades[];
 
 
@@ -55,7 +55,7 @@ public class Curso {
 						String escola,
 						String eletiva,
 						String preRequisito,
-						String [] materiais,
+						String [] materias,
 						Habilidades [] habilidades
 						) {
 						this.idCurso = idCurso;  
@@ -66,7 +66,7 @@ public class Curso {
 						this.escola = escola; 
 						this.eletiva = eletiva; 
 						this.preRequisito = preRequisito; 
-						this.materiais = materiais; 
+						this.materias = materias; 
 						this.habilidades = habilidades;
 								}
 		@Override

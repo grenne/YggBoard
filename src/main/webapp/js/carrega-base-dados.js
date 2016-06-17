@@ -481,7 +481,7 @@ function carregaCursosTotal (){
 					    '"escola" : "",' +
 					    '"eletiva" : "",' +
 					    '"preRequisito" : "",' +
-						'"materiais" : [],' +
+						'"materias" : [],' +
 						'"habilidades" : []' +
 						'}' +
 					'}'
@@ -501,7 +501,7 @@ function carregaCursosTotal (){
 					    '"escola" : "",' +
 					    '"eletiva" : "",' +
 					    '"preRequisito" : "",' +
-						'"materiais" : [],' +
+						'"materias" : [],' +
 						'"habilidades" : []' +
 						'}' +
 					'}'
@@ -519,8 +519,15 @@ function carregaCursosTotal (){
 			var arrayHabilidades = arrayCurso[4].split(",");
 			var w = 0;
 			while (w < arrayHabilidades.length) {
-//				objJson.documento.habilidades.push('"habilidade":"' + arrayHabilidades[w] + '"');
 				objJson.documento.habilidades.push(arrayHabilidades[w]);
+				w++;
+			};
+		};
+		if (arrayCurso[3]){
+			var arrayMaterias = arrayCurso[3].split(",");
+			var w = 0;
+			while (w < arrayMaterias.length) {
+				objJson.documento.materias.push(arrayMaterias[w]);
 				w++;
 			};
 		};

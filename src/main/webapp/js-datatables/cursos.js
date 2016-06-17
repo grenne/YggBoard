@@ -18,13 +18,13 @@
 				'<table id="curso_list" class="curso_theader table toggle-circle">' +
 					'<thead>' +
 						'<tr>' +
-							'<th data-toggle="true">Cursos</th>' +
+							'<th data-toggle="true">Materias</th>' +
 							'<th>Ação</th>' +
+							'<th data-hide="all">Curso</th>' +
 							'<th data-hide="all">Descrição</th>' +
 							'<th data-hide="all">Tempo</th>' +
 							'<th data-hide="all">Custo</th>' +
 							'<th data-hide="all">Escola</th>' +
-							'<th data-hide="all">Curso</th>' +
 							'<th data-hide="all">Pré requisito</th>' +
 						'</tr>' +
 					'</thead>' +
@@ -46,8 +46,9 @@
         $.each(objJson, function (i, curso) {
         	curso_table_row = 
 				'<tr class="itemCurso">' +
-		   			'<td id="nome_' + i + '">' + curso.documento.nome + '</td>' +
+		   			'<td id="nome_' + i + '">' + montaMaterias(curso.documento.materias) + '</td>' +
 					'<td id="acaoTd_' + i + '"><button id="acaoCurso_' + i + '" class="btn-xs btn-info">Grade</button></td>' +
+					'<td id="curso' + i + '">' + curso.documento.nome + '</td>' +
 					'<td id="descricao_' + i + '">' + curso.documento.descricao + '</td>' +
 					'<td id="tempo' + i + '">' + curso.documento.tempo + '</td>' +
 					'<td id="custo' + i + '">' + curso.documento.custo + '</td>' +
@@ -90,4 +91,15 @@
 			cy.autolock( true );
 		};
 		drawElements (cy, curso, actionMove, '');
+	};
+	function montaMaterias (materias) {
+		var materiasTexto = "";
+		var barra = "";
+		var w = 0;
+		while (w < materias.length) {
+			materiasTexto = barra + materiasTexto + materias[w];
+			barra = "/";
+			w++;
+		};
+		return materiasTexto;
 	};
