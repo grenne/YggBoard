@@ -202,6 +202,7 @@ function comparaCarreira (cy, objJson){
 	objJsonElements = JSON.parse(localStorage.getItem("elements"));
 
 	$.each( objJson.necessarios, function( i, element ) {
+		console.log ("carrega necessarios:" + element);
 		var selector = '#' + compoeId (element);
 		var node = cy.$(selector);
 		addElementsGeral (cy, element, node.data('classes'));
@@ -216,6 +217,7 @@ function comparaCarreira (cy, objJson){
 		}
 	});
 	$.each( objJson.recomendados, function( i, element ) {
+		console.log ("carrega recomendados:" + element);
 		var selector = '#' + compoeId (element);
 		var node = cy.$(selector);
 		addElementsGeral (cy, element, node.data('classes'));
@@ -229,7 +231,10 @@ function comparaCarreira (cy, objJson){
 			montaComparacao(cy, compoeId (element), 'perfilCarreira', 'perfilUsuario', 'green', 'red', -0.1);				
 		}
 	});
-	addEdges (cy, objJsonElements);
+	if (localStorage.layoutPerfil == "true"){
+		addEdges (cy, objJsonElements);	
+	};
+	
 };
 
 function montaComparacao(cy, element, perfil_01, perfil_02, cor_01, cor_02, opacity){
