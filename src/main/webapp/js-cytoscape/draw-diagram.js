@@ -128,9 +128,7 @@ function createDiagram (name, objJson, readyFunction, par1, par2){
 				      style: {
 				        'width': 1,
 				        'line-color': 'gray',
-				        'target-arrow-color': 'lightgray',
 				        'target-arrow-shape': 'triangle',
-				        'target-arrow-fill':"filled ",
 				        'background-opacity' : 0.1,
 				        	}
 				}
@@ -252,6 +250,7 @@ function montaTipo (objJson, diagramaCy, tipo){
 			      group: 'nodes', // 'nodes' for a node, 'edges' for an edge
 			      data: { // element data (put dev data here)
 			        id: id, // mandatory for each element, assigned automatically on undefined
+			    	idOriginal : id,  
 			        parent: compoeId (element.documento.parent), // indicates the compound node parent id; not defined => no parent
 				    name : element.documento.name,
 				    descricao : element.documento.descricao,

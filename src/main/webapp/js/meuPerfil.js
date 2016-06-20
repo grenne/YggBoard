@@ -109,7 +109,7 @@ function removerItemMeuPerfil (idOriginal){
 	
 	$.each( objJson.documento.elements, function( i, element ) {
 		if (idOriginal == element){
-			objJson.documento.elements.slice (i);
+			objJson.documento.elements = objJson.documento.elements.slice (i);
 			return;
 		};
 	});
