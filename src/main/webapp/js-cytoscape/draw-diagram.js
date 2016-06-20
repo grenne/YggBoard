@@ -14,7 +14,7 @@ $(function () {
 		})
 		.always(function(data) {
 	    	if (data.status = 200) {
-	    		var cy = createDiagram ("cy");	
+	    		var cy = createDiagram ("cy", data);	
 	    		if (localStorage.usuario == "true"){
 	    			cy.autolock( true );
 	    		};
@@ -22,7 +22,7 @@ $(function () {
 	    		objJson = data;
 //	    		objJson = JSON.parse(localStorage.getItem("elements"));
 	    		localStorage.setItem("elements", JSON.stringify(objJson));
-	    		drawElements (cy, objJson, actionMove, 'grid');
+//	    		drawElements (cy, objJson, actionMove, 'grid');
 	    		$("#labelYggmap").html("");
 	    		localStorage.criaPerfil = false;
 	    		$( "#comparaMeuPerfil" ).bind( "click", function() {
@@ -97,7 +97,8 @@ $(function () {
 	
 });
 
-function createDiagram (name, readyFunction, par1, par2){
+function createDiagram (name, objJson, readyFunction, par1, par2){
+	var diagramaCy = montaCy (objJson);
 
 	var cy = window.cy = cytoscape({
 		container: document.getElementById('cy'),
@@ -119,7 +120,7 @@ function createDiagram (name, readyFunction, par1, par2){
 					selector : ':parent',
 					style : {
 						'background-opacity' : 0.1,
-						'background-color' : 'oramge'
+						'background-color' : 'orange'
 					}
 				},
 				{
@@ -134,35 +135,151 @@ function createDiagram (name, readyFunction, par1, par2){
 				        	}
 				}
 			],
+			elements: diagramaCy,
+			layout: {
+			    name: 'preset'
+			  }
 
-			elements: {
-				nodes: [
-				],
-				edges: [
-				]
-			},
-		});
+	});
 	
-	var options = {
-			  name: 'grid',
-
-			  fit: true, // whether to fit to viewport
-			  padding: 30, // fit padding
-			  boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
-			  animate: true, // whether to transition the node positions
-			  animationDuration: 500, // duration of animation in ms if enabled
-			  animationEasing: undefined, // easing of animation if enabled
-			  ready: undefined, // callback on layoutready
-			  stop: undefined // callback on layoutstop
-			};		
 	cy.panzoom({
-		options
 	});
 
+	cy.on('tap', function(evt){
+		if (evt.cyTarget.id){
+			var selector = '#' + evt.cyTarget.id();
+			var node = cy.$(selector);
+			var opacity = 0.1;
+			if (evt.cyTarget.id) {
+				$('#habilidadeName').html(evt.cyTarget.data('name'));  
+				$('#habilidadeDescricao').html(evt.cyTarget.data('descricao'));
+				$('#habilidadeWiki').html(evt.cyTarget.data('wiki'));
+				$('#habilidadeArea').html(evt.cyTarget.data('area'));
+				$('#habilidadeCampo').html(evt.cyTarget.data('campo'));
+				$('#habilidadeCategoria').html(evt.cyTarget.data('categoria'));
+				$('.habilidade').removeClass('hide');
+				if (cy.$(selector).hasClass("perfilCarreira")){
+					obterCursos (cy, evt.cyTarget.id());
+					$('.cursos').removeClass('hide');
+					obterCursos (cy, evt.cyTarget.id());
+					$('.cursos').removeClass('hide');
+				};
+				var x = cy.$(selector).position('x');
+				var y = cy.$(selector).position('y');
+				var parent = cy.$(selector).parent(node);
+				var selectorParent = '#' + parent.id();
+				var nodeZoom = cy.$(selectorParent);
+				if (cy.$(selector).isParent()){
+					nodeZoom = node;
+				};
+				if (localStorage.criaPerfil == "true"){
+					incluiHabilidadePerfil (cy, evt.cyTarget.data('idOriginal'));
+				}else{
+					if (nodeZoom){
+						cy.animate(
+								{
+									fit: {
+										eles: nodeZoom,
+										padding: 20
+									}
+								}, 
+								{
+									duration: 1000
+								});		
+					};
+				};
+			};
+			console.log ("tap element:" + node.id() + " x:" + x + " y:" + y);
+		};
+	});
+	cy.bind('tapend', function(evt){
+		if (evt.cyTarget.id) {
+			actionMove(cy, evt.cyTarget.id(), evt.cyPosition.x, evt.cyPosition.y);
+		};
+	});
 	
 	return cy;
 };
+
+function montaCy (objJson){
+
+	var diagramaCy = [];
+
+	montaTipo (objJson, diagramaCy, "area");
+	montaTipo (objJson, diagramaCy, "campo");
+	montaTipo (objJson, diagramaCy, "categoria");
+	montaTipo (objJson, diagramaCy, "habilidade");
+
+	return diagramaCy;
+};
+function montaTipo (objJson, diagramaCy, tipo){
+	
+	var xvar = 0;
+	var yvar = 0;
+	$.each( objJson, function( i, element ) {
+		if (element.documento.classes == tipo){
+			if (element.documento.positionX == "") {
+				if (element.documento.parent == ""){
+					objJson = JSON.parse(localStorage.getItem("elements"));
+					element.documento.positionX = xvar;
+					element.documento.positionY = yvar;
+					objJson[i].documento.positionX = xvar;
+					objJson[i].documento.positionY = yvar;
+					localStorage.setItem("elements", JSON.stringify(objJson));
+				}else{
+					var x1 = 0;
+					var y1 = 0;
+					id = compoeId (element.documento.parent);
+					$.each( diagramaCy, function( i, parent ) {
+						console.log ("id:" + parent.data.id);
+						if (id == parent.data.id){
+							x1 = parent.data.parentAddX + 30;
+							y1 = parent.data.parentAddY + 30;
+							parent.data.parentAddX = x1;
+							parent.data.parentAddY = y1;
+							return
+						};
+					});
+					element.documento.positionX = x1;
+					element.documento.positionY = y1;
+					objJson[i].documento.positionX = x1;
+					objJson[i].documento.positionY = y1;
+					};
+			};
+			id = compoeId (element.documento.idHabilidade);
+			var elementcy = {
+			      group: 'nodes', // 'nodes' for a node, 'edges' for an edge
+			      data: { // element data (put dev data here)
+			        id: id, // mandatory for each element, assigned automatically on undefined
+			        parent: compoeId (element.documento.parent), // indicates the compound node parent id; not defined => no parent
+				    name : element.documento.name,
+				    descricao : element.documento.descricao,
+				    wiki : element.documento.wiki,
+				    area : element.documento.area,
+				    campo : element.documento.campo,
+				    categoria : element.documento.categoria,
+				    parentAddX : parseInt(element.documento.positionX),
+				    parentAddY : parseInt(element.documento.positionY),
+			      },
+			      scratch: {
+			        foo: 'bar'
+			      },
+			      position: { // the model position of the node (optional on init, mandatory after)
+			        x: parseInt(element.documento.positionX),
+			        y: parseInt(element.documento.positionY)
+			      },
+			      selected: false, // whether the element is selected (default false)
+			      selectable: true, // whether the selection state is mutable (default true)
+			      locked: false, // when locked a node's position is immutable (default false)
+			      grabbable: true, // whether the node can be grabbed and moved by the user
+			};
+			diagramaCy.push(elementcy);
+		};
+	});
+	return diagramaCy;
+}
 function limpaDiagrama (cy, cor1, cor2, opacity, perfil){
+
 	var elementsCarreira = cy.nodes('.' + perfil);
 
 	$.each( elementsCarreira, function( i, element ) {
@@ -473,6 +590,8 @@ function drawElementsTotal (cy, objJson, actionMove, typeLayout){
 	layout.run();
 
 };
+
+
 
 function 	addElements (cy, objJson, tipo, widthElement){
 
