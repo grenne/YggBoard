@@ -154,6 +154,7 @@ function createDiagram (name, objJson, readyFunction, par1, par2){
 				$('#habilidadeName').html(evt.cyTarget.data('name'));  
 				$('#habilidadeDescricao').html(evt.cyTarget.data('descricao'));
 				$('#habilidadeWiki').html(evt.cyTarget.data('wiki'));
+				$("#habilidadeWiki").attr("href", evt.cyTarget.data('wiki'));
 				$('#habilidadeArea').html(evt.cyTarget.data('area'));
 				$('#habilidadeCampo').html(evt.cyTarget.data('campo'));
 				$('#habilidadeCategoria').html(evt.cyTarget.data('categoria'));
@@ -209,6 +210,7 @@ function montaCy (objJson){
 	montaTipo (objJson, diagramaCy, "campo");
 	montaTipo (objJson, diagramaCy, "categoria");
 	montaTipo (objJson, diagramaCy, "habilidade");
+	montaSeta (objJson, diagramaCy);
 
 	return diagramaCy;
 };
@@ -231,7 +233,6 @@ function montaTipo (objJson, diagramaCy, tipo){
 					var y1 = 0;
 					id = compoeId (element.documento.parent);
 					$.each( diagramaCy, function( i, parent ) {
-						console.log ("id:" + parent.data.id);
 						if (id == parent.data.id){
 							x1 = parent.data.parentAddX + 30;
 							y1 = parent.data.parentAddY + 30;
@@ -274,6 +275,38 @@ function montaTipo (objJson, diagramaCy, tipo){
 			      grabbable: true, // whether the node can be grabbed and moved by the user
 			};
 			diagramaCy.push(elementcy);
+		};
+	});
+	return diagramaCy;
+}
+function montaSeta (objJson, diagramaCy){
+	
+	$.each( objJson, function( i, element ) {
+		if (element.documento.type == "edges"){
+			var temSource = false;
+			var temTarget = false;
+			$.each( diagramaCy, function( i, objElement ) {
+				if (compoeId (element.documento.source) == objElement.data.id){
+					temSource = true;
+				};
+				if (compoeId (element.documento.target) == objElement.data.id){
+					temTarget = true;
+				};
+				if (temSource && temTarget){
+					return
+				};
+			});
+			if (temSource && temTarget){			
+				id = compoeId (element.documento.idHabilidade);
+				var elementcy = {
+				      data: {
+				          id: id,
+				          source : compoeId (element.documento.source),
+						  target : compoeId (element.documento.target)
+				      }
+				};
+				diagramaCy.push(elementcy);
+			};
 		};
 	});
 	return diagramaCy;
@@ -452,6 +485,7 @@ function drawElements (cy, objJson, actionMove, typeLayout){
 			if (evt.cyTarget.id) {
 				$('#habilidadeName').html(evt.cyTarget.data('name'));  
 				$('#habilidadeDescricao').html(evt.cyTarget.data('descricao'));
+				$("#habilidadeWiki").prop("href", evt.cyTarget.data('wiki'));
 				$('#habilidadeWiki').html(evt.cyTarget.data('wiki'));
 				$('#habilidadeArea').html(evt.cyTarget.data('area'));
 				$('#habilidadeCampo').html(evt.cyTarget.data('campo'));

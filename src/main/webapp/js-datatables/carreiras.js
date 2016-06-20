@@ -53,7 +53,7 @@
 		   			'<td id="nome_' + i + '">' + carreira.nome + '</td>' +
 					'<td id="acaoCarreira' + i + '"><button id="acaoCarreira_' + i + '" class="btn-xs btn-info">Comparar</button></td>' +
 					'<td id="descricao_' + i + '">' + carreira.descricao + '</td>' +
-					'<td id="wiki_' + i + '" class="text-info"><a href="' + carreira.wiki + '" target="_blank">Wiki</a></td>' +
+					'<td id="wiki_' + i + '" class="text-info"><a href=https://pt.wikipedia.org/wiki/Carreira"' + carreira.wiki + '" target="_blank">Wiki</a></td>' +
 					'<td id="salario_' + i + '">' + carreira.salario + '</td>' +
 					'<td id="salarioMedio_' + i + '">' + carreira.salarioMedio + '</td>' +
 					'<td id="funcao_' + i + '">' + carreira.funcao + '</td>' +
