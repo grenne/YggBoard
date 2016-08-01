@@ -14,14 +14,14 @@ $(function () {
 		})
 		.always(function(data) {
 	    	if (data.status = 200) {
-	    		var cy = createDiagram ("cy", data);	
-	    		if (localStorage.usuario == "true"){
-	    			cy.autolock( true );
-	    		};
 //	    		objJson = templateHabilidades ();
 	    		objJson = data;
 //	    		objJson = JSON.parse(localStorage.getItem("elements"));
 	    		localStorage.setItem("elements", JSON.stringify(objJson));
+	    		var cy = createDiagram ("cy", data);	
+	    		if (localStorage.usuario == "true"){
+	    			cy.autolock( true );
+	    		};
 //	    		drawElements (cy, objJson, actionMove, 'grid');
 	    		$("#labelYggmap").html("");
 	    		localStorage.criaPerfil = false;
@@ -205,10 +205,18 @@ function montaCy (objJson){
 	var diagramaCy = [];
 
 	montaTipo (objJson, diagramaCy, "area");
-	montaTipo (objJson, diagramaCy, "campo");
-	montaTipo (objJson, diagramaCy, "categoria");
-	montaTipo (objJson, diagramaCy, "habilidade");
-	montaSeta (objJson, diagramaCy);
+	if (localStorage.montacampo == "true"){
+		montaTipo (objJson, diagramaCy, "campo");
+	};
+	if (localStorage.montacategoria == "true"){
+		montaTipo (objJson, diagramaCy, "categoria");
+	};
+	if (localStorage.montahabilidade == "true"){
+		montaTipo (objJson, diagramaCy, "habilidade");
+	};
+	if (localStorage.montaseta == "true"){
+		montaSeta (objJson, diagramaCy);
+	};
 
 	return diagramaCy;
 };
@@ -220,6 +228,8 @@ function montaTipo (objJson, diagramaCy, tipo){
 		if (element.documento.classes == tipo){
 			if (element.documento.positionX == "") {
 				if (element.documento.parent == ""){
+					xvar = element.documento.positionX;
+					yvar = element.documento.positionY;
 					objJson = JSON.parse(localStorage.getItem("elements"));
 					element.documento.positionX = xvar;
 					element.documento.positionY = yvar;
@@ -230,11 +240,23 @@ function montaTipo (objJson, diagramaCy, tipo){
 					var x1 = 0;
 					var y1 = 0;
 					id = compoeId (element.documento.parent);
-					$.each( diagramaCy, function( i, parent ) {
+					$.each( diagramaCy, function( w, parent ) {
 						if (id == parent.data.id){
-							x1 = parent.data.parentAddX + 30;
-							y1 = parent.data.parentAddY + 30;
-							parent.data.parentAddX = x1;
+							x1 = parent.data.parentAddX;
+							y1 = parent.data.parentAddY;
+							if (element.documento.classes == "campo"){
+								x1 = parent.data.parentAddX;
+								y1 = parent.data.parentAddY + 500;
+							};
+							if (element.documento.classes == "categoria"){
+								x1 = parent.data.parentAddX;
+								y1 = parent.data.parentAddY + 300;
+							};
+							if (element.documento.classes == "habilidade"){
+								x1 = parent.data.parentAddX;
+								y1 = parent.data.parentAddY + 50;
+							};
+//							parent.data.parentAddX = element.documento.positionX + 10;
 							parent.data.parentAddY = y1;
 							return
 						};
@@ -243,7 +265,49 @@ function montaTipo (objJson, diagramaCy, tipo){
 					element.documento.positionY = y1;
 					objJson[i].documento.positionX = x1;
 					objJson[i].documento.positionY = y1;
-					};
+				};
+			}else{
+				if (localStorage.calculaposicao == "true"){
+					var x1 = element.documento.positionX;
+					var y1 = element.documento.positiony;
+					id = compoeId (element.documento.parent);
+					$.each( diagramaCy, function( w, parent ) {
+						if (id == parent.data.id){
+							if (localStorage.calculacampo == "true"){
+								if (element.documento.classes == "campo"){
+									x1 = parent.data.parentAddX;
+									y1 = parent.data.parentAddY + 200;
+									element.documento.positionX = x1;
+									element.documento.positionY = y1;
+									objJson[i].documento.positionX = x1;
+									objJson[i].documento.positionY = y1;				
+								};
+							};
+							if (localStorage.calculacategoria == "true"){
+								if (element.documento.classes == "categoria"){
+									x1 = parent.data.parentAddX;
+									y1 = parent.data.parentAddY + 300;
+									element.documento.positionX = x1;
+									element.documento.positionY = y1;
+									objJson[i].documento.positionX = x1;
+									objJson[i].documento.positionY = y1;				
+								};
+							};
+							if (localStorage.calculahabilidade == "true"){
+								if (element.documento.classes == "habilidade"){
+									x1 = parent.data.parentAddX;
+									y1 = parent.data.parentAddY + 50;
+									element.documento.positionX = x1;
+									element.documento.positionY = y1;
+									objJson[i].documento.positionX = x1;
+									objJson[i].documento.positionY = y1;				
+								};
+							};
+							parent.data.parentAddY = y1;
+							return
+						};
+					});
+				};
 			};
 			id = compoeId (element.documento.idHabilidade);
 			var elementcy = {
