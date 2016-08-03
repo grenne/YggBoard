@@ -96,7 +96,7 @@
         .fail(function(data) {
         })
        	.always(function(data) {
-        	if (data.status = 200) {
+        	if (data.status == 200) {
         		action_ok ();
         	}else{
         		actio_not_ok()
@@ -118,7 +118,7 @@
         .fail(function(data) {
         })
        	.always(function(data) {
-        	if (data.status = 200) {
+        	if (data.status == 200) {
         		action_ok ();
         	}else{
         		actio_not_ok()
@@ -139,7 +139,7 @@
         .fail(function(data) {
         })
        	.always(function(data) {
-        	if (data.status = 200) {
+        	if (data.status == 200) {
         		action_ok ();
         	}else{
         		actio_not_ok()
@@ -162,7 +162,7 @@
     	.fail(function(data) {
     	})
     	.always(function(data) {
-        	if (data.status = 200) {
+        	if (data.status == 200) {
         		action_ok ("Student updated", afterUpdate);
         	}else{
         		actio_not_ok()
@@ -186,11 +186,46 @@
     	.fail(function(data) {
     	})
     	.always(function(data) {
-        	if (data.status = 200) {
+        	if (data.status == 200) {
         		action_ok ("Student updated", afterUpdate);
         	}else{
         		actio_not_ok()
         	};
     	});
 
+    };
+    
+    function rest_obterUsuario(email, action_ok, action_not_ok, par1, par2) {
+    	$.ajax({
+			url : "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/obter?email=" + email,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            async:false
+    	})
+    	.done(function( data ) {
+    		action_ok (data, par1, par2);
+    	})
+    	.fail(function(data) {
+    		action_not_ok (data, par1, par2);
+    	})
+    	.always(function(data) {
+    	});
+    };
+
+    function rest_incluirUsuario(objJson, action_ok, action_not_ok) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/incluir",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson)
+		})
+	  	.done(function( data ) {
+    		action_ok (data);
+	  	})
+        .fail(function(data) {
+    		action_not_ok(data)
+        })
+       	.always(function(data) {
+       	});
     };

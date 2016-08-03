@@ -14,7 +14,8 @@ public class ApplicationConfig extends Application {
         return new HashSet<Class<?>>(Arrays.asList(
         		Rest_Habilidade.class,
         		Rest_Curso.class,
-        		Rest_Carreira.class
+        		Rest_Carreira.class,
+        		Rest_Usuario.class
         		));
     }
 }

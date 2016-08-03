@@ -218,9 +218,9 @@
                         <li id="dropdown-user" class="dropdown">
                             <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
                                 <span class="pull-right">
-                                    <img class="img-circle img-user media-object" src="img/grenne.png" alt="Profile Picture">
+<!--                               <img class="img-circle img-user media-object" src="#" alt="Profile Picture"> -->
                                 </span>
-                                <div class="username hidden-xs">Grenne</div>
+                                <div id="userName" class="username"></div>
                             </a>
 
 
@@ -330,7 +330,7 @@
 					                    <button id="comparaMeuPerfil"  class="btn" data-toggle="tooltip" data-original-title="Compara com seu perfil"><i class="fa fa-user"></i></button>
 					                    <button id="criarMeuPerfil"  class="btn" data-toggle="tooltip" data-original-title="Criar seu perfil"><i class="fa fa fa-gears"></i></button>
 					                    <button id="carregaHabilidades"  class="btn" data-toggle="tooltip" data-original-title="Mostra habilidades"><i class="fa fa-graduation-cap"></i></button>
-					                    <div class="btn-group">
+					                    <div class="btn-group tools hide">
 					                        <button class="dropdown-toggle btn" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-gear"></i></button>
 					                        <ul class="dropdown-menu dropdown-menu-right">
 					                            <li><a id="carregaHabilidadesTotal"  href="#">Carrega Habilidades</a></li>
@@ -680,7 +680,7 @@
     <!--=================================================-->
 
     <!--jQuery [ REQUIRED ]-->
-    <script src="js/jquery-2.2.1.min.js"></script>
+    <script src="js/jquery-2.2.4.min.js"></script>
 
 
     <!--BootstrapJS [ RECOMMENDED ]-->
@@ -718,6 +718,7 @@
 	<script src="js-datatables/habilidades.js"></script>
 
     <!--Yggboard-->
+    <script src="js/main.js"></script>
     <script src="js/commons.js"></script>
     <script src="js/carrega-base-dados.js"></script>
     <script src="js/yggboard.js"></script>

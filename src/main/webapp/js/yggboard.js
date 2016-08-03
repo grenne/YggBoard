@@ -8,16 +8,25 @@
 
 	localStorage.urlServidor = window.location.hostname;
 
+	localStorage.layoutPerfil = "false";
+
+	// ** testa login
+	if (localStorage.loginOk != "true"){
+		$(window.document.location).attr('href','index.html');	
+	};
+	
+	// *** carrega nome usuario
+	$('#userName').html(localStorage.usuarioFirstName);
+	// *** reseta para forcar login
+	localStorage.loginOk = "false";
+	
 	var largura = 13;
 	if ($(window).width() > 1185){
 		largura = 9.8;
 	}
 	$('.cy').css( "width", ($(window).width() / 14 * largura));
 	$('.cy').css( "height", ($(window).height() / 12 * 9));
-	
-	localStorage.usuario = "false";
-	localStorage.layoutPerfil = "false";
-	
+		
 	// *** flag de controle da montagem do diagrama para acerto de posicoes
 	if (!localStorage.montacampo){
 		localStorage.montacampo = "true";
