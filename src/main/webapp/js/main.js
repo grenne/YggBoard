@@ -73,3 +73,16 @@
     function semAcao() {
     };
 
+    function montaValor(valor) {
+    	
+    	var size = valor.lenght;
+    	
+    	var i = 0;
+    	var valorString = "";
+    	while (i < 10 - valor.length) {
+			valorString = " " + valorString;
+			++i;
+    	};
+    	
+    	return "R$" + valorString + valor;;
+    };

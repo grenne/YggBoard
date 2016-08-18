@@ -30,13 +30,16 @@ public class Carreira {
 	public static final class Documento {
 
 		public String nome;
+		public String industria;
 		public String descricao;
-		public String wiki;
-		public String salario;
+		public String tarefas;
+		public String salarioMinimo;
 		public String salarioMedio;
+		public String salarioMaximo;
 		public String funcao;
 		public String necessarios[];
 		public String recomendados[];
+		public String tags[];
 
 		public Documento() {
 
@@ -45,22 +48,28 @@ public class Carreira {
 		@JsonCreator
 		public Documento(
 						String nome,
+						String industria,
 						String descricao,
-						String wiki,
-						String salario,
+						String tarefas,
+						String salarioMinimo,
 						String salarioMedio,
+						String salarioMaximo,
 						String funcao,
 						String [] necessarios,
-						String [] recomendados
+						String [] recomendados,
+						String [] tags
 						) {
 						this.nome = nome;  
+						this.industria = industria;  
 						this.descricao = descricao; 
-						this.wiki = wiki; 
-						this.salario = salario; 
-						this.salarioMedio = salarioMedio; 
+						this.tarefas = tarefas; 
+						this.salarioMinimo = salarioMinimo; 
+						this.salarioMedio = salarioMedio;
+						this.salarioMaximo = salarioMaximo;
 						this.funcao = funcao; 
 						this.necessarios = necessarios; 
 						this.recomendados = recomendados; 
+						this.tags = tags; 
 		}
 
 		@Override

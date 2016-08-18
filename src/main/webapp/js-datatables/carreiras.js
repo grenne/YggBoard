@@ -25,11 +25,14 @@
 						'<tr>' +
 							'<th data-toggle="true">Carreiras</th>' +
 							'<th>Ação</th>' +
-							'<th data-hide="all">Descrição</th>' +
-							'<th data-hide="all">Wiki</th>' +
-							'<th data-hide="all">Salário</th>' +
-							'<th data-hide="all">Salário Médio</th>' +
-							'<th data-hide="all">Função</th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
 						'</tr>' +
 					'</thead>' +
 					'<tbody id="carreira_tbody">' +
@@ -48,15 +51,22 @@
 
     	$( ".itemCarreira" ).remove();
         $.each(objJson, function (i, carreira) {
+        	var tagsString = "";
+        	$.each(carreira.tags, function (i, tags){
+        		tagsString = tagsString + tags + ", ";
+        	});
         	carreira_table_row = 
 				'<tr class="itemCarreira">' +
-		   			'<td id="nome_' + i + '">' + carreira.nome + '</td>' +
+		   			'<td id="nome_' + i + '"><span class="panel-label"></span>' + carreira.nome + '</td>' +
 					'<td id="acaoCarreira' + i + '"><button id="acaoCarreira_' + i + '" class="btn-xs btn-info">Comparar</button></td>' +
-					'<td id="descricao_' + i + '">' + carreira.descricao + '</td>' +
-					'<td id="wiki_' + i + '" class="text-info"><a href=https://pt.wikipedia.org/wiki/Carreira"' + carreira.wiki + '" target="_blank">Wiki</a></td>' +
-					'<td id="salario_' + i + '">' + carreira.salario + '</td>' +
-					'<td id="salarioMedio_' + i + '">' + carreira.salarioMedio + '</td>' +
-					'<td id="funcao_' + i + '">' + carreira.funcao + '</td>' +
+					'<td id="descricao_' + i + '"><span class="panel-label">Objetivo: </span>' + carreira.descricao + '</td>' +
+					'<td id="industria_' + i + '"><span class="panel-label">Industria: </span>' + carreira.industria + '</td>' +
+					'<td id="tarefas_' + i + '"<span class="panel-label">Tarefas: </span>' + carreira.tarefas + '</td>' +
+					'<td id="salarioMinimo_' + i + '"><span class="panel-label">Salário Minimo: </span>' + montaValor(carreira.salarioMinimo) + '</td>' +
+					'<td id="salarioMedio_' + i + '"><span class="panel-label">Salário Médio: </span>' + montaValor(carreira.salarioMedio) + '</td>' +
+					'<td id="salarioMaximo_' + i + '"><span class="panel-label">Salário Maximo: </span>' + montaValor(carreira.salarioMaximo) + '</td>' +
+					'<td id="funcao_' + i + '">Função:' + carreira.funcao + '</td>' +
+					'<td id="tags_' + i + '"><span class="hide">' + tagsString + '</span></td>' +
 				'</tr>';
         	$( "#carreira_tbody" ).append(carreira_table_row);
             $('#acaoCarreira_' + i).bind('click', function () {

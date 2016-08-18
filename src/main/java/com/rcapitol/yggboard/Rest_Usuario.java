@@ -35,6 +35,7 @@ import com.mongodb.MongoException;
 
 public class Rest_Usuario {
 
+	@SuppressWarnings("unchecked")
 	@Path("/obter")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -52,14 +53,13 @@ public class Rest_Usuario {
 			mongo.close();
 			return documento;
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;
 	};
+	@SuppressWarnings("unchecked")
 	@Path("/incluir")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -81,25 +81,22 @@ public class Rest_Usuario {
 			mongo.close();
 			return Response.status(200).entity(documento).build();
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			System.out.println("UnknownHostException");
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			System.out.println("MongoException");
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
 			System.out.println("JsonMappingException");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			System.out.println("IOException");
 			e.printStackTrace();
 		}
 		return Response.status(500).build();
 		
 	};
+	@SuppressWarnings("unchecked")
 	@Path("/atualizar")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -120,6 +117,7 @@ public class Rest_Usuario {
 				documento.putAll(mapJson);
 				BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(documento));
 				BasicDBObject searchQuery = new BasicDBObject("documento.email", email);
+				@SuppressWarnings("unused")
 				DBObject cursor = collection.findAndModify(searchQuery,
 		                null,
 		                null,
@@ -130,20 +128,15 @@ public class Rest_Usuario {
 				mongo.close();
 				return Response.status(200).build();
 			} catch (JsonParseException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (JsonMappingException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

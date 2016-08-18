@@ -3,3 +3,6 @@
 .bg-background-yggboard{
     background-image: url("../../img/bg-img/logo-yggboard.png");
 };
+.panel-label {
+	color: #ff8000 !important;
+};

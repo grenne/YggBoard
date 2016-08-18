@@ -149,13 +149,16 @@ public class Rest_Carreira {
 					JSONObject jsonDocumento = new JSONObject();
 					jsonDocumento.put("_id", objCarreiras.getString("_id"));
 					jsonDocumento.put("nome", jsonObject.get("nome"));
+					jsonDocumento.put("industria", jsonObject.get("industria"));
 				    jsonDocumento.put("descricao", jsonObject.get("descricao"));
-				    jsonDocumento.put("wiki", jsonObject.get("wiki"));
-				    jsonDocumento.put("salario", jsonObject.get("salario")); 
-				    jsonDocumento.put("salarioMedio", jsonObject.get("salarioMedio")); 
+				    jsonDocumento.put("tarefas", jsonObject.get("tarefas"));
+				    jsonDocumento.put("salarioMinimo", jsonObject.get("salarioMinimo")); 
+				    jsonDocumento.put("salarioMedio", jsonObject.get("salarioMedio"));
+				    jsonDocumento.put("salarioMaximo", jsonObject.get("salarioMaximo"));
 				    jsonDocumento.put("funcao", jsonObject.get("funcao"));
 				    jsonDocumento.put("necessarios", jsonObject.get("necessarios")); 
-				    jsonDocumento.put("recomentados", jsonObject.get("recomentados")); 
+				    jsonDocumento.put("recomentados", jsonObject.get("recomentados"));
+				    jsonDocumento.put("tags", jsonObject.get("tags"));
 					documentos.add(jsonDocumento);
 				} catch (ParseException e) {
 					// TODO Auto-generated catch block

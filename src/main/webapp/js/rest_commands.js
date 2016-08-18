@@ -12,13 +12,13 @@
     		action_ok(data);
     	})
     	.fail(function(data) {
-    		actio_not_ok()
+    		action_not_ok()
     	})
     	.always(function(data) {
     	});
     };
 
-    function rest_obterHabilidadesName(name, action_ok, actio_not_ok, var1, var2) {
+    function rest_obterHabilidadesName(name, action_ok, action_not_ok, var1, var2) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/obter?name=" + name,
             contentType: "application/json; charset=utf-8",
@@ -28,14 +28,14 @@
     		action_ok(data, var1, var2);
     	})
     	.fail(function(data) {
-    		actio_not_ok(null, var1, var2);
+    		action_not_ok(null, var1, var2);
     	})
     	.always(function(data) {
     	});
     };
 
 
-    function rest_obterHabilidadesIdHabilidade(name, action_ok, actio_not_ok, var1, var2) {
+    function rest_obterHabilidadesIdHabilidade(name, action_ok, action_not_ok, var1, var2) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/obter?idHabilidade=" + idHabilidade,
             contentType: "application/json; charset=utf-8",
@@ -45,7 +45,7 @@
     		action_ok(data, var1, var2);
     	})
     	.fail(function(data) {
-    		actio_not_ok(null, var1, var2)
+    		action_not_ok(null, var1, var2)
     	})
     	.always(function(data) {
     	});
@@ -61,13 +61,13 @@
     		action_ok(data, cy);
     	})
     	.fail(function(data) {
-    		actio_not_ok(null, cy);
+    		action_not_ok(null, cy);
     	})
     	.always(function(data) {
     	});
     };
 
-    function rest_obterCursosHabilidade(habilidade, action_ok, actio_not_ok, var1, var2) {
+    function rest_obterCursosHabilidade(habilidade, action_ok, action_not_ok, var1, var2) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/cursos/lista?habilidade=" + habilidade,
             contentType: "application/json; charset=utf-8",
@@ -77,7 +77,7 @@
        		action_ok(data, var1, var2);
     	})
     	.fail(function(data) {
-    		actio_not_ok(null, var1, var2)
+    		action_not_ok(null, var1, var2)
     	})
     	.always(function(data) {
     	});
@@ -99,7 +99,7 @@
         	if (data.status == 200) {
         		action_ok ();
         	}else{
-        		actio_not_ok()
+        		action_not_ok()
         	};
        	});
     };
@@ -121,7 +121,7 @@
         	if (data.status == 200) {
         		action_ok ();
         	}else{
-        		actio_not_ok()
+        		action_not_ok()
         	};
        	});
     };
@@ -142,7 +142,7 @@
         	if (data.status == 200) {
         		action_ok ();
         	}else{
-        		actio_not_ok()
+        		action_not_ok()
         	};
        	});
     };
@@ -165,7 +165,7 @@
         	if (data.status == 200) {
         		action_ok ("Student updated", afterUpdate);
         	}else{
-        		actio_not_ok()
+        		action_not_ok()
         	};
     	});
 
@@ -189,7 +189,7 @@
         	if (data.status == 200) {
         		action_ok ("Student updated", afterUpdate);
         	}else{
-        		actio_not_ok()
+        		action_not_ok()
         	};
     	});
 
