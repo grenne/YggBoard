@@ -86,3 +86,8 @@
     	
     	return "R$" + valorString + valor;;
     };
+
+    function limpaEspacos(texto) {
+    	    	
+    	return texto.replace (" ", "");
+    };

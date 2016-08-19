@@ -690,7 +690,7 @@ function carregaCarreirasTotal (){
 				var array = arrayItensCarreira[10].split(",");
 				var w = 0;
 				while (w < array.length) {
-					objJson.documento.necessarios.push(array[w]);
+					objJson.documento.necessarios.push(array[w].replace (" ",""));
 					w++;
 				};
 			};
@@ -698,7 +698,7 @@ function carregaCarreirasTotal (){
 				var array = arrayItensCarreira[12].split(",");
 				var w = 0;
 				while (w < array.length) {
-					objJson.documento.recomendados.push(array[w]);
+					objJson.documento.recomendados.push(array[w].replace (" ",""));
 					w++;
 				};
 			};
@@ -706,7 +706,7 @@ function carregaCarreirasTotal (){
 				var array = arrayItensCarreira[8].split(",");
 				var w = 0;
 				while (w < array.length) {
-					objJson.documento.tags.push(array[w]);
+					objJson.documento.tags.push(array[w].replace (" ",""));
 					w++;
 				};
 			};

@@ -91,9 +91,9 @@
                 <div class="navbar-header">
                     <a href="index.html" class="navbar-brand">
                         <img src="img/logo.png" alt="YggBoard" class="brand-icon">
-                        <div class="brand-title">
+                        <span class="brand-title">
                             <span class="brand-text">YggBoard</span>
-                        </div>
+                        </span>
                     </a>
                 </div>
                 <!--================================-->
@@ -222,7 +222,7 @@
                                 <span class="pull-right">
 <!--                               <img class="img-circle img-user media-object" src="#" alt="Profile Picture"> -->
                                 </span>
-                                <div id="userName" class="username"></div>
+                                <span id="userName" class="userName"></span>
                             </a>
 
 
@@ -304,23 +304,9 @@
                 <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                 <!--End page title-->
 
-
-                <!--Breadcrumb-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <ol class="breadcrumb">
-                    <li><a href="#">Home</a></li>
-                    <li class="active">YggMap</li>
-                </ol>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End breadcrumb-->
-
-
-        
-
                 <!--Page content-->
                 <!--===================================================-->
                 <div id="page-content">
-                    
 					<div class="row">
 					    <div class="col-lg-9">
 					        <!--YggMap-->
@@ -328,7 +314,7 @@
 					        <div id="yggmap" class="panel">
 					            <div class="panel-heading">
 					                <div class="panel-control">
-					                    <button id="demo-panel-network-refresh" data-toggle="tooltip"  data-original-title="Recarrega Diagrama" class="btn"><i class="fa fa-rotate-right"></i></button>
+					                    <button id="userPerfil" data-toggle="tooltip"  data-original-title="Perfil do Usuário" class="btn"><i class="fa fa-photo"></i></button>
 					                    <button id="comparaMeuPerfil"  class="btn" data-toggle="tooltip" data-original-title="Compara com seu perfil"><i class="fa fa-user"></i></button>
 					                    <button id="criarMeuPerfil"  class="btn" data-toggle="tooltip" data-original-title="Criar seu perfil"><i class="fa fa fa-gears"></i></button>
 					                    <button id="carregaHabilidades"  class="btn" data-toggle="tooltip" data-original-title="Mostra habilidades"><i class="fa fa-graduation-cap"></i></button>
@@ -351,8 +337,92 @@
 					                </h3>
 					            </div>
 					        </div>
+				            <!-- user-->
+			                <div id="user-panel" class="panel-body panel-user user-panel panel-colorful hide">
+								<div class= "user-panel">
+					                <div class="panel panel-user panel-colorful">
+										<div class="pad-btm col-sm-12">
+											<h3 class="panel-title col-sm-11 userName"></h3>
+						                    <button id="fechaUserPanel"  class="btn"><i class="fa fa-close"></i></button>
+						                </div>
+					             	</div>
+							        <div class="menu user-panel-menu col-sm-4">
+						                <!--Sparkline Line Chart-->
+						                <div class="panel user-panel-menu">
+	                                    <!--Menu list item-->
+									      <div class="nav-collapse">
+									        <ul class="nav">
+									                <li class="dropdown user-panel-menu-objetivos" id="objetivos-user-menu">
+									                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-dot-circle-o"></i><span class="menu-title"> Objetivos</span><b class="caret"></b></a>
+									                    <ul class="dropdown-menu">
+									                      	<li class="dropdown-submenu">
+									                          <a tabindex="-1" href="#"><i class="fa fa-arrow-circle-o-right"></i><span class="menu-title"> Visitados</span></a>
+									                          <ul class="dropdown-menu">
+									                            <li><a tabindex="-1" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
+									                            <li><a href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades necessárias</span></a></li>
+									                            <li><a href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                          </ul>
+									                        </li>
+									                      	<li class="dropdown-submenu">
+									                          <a tabindex="-1" href="#"><i class="fa fa-magic"></i> Interesses</a>
+									                          <ul class="dropdown-menu">
+									                            <li><a tabindex="-1" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
+									                            <li><a href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades necessárias</span></a></li>
+									                            <li><a href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                          </ul>
+									                        </li>
+									                    </ul>
+									                </li>
+									                <li class="dropdown" id="habilidades-user-menu">
+									                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-puzzle-piece"></i><span class="menu-title"> Habilidades</span><b class="caret"></b></a>
+									                    <ul class="dropdown-menu">
+									                      	<li class="dropdown-submenu">
+									                          <a tabindex="-1" href="#"><i class="fa fa-arrow-circle-o-right"></i><span class="menu-title"> Visitadas</span></a>
+									                          <ul class="dropdown-menu">
+									                            <li><a tabindex="-1" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
+									                            <li><a href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                          </ul>
+									                        </li>
+									                      	<li class="dropdown-submenu">
+									                          <a tabindex="-1" href="#"><i class="fa fa-magic"></i> Interesses</a>
+									                          <ul class="dropdown-menu">
+									                            <li><a tabindex="-1" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
+									                            <li><a href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                          </ul>
+									                        </li>
+									                    </ul>
+									                </li>
+									            </ul>
+									        <ul class="nav pull-right">
+									
+									        </ul>
+									      </div><!--/.nav-collapse -->
+      									</div>
+					                </div>
+							        <div class="menu col-sm-8">
+						                <!--Sparkline Line Chart-->
+						                <div class="panel panel-warning">
+											<div id="user_carreiras_theader" class="panel-body user-panel-body">
+												<div class="pad-btm col-sm-5">
+													<button id="collapseUserCarreiras" class="btn-xs btn-success hide">Collapse All</button>
+													<button id="expandUserCarreiras" class="btn-xs btn-warning">Expand All</button>
+												</div>
+												<div class="col-sm-7 text-xs-center text-right">
+													<div class="form-group">
+														<input id="searchUserCarreiras" type="text" placeholder="Search" class="form-control" autocomplete="on">
+													</div>
+												</div>
+											</div>
+											<!--===================================================-->
+											<!-- End Foo Table - Expand / Collapse Rows -->
+						                </div>
+					                </div>
+								</div>			
+							</div>		
+					        <!--===================================================-->
+					        <!--End yggmap diagram-->
 				            <!-- Yggmap-->
-			                      <div class="panel-body">
+			                <div class="panel-body">
 								<div id="cy" class= "cy"></div>			
 							</div>		
 					        <!--===================================================-->
@@ -457,7 +527,7 @@
 					                <div class="panel panel-info panel-colorful">
 										<!-- Carreiras -->
 										<!--===================================================-->
-										<h3 class="panel-title">Carreiras</h3>
+										<h3 class="panel-title">Objetivos</h3>
 										<div id="carreira_theader" class="panel-body">
 											<div class="pad-btm col-sm-5">
 												<button id="collapseCarreiras" class="btn-xs btn-success hide">Collapse</button>

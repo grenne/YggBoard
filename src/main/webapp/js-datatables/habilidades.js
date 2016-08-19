@@ -8,11 +8,11 @@
 						'<tr>' +
 							'<th data-toggle="true">Habilidades</th>' +
 							'<th>Ação</th>' +
-							'<th data-hide="all">Descrição</th>' +
-							'<th data-hide="all">Wiki</th>' +
-							'<th data-hide="all">Área</th>' +
-							'<th data-hide="all">Campo</th>' +
-							'<th data-hide="all">Categoria</th>' +
+							'<th data-hide="all"></th>' +
+							'<th data-hide="all"></th>' +
+							'<th data-hide="all"></th>' +
+							'<th data-hide="all"></th>' +
+							'<th data-hide="all"></th>' +
 						'</tr>' +
 					'</thead>' +
 					'<tbody id="habilidade_tbody">' +
@@ -34,12 +34,13 @@
         	habilidade_table_row = 
 				'<tr class="itemHabilidade">' +
 		   			'<td id="nome_' + i + '">' + element.documento.name + '</td>' +
-					'<td id="acaoHabilidade' + i + '"><button id="acaoHabilidade_' + i + '" class="btn-xs btn-info">Incluir</button></td>' +
-					'<td id="descricao_' + i + '">' + element.documento.descricao + '</td>' +
-					'<td id="wiki_' + i + '" class="text-info"><a href="' + element.documento.wiki + '" target="_blank">Wiki</a></td>' +
-					'<td id="area' + i + '">' + element.documento.area + '</td>' +
-					'<td id="campo' + i + '">' + element.documento.campo + '</td>' +
-					'<td id="categoria' + i + '">' + element.documento.categoria + '</td>' +
+					'<td id="acaoHabilidade' + i + '"><button id="acaoHabilidade_' + i + '" class="btn-xs btn-info">Incluir</button></br>' +
+					'<button id="acaoHabilidadeInteresse_' + i + '" class="btn-xs btn-info">Interesse</button></td>' +
+					'<td id="descricao_' + i + '"><span class="panel-label">Descrição: </span>' + element.documento.descricao + '</td>' +
+					'<td id="wiki_' + i + '" class="text-info"><span class="panel-label">Wiki: </span><a href="' + element.documento.wiki + '" target="_blank">Wiki</a></td>' +
+					'<td id="area' + i + '"><span class="panel-label">Área: </span>' + element.documento.area + '</td>' +
+					'<td id="campo' + i + '"><span class="panel-label">Campo: </span>' + element.documento.campo + '</td>' +
+					'<td id="categoria' + i + '"><span class="panel-label">Categoria: </span>' + element.documento.categoria + '</td>' +
 				'</tr>';
         	$( "#habilidade_tbody" ).append(habilidade_table_row);
             $('#acaoHabilidade_' + i).bind('click', function () {
@@ -48,6 +49,9 @@
 				$('.carreira').addClass('hide');
 				$('.habilidade').addClass('hide');
           });
+            $('#acaoHabilidadeInteresse_' + i).bind('click', function () {
+            	atualizaUserPerfil ("habilidadeInteresse", element.documento.idHabilidade);
+            });
         });
         
         $('.habilidades').removeClass('hide');

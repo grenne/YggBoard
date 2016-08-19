@@ -52,13 +52,16 @@
     	$( ".itemCarreira" ).remove();
         $.each(objJson, function (i, carreira) {
         	var tagsString = "";
+        	var comma = "";
         	$.each(carreira.tags, function (i, tags){
-        		tagsString = tagsString + tags + ", ";
+        		tagsString = tagsString + comma + tags;
+        		comma = ",";
         	});
         	carreira_table_row = 
 				'<tr class="itemCarreira">' +
 		   			'<td id="nome_' + i + '"><span class="panel-label"></span>' + carreira.nome + '</td>' +
-					'<td id="acaoCarreira' + i + '"><button id="acaoCarreira_' + i + '" class="btn-xs btn-info">Comparar</button></td>' +
+					'<td id="acaoCarreira' + i + '"><button id="acaoCarreira_' + i + '" class="btn-xs btn-info">Comparar</button></br>' +
+					'<button id="acaoCarreiraInteresse_' + i + '" class="btn-xs btn-info">Interesse</button></td>' +
 					'<td id="descricao_' + i + '"><span class="panel-label">Objetivo: </span>' + carreira.descricao + '</td>' +
 					'<td id="industria_' + i + '"><span class="panel-label">Industria: </span>' + carreira.industria + '</td>' +
 					'<td id="tarefas_' + i + '"<span class="panel-label">Tarefas: </span>' + carreira.tarefas + '</td>' +
@@ -78,7 +81,13 @@
             	$('.cursos').addClass('hide');
 				$('.habilidade').addClass('hide');
             	$("#labelYggmap").html("Carreira:" + carreira.nome);
-          });
+            	atualizaUserPerfil ("carreiras", carreira.nome);
+            	atualizaUserPerfil ("tags", tagsString);
+            });
+            $('#acaoCarreiraInteresse_' + i).bind('click', function () {
+            	atualizaUserPerfil ("carreiraInteresse", carreira.nome);
+            	atualizaUserPerfil ("tags", tagsString);
+            });
         });
 
         var carreira_table = $('#carreira_list');

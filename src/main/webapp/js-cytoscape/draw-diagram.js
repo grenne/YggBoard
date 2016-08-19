@@ -34,6 +34,7 @@ $(function () {
 	            	$('.habilidade').addClass('hide');
 	            	$('.habilidades').addClass('hide');
 	    			$('.cursos').addClass('hide');
+	    			$('.user-panel').addClass('hide');
 		    		localStorage.criaPerfil = false;
 		    		$("#labelYggmap").html("Seu perfil");
 	    		});
@@ -48,6 +49,7 @@ $(function () {
 	            	$('.habilidade').addClass('hide');
 	    			$('.cursos').addClass('hide');
 	    			$('.carreiras').addClass('hide');
+	    			$('.user-panel').addClass('hide');
 	    			localStorage.criaPerfil = true;
 	    		});
 	    		$( "#carregaHabilidades" ).bind( "click", function() {
@@ -57,7 +59,19 @@ $(function () {
 	    			$('.cursos').addClass('hide');
 	            	$('.habilidade').addClass('hide');
 	            	$('.habilidades').addClass('hide');
+	            	$('.user-panel').addClass('hide');
 	            	$('.carreiras').removeClass('hide');
+	            	localStorage.criaPerfil = false;
+	    		});
+	    		$( "#userPerfil" ).bind( "click", function() {
+	            	$("#labelYggmap").html("");
+	    			limpaDiagrama (cy, "blue", "blue", 0.2, "perfilCarreira");
+	    			limpaDiagrama (cy, "blue", "blue", 0.2, "perfilUsuario");
+	    			$('.cursos').addClass('hide');
+	            	$('.habilidade').addClass('hide');
+	            	$('.habilidades').addClass('hide');
+	            	$('.carreiras').removeClass('hide');
+	            	$('.user-panel').removeClass('hide');
 	            	localStorage.criaPerfil = false;
 	    		});
 /*	    		$( "#carregaHabilidades" ).bind( "click", function() {
@@ -85,11 +99,29 @@ $(function () {
 	    				cy.autolock( true );
 	    			};
 	    			drawElements (cy, objJson, actionMove, '');
-	    			$('.cursos').addClass('hide');
-	    			obterCarreiras (cy);
+*/	    			$('.cursos').addClass('hide');
+/*	    			obterCarreiras (cy);
 	            	$('.carreiras').removeClass('hide');
 	            	localStorage.criaPerfil = false;
 */	    		});
+	    		$( "#fechaUserPanel" ).bind( "click", function() {
+	/*	    			cy.destroy();
+		    			cy = createDiagram ("cy");
+		    			if (JSON.parse(localStorage.getItem("elements"))){
+		    				objJson = JSON.parse(localStorage.getItem("elements"));
+		    			};			
+		    			$( "#comparaMeuPerfil" ).bind( "click", function() {
+		    				carregaMeuPerfil (cy, objJson)
+		    			});
+		    			if (localStorage.usuario == "true"){
+		    				cy.autolock( true );
+		    			};
+		    			drawElements (cy, objJson, actionMove, '');
+	*/	    			$('.user-panel').addClass('hide');
+	/*	    			obterCarreiras (cy);
+		            	$('.carreiras').removeClass('hide');
+		            	localStorage.criaPerfil = false;
+	*/	    		});
 	    	}else{
 	    		actio_not_ok()
 	    	};
@@ -174,6 +206,7 @@ function createDiagram (name, objJson, readyFunction, par1, par2){
 				if (localStorage.criaPerfil == "true"){
 					incluiHabilidadePerfil (cy, evt.cyTarget.data('idOriginal'));
 				}else{
+					atualizaUserPerfil ("habilidades", evt.cyTarget.data('idOriginal'));
 					if (nodeZoom){
 						cy.animate(
 								{

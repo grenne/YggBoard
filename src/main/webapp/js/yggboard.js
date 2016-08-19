@@ -16,7 +16,7 @@
 	};
 	
 	// *** carrega nome usuario
-	$('#userName').html(localStorage.usuarioFirstName);
+	$('.userName').html(localStorage.usuarioFirstName);
 	// *** reseta para forcar login
 	localStorage.loginOk = "false";
 	
@@ -193,5 +193,96 @@
 			rest_atualizaHabilidade(element, semAcao, semAcao, semAcao);
 		});
 	};
-		
+			
+	function atualizaUserPerfil (tipo, elemento){
+		rest_obterUserPerfil (localStorage.usuarioEmail, atualizaUserPerfilElemento, incluiUserPerfil, tipo, elemento)
+	};
+	
+	
+	function incluiUserPerfil (tipo, elemento){
+		var objJson  = 
+				{
+				documento: 
+					{
+					usuario : localStorage.usuarioEmail,
+					habilidadesInteresse : [],
+					habilidades : [],
+					carreirasInteresse : [],
+					carreiras : [],
+					tags : []
+					}
+				};		
+		rest_incluiUserPerfil (objJson, atualizaUserPerfil, semAcao, tipo, elemento)
+	};
+
+	function atualizaUserPerfilElemento (objJson, tipo, elemento){
+		var atualizarPerfil = false;
+		if (tipo == "habilidadeInteresse"){
+			var existente = false;
+			$.each( objJson.documento.habilidadesInteresse, function( i, habilidade) {
+				if (elemento == habilidade){
+					existente = true;
+				};
+			});
+			if (!existente){
+				objJson.documento.habilidadesInteresse.push(elemento);
+				atualizarPerfil = true;
+			};
+		};
+		if (tipo == "habilidades"){
+			var existente = false;
+			$.each( objJson.documento.habilidades, function( i, habilidade) {
+				if (elemento == habilidade){
+					existente = true;
+				};
+			});
+			if (!existente){
+				objJson.documento.habilidades.push(elemento);
+				atualizarPerfil = true;
+			};
+		};
+		if (tipo == "carreiraInteresse"){
+			var existente = false;
+			$.each( objJson.documento.carreirasInteresse, function( i, carreira) {
+				if (elemento == carreira){
+					existente = true;
+				};
+			});
+			if (!existente){
+				objJson.documento.carreirasInteresse.push(elemento);
+				atualizarPerfil = true;
+			};
+		};
+		if (tipo == "carreiras"){
+			var existente = false;
+			$.each( objJson.documento.carreiras, function( i, carreira) {
+				if (elemento == carreira){
+					existente = true;
+				};
+			});
+			if (!existente){
+				objJson.documento.carreiras.push(elemento);
+				atualizarPerfil = true;
+			};
+		};
+		if (tipo == "tags"){
+			var tags = elemento.split(",");
+			$.each( tags, function( i, tag) {
+				var existente = false;
+				$.each( objJson.documento.tags, function( i, tagsElemento) {
+					if (tag == tagsElemento){
+						existente = true;
+					};
+				});
+				if (!existente){
+					objJson.documento.tags.push(tag);
+					atualizarPerfil = true;
+				};
+			});
+		};
+		if (atualizarPerfil){
+			rest_atualizaUserPerfil (objJson, semAcao, semAcao);
+		}
+	};
+
 	

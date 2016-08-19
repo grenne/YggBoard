@@ -83,6 +83,22 @@
     	});
     };
 
+    function rest_obterUserPerfil(usuario, action_ok, action_not_ok, var1, var2) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/obter?usuario=" + usuario,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+    	})
+    	.done(function( data ) {
+       		action_ok(data, var1, var2);
+    	})
+    	.fail(function(data) {
+    		action_not_ok(null, var1, var2)
+    	})
+    	.always(function(data) {
+    	});
+    };
+
     function rest_incluiHabilidades(objJson, action_ok, action_not_ok) {
 		$.ajax({
 			type: "POST",
@@ -147,6 +163,27 @@
        	});
     };
 
+    function rest_incluiUserPerfil(objJson, action_ok, action_not_ok) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/incluir",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson)
+		})
+	  	.done(function( data ) {
+	  	})
+        .fail(function(data) {
+        })
+       	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok ();
+        	}else{
+        		action_not_ok()
+        	};
+       	});
+    };
+
     function rest_atualizaHabilidade(objJson, action_ok, action_not_ok, afterUpdate) {
 		$.ajax({
 			type: "POST",
@@ -190,6 +227,29 @@
         		action_ok ("Student updated", afterUpdate);
         	}else{
         		action_not_ok()
+        	};
+    	});
+    };
+
+    function rest_atualizaUserPerfil(objJson, action_ok, action_not_ok, var1, var2) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/atualizar",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson),
+            async:false
+    	
+		})        	
+		.done(function( data ) {
+    	})
+    	.fail(function(data) {
+    	})
+    	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok (data, var1, var2);
+        	}else{
+        		action_not_ok(data, var1, var2)
         	};
     	});
 
