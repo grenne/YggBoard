@@ -346,7 +346,7 @@
 						                    <button id="fechaUserPanel"  class="btn"><i class="fa fa-close"></i></button>
 						                </div>
 					             	</div>
-							        <div class="menu user-panel-menu col-sm-4">
+							        <div class="menu user-panel-menu col-sm-3">
 						                <!--Sparkline Line Chart-->
 						                <div class="panel user-panel-menu">
 	                                    <!--Menu list item-->
@@ -356,19 +356,19 @@
 									                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-dot-circle-o"></i><span class="menu-title"> Objetivos</span><b class="caret"></b></a>
 									                    <ul class="dropdown-menu">
 									                      	<li class="dropdown-submenu">
-									                          <a tabindex="-1" href="#"><i class="fa fa-arrow-circle-o-right"></i><span class="menu-title"> Visitados</span></a>
+									                          <a href="#"><i class="fa fa-arrow-circle-o-right"></i><span class="menu-title"> Visitados</span></a>
 									                          <ul class="dropdown-menu">
-									                            <li><a tabindex="-1" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
-									                            <li><a href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades necessárias</span></a></li>
-									                            <li><a href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                            <li><a id="carreirasUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
+									                            <li><a id="carreirasUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades necessárias</span></a></li>
+									                            <li><a id="carreirasUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
 									                          </ul>
 									                        </li>
 									                      	<li class="dropdown-submenu">
-									                          <a tabindex="-1" href="#"><i class="fa fa-magic"></i> Interesses</a>
+									                          <a href="#"><i class="fa fa-magic"></i> Interesses</a>
 									                          <ul class="dropdown-menu">
-									                            <li><a tabindex="-1" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
-									                            <li><a href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades necessárias</span></a></li>
-									                            <li><a href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                            <li><a id="carreirasInteresseUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
+									                            <li><a id="carreirasInteresseUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades necessárias</span></a></li>
+									                            <li><a id="carreirasInteresseUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
 									                          </ul>
 									                        </li>
 									                    </ul>
@@ -377,17 +377,17 @@
 									                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-puzzle-piece"></i><span class="menu-title"> Habilidades</span><b class="caret"></b></a>
 									                    <ul class="dropdown-menu">
 									                      	<li class="dropdown-submenu">
-									                          <a tabindex="-1" href="#"><i class="fa fa-arrow-circle-o-right"></i><span class="menu-title"> Visitadas</span></a>
+									                          <a href="#"><i class="fa fa-arrow-circle-o-right"></i><span class="menu-title"> Visitadas</span></a>
 									                          <ul class="dropdown-menu">
-									                            <li><a tabindex="-1" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
-									                            <li><a href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                            <li><a id="habilidadesUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
+									                            <li><a id="habilidadesUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
 									                          </ul>
 									                        </li>
 									                      	<li class="dropdown-submenu">
-									                          <a tabindex="-1" href="#"><i class="fa fa-magic"></i> Interesses</a>
+									                          <a href="#"><i class="fa fa-magic"></i> Interesses</a>
 									                          <ul class="dropdown-menu">
-									                            <li><a tabindex="-1" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
-									                            <li><a href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                            <li><a id="habilidadesInteresseUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
+									                            <li><a id="habilidadesInteresseUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
 									                          </ul>
 									                        </li>
 									                    </ul>
@@ -399,17 +399,53 @@
 									      </div><!--/.nav-collapse -->
       									</div>
 					                </div>
-							        <div class="menu col-sm-8">
+							        <div class="menu col-sm-9 carreira-user-perfil paineis-user-perfil">
 						                <!--Sparkline Line Chart-->
 						                <div class="panel panel-warning">
-											<div id="user_carreiras_theader" class="panel-body user-panel-body">
+											<div id="carreiras_user_perfil_theader" class="panel-body ">
 												<div class="pad-btm col-sm-5">
-													<button id="collapseUserCarreiras" class="btn-xs btn-success hide">Collapse All</button>
-													<button id="expandUserCarreiras" class="btn-xs btn-warning">Expand All</button>
+													<button id="collapseCarreirasUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
+													<button id="expandCarreirasUserPerfil" class="btn-xs btn-warning">Expand All</button>
 												</div>
 												<div class="col-sm-7 text-xs-center text-right">
 													<div class="form-group">
-														<input id="searchUserCarreiras" type="text" placeholder="Search" class="form-control" autocomplete="on">
+														<input id="searchCarreirasUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
+													</div>
+												</div>
+											</div>
+											<!--===================================================-->
+											<!-- End Foo Table - Expand / Collapse Rows -->
+						                </div>
+					                </div>
+							        <div class="menu col-sm-9 habilidade-user-perfil paineis-user-perfil hide">
+						                <!--Sparkline Line Chart-->
+						                <div class="panel panel-warning">
+											<div id="habilidades_user_perfil_theader" class="panel-body ">
+												<div class="pad-btm col-sm-5">
+													<button id="collapseHabilidadesUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
+													<button id="expandHabilidadesUserPerfil" class="btn-xs btn-warning">Expand All</button>
+												</div>
+												<div class="col-sm-7 text-xs-center text-right">
+													<div class="form-group">
+														<input id="searchHabilidadesUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
+													</div>
+												</div>
+											</div>
+											<!--===================================================-->
+											<!-- End Foo Table - Expand / Collapse Rows -->
+						                </div>
+					                </div>
+							        <div class="menu col-sm-9 curso-user-perfil paineis-user-perfil hide">
+						                <!--Sparkline Line Chart-->
+						                <div class="panel panel-warning">
+											<div id="cursos_user_perfil_theader" class="panel-body ">
+												<div class="pad-btm col-sm-5">
+													<button id="collapseCursosUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
+													<button id="expandCursosUserPerfil" class="btn-xs btn-warning">Expand All</button>
+												</div>
+												<div class="col-sm-7 text-xs-center text-right">
+													<div class="form-group">
+														<input id="searchCursosUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
 													</div>
 												</div>
 											</div>
@@ -431,7 +467,6 @@
 					    <div class="col-lg-3">
 					        <div class="row cursos hide">
 					            <div class="col-sm-6 col-lg-12">
-					
 					                <!--Sparkline Line Chart-->
 					                <div class="panel panel-warning panel-colorful">
 										<!-- Cursos -->
@@ -788,6 +823,9 @@
 	<script src="js-datatables/carreiras.js"></script>
 	<script src="js-datatables/cursos.js"></script>
 	<script src="js-datatables/habilidades.js"></script>
+	<script src="js-datatables/carreiras-user-perfil.js"></script>
+	<script src="js-datatables/habilidades-user-perfil.js"></script>
+	<script src="js-datatables/cursos-user-perfil.js"></script>
 
     <!--Yggboard-->
     <script src="js/main.js"></script>

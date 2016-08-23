@@ -41,14 +41,15 @@ import com.mongodb.MongoException;
 
 public class Rest_Curso {
 
+	@SuppressWarnings("unchecked")
 	@Path("/obter")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONObject ObterEmail(@QueryParam("mail") String mail) throws UnknownHostException, MongoException {
+	public JSONObject ObterCurso(@QueryParam("mail") String habilidade) throws UnknownHostException, MongoException {
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
 		DBCollection collection = db.getCollection("cursos");
-		BasicDBObject searchQuery = new BasicDBObject("documento.mail", mail);
+		BasicDBObject searchQuery = new BasicDBObject("documento.habilidade", habilidade);
 		DBObject cursor = collection.findOne(searchQuery);
 		JSONObject documento = new JSONObject();
 		BasicDBObject obj = (BasicDBObject) cursor.get("documento");
@@ -56,6 +57,7 @@ public class Rest_Curso {
 		mongo.close();
 		return documento;
 	};
+	@SuppressWarnings("unchecked")
 	@Path("/incluir")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -77,25 +79,22 @@ public class Rest_Curso {
 			mongo.close();
 			return Response.status(200).entity(documento).build();
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			System.out.println("UnknownHostException");
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			System.out.println("MongoException");
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
 			System.out.println("JsonMappingException");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			System.out.println("IOException");
 			e.printStackTrace();
 		}
 		return Response.status(500).build();
 		
 	};
+	@SuppressWarnings("unchecked")
 	@Path("/atualizar")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -113,6 +112,7 @@ public class Rest_Curso {
 		documento.putAll(mapJson);
 		BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(documento));
 		BasicDBObject searchQuery = new BasicDBObject("documento.mail", name);
+		@SuppressWarnings("unused")
 		DBObject cursor = collection.findAndModify(searchQuery,
                 null,
                 null,
@@ -124,10 +124,11 @@ public class Rest_Curso {
 		return Response.status(200).build();
 	};
 	
+	@SuppressWarnings("unchecked")
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONArray ObterCursoss(@QueryParam("habilidade") String habilidade) {
+	public JSONArray ObterCursos(@QueryParam("habilidade") String habilidade) {
 
 		Mongo mongo;
 		try {
@@ -147,23 +148,18 @@ public class Rest_Curso {
 				BasicDBObject objCurso = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
 				String documento = objCurso.getString("documento");
 				try {
-					JSONObject jsonObject; 
-					jsonObject = (JSONObject) parser.parse(documento);
 					JSONObject jsonDocumento = new JSONObject();
 				    jsonDocumento.put("documento", (JSONObject) parser.parse(documento));
 					documentos.add(jsonDocumento);
 				} catch (ParseException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			};
 			mongo.close();
 			return documentos;
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

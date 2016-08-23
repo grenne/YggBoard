@@ -73,6 +73,7 @@ $(function () {
 	            	$('.carreiras').removeClass('hide');
 	            	$('.user-panel').removeClass('hide');
 	            	localStorage.criaPerfil = false;
+	            	obterCarreirasUserPerfil ("carreiras")
 	    		});
 /*	    		$( "#carregaHabilidades" ).bind( "click", function() {
 	    			cy.destroy();

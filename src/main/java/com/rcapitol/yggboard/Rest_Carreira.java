@@ -41,14 +41,15 @@ import com.mongodb.MongoException;
 
 public class Rest_Carreira {
 
+	@SuppressWarnings("unchecked")
 	@Path("/obter")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONObject Obter(@QueryParam("mail") String mail) throws UnknownHostException, MongoException {
+	public JSONObject ObterCarreira(@QueryParam("carreira") String carreira) throws UnknownHostException, MongoException {
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
 		DBCollection collection = db.getCollection("carreiras");
-		BasicDBObject searchQuery = new BasicDBObject("documento.mail", mail);
+		BasicDBObject searchQuery = new BasicDBObject("documento.mail", carreira);
 		DBObject cursor = collection.findOne(searchQuery);
 		JSONObject documento = new JSONObject();
 		BasicDBObject obj = (BasicDBObject) cursor.get("documento");

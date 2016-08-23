@@ -30,6 +30,7 @@ public class UserPerfil {
 	public static final class Documento {
 
 		public String usuario;
+		public String elementos[];
 		public String habilidadesInteresse[];
 		public String habilidades[];
 		public String carreirasInteresse[];
@@ -44,13 +45,15 @@ public class UserPerfil {
 		@JsonCreator
 		public Documento(
 						String usuario,
+						String [] elementos,
 						String [] habilidadesInteresse,
 						String [] habilidades,
 						String [] carreirasInteresse,
 						String [] carreiras,
 						String [] tags
 						) {
-						this.usuario = usuario;  
+						this.usuario = usuario;
+						this.elementos = elementos;
 						this.habilidadesInteresse = habilidadesInteresse; 
 						this.habilidades = habilidades; 
 						this.carreirasInteresse = carreirasInteresse; 

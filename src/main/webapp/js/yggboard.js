@@ -185,6 +185,58 @@
 		};
 	});
 	
+	// ** ações do menu do user perfil
+	$( "#carreirasUserPerfilVisitadas" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.carreira-user-perfil').removeClass("hide");
+		obterCarreirasUserPerfil ("carreiras")
+	});
+	$( "#carreirasInteresseUserPerfilVisitadas" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.carreira-user-perfil').removeClass("hide");
+		obterCarreirasUserPerfil ("carreiras-interesse")
+	});
+	$( "#carreirasUserPerfilHabilidades" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.habilidade-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("habilidades-necessarias-carreiras", false)
+	});
+	$( "#carreirasInteresseUserPerfilHabilidades" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.habilidade-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("habilidades-interesse-carreiras", false)
+	});
+	$( "#carreirasUserPerfilCursos" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.curso-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("cursos-necessarias-carreiras", true)
+	});
+	$( "#carreirasInteresseUserPerfilCursos" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.curso-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("cursos-interesse-carreiras", true)
+	});
+	$( "#habilidadesUserPerfilVisitadas" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.habilidade-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("habilidades", false)
+	});
+	$( "#habilidadesInteresseUserPerfilVisitadas" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.habilidade-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("habilidades-interesse", false)
+	});
+	$( "#habilidadesUserPerfilCursos" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.curso-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("cursos-necessarias-habilidades", true)
+	});
+	$( "#habilidadesInteresseUserPerfilCursos" ).bind( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.curso-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("cursos-interesse-habilidades", true)
+	});
+	
 	function gravaDiagrama (){
 		
 		var objJson = JSON.parse(localStorage.getItem("elements"));
@@ -205,6 +257,7 @@
 				documento: 
 					{
 					usuario : localStorage.usuarioEmail,
+					elementos : [],
 					habilidadesInteresse : [],
 					habilidades : [],
 					carreirasInteresse : [],
