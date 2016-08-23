@@ -83,7 +83,7 @@
     	});
     };
 
-    function rest_obterUserPerfil(usuario, action_ok, action_not_ok, var1, carreira) {
+    function rest_obterUserPerfil(usuario, action_ok, action_not_ok, var1, var2) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/obter?usuario=" + usuario,
             contentType: "application/json; charset=utf-8",

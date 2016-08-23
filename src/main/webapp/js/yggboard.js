@@ -20,6 +20,9 @@
 	// *** reseta para forcar login
 	localStorage.loginOk = "false";
 	
+	// **** carrega perfil
+	rest_obterUserPerfil(localStorage.usuarioEmail, carregaPerfil, incluiUserPerfil, "elementos", "")
+	
 	var largura = 13;
 	if ($(window).width() > 1185){
 		largura = 9.8;
@@ -250,6 +253,9 @@
 		rest_obterUserPerfil (localStorage.usuarioEmail, atualizaUserPerfilElemento, incluiUserPerfil, tipo, elemento)
 	};
 	
+	function carregaPerfil (objJson){
+		localStorage.setItem("meuPerfil", JSON.stringify(objJson));
+	};	
 	
 	function incluiUserPerfil (tipo, elemento){
 		var objJson  = 
@@ -265,7 +271,7 @@
 					tags : []
 					}
 				};		
-		rest_incluiUserPerfil (objJson, atualizaUserPerfil, semAcao, tipo, elemento)
+		rest_incluiUserPerfil (objJson, atualizaUserPerfil, semAcao, tipo, elemento);
 	};
 
 	function atualizaUserPerfilElemento (objJson, tipo, elemento){
@@ -334,6 +340,7 @@
 			});
 		};
 		if (atualizarPerfil){
+			localStorage.setItem("meuPerfil", JSON.stringify(objJson));
 			rest_atualizaUserPerfil (objJson, semAcao, semAcao);
 		}
 	};

@@ -6,16 +6,22 @@ function addMeuPerfil (cy){
 	if (JSON.parse(localStorage.getItem("meuPerfil"))){
 		var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
 	}else{
-		var objJson  = JSON.parse(
-				'{' +
-				'"documento": {' +
-					'"usuario" : "",' +
-					'"elements" : ' +
-				    	'[' +
-				        ']' +
-		'}}');
+		var objJson  = 
+			{
+			documento: 
+				{
+				usuario : localStorage.usuarioEmail,
+				elementos : [],
+				habilidadesInteresse : [],
+				habilidades : [],
+				carreirasInteresse : [],
+				carreiras : [],
+				tags : []
+				}
+			};		
 	};
-	$.each( objJson.documento.elements, function( i, element ) {
+
+	$.each( objJson.documento.elementos, function( i, element ) {
 		var id = compoeId (element);
 		var selector = '#' + id
 		var node = cy.$(selector);
@@ -31,6 +37,8 @@ function addMeuPerfil (cy){
 	});
 	
 	localStorage.setItem("meuPerfil", JSON.stringify(objJson));
+	rest_atualizaUserPerfil (objJson, semAcao, semAcao);
+
 };
 
 function carregaMeuPerfil (cy, objJson){
@@ -47,7 +55,7 @@ function carregaMeuPerfil (cy, objJson){
 				        ']' +
 		'}}');
 	};
-	$.each( objJson.documento.elements, function( i, element ) {
+	$.each( objJson.documento.elementos, function( i, element ) {
 		var id = compoeId (element);
 		var selector = '#' + id
 		var node = cy.$(selector);
@@ -62,6 +70,8 @@ function carregaMeuPerfil (cy, objJson){
 	});
 	
 	localStorage.setItem("meuPerfil", JSON.stringify(objJson));
+	rest_atualizaUserPerfil (objJson, semAcao, semAcao);
+
 };
 
 
@@ -98,22 +108,28 @@ function incluirItemMeuPerfil (idOriginal){
 	
 	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
 	
-	objJson.documento.elements.push(idOriginal);
+	objJson.documento.elementos.push(idOriginal);
 	
 	localStorage.setItem("meuPerfil", JSON.stringify(objJson));
+	
+	rest_atualizaUserPerfil (objJson, semAcao, semAcao);
+
 };
 
 function removerItemMeuPerfil (idOriginal){
 	
 	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
 	
-	$.each( objJson.documento.elements, function( i, element ) {
+	$.each( objJson.documento.elementos, function( i, element ) {
 		if (idOriginal == element){
-			objJson.documento.elements = objJson.documento.elements.slice (i);
+			objJson.documento.elementos = objJson.documento.elementos.slice (i);
 			return;
 		};
 	});
 	
 	
 	localStorage.setItem("meuPerfil", JSON.stringify(objJson));
+	
+	rest_atualizaUserPerfil (objJson, semAcao, semAcao);
+
 };
