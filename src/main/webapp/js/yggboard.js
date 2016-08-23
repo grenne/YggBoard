@@ -270,7 +270,8 @@
 					carreiras : [],
 					tags : []
 					}
-				};		
+				};	
+		localStorage.setItem("meuPerfil", JSON.stringify(objJson));
 		rest_incluiUserPerfil (objJson, atualizaUserPerfil, semAcao, tipo, elemento);
 	};
 
