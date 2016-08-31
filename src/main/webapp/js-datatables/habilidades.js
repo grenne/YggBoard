@@ -34,8 +34,10 @@
         	habilidade_table_row = 
 				'<tr class="itemHabilidade">' +
 		   			'<td id="nome_' + i + '">' + element.documento.name + '</td>' +
-					'<td id="acaoHabilidade' + i + '"><button id="acaoHabilidade_' + i + '" class="btn-xs btn-info">Incluir</button></br>' +
-					'<button id="acaoHabilidadeInteresse_' + i + '" class="btn-xs btn-info">Interesse</button></td>' +
+					'<td id="acaoHabilidade' + i + '">' +
+						'<button id="acaoHabilidade_' + i + '" class="btn-xs btn-info">Incluir</button></br>' +
+						'<button id="acaoHabilidadeInteresse_' + i + '" class="btn-xs btn-info">Interesse</button>' + 
+					'</td>' +
 					'<td id="descricao_' + i + '"><span class="panel-label">Descrição: </span>' + element.documento.descricao + '</td>' +
 					'<td id="wiki_' + i + '" class="text-info"><span class="panel-label">Wiki: </span><a href="' + element.documento.wiki + '" target="_blank">Wiki</a></td>' +
 					'<td id="area' + i + '"><span class="panel-label">Área: </span>' + element.documento.area + '</td>' +
@@ -43,13 +45,15 @@
 					'<td id="categoria' + i + '"><span class="panel-label">Categoria: </span>' + element.documento.categoria + '</td>' +
 				'</tr>';
         	$( "#habilidade_tbody" ).append(habilidade_table_row);
-            $('#acaoHabilidade_' + i).bind('click', function () {
+        	$('#acaoHabilidade_' + i).on('click');
+            $('#acaoHabilidade_' + i).on('click', function () {
             	incluiHabilidadePerfil (cy, element.documento.idHabilidade);
 				$('.cursos').addClass('hide');
 				$('.carreira').addClass('hide');
 				$('.habilidade').addClass('hide');
-          });
-            $('#acaoHabilidadeInteresse_' + i).bind('click', function () {
+            });
+            $('#acaoHabilidadeInteresse_' + i).off('click');
+            $('#acaoHabilidadeInteresse_' + i).on('click', function () {
             	atualizaUserPerfil ("habilidadeInteresse", element.documento.idHabilidade);
             });
         });

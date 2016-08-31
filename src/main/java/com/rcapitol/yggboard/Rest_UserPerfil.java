@@ -104,6 +104,12 @@ public class Rest_UserPerfil {
 				    jsonDocumento.put("necessarios", objCarreiras.get("necessarios")); 
 				    jsonDocumento.put("recomentados", objCarreiras.get("recomentados"));
 				    jsonDocumento.put("tags", objCarreiras.get("tags"));
+					ArrayList arrayListElementos = new ArrayList(); 
+					arrayListElementos = (ArrayList) jsonObject.get("elementos");
+			    	Object arrayElementos[] = arrayListElementos.toArray(); 
+				    JSONObject jsonQtdeHabilidades = obterTotalHabilidades(objCarreiras.get("nome"), arrayElementos);
+				    jsonDocumento.put("totalHabilidades", jsonQtdeHabilidades.get("totalHabilidades"));
+				    jsonDocumento.put("totalPossuiHabilidades", jsonQtdeHabilidades.get("totalPossuiHabilidades"));
 					documentos.add(jsonDocumento);
 					mongoCarreiras.close();
 					++w;
@@ -137,6 +143,25 @@ public class Rest_UserPerfil {
 					++w;
 				};
 			};
+			if (item.equals("habilidades-elementos")){
+					ArrayList arrayList = new ArrayList(); 
+					arrayList = (ArrayList) jsonObject.get("elementos");
+			    	Object array[] = arrayList.toArray(); 
+					int w = 0;
+					while (w < array.length) {
+						Mongo mongoHabilidades = new Mongo();
+						DB dbSchool = (DB) mongoHabilidades.getDB("documento");
+						DBCollection collectionHabilidades = dbSchool.getCollection("habilidades");
+						BasicDBObject searchQueryHabilidades = new BasicDBObject("documento.idHabilidade", array[w]);
+						DBObject cursorHabilidades = collectionHabilidades.findOne(searchQueryHabilidades);
+						BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
+						JSONObject jsonDocumento = new JSONObject();
+					    jsonDocumento.put("documento", objHabilidades);
+						documentos.add(jsonDocumento);
+						mongoHabilidades.close();
+						++w;
+					};
+				};
 			if (item.equals("habilidades-necessarias-carreiras") | item.equals("habilidades-interesse-carreiras") |
 					item.equals("cursos-necessarias-carreiras") | item.equals("cursos-interesse-carreiras") |
 					item.equals("habilidades-necessarias-carreira")){
@@ -338,6 +363,44 @@ public class Rest_UserPerfil {
 		}
 		return null;
 	}
+	@SuppressWarnings("unchecked")
+	private JSONObject obterTotalHabilidades (Object carreira, Object[] arrayElementos) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("carreiras");
+			BasicDBObject searchQuery = new BasicDBObject("documento.nome", carreira);
+			DBObject cursor = collection.findOne(searchQuery);
+			BasicDBObject objCarreira = (BasicDBObject) cursor.get("documento");
+			ArrayList<String> arrayListHabilidades = new ArrayList<String>(); 
+			arrayListHabilidades = (ArrayList<String>) objCarreira.get("necessarios");
+	    	Object arrayHabilidades[] = arrayListHabilidades.toArray();
+	    	int totalHabilidades = 0;
+	    	int totalPossuiHabilidades = 0;
+			int w = 0;
+			while (w < arrayHabilidades.length) {
+				int z = 0;
+				while (z < arrayElementos.length) {
+					if (arrayHabilidades[w].equals(arrayElementos[z])){
+						++totalPossuiHabilidades;
+					}
+					++z;
+				};
+				++w;
+				++totalHabilidades;
+			};
+			JSONObject jsonQtdeHabilidades = new JSONObject();
+			jsonQtdeHabilidades.put("totalHabilidades", totalHabilidades);
+			jsonQtdeHabilidades.put("totalPossuiHabilidades", totalPossuiHabilidades);
+			return jsonQtdeHabilidades;
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (MongoException e) {
+			e.printStackTrace();
+		}
+		return null;
+	};
 	@SuppressWarnings("unchecked")
 	private ArrayList<String> obterCursosNecessarios (Object habilidade, JSONArray documentos) {
 

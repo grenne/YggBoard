@@ -67,17 +67,17 @@
     	});
     };
 
-    function rest_obterCursosHabilidade(habilidade, action_ok, action_not_ok, var1, var2) {
+    function rest_obterCursosHabilidade(habilidade, action_ok, action_not_ok, var1, var2, var3) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/cursos/lista?habilidade=" + habilidade,
             contentType: "application/json; charset=utf-8",
             dataType: 'json'
     	})
     	.done(function( data ) {
-       		action_ok(data, var1, var2);
+       		action_ok(data, var1, var2, var3);
     	})
     	.fail(function(data) {
-    		action_not_ok(null, var1, var2)
+    		action_not_ok(null, var1, var2, var3)
     	})
     	.always(function(data) {
     	});
@@ -99,17 +99,17 @@
     	});
     };
 
-    function rest_obterUserPerfilItens(item, action_ok, action_not_ok, var1, carreira) {
+    function rest_obterUserPerfilItens(item, action_ok, action_not_ok, var1, var2, var3) {
     	$.ajax({
-            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/obter/itens?usuario=" + localStorage.usuarioEmail + "&item=" + item  + "&carreira=" + carreira,
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/obter/itens?usuario=" + localStorage.usuarioEmail + "&item=" + item  + "&carreira=" + var2,
             contentType: "application/json; charset=utf-8",
             dataType: 'json'
     	})
     	.done(function( data ) {
-       		action_ok(data, var1, carreira);
+       		action_ok(data, var1, var2, var3);
     	})
     	.fail(function(data) {
-    		action_not_ok(null, var1, carreira)
+    		action_not_ok(null, var1, var2, var3)
     	})
     	.always(function(data) {
     	});

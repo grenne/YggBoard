@@ -188,58 +188,52 @@
 		};
 	});
 	
-	// ** ações do menu do user perfil
-	$( "#carreirasUserPerfilVisitadas" ).bind( "click", function() {
+    // ** ações do menu do user perfil tab interesses
+	$( "#interesseUserPerfil" ).on( "click", function() {
 		$('.paineis-user-perfil').addClass("hide");
 		$('.carreira-user-perfil').removeClass("hide");
-		obterCarreirasUserPerfil ("carreiras")
+		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_theader");
 	});
-	$( "#carreirasInteresseUserPerfilVisitadas" ).bind( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.carreira-user-perfil').removeClass("hide");
-		obterCarreirasUserPerfil ("carreiras-interesse")
-	});
-	$( "#carreirasUserPerfilHabilidades" ).bind( "click", function() {
+	$( "#interesseUserPerfilHabilidades" ).on( "click", function() {
 		$('.paineis-user-perfil').addClass("hide");
 		$('.habilidade-user-perfil').removeClass("hide");
-		obterHabilidadesUserPerfil ("habilidades-necessarias-carreiras", false)
+		obterHabilidadesUserPerfil ("habilidades-interesse", false, "habilidades_user_perfil_theader")
 	});
-	$( "#carreirasInteresseUserPerfilHabilidades" ).bind( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.habilidade-user-perfil').removeClass("hide");
-		obterHabilidadesUserPerfil ("habilidades-interesse-carreiras", false)
-	});
-	$( "#carreirasUserPerfilCursos" ).bind( "click", function() {
+	$( "#interesseUserPerfilCursos" ).on( "click", function() {
 		$('.paineis-user-perfil').addClass("hide");
 		$('.curso-user-perfil').removeClass("hide");
-		obterHabilidadesUserPerfil ("cursos-necessarias-carreiras", true)
-	});
-	$( "#carreirasInteresseUserPerfilCursos" ).bind( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.curso-user-perfil').removeClass("hide");
-		obterHabilidadesUserPerfil ("cursos-interesse-carreiras", true)
-	});
-	$( "#habilidadesUserPerfilVisitadas" ).bind( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.habilidade-user-perfil').removeClass("hide");
-		obterHabilidadesUserPerfil ("habilidades", false)
-	});
-	$( "#habilidadesInteresseUserPerfilVisitadas" ).bind( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.habilidade-user-perfil').removeClass("hide");
-		obterHabilidadesUserPerfil ("habilidades-interesse", false)
-	});
-	$( "#habilidadesUserPerfilCursos" ).bind( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.curso-user-perfil').removeClass("hide");
-		obterHabilidadesUserPerfil ("cursos-necessarias-habilidades", true)
-	});
-	$( "#habilidadesInteresseUserPerfilCursos" ).bind( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.curso-user-perfil').removeClass("hide");
-		obterHabilidadesUserPerfil ("cursos-interesse-habilidades", true)
+		obterHabilidadesUserPerfil ("cursos-interesse-habilidades", true, "cursos_user_perfil_theader")
 	});
 	
+    // ** ações do menu do user perfil tab conquistas
+	$( "#conquistasUserPerfil" ).on( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.carreira-user-perfil').removeClass("hide");
+		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_conquista_theader");
+	});
+	$( "#conquistasUserPerfilHabilidades" ).on( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.habilidade-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("habilidades-elementos", false, "habilidades_user_perfil_conquista_theader")
+	});
+//	$( "#conquistasUserPerfilCursos" ).on( "click", function() {
+//		$('.paineis-user-perfil').addClass("hide");
+//		$('.curso-user-perfil').removeClass("hide");
+//		obterHabilidadesUserPerfil ("", true, "cursos_user_perfil_conquista_theader")
+//	});
+
+	// ** ações da troca de tabs
+//	$( "#tab_conquistas" ).on( "click", function() {
+//		$('.paineis-user-perfil').addClass("hide");
+//		$('.carreira-user-perfil').removeClass("hide");
+//		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_conquista_theader");
+//	});
+//	$( "#tab_interesses" ).on( "click", function() {
+//		$('.paineis-user-perfil').addClass("hide");
+//		$('.carreira-user-perfil').removeClass("hide");
+//		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_theader");
+//	});
+
 	function gravaDiagrama (){
 		
 		var objJson = JSON.parse(localStorage.getItem("elements"));

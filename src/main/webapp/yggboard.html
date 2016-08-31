@@ -316,7 +316,7 @@
 					                <div class="panel-control">
 					                    <button id="userPerfil" data-toggle="tooltip"  data-original-title="Perfil do Usuário" class="btn"><i class="fa fa-photo"></i></button>
 					                    <button id="comparaMeuPerfil"  class="btn" data-toggle="tooltip" data-original-title="Compara com seu perfil"><i class="fa fa-user"></i></button>
-					                    <button id="criarMeuPerfil"  class="btn" data-toggle="tooltip" data-original-title="Criar seu perfil"><i class="fa fa fa-gears"></i></button>
+					                    <button id="criarMeuPerfil"  class="btn hide" data-toggle="tooltip" data-original-title="Criar seu perfil"><i class="fa fa fa-gears"></i></button>
 					                    <button id="carregaHabilidades"  class="btn" data-toggle="tooltip" data-original-title="Mostra habilidades"><i class="fa fa-graduation-cap"></i></button>
 					                    <div class="btn-group tools hide">
 					                        <button class="dropdown-toggle btn" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-gear"></i></button>
@@ -337,248 +337,182 @@
 					                </h3>
 					            </div>
 					        </div>
-					<div id="user-panel" class="row user-panel demo-nifty-panel hide">
-					    <div class="col-lg-12">
-					
-					
-					        <!--Panel with Tabs-->
-					        <!--===================================================-->
-					        <div class="panel panel-primary">
-					
-					            <!--Panel heading-->
-					            <div class="panel-heading">
-					                <div class="panel-control">
-					
-					                    <!--Nav tabs-->
-					                    <ul class="nav nav-tabs">
-					                        <li class="active"><a data-toggle="tab" href="#demo-tabs-box-1">Interesses</a></li>
-					                        <li><a data-toggle="tab" href="#demo-tabs-box-2">Conquistas</a></li>
-					                    </ul>
-					
-					                </div>
-					                <h3 class="panel-title userName col-sm-8">
-					                </h3>
-				                    <button id="fechaUserPanel"  class="btn"><i class="fa fa-close"></i></button>
-					            </div>
-					
-					            <!--Panel body-->
-					            <div class="panel-body">
-					
-					                <!--Tabs content-->
-					                <div class="tab-content">
-					                    <div id="demo-tabs-box-1" class="tab-pane fade in active">
-									        <div class="menu user-panel-menu col-sm-3">
-								                <!--Sparkline Line Chart-->
-								                <div class="panel user-panel-menu">
-			                                    <!--Menu list item-->
-											      <div class="nav-collapse">
-											        <ul class="nav">
-							                            <li><a id="carreirasUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Objetivos</span></a></li>
-							                            <li><a id="carreirasUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades</span></a></li>
-							                            <li><a id="carreirasUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
-							                            <li><a id="carreirasUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Badges</span></a></li>
-											        <ul class="nav pull-right">
-											      </div><!--/.nav-collapse -->
-		      									</div>
+							<div id="user-panel" class="row user-panel demo-nifty-panel hide">
+							    <div class="col-lg-12">
+							
+							
+							        <!--Panel with Tabs-->
+							        <!--===================================================-->
+							        <div class="panel panel-primary">
+							
+							            <!--Panel heading-->
+							            <div class="panel-heading">
+							                <div class="panel-control">
+							
+							                    <!--Nav tabs-->
+							                    <ul class="nav nav-tabs">
+							                        <li class="active"><a id="tab_interesses" data-toggle="tab" href="#demo-tabs-box-1">Interesses</a></li>
+							                        <li><a id="tab_conquistas" data-toggle="tab" href="#demo-tabs-box-2">Conquistas</a></li>
+							                    </ul>
+							
 							                </div>
-									        <div class="col-sm-9 carreira-user-perfil paineis-user-perfil">
-								                <!--Sparkline Line Chart-->
-								                <div class="panel panel-warning">
-													<div id="carreiras_user_perfil_theader" class="panel-body ">
-														<div class="pad-btm col-sm-5">
-															<button id="collapseCarreirasUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
-															<button id="expandCarreirasUserPerfil" class="btn-xs btn-warning">Expand All</button>
-														</div>
-														<div class="col-sm-7 text-xs-center text-right">
-															<div class="form-group">
-																<input id="searchCarreirasUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
-															</div>
-														</div>
-													</div>
-													<!--===================================================-->
-													<!-- End Foo Table - Expand / Collapse Rows -->
-								                </div>
-							                </div>
-									        <div class="menu col-sm-9 habilidade-user-perfil paineis-user-perfil hide">
-								                <!--Sparkline Line Chart-->
-								                <div class="panel panel-warning">
-													<div id="habilidades_user_perfil_theader" class="panel-body ">
-														<div class="pad-btm col-sm-5">
-															<button id="collapseHabilidadesUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
-															<button id="expandHabilidadesUserPerfil" class="btn-xs btn-warning">Expand All</button>
-														</div>
-														<div class="col-sm-7 text-xs-center text-right">
-															<div class="form-group">
-																<input id="searchHabilidadesUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
-															</div>
-														</div>
-													</div>
-													<!--===================================================-->
-													<!-- End Foo Table - Expand / Collapse Rows -->
-								                </div>
-							                </div>
-									        <div class="menu col-sm-9 curso-user-perfil paineis-user-perfil hide">
-								                <!--Sparkline Line Chart-->
-								                <div class="panel panel-warning">
-													<div id="cursos_user_perfil_theader" class="panel-body ">
-														<div class="pad-btm col-sm-5">
-															<button id="collapseCursosUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
-															<button id="expandCursosUserPerfil" class="btn-xs btn-warning">Expand All</button>
-														</div>
-														<div class="col-sm-7 text-xs-center text-right">
-															<div class="form-group">
-																<input id="searchCursosUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
-															</div>
-														</div>
-													</div>
-													<!--===================================================-->
-													<!-- End Foo Table - Expand / Collapse Rows -->
-								                </div>
-							                </div>
-					                    </div>
-					                    <div id="demo-tabs-box-2" class="tab-pane fade">
-									        <div class="menu user-panel-menu col-sm-3">
-								                <!--Sparkline Line Chart-->
-								                <div class="panel user-panel-menu">
-			                                    <!--Menu list item-->
-											      <div class="nav-collapse">
-											        <ul class="nav">
-							                            <li><a id="carreirasUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Objetivos</span></a></li>
-							                            <li><a id="carreirasUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades</span></a></li>
-							                            <li><a id="carreirasUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
-							                            <li><a id="carreirasUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Badges</span></a></li>
-											        <ul class="nav pull-right">
-											      </div><!--/.nav-collapse -->
-		      									</div>
-							                </div>
-					                    </div>
-					                </div>
-					            </div>
-					        </div>
-					        <!--===================================================-->
-					        <!--End of panel with tabs-->
-					
-					
-					    </div>
-					</div>
-				            <!-- user-->
-			                <div id="user-panelII" class="panel-body panel-user user-panel panel-colorful hide">
-								<div class= "user-panel">
-					                <div class="panel panel-user panel-colorful">
-										<div class="pad-btm col-sm-12">
-											<h3 class="panel-title col-sm-11 userName"></h3>
+							                <h3 class="panel-title userName col-sm-8">
+							                </h3>
 						                    <button id="fechaUserPanel"  class="btn"><i class="fa fa-close"></i></button>
-						                </div>
-					             	</div>
-							        <div class="menu user-panel-menu col-sm-3">
-						                <!--Sparkline Line Chart-->
-						                <div class="panel user-panel-menu">
-	                                    <!--Menu list item-->
-									      <div class="nav-collapse">
-									        <ul class="nav">
-									                <li class="dropdown user-panel-menu-objetivos" id="objetivos-user-menu">
-									                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-dot-circle-o"></i><span class="menu-title"> Objetivos</span><b class="caret"></b></a>
-									                    <ul class="dropdown-menu">
-									                      	<li class="dropdown-submenu">
-									                          <a href="#"><i class="fa fa-arrow-circle-o-right"></i><span class="menu-title"> Visitados</span></a>
-									                          <ul class="dropdown-menu">
-									                            <li><a id="carreirasUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
-									                            <li><a id="carreirasUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades necessárias</span></a></li>
-									                            <li><a id="carreirasUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
-									                          </ul>
-									                        </li>
-									                      	<li class="dropdown-submenu">
-									                          <a href="#"><i class="fa fa-magic"></i> Interesses</a>
-									                          <ul class="dropdown-menu">
-									                            <li><a id="carreirasInteresseUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
-									                            <li><a id="carreirasInteresseUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades necessárias</span></a></li>
-									                            <li><a id="carreirasInteresseUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
-									                          </ul>
-									                        </li>
-									                    </ul>
-									                </li>
-									                <li class="dropdown" id="habilidades-user-menu">
-									                    <a class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fa fa-puzzle-piece"></i><span class="menu-title"> Habilidades</span><b class="caret"></b></a>
-									                    <ul class="dropdown-menu">
-									                      	<li class="dropdown-submenu">
-									                          <a href="#"><i class="fa fa-arrow-circle-o-right"></i><span class="menu-title"> Visitadas</span></a>
-									                          <ul class="dropdown-menu">
-									                            <li><a id="habilidadesUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
-									                            <li><a id="habilidadesUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
-									                          </ul>
-									                        </li>
-									                      	<li class="dropdown-submenu">
-									                          <a href="#"><i class="fa fa-magic"></i> Interesses</a>
-									                          <ul class="dropdown-menu">
-									                            <li><a id="habilidadesInteresseUserPerfilVisitadas" href="#"><i class="fa fa-list"></i><span class="menu-title"> Lista</span></a></li>
-									                            <li><a id="habilidadesInteresseUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
-									                          </ul>
-									                        </li>
-									                    </ul>
-									                </li>
-									            </ul>
-									        <ul class="nav pull-right">
-									
-									        </ul>
-									      </div><!--/.nav-collapse -->
-      									</div>
-					                </div>
-							        <div class="col-sm-9 carreira-user-perfil paineis-user-perfil">
-						                <!--Sparkline Line Chart-->
-						                <div class="panel panel-warning">
-											<div id="carreiras_user_perfil_theader" class="panel-body ">
-												<div class="pad-btm col-sm-5">
-													<button id="collapseCarreirasUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
-													<button id="expandCarreirasUserPerfil" class="btn-xs btn-warning">Expand All</button>
-												</div>
-												<div class="col-sm-7 text-xs-center text-right">
-													<div class="form-group">
-														<input id="searchCarreirasUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
-													</div>
-												</div>
-											</div>
-											<!--===================================================-->
-											<!-- End Foo Table - Expand / Collapse Rows -->
-						                </div>
-					                </div>
-							        <div class="menu col-sm-9 habilidade-user-perfil paineis-user-perfil hide">
-						                <!--Sparkline Line Chart-->
-						                <div class="panel panel-warning">
-											<div id="habilidades_user_perfil_theader" class="panel-body ">
-												<div class="pad-btm col-sm-5">
-													<button id="collapseHabilidadesUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
-													<button id="expandHabilidadesUserPerfil" class="btn-xs btn-warning">Expand All</button>
-												</div>
-												<div class="col-sm-7 text-xs-center text-right">
-													<div class="form-group">
-														<input id="searchHabilidadesUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
-													</div>
-												</div>
-											</div>
-											<!--===================================================-->
-											<!-- End Foo Table - Expand / Collapse Rows -->
-						                </div>
-					                </div>
-							        <div class="menu col-sm-9 curso-user-perfil paineis-user-perfil hide">
-						                <!--Sparkline Line Chart-->
-						                <div class="panel panel-warning">
-											<div id="cursos_user_perfil_theader" class="panel-body ">
-												<div class="pad-btm col-sm-5">
-													<button id="collapseCursosUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
-													<button id="expandCursosUserPerfil" class="btn-xs btn-warning">Expand All</button>
-												</div>
-												<div class="col-sm-7 text-xs-center text-right">
-													<div class="form-group">
-														<input id="searchCursosUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
-													</div>
-												</div>
-											</div>
-											<!--===================================================-->
-											<!-- End Foo Table - Expand / Collapse Rows -->
-						                </div>
-					                </div>
-								</div>			
-							</div>		
+							            </div>
+							
+							            <!--Panel body-->
+							            <div class="panel-body">
+							
+							                <!--Tabs content-->
+							                <div class="tab-content">
+							                    <div id="demo-tabs-box-1" class="tab-pane fade in active">
+											        <div class="menu user-panel-menu col-sm-3">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel user-panel-menu">
+					                                    <!--Menu list item-->
+													      <div class="nav-collapse">
+													        <ul class="nav">
+									                            <li><a id="interesseUserPerfil" href="#"><i class="fa fa-list"></i><span class="menu-title"> Objetivos</span></a></li>
+									                            <li><a id="interesseUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades</span></a></li>
+									                            <li><a id="interesseUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                            <li><a id="interesseUserPerfilBadges" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Badges</span></a></li>
+													        <ul class="nav pull-right">
+													      </div><!--/.nav-collapse -->
+				      									</div>
+									                </div>
+											        <div class="col-sm-9 carreira-user-perfil paineis-user-perfil">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="carreiras_user_perfil_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseCarreirasUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandCarreirasUserPerfil" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchCarreirasUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+											        <div class="menu col-sm-9 habilidade-user-perfil paineis-user-perfil hide">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="habilidades_user_perfil_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseHabilidadesUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandHabilidadesUserPerfil" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchHabilidadesUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+											        <div class="menu col-sm-9 curso-user-perfil paineis-user-perfil hide">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="cursos_user_perfil_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseCursosUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandCursosUserPerfil" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchCursosUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+							                    </div>
+							                    <div id="demo-tabs-box-2" class="tab-pane fade">
+											        <div class="menu user-panel-menu col-sm-3">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel user-panel-menu">
+					                                    <!--Menu list item-->
+													      <div class="nav-collapse">
+													        <ul class="nav">
+									                            <li><a id="conquistasUserPerfil" href="#"><i class="fa fa-list"></i><span class="menu-title"> Objetivos</span></a></li>
+									                            <li><a id="conquistasUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades</span></a></li>
+									                            <li><a id="conquistasUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                            <li><a id="conquistasUserPerfilBadges" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Badges</span></a></li>
+													        <ul class="nav pull-right">
+													      </div><!--/.nav-collapse -->
+				      									</div>
+									                </div>
+											        <div class="col-sm-9 carreira-user-perfil paineis-user-perfil">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="carreiras_user_perfil_conquista_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseCarreirasUserPerfilConquista" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandCarreirasUserPerfilConquista" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchCarreirasUserPerfilConquista" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+											        <div class="menu col-sm-9 habilidade-user-perfil paineis-user-perfil hide">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="habilidades_user_perfil_conquista_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseHabilidadesUserPerfilConquista" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandHabilidadesUserPerfilConquista" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchHabilidadesUserPerfilConquista" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+											        <div class="menu col-sm-9 curso-user-perfil paineis-user-perfil hide">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="cursos_user_perfil_conquista_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseCursosUserPerfilConquista" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandCursosUserPerfilConquista" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchCursosUserPerfilConquista" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+							                    </div>
+							                </div>
+							            </div>
+							        </div>
+							        <!--===================================================-->
+							        <!--End of panel with tabs-->
+							    </div>
+							</div>
 					        <!--===================================================-->
 					        <!--End yggmap diagram-->
 				            <!-- Yggmap-->
@@ -674,6 +608,10 @@
 											<h3 id="habilidadeName" class="panel-title text-center"></h3>
 											<h5><em class="text-mutted text-justify col-sm-12" id="habilidadeDescricao" ></em></h5><br><br>
 											<a id="habilidadeWiki" href="" target="_blank">Wiki</a><br>
+										</div>
+										<div class="acoesHablidades col-sm-12 text-xs-center hide text-right">
+											<button id="acaoHabilidade" class="btn-xs btn-info">Incluir</button></br>
+											<button id="acaoHabilidadeInteresse" class="btn-xs btn-info">Interesse</button>
 										</div>
 										<!--===================================================-->
 					                </div>
