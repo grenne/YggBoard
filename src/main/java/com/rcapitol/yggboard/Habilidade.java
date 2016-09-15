@@ -52,6 +52,7 @@ public class Habilidade {
 		public String targetArrowShape;
 		public String source;
 		public String target;
+		public String tags[];
 
 
 		public Documento() {
@@ -82,7 +83,8 @@ public class Habilidade {
 				String targetArrowColor,
 				String targetArrowShape,
 				String source,
-				String target
+				String target,
+				String [] tags
 						) {
 						this.diagrama = diagrama;
 						this.type = type;
@@ -107,6 +109,7 @@ public class Habilidade {
 						this.targetArrowShape = targetArrowShape;
 						this.source = source;
 						this.target = target;
+						this.tags = tags;
 		}
 
 

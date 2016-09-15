@@ -18,7 +18,7 @@
 	// *** carrega nome usuario
 	$('.userName').html(localStorage.usuarioFirstName);
 	// *** reseta para forcar login
-	localStorage.loginOk = "false";
+	//localStorage.loginOk = "false";
 	
 	// **** carrega perfil
 	rest_obterUserPerfil(localStorage.usuarioEmail, carregaPerfil, incluiUserPerfil, "elementos", "")
