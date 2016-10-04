@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import javax.inject.Singleton;
@@ -41,6 +40,7 @@ import com.mongodb.MongoException;
 
 public class Rest_Habilidade {
 
+	@SuppressWarnings("unchecked")
 	@Path("/obter")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -65,14 +65,13 @@ public class Rest_Habilidade {
 			mongo.close();
 			return documento;
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			return null;
 		}
 		return null;
 	};
+	@SuppressWarnings("unchecked")
 	@Path("/incluir")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -94,25 +93,22 @@ public class Rest_Habilidade {
 			mongo.close();
 			return Response.status(200).entity(documento).build();
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			System.out.println("UnknownHostException");
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			System.out.println("MongoException");
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
 			System.out.println("JsonMappingException");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			System.out.println("IOException");
 			e.printStackTrace();
 		}
 		return Response.status(500).build();
 		
 	};
+	@SuppressWarnings({ "unchecked", "unused" })
 	@Path("/atualizar")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -141,6 +137,7 @@ public class Rest_Habilidade {
 		return Response.status(200).build();
 	};
 	
+	@SuppressWarnings("unchecked")
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -168,23 +165,40 @@ public class Rest_Habilidade {
 			while (((Iterator<DBObject>) cursor).hasNext()) {
 				JSONParser parser = new JSONParser(); 
 				BasicDBObject objHabilidade = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
-				String documento = objHabilidade.getString("documento");
-				try {
-					JSONObject jsonDocumento = new JSONObject();
-				    jsonDocumento.put("documento", (JSONObject) parser.parse(documento));
-					documentos.add(jsonDocumento);
-				} catch (ParseException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+				JSONObject jsonDocumento = new JSONObject();
+			    BasicDBObject obj = (BasicDBObject) objHabilidade.get("documento");
+			    String idHabilidade = (String) obj.get("idHabilidade");
+				Mongo mongoCurso;
+				mongoCurso = new Mongo();
+				DB dbCurso = (DB) mongoCurso.getDB("documento");
+				DBCollection collectionCurso = dbCurso.getCollection("cursos");
+				BasicDBObject setQueryCurso = new BasicDBObject();
+				setQueryCurso.put("documento.habilidades.habilidade", idHabilidade);
+				DBCursor cursorCurso = collectionCurso.find(setQueryCurso);
+				JSONArray cursosArray = new JSONArray();
+				while (((Iterator<DBObject>) cursorCurso).hasNext()) {
+					BasicDBObject objCurso = (BasicDBObject) ((Iterator<DBObject>) cursorCurso).next();
+					String documentoCurso = objCurso.getString("documento");
+					try {
+						JSONObject jsonObject = (JSONObject) parser.parse(documentoCurso);
+						JSONObject jsonCursos = new JSONObject();
+						jsonCursos.put("nome", jsonObject.get("nome"));
+						jsonCursos.put("descricao", jsonObject.get("descricao"));
+						cursosArray.add (jsonCursos);
+					} catch (ParseException e) {
+						e.printStackTrace();
+					}
+				};
+				mongoCurso.close();
+			    obj.put("cursos", cursosArray);
+			    jsonDocumento.put("documento", obj);
+				documentos.add(jsonDocumento);
 			};
 			mongo.close();
 			return documentos;
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

@@ -1,10 +1,10 @@
-@CHARSET "ISO-8859-1";
+
 
 .bg-background-yggboard{
     background-image: url("../../img/bg-img/logo-yggboard.png");
 };
 .panel-label {
-	color: #ff8000 !important;
+	color: #6D9E38 !important;
 };
 
 .dropdown-submenu{position:relative;}
@@ -41,4 +41,19 @@
   background-color: #ffffff;
   border-color: #ffffff;
   color: #ffffff;
+}
+.header-yggboard{
+	background-color: #80ff00 !important;
+}
+
+.content-container{
+	padding : 0px !important;
+}
+
+.footable-page{
+	display: none !important;
+}
+
+.aqui{
+	padding : 0px !important;
 }

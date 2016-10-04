@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YggBoard</title>
+    <link rel="shortcut icon" href="img/logo/logo-yggboard.png" >
+
+
+    <!--STYLESHEET-->
+    <!--=================================================-->
+
+
+
+    <!--Bootstrap Stylesheet [ REQUIRED ]-->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+
+    <!--Nifty Stylesheet [ REQUIRED ]-->
+    <link href="css/nifty.min.css" rel="stylesheet">
+
+    <!--Nifty Premium Icon [ DEMO ]-->
+    <link href="css/demo/nifty-demo-icons.min.css" rel="stylesheet">
+
+    
+    <!--Font Awesome [ OPTIONAL ]-->
+    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+
+    <!--Switchery [ OPTIONAL ]-->
+    <link href="plugins/switchery/switchery.min.css" rel="stylesheet">
+
+
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
+
+    <!--SCRIPT-->
+    <!--=================================================-->
+
+    <!--Page Load Progress Bar [ OPTIONAL ]-->
+    <link href="plugins/pace/pace.min.css" rel="stylesheet">
+    <script src="plugins/pace/pace.min.js"></script>
+	
+	<!--cytoscape-->
+	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.css">
+	<link rel="stylesheet" type="text/css" href="css-cytoscape/panzoom.css"  />
+	<link rel="stylesheet" type="text/css" href="css-cytoscape/cytostyle.css"  />
+
+	<!--yggboard-->
+	<link rel="stylesheet" type="text/css" href="css/yggboard.css"  />
+
+    
+    <!--
+
+    REQUIRED
+    You must include this in your project.
+
+    RECOMMENDED
+    This category must be included but you may modify which plugins or components which should be included in your project.
+
+    OPTIONAL
+    Optional plugins. You may choose whether to include it in your project or not.
+
+    DEMONSTRATION
+    This is to be removed, used for demonstration purposes only. This category must not be included in your project.
+
+    SAMPLE
+    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
+
+
+    Detailed information and more samples can be found in the document.
+
+    -->
+        
+</head>
+
+<!--TIPS-->
+<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
+
+<body>
+    <div id="container" class="effect mainnav-sm">
+        
+        <!--NAVBAR-->
+        <!--===================================================-->
+        <header id="navbar" class="header-yggboard">
+            <div id="navbar-container" class="boxed">
+
+            </div>
+        </header>
+        <!--===================================================-->
+        <!--END NAVBAR-->
+
+        <div class="boxed">
+
+            <!--CONTENT CONTAINER-->
+            <!--===================================================-->
+            <div id="aqui">
+                
+                <!--Page content-->
+                <!--===================================================-->
+                <div id="page-content" >
+					<div class="row ">
+					    <div class="col-lg-12 header-yggboard">
+						</div>
+					</div>
+					<div class="row ">
+					    <div class="col-lg-9">
+							<div id="user-panel" class="row user-panel demo-nifty-panel hide">
+							    <div class="col-lg-12">
+							
+							
+							        <!--Panel with Tabs-->
+							        <!--===================================================-->
+							        <div class="panel panel-primary">
+							
+							            <!--Panel heading-->
+							            <div class="panel-heading">
+							                <div class="panel-control">
+							
+							                    <!--Nav tabs-->
+							                    <ul class="nav nav-tabs">
+							                        <li class="active"><a id="tab_interesses" data-toggle="tab" href="#demo-tabs-box-1">Interesses</a></li>
+							                        <li><a id="tab_conquistas" data-toggle="tab" href="#demo-tabs-box-2">Conquistas</a></li>
+							                    </ul>
+							
+							                </div>
+							                <h3 class="panel-title userName col-sm-8">
+							                </h3>
+						                    <button id="fechaUserPanel"  class="btn"><i class="fa fa-close"></i></button>
+							            </div>
+							
+							            <!--Panel body-->
+							            <div class="panel-body">
+							
+							                <!--Tabs content-->
+							                <div class="tab-content">
+							                    <div id="demo-tabs-box-1" class="tab-pane fade in active">
+											        <div class="menu user-panel-menu col-sm-3">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel user-panel-menu">
+					                                    <!--Menu list item-->
+													      <div class="nav-collapse">
+													        <ul class="nav">
+									                            <li><a id="interesseUserPerfil" href="#"><i class="fa fa-list"></i><span class="menu-title"> Objetivos</span></a></li>
+									                            <li><a id="interesseUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades</span></a></li>
+									                            <li><a id="interesseUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                            <li><a id="interesseUserPerfilBadges" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Badges</span></a></li>
+													        <ul class="nav pull-right">
+													      </div><!--/.nav-collapse -->
+				      									</div>
+									                </div>
+											        <div class="col-sm-9 carreira-user-perfil paineis-user-perfil">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="carreiras_user_perfil_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseCarreirasUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandCarreirasUserPerfil" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchCarreirasUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+											        <div class="menu col-sm-9 habilidade-user-perfil paineis-user-perfil hide">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="habilidades_user_perfil_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseHabilidadesUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandHabilidadesUserPerfil" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchHabilidadesUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+											        <div class="menu col-sm-9 curso-user-perfil paineis-user-perfil hide">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="cursos_user_perfil_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseCursosUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandCursosUserPerfil" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchCursosUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+							                    </div>
+							                    <div id="demo-tabs-box-2" class="tab-pane fade">
+											        <div class="menu user-panel-menu col-sm-3">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel user-panel-menu">
+					                                    <!--Menu list item-->
+													      <div class="nav-collapse">
+													        <ul class="nav">
+									                            <li><a id="conquistasUserPerfil" href="#"><i class="fa fa-list"></i><span class="menu-title"> Objetivos</span></a></li>
+									                            <li><a id="conquistasUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades</span></a></li>
+									                            <li><a id="conquistasUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
+									                            <li><a id="conquistasUserPerfilBadges" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Badges</span></a></li>
+													        <ul class="nav pull-right">
+													      </div><!--/.nav-collapse -->
+				      									</div>
+									                </div>
+											        <div class="col-sm-9 carreira-user-perfil paineis-user-perfil">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="carreiras_user_perfil_conquista_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseCarreirasUserPerfilConquista" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandCarreirasUserPerfilConquista" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchCarreirasUserPerfilConquista" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+											        <div class="menu col-sm-9 habilidade-user-perfil paineis-user-perfil hide">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="habilidades_user_perfil_conquista_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseHabilidadesUserPerfilConquista" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandHabilidadesUserPerfilConquista" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchHabilidadesUserPerfilConquista" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+											        <div class="menu col-sm-9 curso-user-perfil paineis-user-perfil hide">
+										                <!--Sparkline Line Chart-->
+										                <div class="panel panel-warning">
+															<div id="cursos_user_perfil_conquista_theader" class="panel-body ">
+																<div class="pad-btm col-sm-5">
+																	<button id="collapseCursosUserPerfilConquista" class="btn-xs btn-success hide">Collapse All</button>
+																	<button id="expandCursosUserPerfilConquista" class="btn-xs btn-warning">Expand All</button>
+																</div>
+																<div class="col-sm-7 text-xs-center text-right">
+																	<div class="form-group">
+																		<input id="searchCursosUserPerfilConquista" type="text" placeholder="Search" class="form-control" autocomplete="on">
+																	</div>
+																</div>
+															</div>
+															<!--===================================================-->
+															<!-- End Foo Table - Expand / Collapse Rows -->
+										                </div>
+									                </div>
+							                    </div>
+							                </div>
+							            </div>
+							        </div>
+							        <!--===================================================-->
+							        <!--End of panel with tabs-->
+							    </div>
+							</div>
+					        <!--===================================================-->
+					        <!--End yggmap diagram-->
+				            <!-- Yggmap-->
+			                <div class="panel-body">
+								<div id="cy" class= "cy"></div>			
+							</div>		
+					        <!--===================================================-->
+					        <!--End yggmap diagram-->
+		                </div>
+					    <div class="col-lg-3">
+					        <div class="row cursos hide">
+					            <div class="col-sm-6 col-lg-12">
+					                <!--Sparkline Line Chart-->
+					                <div class="panel panel-warning panel-colorful">
+										<!-- Cursos -->
+										<!--===================================================-->
+										<div class="pad-btm col-sm-12">
+											<h3 class="panel-title col-sm-10">Cursos</h3>
+						                    <button id="fechaCursos"  class="btn"><i class="fa fa-close"></i></button>
+						                </div>
+										<div id="curso_theader" class="panel-body">
+											<div class="pad-btm col-sm-5">
+												<button id="collapseCursos" class="btn-xs btn-success hide">Collapse All</button>
+												<button id="expandCursos" class="btn-xs btn-warning">Expand All</button>
+											</div>
+											<div class="col-sm-7 text-xs-center text-right">
+												<div class="form-group">
+													<input id="searchCursos" type="text" placeholder="Search" class="form-control" autocomplete="on">
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<!-- End Foo Table - Expand / Collapse Rows -->
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row auxiliamontagemdiagrama hide">
+					            <div class="col-sm-6 col-lg-12 ">
+					                <div id="montagem" class="panel panel-mint panel-colorful panel-body">
+							            <div class="panel-heading ">
+							                <h3 class="panel-title">Auxilia montagem diagrama</h3>
+							            </div>
+						                <div class="form-group pad-ver">
+						                    <label class="col-md-3 control-label">Carregar</label>
+						                    <div class="col-md-9">
+						                        <div class="checkbox">
+						                            <input id="cargaCampos" class="magic-checkbox" type="checkbox" checked>
+						                            <label for="cargaCampos">Campos</label>
+						                        </div>
+						                        <div class="checkbox">
+						                            <input id=cargaCategorias class="magic-checkbox" type="checkbox" checked>
+						                            <label for="cargaCategorias">Categorias</label>
+						                        </div>
+						                        <div class="checkbox">
+						                            <input id="cargaHabilidades" class="magic-checkbox" type="checkbox" checked>
+						                            <label for="cargaHabilidades">Habilidades</label>
+						                        </div>
+						                        <div class="checkbox">
+						                            <input id="cargaSetas" class="magic-checkbox" type="checkbox" checked>
+						                            <label for="cargaSetas">Setas</label>
+						                        </div>
+						                    </div>
+										</div>
+						                <div class="form-group pad-ver">
+						                    <label class="col-md-3 control-label">Calcular</label>
+						                    <div class="col-md-9">
+						                        <div class="checkbox">
+						                            <input id="calculaPosicao" class="magic-checkbox" type="checkbox">
+						                            <label for="calculaPosicao">Calcula as posições</label>
+						                        </div>
+						                        <div class="checkbox">
+						                            <input id="calculaCampos" class="magic-checkbox" type="checkbox">
+						                            <label for="calculaCampos">Campos</label>
+						                        </div>
+						                        <div class="checkbox">
+						                            <input id="calculaCategorias" class="magic-checkbox" type="checkbox">
+						                            <label for="calculaCategorias">Categorias</label>
+						                        </div>						
+						                        <div class="checkbox">
+						                            <input id="calculaHabilidades" class="magic-checkbox" type="checkbox">
+						                            <label for="calculaHabilidades">Habilidades</label>
+						                        </div>
+						                    </div>
+						                </div>
+						        	</div>
+							    </div>
+					        </div>
+					        <div class="row habilidade hide">
+					            <div class="col-sm-6 col-lg-12">
+					
+					                <div id="habilidade" class="panel panel-mint panel-colorful panel-body">
+										<div class="col-sm-12 text-xs-center text-right">
+											<h3 id="habilidadeName" class="panel-title text-center"></h3>
+											<h5><em class="text-mutted text-justify col-sm-12" id="habilidadeDescricao" ></em></h5><br><br>
+											<a id="habilidadeWiki" href="" target="_blank">Wiki</a><br>
+										</div>
+										<div class="acoesHablidades col-sm-12 text-xs-center hide text-right">
+											<button id="acaoHabilidade" class="btn-xs btn-info">Incluir</button></br>
+											<button id="acaoHabilidadeInteresse" class="btn-xs btn-info">Interesse</button>
+										</div>
+										<!--===================================================-->
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row carreiras">
+					            <div class="col-sm-6 col-lg-12">
+					
+					                <!--Sparkline Line Chart-->
+					                <div class="panel panel-info ">
+										<!-- Carreiras -->
+										<!--===================================================-->
+										<h3 id="panel_objetivos" class="panel-title">Objetivos</h3>
+										<div id="carreira_theader" class="panel-body">
+											<div class="col-sm-12 text-xs-center text-right">
+												<div class="form-group">
+													<input id="searchCarreiras" type="text" placeholder="Search" class="form-control" autocomplete="on">
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<!-- End Foo Table - Expand / Collapse Rows -->
+					                </div>
+					            </div>
+					        </div>
+					        <div class="row habilidades hide">
+					            <div class="col-sm-6 col-lg-12">
+					
+					                <!--Sparkline Line Chart-->
+					                <div id="panel_habilidades" class="panel panel-purple ">
+										<!-- Habilidades -->
+										<!--===================================================-->
+										<h3 class="panel-title">Habilidades</h3>
+										<div id="habilidade_theader" class="panel-body">
+											<div class="col-sm-7 text-xs-center text-right">
+												<div class="form-group">
+													<input id="searchHabilidades" type="text" placeholder="Search" class="form-control" autocomplete="on">
+												</div>
+											</div>
+										</div>
+										<!--===================================================-->
+										<!-- End Foo Table - Expand / Collapse Rows -->
+					                </div>
+					            </div>
+					        </div>
+					    </div>
+					</div>
+				</div>
+                <!--===================================================-->
+                <!--End page content-->
+
+
+            </div>
+            <!--===================================================-->
+            <!--END CONTENT CONTAINER-->
+
+        </div>
+
+        
+
+        <!-- FOOTER -->
+        <!--===================================================-->
+        <footer id="footer">
+
+            <!-- Visible when footer positions are fixed -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="show-fixed pull-right">
+                <ul class="footer-list list-inline">
+                    <li>
+                        <p class="text-sm">SEO Proggres</p>
+                        <div class="progress progress-sm progress-light-base">
+                            <div style="width: 80%" class="progress-bar progress-bar-danger"></div>
+                        </div>
+                    </li>
+
+                    <li>
+                        <p class="text-sm">Online Tutorial</p>
+                        <div class="progress progress-sm progress-light-base">
+                            <div style="width: 80%" class="progress-bar progress-bar-primary"></div>
+                        </div>
+                    </li>
+                    <li>
+                        <button class="btn btn-sm btn-dark btn-active-success">Checkout</button>
+                    </li>
+                </ul>
+            </div>
+
+
+
+            <!-- Visible when footer positions are static -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <div class="hide-fixed pull-right pad-rgt">Currently v2.4.1</div>
+
+
+
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+            <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
+            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
+
+            <p class="pad-lft">&#0169; 2016 Your Company</p>
+
+
+
+        </footer>
+        <!--===================================================-->
+        <!-- END FOOTER -->
+
+
+        <!-- SCROLL TOP BUTTON -->
+        <!--===================================================-->
+        <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
+        <!--===================================================-->
+
+
+
+    </div>
+    <!--===================================================-->
+    <!-- END OF CONTAINER -->
+
+
+    
+    
+    
+    <!--JAVASCRIPT-->
+    <!--=================================================-->
+
+    <!--jQuery [ REQUIRED ]-->
+    <script src="js/jquery-2.2.4.min.js"></script>
+
+
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="js/bootstrap.min.js"></script>
+
+
+    <!--Fast Click [ OPTIONAL ]-->
+    <script src="plugins/fast-click/fastclick.min.js"></script>
+
+    
+    <!--Nifty Admin [ RECOMMENDED ]-->
+    <script src="js/nifty.min.js"></script>
+
+
+    <!--Switchery [ OPTIONAL ]-->
+    <script src="plugins/switchery/switchery.min.js"></script>
+
+
+    <!--Bootstrap Select [ OPTIONAL ]-->
+    <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
+
+    <!--FooTable -->
+    <script src="js-datatables/tables-footable.js"></script>
+    <script src="js-datatables/footable.all.min.js"></script>
+
+    <!--cytoscape-->
+	<script	src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
+	<script src="js-cytoscape/cytoscape-cose-bilkent.js"></script>
+	<script src="js-cytoscape/cytoscape-panzoom.js"></script>
+	<script src="js-cytoscape/cytoscape-qtip.js"></script>
+	<script src="js-cytoscape/template-base.js"></script>
+	<script src="js-cytoscape/draw-diagram.js"></script>
+	<script src="js-datatables/carreiras.js"></script>
+	<script src="js-datatables/cursos.js"></script>
+	<script src="js-datatables/habilidades.js"></script>
+	<script src="js-datatables/carreiras-user-perfil.js"></script>
+	<script src="js-datatables/habilidades-user-perfil.js"></script>
+	<script src="js-datatables/cursos-user-perfil.js"></script>
+
+    <!--rest commands-->
+    <script src="js/rest_commands.js"></script>
+
+    <!--Yggboard-->
+    <script src="js/main.js"></script>
+    <script src="js/commons.js"></script>
+    <script src="js/carrega-base-dados.js"></script>
+    <script src="js/yggboard.js"></script>
+    <script src="js/meuPerfil.js"></script>
+    
+    <!--
+
+    REQUIRED
+    You must include this in your project.
+
+    RECOMMENDED
+    This category must be included but you may modify which plugins or components which should be included in your project.
+
+    OPTIONAL
+    Optional plugins. You may choose whether to include it in your project or not.
+
+    DEMONSTRATION
+    This is to be removed, used for demonstration purposes only. This category must not be included in your project.
+
+    SAMPLE
+    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
+
+
+    Detailed information and more samples can be found in the document.
+
+    -->
+		<!-- Your GOOGLE ANALYTICS CODE Below -->
+		<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-84684130-1']);
+			_gaq.push(['_trackPageview']);
+
+			(function() {
+				var ga = document.createElement('script');
+				ga.type = 'text/javascript';
+				ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(ga, s);
+			})();
+
+		</script>
+        
+
+</body>
+</html>

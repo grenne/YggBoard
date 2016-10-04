@@ -1,896 +1,149 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />        
+        <title>YggBoard</title>
+        <link rel="icon" href="img/icone-arvore.png">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/sistema.css" rel="stylesheet" media="screen">
+        <link href="css/responsivo.css" rel="stylesheet" media="screen">
+         
+	    <!--FooTable [ OPTIONAL ]-->
+	    <link href="plugins/fooTable/css/footable.core.css" rel="stylesheet">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YggBoard</title>
-    <link rel="shortcut icon" href="img/logo/logo-yggboard.png" >
+       <!--
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" media="screen"> 
+     -->
+	    <!--Font Awesome [ OPTIONAL ]-->
+   		 <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
-
-    <!--STYLESHEET-->
-    <!--=================================================-->
-
-
-
-    <!--Bootstrap Stylesheet [ REQUIRED ]-->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-
-
-    <!--Nifty Stylesheet [ REQUIRED ]-->
-    <link href="css/nifty.min.css" rel="stylesheet">
-
-    <!--Nifty Premium Icon [ DEMO ]-->
-    <link href="css/demo/nifty-demo-icons.min.css" rel="stylesheet">
-
+		<!--yggboard-->
+		<link rel="stylesheet" type="text/css" href="css/yggboard.css"  />
+   		 
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]--> 
+    </head>
+  	<body>
     
-    <!--Font Awesome [ OPTIONAL ]-->
-    <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-
-
-    <!--Switchery [ OPTIONAL ]-->
-    <link href="plugins/switchery/switchery.min.css" rel="stylesheet">
-
-
-    <!--Bootstrap Select [ OPTIONAL ]-->
-    <link href="plugins/bootstrap-select/bootstrap-select.min.css" rel="stylesheet">
-
-    <!--SCRIPT-->
-    <!--=================================================-->
-
-    <!--Page Load Progress Bar [ OPTIONAL ]-->
-    <link href="plugins/pace/pace.min.css" rel="stylesheet">
-    <script src="plugins/pace/pace.min.js"></script>
-	
-	<!--cytoscape-->
-	<link rel="stylesheet" type="text/css" href="http://cdnjs.cloudflare.com/ajax/libs/qtip2/2.2.0/jquery.qtip.css">
-	<link rel="stylesheet" type="text/css" href="css-cytoscape/panzoom.css"  />
-	<link rel="stylesheet" type="text/css" href="css-cytoscape/cytostyle.css"  />
-
-	<!--yggboard-->
-	<link rel="stylesheet" type="text/css" href="css/yggboard.css"  />
-
-    
-    <!--
-
-    REQUIRED
-    You must include this in your project.
-
-    RECOMMENDED
-    This category must be included but you may modify which plugins or components which should be included in your project.
-
-    OPTIONAL
-    Optional plugins. You may choose whether to include it in your project or not.
-
-    DEMONSTRATION
-    This is to be removed, used for demonstration purposes only. This category must not be included in your project.
-
-    SAMPLE
-    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
-
-
-    Detailed information and more samples can be found in the document.
-
-    -->
-        
-</head>
-
-<!--TIPS-->
-<!--You may remove all ID or Class names which contain "demo-", they are only used for demonstration. -->
-
-<body>
-    <div id="container" class="effect mainnav-sm">
-        
-        <!--NAVBAR-->
-        <!--===================================================-->
-        <header id="navbar">
-            <div id="navbar-container" class="boxed">
-
-                <!--Brand logo & name-->
-                <!--================================-->
-                <div class="navbar-header">
-                    <a href="index.html" class="navbar-brand">
-                        <img src="img/logo.png" alt="YggBoard" class="brand-icon">
-                        <span class="brand-title">
-                            <span class="brand-text">YggBoard</span>
-                        </span>
+    <header>
+    	<div class="container">	
+        	<h1 class="pull-left">YggBoard</h1>
+			<ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="imagem-user"><img src="img/user.png" width="45" height="45" class="img-circle"></span> 
+                        <span class="userName"></span>
                     </a>
-                </div>
-                <!--================================-->
-                <!--End brand logo & name-->
-
-
-                <!--Navbar Dropdown-->
-                <!--================================-->
-                <div class="navbar-content clearfix">
-                    <ul class="nav navbar-top-links pull-left">
-
-                        <!--Navigation toogle button-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <li class="tgl-menu-btn">
-                            <a class="mainnav-toggle" href="#">
-                                <i class="pli-view-list"></i>
-                            </a>
-                        </li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End Navigation toogle button-->
-
-
-
-                        <!--Notification dropdown-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <li class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
-                                <i class="pli-bell"></i>
-                                <span class="badge badge-header badge-danger"></span>
-                            </a>
-
-                            <!--Notification dropdown menu-->
-                            <div class="dropdown-menu dropdown-menu-md">
-                                <div class="pad-all bord-btm">
-                                    <p class="text-lg text-semibold mar-no"></p>
-                                </div>
-                                <div class="nano scrollable">
-                                    <div class="nano-content">
-                                        <ul class="head-list">
-
-                                            <!-- Dropdown list-->
-                                            <li>
-                                                <a href="#">
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                                <!--Dropdown footer-->
-                                <div class="pad-all bord-top">
-                                    <a href="#" class="btn-link text-dark box-block">
-                                        <i class="fa fa-angle-right fa-lg pull-right"></i>Show All Notifications
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End notifications dropdown-->
-
+                    <ul class="dropdown-menu">
+                    	<li><a href=""><i class="fa fa-user"></i>Meu perfil</a></li>
+                    	<li><a href=""><i class="fa fa-cog"></i>Configurações</a></li>
+                        <li class="divider"></li>
+						<li><a href=""><i class="fa fa-sign-out"></i>Sair</a></li>
                     </ul>
-                    <ul class="nav navbar-top-links pull-right">
-
-                        <!--Language selector-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <li class="dropdown">
-                            <a id="demo-lang-switch" class="lang-selector dropdown-toggle" href="#" data-toggle="dropdown">
-                                <span class="lang-selected">
-                                    <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English">
-                                </span>
-                            </a>
-
-                            <!--Language selector menu-->
-                            <ul class="head-list dropdown-menu">
-						        <li>
-						            <!--English-->
-						            <a href="#" class="active">
-						                <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English">
-						                <span class="lang-id">EN</span>
-						                <span class="lang-name">English</span>
-						            </a>
-						        </li>
-						        <li>
-						            <!--France-->
-						            <a href="#">
-						                <img class="lang-flag" src="img/flags/france.png" alt="France">
-						                <span class="lang-id">FR</span>
-						                <span class="lang-name">Fran&ccedil;ais</span>
-						            </a>
-						        </li>
-						        <li>
-						            <!--Germany-->
-						            <a href="#">
-						                <img class="lang-flag" src="img/flags/germany.png" alt="Germany">
-						                <span class="lang-id">DE</span>
-						                <span class="lang-name">Deutsch</span>
-						            </a>
-						        </li>
-						        <li>
-						            <!--Italy-->
-						            <a href="#">
-						                <img class="lang-flag" src="img/flags/italy.png" alt="Italy">
-						                <span class="lang-id">IT</span>
-						                <span class="lang-name">Italiano</span>
-						            </a>
-						        </li>
-						        <li>
-						            <!--Spain-->
-						            <a href="#">
-						                <img class="lang-flag" src="img/flags/spain.png" alt="Spain">
-						                <span class="lang-id">ES</span>
-						                <span class="lang-name">Espa&ntilde;ol</span>
-						            </a>
-						        </li>
-                            </ul>
-                        </li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End language selector-->
-
-
-
-                        <!--User dropdown-->
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <li id="dropdown-user" class="dropdown">
-                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
-                                <span class="pull-right">
-<!--                               <img class="img-circle img-user media-object" src="#" alt="Profile Picture"> -->
-                                </span>
-                                <span id="userName" class="userName"></span>
-                            </a>
-
-
-                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
-
-                                <!-- Dropdown heading  -->
-                                <div class="pad-all bord-btm">
-                                    <p class="text-lg text-semibold mar-btm">32 Habilidades</p>
-                                </div>
-
-
-                                <!-- User dropdown menu -->
-                                <ul class="head-list">
-                                    <li>
-                                        <a href="#">
-                                            <i class="pli-male icon-lg icon-fw"></i> Profile
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <span class="badge badge-danger pull-right">9</span>
-                                            <i class="pli-mail icon-lg icon-fw"></i> Mensagens
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="pli-gear icon-lg icon-fw"></i> Configuração
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="pli-information icon-lg icon-fw"></i> Ajuda
-                                        </a>
-                                    </li>
-                                </ul>
-
-                                <!-- Dropdown footer -->
-                                <div class="pad-all text-right">
-                                    <a href="pages-login.html" class="btn btn-primary">
-                                        <i class="pli-unlock"></i> Logout
-                                    </a>
-                                </div>
-                            </div>
-                        </li>
-                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                        <!--End user dropdown-->
-
-                    </ul>
-                </div>
-                <!--================================-->
-                <!--End Navbar Dropdown-->
-
-            </div>
-        </header>
-        <!--===================================================-->
-        <!--END NAVBAR-->
-
-        <div class="boxed">
-
-            <!--CONTENT CONTAINER-->
-            <!--===================================================-->
-            <div id="content-container">
-                
-                <!--Page Title-->
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <div id="page-title">
-                    <h1 class="page-header text-overflow"><img src="img/logo.png" alt="YggBoard" class="brand-icon"></h1>
-
-                    <!--Searchbox-->
-                    <div class="searchbox">
-                        <div class="input-group custom-search-form">
-                            <input type="text" class="form-control" placeholder="Search..">
-                            <span class="input-group-btn">
-                                <button class="text-muted" type="button"><i class="fa fa-search"></i></button>
-                            </span>
-                        </div>
-                    </div>
-                </div>
-                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
-                <!--End page title-->
-
-                <!--Page content-->
-                <!--===================================================-->
-                <div id="page-content">
-					<div class="row">
-					    <div class="col-lg-9">
-					        <!--YggMap-->
-					        <!--===================================================-->
-					        <div id="yggmap" class="panel">
-					            <div class="panel-heading">
-					                <div class="panel-control">
-					                    <button id="userPerfil" data-toggle="tooltip"  data-original-title="Perfil do Usuário" class="btn"><i class="fa fa-photo"></i></button>
-					                    <button id="comparaMeuPerfil"  class="btn" data-toggle="tooltip" data-original-title="Compara com seu perfil"><i class="fa fa-user"></i></button>
-					                    <button id="criarMeuPerfil"  class="btn hide" data-toggle="tooltip" data-original-title="Criar seu perfil"><i class="fa fa fa-gears"></i></button>
-					                    <button id="carregaHabilidades"  class="btn" data-toggle="tooltip" data-original-title="Mostra habilidades"><i class="fa fa-graduation-cap"></i></button>
-					                    <div class="btn-group tools hide">
-					                        <button class="dropdown-toggle btn" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-gear"></i></button>
-					                        <ul class="dropdown-menu dropdown-menu-right">
-					                            <li><a id="carregaHabilidadesTotal"  href="#">Carrega Habilidades</a></li>
-					                            <li><a id="carregaCarreirasTotal"  href="#">Carrega Carreiras</a></li>
-					                            <li><a id="carregaCursosTotal"  href="#">Carrega Cursos</a></li>
-					                            <li ><a id="gravaDiagrama"  href="#">Grava Diagrama</a></li>
-					                            <li class="divider"></li>
-					                            <li ><a id="auxiliamontagemdiagrama"  href="#">Auxilia Posicionamento Diagrama</a></li>
-					                        </ul>
-					                    </div>
-					                </div> 
-					                <h3 class="panel-title">
-					                <span class="col-lg-5">YggMap</span>
-					                <span id="labelYggmap" class="col-lg-3 blink text-warning">Carregando diagrama....</span>
-					                <span class="col-lg-3"></span>
-					                </h3>
-					            </div>
-					        </div>
-							<div id="user-panel" class="row user-panel demo-nifty-panel hide">
-							    <div class="col-lg-12">
-							
-							
-							        <!--Panel with Tabs-->
-							        <!--===================================================-->
-							        <div class="panel panel-primary">
-							
-							            <!--Panel heading-->
-							            <div class="panel-heading">
-							                <div class="panel-control">
-							
-							                    <!--Nav tabs-->
-							                    <ul class="nav nav-tabs">
-							                        <li class="active"><a id="tab_interesses" data-toggle="tab" href="#demo-tabs-box-1">Interesses</a></li>
-							                        <li><a id="tab_conquistas" data-toggle="tab" href="#demo-tabs-box-2">Conquistas</a></li>
-							                    </ul>
-							
-							                </div>
-							                <h3 class="panel-title userName col-sm-8">
-							                </h3>
-						                    <button id="fechaUserPanel"  class="btn"><i class="fa fa-close"></i></button>
-							            </div>
-							
-							            <!--Panel body-->
-							            <div class="panel-body">
-							
-							                <!--Tabs content-->
-							                <div class="tab-content">
-							                    <div id="demo-tabs-box-1" class="tab-pane fade in active">
-											        <div class="menu user-panel-menu col-sm-3">
-										                <!--Sparkline Line Chart-->
-										                <div class="panel user-panel-menu">
-					                                    <!--Menu list item-->
-													      <div class="nav-collapse">
-													        <ul class="nav">
-									                            <li><a id="interesseUserPerfil" href="#"><i class="fa fa-list"></i><span class="menu-title"> Objetivos</span></a></li>
-									                            <li><a id="interesseUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades</span></a></li>
-									                            <li><a id="interesseUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
-									                            <li><a id="interesseUserPerfilBadges" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Badges</span></a></li>
-													        <ul class="nav pull-right">
-													      </div><!--/.nav-collapse -->
-				      									</div>
-									                </div>
-											        <div class="col-sm-9 carreira-user-perfil paineis-user-perfil">
-										                <!--Sparkline Line Chart-->
-										                <div class="panel panel-warning">
-															<div id="carreiras_user_perfil_theader" class="panel-body ">
-																<div class="pad-btm col-sm-5">
-																	<button id="collapseCarreirasUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
-																	<button id="expandCarreirasUserPerfil" class="btn-xs btn-warning">Expand All</button>
-																</div>
-																<div class="col-sm-7 text-xs-center text-right">
-																	<div class="form-group">
-																		<input id="searchCarreirasUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
-																	</div>
-																</div>
-															</div>
-															<!--===================================================-->
-															<!-- End Foo Table - Expand / Collapse Rows -->
-										                </div>
-									                </div>
-											        <div class="menu col-sm-9 habilidade-user-perfil paineis-user-perfil hide">
-										                <!--Sparkline Line Chart-->
-										                <div class="panel panel-warning">
-															<div id="habilidades_user_perfil_theader" class="panel-body ">
-																<div class="pad-btm col-sm-5">
-																	<button id="collapseHabilidadesUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
-																	<button id="expandHabilidadesUserPerfil" class="btn-xs btn-warning">Expand All</button>
-																</div>
-																<div class="col-sm-7 text-xs-center text-right">
-																	<div class="form-group">
-																		<input id="searchHabilidadesUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
-																	</div>
-																</div>
-															</div>
-															<!--===================================================-->
-															<!-- End Foo Table - Expand / Collapse Rows -->
-										                </div>
-									                </div>
-											        <div class="menu col-sm-9 curso-user-perfil paineis-user-perfil hide">
-										                <!--Sparkline Line Chart-->
-										                <div class="panel panel-warning">
-															<div id="cursos_user_perfil_theader" class="panel-body ">
-																<div class="pad-btm col-sm-5">
-																	<button id="collapseCursosUserPerfil" class="btn-xs btn-success hide">Collapse All</button>
-																	<button id="expandCursosUserPerfil" class="btn-xs btn-warning">Expand All</button>
-																</div>
-																<div class="col-sm-7 text-xs-center text-right">
-																	<div class="form-group">
-																		<input id="searchCursosUserPerfil" type="text" placeholder="Search" class="form-control" autocomplete="on">
-																	</div>
-																</div>
-															</div>
-															<!--===================================================-->
-															<!-- End Foo Table - Expand / Collapse Rows -->
-										                </div>
-									                </div>
-							                    </div>
-							                    <div id="demo-tabs-box-2" class="tab-pane fade">
-											        <div class="menu user-panel-menu col-sm-3">
-										                <!--Sparkline Line Chart-->
-										                <div class="panel user-panel-menu">
-					                                    <!--Menu list item-->
-													      <div class="nav-collapse">
-													        <ul class="nav">
-									                            <li><a id="conquistasUserPerfil" href="#"><i class="fa fa-list"></i><span class="menu-title"> Objetivos</span></a></li>
-									                            <li><a id="conquistasUserPerfilHabilidades" href="#"><i class="fa fa-gears"></i><span class="menu-title"> Habilidades</span></a></li>
-									                            <li><a id="conquistasUserPerfilCursos" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Cursos</span></a></li>
-									                            <li><a id="conquistasUserPerfilBadges" href="#"><i class="fa fa-mortar-board"></i><span class="menu-title"> Badges</span></a></li>
-													        <ul class="nav pull-right">
-													      </div><!--/.nav-collapse -->
-				      									</div>
-									                </div>
-											        <div class="col-sm-9 carreira-user-perfil paineis-user-perfil">
-										                <!--Sparkline Line Chart-->
-										                <div class="panel panel-warning">
-															<div id="carreiras_user_perfil_conquista_theader" class="panel-body ">
-																<div class="pad-btm col-sm-5">
-																	<button id="collapseCarreirasUserPerfilConquista" class="btn-xs btn-success hide">Collapse All</button>
-																	<button id="expandCarreirasUserPerfilConquista" class="btn-xs btn-warning">Expand All</button>
-																</div>
-																<div class="col-sm-7 text-xs-center text-right">
-																	<div class="form-group">
-																		<input id="searchCarreirasUserPerfilConquista" type="text" placeholder="Search" class="form-control" autocomplete="on">
-																	</div>
-																</div>
-															</div>
-															<!--===================================================-->
-															<!-- End Foo Table - Expand / Collapse Rows -->
-										                </div>
-									                </div>
-											        <div class="menu col-sm-9 habilidade-user-perfil paineis-user-perfil hide">
-										                <!--Sparkline Line Chart-->
-										                <div class="panel panel-warning">
-															<div id="habilidades_user_perfil_conquista_theader" class="panel-body ">
-																<div class="pad-btm col-sm-5">
-																	<button id="collapseHabilidadesUserPerfilConquista" class="btn-xs btn-success hide">Collapse All</button>
-																	<button id="expandHabilidadesUserPerfilConquista" class="btn-xs btn-warning">Expand All</button>
-																</div>
-																<div class="col-sm-7 text-xs-center text-right">
-																	<div class="form-group">
-																		<input id="searchHabilidadesUserPerfilConquista" type="text" placeholder="Search" class="form-control" autocomplete="on">
-																	</div>
-																</div>
-															</div>
-															<!--===================================================-->
-															<!-- End Foo Table - Expand / Collapse Rows -->
-										                </div>
-									                </div>
-											        <div class="menu col-sm-9 curso-user-perfil paineis-user-perfil hide">
-										                <!--Sparkline Line Chart-->
-										                <div class="panel panel-warning">
-															<div id="cursos_user_perfil_conquista_theader" class="panel-body ">
-																<div class="pad-btm col-sm-5">
-																	<button id="collapseCursosUserPerfilConquista" class="btn-xs btn-success hide">Collapse All</button>
-																	<button id="expandCursosUserPerfilConquista" class="btn-xs btn-warning">Expand All</button>
-																</div>
-																<div class="col-sm-7 text-xs-center text-right">
-																	<div class="form-group">
-																		<input id="searchCursosUserPerfilConquista" type="text" placeholder="Search" class="form-control" autocomplete="on">
-																	</div>
-																</div>
-															</div>
-															<!--===================================================-->
-															<!-- End Foo Table - Expand / Collapse Rows -->
-										                </div>
-									                </div>
-							                    </div>
-							                </div>
-							            </div>
-							        </div>
-							        <!--===================================================-->
-							        <!--End of panel with tabs-->
-							    </div>
-							</div>
-					        <!--===================================================-->
-					        <!--End yggmap diagram-->
-				            <!-- Yggmap-->
-			                <div class="panel-body">
-								<div id="cy" class= "cy"></div>			
-							</div>		
-					        <!--===================================================-->
-					        <!--End yggmap diagram-->
-		                </div>
-					    <div class="col-lg-3">
-					        <div class="row cursos hide">
-					            <div class="col-sm-6 col-lg-12">
-					                <!--Sparkline Line Chart-->
-					                <div class="panel panel-warning panel-colorful">
-										<!-- Cursos -->
-										<!--===================================================-->
-										<div class="pad-btm col-sm-12">
-											<h3 class="panel-title col-sm-10">Cursos</h3>
-						                    <button id="fechaCursos"  class="btn"><i class="fa fa-close"></i></button>
-						                </div>
-										<div id="curso_theader" class="panel-body">
-											<div class="pad-btm col-sm-5">
-												<button id="collapseCursos" class="btn-xs btn-success hide">Collapse All</button>
-												<button id="expandCursos" class="btn-xs btn-warning">Expand All</button>
-											</div>
-											<div class="col-sm-7 text-xs-center text-right">
-												<div class="form-group">
-													<input id="searchCursos" type="text" placeholder="Search" class="form-control" autocomplete="on">
-												</div>
-											</div>
-										</div>
-										<!--===================================================-->
-										<!-- End Foo Table - Expand / Collapse Rows -->
-					                </div>
-					            </div>
-					        </div>
-					        <div class="row auxiliamontagemdiagrama hide">
-					            <div class="col-sm-6 col-lg-12 ">
-					                <div id="montagem" class="panel panel-mint panel-colorful panel-body">
-							            <div class="panel-heading ">
-							                <h3 class="panel-title">Auxilia montagem diagrama</h3>
-							            </div>
-						                <div class="form-group pad-ver">
-						                    <label class="col-md-3 control-label">Carregar</label>
-						                    <div class="col-md-9">
-						                        <div class="checkbox">
-						                            <input id="cargaCampos" class="magic-checkbox" type="checkbox" checked>
-						                            <label for="cargaCampos">Campos</label>
-						                        </div>
-						                        <div class="checkbox">
-						                            <input id=cargaCategorias class="magic-checkbox" type="checkbox" checked>
-						                            <label for="cargaCategorias">Categorias</label>
-						                        </div>
-						                        <div class="checkbox">
-						                            <input id="cargaHabilidades" class="magic-checkbox" type="checkbox" checked>
-						                            <label for="cargaHabilidades">Habilidades</label>
-						                        </div>
-						                        <div class="checkbox">
-						                            <input id="cargaSetas" class="magic-checkbox" type="checkbox" checked>
-						                            <label for="cargaSetas">Setas</label>
-						                        </div>
-						                    </div>
-										</div>
-						                <div class="form-group pad-ver">
-						                    <label class="col-md-3 control-label">Calcular</label>
-						                    <div class="col-md-9">
-						                        <div class="checkbox">
-						                            <input id="calculaPosicao" class="magic-checkbox" type="checkbox">
-						                            <label for="calculaPosicao">Calcula as posições</label>
-						                        </div>
-						                        <div class="checkbox">
-						                            <input id="calculaCampos" class="magic-checkbox" type="checkbox">
-						                            <label for="calculaCampos">Campos</label>
-						                        </div>
-						                        <div class="checkbox">
-						                            <input id="calculaCategorias" class="magic-checkbox" type="checkbox">
-						                            <label for="calculaCategorias">Categorias</label>
-						                        </div>						
-						                        <div class="checkbox">
-						                            <input id="calculaHabilidades" class="magic-checkbox" type="checkbox">
-						                            <label for="calculaHabilidades">Habilidades</label>
-						                        </div>
-						                    </div>
-						                </div>
-						        	</div>
-							    </div>
-					        </div>
-					        <div class="row habilidade hide">
-					            <div class="col-sm-6 col-lg-12">
-					
-					                <div id="habilidade" class="panel panel-mint panel-colorful panel-body">
-										<div class="col-sm-12 text-xs-center text-right">
-											<h3 id="habilidadeName" class="panel-title text-center"></h3>
-											<h5><em class="text-mutted text-justify col-sm-12" id="habilidadeDescricao" ></em></h5><br><br>
-											<a id="habilidadeWiki" href="" target="_blank">Wiki</a><br>
-										</div>
-										<div class="acoesHablidades col-sm-12 text-xs-center hide text-right">
-											<button id="acaoHabilidade" class="btn-xs btn-info">Incluir</button></br>
-											<button id="acaoHabilidadeInteresse" class="btn-xs btn-info">Interesse</button>
-										</div>
-										<!--===================================================-->
-					                </div>
-					            </div>
-					        </div>
-					        <div class="row carreiras">
-					            <div class="col-sm-6 col-lg-12">
-					
-					                <!--Sparkline Line Chart-->
-					                <div class="panel panel-info panel-colorful">
-										<!-- Carreiras -->
-										<!--===================================================-->
-										<h3 class="panel-title">Objetivos</h3>
-										<div id="carreira_theader" class="panel-body">
-											<div class="pad-btm col-sm-5">
-												<button id="collapseCarreiras" class="btn-xs btn-success hide">Collapse</button>
-												<button id="expandCarreiras" class="btn-xs btn-warning">Expand All</button>
-											</div>
-											<div class="col-sm-7 text-xs-center text-right">
-												<div class="form-group">
-													<input id="searchCarreiras" type="text" placeholder="Search" class="form-control" autocomplete="on">
-												</div>
-											</div>
-										</div>
-										<!--===================================================-->
-										<!-- End Foo Table - Expand / Collapse Rows -->
-					                </div>
-					            </div>
-					        </div>
-					        <div class="row habilidades hide">
-					            <div class="col-sm-6 col-lg-12">
-					
-					                <!--Sparkline Line Chart-->
-					                <div class="panel panel-purple panel-colorful">
-										<!-- Habilidades -->
-										<!--===================================================-->
-										<h3 class="panel-title">Habilidades</h3>
-										<div id="habilidade_theader" class="panel-body">
-											<div class="pad-btm col-sm-5">
-												<button id="collapseHabilidades" class="btn-xs btn-success hide">Collapse</button>
-												<button id="expandHabilidades" class="btn-xs btn-warning">Expand All</button>
-											</div>
-											<div class="col-sm-7 text-xs-center text-right">
-												<div class="form-group">
-													<input id="searchHabilidades" type="text" placeholder="Search" class="form-control" autocomplete="on">
-												</div>
-											</div>
-										</div>
-										<!--===================================================-->
-										<!-- End Foo Table - Expand / Collapse Rows -->
-					                </div>
-					            </div>
-					        </div>
-					    </div>
-					</div>
-				</div>
-                <!--===================================================-->
-                <!--End page content-->
-
-
-            </div>
-            <!--===================================================-->
-            <!--END CONTENT CONTAINER-->
-
-
-            
-            <!--MAIN NAVIGATION-->
-            <!--===================================================-->
-            <nav id="mainnav-container">
-                <div id="mainnav">
-
-                    <!--Shortcut buttons-->
-                    <!--================================-->
-                    <div id="mainnav-shortcut">
-                        <ul class="list-unstyled">
-                            <li class="col-xs-4" data-content="Administrador">
-                                <a id="demo-toggle-aside" class="shortcut-grid" href="#">
-                                    <i class="psi-sidebar-window"></i>
-                                </a>
-                            </li>
-                            <li class="col-xs-4" data-content="Carreiras">
-                                <a id="demo-alert" class="shortcut-grid" href="#">
-                                    <i class="psi-speech-bubble-comic-2"></i>
-                                </a>
-                            </li>
-                            <li class="col-xs-4" data-content="Habilidades">
-                                <a id="demo-page-alert" class="shortcut-grid" href="#">
-                                    <i class="psi-warning-window"></i>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!--================================-->
-                    <!--End shortcut buttons-->
-
-
-                    <!--Menu-->
-                    <!--================================-->
-                    <div id="mainnav-menu-wrap">
-                        <div class="nano">
-                            <div class="nano-content">
-                                <ul id="mainnav-menu" class="list-group">
-						
-						            <!--Category name-->
-						            <li class="list-header">Navigation</li>
-						
-						            <!--Menu list item-->
-						            <li>
-						                <a href="yggboard.html">
-						                    <i class="psi-home"></i>
-						                    <span class="menu-title">
-												<strong>Dashboard</strong>
-											</span>
-						                </a>
-						            </li>
-						
-								</ul>
-
-
-                            </div>
-                        </div>
-                    </div>
-                    <!--================================-->
-                    <!--End menu-->
-
-                </div>
-            </nav>
-            <!--===================================================-->
-            <!--END MAIN NAVIGATION-->
-            
-            <!--ASIDE-->
-            <!--===================================================-->
-            <aside id="aside-container">
-                <div id="aside">
-                    <div class="nano">
-                        <div class="nano-content">
-                            
-                            <!--Nav tabs-->
-                            <!--================================-->
-                            <ul class="nav nav-tabs nav-justified">
-                                <li class="active">
-                                    <a href="#demo-asd-tab-1" data-toggle="tab">
-                                        <i class="pli-speech-bubble-7"></i>
-                                        <span class="badge badge-purple">7</span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#demo-asd-tab-2" data-toggle="tab">
-                                        <i class="pli-information"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#demo-asd-tab-3" data-toggle="tab">
-                                        <i class="pli-wrench"></i>
-                                    </a>
-                                </li>
-                            </ul>
-                            <!--================================-->
-                            <!--End nav tabs-->
-                        </div>
-                    </div>
-                </div>
-            </aside>
-            <!--===================================================-->
-            <!--END ASIDE-->
-
+                </li>
+            </ul>        
+    	</div>
+    </header>
+    
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#"><i class="fa fa-home"></i>Início</a></li>
+                <li><a href="#"><i class="fa fa-puzzle-piece"></i>Painel</a></li>
+                <li><a href="#"><i class="fa fa-info-circle"></i>Tutorial</a></li>
+            </ul>
         </div>
-
-        
-
-        <!-- FOOTER -->
-        <!--===================================================-->
-        <footer id="footer">
-
-            <!-- Visible when footer positions are fixed -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="show-fixed pull-right">
-                <ul class="footer-list list-inline">
-                    <li>
-                        <p class="text-sm">SEO Proggres</p>
-                        <div class="progress progress-sm progress-light-base">
-                            <div style="width: 80%" class="progress-bar progress-bar-danger"></div>
-                        </div>
-                    </li>
-
-                    <li>
-                        <p class="text-sm">Online Tutorial</p>
-                        <div class="progress progress-sm progress-light-base">
-                            <div style="width: 80%" class="progress-bar progress-bar-primary"></div>
-                        </div>
-                    </li>
-                    <li>
-                        <button class="btn btn-sm btn-dark btn-active-success">Checkout</button>
-                    </li>
-                </ul>
+    </nav>
+    
+    <section id="nome-pagina">
+    	<div class="container">
+    		<h2>Dashboard</h2>
+            <div class="busca-geral pull-right">
+				<div class="input-group">
+                    <input type="text" class=" form-control" placeholder="Procure por algo..." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-busca" type="button">
+                            <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>            
             </div>
-
-
-
-            <!-- Visible when footer positions are static -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <div class="hide-fixed pull-right pad-rgt">Currently v2.4.1</div>
-
-
-
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-            <!-- Remove the class name "show-fixed" and "hide-fixed" to make the content always appears. -->
-            <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-
-            <p class="pad-lft">&#0169; 2016 Your Company</p>
-
-
-
-        </footer>
-        <!--===================================================-->
-        <!-- END FOOTER -->
-
-
-        <!-- SCROLL TOP BUTTON -->
-        <!--===================================================-->
-        <button id="scroll-top" class="btn"><i class="fa fa-chevron-up"></i></button>
-        <!--===================================================-->
-
-
-
-    </div>
-    <!--===================================================-->
-    <!-- END OF CONTAINER -->
-
-
+    	</div>
+    </section>
     
-    
-    
-    <!--JAVASCRIPT-->
-    <!--=================================================-->
+    <section id="conteudo">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-md-8">
+                
+                	<div id="box-mapa">
+                        
+                        <!-- aqui vai o mapa -->
+                        
+                    </div>
+                
+                </div>
+            	<div class="col-md-4">
+                	<div class="box-direita">
+                    
+                        <div id="tabs">	
+                        	<ul class="nav nav-tabs">
+                            	<li class="active" id="carreira_theader_tab"><a  href="#carreira_theader" data-toggle="tab"><h4>Objetivos</h4></a></li>
+                                <li id="habilidade_theader_tab"><a href="#habilidade_theader" data-toggle="tab"><h4>Habilidades</h4></a></li>
+                            </ul>
+                            <div class="area-filtro">
+                            	<div class="numero-filtrado numero-objetivos">
+                            		<span id="qtdeObjetivos" ></span>
+                            		<button id="filterObjetivo" class=""><i class="fa fa-filter icon-filter""></i></button>
+                            	</div>
+                            	<div class="numero-filtrado numero-habilidades hide">
+                            		<span id="qtdeHabilidades" ></span>
+                            		<button id="filterHabilidade" class=""><i class="fa fa-filter icon-filter""></i></button>
+                            	</div>
+                            </div>
+                        	<div class="tab-content">
+                            	<div class="tab-pane active" id="carreira_theader">
+					
+                                </div>
+                            	<div class="tab-pane" id="habilidade_theader">
+
+                                </div>
+                        	</div>
+						</div>
+                    
+                	</div><!--box-direita-->
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!--jQuery [ REQUIRED ]-->
     <script src="js/jquery-2.2.4.min.js"></script>
 
-
     <!--BootstrapJS [ RECOMMENDED ]-->
     <script src="js/bootstrap.min.js"></script>
-
-
-    <!--Fast Click [ OPTIONAL ]-->
-    <script src="plugins/fast-click/fastclick.min.js"></script>
-
     
-    <!--Nifty Admin [ RECOMMENDED ]-->
-    <script src="js/nifty.min.js"></script>
+    <!--FooTable [ OPTIONAL ]-->
+    <script src="plugins/fooTable/dist/footable.all.min.js"></script>
 
+    <!--rest commands-->
+    <script src="js/rest_commands.js"></script>
 
-    <!--Switchery [ OPTIONAL ]-->
-    <script src="plugins/switchery/switchery.min.js"></script>
-
-
-    <!--Bootstrap Select [ OPTIONAL ]-->
-    <script src="plugins/bootstrap-select/bootstrap-select.min.js"></script>
-
-    <!--FooTable -->
-    <script src="js-datatables/tables-footable.js"></script>
-    <script src="js-datatables/footable.all.min.js"></script>
-
-    <!--cytoscape-->
-	<script	src="http://cytoscape.github.io/cytoscape.js/api/cytoscape.js-latest/cytoscape.min.js"></script>
-	<script src="js-cytoscape/cytoscape-cose-bilkent.js"></script>
-	<script src="js-cytoscape/cytoscape-panzoom.js"></script>
-	<script src="js-cytoscape/cytoscape-qtip.js"></script>
-	<script src="js-cytoscape/template-base.js"></script>
-	<script src="js-cytoscape/draw-diagram.js"></script>
+	<!--DataTables -->
 	<script src="js-datatables/carreiras.js"></script>
 	<script src="js-datatables/cursos.js"></script>
 	<script src="js-datatables/habilidades.js"></script>
 	<script src="js-datatables/carreiras-user-perfil.js"></script>
 	<script src="js-datatables/habilidades-user-perfil.js"></script>
-	<script src="js-datatables/cursos-user-perfil.js"></script>
-
-    <!--rest commands-->
-    <script src="js/rest_commands.js"></script>
+	<script src="js-datatables/cursos-user-perfil.js"></script>  
 
     <!--Yggboard-->
     <script src="js/main.js"></script>
@@ -898,29 +151,6 @@
     <script src="js/carrega-base-dados.js"></script>
     <script src="js/yggboard.js"></script>
     <script src="js/meuPerfil.js"></script>
-    
-    <!--
 
-    REQUIRED
-    You must include this in your project.
-
-    RECOMMENDED
-    This category must be included but you may modify which plugins or components which should be included in your project.
-
-    OPTIONAL
-    Optional plugins. You may choose whether to include it in your project or not.
-
-    DEMONSTRATION
-    This is to be removed, used for demonstration purposes only. This category must not be included in your project.
-
-    SAMPLE
-    Some script samples which explain how to initialize plugins or components. This category should not be included in your project.
-
-
-    Detailed information and more samples can be found in the document.
-
-    -->
-        
-
-</body>
+  </body>
 </html>

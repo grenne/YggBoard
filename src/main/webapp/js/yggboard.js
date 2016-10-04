@@ -27,9 +27,8 @@
 	if ($(window).width() > 1185){
 		largura = 9.8;
 	}
-	$('.cy').css( "width", ($(window).width() / 14 * largura));
-	$('.cy').css( "height", ($(window).height() / 12 * 9));
-		
+
+			
 	// *** flag de controle da montagem do diagrama para acerto de posicoes
 	if (!localStorage.montacampo){
 		localStorage.montacampo = "true";
@@ -216,6 +215,27 @@
 		$('.habilidade-user-perfil').removeClass("hide");
 		obterHabilidadesUserPerfil ("habilidades-elementos", false, "habilidades_user_perfil_conquista_theader")
 	});
+
+	localStorage.carrega = "true";
+	$('#habilidade_theader_tab').on('shown.bs.tab', function (e) {
+		if (localStorage.carrega == "true"){
+			var cy = "";
+			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")), cy);
+		};
+		localStorage.carrega = "false";
+		$('.numero-objetivos').addClass("hide");
+		$('.numero-habilidades').removeClass("hide");
+	});
+	$('#carreira_theader_tab').on('shown.bs.tab', function (e) {
+		if (localStorage.carrega == "true"){
+			var cy = "";
+			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")), cy);
+		};
+		localStorage.carrega = "false";
+		$('.numero-objetivos').removeClass("hide");
+		$('.numero-habilidades').addClass("hide");
+	});
+
 //	$( "#conquistasUserPerfilCursos" ).on( "click", function() {
 //		$('.paineis-user-perfil').addClass("hide");
 //		$('.curso-user-perfil').removeClass("hide");

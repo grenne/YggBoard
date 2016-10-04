@@ -2,14 +2,14 @@
  * 
  */
     
-    function rest_obterHabilidades(action_ok) {
+    function rest_obterHabilidades(action_ok, var1, var2) {
     	$.ajax({
-            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/lista",
+	        url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/lista?diagrama=habilidades",
             contentType: "application/json; charset=utf-8",
             dataType: 'json'
     	})
     	.done(function( data ) {
-    		action_ok(data);
+    		action_ok(data, var1, var2);
     	})
     	.fail(function(data) {
     		action_not_ok()
@@ -180,6 +180,7 @@
     };
 
     function rest_incluiUserPerfil(objJson, action_ok, action_not_ok) {
+    	alert ("aqui");
 		$.ajax({
 			type: "POST",
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/incluir",

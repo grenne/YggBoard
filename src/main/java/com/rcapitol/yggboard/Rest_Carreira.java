@@ -2,9 +2,9 @@ package com.rcapitol.yggboard;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Map;
 
 import javax.inject.Singleton;
@@ -57,6 +57,7 @@ public class Rest_Carreira {
 		mongo.close();
 		return documento;
 	};
+	@SuppressWarnings("unchecked")
 	@Path("/incluir")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -78,25 +79,22 @@ public class Rest_Carreira {
 			mongo.close();
 			return Response.status(200).entity(documento).build();
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			System.out.println("UnknownHostException");
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			System.out.println("MongoException");
 			e.printStackTrace();
 		} catch (JsonMappingException e) {
-			// TODO Auto-generated catch block
 			System.out.println("JsonMappingException");
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			System.out.println("IOException");
 			e.printStackTrace();
 		}
 		return Response.status(500).build();
 		
 	};
+	@SuppressWarnings({ "unchecked", "unused" })
 	@Path("/atualizar")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -125,6 +123,7 @@ public class Rest_Carreira {
 		return Response.status(200).build();
 	};
 	
+	@SuppressWarnings({ "unchecked", "rawtypes" })
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -135,7 +134,6 @@ public class Rest_Carreira {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
 
-			BasicDBObject setQuery = new BasicDBObject();
 			DBCollection collection = db.getCollection("carreiras");
 			
 			DBCursor cursor = collection.find();
@@ -160,19 +158,37 @@ public class Rest_Carreira {
 				    jsonDocumento.put("necessarios", jsonObject.get("necessarios")); 
 				    jsonDocumento.put("recomentados", jsonObject.get("recomentados"));
 				    jsonDocumento.put("tags", jsonObject.get("tags"));
+			    	ArrayList arrayListNecessarios = new ArrayList(); 
+			    	arrayListNecessarios = (ArrayList) jsonObject.get("necessarios");
+			    	Object arrayNecessarios[] = arrayListNecessarios.toArray(); 
+					int w = 0;
+					JSONArray necessariosArray = new JSONArray();
+					while (w < arrayNecessarios.length) {
+						Mongo mongoHabilidade = new Mongo();
+						DB dbHabilidade = (DB) mongoHabilidade.getDB("documento");
+						DBCollection collectionHabilidade = dbHabilidade.getCollection("habilidades");
+						BasicDBObject searchQueryHabilidade = new BasicDBObject("documento.idHabilidade", arrayNecessarios[w]);
+						DBObject cursorHabilidade = collectionHabilidade.findOne(searchQueryHabilidade);
+						if (cursorHabilidade != null){
+							BasicDBObject obj = (BasicDBObject) cursorHabilidade.get("documento");
+							JSONObject jsonNecessarios = new JSONObject();
+							jsonNecessarios.put("idHabilidade", arrayNecessarios[w]);
+							jsonNecessarios.put("name", obj.get("name"));
+							necessariosArray.add (jsonNecessarios);
+						}
+						++w;
+					};
+					jsonDocumento.put("arrayNecessarios", necessariosArray);
 					documentos.add(jsonDocumento);
 				} catch (ParseException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			};
 			mongo.close();
 			return documentos;
 		} catch (UnknownHostException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (MongoException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return null;

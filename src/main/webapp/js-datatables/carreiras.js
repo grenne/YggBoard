@@ -1,30 +1,28 @@
 /**
  * 				obter os dados
  */
-
-	function obterCarreiras (cy) {
 //		
 //		carrega carreiras
 //
-		/**
-		 * 	carrega lista de carreiras
-		 */
-//		objJson  = templateCarreiras ();
+	/**
+	 * 	carrega lista de carreiras
+	 */
+	var cy = "";
+	rest_obterCarreiras(carregaCarreiras, cy)
 		
-//		carregaCarreiras (objJson, cy);	
-
-		rest_obterCarreiras(carregaCarreiras, cy)
-	};
-		
-	function carregaCarreiras (objJson, cy) {	
+	function carregaCarreiras (objJson, cy) {
+		$("#qtdeObjetivos").html(objJson.length + " objetivos");
 		$( ".carreira_theader" ).remove();
 
 		var carreira_table_header =
-				'<table id="carreira_list" class="carreira_theader table toggle-circle">' +
+				'<table id="carreira_list" class="carreira_theader footable table toggle-circle" data-sorting="true">' +
 					'<thead>' +
 						'<tr>' +
-							'<th data-toggle="true">Carreiras</th>' +
-							'<th>Ação</th>' +
+							'<th data-toggle="true" data-sort-initial="true"></th>' +
+							'<th></th>' +
+							'<th></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
 							'<th data-hide="all" ></th>' +
 							'<th data-hide="all" ></th>' +
 							'<th data-hide="all" ></th>' +
@@ -51,28 +49,36 @@
 
     	$( ".itemCarreira" ).remove();
         $.each(objJson, function (i, carreira) {
-        	var tagsString = "";
-        	var comma = "";
-        	$.each(carreira.tags, function (i, tags){
-        		tagsString = tagsString + comma + tags;
-        		comma = ",";
+        	var habilidades = "";
+        	$.each(carreira.arrayNecessarios, function (i, habilidade){
+        		habilidades = habilidades +
+				'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide">- ' + habilidade.name + '</span>';
         	});
         	carreira_table_row = 
 				'<tr class="itemCarreira">' +
-		   			'<td id="nome_' + i + '"><span class="panel-label"></span>' + carreira.nome + '</td>' +
-					'<td id="acaoCarreira' + i + '"><button id="acaoCarreira_' + i + '" class="btn-xs btn-info">Comparar</button></br>' +
-					'<button id="acaoCarreiraInteresse_' + i + '" class="btn-xs btn-info">Interesse</button></td>' +
-					'<td id="descricao_' + i + '"><span class="panel-label">Objetivo: </span>' + carreira.descricao + '</td>' +
-					'<td id="industria_' + i + '"><span class="panel-label">Industria: </span>' + carreira.industria + '</td>' +
-					'<td id="tarefas_' + i + '"<span class="panel-label">Tarefas: </span>' + carreira.tarefas + '</td>' +
-					'<td id="salarioMinimo_' + i + '"><span class="panel-label">Salário Minimo: </span>' + montaValor(carreira.salarioMinimo) + '</td>' +
-					'<td id="salarioMedio_' + i + '"><span class="panel-label">Salário Médio: </span>' + montaValor(carreira.salarioMedio) + '</td>' +
-					'<td id="salarioMaximo_' + i + '"><span class="panel-label">Salário Maximo: </span>' + montaValor(carreira.salarioMaximo) + '</td>' +
-					'<td id="funcao_' + i + '">Função:' + carreira.funcao + '</td>' +
-					'<td id="tags_' + i + '"><span class="hide">' + tagsString + '</span></td>' +
+					'<td id="nome_' + i + '"><span class="panel-label" data-tooltip="objetivo"></span>' + carreira.nome + '</td>' +
+					'<td><a id="seiFazer_' + i + '" data-tooltip="sei fazer"><i class="fa fa-leanpub"></i></a></td>' +
+					'<td><a id="queroAprender_' + i + '" data-tooltip="quero aprender"><i class="fa fa-book"></i></a></td>' +
+						'<td><span class="panel-label">OBJETIVO: </span><br>' +
+						'<span class="panel-text">' + carreira.descricao + '</span></td>' +
+						'<td><br><span class="panel-label">INDÚSTRIA: </span><br>' +
+						'<span class="panel-text">' + carreira.industria + '</span></td>' +
+						'<td><br><span class="panel-label">FUNÇÃO: </span><br>' +
+						'<span class="panel-text">' + carreira.funcao + '</span></td>' +
+						'<td><br><button id="habilidadeCarreiraIn_' + i + '" class="panel-button habilidadeCarreiraIn"><i class="fa fa-chevron-down icon-check"></i><span>habilidades necessárias</span></button>' +
+						'<button id="habilidadeCarreiraOff_' + i + '" class="panel-button habilidadeCarreira hide"><i class="fa fa-chevron-up icon-check""></i><span>habilidades necessárias</span></button></td>' +
+						'<td>' + habilidades + '</td>' +
 				'</tr>';
-        	$( "#carreira_tbody" ).append(carreira_table_row);
-            $('#acaoCarreira_' + i).bind('click', function () {
+        	$("#carreira_tbody").append(carreira_table_row);
+            $('#habilidadeCarreiraIn_' + i).bind('click', function () {
+            	$(".habilidadeCarreira").removeClass("hide");
+            	$(".habilidadeCarreiraIn").addClass("hide");
+            });
+            $('#habilidadeCarreiraOff_' + i).bind('click', function () {
+            	$(".habilidadeCarreira").addClass("hide");
+            	$(".habilidadeCarreiraIn").removeClass("hide");
+            });
+            $('#comparaCarreira' + i).bind('click', function () {
             	$("#labelYggmap").html("Montando carreira:" + carreira.nome + "...");
             	$("#labelYggmap").removeClass("text-success");
             	$("#labelYggmap").removeClass("text-warning");
@@ -93,17 +99,9 @@
         var carreira_table = $('#carreira_list');
 		carreira_table.footable().trigger('footable_collapse_all');
 
-
-		$('#collapseCarreiras').on('click', function(){
-			carreira_table.trigger('footable_collapse_all');
-			$( "#collapseCarreiras").addClass('hide');
-			$( "#expandCarreiras").removeClass('hide');
+		$('#carreira_theader_tab').on('shown.bs.tab', function (e) {
+			carreira_table.footable().trigger('footable_collapse_all');
 		});
-		$('#expandCarreiras').on('click', function(){
-			carreira_table.trigger('footable_expand_all');
-			$( "#collapseCarreiras").removeClass('hide');
-			$( "#expandCarreiras").addClass('hide');
-		})
 		// Search input
 		$('#searchCarreiras').on('input', function (e) {
 			e.preventDefault();
