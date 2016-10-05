@@ -57,16 +57,16 @@
         	carreira_table_row = 
 				'<tr class="itemCarreira">' +
 					'<td id="nome_' + i + '"><span class="panel-label" data-tooltip="objetivo"></span>' + carreira.nome + '</td>' +
-					'<td><a id="seiFazer_' + i + '" data-tooltip="sei fazer"><i class="fa fa-leanpub"></i></a></td>' +
-					'<td><a id="queroAprender_' + i + '" data-tooltip="quero aprender"><i class="fa fa-book"></i></a></td>' +
+					'<td><a id="comparar_' + i + '" data-tooltip="comparar" class="icon-logo"><img src="img/icone-arvore.png" alt="compara" height="15" width="15"  class="icon-logo"></i></a></td>' +
+					'<td><a id="queroAprender_' + i + '" data-tooltip="quero aprender"><i class="fa fa-thumbs-o-up"></i></a></td>' +
 						'<td><span class="panel-label">OBJETIVO: </span><br>' +
 						'<span class="panel-text">' + carreira.descricao + '</span></td>' +
 						'<td><br><span class="panel-label">INDÚSTRIA: </span><br>' +
 						'<span class="panel-text">' + carreira.industria + '</span></td>' +
 						'<td><br><span class="panel-label">FUNÇÃO: </span><br>' +
 						'<span class="panel-text">' + carreira.funcao + '</span></td>' +
-						'<td><br><button id="habilidadeCarreiraIn_' + i + '" class="panel-button habilidadeCarreiraIn"><i class="fa fa-chevron-down icon-check"></i><span>habilidades necessárias</span></button>' +
-						'<button id="habilidadeCarreiraOff_' + i + '" class="panel-button habilidadeCarreira hide"><i class="fa fa-chevron-up icon-check""></i><span>habilidades necessárias</span></button></td>' +
+						'<td><br><button id="habilidadeCarreiraIn_' + i + '" class="panel-button-carreira habilidadeCarreiraIn"><i class="fa fa-chevron-down icon-check-carreira"></i><span>lista de habilidades</span></button>' +
+						'<button id="habilidadeCarreiraOff_' + i + '" class="panel-button-carreira habilidadeCarreira hide"><i class="fa fa-chevron-up icon-check-carreira"></i><span>lista de habilidades</span></button></td>' +
 						'<td>' + habilidades + '</td>' +
 				'</tr>';
         	$("#carreira_tbody").append(carreira_table_row);

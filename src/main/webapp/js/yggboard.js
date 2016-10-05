@@ -17,6 +17,8 @@
 	
 	// *** carrega nome usuario
 	$('.userName').html(localStorage.usuarioFirstName);
+	$('.completeName').html(localStorage.usuarioFirstName + " " + localStorage.usuarioLastName);
+
 	// *** reseta para forcar login
 	//localStorage.loginOk = "false";
 	
@@ -188,10 +190,17 @@
 	});
 	
     // ** ações do menu do user perfil tab interesses
-	$( "#interesseUserPerfil" ).on( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.carreira-user-perfil').removeClass("hide");
-		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_theader");
+	$( "#openUserPainel" ).on( "click", function() {
+		$('#userPanel').removeClass("hide");
+		$('#tutorial').addClass("hide");
+	});
+	$( "#openTutorial" ).on( "click", function() {
+		$('#userPanel').addClass("hide");
+		$('#tutorial').removeClass("hide");
+	});
+	$( "#closePainel" ).on( "click", function() {
+		$('#userPanel').addClass("hide");
+		$('#tutorial').addClass("hide");
 	});
 	$( "#interesseUserPerfilHabilidades" ).on( "click", function() {
 		$('.paineis-user-perfil').addClass("hide");

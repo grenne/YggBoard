@@ -56,9 +56,9 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="#"><i class="fa fa-home"></i>Início</a></li>
-                <li><a href="#"><i class="fa fa-puzzle-piece"></i>Painel</a></li>
-                <li><a href="#"><i class="fa fa-info-circle"></i>Tutorial</a></li>
+                <li class="active "><a id="closePainel" ><i class="fa fa-home"></i>Início</a></li>
+                <li class=""><a id="openUserPainel" ><i class="fa fa-puzzle-piece"></i>Painel</a></li>
+                <li class=""><a id="openTutorial"><i class="fa fa-info-circle"></i>Tutorial</a></li>
             </ul>
         </div>
     </nav>
@@ -83,6 +83,68 @@
     	<div class="container">
         	<div class="row">
             	<div class="col-md-8">
+                  	<div id="userPanel" class="user-panel col-md-12 hide">
+                       	<div class="box-user-name ">
+                       		<span id="completeName" class="completeName"></span>
+                       	</div>
+                       	<div class="box-text-user-panel">
+                       		<span id="text-user-panel" class="text-user-panel">
+                       		Nesta seção voçe poderá determinar seus interesses e objetivos. Escolha um dos itens clicando abaixo. Em caso de dúvida, consulte nosso tutorial.
+                       		</span>
+                       	</div>
+                        <div id="tabs" class="">	
+                        	<ul class="nav nav-tabs nav-user-panel">
+                            	<li class="active tab-user-panel" id="interesses_theader_tab"><a  href="#interesses_theader" data-toggle="tab">Interesses</a></li>
+                                <li class="tab-user-panel" id="conquistas_theader_tab"><a href="#conquistas_theader" data-toggle="tab">Conquistas</a></li>
+                            </ul>
+                        	<div class="tab-content">
+                            	<div class="tab-pane active-user-panel" id="interesses_theader">
+		                        	<ul class="nav nav-tabs nav-user-panel nav-user-interesse">
+		                            	<li class="active tab-user-panel-interesse" id="interesse_objetivos_theader_tab"><a  href="#interesse_objetivos_theader" data-toggle="tab" ><i class="fa fa-list-ul"></i> Objetivos</a></li>
+		                                <li class="tab-user-panel-interesse" id="interesse_habilidades_theader_tab"><a href="#interesse_habilidades_theader" data-toggle="tab" ><i class="fa fa-wrench"></i> Habilidades</a></li>
+		                            	<li class="tab-user-panel-interesse" id="interesse_cursos_theader_tab"><a href="#interesse_cursos_theader" data-toggle="tab" ><i class="fa fa-mortar-board"></i> Cursos</a></li>
+		                                <li class="tab-user-panel-interesse" id="interesse_premios_theader_tab"><a href="#interesse_premios_theader" data-toggle="tab" ><i class="fa fa-trophy"></i> Premios</a></li>
+		                            </ul>					
+                        			<div class="tab-content">
+		                            	<div class="tab-pane" id="interesse_objetivos_theader">
+		
+		                                </div>
+		                            	<div class="tab-pane" id="interesse_habilidades_theader">
+		
+		                                </div>
+		                            	<div class="tab-pane" id="interesse_cursos_theader">
+		
+		                                </div>
+		                            	<div class="tab-pane" id="interesse_premios_theader">
+		
+		                                </div>
+		                        	</div>
+                                </div>
+                            	<div class="tab-pane" id="conquistas_theader">
+  		                        	<ul class="nav nav-tabs nav-user-panel nav-user-conquista">
+		                            	<li class="active tab-user-panel-conquista" id="conquista_objetivos_theader_tab"><a  href="#conquista_objetivos_theader" data-toggle="tab"><i class="fa fa-list-ul"></i> Objetivos</a></li>
+		                                <li class="tab-user-panel-conquista" id="conquista_habilidades_theader_tab"><a href="#conquista_habilidades_theader" data-toggle="tab"><i class="fa fa-wrench"></i> Habilidades</a></li>
+		                            	<li class="tab-user-panel-conquista" id="conquista_cursos_theader_tab"><a href="#conquista_cursos_theader" data-toggle="tab"><i class="fa fa-mortar-board"></i> Cursos</a></li>
+		                                <li class="tab-user-panel-conquista" id="conquista_premios_theader_tab"><a href="#conquista_premios_theader" data-toggle="tab"><i class="fa fa-trophy"></i> Premios</a></li>
+		                            </ul>					
+                        			<div class="tab-content">
+		                            	<div class="tab-pane" id="conquista_objetivos_theader">
+		
+		                                </div>
+		                            	<div class="tab-pane" id="conquista_habilidades_theader">
+		
+		                                </div>
+		                            	<div class="tab-pane" id="conquista_cursos_theader">
+		
+		                                </div>
+		                            	<div class="tab-pane" id="conquista_premios_theader">
+		
+		                                </div>
+		                       		</div>
+	                            </div>
+                        	</div>
+						</div>                    
+                	</div><!--user panel-->
                 
                 	<div id="box-mapa">
                         
@@ -102,11 +164,11 @@
                             <div class="area-filtro">
                             	<div class="numero-filtrado numero-objetivos">
                             		<span id="qtdeObjetivos" ></span>
-                            		<button id="filterObjetivo" class=""><i class="fa fa-filter icon-filter""></i></button>
+                            		<button id="filterObjetivo" class="icon-filter"><i class="fa fa-filter"></i></button>
                             	</div>
                             	<div class="numero-filtrado numero-habilidades hide">
                             		<span id="qtdeHabilidades" ></span>
-                            		<button id="filterHabilidade" class=""><i class="fa fa-filter icon-filter""></i></button>
+                            		<button id="filterHabilidade" class="icon-filter"><i class="fa fa-filter"></i></button>
                             	</div>
                             </div>
                         	<div class="tab-content">

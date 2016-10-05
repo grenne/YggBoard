@@ -46,10 +46,11 @@
 
     	$( ".itemHabilidade" ).remove();
         $.each(objJson, function (i, element) {
-        	var cursos = "0";
+        	var cursos = "";
         	$.each(element.documento.cursos, function (i, curso){
         		cursos = cursos +
-				'<br class="cursoHabilidade "><span class="panel-text cursoHabilidade ">- ' + curso.nome + '</span>';
+				'<br class="cursoHabilidade hide"><a id="querofazer_' + i + '" data-tooltip="quero fazer"  class="cursoHabilidade hide icon-querofazer"><i class="fa fa-leanpub icon-quefazer"></i></a>' +
+				'<span class="panel-text panel-cursos cursoHabilidade hide ">  ' + curso.nome + '</span>';
         	});
         	habilidade_table_row = 
 				'<tr class="itemHabilidade">' +
@@ -64,8 +65,9 @@
 					'<span class="panel-text">' + element.documento.campo + '</span></td>' +
 					'<td><br><span class="panel-label">CATEGORIA: </span><br>' +
 					'<span class="panel-text">' + element.documento.categoria + '</span></td>' +
-					'<td><br><button id="cursoHabilidadeIn_' + i + '" class="panel-button cursoHabilidadeIn"><i class="fa fa-chevron-down icon-check"></i><span>cursos</span></button>' +
-					'<button id="cursoHabilidadeOff_' + i + '" class="panel-button cursoHabilidade hide"><i class="fa fa-chevron-up icon-check""></i><span>cursos</span></button></td>' +
+					'<td><br><button id="cursoHabilidadeIn_' + i + '" class="panel-button-habilidade cursoHabilidadeIn"><i class="fa fa-chevron-down icon-check-habilidade"></i><span>cursos necessários</span></button>' +
+					'<button id="cursoHabilidadeOff_' + i + '" class="panel-button-habilidade cursoHabilidade hide"><i class="fa fa-chevron-up icon-check-habilidade"></i><span>cursos necessários</span></button>' +
+					'<a id="wiki_' + i + '" href="' + element.documento.wiki + '" class="wiki" data-tooltip="wikipédia"><i class="fa fa-wikipedia-w"></i></a></td>' +
 					'<td>' + cursos + '</td>' +
 				'</tr>';
         	$("#habilidade_tbody" ).append(habilidade_table_row);

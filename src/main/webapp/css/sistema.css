@@ -360,6 +360,19 @@ section#conteudo .box-direita #tabs .nav-tabs h4 {
     cursor: default;
 }
 
+.navbar-nav > li.active > a, .navbar-nav > li.active > a:focus, .navbar-nav > li.active > a:hover {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #fff;
+    border-color: transparent;
+    border-image: none;
+    border-style: none;
+    border-width: 0px;
+    cursor: default;
+}
+
 section#conteudo  .nav-tabs > li {
 	width:50%;
 	text-align:center;
@@ -461,16 +474,40 @@ section#conteudo .nav > li > a {
 	font-weight: bold !important;
 }
 
-.panel-button {
+.panel-button-carreira {
 	padding : 5px !important;
 	background-color: #AC9480 !important;
 	color: #ffffff !important;
 }
 
-.icon-check {
+.panel-cursos {
+	color: #7C172B !important;
+}
+
+.panel-button-habilidade {
+	padding : 5px !important;
+	background-color: #7C172B !important;
+	color: #ffffff !important;
+}
+
+.icon-check-habilidade {
+	padding : 5px !important;
+	background-color:  #7C172B !important;
+	color: #ffffff!important;
+}
+
+.icon-check-carreira {
 	padding : 5px !important;
 	background-color: #AC9480 !important;
 	color: #ffffff!important;
+}
+
+.icon-logo {
+	padding : 0px !important;
+}
+
+.icon-querofazer {
+	padding-right : 20px !important;
 }
 
 .area-filtro {
@@ -481,7 +518,138 @@ section#conteudo .nav > li > a {
 }
 
 .icon-filter {
-	text-align: right;
+}
+
+.tab-user-panel.active{
+	background-color: #FFD4AF !important;
+	text-transform: capitalize !important;
+}
+
+.tab-user-panel{
+	background-color: #FAFAFA !important;
+	text-transform: capitalize !important;
+}
+
+.nav-user-panel > li.active > a, .nav-user-panel > li.active > a:focus, .nav-user-panel > li.active > a:hover {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent;
+    border-image: none;
+    border-style: none;
+    border-width: 0px;
+    cursor: default;
+	background-color: #FFD4AF !important;
+}
+
+.nav-user-interesse > li {
+	width:15%  !important;
+	text-align:center  !important;
+	height:38px  !important;
+}
+.nav-user-interesse {
+	background-color: #fff !important;
+}
+
+.nav-user-conquista > li {
+	width:15%  !important;
+	text-align:center !important;
+	height:38px !important;
+	background-color: #fff !important;
+}
+.nav-user-conquista {
+	background-color: #fff !important;
+}
+
+.tab-user-panel-interesse.active{
+	background-color: #ffffff!important;
+	text-transform: capitalize !important;
+}
+
+.tab-user-panel-interesse{
+	background-color: #ffffff !important;
+	text-transform: capitalize !important;
+	border-color: #000000;
+    border-image: none;
+    border-style: none;
+    border-width: 2px;
+}
+
+.nav-user-interesse > li.active > a, .nav-user-interesse > li.active > a:focus, .nav-user-interesse > li.active > a:hover {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #000000;
+    border-image: none;
+    border-style: none;
+    border-width: 3px;
+    cursor: default;
+	background-color: #ffffff !important;
+	color : #EADACC !important;
+	height:38px !important;
+	
+}
+
+.tab-user-panel-conquista.active{
+	background-color: #ffffff!important;
+	text-transform: capitalize !important;
+}
+
+.tab-user-panel-conquista{
+	background-color: #ffffff !important;
+	text-transform: capitalize !important;
+}
+
+.nav-user-conquista > li.active > a, .nav-user-conquista > li.active > a:focus, .nav-user-conquista > li.active > a:hover {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: transparent;
+    border-image: none;
+    border-style: none;
+    border-width: 0px;
+    cursor: default;
+	background-color: #ffffff !important;
+	color : #EADACC !important;
+	height:38px !important;
+}
+
+.box-user-name{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+	padding-right: 0px;	
+    background-color: #fff;
+    border-color: transparent;
+    border-image: none;
+    border-style: none;
+    border-width: 0px;
+    cursor: default;	
+	color: #000000 !important;
+	font-weight: bold !important;
+}
+
+.box-text-user-panel{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+	padding-right: 0px;	
+    background-color: #fff;
+    border-color: transparent;
+    border-image: none;
+    border-style: none;
+    border-width: 0px;
+    cursor: default;	
+	color: #000000 !important;
+	font-size: 80%;
+}
+
+
+.wiki {
+	padding-left : 110px !important;
 }
 
 /* 
