@@ -648,19 +648,75 @@ section#conteudo .nav > li > a {
 	font-size: 80%;
 }
 
-
+.box-user-tabs{
+	padding-top: 15px;
+	padding-bottom: 15px;
+	padding-left: 0px;
+	padding-right: 0px;	
+    background-color: #fff;
+    border-color: transparent;
+    border-image: none;
+    border-style: none;
+    border-width: 0px;
+    cursor: default;	
+	color: #000000 !important;
+	font-weight: bold !important;
+}
 .wiki {
 	padding-left : 110px !important;
 }
 
-.percentual{
+.percentual-box{
+	padding : 8px;
+	background-color: #C5E89F;
+}
+.percentual-numero{
+	padding : 8px;
 	background-color: #C5E89F;
 	color: #6D9E38;
+	font-weight: bold !important;
 }
+.percentual-texto{
+	padding : 8px;
+	background-color: #C5E89F;
+	color: #91B56A;
+	font-size: 80%;
+}
+
 .user-panel-label {
 	color: #797979!important;
 	font-weight: bold !important;
 }
+.user-panel-td{
+	padding : 12px;
+}
+
+.user-panel-table{
+	background-color: #fff;
+	padding : 15px;
+}
+.user-panel-label-habilidade{
+	color : #616161;
+	text-transform:uppercase;
+	font-weight: bold !important;
+	font-size: 80%;
+}
+.user-panel-habilidade-nome{
+	color : #6D9E38;
+	font-weight: normal !important;
+	font-size: 90%;
+	
+}
+.user-panel-td-habilidade{
+	padding-left : 20px;
+}
+.user-panel-button-curso {
+	padding : 5px !important;
+	background-color: #FFD4AF !important;
+	color: #A87345 !important;
+	font-size: 60%;
+}
+
 /* 
   <p><a href="#" data-tooltip="Iâ€™m the tooltip text.">Iâ€™m a link with a tooltip.</a></p>
 

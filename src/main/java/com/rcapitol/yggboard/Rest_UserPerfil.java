@@ -57,7 +57,7 @@ public class Rest_UserPerfil {
 		mongo.close();
 		return documento;
 	};
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
 	@Path("/obter/itens")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -107,9 +107,34 @@ public class Rest_UserPerfil {
 					ArrayList arrayListElementos = new ArrayList(); 
 					arrayListElementos = (ArrayList) jsonObject.get("elementos");
 			    	Object arrayElementos[] = arrayListElementos.toArray(); 
-				    JSONObject jsonQtdeHabilidades = obterTotalHabilidades(objCarreiras.get("nome"), arrayElementos);
+					ArrayList <String> arrayListElementosFaltantes = new ArrayList(); 
+				    JSONObject jsonQtdeHabilidades = obterTotalHabilidades(objCarreiras.get("nome"), arrayElementos, arrayListElementosFaltantes);
 				    jsonDocumento.put("totalHabilidades", jsonQtdeHabilidades.get("totalHabilidades"));
 				    jsonDocumento.put("totalPossuiHabilidades", jsonQtdeHabilidades.get("totalPossuiHabilidades"));
+			    	ArrayList arrayListNecessarios = new ArrayList(); 
+			    	arrayListNecessarios = (ArrayList) objCarreiras.get("necessarios");
+			    	Object arrayNecessarios[] = arrayListNecessarios.toArray(); 
+					int z = 0;
+					JSONArray necessariosArray = new JSONArray();
+					while (z < arrayListElementosFaltantes.size()) {
+						Mongo mongoHabilidade = new Mongo();
+						DB dbHabilidade = (DB) mongoHabilidade.getDB("documento");
+						DBCollection collectionHabilidade = dbHabilidade.getCollection("habilidades");
+						BasicDBObject searchQueryHabilidade = new BasicDBObject("documento.idHabilidade", arrayListElementosFaltantes.get(z));
+						DBObject cursorHabilidade = collectionHabilidade.findOne(searchQueryHabilidade);
+						if (cursorHabilidade != null){
+							BasicDBObject objCarreira = (BasicDBObject) cursorHabilidade.get("documento");
+							JSONObject jsonNecessarios = new JSONObject();
+							jsonNecessarios.put("idHabilidade", arrayListElementosFaltantes.get(z));
+							jsonNecessarios.put("name", objCarreira.get("name"));
+							JSONArray cursos = new JSONArray();
+							obterCursosNecessarios (arrayListElementosFaltantes.get(z), cursos);
+							jsonNecessarios.put("cursos", cursos);
+							necessariosArray.add (jsonNecessarios);
+						}
+						++z;
+					};
+					jsonDocumento.put("arrayNecessarios", necessariosArray);
 					documentos.add(jsonDocumento);
 					mongoCarreiras.close();
 					++w;
@@ -340,8 +365,8 @@ public class Rest_UserPerfil {
 				};
 				if (!existeHabilidade){
 					Mongo mongoHabilidades = new Mongo();
-					DB dbSchool = (DB) mongoHabilidades.getDB("documento");
-					DBCollection collectionHabilidades = dbSchool.getCollection("habilidades");
+					DB dbHabilidade = (DB) mongoHabilidades.getDB("documento");
+					DBCollection collectionHabilidades = dbHabilidade.getCollection("habilidades");
 					BasicDBObject searchQueryHabilidades = new BasicDBObject("documento.idHabilidade", arrayHabilidades[w]);
 					DBObject cursorHabilidades = collectionHabilidades.findOne(searchQueryHabilidades);
 					BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
@@ -364,7 +389,7 @@ public class Rest_UserPerfil {
 		return null;
 	}
 	@SuppressWarnings("unchecked")
-	private JSONObject obterTotalHabilidades (Object carreira, Object[] arrayElementos) {
+	private JSONObject obterTotalHabilidades (Object carreira, Object[] arrayElementos, ArrayList<String> arrayListElementosFaltantes) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
@@ -380,13 +405,18 @@ public class Rest_UserPerfil {
 	    	int totalPossuiHabilidades = 0;
 			int w = 0;
 			while (w < arrayHabilidades.length) {
+				Boolean temHabilidade = false;
 				int z = 0;
 				while (z < arrayElementos.length) {
 					if (arrayHabilidades[w].equals(arrayElementos[z])){
 						++totalPossuiHabilidades;
+						temHabilidade = true;
 					}
 					++z;
 				};
+				if (!temHabilidade){
+					arrayListElementosFaltantes.add((String) arrayHabilidades[w]); 
+				}
 				++w;
 				++totalHabilidades;
 			};
