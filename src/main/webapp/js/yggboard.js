@@ -202,12 +202,28 @@
 		$('#userPanel').addClass("hide");
 		$('#tutorial').addClass("hide");
 	});
-	$( "#interesseUserPerfilHabilidades" ).on( "click", function() {
+    // ** ações do menu do user perfil tab interesses
+	$( "#interesses_theader_tab" ).on( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.carreira-user-perfil').removeClass("hide");
+		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_theader");
+	});
+	$( "#interesse_objetivos_theader_tab" ).on( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.carreira-user-perfil').removeClass("hide");
+		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_theader");
+	});
+	$( "#interesse_habilidades_theader_tab" ).on( "click", function() {
 		$('.paineis-user-perfil').addClass("hide");
 		$('.habilidade-user-perfil').removeClass("hide");
 		obterHabilidadesUserPerfil ("habilidades-interesse", false, "habilidades_user_perfil_theader")
 	});
-	$( "#interesseUserPerfilCursos" ).on( "click", function() {
+	$( "#interesse_cursos_theader_tab" ).on( "click", function() {
+		$('.paineis-user-perfil').addClass("hide");
+		$('.curso-user-perfil').removeClass("hide");
+		obterHabilidadesUserPerfil ("cursos-interesse-habilidades", true, "cursos_user_perfil_theader")
+	});
+	$( "#interesse_premios_theader_tab" ).on( "click", function() {
 		$('.paineis-user-perfil').addClass("hide");
 		$('.curso-user-perfil').removeClass("hide");
 		obterHabilidadesUserPerfil ("cursos-interesse-habilidades", true, "cursos_user_perfil_theader")

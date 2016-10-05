@@ -34,8 +34,9 @@
 				'<table id="carreira_user_perfil_list' + append + '" class="' + append + '">' +
 					'<thead>' +
 						'<tr>' +
-							'<th data-toggle="true">' + label + '</th>' +
-							actions + 
+							'<th data-toggle="true" data-sort-ignore="true"></th>' +
+							'<th data-toggle="true" data-sort-ignore="true"></th>' + 
+							'<th data-toggle="true" data-sort-ignore="true"></th>' + 
 							'<th data-hide="all" ></th>' +
 							'<th data-hide="all" ></th>' +
 							'<th data-hide="all" ></th>' +
@@ -75,13 +76,13 @@
 	        	actions = "";
 	        	if (append == "carreiras_user_perfil_theader"){
 	        		actions = 
-	        			'<td><span class="panel-label">% </span>' + percentualHabilidades + ' <span class="panel-label"> </span></td>' +
-						'<td id="acaoCarreiraUserPerfilHabilidades' + i + append + '"><button id="acaoCarreiraUserPerfilHabilidades_' + i + append + '" class="btn-xs btn-info">Habilidades Faltantes</button></td>';	        		
+	        			'<td><span class="panel-label percentual">' + percentualHabilidades + '%  em comum </span></td>';
 	        	};
 	        	carreira_user_perfil_table_row = 
 					'<tr class="itemCarreiraUserPerfil' + append + '">' +
-			   			'<td id="nome_' + i + '">' + carreira.nome + '</td>' +
+			   			'<td id="nome_' + i + '"><span class="user-panel-label">' + carreira.nome + '</span></td>' +
 			   			actions +
+						'<td><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
 						'<td id="descricao_' + i + '"><span class="panel-label">Objetivo: </span>' + carreira.descricao + '</td>' +
 						'<td id="industria_' + i + '"><span class="panel-label">Industria: </span>' + carreira.industria + '</td>' +
 						'<td id="tarefas_' + i + '"<span class="panel-label">Tarefas: </span>' + carreira.tarefas + '</td>' +

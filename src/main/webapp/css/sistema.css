@@ -517,7 +517,8 @@ section#conteudo .nav > li > a {
 	font-weight: bold !important;
 }
 
-.icon-filter {
+.icon-trash {
+	color: #FF6969 !important;
 }
 
 .tab-user-panel.active{
@@ -652,6 +653,14 @@ section#conteudo .nav > li > a {
 	padding-left : 110px !important;
 }
 
+.percentual{
+	background-color: #C5E89F;
+	color: #6D9E38;
+}
+.user-panel-label {
+	color: #797979!important;
+	font-weight: bold !important;
+}
 /* 
   <p><a href="#" data-tooltip="Iâ€™m the tooltip text.">Iâ€™m a link with a tooltip.</a></p>
 
