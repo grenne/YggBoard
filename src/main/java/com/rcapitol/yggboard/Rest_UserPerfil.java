@@ -58,6 +58,7 @@ public class Rest_UserPerfil {
 			mongo.close();
 			return documento;
 		}else{
+			mongo.close();
 			return null;
 		}
 	};
@@ -136,6 +137,7 @@ public class Rest_UserPerfil {
 							jsonNecessarios.put("cursos", cursos);
 							necessariosArray.add (jsonNecessarios);
 						}
+						mongoHabilidade.close();
 						++z;
 					};
 					jsonDocumento.put("arrayNecessarios", necessariosArray);
@@ -171,9 +173,9 @@ public class Rest_UserPerfil {
 							obterCursosNecessarios (objHabilidades.get("idHabilidade"), cursos);
 							jsonDocumento.put("cursos", cursos);
 							documentos.add(jsonDocumento);
-							mongoHabilidades.close();
 						};
 					};
+					mongoHabilidades.close();
 					++w;
 				};
 			};
@@ -244,6 +246,7 @@ public class Rest_UserPerfil {
 					++w;
 				};
 			};
+			mongo.close();
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}

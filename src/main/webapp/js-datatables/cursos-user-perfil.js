@@ -19,6 +19,7 @@
 					'<thead>' +
 						'<tr>' +
 							'<th data-toggle="true"></th>' +
+							'<th data-toggle="true"></th>' +
 							'<th data-hide="all" ></th>' +
 							'<th data-hide="all" ></th>' +
 							'<th data-hide="all" ></th>' +
@@ -47,6 +48,7 @@
 		   			'<td>' + 
 						'<span class="user-panel-label">' + curso.documento.descricao + '</span>' +
 					'</td>' +
+					'<td class="user-panel-td"><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
 					'<td><span id="curso' + i + '" class="user-panel-detalhes-curso">' + curso.documento.nome + '</span></td>' +
 					'<td><span id="tempo' + i + '" class="user-panel-detalhes-curso">' + curso.documento.tempo + '</span></td>' +
 					'<td><span id="custo' + i + '" class="user-panel-detalhes-curso">' + curso.documento.custo + '</span></td>' +

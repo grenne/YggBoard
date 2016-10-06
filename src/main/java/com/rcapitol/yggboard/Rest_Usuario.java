@@ -48,8 +48,12 @@ public class Rest_Usuario {
 			BasicDBObject searchQuery = new BasicDBObject("documento.email", email);
 			DBObject cursor = collection.findOne(searchQuery);
 			JSONObject documento = new JSONObject();
-			BasicDBObject obj = (BasicDBObject) cursor.get("documento");
-			documento.put("documento", obj);
+			if (cursor != null){
+				BasicDBObject obj = (BasicDBObject) cursor.get("documento");
+				documento.put("documento", obj);
+			}else{
+				return null;
+			};
 			mongo.close();
 			return documento;
 		} catch (UnknownHostException e) {
