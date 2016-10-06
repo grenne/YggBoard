@@ -750,6 +750,11 @@ section#conteudo .nav > li > a {
 	font-size: 80%;
 }
 
+.lineInvisible{
+	color : #fff;
+	backfground-color : #fff;
+	height : 0px;
+}
 /* 
   <p><a href="#" data-tooltip="Iâ€™m the tooltip text.">Iâ€™m a link with a tooltip.</a></p>
 

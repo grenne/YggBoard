@@ -66,8 +66,8 @@
        				'<div class="row">' +
 	       				'<div class="user-panel-habilidade-div col-xs-12">' +
 		    				'<span class="user-panel-carreira-habilidade-nome habilidadeCarreira col-xs-9">- ' + habilidade.name + '</span>' +
-							'<button id="cursoHabilidadeIn_' + i + "-" + z + '" class="user-panel-button-curso user-panel-button-curso-item col-xs-3"><span><i class="fa fa-chevron-down "></i> cursos</span></button>' +
-							'<button id="cursoHabilidadeOff_' + i + "-" + z + '" class="user-panel-button-curso col-xs-3 hide"><span><i class="fa fa-chevron-up "></i> cursos</span></button>' +
+							'<button id="cursoHabilidadeIn_' + i + "-" + z + '" class="user-panel-button-curso user-panel-button-curso-item col-xs-2"><span><i class="fa fa-chevron-down "></i> cursos</span></button>' +
+							'<button id="cursoHabilidadeOff_' + i + "-" + z + '" class="user-panel-button-curso col-xs-2 hide"><span><i class="fa fa-chevron-up "></i> cursos</span></button>' +
 						'</div>' +
 					'</div>';
                 	$.each(habilidade.cursos, function (w, curso){
@@ -89,8 +89,13 @@
 			   			'<td id="nome_' + i + '" class="user-panel-td"><span class="user-panel-label">' + carreira.nome + '</span></td>' +
 			   			actions +
 						'<td class="user-panel-td"><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
-						'<td>' +
-							'<div id="habilidades_' + i + '" class="user-panel-td-habilidade"><span class="user-panel-label-habilidade">Habilidades faltantes</span>' +
+						'<td class="col-xs-12">' +
+							'<div class="col-xs-12 lineInvisible">' +
+							'____________________________________________'+
+							'</div>' +
+							'<div id="habilidades_' + i + '" class="user-panel-td-habilidade row"><span class="user-panel-label-habilidade">Habilidades faltantes</span>' +
+							'</div>' +
+							'<div class="col-xs-12">' +
 							habilidades +
 							'</div>' +
 						'</td>' +
