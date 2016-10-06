@@ -23,8 +23,13 @@
 	    <!--Font Awesome [ OPTIONAL ]-->
    		 <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
+		<!--unify-->
+	    <link rel="stylesheet" href="TemplateData/style.css">
+	    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+
 		<!--yggboard-->
 		<link rel="stylesheet" type="text/css" href="css/yggboard.css"  />
+   		 
    		 
         <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
@@ -154,12 +159,17 @@
 						</div>                    
                 	</div><!--user panel-->
                 
-<!--                  	<div id="box-mapa">
-                        
-                        <-- aqui vai o mapa ->
-                        
+                 	<div id="box-mapa" class="col-md-12 row">
+					    <div class="template-wrap clear ">
+					      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="450px" width="720px"></canvas>
+					      <br>
+					      <div class="logo"></div>
+					      <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+					      <div class="title">YggBoard</div>
+					    </div>
+					    <p class="footer">&laquo; created with <a href="http://unity3d.com/" title="Go to unity3d.com">Unity</a> &raquo;</p>
                     </div>
--->                
+              
                 </div>
             	<div class="col-md-4">
                 	<div class="box-direita">
@@ -216,6 +226,10 @@
 	<script src="js-datatables/cursos-habilidade-user-perfil.js"></script>
 	<script src="js-datatables/cursos-user-perfil.js"></script>  
 
+    <!--unify-->
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Release/UnityLoader.js"></script>
+
     <!--Yggboard-->
     <script src="js/main.js"></script>
     <script src="js/commons.js"></script>
@@ -223,5 +237,16 @@
     <script src="js/yggboard.js"></script>
     <script src="js/meuPerfil.js"></script>
 
-  </body>
+    <script type='text/javascript'>
+		  var Module = {
+		    TOTAL_MEMORY: 268435456,
+		    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+		    compatibilitycheck: null,
+		    dataUrl: "Release/ygg.data",
+		    codeUrl: "Release/ygg.js",
+		    memUrl: "Release/ygg.mem",
+		  };
+	</script>
+
+	</body>
 </html>
