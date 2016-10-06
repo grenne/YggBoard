@@ -83,8 +83,197 @@
         
         <!--NAVBAR-->
         <!--===================================================-->
-        <header id="navbar" class="header-yggboard">
+        <header id="navbar">
             <div id="navbar-container" class="boxed">
+
+                <!--Brand logo & name-->
+                <!--================================-->
+                <div class="navbar-header">
+                    <a href="index.html" class="navbar-brand">
+                        <img src="img/logo.png" alt="YggBoard" class="brand-icon">
+                        <span class="brand-title">
+                            <span class="brand-text">YggBoard</span>
+                        </span>
+                    </a>
+                </div>
+                <!--================================-->
+                <!--End brand logo & name-->
+
+
+                <!--Navbar Dropdown-->
+                <!--================================-->
+                <div class="navbar-content clearfix">
+                    <ul class="nav navbar-top-links pull-left">
+
+                        <!--Navigation toogle button-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="tgl-menu-btn">
+                            <a class="mainnav-toggle" href="#">
+                                <i class="pli-view-list"></i>
+                            </a>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End Navigation toogle button-->
+
+
+
+                        <!--Notification dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                <i class="pli-bell"></i>
+                                <span class="badge badge-header badge-danger"></span>
+                            </a>
+
+                            <!--Notification dropdown menu-->
+                            <div class="dropdown-menu dropdown-menu-md">
+                                <div class="pad-all bord-btm">
+                                    <p class="text-lg text-semibold mar-no"></p>
+                                </div>
+                                <div class="nano scrollable">
+                                    <div class="nano-content">
+                                        <ul class="head-list">
+
+                                            <!-- Dropdown list-->
+                                            <li>
+                                                <a href="#">
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <!--Dropdown footer-->
+                                <div class="pad-all bord-top">
+                                    <a href="#" class="btn-link text-dark box-block">
+                                        <i class="fa fa-angle-right fa-lg pull-right"></i>Show All Notifications
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End notifications dropdown-->
+
+                    </ul>
+                    <ul class="nav navbar-top-links pull-right">
+
+                        <!--Language selector-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li class="dropdown">
+                            <a id="demo-lang-switch" class="lang-selector dropdown-toggle" href="#" data-toggle="dropdown">
+                                <span class="lang-selected">
+                                    <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English">
+                                </span>
+                            </a>
+
+                            <!--Language selector menu-->
+                            <ul class="head-list dropdown-menu">
+						        <li>
+						            <!--English-->
+						            <a href="#" class="active">
+						                <img class="lang-flag" src="img/flags/united-kingdom.png" alt="English">
+						                <span class="lang-id">EN</span>
+						                <span class="lang-name">English</span>
+						            </a>
+						        </li>
+						        <li>
+						            <!--France-->
+						            <a href="#">
+						                <img class="lang-flag" src="img/flags/france.png" alt="France">
+						                <span class="lang-id">FR</span>
+						                <span class="lang-name">Fran&ccedil;ais</span>
+						            </a>
+						        </li>
+						        <li>
+						            <!--Germany-->
+						            <a href="#">
+						                <img class="lang-flag" src="img/flags/germany.png" alt="Germany">
+						                <span class="lang-id">DE</span>
+						                <span class="lang-name">Deutsch</span>
+						            </a>
+						        </li>
+						        <li>
+						            <!--Italy-->
+						            <a href="#">
+						                <img class="lang-flag" src="img/flags/italy.png" alt="Italy">
+						                <span class="lang-id">IT</span>
+						                <span class="lang-name">Italiano</span>
+						            </a>
+						        </li>
+						        <li>
+						            <!--Spain-->
+						            <a href="#">
+						                <img class="lang-flag" src="img/flags/spain.png" alt="Spain">
+						                <span class="lang-id">ES</span>
+						                <span class="lang-name">Espa&ntilde;ol</span>
+						            </a>
+						        </li>
+                            </ul>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End language selector-->
+
+
+
+                        <!--User dropdown-->
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <li id="dropdown-user" class="dropdown">
+                            <a href="#" data-toggle="dropdown" class="dropdown-toggle text-right">
+                                <span class="pull-right">
+<!--                               <img class="img-circle img-user media-object" src="#" alt="Profile Picture"> -->
+                                </span>
+                                <span id="userName" class="userName"></span>
+                            </a>
+
+
+                            <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
+
+                                <!-- Dropdown heading  -->
+                                <div class="pad-all bord-btm">
+                                    <p class="text-lg text-semibold mar-btm">32 Habilidades</p>
+                                </div>
+
+
+                                <!-- User dropdown menu -->
+                                <ul class="head-list">
+                                    <li>
+                                        <a href="#">
+                                            <i class="pli-male icon-lg icon-fw"></i> Profile
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="badge badge-danger pull-right">9</span>
+                                            <i class="pli-mail icon-lg icon-fw"></i> Mensagens
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="pli-gear icon-lg icon-fw"></i> Configuração
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <i class="pli-information icon-lg icon-fw"></i> Ajuda
+                                        </a>
+                                    </li>
+                                </ul>
+
+                                <!-- Dropdown footer -->
+                                <div class="pad-all text-right">
+                                    <a href="pages-login.html" class="btn btn-primary">
+                                        <i class="pli-unlock"></i> Logout
+                                    </a>
+                                </div>
+                            </div>
+                        </li>
+                        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                        <!--End user dropdown-->
+
+                    </ul>
+                </div>
+                <!--================================-->
+                <!--End Navbar Dropdown-->
 
             </div>
         </header>
@@ -95,17 +284,59 @@
 
             <!--CONTENT CONTAINER-->
             <!--===================================================-->
-            <div id="aqui">
+            <div id="content-container">
                 
+                <!--Page Title-->
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <div id="page-title">
+                    <h1 class="page-header text-overflow"><img src="img/logo.png" alt="YggBoard" class="brand-icon"></h1>
+
+                    <!--Searchbox-->
+                    <div class="searchbox">
+                        <div class="input-group custom-search-form">
+                            <input type="text" class="form-control" placeholder="Search..">
+                            <span class="input-group-btn">
+                                <button class="text-muted" type="button"><i class="fa fa-search"></i></button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+                <!--End page title-->
+
                 <!--Page content-->
                 <!--===================================================-->
-                <div id="page-content" >
-					<div class="row ">
-					    <div class="col-lg-12 header-yggboard">
-						</div>
-					</div>
-					<div class="row ">
+                <div id="page-content">
+					<div class="row">
 					    <div class="col-lg-9">
+					        <!--YggMap-->
+					        <!--===================================================-->
+					        <div id="yggmap" class="panel">
+					            <div class="panel-heading">
+					                <div class="panel-control">
+					                    <button id="userPerfil" data-toggle="tooltip"  data-original-title="Perfil do Usuário" class="btn"><i class="fa fa-photo"></i></button>
+					                    <button id="comparaMeuPerfil"  class="btn" data-toggle="tooltip" data-original-title="Compara com seu perfil"><i class="fa fa-user"></i></button>
+					                    <button id="criarMeuPerfil"  class="btn hide" data-toggle="tooltip" data-original-title="Criar seu perfil"><i class="fa fa fa-gears"></i></button>
+					                    <button id="carregaHabilidades"  class="btn" data-toggle="tooltip" data-original-title="Mostra habilidades"><i class="fa fa-graduation-cap"></i></button>
+					                    <div class="btn-group tools hide">
+					                        <button class="dropdown-toggle btn" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-gear"></i></button>
+					                        <ul class="dropdown-menu dropdown-menu-right">
+					                            <li><a id="carregaHabilidadesTotal"  href="#">Carrega Habilidades</a></li>
+					                            <li><a id="carregaCarreirasTotal"  href="#">Carrega Carreiras</a></li>
+					                            <li><a id="carregaCursosTotal"  href="#">Carrega Cursos</a></li>
+					                            <li ><a id="gravaDiagrama"  href="#">Grava Diagrama</a></li>
+					                            <li class="divider"></li>
+					                            <li ><a id="auxiliamontagemdiagrama"  href="#">Auxilia Posicionamento Diagrama</a></li>
+					                        </ul>
+					                    </div>
+					                </div> 
+					                <h3 class="panel-title">
+					                <span class="col-lg-5">YggMap</span>
+					                <span id="labelYggmap" class="col-lg-3 blink text-warning">Carregando diagrama....</span>
+					                <span class="col-lg-3"></span>
+					                </h3>
+					            </div>
+					        </div>
 							<div id="user-panel" class="row user-panel demo-nifty-panel hide">
 							    <div class="col-lg-12">
 							
@@ -390,12 +621,16 @@
 					            <div class="col-sm-6 col-lg-12">
 					
 					                <!--Sparkline Line Chart-->
-					                <div class="panel panel-info ">
+					                <div class="panel panel-info panel-colorful">
 										<!-- Carreiras -->
 										<!--===================================================-->
-										<h3 id="panel_objetivos" class="panel-title">Objetivos</h3>
+										<h3 class="panel-title">Objetivos</h3>
 										<div id="carreira_theader" class="panel-body">
-											<div class="col-sm-12 text-xs-center text-right">
+											<div class="pad-btm col-sm-5">
+												<button id="collapseCarreiras" class="btn-xs btn-success hide">Collapse</button>
+												<button id="expandCarreiras" class="btn-xs btn-warning">Expand All</button>
+											</div>
+											<div class="col-sm-7 text-xs-center text-right">
 												<div class="form-group">
 													<input id="searchCarreiras" type="text" placeholder="Search" class="form-control" autocomplete="on">
 												</div>
@@ -410,11 +645,15 @@
 					            <div class="col-sm-6 col-lg-12">
 					
 					                <!--Sparkline Line Chart-->
-					                <div id="panel_habilidades" class="panel panel-purple ">
+					                <div class="panel panel-purple panel-colorful">
 										<!-- Habilidades -->
 										<!--===================================================-->
 										<h3 class="panel-title">Habilidades</h3>
 										<div id="habilidade_theader" class="panel-body">
+											<div class="pad-btm col-sm-5">
+												<button id="collapseHabilidades" class="btn-xs btn-success hide">Collapse</button>
+												<button id="expandHabilidades" class="btn-xs btn-warning">Expand All</button>
+											</div>
 											<div class="col-sm-7 text-xs-center text-right">
 												<div class="form-group">
 													<input id="searchHabilidades" type="text" placeholder="Search" class="form-control" autocomplete="on">
@@ -436,6 +675,108 @@
             </div>
             <!--===================================================-->
             <!--END CONTENT CONTAINER-->
+
+
+            
+            <!--MAIN NAVIGATION-->
+            <!--===================================================-->
+            <nav id="mainnav-container">
+                <div id="mainnav">
+
+                    <!--Shortcut buttons-->
+                    <!--================================-->
+                    <div id="mainnav-shortcut">
+                        <ul class="list-unstyled">
+                            <li class="col-xs-4" data-content="Administrador">
+                                <a id="demo-toggle-aside" class="shortcut-grid" href="#">
+                                    <i class="psi-sidebar-window"></i>
+                                </a>
+                            </li>
+                            <li class="col-xs-4" data-content="Carreiras">
+                                <a id="demo-alert" class="shortcut-grid" href="#">
+                                    <i class="psi-speech-bubble-comic-2"></i>
+                                </a>
+                            </li>
+                            <li class="col-xs-4" data-content="Habilidades">
+                                <a id="demo-page-alert" class="shortcut-grid" href="#">
+                                    <i class="psi-warning-window"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!--================================-->
+                    <!--End shortcut buttons-->
+
+
+                    <!--Menu-->
+                    <!--================================-->
+                    <div id="mainnav-menu-wrap">
+                        <div class="nano">
+                            <div class="nano-content">
+                                <ul id="mainnav-menu" class="list-group">
+						
+						            <!--Category name-->
+						            <li class="list-header">Navigation</li>
+						
+						            <!--Menu list item-->
+						            <li>
+						                <a href="yggboard.html">
+						                    <i class="psi-home"></i>
+						                    <span class="menu-title">
+												<strong>Dashboard</strong>
+											</span>
+						                </a>
+						            </li>
+						
+								</ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <!--================================-->
+                    <!--End menu-->
+
+                </div>
+            </nav>
+            <!--===================================================-->
+            <!--END MAIN NAVIGATION-->
+            
+            <!--ASIDE-->
+            <!--===================================================-->
+            <aside id="aside-container">
+                <div id="aside">
+                    <div class="nano">
+                        <div class="nano-content">
+                            
+                            <!--Nav tabs-->
+                            <!--================================-->
+                            <ul class="nav nav-tabs nav-justified">
+                                <li class="active">
+                                    <a href="#demo-asd-tab-1" data-toggle="tab">
+                                        <i class="pli-speech-bubble-7"></i>
+                                        <span class="badge badge-purple">7</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#demo-asd-tab-2" data-toggle="tab">
+                                        <i class="pli-information"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#demo-asd-tab-3" data-toggle="tab">
+                                        <i class="pli-wrench"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!--================================-->
+                            <!--End nav tabs-->
+                        </div>
+                    </div>
+                </div>
+            </aside>
+            <!--===================================================-->
+            <!--END ASIDE-->
 
         </div>
 
@@ -579,22 +920,6 @@
     Detailed information and more samples can be found in the document.
 
     -->
-		<!-- Your GOOGLE ANALYTICS CODE Below -->
-		<script type="text/javascript">
-			var _gaq = _gaq || [];
-			_gaq.push(['_setAccount', 'UA-84684130-1']);
-			_gaq.push(['_trackPageview']);
-
-			(function() {
-				var ga = document.createElement('script');
-				ga.type = 'text/javascript';
-				ga.async = true;
-				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-				var s = document.getElementsByTagName('script')[0];
-				s.parentNode.insertBefore(ga, s);
-			})();
-
-		</script>
         
 
 </body>

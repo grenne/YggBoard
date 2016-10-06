@@ -19,8 +19,8 @@
 					'<thead>' +
 						'<tr>' +
 							'<th data-toggle="true" data-sort-initial="true"></th>' +
-							'<th></th>' +
-							'<th></th>' +
+							'<th data-sort-ignore="true"></th>' +
+							'<th data-sort-ignore="true"></th>' +
 							'<th data-hide="all" ></th>' +
 							'<th data-hide="all" ></th>' +
 							'<th data-hide="all" ></th>' +
@@ -65,6 +65,8 @@
 						'<span class="panel-text">' + carreira.industria + '</span></td>' +
 						'<td><br><span class="panel-label">FUNÇÃO: </span><br>' +
 						'<span class="panel-text">' + carreira.funcao + '</span></td>' +
+						'<td><br><span class="panel-label">TAREFAS: </span><br>' +
+						'<span class="panel-text">' + carreira.tarefas + '</span></td>' +
 						'<td><br><button id="habilidadeCarreiraIn_' + i + '" class="panel-button-carreira habilidadeCarreiraIn"><i class="fa fa-chevron-down icon-check-carreira"></i><span>lista de habilidades</span></button>' +
 						'<button id="habilidadeCarreiraOff_' + i + '" class="panel-button-carreira habilidadeCarreira hide"><i class="fa fa-chevron-up icon-check-carreira"></i><span>lista de habilidades</span></button></td>' +
 						'<td>' + habilidades + '</td>' +

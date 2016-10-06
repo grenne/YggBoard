@@ -45,13 +45,9 @@
 				'<table id="habilidade_user_perfil_list' + append + '" class="' + append + '">' +
 					'<thead>' +
 						'<tr>' +
-							'<th data-toggle="true">' + label + '</th>' +
-							'<th>Ação</th>' +
-							'<th data-hide="all"></th>' +
-							'<th data-hide="all"></th>' +
-							'<th data-hide="all"></th>' +
-							'<th data-hide="all"></th>' +
-							'<th data-hide="all"></th>' +
+							'<th data-toggle="true" data-sort-ignore="true"></th>' +
+							'<th data-toggle="true" data-sort-ignore="true"></th>' + 
+							'<th data-hide="all" ></th>' +
 						'</tr>' +
 					'</thead>' +
 					'<tbody id="habilidade_user_perfil_tbody' + append + '">' + 
@@ -70,27 +66,26 @@
 
     	$( ".itemHabilidade" + append).remove();
         $.each(objJson, function (i, element) {
+        	var cursos = "";
+        	$.each(element.cursos, function (w, curso){
+        		cursos = cursos +
+   				'<div class="row">' +
+   					'<div class="user-panel-curso-div col-xs-12">' +
+   						'<span class="user-panel-curso-habilidade-nome cursoHabilidade_' + i + "-" + w + ' ">- ' + curso.documento.descricao + '</span>' +
+					'</div>' +
+   				'</div>';
+        	});
         	habilidade_user_perfil_table_row = 
 				'<tr class="itemHabilidade' + append + '">' +
-		   			'<td id="nome_' + i + '">' + element.documento.name + '</td>' +
-					'<td id="acaoHabilidadeUserPefil_' + i + append + '"><button id="acaoHabilidadeUserPefil__' + i + append + '" class="btn-xs btn-info">Cursos</button></td>' +
-					'<td id="descricao_' + i + '"><span class="panel-label">Descrição: </span>' + element.documento.descricao + '</td>' +
-					'<td id="wiki_' + i + '" class="text-info"><span class="panel-label">Wiki: </span><a href="' + element.documento.wiki + '" target="_blank">Wiki</a></td>' +
-					'<td id="area' + i + '"><span class="panel-label">Área: </span>' + element.documento.area + '</td>' +
-					'<td id="campo' + i + '"><span class="panel-label">Campo: </span>' + element.documento.campo + '</td>' +
-					'<td id="categoria' + i + '"><span class="panel-label">Categoria: </span>' + element.documento.categoria + '</td>' +
+		   			'<td>' + 
+	    				'<span class="user-panel-label">' + element.documento.name + '</span>' +
+					'</td>' +
+					'<td class="user-panel-td"><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
+					'<td><span class="user-panel-label-curso">Cursos disponíveis</span>' +
+					cursos +
+					'</td>' +
 				'</tr>';
         	$("#habilidade_user_perfil_tbody" + append).append(habilidade_user_perfil_table_row);
-        	$('#acaoHabilidadeUserPefil_' + i + append).off('click');
-            $('#acaoHabilidadeUserPefil_' + i + append).on('click', function () {
-        		$('.paineis-user-perfil').addClass("hide");
-        		$('.curso-user-perfil').removeClass("hide");
-            	if (append == "habilidades_user_perfil_theader"){
-            		obterCursosHabilidade (element.documento.idHabilidade, tipo, element.documento.name, "cursos_user_perfil_theader")
-            	}else{
-            		obterCursosHabilidade (element.documento.idHabilidade, tipo, element.documento.name, "cursos_user_perfil_conquista_theader")
-            	}
-            });
         });
         
         $('.habilidades').removeClass('hide');

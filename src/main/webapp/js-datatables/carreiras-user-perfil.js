@@ -64,15 +64,19 @@
             	$.each(carreira.arrayNecessarios, function (z, habilidade){
             		habilidades = habilidades +
        				'<div class="row">' +
-	       				'<div class="col-xs-12">' +
-		    				'<span class="user-panel-habilidade-nome habilidadeCarreira col-xs-9">- ' + habilidade.name + '</span>' +
-							'<button id="cursoHabilidadeIn_' + i + "-" + z + '" class="user-panel-button-curso user-panel-button-curso-item col-xs-3"><span><i class="fa fa-chevron-down "></i> ver cursos</span></button>' +
-							'<button id="cursoHabilidadeOff_' + i + "-" + z + '" class="user-panel-button-curso col-xs-3 hide"><span><i class="fa fa-chevron-up "></i> fechar cursos</span></button>' +
+	       				'<div class="user-panel-habilidade-div col-xs-12">' +
+		    				'<span class="user-panel-carreira-habilidade-nome habilidadeCarreira col-xs-9">- ' + habilidade.name + '</span>' +
+							'<button id="cursoHabilidadeIn_' + i + "-" + z + '" class="user-panel-button-curso user-panel-button-curso-item col-xs-3"><span><i class="fa fa-chevron-down "></i> cursos</span></button>' +
+							'<button id="cursoHabilidadeOff_' + i + "-" + z + '" class="user-panel-button-curso col-xs-3 hide"><span><i class="fa fa-chevron-up "></i> cursos</span></button>' +
 						'</div>' +
 					'</div>';
                 	$.each(habilidade.cursos, function (w, curso){
                 		habilidades = habilidades +
-        				'<br class="cursoHabilidade_' + i + "-" + z + ' hide"><span class="user-panel-habilidade-nome cursoHabilidade_' + i + "-" + z + ' col-xs-12 hide">- ' + curso.documento.nome + '</span>';                		
+           				'<div class="row">' +
+           					'<div class="user-panel-curso-div col-xs-12">' +
+           						'<span class="user-panel-curso-habilidade-nome cursoHabilidade_' + i + "-" + z + ' col-xs-12 hide">- ' + curso.documento.descricao + '</span>' +
+    						'</div>' +
+           				'</div>';
                 	});
             	});
 	        	actions = "";

@@ -59,6 +59,11 @@
                 <li class=""><a id="closePainel" href="#" ><i class="fa fa-home"></i>Início</a></li>
                 <li class=""><a id="openUserPainel" href="#" ><i class="fa fa-puzzle-piece"></i>Painel</a></li>
                 <li class=""><a id="openTutorial" href="#"><i class="fa fa-info-circle"></i>Tutorial</a></li>
+                 <li><a id="carregaHabilidadesTotal"  href="#" class="hide tools">C. Habilidades</a></li>
+                 <li><a id="carregaCarreirasTotal"  href="#" class="hide tools">C. Carreiras</a></li>
+                 <li><a id="carregaCursosTotal"  href="#" class="hide tools">C. Cursos</a></li>
+                 <li ><a id="gravaDiagrama"  href="#" class="hide tools">Grava Diagrama</a></li>
+                 <li ><a id="auxiliamontagemdiagrama"  href="#" class="hide tools">Aux. Posicionamento</a></li>
             </ul>
         </div>
     </nav>
@@ -95,7 +100,7 @@
                         <div id="tabs" class="box-user-tabs">	
                         	<ul class="nav nav-tabs nav-user-panel">
                             	<li class="tab-user-panel" id="interesses_theader_tab"><a  href="#interesses_theader" data-toggle="tab">Interesses</a></li>
-                                <li class="tab-user-panel" id="conquistas_theader_tab"><a href="#conquistas_theader" data-toggle="tab">Conquistas</a></li>
+                                <li class="tab-user-panel" id="conquistas_theader_tab"><a href="#conquistas_theader" data-toggle="tab">Conquistas</a></li>                               
                             </ul>
                         	<div class="tab-content">
                             	<div class="tab-pane active-user-panel" id="interesses_theader">
@@ -111,10 +116,12 @@
 											</div>
 		                                </div>
 		                            	<div class="tab-pane" id="interesse_habilidades_theader">
-		
+											<div id="habilidades_user_perfil_theader" class="panel-body ">
+											</div>
 		                                </div>
 		                            	<div class="tab-pane" id="interesse_cursos_theader">
-		
+											<div id="cursos_user_perfil_theader" class="panel-body ">
+											</div>		
 		                                </div>
 		                            	<div class="tab-pane" id="interesse_premios_theader">
 		
@@ -206,6 +213,7 @@
 	<script src="js-datatables/habilidades.js"></script>
 	<script src="js-datatables/carreiras-user-perfil.js"></script>
 	<script src="js-datatables/habilidades-user-perfil.js"></script>
+	<script src="js-datatables/cursos-habilidade-user-perfil.js"></script>
 	<script src="js-datatables/cursos-user-perfil.js"></script>  
 
     <!--Yggboard-->

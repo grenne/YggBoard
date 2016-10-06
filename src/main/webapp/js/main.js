@@ -10,7 +10,7 @@
 	localStorage.usuario = "false";
 	localStorage.layoutPerfil = "false";
 
-	if (localStorage.usuarioPerfil == "administrator"){
+	if (localStorage.usuarioPerfil == "tools"){
 		$(".tools").removeClass ("hide");
 	}; 
 	if (localStorage.usuarioPerfil == "user"){
@@ -35,6 +35,9 @@
 			localStorage.loginOk = "true";
 			switch(localStorage.usuarioPerfil) {
 		    case "administrator":
+				$(window.document.location).attr('href','yggboard.html');
+		        break;
+		    case "tools":
 				$(".tools").removeClass ("hide");
 				$(window.document.location).attr('href','yggboard.html');
 		        break;

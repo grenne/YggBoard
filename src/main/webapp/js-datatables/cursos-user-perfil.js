@@ -2,34 +2,28 @@
  * 				obter os dados
  */
 
-	function obterCursosHabilidade (habilidade, tipo, habilidadeNome, append) {
+	function obterCursosInteresseUserPerfil (tipo, habilidadeNome, append) {
 
-		rest_obterCursosHabilidade(habilidade, carregaCursosUserPerfil, semAcao, tipo, habilidadeNome, append);
+		rest_obterUserPerfilItens(tipo, carregaCursosInteresseUserPerfil, semAcao, tipo, null, append);
 	
 	};
 		
-	function carregaCursosUserPerfil (objJson, tipo, habilidadeNome, append) {	
+	function carregaCursosInteresseUserPerfil (objJson, tipo, habilidadeNome, append) {	
 //		
 //		carrega cursos
 //
 		$( "." + append ).remove();
-		var label = "";
-		if (habilidadeNome){
-			label = " da habilidade " + habilidadeNome;
-		};
 
 		var curso_user_perfil_table_header =
 				'<table id="curso_user_perfil_list' + append + '" class="' + append + '">' +
 					'<thead>' +
 						'<tr>' +
-							'<th data-toggle="true">Materias' + label + '</th>' +
-//							'<th>Ação</th>' +
-							'<th data-hide="all" class="text-info">Curso</th>' +
-							'<th data-hide="all" class="text-info">Descrição</th>' +
-							'<th data-hide="all" class="text-info">Tempo</th>' +
-							'<th data-hide="all" class="text-info">Custo</th>' +
-							'<th data-hide="all" class="text-info">Escola</th>' +
-							'<th data-hide="all" class="text-info">Pré requisito</th>' +
+							'<th data-toggle="true"></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
 						'</tr>' +
 					'</thead>' +
 					'<tbody id="curso_user_perfil_tbody' + append + '">' +
@@ -50,14 +44,14 @@
         $.each(objJson, function (i, curso) {
         	curso_user_perfil_table_row = 
 				'<tr class="itemCursoUserPerfil' + append + '">' +
-		   			'<td id="nome_' + i + '">' + montaMaterias(curso.documento.materias) + '</td>' +
-//					'<td id="acaoTd_' + i + '"><button id="acaoCursoUserPerfil_' + i + '" class="btn-xs btn-info">Grade</button></td>' +
-					'<td id="curso' + i + '">' + curso.documento.nome + '</td>' +
-					'<td id="descricao_' + i + '">' + curso.documento.descricao + '</td>' +
-					'<td id="tempo' + i + '">' + curso.documento.tempo + '</td>' +
-					'<td id="custo' + i + '">' + curso.documento.custo + '</td>' +
-					'<td id="escola' + i + '">' + curso.documento.escola + '</td>' +
-					'<td id="preRequisito' + i + '">' + curso.documento.preRequisito + '</td>' +
+		   			'<td>' + 
+						'<span class="user-panel-label">' + curso.documento.descricao + '</span>' +
+					'</td>' +
+					'<td><span id="curso' + i + '" class="user-panel-detalhes-curso">' + curso.documento.nome + '</span></td>' +
+					'<td><span id="tempo' + i + '" class="user-panel-detalhes-curso">' + curso.documento.tempo + '</span></td>' +
+					'<td><span id="custo' + i + '" class="user-panel-detalhes-curso">' + curso.documento.custo + '</span></td>' +
+					'<td><span id="escola' + i + '" class="user-panel-detalhes-curso">' + curso.documento.escola + '</span></td>' +
+					'<td><span id="preRequisito' + i + '" class="user-panel-detalhes-curso">' + curso.documento.preRequisito + '</td>' +
 				'</tr>';
         	$( "#curso_user_perfil_tbody" + append).append(curso_user_perfil_table_row);
         });
@@ -65,35 +59,4 @@
         var curso_user_perfil_table = $('#curso_user_perfil_list' + append);
 		curso_user_perfil_table.footable().trigger('footable_collapse_all');
 
-		$('#collapseCursosUserPerfil').on('click', function(){
-			curso_user_perfil_table.trigger('footable_collapse_all');
-			$( "#collapseCursosUserPerfil").addClass('hide');
-			$( "#expandCursosUserPerfil").removeClass('hide');
-		});
-		$('#expandCursosUserPerfil').on('click', function(){
-			curso_user_perfil_table.trigger('footable_expand_all');
-			$( "#collapseCursosUserPerfil").removeClass('hide');
-			$( "#expandCursosUserPerfil").addClass('hide');
-		})
-		// Search input
-		$('#searchCursosUserPerfil').on('input', function (e) {
-			e.preventDefault();
-			curso_user_perfil_table.trigger('footable_filter', {filter: $(this).val()});
-		});
-
-		$('#collapseCursosUserPerfilConquista').on('click', function(){
-			curso_user_perfil_table.trigger('footable_collapse_all');
-			$( "#collapseCursosUserPerfil").addClass('hide');
-			$( "#expandCursosUserPerfil").removeClass('hide');
-		});
-		$('#expandCursosUserPerfilConquista').on('click', function(){
-			curso_user_perfil_table.trigger('footable_expand_all');
-			$( "#collapseCursosUserPerfil").removeClass('hide');
-			$( "#expandCursosUserPerfil").addClass('hide');
-		})
-		// Search input
-		$('#searchCursosUserPerfilConquista').on('input', function (e) {
-			e.preventDefault();
-			curso_user_perfil_table.trigger('footable_filter', {filter: $(this).val()});
-		});
 	};

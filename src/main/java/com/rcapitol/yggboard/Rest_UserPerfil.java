@@ -51,11 +51,15 @@ public class Rest_UserPerfil {
 		DBCollection collection = db.getCollection("userPerfil");
 		BasicDBObject searchQuery = new BasicDBObject("documento.usuario", usuario);
 		DBObject cursor = collection.findOne(searchQuery);
-		JSONObject documento = new JSONObject();
-		BasicDBObject obj = (BasicDBObject) cursor.get("documento");
-		documento.put("documento", obj);
-		mongo.close();
-		return documento;
+		if (cursor != null){
+			JSONObject documento = new JSONObject();
+			BasicDBObject obj = (BasicDBObject) cursor.get("documento");
+			documento.put("documento", obj);
+			mongo.close();
+			return documento;
+		}else{
+			return null;
+		}
 	};
 	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
 	@Path("/obter/itens")	
@@ -86,8 +90,8 @@ public class Rest_UserPerfil {
 				int w = 0;
 				while (w < array.length) {
 					Mongo mongoCarreiras = new Mongo();
-					DB dbSchool = (DB) mongoCarreiras.getDB("documento");
-					DBCollection collectionCarreiras = dbSchool.getCollection("carreiras");
+					DB dbCarreiras = (DB) mongoCarreiras.getDB("documento");
+					DBCollection collectionCarreiras = dbCarreiras.getCollection("carreiras");
 					BasicDBObject searchQueryCarreiras = new BasicDBObject("documento.nome", array[w]);
 					DBObject cursorCarreiras = collectionCarreiras.findOne(searchQueryCarreiras);
 					BasicDBObject objCarreiras = (BasicDBObject) cursorCarreiras.get("documento");
@@ -152,18 +156,23 @@ public class Rest_UserPerfil {
 				int w = 0;
 				while (w < array.length) {
 					Mongo mongoHabilidades = new Mongo();
-					DB dbSchool = (DB) mongoHabilidades.getDB("documento");
-					DBCollection collectionHabilidades = dbSchool.getCollection("habilidades");
+					DB dbHabilidades = (DB) mongoHabilidades.getDB("documento");
+					DBCollection collectionHabilidades = dbHabilidades.getCollection("habilidades");
 					BasicDBObject searchQueryHabilidades = new BasicDBObject("documento.idHabilidade", array[w]);
 					DBObject cursorHabilidades = collectionHabilidades.findOne(searchQueryHabilidades);
-					BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
-					if (item.equals("cursos-necessarias-habilidades") | item.equals("cursos-interesse-habilidades")){
-						obterCursosNecessarios (objHabilidades.get("idHabilidade"), documentos);
-					}else{
-						JSONObject jsonDocumento = new JSONObject();
-					    jsonDocumento.put("documento", objHabilidades);
-						documentos.add(jsonDocumento);
-						mongoHabilidades.close();
+					if (cursorHabilidades != null){
+						BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
+						if (item.equals("cursos-necessarias-habilidades") | item.equals("cursos-interesse-habilidades")){
+							obterCursosNecessarios (objHabilidades.get("idHabilidade"), documentos);
+						}else{
+							JSONObject jsonDocumento = new JSONObject();
+						    jsonDocumento.put("documento", objHabilidades);
+							JSONArray cursos = new JSONArray();
+							obterCursosNecessarios (objHabilidades.get("idHabilidade"), cursos);
+							jsonDocumento.put("cursos", cursos);
+							documentos.add(jsonDocumento);
+							mongoHabilidades.close();
+						};
 					};
 					++w;
 				};
@@ -175,8 +184,8 @@ public class Rest_UserPerfil {
 					int w = 0;
 					while (w < array.length) {
 						Mongo mongoHabilidades = new Mongo();
-						DB dbSchool = (DB) mongoHabilidades.getDB("documento");
-						DBCollection collectionHabilidades = dbSchool.getCollection("habilidades");
+						DB dbHabilidades = (DB) mongoHabilidades.getDB("documento");
+						DBCollection collectionHabilidades = dbHabilidades.getCollection("habilidades");
 						BasicDBObject searchQueryHabilidades = new BasicDBObject("documento.idHabilidade", array[w]);
 						DBObject cursorHabilidades = collectionHabilidades.findOne(searchQueryHabilidades);
 						BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
@@ -213,7 +222,28 @@ public class Rest_UserPerfil {
 						++w;
 					};
 		    	};
-			};			
+			};
+			if (item.equals("cursos-interesse")){
+				ArrayList arrayList = new ArrayList(); 
+				arrayList = (ArrayList) jsonObject.get("cursosInteresse");
+		    	Object array[] = arrayList.toArray(); 
+				int w = 0;
+				while (w < array.length) {
+					Mongo mongoCursos = new Mongo();
+					DB dbCursos = (DB) mongoCursos.getDB("documento");
+					DBCollection collectionCursos = dbCursos.getCollection("cursos");
+					BasicDBObject searchQueryCursos = new BasicDBObject("documento.idCurso", array[w]);
+					DBObject cursorCursos = collectionCursos.findOne(searchQueryCursos);
+					JSONObject jsonDocumento = new JSONObject();
+					if (cursorCursos != null){
+						BasicDBObject objCursos = (BasicDBObject) cursorCursos.get("documento");
+						jsonDocumento.put("documento", objCursos);
+					};
+					documentos.add(jsonDocumento);
+					mongoCursos.close();
+					++w;
+				};
+			};
 		} catch (ParseException e) {
 			e.printStackTrace();
 		}
