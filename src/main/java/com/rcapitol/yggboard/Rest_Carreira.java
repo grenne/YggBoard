@@ -176,6 +176,7 @@ public class Rest_Carreira {
 							jsonNecessarios.put("name", obj.get("name"));
 							necessariosArray.add (jsonNecessarios);
 						}
+						mongoHabilidade.close();
 						++w;
 					};
 					jsonDocumento.put("arrayNecessarios", necessariosArray);

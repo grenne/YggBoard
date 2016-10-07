@@ -193,14 +193,17 @@
 	$( "#openUserPainel" ).on( "click", function() {
 		$('#userPanel').removeClass("hide");
 		$('#tutorial').addClass("hide");
+		$('#unity').addClass("hide");
 	});
 	$( "#openTutorial" ).on( "click", function() {
 		$('#userPanel').addClass("hide");
 		$('#tutorial').removeClass("hide");
+		$('#unity').addClass("hide");
 	});
 	$( "#closePainel" ).on( "click", function() {
 		$('#userPanel').addClass("hide");
 		$('#tutorial').addClass("hide");
+		$('#unity').removeClass("hide");
 	});
     // ** ações do menu do user perfil tab interesses
 	$( "#interesse_objetivos_theader_tab" ).on( "click", function() {
