@@ -178,17 +178,26 @@
                             </ul>
                             <div class="area-filtro">
                             	<div class="numero-filtrado numero-objetivos">
-                            		<span id="qtdeObjetivos" ></span>
+                            		<span id="qtdeObjetivos" class="badge"></span>
                             		<button id="filterObjetivo" class="icon-filter"><i class="fa fa-filter"></i></button>
                             	</div>
                             	<div class="numero-filtrado numero-habilidades hide">
-                            		<span id="qtdeHabilidades" ></span>
+                            		<span id="qtdeHabilidades" class="badge"></span>
                             		<button id="filterHabilidade" class="icon-filter"><i class="fa fa-filter"></i></button>
                             	</div>
                             </div>
                         	<div class="tab-content">
                             	<div class="tab-pane active" id="carreira_theader">
-					
+									<div class="filtro-carreira hide" id="filtro-carreira">
+										<div class="form-group">
+											<input id="searchCarreiras" type="text" placeholder="Search" class="form-control" autocomplete="on">
+										</div>
+										<a class="btn btn-primary" data-toggle="collapse" href="#filtro-industria-list" aria-expanded="false" aria-controls="filtro-industria-list">
+    										Indústria
+  										</a>
+										<ul id="filtro-industria-list" class="list-group collapse" >
+										</ul>									
+									</div>
                                 </div>
                             	<div class="tab-pane" id="habilidade_theader">
 
@@ -222,9 +231,6 @@
 	<script src="js-datatables/cursos-habilidade-user-perfil.js"></script>
 	<script src="js-datatables/cursos-user-perfil.js"></script>  
 
-    <!--unify-->
-    <script src="/TemplateData/UnityProgress.js"></script>
-    <script src="/Release/UnityLoader.js"></script>
 
     <!--Yggboard-->
     <script src="js/main.js"></script>
@@ -233,17 +239,17 @@
     <script src="js/yggboard.js"></script>
     <script src="js/meuPerfil.js"></script>
     <script type='text/javascript'>
-  var Module = {
-    TOTAL_MEMORY: 268435456,
-    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-    compatibilitycheck: null,
-    dataUrl: "Release/ygg.data",
-    codeUrl: "Release/ygg.js",
-    memUrl: "Release/ygg.mem",
-    
-  };
-</script>
-<script src="Release/UnityLoader.js"></script>
-
+		  var Module = {
+		   TOTAL_MEMORY: 268435456,
+		    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+		    compatibilitycheck: null,
+		    dataUrl: "Release/ygg.datagz",
+		    codeUrl: "Release/ygg.jsgz",
+		    memUrl: "Release/ygg.memgz",
+		  };
+	</script>
+    <!--unify-->
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Release/UnityLoader.js"></script>
   </body>
 </html>
