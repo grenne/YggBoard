@@ -13,7 +13,7 @@
 	function carregaCarreiras (objJson, cy) {
 		$("#qtdeObjetivos").html(objJson.length + " objetivos");
 		
-		montaHeader (objJson, cy);
+		montaHeaderCarreira (objJson, cy);
     	
 		$( ".itemCarreira" ).remove();
         
@@ -34,21 +34,24 @@
         		$("#filtro-industria-list").append(industriaItem);
                 $('#industria_' + i).off('click');
                 $('#industria_' + i).on('click', function () {
-					montaHeader (objJson, cy);
-					$( ".itemCarreira" ).remove();
-                	$(".item-industria").each(function(w, value) {
+					montaHeaderCarreira (objJson, cy);
+					$(".itemCarreira").remove();
+					totalObjetivos = 0;
+					$(".item-industria").each(function(w, value) {
         				var item = $(this).attr('id').split("_")[1];
         				if ($('#industria-check_' + item).prop( "checked" )) {
         					var nomeIndustria = $(this).attr('data-nome-industria');
         					$.each(objJson, function (i, carreira){
                         		if (carreira.industria == nomeIndustria) {
                         			montaLinhaCarreira(i, carreira);
+                        			++totalObjetivos;
                         		};
                         	});
         				};
         			});
     		        var carreira_table = $('#carreira_list');
     				carreira_table.footable().trigger('footable_collapse_all');
+    				$("#qtdeObjetivos").html(totalObjetivos + " objetivos");
                 });
         	};
         	
@@ -105,9 +108,8 @@
 			};
         });
 	};
-	
-	
-	function montaHeader (objJson, cy) {
+		
+	function montaHeaderCarreira (objJson, cy) {
 
 		$( ".carreira_theader" ).remove();
 
