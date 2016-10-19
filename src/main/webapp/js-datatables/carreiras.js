@@ -12,43 +12,12 @@
 		
 	function carregaCarreiras (objJson, cy) {
 		$("#qtdeObjetivos").html(objJson.length + " objetivos");
-		$( ".carreira_theader" ).remove();
-
-		var carreira_table_header =
-				'<table id="carreira_list" class="carreira_theader footable table toggle-circle" data-sorting="true">' +
-					'<thead>' +
-						'<tr>' +
-							'<th data-toggle="true" data-sort-initial="true"></th>' +
-							'<th data-sort-ignore="true"></th>' +
-							'<th data-sort-ignore="true"></th>' +
-							'<th data-hide="all" ></th>' +
-							'<th data-hide="all" ></th>' +
-							'<th data-hide="all" ></th>' +
-							'<th data-hide="all" ></th>' +
-							'<th data-hide="all" ></th>' +
-							'<th data-hide="all" ></th>' +
-							'<th data-hide="all" ></th>' +
-							'<th data-hide="all" ></th>' +
-							'<th data-hide="all" ></th>' +
-							'<th data-hide="all" ></th>' +
-						'</tr>' +
-					'</thead>' +
-					'<tbody id="carreira_tbody">' +
-					'</tbody>' +
-					'<tfoot>' +
-						'<tr>' +
-							'<td colspan="5">' +
-								'<div class="text-right">' +
-									'<ul class="pagination"></ul>' +
-								'</div>' +
-							'</td>' +
-						'</tr>' +
-					'</tfoot>' +
-				'</table>';
-    	$( "#carreira_theader" ).append(carreira_table_header);
-
-    	$( ".itemCarreira" ).remove();
-        $.each(objJson, function (i, carreira) {
+		
+		montaHeader (objJson, cy);
+    	
+		$( ".itemCarreira" ).remove();
+        
+		$.each(objJson, function (i, carreira) {
         	
         	montaLinhaCarreira(i, carreira);
         	
@@ -65,10 +34,11 @@
         		$("#filtro-industria-list").append(industriaItem);
                 $('#industria_' + i).off('click');
                 $('#industria_' + i).on('click', function () {
+					montaHeader (objJson, cy);
+					$( ".itemCarreira" ).remove();
                 	$(".item-industria").each(function(w, value) {
         				var item = $(this).attr('id').split("_")[1];
         				if ($('#industria-check_' + item).prop( "checked" )) {
-        					$( ".itemCarreira" ).remove();
         					var nomeIndustria = $(this).attr('data-nome-industria');
         					$.each(objJson, function (i, carreira){
                         		if (carreira.industria == nomeIndustria) {
@@ -111,16 +81,17 @@
         var carreira_table = $('#carreira_list');
 		carreira_table.footable().trigger('footable_collapse_all');
 
-		$('#carreira_theader_tab').on('shown.bs.tab', function (e) {
-			carreira_table.footable().trigger('footable_collapse_all');
-		});
+//		$('#carreira_theader_tab').on('shown.bs.tab', function (e) {
+//			carreira_table.footable().trigger('footable_collapse_all');
+//		});
 		// Search input
 		$('#searchCarreiras').on('input', function (e) {
 			e.preventDefault();
 			carreira_table.trigger('footable_filter', {filter: $(this).val()});
 		});
 		// mostra filtros
-		$('#filterObjetivo').bind('click', function () {
+		$('#filterObjetivo').off('click');
+		$('#filterObjetivo').on('click', function () {
 			if ($('#filtro-carreira').hasClass("hide")){
 				$(".filtro-carreira").removeClass("hide");
 				$('#searchCarreiras').off('input');
@@ -136,6 +107,43 @@
 	};
 	
 	
+	function montaHeader (objJson, cy) {
+
+		$( ".carreira_theader" ).remove();
+
+		var carreira_table_header =
+				'<table id="carreira_list" class="carreira_theader footable table toggle-circle" data-sorting="true">' +
+					'<thead>' +
+						'<tr>' +
+							'<th data-toggle="true" data-sort-initial="true"></th>' +
+							'<th data-sort-ignore="true"></th>' +
+							'<th data-sort-ignore="true"></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+							'<th data-hide="all" ></th>' +
+						'</tr>' +
+					'</thead>' +
+					'<tbody id="carreira_tbody">' +
+					'</tbody>' +
+					'<tfoot>' +
+						'<tr>' +
+							'<td colspan="5">' +
+								'<div class="text-right">' +
+									'<ul class="pagination"></ul>' +
+								'</div>' +
+							'</td>' +
+						'</tr>' +
+					'</tfoot>' +
+				'</table>';
+    	$( "#carreira_theader" ).append(carreira_table_header);
+	};	
 function montaLinhaCarreira (i, carreira){
 	var habilidades = "";
 	$.each(carreira.arrayNecessarios, function (i, habilidade){

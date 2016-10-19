@@ -93,6 +93,10 @@
         var habilidade_table = $('#habilidade_list');
 		habilidade_table.footable().trigger('footable_collapse_all');
 
+//		$('#habilidade_theader_tab').on('shown.bs.tab', function (e) {
+//			habilidade_table.footable().trigger('footable_collapse_all');
+//		});
+
 		// Search input
 		$('#searchHabilidades').on('input', function (e) {
 			e.preventDefault();
