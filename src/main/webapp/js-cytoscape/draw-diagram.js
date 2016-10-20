@@ -39,7 +39,7 @@ $(function () {
 		    		$("#labelYggmap").html("Seu perfil");
 		    		$(".acoesHablidades").removeClass("hide");
 	    		});
-	    		obterCarreiras (cy);
+//	    		obterCarreiras (cy);
 	    		$( "#criarMeuPerfil" ).bind( "click", function() {
 		    		$("#labelYggmap").html("Criar seu perfil");
 		    		$("#labelYggmap").removeClass("text-warning");

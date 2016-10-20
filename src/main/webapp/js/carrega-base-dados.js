@@ -1,8 +1,20907 @@
 /**
  * 
  */
-
 function carregaHabilidadesTotal (){
+	var jsonBase =
+	{
+		data:
+		[
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd70",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1",
+		        name : "Acadêmica",
+		        descricao : "Conhecimentos relativos à produção científica e seus requerimentos",
+		        wiki : "https://pt.wikipedia.org/wiki/Academia",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "933.75",
+		        positionY : "361.71508819920325",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Acadêmico"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd71",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "6",
+		        name : "Filosofia",
+		        descricao : "Estudos sobre a consciência e condição humana, conhecimentos transcendentes à realidade",
+		        wiki : "https://pt.wikipedia.org/wiki/Filosofia",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "-1264.75",
+		        positionY : "373",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd72",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "5",
+		        name : "Economia",
+		        descricao : "Estudo das interações humanas de trocas e seus componentes",
+		        wiki : "https://pt.wikipedia.org/wiki/Economia",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "-3297",
+		        positionY : "1446",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Economics"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd73",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "2",
+		        name : "Administração de empresas",
+		        descricao : "Estudo da organização humana e administração de organizações",
+		        wiki : "https://pt.wikipedia.org/wiki/Administra%C3%A7%C3%A3o_de_empresas",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "31.56121935581632",
+		        positionY : "1654.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Business", 
+		            "MBA", 
+		            "gestão"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd74",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "3",
+		        name : "Ciências contábeis",
+		        descricao : "Estudo de regras de contabilização de transações e propriedades",
+		        wiki : "https://pt.wikipedia.org/wiki/Contabilidade",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "3098.106625788411",
+		        positionY : "1004.8112473719638",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Contabilidade"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd75",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "4",
+		        name : "Direito",
+		        descricao : "Estudo das normas que regem as relações humanas em sociedade",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "-1466",
+		        positionY : "3159",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Law", 
+		            "LLM", 
+		            "advogado"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd76",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "7",
+		        name : "Matemática",
+		        descricao : "Estudo das relações numéricas como medidas, variações e estatísticas",
+		        wiki : "https://pt.wikipedia.org/wiki/Matem%C3%A1tica",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "642",
+		        positionY : "3010.25",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd77",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "8",
+		        name : "Psicologia",
+		        descricao : "Estudo do funcionamento da mente humana e seus padrões",
+		        wiki : "https://pt.wikipedia.org/wiki/Psicologia",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "1599",
+		        positionY : "251.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd78",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "12",
+		        name : "Idiomas",
+		        descricao : "Comunicação em idiomas estrangeiros",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_natural",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "2268.5",
+		        positionY : "222.75",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Línguas"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd79",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "9",
+		        name : "Tecnologia da informação",
+		        descricao : "Conhecimentos e habilidades ligados a sistemas de informação digitais, computadores e redes",
+		        wiki : "https://pt.wikipedia.org/wiki/Tecnologia_da_informa%C3%A7%C3%A3o",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "2990.6066257884113",
+		        positionY : "2088.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "TI", 
+		            "PC", 
+		            "Mac"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd7a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "11",
+		        name : "Sociologia",
+		        descricao : "Estudo do comportamento e interações humanas",
+		        wiki : "https://pt.wikipedia.org/wiki/Sociologia",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "937",
+		        positionY : "18.75",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd7b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10",
+		        name : "Soft Skills",
+		        descricao : "Competências Intelectuais não técnicas, emocionais, sociais e criativas",
+		        wiki : "https://en.wikipedia.org/wiki/Soft_skills",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "-272",
+		        positionY : "251.75",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Competênciasemocionais", 
+		            ""
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd7c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "13",
+		        name : "Profissional",
+		        descricao : "Habilidades profissionais",
+		        wiki : "https://pt.wikipedia.org/wiki/Trabalhador",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "area",
+		        weight : "70",
+		        positionX : "-1098.4561439783613",
+		        positionY : "82.4495500676217",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "trabalho"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd7d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "100",
+		        name : "Trabalhos acadêmicos",
+		        descricao : "Criação de trabalhos acadêmicos de acordo com as normas",
+		        wiki : "https://pt.wikipedia.org/wiki/Academia",
+		        area : "Acadêmica",
+		        campo : "",
+		        categoria : "",
+		        parent : "1",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "1051",
+		        positionY : "367.25",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd7e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "127",
+		        name : "Métodos de ensino",
+		        descricao : "Técnicas e métodos de ensino",
+		        wiki : "https://pt.wikipedia.org/wiki/Ensino",
+		        area : "Acadêmica",
+		        campo : "",
+		        categoria : "",
+		        parent : "1",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "773",
+		        positionY : "324",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Aulas", 
+		            "professores"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd7f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "128",
+		        name : "Pesquisa",
+		        descricao : "Técnicas e métodos de pesquisa",
+		        wiki : "https://pt.wikipedia.org/wiki/Pesquisa",
+		        area : "Acadêmica",
+		        campo : "",
+		        categoria : "",
+		        parent : "1",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "755.7325440996017",
+		        positionY : "415.9301763984065",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Tese", 
+		            "mestrado", 
+		            "doutorado"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd80",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "101",
+		        name : "Gestão",
+		        descricao : "Coordenação e direção das atividades da empresa basedas na interação com acionistas e stakeholders",
+		        wiki : "https://pt.wikipedia.org/wiki/Administra%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "",
+		        categoria : "",
+		        parent : "2",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1733.9387806441837",
+		        positionY : "1007.0572176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd81",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "102",
+		        name : "Comercial",
+		        descricao : "Execução de transações de compra e venda baseadas em processos de relacionamento, negociação e senso comercial",
+		        wiki : "https://pt.wikipedia.org/wiki/Com%C3%A9rcio",
+		        area : "Administração de empresas",
+		        campo : "",
+		        categoria : "",
+		        parent : "2",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "1588.561219355816",
+		        positionY : "1362.0572176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd82",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "103",
+		        name : "Empreendedorismo",
+		        descricao : "Identificação de oportunidades, criação de modelos de negócios e implementação de novas empresas",
+		        wiki : "https://pt.wikipedia.org/wiki/Empreendedorismo",
+		        area : "Administração de empresas",
+		        campo : "",
+		        categoria : "",
+		        parent : "2",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "252.0612193558144",
+		        positionY : "886.5572176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd83",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "104",
+		        name : "Estratégia",
+		        descricao : "Planejamento, execução e iteração de iniciativas com o intuito de maximizar o sucesso competitivo da empresa",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrat%C3%A9gia",
+		        area : "Administração de empresas",
+		        campo : "",
+		        categoria : "",
+		        parent : "2",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1871.688780644184",
+		        positionY : "2355.9662086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd84",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "105",
+		        name : "Finanças",
+		        descricao : "Gestão dos recursos financeiros da companhia, com o objetivo da redução de seu custo, a otimização da sua aplicação e sua plena disponibilidade",
+		        wiki : "https://pt.wikipedia.org/wiki/Finan%C3%A7as",
+		        area : "Administração de empresas",
+		        campo : "",
+		        categoria : "",
+		        parent : "2",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "595.8112193558155",
+		        positionY : "2132.124381869675",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "finance", 
+		            "grana"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd85",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "107",
+		        name : "Marketing",
+		        descricao : "Interação com mercado para a criação de soluções e de uma marca, suas ofertas e gestão de seus desempenhos",
+		        wiki : "https://pt.wikipedia.org/wiki/Marketing",
+		        area : "Administração de empresas",
+		        campo : "",
+		        categoria : "",
+		        parent : "2",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1718.4387806441837",
+		        positionY : "1700.5572176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd86",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "108",
+		        name : "Recursos humanos",
+		        descricao : "Identificação, atração, retenção e desenvolvimento de pessoas para viabilizar a execução da visão da organização",
+		        wiki : "https://pt.wikipedia.org/wiki/Gest%C3%A3o_de_recursos_humanos",
+		        area : "Administração de empresas",
+		        campo : "",
+		        categoria : "",
+		        parent : "2",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-677.1887806441854",
+		        positionY : "1094.5572176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "RH"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc71c66652ca33e4cd87",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "146",
+		        name : "Operações",
+		        descricao : "Planejamento e execução de processos, determinando recursos e ferramentas necessários para a disponibilização eficiente de produtos e serviços",
+		        wiki : "https://pt.wikipedia.org/wiki/Administra%C3%A7%C3%A3o_da_produ%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "",
+		        categoria : "",
+		        parent : "2",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "543.811219355815",
+		        positionY : "1310.5572176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "operations", 
+		            "produção"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd88",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "109",
+		        name : "Contabilidade",
+		        descricao : "Manutenção de registros contábeis de uma operação ou negócio",
+		        wiki : "https://pt.wikipedia.org/wiki/Contabilidade",
+		        area : "Ciências contábeis",
+		        campo : "",
+		        categoria : "",
+		        parent : "3",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "3098.106625788411",
+		        positionY : "1012.5612473719638",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Contabilidade"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd89",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "110",
+		        name : "Direito civil",
+		        descricao : "Regulação das interações e relações entre pessoas fisícas ou jurídicas",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_civil",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1380.75",
+		        positionY : "3098.75",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd8a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "114",
+		        name : "Direito trabalhista",
+		        descricao : "Regulação das relações trabalhistas entre pessoas físicas e jurídicas",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_do_trabalho",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-798.5",
+		        positionY : "2847",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "emprego"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd8b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "113",
+		        name : "Direito tributário",
+		        descricao : "Regras e normas que regulam a cobrança de taxas e impostos de pessoas físicas e jurídicas",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_tribut%C3%A1rio",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1377.5",
+		        positionY : "3437.75",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Impostos", 
+		            "taxas"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd8c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "111",
+		        name : "Direito comercial",
+		        descricao : "Regulação das atividades empresariais e comerciais",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_comercial",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-594.25",
+		        positionY : "3273.75",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd8d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "112",
+		        name : "Direito constitucional",
+		        descricao : "Análise e interpretação das normas constitucionais que regem uma nação",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_constitucional",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1469",
+		        positionY : "2824",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd8e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "115",
+		        name : "Regulações setoriais",
+		        descricao : "Regulações específicas que regem o funcionamento de setores econômicos",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1837",
+		        positionY : "3084.25",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd8f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "129",
+		        name : "Direito administrativo",
+		        descricao : "Direito das relações entre cidadãos e o governo",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_administrativo",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1802",
+		        positionY : "3286",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd90",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "134",
+		        name : "Direito Internacional",
+		        descricao : "Regulação das relações internacionais entre países e organizações",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_internacional",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-2461.5",
+		        positionY : "3467.25",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd91",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "131",
+		        name : "Direito processual",
+		        descricao : "Conjunto de regras, instituições e suas jurisprudências, que regulam o processo jurídico",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_processual",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-2419",
+		        positionY : "3094.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd92",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "130",
+		        name : "Direito econômico",
+		        descricao : "Regulação das relações econômicas, produtivas e de circulação de bens",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_econ%C3%B4mico",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1930",
+		        positionY : "3475",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd93",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "132",
+		        name : "Direito bancário",
+		        descricao : "Conjunto de normas que regulam o funcionamento do mercado bancário no Brasil",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_banc%C3%A1rio",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1765",
+		        positionY : "2866",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd94",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "136",
+		        name : "Direito penal",
+		        descricao : "Regulação das penalidades aplicadas a infratores",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_penal",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-2377.75",
+		        positionY : "3264",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd95",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "116",
+		        name : "Análise econômica",
+		        descricao : "Análise econômica",
+		        wiki : "https://pt.wikipedia.org/wiki/Economia",
+		        area : "Economia",
+		        campo : "",
+		        categoria : "",
+		        parent : "5",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-3493",
+		        positionY : "1453.75",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd96",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "138",
+		        name : "Filosofia política",
+		        descricao : "Estudo da necessidade de importância da política na humanidade",
+		        wiki : "https://pt.wikipedia.org/wiki/Filosofia_pol%C3%ADtica",
+		        area : "Filosofia",
+		        campo : "",
+		        categoria : "",
+		        parent : "6",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1427",
+		        positionY : "309",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd97",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "137",
+		        name : "Pensamento economico",
+		        descricao : "Evolução do estudo econômico e escolas de pensamento econômico",
+		        wiki : "https://pt.wikipedia.org/wiki/C%C3%B3digos_de_classifica%C3%A7%C3%A3o_JEL#B_-_Hist.C3.B3ria_do_pensamento_econ.C3.B3mico.2C_metodologia_e_abordagens_heterodoxas",
+		        area : "Economia",
+		        campo : "",
+		        categoria : "",
+		        parent : "5",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-2664",
+		        positionY : "1258",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd98",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "117",
+		        name : "Economia comportamental",
+		        descricao : "Análise da influência do comportamento humano nas decisões econômicas",
+		        wiki : "https://pt.wikipedia.org/wiki/Economia_comportamental",
+		        area : "Economia",
+		        campo : "",
+		        categoria : "",
+		        parent : "5",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-2660",
+		        positionY : "1520.25",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd99",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "118",
+		        name : "Ética",
+		        descricao : "Estudo dos bons hábitos necessários à vida em comunidade",
+		        wiki : "https://pt.wikipedia.org/wiki/%C3%89tica",
+		        area : "Filosofia",
+		        campo : "",
+		        categoria : "",
+		        parent : "6",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-1102",
+		        positionY : "383.25",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd9a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "139",
+		        name : "Inglês",
+		        descricao : "Comunicação na língua inglesa",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_inglesa",
+		        area : "Idiomas",
+		        campo : "",
+		        categoria : "",
+		        parent : "12",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "2261",
+		        positionY : "182.75",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd9b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "144",
+		        name : "Francês",
+		        descricao : "Comunicação na língua francesa",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_francesa",
+		        area : "Idiomas",
+		        campo : "",
+		        categoria : "",
+		        parent : "12",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "2268.25",
+		        positionY : "340",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd9c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "147",
+		        name : "Português",
+		        descricao : "Comunicação na língua portuguesa",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_portuguesa",
+		        area : "Idiomas",
+		        campo : "",
+		        categoria : "",
+		        parent : "12",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "2077",
+		        positionY : "19",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd9d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "145",
+		        name : "Espanhol",
+		        descricao : "Comunicação na língua espanhola",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_castelhana",
+		        area : "Idiomas",
+		        campo : "",
+		        categoria : "",
+		        parent : "12",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "2269",
+		        positionY : "437.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd9e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "120",
+		        name : "Estatística",
+		        descricao : "Análise do relacionamento entre dados e sua descrição",
+		        wiki : "https://pt.wikipedia.org/wiki/Estat%C3%ADstica",
+		        area : "Matemática",
+		        campo : "",
+		        categoria : "",
+		        parent : "7",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "534.25",
+		        positionY : "2876.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cd9f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "119",
+		        name : "Cálculo",
+		        descricao : "Estudo das taxas de variação e crescimento de grandezas",
+		        wiki : "https://pt.wikipedia.org/wiki/C%C3%A1lculo",
+		        area : "Matemática",
+		        campo : "",
+		        categoria : "",
+		        parent : "7",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "909",
+		        positionY : "3106",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cda0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "140",
+		        name : "Álgebra",
+		        descricao : "Manipulação de operações e equações matemáticas",
+		        wiki : "https://pt.wikipedia.org/wiki/%C3%81lgebra",
+		        area : "Matemática ",
+		        campo : "",
+		        categoria : "",
+		        parent : "7",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "466.25",
+		        positionY : "3073.25",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cda1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "141",
+		        name : "Probabilidade",
+		        descricao : "Estudo da incerteza matemática",
+		        wiki : "https://pt.wikipedia.org/wiki/Probabilidade",
+		        area : "Matemática ",
+		        campo : "",
+		        categoria : "",
+		        parent : "7",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "976",
+		        positionY : "2826",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cda2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "121",
+		        name : "Psicologia Freudiana",
+		        descricao : "Psicologia Freudiana",
+		        wiki : "",
+		        area : "Psicologia",
+		        campo : "",
+		        categoria : "",
+		        parent : "8",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "1443",
+		        positionY : "77",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cda3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "150",
+		        name : "Matemática financeira",
+		        descricao : "Estudo das relações matemáticas de números financeiros",
+		        wiki : "https://pt.wikipedia.org/wiki/Matem%C3%A1tica_financeira",
+		        area : "Matemática ",
+		        campo : "",
+		        categoria : "",
+		        parent : "7",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "401.5",
+		        positionY : "3215.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc72c66652ca33e4cda4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "122",
+		        name : "Psicologia do trabalho",
+		        descricao : "Psicologia do trabalho",
+		        wiki : "",
+		        area : "Psicologia",
+		        campo : "",
+		        categoria : "",
+		        parent : "8",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "1704",
+		        positionY : "351.25",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cda5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "148",
+		        name : "Psicanálise",
+		        descricao : "Psicanálise",
+		        wiki : "https://pt.wikipedia.org/wiki/Psican%C3%A1lise",
+		        area : "Psicologia",
+		        campo : "",
+		        categoria : "",
+		        parent : "8",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "1718",
+		        positionY : "98",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cda6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "142",
+		        name : "Sociologia econômica",
+		        descricao : "Análise dos impactos dos sistemas econômicos na vida em sociedade",
+		        wiki : "",
+		        area : "Sociologia",
+		        campo : "",
+		        categoria : "",
+		        parent : "11",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "1057",
+		        positionY : "26.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cda7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "143",
+		        name : "Sociologia jurídica",
+		        descricao : "Análise dos impactos das leis e normas na vida em sociedade",
+		        wiki : "",
+		        area : "Sociologia",
+		        campo : "",
+		        categoria : "",
+		        parent : "11",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "781",
+		        positionY : "74",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cda8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "151",
+		        name : "Pensamento crítico",
+		        descricao : "Avaliação e reflexão lógica",
+		        wiki : "https://pt.wikipedia.org/wiki/Pensamento_cr%C3%ADtico",
+		        area : "Soft Skills",
+		        campo : "",
+		        categoria : "",
+		        parent : "10",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-99.75",
+		        positionY : "120.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cda9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "149",
+		        name : "Habilidades sociais",
+		        descricao : "Capacidade de interação social e de criação de relacionamentos",
+		        wiki : "https://pt.wikipedia.org/wiki/Intelig%C3%AAncia_social",
+		        area : "Soft Skills",
+		        campo : "",
+		        categoria : "",
+		        parent : "10",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-46.75",
+		        positionY : "331.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Inteligênciaemocional"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdaa",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "152",
+		        name : "Pensamento abstrato",
+		        descricao : "Avaliação de observações e experiências pelos seus componentes",
+		        wiki : "https://pt.wikipedia.org/wiki/Abstra%C3%A7%C3%A3o",
+		        area : "Soft Skills",
+		        campo : "",
+		        categoria : "",
+		        parent : "10",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-172",
+		        positionY : "470.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdab",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "153",
+		        name : "Comunicação",
+		        descricao : "Transmissão e recepção de informações",
+		        wiki : "https://pt.wikipedia.org/wiki/Comunica%C3%A7%C3%A3o",
+		        area : "Soft Skills",
+		        campo : "",
+		        categoria : "",
+		        parent : "10",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-671.5",
+		        positionY : "144",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdac",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "154",
+		        name : "Postura",
+		        descricao : "Auto controle do comportamental para atingimento de objetivos",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "",
+		        categoria : "",
+		        parent : "10",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "-641",
+		        positionY : "407.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdad",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "123",
+		        name : "Computação geral",
+		        descricao : "Computação geral",
+		        wiki : "",
+		        area : "Tecnologia da informação",
+		        campo : "",
+		        categoria : "",
+		        parent : "9",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "2889.1066257884113",
+		        positionY : "1723.2536194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdae",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "125",
+		        name : "Programação e Desenvolvimento",
+		        descricao : "Programação e Desenvolvimento",
+		        wiki : "",
+		        area : "Tecnologia da informação",
+		        campo : "",
+		        categoria : "",
+		        parent : "9",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "2827.3566257884113",
+		        positionY : "2115.7536194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdaf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "124",
+		        name : "Infra estrutura tecnológica",
+		        descricao : "Infra estrutura tecnológica",
+		        wiki : "",
+		        area : "Tecnologia da informação",
+		        campo : "",
+		        categoria : "",
+		        parent : "9",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "3305.3566257884113",
+		        positionY : "2100.7536194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "126",
+		        name : "Sistemas e plataformas",
+		        descricao : "Sistemas e plataformas",
+		        wiki : "",
+		        area : "Tecnologia da informação",
+		        campo : "",
+		        categoria : "",
+		        parent : "9",
+		        classes : "campo",
+		        weight : "70",
+		        positionX : "3005.6066257884113",
+		        positionY : "2485.7536194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1000",
+		        name : "Monografias",
+		        descricao : "Monografias",
+		        wiki : "https://pt.wikipedia.org/wiki/Monografia",
+		        area : "Trabalhos acadêmicos",
+		        campo : "",
+		        categoria : "",
+		        parent : "100",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "1051",
+		        positionY : "375",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "TCC", 
+		            "tese", 
+		            "doutorado", 
+		            "mestrado"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1050",
+		        name : "Álgebra linear",
+		        descricao : "",
+		        wiki : "",
+		        area : "Álgebra",
+		        campo : "",
+		        categoria : "",
+		        parent : "140",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "590",
+		        positionY : "3081",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1010",
+		        name : "Macroeconomia",
+		        descricao : "Estudo da economia de uma região ou país",
+		        wiki : "https://pt.wikipedia.org/wiki/Macroeconomia",
+		        area : "Análise econômica",
+		        campo : "",
+		        categoria : "",
+		        parent : "116",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-3661",
+		        positionY : "1591",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1012",
+		        name : "Teoria do desenvolvimento econômico",
+		        descricao : "Teoria do desenvolvimento econômico",
+		        wiki : "",
+		        area : "Análise econômica",
+		        campo : "",
+		        categoria : "",
+		        parent : "116",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-3046",
+		        positionY : "1303",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1011",
+		        name : "Microeconomia",
+		        descricao : "Estudo do comportamento econômico de indivíduos e firmas",
+		        wiki : "https://pt.wikipedia.org/wiki/Microeconomia",
+		        area : "Análise econômica",
+		        campo : "",
+		        categoria : "",
+		        parent : "116",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-3723.5",
+		        positionY : "1356.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1013",
+		        name : "Teoria dos jogos",
+		        descricao : "Teoria dos jogos",
+		        wiki : "",
+		        area : "Análise econômica",
+		        campo : "",
+		        categoria : "",
+		        parent : "116",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-3724",
+		        positionY : "1227",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1051",
+		        name : "Econometria",
+		        descricao : "",
+		        wiki : "",
+		        area : "Análise econômica",
+		        campo : "",
+		        categoria : "",
+		        parent : "116",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-3044",
+		        positionY : "1502",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1060",
+		        name : "Economia Internacional",
+		        descricao : "",
+		        wiki : "",
+		        area : "Análise econômica",
+		        campo : "",
+		        categoria : "",
+		        parent : "116",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-3044",
+		        positionY : "1656",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdb9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1014",
+		        name : "Negociações",
+		        descricao : "Troca de informações com clientes e discussão de termos para realização de acordo",
+		        wiki : "",
+		        area : "Comercial",
+		        campo : "",
+		        categoria : "",
+		        parent : "102",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "1404.561219355816",
+		        positionY : "1396.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdba",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1065",
+		        name : "Transações comerciais",
+		        descricao : "Condução de processos comerciais do interesse à entrega do produto",
+		        wiki : "",
+		        area : "Comercial",
+		        campo : "",
+		        categoria : "",
+		        parent : "102",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "1588.561219355816",
+		        positionY : "1269.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdbb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1015",
+		        name : "Relacionamento com clientes",
+		        descricao : "Criaçãod e relacionamentos com objetivos de maximizar a eficiência comercial de longo prazo do negócio",
+		        wiki : "",
+		        area : "Comercial",
+		        campo : "",
+		        categoria : "",
+		        parent : "102",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "1699.561219355816",
+		        positionY : "1422.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdbc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1016",
+		        name : "Utilização MS Office",
+		        descricao : "Utilização MS Office",
+		        wiki : "",
+		        area : "Computação geral",
+		        campo : "",
+		        categoria : "",
+		        parent : "123",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "3003.6066257884113",
+		        positionY : "1731.0036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdbd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1018",
+		        name : "Contabilidade empresarial",
+		        descricao : "Contabilidade empresarial",
+		        wiki : "",
+		        area : "Contabilidade",
+		        campo : "",
+		        categoria : "",
+		        parent : "109",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "2930.106625788411",
+		        positionY : "1067.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc73c66652ca33e4cdbe",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1019",
+		        name : "Contabilidade financeira",
+		        descricao : "Contabilidade financeira",
+		        wiki : "",
+		        area : "Contabilidade",
+		        campo : "",
+		        categoria : "",
+		        parent : "109",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "3515.356625788411",
+		        positionY : "1184.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdbf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1020",
+		        name : "Contabilidade pessoal",
+		        descricao : "Contabilidade Pessoal",
+		        wiki : "",
+		        area : "Contabilidade",
+		        campo : "",
+		        categoria : "",
+		        parent : "109",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "3078.106625788411",
+		        positionY : "777.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1021",
+		        name : "Código civil",
+		        descricao : "Código civil",
+		        wiki : "",
+		        area : "Direito Civil",
+		        campo : "",
+		        categoria : "",
+		        parent : "110",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1527",
+		        positionY : "2965",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1052",
+		        name : "Direito da propriedade",
+		        descricao : "",
+		        wiki : "",
+		        area : "Direito Civil",
+		        campo : "",
+		        categoria : "",
+		        parent : "110",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1509",
+		        positionY : "3131",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1053",
+		        name : "Direito da família",
+		        descricao : "",
+		        wiki : "",
+		        area : "Direito Civil",
+		        campo : "",
+		        categoria : "",
+		        parent : "110",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1243",
+		        positionY : "3009",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1054",
+		        name : "Direito das sucessões",
+		        descricao : "",
+		        wiki : "",
+		        area : "Direito Civil",
+		        campo : "",
+		        categoria : "",
+		        parent : "110",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1239",
+		        positionY : "3204",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1022",
+		        name : "Contratos",
+		        descricao : "Contratos",
+		        wiki : "",
+		        area : "Direito Comercial",
+		        campo : "",
+		        categoria : "",
+		        parent : "111",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-490.75",
+		        positionY : "3092.5",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1024",
+		        name : "Direito societário",
+		        descricao : "Direito societário",
+		        wiki : "",
+		        area : "Direito Comercial",
+		        campo : "",
+		        categoria : "",
+		        parent : "111",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-590.25",
+		        positionY : "3347",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1056",
+		        name : "Direito internacional privado",
+		        descricao : "",
+		        wiki : "",
+		        area : "Direito internacional",
+		        campo : "",
+		        categoria : "",
+		        parent : "134",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-2625",
+		        positionY : "3471",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1055",
+		        name : "Direito internacional público",
+		        descricao : "",
+		        wiki : "",
+		        area : "Direito internacional",
+		        campo : "",
+		        categoria : "",
+		        parent : "134",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-2298",
+		        positionY : "3479",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1025",
+		        name : "Tributação",
+		        descricao : "Tributação",
+		        wiki : "",
+		        area : "Direito tributário",
+		        campo : "",
+		        categoria : "",
+		        parent : "113",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1525",
+		        positionY : "3444",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdc9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1057",
+		        name : "Planejamento tributário",
+		        descricao : "",
+		        wiki : "",
+		        area : "Direito tributário",
+		        campo : "",
+		        categoria : "",
+		        parent : "113",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1251",
+		        positionY : "3497",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdca",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1026",
+		        name : "Finanças comportamentais",
+		        descricao : "Finanças comportamentais",
+		        wiki : "",
+		        area : "Economia comportamental",
+		        campo : "",
+		        categoria : "",
+		        parent : "117",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-2660",
+		        positionY : "1528",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdcb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1027",
+		        name : "Inovação",
+		        descricao : "Identificação de oportunidades e lacunas de mercado e construção de soluções para suprir esta necessidade",
+		        wiki : "",
+		        area : "Empreendedorismo",
+		        campo : "",
+		        categoria : "",
+		        parent : "103",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "59.56121935581422",
+		        positionY : "780.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdcc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1028",
+		        name : "Novos negócios",
+		        descricao : "Criação de modelos de negócios e implantação de organizações para desenvolvê-los",
+		        wiki : "",
+		        area : "Empreendedorismo",
+		        campo : "",
+		        categoria : "",
+		        parent : "103",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "252.06121935581436",
+		        positionY : "945.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdcd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1029",
+		        name : "Formulação estratégica",
+		        descricao : "Análises do mercado, sua conjuntura competitiva, de empresas e produtos para a criação de planos e políticas de ação",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrat%C3%A9gia#A_intelig.C3.AAncia_e_o_planejamento",
+		        area : "Estratégia",
+		        campo : "",
+		        categoria : "",
+		        parent : "104",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1871.688780644184",
+		        positionY : "2267.2162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdce",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1030",
+		        name : "Decisão estratégica",
+		        descricao : "Criação, seleção e execução de iniciativas estratégicas condicionadas às respostas competitivas observadas",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrat%C3%A9gia#Dire.C3.A7.C3.A3o_Estrat.C3.A9gica",
+		        area : "Estratégia",
+		        campo : "",
+		        categoria : "",
+		        parent : "104",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1869.938780644184",
+		        positionY : "2522.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdcf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1031",
+		        name : "Ética Aplicada",
+		        descricao : "Ética Aplicada",
+		        wiki : "",
+		        area : "Ética",
+		        campo : "",
+		        categoria : "",
+		        parent : "118",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1102",
+		        positionY : "391",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdd0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1017",
+		        name : "Finanças bancárias",
+		        descricao : "Controle e aplicação de recursos financeiros dentro de instituições financeiras",
+		        wiki : "https://pt.wikipedia.org/wiki/Banco",
+		        area : "Finanças",
+		        campo : "",
+		        categoria : "",
+		        parent : "105",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "1830.5612193558159",
+		        positionY : "1897.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdd1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1032",
+		        name : "Finanças corporativas",
+		        descricao : "Análise e otimização da estrutura de capital de uma empresa para maximização do seu valor",
+		        wiki : "https://pt.wikipedia.org/wiki/Finan%C3%A7as_corporativas",
+		        area : "Finanças",
+		        campo : "",
+		        categoria : "",
+		        parent : "105",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-291.1887806441855",
+		        positionY : "2319.8072176905703",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdd2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1036",
+		        name : "Trading",
+		        descricao : "Estruturação e execução de transações a mercado",
+		        wiki : "https://pt.wikipedia.org/wiki/Mercado_financeiro",
+		        area : "Finanças",
+		        campo : "",
+		        categoria : "",
+		        parent : "105",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "631.311219355815",
+		        positionY : "1834.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdd3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1034",
+		        name : "Investimentos",
+		        descricao : "Avaliação e aplicação de recursos em ativos financeiros para a maximização do retorno a determinado nível de risco",
+		        wiki : "https://pt.wikipedia.org/wiki/Investimento",
+		        area : "Finanças",
+		        campo : "",
+		        categoria : "",
+		        parent : "105",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "1433.5612193558152",
+		        positionY : "2375.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdd4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1033",
+		        name : "Controladoria",
+		        descricao : "Geração de informações financeiras para implementação de controles e realização de planejamento",
+		        wiki : "https://pt.wikipedia.org/wiki/Controladoria",
+		        area : "Finanças",
+		        campo : "",
+		        categoria : "",
+		        parent : "105",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-691.1887806441854",
+		        positionY : "1896.307217690571",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdd5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1035",
+		        name : "Finanças pessoais",
+		        descricao : "Organização e maximização dos recursos financeiros pessoais em função das necessidades individuais",
+		        wiki : "https://pt.wikipedia.org/wiki/Finan%C3%A7as_pessoais",
+		        area : "Finanças",
+		        campo : "",
+		        categoria : "",
+		        parent : "105",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-846.3268403456773",
+		        positionY : "1713.4415460487794",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdd6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1002",
+		        name : "Gestão de projetos",
+		        descricao : "Planejamento, implementação e controle de projetos de mudança",
+		        wiki : "https://pt.wikipedia.org/wiki/Ger%C3%AAncia_de_projetos",
+		        area : "Gestão",
+		        campo : "",
+		        categoria : "",
+		        parent : "101",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1733.9387806441837",
+		        positionY : "1053.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc74c66652ca33e4cdd7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1004",
+		        name : "Governança corporativa",
+		        descricao : "Criação de estruturas de controle e direção dos negócios pelos acionistas e condução desses mecanismos",
+		        wiki : "https://pt.wikipedia.org/wiki/Governan%C3%A7a_corporativa",
+		        area : "Gestão",
+		        campo : "",
+		        categoria : "",
+		        parent : "101",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1965.1887806441837",
+		        positionY : "844.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cdd8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1007",
+		        name : "Gestão sustentável",
+		        descricao : "Interação e comunicação com stakeholders para a adaptação das atividades da empresa e criação de iniciativas alinhadas a seus interesses",
+		        wiki : "",
+		        area : "Gestão",
+		        campo : "",
+		        categoria : "",
+		        parent : "101",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1886.6887806441837",
+		        positionY : "1217.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cdd9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1058",
+		        name : "Inglês de negócios",
+		        descricao : "Jargões de inglês utilizados em negócios",
+		        wiki : "",
+		        area : "Inglês",
+		        campo : "",
+		        categoria : "",
+		        parent : "139",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "2348",
+		        positionY : "226",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cdda",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1037",
+		        name : "Implementação de sistemas",
+		        descricao : "Implementação de sistemas",
+		        wiki : "",
+		        area : "Infra estrutura tecnológica",
+		        campo : "",
+		        categoria : "",
+		        parent : "124",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "3305.3566257884113",
+		        positionY : "2108.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cddb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1038",
+		        name : "Gestão de produto",
+		        descricao : "Desenho e desenvolvimento de soluções alinhadas às necessidades dos consumidores, e gestão de seus atributos",
+		        wiki : "",
+		        area : "Marketing",
+		        campo : "",
+		        categoria : "",
+		        parent : "107",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1950.4387806441837",
+		        positionY : "1627.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cddc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1039",
+		        name : "Análise mercadológica",
+		        descricao : "Coleta e análise de informações de mercado e de uso dos produtos e serviços da empresa para reforçar o valor da sua oferta",
+		        wiki : "",
+		        area : "Marketing",
+		        campo : "",
+		        categoria : "",
+		        parent : "107",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1839.9387806441837",
+		        positionY : "1424.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cddd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1040",
+		        name : "Comunicação mercadológica",
+		        descricao : "Criação e gestão de canais de comunicação para a transmissão de informações sobre a empresa e suas ofertas",
+		        wiki : "",
+		        area : "Marketing",
+		        campo : "",
+		        categoria : "",
+		        parent : "107",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1850.9387806441837",
+		        positionY : "1827.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cdde",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1041",
+		        name : "Decisão mercadológica",
+		        descricao : "Planejamento e gestão da oferta de produtos e serviços, agregando valor ao negócio com o pleno atendimento dos clientes",
+		        wiki : "",
+		        area : "Marketing",
+		        campo : "",
+		        categoria : "",
+		        parent : "107",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1432.688780644184",
+		        positionY : "1630.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cddf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1005",
+		        name : "Gestão de operações",
+		        descricao : "Desenvolvimento e controle de processos, visando a utilização eficiente de recursos na produção de bens e serviços",
+		        wiki : "",
+		        area : "Operações",
+		        campo : "",
+		        categoria : "",
+		        parent : "146",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "880.811219355815",
+		        positionY : "1419.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1061",
+		        name : "Marketing digital",
+		        descricao : "Utilização de canais digitais para a realização de comunicações e vendas",
+		        wiki : "",
+		        area : "Marketing",
+		        campo : "",
+		        categoria : "",
+		        parent : "107",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1836.6887806441837",
+		        positionY : "1993.3072176905714",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1062",
+		        name : "Administração de sistemas",
+		        descricao : "Dimensionamento, operação e controle de ferramentas tecnológicas para a operação eficiente de negócios",
+		        wiki : "",
+		        area : "Operações",
+		        campo : "",
+		        categoria : "",
+		        parent : "146",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "799.3112193558145",
+		        positionY : "1216.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1063",
+		        name : "Logística",
+		        descricao : "Dimensionamento, armazenamento e movimentação de recursos pela empresa, garantindo o fluxo constante e eficiente de sua operação",
+		        wiki : "https://pt.wikipedia.org/wiki/Gest%C3%A3o_da_cadeia_de_suprimentos",
+		        area : "Operações",
+		        campo : "",
+		        categoria : "",
+		        parent : "146",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "155.06121935581425",
+		        positionY : "1420.8072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Supplychain", 
+		            "SCM", 
+		            "Gestão da cadeia de suprimentos"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1064",
+		        name : "Técnicas de gestão operacional",
+		        descricao : "Técnicas de controle e desenvolvimento de operações",
+		        wiki : "",
+		        area : "Operações",
+		        campo : "",
+		        categoria : "",
+		        parent : "146",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-14.438780644185783",
+		        positionY : "1204.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1042",
+		        name : "Linguagens de programação",
+		        descricao : "Linguagens de programação",
+		        wiki : "",
+		        area : "Programação e Desenvolvimento",
+		        campo : "",
+		        categoria : "",
+		        parent : "125",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "2983.3566257884113",
+		        positionY : "2123.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1046",
+		        name : "Estruturação organizacional",
+		        descricao : "Determinação das funções e criação de desenho estrutural da organização baseados no dimensionamento das suas necessidades de recursos humanos",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrutura_organizacional",
+		        area : "Recursos humanos",
+		        campo : "",
+		        categoria : "",
+		        parent : "108",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-793.9387806441855",
+		        positionY : "798.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Organograma"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1043",
+		        name : "Psicologia comportamental",
+		        descricao : "Psicologia comportamental",
+		        wiki : "",
+		        area : "Psicologia do trabalho",
+		        campo : "",
+		        categoria : "",
+		        parent : "122",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "1704",
+		        positionY : "359",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1045",
+		        name : "Recrutamento e seleção",
+		        descricao : "Identificação e triagem de candidatos e condução de processos seletivos para garantir a aderência dos profissionais recrutados às necessidades técnicas e culturais da organização",
+		        wiki : "https://pt.wikipedia.org/wiki/Provis%C3%A3o_de_recursos_humanos#Recrutamento_e_sele.C3.A7.C3.A3o",
+		        area : "Recursos humanos",
+		        campo : "",
+		        categoria : "",
+		        parent : "108",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-831.688780644185",
+		        positionY : "982.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Headhunter"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1044",
+		        name : "Atração e retenção",
+		        descricao : "Desenvolvimento de pacotes de compensação e planos de carreira alinhados às expectativas dos funcionários e ao mercado, maximizando o capital humano da organização",
+		        wiki : "",
+		        area : "Recursos humanos",
+		        campo : "",
+		        categoria : "",
+		        parent : "108",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-677.1887806441854",
+		        positionY : "1160.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Retençãode talentos", 
+		            "talentos", 
+		            "gestão de talentos"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cde9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1066",
+		        name : "Treinamento e desenvolvimento",
+		        descricao : "Estruturação de metas e disponibilização de recursos educacionais para colaboradores de maneira a a garantir a oferta de habilidades para a evolução da organização",
+		        wiki : "",
+		        area : "Recursos humanos",
+		        campo : "",
+		        categoria : "",
+		        parent : "108",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-803.9387806441853",
+		        positionY : "1371.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cdea",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1047",
+		        name : "Regulação bancária",
+		        descricao : "Regulação bancária",
+		        wiki : "",
+		        area : "Regulações setoriais",
+		        campo : "",
+		        categoria : "",
+		        parent : "115",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "-1837",
+		        positionY : "3092",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cdeb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1049",
+		        name : "Sistemas de negociação",
+		        descricao : "Sistemas de negociação",
+		        wiki : "",
+		        area : "Sistemas e plataformas",
+		        campo : "",
+		        categoria : "",
+		        parent : "126",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "2700.3566257884113",
+		        positionY : "2493.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cdec",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1048",
+		        name : "Bases de dados",
+		        descricao : "Bases de dados",
+		        wiki : "",
+		        area : "Sistemas e plataformas",
+		        campo : "",
+		        categoria : "",
+		        parent : "126",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "3051.3566257884113",
+		        positionY : "2473.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cded",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "1059",
+		        name : "Software econométrico",
+		        descricao : "",
+		        wiki : "",
+		        area : "Sistemas e plataformas",
+		        campo : "",
+		        categoria : "",
+		        parent : "126",
+		        classes : "categoria",
+		        weight : "70",
+		        positionX : "3362.3566257884113",
+		        positionY : "2465.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cdee",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10000",
+		        name : "Formatação de trabalhos científicos",
+		        descricao : "Utilização das regras da ABNT para formatação de trabalhos acadêmicos",
+		        wiki : "",
+		        area : "Acadêmica",
+		        campo : "Trabalhos acadêmicos",
+		        categoria : "Monografias",
+		        parent : "1000",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1051",
+		        positionY : "358",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc75c66652ca33e4cdef",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10168",
+		        name : "Criação de cursos em PBL",
+		        descricao : "Utilização da metodologia de ensino baseada em solução de problemas e em projetos (Problem based Learning)",
+		        wiki : "https://pt.wikipedia.org/wiki/Projeto_de_aprendizagem",
+		        area : "Acadêmica",
+		        campo : "Métodos de ensino",
+		        categoria : "",
+		        parent : "127",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "773",
+		        positionY : "332",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Projectbased learning"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10169",
+		        name : "Projetos de pesquisa",
+		        descricao : "Criação de projetos de pesquisa acadêmica",
+		        wiki : "",
+		        area : "Acadêmica",
+		        campo : "Pesquisa",
+		        categoria : "",
+		        parent : "128",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "755.7325440996017",
+		        positionY : "423.9301763984065",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10022",
+		        name : "Negociação",
+		        descricao : "Utilização de técnicas e conceitos de negociação para maximização de resultados",
+		        wiki : "https://pt.wikipedia.org/wiki/Negocia%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "Comercial",
+		        categoria : "Negociações",
+		        parent : "1014",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1404.561219355816",
+		        positionY : "1379.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10170",
+		        name : "Defesa de teses",
+		        descricao : "Aprovação de trabalhos teóricos em banca de examinação",
+		        wiki : "",
+		        area : "Acadêmica",
+		        campo : "Academia",
+		        categoria : "Monografias",
+		        parent : "1000",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1051",
+		        positionY : "408",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10199",
+		        name : "Participação de leilões",
+		        descricao : "Participação dos diversos tipo de leilão e realização de lances para aquisição de produtos e serviços de acordo com as regras estipuladas",
+		        wiki : "https://pt.wikipedia.org/wiki/Leil%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "Comercial",
+		        categoria : "Negociações",
+		        parent : "1014",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1404.561219355816",
+		        positionY : "1429.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10353",
+		        name : "Realização de Road Show",
+		        descricao : "Condução de sequência de reuniões e encontros com potenciais investidores para a apresentação de uma oportunidade de investimento e coleta de ofertas indicativas ou firmes.",
+		        wiki : "https://en.wikipedia.org/wiki/Financial_roadshows",
+		        area : "Administração de empresas",
+		        campo : "Comercial",
+		        categoria : "Transações comerciais",
+		        parent : "1065",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1758.561219355816",
+		        positionY : "1279.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Roadshow", 
+		            "IPO", 
+		            "Structured finance", 
+		            "follow-on", 
+		            "emissão secundária", 
+		            "emissão primária", 
+		            "abertura de capital"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10319",
+		        name : "Cotação e orçamento",
+		        descricao : "Informação de preço de combinações de produtos e serviços para clientes individuais",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Comercial",
+		        categoria : "Transações comerciais",
+		        parent : "1065",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1400.561219355816",
+		        positionY : "1275.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10320",
+		        name : "Criação de propostas",
+		        descricao : "Redação de propostas comerciais, contendo seus termos e condições",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Comercial",
+		        categoria : "Transações comerciais",
+		        parent : "1065",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1568.561219355816",
+		        positionY : "1278.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10024",
+		        name : "Prospecção de mercado",
+		        descricao : "Pesquisa e contato com novos clientes, fornacedores e parceiros",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Comercial",
+		        categoria : "Relacionamento com clientes",
+		        parent : "1015",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1699.561219355816",
+		        positionY : "1380.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10023",
+		        name : "Gestão de relacionamento com clientes",
+		        descricao : "Manutenção de relacionamento com clientes com objetivo de maximizar vendas e capacidade de atendimento",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Comercial",
+		        categoria : "Relacionamento com clientes",
+		        parent : "1015",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1699.561219355816",
+		        positionY : "1430.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdf9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10321",
+		        name : "Atendimento a clientes",
+		        descricao : "Interação com clientes para entendimento de suas demandas e melhor forma de atendê-las com produtos e serviços ofertados",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Comercial",
+		        categoria : "Relacionamento com clientes",
+		        parent : "1015",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1699.561219355816",
+		        positionY : "1480.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdfa",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10026",
+		        name : "Design thinking",
+		        descricao : "Criação de soluções baseada na interação com usuários e foco em design e inovação",
+		        wiki : "https://pt.wikipedia.org/wiki/Design_thinking",
+		        area : "Administração de empresas",
+		        campo : "Empreendedorismo",
+		        categoria : "Inovação",
+		        parent : "1027",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "190.56121935581422",
+		        positionY : "789.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdfb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10028",
+		        name : "Inovação em produtos e serviços",
+		        descricao : "Identificação de lacunas de mercados ou criação de novas soluções para problemas e transformação de oportunidades em produtos ou serviços",
+		        wiki : "https://pt.wikipedia.org/wiki/Inova%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "Empreendedorismo",
+		        categoria : "Inovação",
+		        parent : "1027",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-8.438780644185783",
+		        positionY : "787.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdfc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10025",
+		        name : "Abertura de empresas",
+		        descricao : "Condução do processo burocrático de abertura de uma nova pessoa jurídica",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Empreendedorismo",
+		        categoria : "Novos negócios",
+		        parent : "1028",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-44.43878064418567",
+		        positionY : "890.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdfd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10029",
+		        name : "Empreendimento com metodologia Lean Start-up",
+		        descricao : "Criação de novos negócios com foco na criação eficiente de produtos com base na identificação de demandas",
+		        wiki : "https://pt.wikipedia.org/wiki/Lean_startup",
+		        area : "Administração de empresas",
+		        campo : "Empreendedorismo",
+		        categoria : "Novos negócios",
+		        parent : "1028",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "249.56121935581422",
+		        positionY : "890.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Lean"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdfe",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10030",
+		        name : "Criação de modelos de negócios",
+		        descricao : "Desenvolvimento de modelos de negócios baseados em novos produtos, clientes e mercados",
+		        wiki : "https://pt.wikipedia.org/wiki/Modelo_de_neg%C3%B3cio",
+		        area : "Administração de empresas",
+		        campo : "Empreendedorismo",
+		        categoria : "Novos negócios",
+		        parent : "1028",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-45.43878064418567",
+		        positionY : "947.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Businessmodel"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4cdff",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10031",
+		        name : "Financiamento de novos negócios",
+		        descricao : "Estruturação de operações e captação de recursos para viabilizar empresas em fase inicial de operação",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Empreendedorismo",
+		        categoria : "Novos negócios",
+		        parent : "1028",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "254.56121935581422",
+		        positionY : "1014.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4ce00",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10322",
+		        name : "Criação de plano de negócios",
+		        descricao : "Criação de um plano de negócios contendo os objetivos, análise de mercado e as características da empresa e produto a serem criados",
+		        wiki : "https://pt.wikipedia.org/wiki/Plano_de_neg%C3%B3cios",
+		        area : "Administração de empresas",
+		        campo : "Empreendedorismo",
+		        categoria : "Novos negócios",
+		        parent : "1028",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "249.56121935581422",
+		        positionY : "949.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "BP", 
+		            "business plan"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4ce01",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10367",
+		        name : "Empreendedorismo social",
+		        descricao : "Criação de empresa com modelo de negócios focado na criação de benefícios sociais e não diretamente ligado à obtenção de lucro",
+		        wiki : "https://pt.wikipedia.org/wiki/Empreendedorismo_social",
+		        area : "Administração de empresas",
+		        campo : "Empreendedorismo",
+		        categoria : "Novos negócios",
+		        parent : "1028",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "539.5612193558144",
+		        positionY : "950.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "CSR", 
+		            "Empresa social", 
+		            "setor dois e meio", 
+		            "setor 2.5", 
+		            "Inclusão"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4ce02",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10407",
+		        name : "Aceleração de empreendimentos",
+		        descricao : "Apoio a projetos e empresas para que estes possam atingir a fase de produção e comercialização de maneira mais rápida",
+		        wiki : "https://pt.wikipedia.org/wiki/Aceleradora",
+		        area : "Administração de empresas",
+		        campo : "Empreendedorismo",
+		        categoria : "Novos negócios",
+		        parent : "1028",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "548.5612193558144",
+		        positionY : "1017.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Incubadora", 
+		            "angel", 
+		            "investidor anjo"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4ce03",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10200",
+		        name : "Análise das forças de mercado",
+		        descricao : "Análise da distribuição de forças em um determinado mercado e mitigação dos riscos que essa distribuição apresenta",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Formulação estratégica",
+		        parent : "1029",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2078.4387806441837",
+		        positionY : "2183.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4ce04",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10072",
+		        name : "Análise de cadeia de valor",
+		        descricao : "Análise da cadeia de fornecedores e de processos produtivos para identificação de vantagens e desvantagens competitivas",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Formulação estratégica",
+		        parent : "1029",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2078.4387806441837",
+		        positionY : "2242.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4ce05",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10032",
+		        name : "Análise da concorrência",
+		        descricao : "Criação de relatórios de estratégias de concorrentes, determinar seus pontos fortes e fracos e posicionar empresas no mercado",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrat%C3%A9gia",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Formulação estratégica",
+		        parent : "1029",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1856.4387806441841",
+		        positionY : "2241.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4ce06",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10033",
+		        name : "Análise de end game",
+		        descricao : "Identificação de potenciais reações competitivas de uma decisão estratégica e adaptação a essas reações",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Formulação estratégica",
+		        parent : "1029",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2080.4387806441837",
+		        positionY : "2366.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc76c66652ca33e4ce07",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10034",
+		        name : "Análise do ciclo de vida do produto",
+		        descricao : "Identificação do ponto de vida de determinado produto e de ações específicas para maximizar seu retorno",
+		        wiki : "https://pt.wikipedia.org/wiki/Ciclo_de_vida_do_produto",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Formulação estratégica",
+		        parent : "1029",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2081.4387806441837",
+		        positionY : "2305.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce08",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10035",
+		        name : "Análise estrutural",
+		        descricao : "Construir o entendimento sobre uma indústria, sua cadeia de valor, tendências e distribuição de poderes",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrat%C3%A9gia",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Formulação estratégica",
+		        parent : "1029",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1853.4387806441841",
+		        positionY : "2183.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce09",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10364",
+		        name : "Análise de jogos",
+		        descricao : "Análise do comportamento de participantes de situações baseada na teoria dos jogos",
+		        wiki : "https://pt.wikipedia.org/wiki/Teoria_dos_jogos",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Formulação estratégica",
+		        parent : "1029",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1856.4387806441841",
+		        positionY : "2362.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Johnnash", 
+		            "dilema do prisoneiro"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce0a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10037",
+		        name : "Planejamento estratégico",
+		        descricao : "Desenvolvimento de objetivos de médio e longo prazo e identificação de ações necessárias a seu atingimento",
+		        wiki : "https://pt.wikipedia.org/wiki/Planejamento_estrat%C3%A9gico",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Formulação estratégica",
+		        parent : "1029",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1628.4387806441841",
+		        positionY : "2298.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce0b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10417",
+		        name : "Análise SWOT",
+		        descricao : "Realização de análise sobre as forças, fraquezas, oportunidades e ameaças ligadas ao negócio da empresa",
+		        wiki : "https://pt.wikipedia.org/wiki/An%C3%A1lise_SWOT",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Formulação estratégica",
+		        parent : "1029",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1855.4387806441841",
+		        positionY : "2306.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "FOFA"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce0c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10036",
+		        name : "Construção de estratégias competitivas",
+		        descricao : "Definir estratégia geral ou especifica com base em dados de mercado e análises mercadológicas e estratégicas",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrat%C3%A9gia",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Decisão estratégica",
+		        parent : "1030",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1892.4387806441841",
+		        positionY : "2502.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce0d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10366",
+		        name : "Criação de estratégia global",
+		        descricao : "Desenho da estratégia da empresa levando em consideração os diversos países onde atua e buscando maximizar seu retorno em cada mercado, aproveitando oportunidades e mitigando riscos de cada região",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Decisão estratégica",
+		        parent : "1030",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1891.4387806441841",
+		        positionY : "2559.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Globalização", 
+		            ""
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce0e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10420",
+		        name : "Criação de plano de ação",
+		        descricao : "Listagem das ações necessárias ao atingimento dos objetivos estratégicos e determinação da ordem em que serão realizadas",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Decisão estratégica",
+		        parent : "1030",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1635.4387806441841",
+		        positionY : "2503.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce0f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10419",
+		        name : "Direção estratégica",
+		        descricao : "Definição do norte estratégico da empresa com missão, visão e valores",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Estratégia",
+		        categoria : "Decisão estratégica",
+		        parent : "1030",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2126.4387806441837",
+		        positionY : "2501.7162086919234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Missão", 
+		            "visão"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce10",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10098",
+		        name : "Cálculos de LCR e NSFR - BIS III",
+		        descricao : "Cálculo dos índices de NSFR (Net Stable Funding Ratio) e LCR ( Liquidity Coverage Ratio)",
+		        wiki : "https://pt.wikipedia.org/wiki/Basileia_III",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2065.5612193558154",
+		        positionY : "1781.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce11",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10099",
+		        name : "Divulgação de informações bancárias",
+		        descricao : "Criação e divulgação de informações determinadas pelas normas de divulgação de informação e transparência para investidores de mercado (CVM/ Bolsas de valor)",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1747.561219355816",
+		        positionY : "1843.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce12",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10100",
+		        name : "Cálculo de requerimento de capital de BIS III",
+		        descricao : "Determinação do índice de basiléia de um banco, a partir do cálculo do requerimento de capital por ativo ponderado por risco",
+		        wiki : "https://pt.wikipedia.org/wiki/Basileia_III",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2066.5612193558154",
+		        positionY : "1841.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce13",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10190",
+		        name : "Análise de crédito PJ",
+		        descricao : "Avaliação do risco de não pagamento de dívidas por empresas",
+		        wiki : "https://pt.wikipedia.org/wiki/Cr%C3%A9dito",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1512.561219355816",
+		        positionY : "1841.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce14",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10191",
+		        name : "Análise de crédito PF",
+		        descricao : "Avaliação do risco de não pagamento de dívidas por indivíduos",
+		        wiki : "https://pt.wikipedia.org/wiki/Cr%C3%A9dito",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1511.561219355816",
+		        positionY : "1779.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce15",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10192",
+		        name : "Análise de riscos",
+		        descricao : "Análise dos diversos riscos aos quais um banco está exposto e criação de estratégias de mitigação",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1510.561219355816",
+		        positionY : "1965.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce16",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10193",
+		        name : "Análise de liquidez",
+		        descricao : "Análise das projeções de necessidades e disponibilidade de caixa no curto e médio prazo",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1510.561219355816",
+		        positionY : "2031.3072176905716",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce17",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10312",
+		        name : "Gestão de garantias",
+		        descricao : "Avaliação e acompanhamento do valor de garantias prestadas em relação a uma dívida e tomada de ação em caso de desenquadramento",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1746.561219355816",
+		        positionY : "1900.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce18",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10348",
+		        name : "Definição de política de crédito",
+		        descricao : "Definição de variáveis a serem analisadas e valores a serem observados para a aprovação de operações de crédito",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1749.561219355816",
+		        positionY : "1781.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Crédito"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce19",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10349",
+		        name : "Análise de garantias",
+		        descricao : "Análise de ativos oferecidos em garantias de operações de crédito, seu valor e instrumento jurídico utilizado para a dação",
+		        wiki : "https://pt.wikipedia.org/wiki/Garantia",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças bancárias",
+		        parent : "1017",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1511.561219355816",
+		        positionY : "1900.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Garantias", 
+		            "alienação fiduciária"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce1a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10049",
+		        name : "Criação de relatórios gerenciais",
+		        descricao : "Criação de relatórios e demonstrativos gerenciais, de acordo com normas corporativas internas",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Controladoria",
+		        parent : "1033",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-682.4387806441856",
+		        positionY : "1834.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce1b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10050",
+		        name : "Consolidação de demonstrativos",
+		        descricao : "Consolidação gerencial de demonstrativos financeiros de diversas unidades de negócio",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Controladoria",
+		        parent : "1033",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-949.4387806441853",
+		        positionY : "1834.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce1c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10051",
+		        name : "Relatórios para investidores",
+		        descricao : "Produção de informações conforme regulação visando o atendimento a investidores",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Controladoria",
+		        parent : "1033",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-413.4387806441857",
+		        positionY : "1833.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce1d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10198",
+		        name : "Planejamento financeiro",
+		        descricao : "Criação de orçamentos de receitas e despesas e cálculo de necessidades de financiamento",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Controladoria",
+		        parent : "1033",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-681.4387806441856",
+		        positionY : "1906.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce1e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10306",
+		        name : "Gestão de contas a pagar/ receber",
+		        descricao : "Acompanhamento de fluxos financeiros previstos e realizados, e tomada de ação para garantir a correta entrada e saída de recursos",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Controladoria",
+		        parent : "1033",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-944.4387806441852",
+		        positionY : "1975.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce1f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10339",
+		        name : "Criação de controles internos",
+		        descricao : "Desenvolvimento de normas e processos para garantir a confiabilidade das informações financeiras geradas",
+		        wiki : "https://pt.wikipedia.org/wiki/Controle_interno",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Controladoria",
+		        parent : "1033",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-944.4387806441852",
+		        positionY : "1907.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Auditoriainterna"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce20",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10038",
+		        name : "Reestruturação de passivos",
+		        descricao : "Renegociação de dívidas para readequação dos fluxos de pagamentos à geração de caixa da empresa",
+		        wiki : "https://pt.wikipedia.org/wiki/Turnaround_%28administra%C3%A7%C3%A3o%29",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "50.56121935581422",
+		        positionY : "2081.30721769057",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc77c66652ca33e4ce21",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10040",
+		        name : "Captação a mercado via ações",
+		        descricao : "Estruturação de operações de captação de recursos por meio de venda de ações",
+		        wiki : "https://pt.wikipedia.org/wiki/Mercado_de_capitais",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "49.56121935581422",
+		        positionY : "2444.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce22",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10041",
+		        name : "Captação a mercado com dívida",
+		        descricao : "Estruturação de operações de captação de recursos por meio de instrumentos de dívida",
+		        wiki : "https://pt.wikipedia.org/wiki/Mercado_de_capitais",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "50.56121935581422",
+		        positionY : "2507.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce23",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10042",
+		        name : "Análise de demonstrativos financeiros",
+		        descricao : "Análise vertical/ horizontal de balanços, DREs e fluxos de caixa",
+		        wiki : "https://pt.wikipedia.org/wiki/An%C3%A1lise_financeira",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-951.4387806441853",
+		        positionY : "2294.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce24",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10043",
+		        name : "Análise de índices financeiros",
+		        descricao : "Criação de índices a partir de informações financeiras e interpretação de seus resultados",
+		        wiki : "https://pt.wikipedia.org/wiki/An%C3%A1lise_financeira",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-694.4387806441856",
+		        positionY : "2295.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce25",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10044",
+		        name : "Avaliação de opções reais",
+		        descricao : "Cálculo do valor de opções reais e utilização na análise de investimentos",
+		        wiki : "https://pt.wikipedia.org/wiki/Avalia%C3%A7%C3%A3o_de_op%C3%A7%C3%B5es_reais",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "48.56121935581422",
+		        positionY : "2281.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce26",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10045",
+		        name : "Avaliação de empresas",
+		        descricao : "Cálculo e análise do valor de uma empresa/ ativos/ projetos via múltiplos ou descontos de fluxo de caixa",
+		        wiki : "https://pt.wikipedia.org/wiki/Avalia%C3%A7%C3%A3o_de_empresas",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-219.43878064418573",
+		        positionY : "2367.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce27",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10046",
+		        name : "Otimização da estrutura de capital",
+		        descricao : "Maximização do valor de uma empresa a partir da melhor composição de sua estrutura de financiamento",
+		        wiki : "https://pt.wikipedia.org/wiki/Custo_do_capital",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "382.5612193558142",
+		        positionY : "2277.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce28",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10047",
+		        name : "Estruturação de fusões e aquisições",
+		        descricao : "Definição de estratégia e estruturação de operações de compra ou venda de negócios ou ativos",
+		        wiki : "https://pt.wikipedia.org/wiki/Fus%C3%A3o_%28direito%29",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "50.56121935581422",
+		        positionY : "2363.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce29",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10052",
+		        name : "Cálculo do custo de capital",
+		        descricao : "Determinação do custo de capital médio ponderado de uma empresa incluindo as componentes de capital próprio - CAPM - e de terceiros",
+		        wiki : "https://pt.wikipedia.org/wiki/Custo_do_capital",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-691.4387806441856",
+		        positionY : "2508.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce2a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10048",
+		        name : "Gestão de caixa",
+		        descricao : "Garantir a disponibilidade de caixa, via a projeção de sua geração e de necessidades de financiamento",
+		        wiki : "https://pt.wikipedia.org/wiki/Cash_management",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-695.4387806441856",
+		        positionY : "2215.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce2b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10185",
+		        name : "Medição de alavancagem",
+		        descricao : "Cálculo e análise das diversas medidas de alavancagem de uma empresa",
+		        wiki : "https://pt.wikipedia.org/wiki/Alavancagem_financeira",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-691.4387806441856",
+		        positionY : "2361.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce2c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10186",
+		        name : "Criação de estratégias de saída",
+		        descricao : "Avaliação e seleção de modalidades de realização de investimentos em empresas",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "388.5612193558142",
+		        positionY : "2357.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce2d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10187",
+		        name : "Avaliação por desconto",
+		        descricao : "Determinação do valor presente de ativos a partir da sua capacidade de geração de resultados futuros",
+		        wiki : "https://pt.wikipedia.org/wiki/Avalia%C3%A7%C3%A3o_de_empresas",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-446.4387806441857",
+		        positionY : "2429.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "DCF", 
+		            "DDM", 
+		            "NOPLAT", 
+		            "EBITDA"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce2e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10188",
+		        name : "Avaliação por múltiplos",
+		        descricao : "Determinação do valor presente de ativos a partir da comparação de índices com empresas e transações semelhantes",
+		        wiki : "https://pt.wikipedia.org/wiki/Avalia%C3%A7%C3%A3o_de_empresas",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-447.4387806441857",
+		        positionY : "2296.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "P/E", 
+		            "Market to book", 
+		            "price to earnings"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce2f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10189",
+		        name : "Securitização",
+		        descricao : "Estruturação de transações e veículos de securitização de ativos",
+		        wiki : "https://pt.wikipedia.org/wiki/Securitiza%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "48.56121935581422",
+		        positionY : "2148.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "FIDC", 
+		            "CDO", 
+		            "CRI", 
+		            "CRA"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce30",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10307",
+		        name : "Avaliação de projetos",
+		        descricao : "Determinação do valor presente de um projeto e sua sensibilidade a variáveis ligadas a esse projeto",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-222.43878064418573",
+		        positionY : "2297.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "NPV"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce31",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10350",
+		        name : "Criação de covenants financeiros",
+		        descricao : "Criação de cláusulas e restrições contratuais em instrumentos financeiros estruturados para garantir o comportamento corporativo alinhado aos interesses dos investidores",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "48.56121935581422",
+		        positionY : "2574.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Covenants", 
+		            "finanças estruturadas"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce32",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10351",
+		        name : "Avaliação da geração de valor",
+		        descricao : "Cálculo de métricas de geração de valor e interpretação de seus resultados",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-446.4387806441857",
+		        positionY : "2511.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "EVA", 
+		            "GVA", 
+		            "MVA"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce33",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10352",
+		        name : "Projeção financeira",
+		        descricao : "Criação de projeções de demonstrativos financeiros operacionais de uma empresa a partir de resultados passados e assumindo premissas de evolução dos números",
+		        wiki : "https://pt.wikipedia.org/wiki/Proje%C3%A7%C3%A3o_financeira",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-691.4387806441856",
+		        positionY : "2431.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Forecasting", 
+		            "avaliação financeira"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce34",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10346",
+		        name : "Financiamento de projetos",
+		        descricao : "Criação de estruturas de financiamento de projetos conforme sua necessidade e projeção de geração de caixa",
+		        wiki : "https://en.wikipedia.org/wiki/Project_finance",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças corporativas",
+		        parent : "1032",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "45.56121935581422",
+		        positionY : "2219.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Projectfinance"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce35",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10039",
+		        name : "Análise dos mercados financeiros",
+		        descricao : "Análise básica do funcionamento de mercados financeiros com a visão de Risco e Retorno, Eficiência de mercado e Portfólio eficiente",
+		        wiki : "https://pt.wikipedia.org/wiki/Finan%C3%A7as",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "708.5612193558142",
+		        positionY : "2287.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Riscoe retorno", 
+		            "eficiência de mercado"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce36",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10053",
+		        name : "Análise quantitativa",
+		        descricao : "Determinação do preço de um ativo financeiro com base em análises estatisticas de componentes que o influenciam",
+		        wiki : "https://en.wikipedia.org/wiki/Quantitative_analyst",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1233.561219355816",
+		        positionY : "2283.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc78c66652ca33e4ce37",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10054",
+		        name : "Análise fundamentalista",
+		        descricao : "Determinação do preço de uma ação a partir de fluxos de caixa projetados com informações financeiras e de mercado",
+		        wiki : "https://pt.wikipedia.org/wiki/An%C3%A1lise_fundamentalista",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "993.5612193558148",
+		        positionY : "2289.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Research"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce38",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10055",
+		        name : "Análise técnica",
+		        descricao : "Determinação do preço de um ativo financeiro a partir do preço do ativo e seu comportamento histórico",
+		        wiki : "https://pt.wikipedia.org/wiki/An%C3%A1lise_t%C3%A9cnica",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "994.5612193558148",
+		        positionY : "2217.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Análisegráfica"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce39",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10057",
+		        name : "Gestão de portfólio",
+		        descricao : "Combinação dos diversos ativos financeiros disponíveis para a construção e manutenção de portfólio alinhado aos objetivos do investidor",
+		        wiki : "https://pt.wikipedia.org/wiki/Teoria_moderna_do_portf%C3%B3lio",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1672.561219355816",
+		        positionY : "2207.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce3a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10064",
+		        name : "Análise de títulos de renda fixa",
+		        descricao : "Avaliação dos componentes e cálculo do valor justo de títulos de dívida pública ou corporativa",
+		        wiki : "https://pt.wikipedia.org/wiki/Renda_fixa",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "989.5612193558148",
+		        positionY : "2357.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce3b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10063",
+		        name : "Análise da curva a termo",
+		        descricao : "Cálculo da taxa de juros justa para diferentes prazos e vencimentos, utilizando FRAs e projeções de mercados",
+		        wiki : "https://pt.wikipedia.org/wiki/Curva_a_termo",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "702.5612193558142",
+		        positionY : "2363.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce3c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10173",
+		        name : "Análise de perfil de investidor",
+		        descricao : "Determinação de perfil de investidores a partir de seus objetivos e restrições, utilizando conceitos de gestão de portfólio",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "707.5612193558142",
+		        positionY : "2425.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce3d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10174",
+		        name : "Investimentos em ativos imobiliários",
+		        descricao : "Análise de imóveis como investimentos",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1676.561219355816",
+		        positionY : "2422.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce3e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10176",
+		        name : "Investimentos alternativos",
+		        descricao : "Análise de investimento em ativos não tradicionais e de alto risco",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1675.561219355816",
+		        positionY : "2346.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Hedgefunds"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce3f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10345",
+		        name : "Investimento em empresas de capital fechado",
+		        descricao : "Avaliação e investimento em empresas sem ações negociadas em bolsas de valores",
+		        wiki : "https://pt.wikipedia.org/wiki/Private_equity",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1675.561219355816",
+		        positionY : "2274.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "PrivateEquity", 
+		            "venture capital"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce40",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10177",
+		        name : "Investimento em ativos securitizados",
+		        descricao : "Avaliação e investimento em ativos financeiros decorrentes de processos de securitização",
+		        wiki : "https://pt.wikipedia.org/wiki/Securitiza%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1677.561219355816",
+		        positionY : "2493.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "FIDC", 
+		            "CRI", 
+		            "CRA"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce41",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10182",
+		        name : "Investimentos em seguros",
+		        descricao : "Avaliação de investimentos em títulos lastreados em contratos de seguros e resseguros",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1676.561219355816",
+		        positionY : "2566.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce42",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10178",
+		        name : "Criação de tese de investimento",
+		        descricao : "Criação de estratégias de geração de valor com investimentos em ativos financeiros ou empresas de capital fechado",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "710.5612193558142",
+		        positionY : "2486.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce43",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10179",
+		        name : "Gestão de fortunas",
+		        descricao : "Criação de portfólio personalizado com diversificação de objetivos e orientação de longo prazo",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2184.5612193558163",
+		        positionY : "2264.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce44",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10180",
+		        name : "Planejamento sucessório",
+		        descricao : "Estruturação de veículos de investimento voltados à eficiência tributária na transmissão de bens entre gerações familiares",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2188.5612193558163",
+		        positionY : "2327.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce45",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10181",
+		        name : "Gestão institucional",
+		        descricao : "Criação de portfólio institucional, seguindo regras atuariais de retorno requerido e limitação de riscos",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2182.5612193558163",
+		        positionY : "2200.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce46",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10183",
+		        name : "Gestão de riscos",
+		        descricao : "Determinação das exposições a serem tomadas e ajuste de portfólio para balanceamento destas exposições",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1404.561219355816",
+		        positionY : "2204.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce47",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10184",
+		        name : "Avaliação de performance",
+		        descricao : "Utilização de benchmarks e objetivos para avaliação do desempenho do portfolio",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1963.561219355816",
+		        positionY : "2202.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce48",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10340",
+		        name : "Classificação de risco",
+		        descricao : "Classificação de capacidade de pagamento das dívidas de determinada empresa ou instituição",
+		        wiki : "https://pt.wikipedia.org/wiki/Classifica%C3%A7%C3%A3o_de_cr%C3%A9dito",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1407.561219355816",
+		        positionY : "2420.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Rating", 
+		            "nota de crédito"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce49",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10341",
+		        name : "Teste de estresse",
+		        descricao : "Realização de simulação financeira com cenários extremamente negativos para identificação de riscos sistêmicos e limites operacionais de empresas",
+		        wiki : "https://en.wikipedia.org/wiki/Stress_test_(financial)",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1226.561219355816",
+		        positionY : "2418.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Stresstesting", 
+		            "crise financeira", 
+		            "basiléia"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce4a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10342",
+		        name : "Avaliação de riscos",
+		        descricao : "Avaliação da sensibilidade do preço de títulos de renda fixa e seus derivados a eventos como pré pagamento, inadimplência e oscilações de mercado",
+		        wiki : "https://pt.wikipedia.org/wiki/Gerenciamento_de_risco",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "988.5612193558148",
+		        positionY : "2422.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Prépagamento", 
+		            "crédito", 
+		            "mercado"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce4b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10343",
+		        name : "Estruturação de fundos de investimentos",
+		        descricao : "Implantação de um fundo de investimentos, a partir de sua documentação, definição de responsabilidades e desenvolvimento de processos operacionais com os participantes definidos",
+		        wiki : "https://pt.wikipedia.org/wiki/Fundo_de_investimento",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Investimentos",
+		        parent : "1034",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "985.5612193558148",
+		        positionY : "2487.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Fundode investimentos", 
+		            "FIDC", 
+		            "Hedge fund", 
+		            "FII", 
+		            "FIA", 
+		            "FIP."
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce4c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10065",
+		        name : "Precificação de derivativos",
+		        descricao : "Cálculo do valor de derivativos como opções de compra e venda e futuros",
+		        wiki : "https://pt.wikipedia.org/wiki/Derivativo",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "906.5612193558148",
+		        positionY : "1923.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce4d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10347",
+		        name : "Conciliação de posições",
+		        descricao : "Verificação do saldo de contas e posições financeiras após um período de movimentacões, comparando saldos finais com as somas dos valores movimentados",
+		        wiki : "https://pt.wikipedia.org/wiki/Concilia%C3%A7%C3%A3o_banc%C3%A1ria",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "420.5612193558142",
+		        positionY : "1936.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce4e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10066",
+		        name : "Criação de estratégias de hedge",
+		        descricao : "Montagem de estratégias de hedge com derivativos, alguéis de ações e seguros",
+		        wiki : "https://pt.wikipedia.org/wiki/Cobertura_%28finan%C3%A7as%29",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1132.5612193558156",
+		        positionY : "1921.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce4f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10062",
+		        name : "Negociação em mercado organizado",
+		        descricao : "Compra e venda de ativos financeiros em bolsa de valores ou mercado de balcão",
+		        wiki : "https://pt.wikipedia.org/wiki/Mercado_financeiro",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "424.5612193558142",
+		        positionY : "1749.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce50",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10068",
+		        name : "Operação de plataformas de negociação",
+		        descricao : "Utilização de plataformas de negociação de ativos financeiros",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "423.5612193558142",
+		        positionY : "1870.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce51",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10194",
+		        name : "Avaliação de derivativos",
+		        descricao : "Avaliação dos diversos tipos de derivativos (termos, futuros, opções, Swaps)",
+		        wiki : "https://pt.wikipedia.org/wiki/Derivativo",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "686.5612193558142",
+		        positionY : "1928.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce52",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10197",
+		        name : "Avaliação de opções",
+		        descricao : "Avaliação do valor de uma opção e seus componentes (letras gregas)",
+		        wiki : "https://pt.wikipedia.org/wiki/Mercado_de_op%C3%A7%C3%B5es",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "683.5612193558142",
+		        positionY : "1866.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc79c66652ca33e4ce53",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10195",
+		        name : "Cálculo de spreads e prêmios",
+		        descricao : "Cálculo de ágios cobrados em transações de ativos e inclusão da informação na tomada de decisão de investimentos",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "141.56121935581422",
+		        positionY : "1810.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce54",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10196",
+		        name : "Arbitragem financeira",
+		        descricao : "Compra e venda de ativos com preço divergente de seu valor justo com a expectativa de ajuste para esse valor",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "426.56121935581416",
+		        positionY : "1807.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce55",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10308",
+		        name : "Estruturação de produtos",
+		        descricao : "Combinação de ativos financeiros e derivativos com base em uma estratégia de resultado",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "902.5612193558148",
+		        positionY : "1809.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce56",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10311",
+		        name : "Estratégias de negociação",
+		        descricao : "Utilização de técnicas de negociação baseadas em estruturas de mercado, custos de transação e preferências estratégica",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "681.5612193558142",
+		        positionY : "1749.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce57",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10337",
+		        name : "Aluguel de ações",
+		        descricao : "Execução de transações de aluguel de ações e utilização em estruturas e estratégias",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "681.5612193558142",
+		        positionY : "1807.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Stockrenting", 
+		            "venda a descoberto"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce58",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10338",
+		        name : "Emissão de ordem de negociação",
+		        descricao : "Emissão de ordens de compra e venda, nas diversas modalidades de ordens praticadas em bolsas de valores",
+		        wiki : "https://en.wikipedia.org/wiki/Order_(exchange)",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Trading",
+		        parent : "1036",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "135.56121935581422",
+		        positionY : "1749.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Stoploss", 
+		            "stop", 
+		            "realização"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce59",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10421",
+		        name : "Investimento em previdência privada",
+		        descricao : "Investimento em planos de previdência complementar para garantir fluxo de renda futuro",
+		        wiki : "https://pt.wikipedia.org/wiki/Previd%C3%AAncia_privada",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças pessoais",
+		        parent : "1035",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-756.8268403456781",
+		        positionY : "1721.4415460487794",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "aposentadoria"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce5a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10422",
+		        name : "Orçamento doméstico",
+		        descricao : "Construção de plano financeiro para tomada de decisão de consumo doméstico",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Finanças",
+		        categoria : "Finanças pessoais",
+		        parent : "1035",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-987.8268403456766",
+		        positionY : "1721.4415460487794",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce5b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10423",
+		        name : "Análise do comportamento de clientes",
+		        descricao : "Avaliação do processo de tomada de decisão de compra dos clientes para criação de ofertas adaptadas a este comportamento",
+		        wiki : "https://pt.wikipedia.org/wiki/Comportamento_do_consumidor",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Análise mercadológica",
+		        parent : "1039",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2079.4387806441837",
+		        positionY : "1464.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "comportamentodo consumidor"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce5c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10002",
+		        name : "Análise de valor agregado de projetos",
+		        descricao : "Dimensionamento dos benefícios e resultados esperados de projetos",
+		        wiki : "https://pt.wikipedia.org/wiki/Gerência_de_projetos",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Gestão de projetos",
+		        parent : "1002",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2078.4387806441837",
+		        positionY : "1028.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce5d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10003",
+		        name : "Desenvolvimento de cronogramas",
+		        descricao : "Criação de planos de metas e definição do tempo necessário ao cumprimento das atividades ligadas a um projeto",
+		        wiki : "https://pt.wikipedia.org/wiki/Gerência_de_projetos",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Gestão de projetos",
+		        parent : "1002",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2076.4387806441837",
+		        positionY : "1093.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce5e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10004",
+		        name : "Gerênciamento de riscos de projetos",
+		        descricao : "Identificação de obstáculos e riscos de projetos e definição de ações para a mitigação dos mesmos",
+		        wiki : "https://pt.wikipedia.org/wiki/Gerência_de_projetos",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Gestão de projetos",
+		        parent : "1002",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1647.438780644184",
+		        positionY : "1095.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce5f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10005",
+		        name : "Planejamento de projetos",
+		        descricao : "Desenvolvimento de planos de projetos, incluindo Escopos, objetivos, cronogramas, orçamentos e avaliação do esforço necessário.",
+		        wiki : "https://pt.wikipedia.org/wiki/Gerência_de_projetos",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Gestão de projetos",
+		        parent : "1002",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1835.438780644184",
+		        positionY : "1028.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce60",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10006",
+		        name : "Gerência de projeto",
+		        descricao : "Gestão de todo o processo de um projeto, incluindo custos, qualidade, recursos humanos e comunicações",
+		        wiki : "https://pt.wikipedia.org/wiki/Gerência_de_projetos",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Gestão de projetos",
+		        parent : "1002",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1647.438780644184",
+		        positionY : "1029.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce61",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10368",
+		        name : "Criação de planos de contingência",
+		        descricao : "Criação de planos para mitigação de eventuais crises e situações adversas com que a empresa possa se deparar",
+		        wiki : "https://pt.wikipedia.org/wiki/Plano_de_conting%C3%AAncia",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Gestão de projetos",
+		        parent : "1002",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1377.438780644184",
+		        positionY : "1095.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Gestãode crises"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce62",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10172",
+		        name : "Gestão de mudanças",
+		        descricao : "Condução de processos de mudança organizacional, levando em consideração seu tipo e o ambiente em que ocorrerá",
+		        wiki : "https://pt.wikipedia.org/wiki/Gest%C3%A3o_da_mudan%C3%A7a",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Gestão de projetos",
+		        parent : "1002",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1377.438780644184",
+		        positionY : "1029.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce63",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10008",
+		        name : "Relacionamento com órgãos reguladores",
+		        descricao : "Atendimento a demandas e gestão de relacionamento com órgãos regulatórios",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Governança corporativa",
+		        parent : "1004",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1873.438780644184",
+		        positionY : "914.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce64",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10009",
+		        name : "Gestão de comitês",
+		        descricao : "Organização e condução de comitês e conselhos, criação de pautas e atas",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Governança corporativa",
+		        parent : "1004",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1873.438780644184",
+		        positionY : "854.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce66",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10201",
+		        name : "Gestão fiduciária",
+		        descricao : "Gestão de empresas e criação de instrumentos para mitigação de conflitos entre acionistas e gestores",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Governança corporativa",
+		        parent : "1004",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2086.4387806441837",
+		        positionY : "790.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce65",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10010",
+		        name : "Definição de alçadas de decisão",
+		        descricao : "Estruturação e definição das alçadas de tomada de decisões corporativas",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Governança corporativa",
+		        parent : "1004",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2088.4387806441837",
+		        positionY : "853.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce67",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10408",
+		        name : "Identificação de impactos",
+		        descricao : "Identificação e mensuração dos impactos causados pela operação de uma empresa",
+		        wiki : "https://pt.wikipedia.org/wiki/Impacto_ambiental",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Sustentabilidade",
+		        parent : "1007",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2118.4387806441837",
+		        positionY : "1196.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Impacto"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce68",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10365",
+		        name : "Criação de estratégia sustentável",
+		        descricao : "Desenho de estratégia de negócios baseada nos impactos causados pela atividade no ambiente, nas comunidades que atua e na economia.",
+		        wiki : "https://pt.wikipedia.org/wiki/Desenvolvimento_sustent%C3%A1vel",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Sustentabilidade",
+		        parent : "1007",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1896.438780644184",
+		        positionY : "1196.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "CSR", 
+		            "Sustentabilidade"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce69",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10371",
+		        name : "Criação de políticas de responsabilidade",
+		        descricao : "Definição das normas e valores a serem seguidos pela empresa e seus funcionários, visando a não infração de direitos humanos e a promoção do bem estar social",
+		        wiki : "https://pt.wikipedia.org/wiki/Responsabilidade_social_corporativa",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Sustentabilidade",
+		        parent : "1007",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1895.438780644184",
+		        positionY : "1255.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "CSR", 
+		            "RSC"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce6a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10013",
+		        name : "Gestão da sustentabilidade",
+		        descricao : "Interagir com steakholders de uma operação para minimizar seus impactos ambientais e maximizar os econômico-sociais",
+		        wiki : "https://pt.wikipedia.org/wiki/Sustentabilidade",
+		        area : "Administração de empresas",
+		        campo : "Gestão",
+		        categoria : "Sustentabilidade",
+		        parent : "1007",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1661.438780644184",
+		        positionY : "1196.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce6b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10083",
+		        name : "Segmentação de mercado",
+		        descricao : "Criação de segmentos de clientes a partir da definição de suas características",
+		        wiki : "https://pt.wikipedia.org/wiki/Segmenta%C3%A7%C3%A3o_de_mercado",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Análise mercadológica",
+		        parent : "1039",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1834.438780644184",
+		        positionY : "1401.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce6c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10080",
+		        name : "Criação de inteligência competitiva",
+		        descricao : "Coleta e análise contínuas de dados sobre desempenho de produtos e concorrentes em um mercado e mapeamento das preferências dos consumidores",
+		        wiki : "https://pt.wikipedia.org/wiki/Intelig%C3%AAncia_competitiva",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Análise mercadológica",
+		        parent : "1039",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1588.438780644184",
+		        positionY : "1404.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce6d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10073",
+		        name : "Pesquisa mercadológica",
+		        descricao : "Coleta e interpretação de dados sobre produtos e desejos dos consumidores",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Análise mercadológica",
+		        parent : "1039",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2076.4387806441837",
+		        positionY : "1401.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ac66652ca33e4ce6e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10423",
+		        name : "Análise do comportamento de clientes",
+		        descricao : "Avaliação do processo de tomada de decisão de compra dos clientes para criação de ofertas adaptadas a este comportamento",
+		        wiki : "https://pt.wikipedia.org/wiki/Comportamento_do_consumidor",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Análise mercadológica",
+		        parent : "1039",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "comportamentodo consumidor"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce6f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10362",
+		        name : "Criação de material promocional",
+		        descricao : "Criação de material de promoção da empresa e sua oferta, incentivandoa aquisição de produtos e serviços",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Comunicação mercadológica",
+		        parent : "1040",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1900.438780644184",
+		        positionY : "1804.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "promoção", 
+		            "banner", 
+		            "panfleto", 
+		            "tickets", 
+		            "vouchers"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce70",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10363",
+		        name : "Criação de marca",
+		        descricao : "Criação de uma marca alinhada aos objetivos da empresa através da definição de sua identidade visual e verbal",
+		        wiki : "https://pt.wikipedia.org/wiki/Branding",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Comunicação mercadológica",
+		        parent : "1040",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2120.4387806441837",
+		        positionY : "1805.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Branding", 
+		            "logo", 
+		            "slogan", 
+		            "identidade visual"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce71",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10085",
+		        name : "Relacionamento Público",
+		        descricao : "Comunicação com mercado e coordenação de ações de exposição de marca e de identidade corporativa",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Comunicação mercadológica",
+		        parent : "1040",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1902.438780644184",
+		        positionY : "1865.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce72",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10086",
+		        name : "Organização de eventos",
+		        descricao : "Realização de eventos com programação de atividades, emissão de convites e organização do local",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Comunicação mercadológica",
+		        parent : "1040",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2123.4387806441837",
+		        positionY : "1865.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce73",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10357",
+		        name : "Criação de campanhas publicitárias",
+		        descricao : "Desenvolvimento de objetivos, seleção de mídias e estruturação das ações que comporão uma campanha",
+		        wiki : "https://pt.wikipedia.org/wiki/Campanha_publicit%C3%A1ria",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Comunicação mercadológica",
+		        parent : "1040",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1630.438780644184",
+		        positionY : "1804.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "propaganda", 
+		            "veiculação", 
+		            "mídia digital"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce74",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10076",
+		        name : "Gestão de comunicação mercadológica",
+		        descricao : "Controle dos canais de comunicação e mensagens a serem enviadas aos clientes, fornecedores e mercado em geral",
+		        wiki : "https://pt.wikipedia.org/wiki/Comunica%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Comunicação mercadológica",
+		        parent : "1040",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1632.438780644184",
+		        positionY : "1867.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce75",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10081",
+		        name : "Desenvolvimento de novos produtos",
+		        descricao : "Criação de soluções com atributos para suprir demandas identificadas no mercado",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Gestão de produto",
+		        parent : "1038",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2083.4387806441837",
+		        positionY : "1577.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce76",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10082",
+		        name : "Precificação de produtos e serviços",
+		        descricao : "Definição de preços com base em metodologias como mark-up ou disponibilidade a pagar dos consumidores por atributos",
+		        wiki : "https://pt.wikipedia.org/wiki/Pre%C3%A7o",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Gestão de produto",
+		        parent : "1038",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1814.438780644184",
+		        positionY : "1578.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce77",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10356",
+		        name : "Criação de promoções",
+		        descricao : "Desenvolvimento de ações de redução de preços para alavancar as vendas de produtos e serviços",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Gestão de produto",
+		        parent : "1038",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1816.438780644184",
+		        positionY : "1637.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Desconto", 
+		            "queima de estoque", 
+		            "sales"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce78",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10361",
+		        name : "Gamificação de produtos e serviços",
+		        descricao : "Utilização de conceitos de jogos no desenvolvimento dos produtos e serviços da empresa, visando o aumento do engajamento e retenção de clientes",
+		        wiki : "https://pt.wikipedia.org/wiki/Ludifica%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Gestão de produto",
+		        parent : "1038",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2084.4387806441837",
+		        positionY : "1694.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Gamification", 
+		            "ludificação"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce79",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10424",
+		        name : "Desesenho de produtos",
+		        descricao : "Criação da identidade visual de produtos, seu aspecto e de sua embalagem",
+		        wiki : "https://pt.wikipedia.org/wiki/Design",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Gestão de produto",
+		        parent : "1038",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2082.4387806441837",
+		        positionY : "1638.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Design"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce7a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10074",
+		        name : "Atração e retenção de clientes",
+		        descricao : "Criação de estratégias para expansão de mercados e manutenção da base de clientes atuais",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Decisão mercadológica",
+		        parent : "1041",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1534.438780644184",
+		        positionY : "1698.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce7b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10077",
+		        name : "Gestão de canais",
+		        descricao : "Definição e controle dos canais a serem empregados pela empresa para entregar seus produtos e serviços",
+		        wiki : "https://pt.wikipedia.org/wiki/Distribui%C3%A7%C3%A3o_%28log%C3%ADstica%29",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Decisão mercadológica",
+		        parent : "1041",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1305.438780644184",
+		        positionY : "1579.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce7c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10078",
+		        name : "Gestão de mix de produtos",
+		        descricao : "Determinação do mix de ofertas da empresa, com foco de atender a todos os segmentos selecionados e maximizar o valor dos negócios",
+		        wiki : "https://pt.wikipedia.org/wiki/Produto_%28marketing%29",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Decisão mercadológica",
+		        parent : "1041",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1531.438780644184",
+		        positionY : "1580.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce7d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10360",
+		        name : "Criação de plano de marketing",
+		        descricao : "Criação de plano listando e fundamentando os objetivos mercadológicos de uma empresa e as ações necessárias para atingi-los",
+		        wiki : "https://pt.wikipedia.org/wiki/Plano_de_marketing",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Decisão mercadológica",
+		        parent : "1041",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1534.438780644184",
+		        positionY : "1639.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Estratégiade marketing"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce7e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10317",
+		        name : "Gestão de campanhas",
+		        descricao : "Acompanhamento do desempenho de campanhas e criação de ações corretivas",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Decisão mercadológica",
+		        parent : "1041",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1302.438780644184",
+		        positionY : "1639.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce7f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10316",
+		        name : "Criação de campanhas digitais",
+		        descricao : "Criação de campanhas em plataformas digitais de marketing, como Google Ads e Facewords",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Marketing digital",
+		        parent : "1061",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1575.438780644184",
+		        positionY : "1971.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce80",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10354",
+		        name : "Análise do uso de sites",
+		        descricao : "Utilização de plataformas de análise do comportamento de usuários de websites para obtenção de informações sobre conversão e identificação de ações de melhora",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Marketing digital",
+		        parent : "1061",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2082.4387806441837",
+		        positionY : "1972.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Googleanalytics", 
+		            "SEO"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce81",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10355",
+		        name : "Otimização para sistema de busca",
+		        descricao : "Utilização de estratégias para aumento da relevância de um site como resultado de uma busca baseadas nos critérios de classificação utilizados pelos sistemas de buscas",
+		        wiki : "https://pt.wikipedia.org/wiki/Otimiza%C3%A7%C3%A3o_para_motores_de_busca",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Marketing digital",
+		        parent : "1061",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2084.4387806441837",
+		        positionY : "2031.3072176905716",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "SEO"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce82",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10358",
+		        name : "Marketing de sistemas de busca",
+		        descricao : "Criação de planos de marketing baseados em aumento da relevância da oferta em sistemas de busca",
+		        wiki : "https://pt.wikipedia.org/wiki/Palavra-chave_(marketing_de_pesquisa)",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Marketing digital",
+		        parent : "1061",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1829.438780644184",
+		        positionY : "1972.3072176905712",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "SEM", 
+		            "adwords"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce83",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10359",
+		        name : "Marketing de redes sociais",
+		        descricao : "Criação de planos de marketing baseados em ofertas direcionadas a perfis de clientes identificados em redes sociais",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Marketing",
+		        categoria : "Marketing digital",
+		        parent : "1061",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1828.438780644184",
+		        positionY : "2031.3072176905716",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Faceads"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce84",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10398",
+		        name : "Planejamento de sistemas",
+		        descricao : "Planejamento do uso eficiente de recursos técnológicos garantindo o funcionamento pleno da operação da empresa",
+		        wiki : "https://pt.wikipedia.org/wiki/Planejamento_estrat%C3%A9gico_de_sistemas_de_informa%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Administração de sistemas",
+		        parent : "1062",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "974.5612193558148",
+		        positionY : "1198.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "sistemasde informação", 
+		            "estratégia"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce85",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10399",
+		        name : "Dimensionamento de infraestrutura técnológica",
+		        descricao : "Determinação da quantidade e qualidade de recursos técnológicos a serem utilizados na operação da empresa",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Administração de sistemas",
+		        parent : "1062",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "697.5612193558142",
+		        positionY : "1198.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Banda", 
+		            "Projeto de rede", 
+		            "projeto de informática"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce86",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10400",
+		        name : "Implantação de sistema de gestão integrado",
+		        descricao : "Implantação e operação de sistema integrado de informações de gestão",
+		        wiki : "https://pt.wikipedia.org/wiki/Sistema_integrado_de_gest%C3%A3o_empresarial",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Administração de sistemas",
+		        parent : "1062",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "695.5612193558142",
+		        positionY : "1251.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "ERP"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce87",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10011",
+		        name : "Criação e revisão de processos",
+		        descricao : "Determinar passos e atividades necessárias para o atingimento de um objetivo",
+		        wiki : "https://pt.wikipedia.org/wiki/Processo",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Gestão de operações",
+		        parent : "1005",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "633.5612193558142",
+		        positionY : "1364.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7bc66652ca33e4ce88",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10012",
+		        name : "Determinação de níveis de eficiência",
+		        descricao : "Ajustar processos e recursos para a entrega de um nível de eficiência planejado",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Gestão de operações",
+		        parent : "1005",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "893.5612193558148",
+		        positionY : "1364.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce89",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10015",
+		        name : "Planejamento operacional",
+		        descricao : "Determinar e otimizar a quantidade de recursos necessários a uma operação, desenhar e encadear processos envolvidos",
+		        wiki : "https://pt.wikipedia.org/wiki/Planejamento_operacional",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Gestão de operações",
+		        parent : "1005",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1129.5612193558156",
+		        positionY : "1365.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce8a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10313",
+		        name : "Mapeamento de processos",
+		        descricao : "Identificação e registro do fluxo de processos envolvidos nas diversas atividades da empresa",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Gestão de operações",
+		        parent : "1005",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "635.5612193558142",
+		        positionY : "1424.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce8b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10314",
+		        name : "Métricas de performance",
+		        descricao : "Desenvolvimento e análise de índices representativos do desempenho de uma operação ou empresa",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Gestão de operações",
+		        parent : "1005",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1131.5612193558156",
+		        positionY : "1427.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "KPI", 
+		            "Performance metrics", 
+		            "Indicadores chave de performance", 
+		            "métrica"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce8c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10315",
+		        name : "Terceirização de mão de obra",
+		        descricao : "Desenvolvimento de projetos de terceirização de processose de pessoal",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Gestão de operações",
+		        parent : "1005",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1134.5612193558156",
+		        positionY : "1486.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce8d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10370",
+		        name : "Gestão de resíduos",
+		        descricao : "Determinação dos tipos de resíduos gerados pelos processos da empresa e da maneira mais economicamente sustentável de dispor deles",
+		        wiki : "https://pt.wikipedia.org/wiki/Gest%C3%A3o_integrada_de_res%C3%ADduos_s%C3%B3lidos",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Gestão de operações",
+		        parent : "1005",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "633.5612193558142",
+		        positionY : "1490.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Reciclagem", 
+		            "sustentabilidade", 
+		            "pegada de carbono", 
+		            "lixo"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce8e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10369",
+		        name : "Planejamento de produção global",
+		        descricao : "Criação de plano de produção e logística global, aproveitando benefícios e vantagens comparativas regionais para maximização da competitividade da empresa",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Logística",
+		        parent : "1063",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "343.56121935581416",
+		        positionY : "1432.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Mundial", 
+		            "otimização"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce8f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10071",
+		        name : "Otimização logística",
+		        descricao : "Redução dos custos e aumento da eficiência na movimentação de recursos e bens",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Logística",
+		        parent : "1063",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "137.56121935581422",
+		        positionY : "1432.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce90",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10401",
+		        name : "Gestão de estoques",
+		        descricao : "Determinação de níveis de estoques a serem mantidos e tamanho dos armazéns a serem utilizados para garantir a operação da empresa",
+		        wiki : "https://pt.wikipedia.org/wiki/Estoque",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Logística",
+		        parent : "1063",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-60.43878064418567",
+		        positionY : "1370.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "WMS", 
+		            "Warehouse management"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce91",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10402",
+		        name : "Gestão de transportes",
+		        descricao : "Definição de rotas e carregamentos para reduzir os custos do processo de entrega de mercadorias",
+		        wiki : "https://pt.wikipedia.org/wiki/Gest%C3%A3o_da_cadeia_de_suprimentos",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Logística",
+		        parent : "1063",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-61.43878064418567",
+		        positionY : "1432.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce92",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10403",
+		        name : "Planejamento de recursos",
+		        descricao : "Dimensionamento da necessidade de insumos para a produção",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Logística",
+		        parent : "1063",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-59.43878064418567",
+		        positionY : "1487.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "ERP", 
+		            "Resource planning"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce93",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10404",
+		        name : "Utilização de linha de montagem",
+		        descricao : "Criação e implantação de processos produtivos baseados em linha de montagem",
+		        wiki : "https://pt.wikipedia.org/wiki/Linha_de_produ%C3%A7%C3%A3o",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Técnicas de gestão operacional",
+		        parent : "1064",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-14.438780644185783",
+		        positionY : "1162.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Ford", 
+		            "assembly line", 
+		            "linha de produção"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce94",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10405",
+		        name : "Utilização de Kanban",
+		        descricao : "Criação e implantação de controle de processos produtivos utilizando Kanbans",
+		        wiki : "https://pt.wikipedia.org/wiki/Kanban",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Técnicas de gestão operacional",
+		        parent : "1064",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-14.438780644185783",
+		        positionY : "1212.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Toyota"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce95",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10406",
+		        name : "Utilização de modelo de produção JIT",
+		        descricao : "Criação e implantação de processos produtivos baseados na metodologia Just in Time",
+		        wiki : "https://pt.wikipedia.org/wiki/Just_in_time",
+		        area : "Administração de empresas",
+		        campo : "Operações",
+		        categoria : "Técnicas de gestão operacional",
+		        parent : "1064",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-14.438780644185783",
+		        positionY : "1262.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Justin time"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce96",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10087",
+		        name : "Gestão da folha de pagamentos",
+		        descricao : "Cálculo e controle de pagamentos de vencimentos, e geração de demonstrativos dos valores",
+		        wiki : "https://pt.wikipedia.org/wiki/Folha_de_pagamento",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Atração e retenção",
+		        parent : "1044",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-961.4387806441849",
+		        positionY : "1138.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Holerite"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce97",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10088",
+		        name : "Criação de planos de carreiras",
+		        descricao : "Desenvolvimento de planos de progressão de carreira vinculados a metas",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Atração e retenção",
+		        parent : "1044",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-702.4387806441856",
+		        positionY : "1199.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "planode carreira"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce98",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10095",
+		        name : "Avaliação de clima interno",
+		        descricao : "Pesquisa e determinação da satisfação dos funcionários com o ambiente de trabalho",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Atração e retenção",
+		        parent : "1044",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-701.4387806441856",
+		        positionY : "1136.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Qualidadede vida", 
+		            "satisfação profissional"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce99",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10091",
+		        name : "Gestão de remuneração e benefícios",
+		        descricao : "Definição de pacotes de remuneração e benefícios por cargos a partir de estudos de mercado e interações com funcionários",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Atração e retenção",
+		        parent : "1044",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-960.4387806441849",
+		        positionY : "1199.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "salário"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce9a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10412",
+		        name : "Seleção de candidatos",
+		        descricao : "Divulgação de vagas, pesquisa e triagem incial de candidatos",
+		        wiki : "https://pt.wikipedia.org/wiki/Provisão_de_recursos_humanos",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Recrutamento e seleção",
+		        parent : "1045",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-966.4387806441847",
+		        positionY : "930.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce9b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10410",
+		        name : "Criação de estratégia de atração e retenção",
+		        descricao : "Criação de plano para oferta de condições mais competitivas de trabalho para maximização do capital humano",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Atração e retenção",
+		        parent : "1044",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-418.4387806441857",
+		        positionY : "1200.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce9c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10090",
+		        name : "Realização de processos seletivos",
+		        descricao : "Condução de atividades de processo de seleção de pessoas, como aplicação de provas, dinâmicas de grupo e entrevistas",
+		        wiki : "https://pt.wikipedia.org/wiki/Provisão_de_recursos_humanos",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Recrutamento e seleção",
+		        parent : "1045",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-738.4387806441856",
+		        positionY : "933.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce9d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10413",
+		        name : "Contratação",
+		        descricao : "Condução de processos burocráticos de contratação de funcionários",
+		        wiki : "https://pt.wikipedia.org/wiki/Provisão_de_recursos_humanos",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Recrutamento e seleção",
+		        parent : "1045",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-740.4387806441856",
+		        positionY : "994.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Contratação"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce9e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10414",
+		        name : "Desligamento",
+		        descricao : "Condução de processos burocráticos de desligamento de funcionários",
+		        wiki : "https://pt.wikipedia.org/wiki/Provisão_de_recursos_humanos",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Recrutamento e seleção",
+		        parent : "1045",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-737.4387806441856",
+		        positionY : "1050.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Demissão", 
+		            "justa causa"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4ce9f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10096",
+		        name : "Definição de mandatos e cargos",
+		        descricao : "Especificação de mandatos de cargos e funções",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrutura_organizacional",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Estruturação organizacional",
+		        parent : "1046",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-937.4387806441853",
+		        positionY : "781.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4cea0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10097",
+		        name : "Criação de organogramas",
+		        descricao : "Criação de mapas de cargos e funções de uma empresa",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrutura_organizacional",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Estruturação organizacional",
+		        parent : "1046",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-937.4387806441853",
+		        positionY : "831.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4cea1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10171",
+		        name : "Definição de estrutura organizacional",
+		        descricao : "Definição de melhor estrutura organizacional para cada modelo e momento de negócio",
+		        wiki : "https://pt.wikipedia.org/wiki/Estrutura_organizacional",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Estruturação organizacional",
+		        parent : "1046",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-667.4387806441856",
+		        positionY : "808.3072176905706",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4cea2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10089",
+		        name : "Coaching",
+		        descricao : "Acompanhamento individual de colaboradores e prestação de apoio ao seu desenvolvimento",
+		        wiki : "https://pt.wikipedia.org/wiki/Coaching",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Treinamento e desenvolvimento",
+		        parent : "1066",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-940.4387806441852",
+		        positionY : "1319.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7cc66652ca33e4cea3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10092",
+		        name : "Treinamento de recursos humanos",
+		        descricao : "Identificação de necessidade e criação de programas de capacitação de funcionários",
+		        wiki : "https://pt.wikipedia.org/wiki/Treinamento",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Treinamento e desenvolvimento",
+		        parent : "1066",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-698.4387806441856",
+		        positionY : "1319.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cea4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10094",
+		        name : "Gestão de metas",
+		        descricao : "Definição e acompanhamento de metas de cargos e funções",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Treinamento e desenvolvimento",
+		        parent : "1066",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-941.4387806441852",
+		        positionY : "1379.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cea5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10415",
+		        name : "Avaliação de performance",
+		        descricao : "Condução de processos de avaliação do desempenho de funcionários",
+		        wiki : "",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Treinamento e desenvolvimento",
+		        parent : "1066",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-940.4387806441852",
+		        positionY : "1439.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cea6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10416",
+		        name : "Gestão por competências",
+		        descricao : "Criação de planos de desenvolvimento individual baseados na identificação de competências necessárias e a desenvolver",
+		        wiki : "https://pt.wikipedia.org/wiki/Gest%C3%A3o_por_compet%C3%AAncias",
+		        area : "Administração de empresas",
+		        campo : "Recursos humanos",
+		        categoria : "Treinamento e desenvolvimento",
+		        parent : "1066",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-697.4387806441856",
+		        positionY : "1436.3072176905707",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cea7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10101",
+		        name : "Contabilização de custos",
+		        descricao : "Determinação e alocação dos custos de uma empresa de acordo com normativos pré determinados",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2950.356625788411",
+		        positionY : "1020.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cea8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10102",
+		        name : "Contabilização de receitas",
+		        descricao : "Reconhecimento e alocação das receitas de uma empresa de acordo com normas e regimes determinados",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2950.356625788411",
+		        positionY : "957.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cea9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10103",
+		        name : "Contabilização de resultados",
+		        descricao : "Determinação do resultado de uma empresa a partir de receitas e custos",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3207.356625788411",
+		        positionY : "1021.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceaa",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10104",
+		        name : "Gestão Contábil",
+		        descricao : "Realização de todas as rotinas contábeis como lançamento de notas fiscais, geração de demonstrativos e controle de contas a pagar/ receber",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2684.356625788411",
+		        positionY : "880.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceab",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10105",
+		        name : "Contabilização fiscal brasileira",
+		        descricao : "Determinação de impostos a serem pagos e créditos tributários gerados por uma empresa, partindo das bases de cálculo e alíquotas estipuladas na lei brasileira",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3210.356625788411",
+		        positionY : "955.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceac",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10106",
+		        name : "Contabilização básica",
+		        descricao : "Utilização de conceitos contábeis básicos: ativo, passivo, contas T, demonstrativos contábeis",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2684.356625788411",
+		        positionY : "956.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cead",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10107",
+		        name : "Montagem de demonstrativos financeiros",
+		        descricao : "Fechamento de demonstrativos financeiros de uma empresa: Balanço, DRE, Fluxo de caixa",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2685.356625788411",
+		        positionY : "1022.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceae",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10219",
+		        name : "Contabilidade em IFRS",
+		        descricao : "Realização de lançamentos contábeis de acordo com as normas internacionais de contabilidade estipuladas pelo IASB",
+		        wiki : "https://pt.wikipedia.org/wiki/International_Financial_Reporting_Standards",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3196.356625788411",
+		        positionY : "1254.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceaf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10220",
+		        name : "Contabilidade em US GAAP",
+		        descricao : "Realização de lançamentos contábeis de acordo com as normas de contabilidade geralmente aceitas nos EUA",
+		        wiki : "https://en.wikipedia.org/wiki/Generally_Accepted_Accounting_Principles_(United_States)",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2967.356625788411",
+		        positionY : "1251.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10221",
+		        name : "Contabilidade em BR GAAP",
+		        descricao : "Realização de lançamentos contábeis de acordo com as normas geralmente aceitas no Brasil",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3085.356625788411",
+		        positionY : "1175.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10222",
+		        name : "Contabilização de itens extraordinários",
+		        descricao : "Contabilização e tratamento correto de lançamentos de intangíveis, provisões e demais itens não recorrentes da operação de uma empresa",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2945.356625788411",
+		        positionY : "1087.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10224",
+		        name : "Contabilização de estoques",
+		        descricao : "Contabilização de ativos operacionais e sua transformação de acordo com métodos existentes (PEPS/UEPS)",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2685.356625788411",
+		        positionY : "1270.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10223",
+		        name : "Contabilização de ativos",
+		        descricao : "Contabilização de itens de ativo, circulante ou permanente, de acordo com as normas internas e regulações vigentes",
+		        wiki : "https://pt.wikipedia.org/wiki/Ativo",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2682.356625788411",
+		        positionY : "1090.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10225",
+		        name : "Contabilização de depreciação",
+		        descricao : "Tratamento do valor contábil de ativos de acordo com sua utilização e com as regulações existentes",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2681.356625788411",
+		        positionY : "1151.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10226",
+		        name : "Contabilização de investimentos",
+		        descricao : "Contabilização e consolidação de ativos permanentes de acordo com seu valor e estrutura de investimento",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2682.356625788411",
+		        positionY : "1210.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10108",
+		        name : "Contabilização bancária",
+		        descricao : "Contabilização de empresas do setor bancário, contemplando as regras específicas por produto e empresa",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade financeira",
+		        parent : "1019",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3515.356625788411",
+		        positionY : "1117.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10227",
+		        name : "Contabilização de fluxo de caixa",
+		        descricao : "Contabilização de itens de fluxo de caixa e correta determinação de seu valor, utilizando os métodos direto ou indireto",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade empresarial",
+		        parent : "1018",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3206.356625788411",
+		        positionY : "1087.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10109",
+		        name : "Contabilização de seguros",
+		        descricao : "Cálculo e registro de operações de seguros, suas provisões e resultados",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade financeira",
+		        parent : "1019",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3515.356625788411",
+		        positionY : "1167.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceb9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10110",
+		        name : "Contabilização de operações de leasing",
+		        descricao : "Cálculo e registro de operações de leasing, seus resultados e tributação",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade financeira",
+		        parent : "1019",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3515.356625788411",
+		        positionY : "1217.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4ceba",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10323",
+		        name : "Conciliação contábil",
+		        descricao : "Criação de provisões e ajustes para lançamentos com efetivação em data diferente de sua execução",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade financeira",
+		        parent : "1019",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3515.356625788411",
+		        positionY : "1267.8112473719639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cebb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10111",
+		        name : "Contabilização de IRPF",
+		        descricao : "Determinação do Imposto de Renda de Pessoa Física a ser pago ou restituído",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade pessoal",
+		        parent : "1020",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2965.356625788411",
+		        positionY : "785.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cebc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10228",
+		        name : "Contabilização previdenciária",
+		        descricao : "Contabilização do valor e benefício tributário do investimento nas diversas modalidades de planos de previdência",
+		        wiki : "",
+		        area : "Ciências contábeis",
+		        campo : "Contabilidade",
+		        categoria : "Contabilidade pessoal",
+		        parent : "1020",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3170.356625788411",
+		        positionY : "785.8112473719636",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7dc66652ca33e4cebd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10229",
+		        name : "Análise de casos",
+		        descricao : "Leitura de casos e análise de suas seções, fontes de informação e direcionamentos das conclusões",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2478",
+		        positionY : "2800",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cebe",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10230",
+		        name : "Interpretação de textos jurídicos",
+		        descricao : "Leitura de textos jurídicos e análise de seu conteúdo e forma",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2479",
+		        positionY : "2870",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cebf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10231",
+		        name : "Tramitação no poder judiciário",
+		        descricao : "Conhecimento dos órgãos e instituições que compoem o poder judiciário brasileiro e direcionamento de casos de acordo",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1994",
+		        positionY : "2801",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10232",
+		        name : "Utilização de jurisprudência",
+		        descricao : "Compreensão do conceito e utilização de jurisprudências para resolução de casos com maior agilidade",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2238",
+		        positionY : "2799",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10233",
+		        name : "Desenvolvimento jurídico",
+		        descricao : "Entendimento do desenvolvimento histórico das leis e contextualização das leis atuais",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2718",
+		        positionY : "2867",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10234",
+		        name : "Arbitragem judicial",
+		        descricao : "Participação de um processo como árbitro, seguindo as regras comuns ao papel",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2243",
+		        positionY : "2945",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10235",
+		        name : "Análise de direitos humanos",
+		        descricao : "Análise de situações com base nos direitos humanos universais",
+		        wiki : "https://pt.wikipedia.org/wiki/Direitos_humanos",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1994",
+		        positionY : "2871",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10236",
+		        name : "Criação de peças jurídicas",
+		        descricao : "Redação de documentos jurídicos utilizando a terminologia e formatos apropriados",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2477",
+		        positionY : "2944",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10237",
+		        name : "Avaliação de responsabilidade",
+		        descricao : "Determinação do grau de responsabilidade de uma parte de acordo com a legislação brasileira",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "",
+		        categoria : "",
+		        parent : "4",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1997",
+		        positionY : "2946",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10238",
+		        name : "Análise institucional",
+		        descricao : "Análise da eficiência e do funcionamento de instituições públicas com relação a seu papel",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito administrativo",
+		        categoria : "",
+		        parent : "129",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1802",
+		        positionY : "3244",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10239",
+		        name : "Desenho institucional",
+		        descricao : "Criação de normativos para regular o correto funcionamento de instituições públicas",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito administrativo",
+		        categoria : "",
+		        parent : "129",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1802",
+		        positionY : "3294",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10324",
+		        name : "Análise de políticas públicas",
+		        descricao : "Análise do impacto de leis e normativos nas esferas a que dizem respeito",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito administrativo",
+		        categoria : "",
+		        parent : "129",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1802",
+		        positionY : "3344",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cec9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10112",
+		        name : "Definição de pessoa jurídica",
+		        descricao : "Caracterização de uma pessoa jurídica a partir de seus objetivos e identificação dos requisitos e direitos de cada modalidade",
+		        wiki : "https://pt.wikipedia.org/wiki/Pessoa_jur%C3%ADdica",
+		        area : "Direito",
+		        campo : "Direito Civil",
+		        categoria : "Código civil",
+		        parent : "1021",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1527",
+		        positionY : "2973",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4ceca",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10240",
+		        name : "Celebração de Uniões",
+		        descricao : "Criação de contratos de união de indivíduos nas modalidades previstas na legislação brasileira",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_de_fam%C3%ADlia",
+		        area : "Direito",
+		        campo : "Direito civil",
+		        categoria : "Direito da família",
+		        parent : "1053",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1243",
+		        positionY : "2967",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cecb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10241",
+		        name : "Defesa de direitos de menores",
+		        descricao : "Utilização das leis que envolvem crianças nas famílias para resolução de situações e garantia de direitos previstos na constituição",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_de_fam%C3%ADlia",
+		        area : "Direito",
+		        campo : "Direito civil",
+		        categoria : "Direito da família",
+		        parent : "1053",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1243",
+		        positionY : "3017",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cecc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10242",
+		        name : "Dissolução de uniões",
+		        descricao : "Dissolucão de contratos de união de indivíduos nas modalidades previstas na legislação brasileira e tratamento da separação",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_de_fam%C3%ADlia",
+		        area : "Direito",
+		        campo : "Direito civil",
+		        categoria : "Direito da família",
+		        parent : "1053",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1243",
+		        positionY : "3067",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cecd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10243",
+		        name : "Planejamento sucessório",
+		        descricao : "Criação de planos para minimizar o trabalho e a taxação da transferência bens na sucessão",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_das_sucess%C3%B5es",
+		        area : "Direito",
+		        campo : "Direito civil",
+		        categoria : "Direito das sucessões",
+		        parent : "1054",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1239",
+		        positionY : "3162",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cece",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10244",
+		        name : "Criação de testamentos",
+		        descricao : "Redação de documentos contendo a destinação de bens na sucessão de um indivíduo",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_das_sucess%C3%B5es",
+		        area : "Direito",
+		        campo : "Direito civil",
+		        categoria : "Direito das sucessões",
+		        parent : "1054",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1239",
+		        positionY : "3212",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4cecf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10245",
+		        name : "Processo sucessório",
+		        descricao : "Condução de processos de transmissão de bens para sucessores inter vivo ou causa mortis",
+		        wiki : "https://pt.wikipedia.org/wiki/Invent%C3%A1rio",
+		        area : "Direito",
+		        campo : "Direito civil",
+		        categoria : "Direito das sucessões",
+		        parent : "1054",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1239",
+		        positionY : "3262",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4ced0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10246",
+		        name : "Caracterização da propriedade",
+		        descricao : "Análise dos direitos e deveres oriundos da propriedade de algo",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_de_propriedade",
+		        area : "Direito",
+		        campo : "Direito civil",
+		        categoria : "Direito da propriedade",
+		        parent : "1052",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1509",
+		        positionY : "3089",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4ced1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10247",
+		        name : "Defesa da propriedade",
+		        descricao : "Condução de casos de defesa da propriedade com base nos normativos brasileiros",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_de_propriedade",
+		        area : "Direito",
+		        campo : "Direito civil",
+		        categoria : "Direito da propriedade",
+		        parent : "1052",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1509",
+		        positionY : "3139",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4ced2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10248",
+		        name : "Desapropriação",
+		        descricao : "Condução de processos de desapropriação em conforme com a legislação brasileira",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_de_propriedade",
+		        area : "Direito",
+		        campo : "Direito civil",
+		        categoria : "Direito da propriedade",
+		        parent : "1052",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1509",
+		        positionY : "3189",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4ced3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10395",
+		        name : "Estruturação de parcerias",
+		        descricao : "Definição das responsabilidades e direitos das partes em um processo de parceria corporativa",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "",
+		        parent : "111",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-961",
+		        positionY : "3097",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Jointventure", 
+		            "partnership"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4ced4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10113",
+		        name : "Condução de processo falimentar",
+		        descricao : "Coordenação do processo falimentar, definição do tipo de pedido de falência",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Direito societário",
+		        parent : "1024",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-267",
+		        positionY : "3235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4ced5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10114",
+		        name : "Reestruturação societária",
+		        descricao : "Criação e revisão de contratos para a mudança da composição acionária de uma empresa, contemplando acionistas e credores",
+		        wiki : "https://pt.wikipedia.org/wiki/Turnaround_%28administra%C3%A7%C3%A3o%29",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Direito societário",
+		        parent : "1024",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-553",
+		        positionY : "3232",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4ced6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10115",
+		        name : "Emissão de novas ações",
+		        descricao : "Criação de peças jurídicas e revisão do contrato social de uma empresa para emissão de novas ações",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Direito societário",
+		        parent : "1024",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-552",
+		        positionY : "3355",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7ec66652ca33e4ced7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10116",
+		        name : "Emissão de títulos de dívida",
+		        descricao : "Criação e revisão de contratos para a emissão de instrumentos de dívida corporativa",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Direito societário",
+		        parent : "1024",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-554",
+		        positionY : "3295",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4ced8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10117",
+		        name : "Criação de sociedades",
+		        descricao : "Criação de contratos sociais, acordos de acionistas e demais peças necessárias ao registro de uma Pessoa Jurídica",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Direito societário",
+		        parent : "1024",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-883",
+		        positionY : "3231",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4ced9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10118",
+		        name : "Estruturação de fundos de investimentos",
+		        descricao : "Criação de contratos e documentos para o registro e funcionamento de fundos de investimentos",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Direito societário",
+		        parent : "1024",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-888",
+		        positionY : "3295",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4ceda",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10119",
+		        name : "Estruturação de fusões e aquisições",
+		        descricao : "Estruturação jurídica de operação de compra e venda de empresas ou ativos corporativos",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Direito societário",
+		        parent : "1024",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-548",
+		        positionY : "3417",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cedb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10396",
+		        name : "Estruturação de empresa de capital aberto",
+		        descricao : "Revisão de contratos e instrumentos constitutivos para permitir o funcionamento de uma empresa em regime de capital aberto",
+		        wiki : "https://pt.wikipedia.org/wiki/Empresa_de_capital_aberto",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Direito societário",
+		        parent : "1024",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-551",
+		        positionY : "3479",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "IPO", 
+		            "corporate finance", 
+		            "abertura de capital"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cedc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10397",
+		        name : "Internacionalização de empresas",
+		        descricao : "Abertura de subsidiárias e revisão de instrumentos constitutivos para permitir o funcionamento de uma empresa em países estrangeiros",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Direito societário",
+		        parent : "1024",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-267",
+		        positionY : "3293",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Globalização", 
+		            "expansão internacional"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cedd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10249",
+		        name : "Redação de contratos",
+		        descricao : "Criação de instrumentos jurídicos de intermediação de relacionamentos e estabelecimento de obrigações",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Contratos",
+		        parent : "1022",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-741",
+		        positionY : "3100",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cede",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10120",
+		        name : "Criação de contratos bancários",
+		        descricao : "Desenvolvimento de contratos de serviços bancários em conforme com as leis",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Contratos",
+		        parent : "1022",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-273",
+		        positionY : "3100",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cedf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10250",
+		        name : "Padronização de contratos",
+		        descricao : "Redação de contratos padronizados de acordo com o tipo de relacionamento que se propõe",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito Comercial",
+		        categoria : "Contratos",
+		        parent : "1022",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-521",
+		        positionY : "3101",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10121",
+		        name : "Utilização dos princípios constitucionais brasileiros",
+		        descricao : "Aplicação dos conceitos básicos da constituição brasileira em análises jurídicas",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito constitucional",
+		        categoria : "",
+		        parent : "112",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1469",
+		        positionY : "2832",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10251",
+		        name : "Análise econômica do direito",
+		        descricao : "Análise do papel econômico do sistema jurídico, suas ineficiências e alavancas",
+		        wiki : "https://pt.wikipedia.org/wiki/An%C3%A1lise_econ%C3%B4mica_do_direito",
+		        area : "Direito",
+		        campo : "Direito econômico",
+		        categoria : "",
+		        parent : "130",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1930",
+		        positionY : "3458",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10252",
+		        name : "Criação de políticas públicas econômicas",
+		        descricao : "Criação de políticas públicas com o intuito de fortalecer o sistema econômico do país",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito econômico",
+		        categoria : "",
+		        parent : "130",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1930",
+		        positionY : "3508",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10253",
+		        name : "Análise de comunidades internacionais",
+		        descricao : "Análise de acordos internacionais e seus impactos",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_internacional",
+		        area : "Direito",
+		        campo : "Direito internacional",
+		        categoria : "Direito internacional público",
+		        parent : "1055",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2298",
+		        positionY : "3462",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10254",
+		        name : "Análise de regulação internacional",
+		        descricao : "Observância de regulamentações internacionais na confecção de peças jurídicas",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito internacional",
+		        categoria : "Direito internacional público",
+		        parent : "1055",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2298",
+		        positionY : "3512",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10255",
+		        name : "Estruturação de acordos Internacionais",
+		        descricao : "Análise e criação de normas para composição de acordos internacionais",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_internacional",
+		        area : "Direito",
+		        campo : "Direito internacional",
+		        categoria : "Direito internacional privado",
+		        parent : "1056",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2625",
+		        positionY : "3454",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10256",
+		        name : "Solução de controvérsias",
+		        descricao : "Resolução de disputas internacionais com base nas normas locais e de direito internacional",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito internacional",
+		        categoria : "Direito internacional privado",
+		        parent : "1056",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2625",
+		        positionY : "3504",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10262",
+		        name : "Referência à jurisprudência penal",
+		        descricao : "Análise de casos com base na jurisprudência penal vigente",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_penal",
+		        area : "Direito",
+		        campo : "Direito penal",
+		        categoria : "",
+		        parent : "136",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2345",
+		        positionY : "3243",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10263",
+		        name : "Promotoria penal",
+		        descricao : "Moção de processos com base em atestação de infringimento do código penal",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_penal",
+		        area : "Direito",
+		        campo : "Direito penal",
+		        categoria : "",
+		        parent : "136",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2556",
+		        positionY : "3241",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cee9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10265",
+		        name : "Argumentação penal comparativa",
+		        descricao : "Utilização de analogias e comparações entre sistemas jurídicos extrangeiros para avaliação de casos",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_penal",
+		        area : "Direito",
+		        campo : "Direito penal",
+		        categoria : "",
+		        parent : "136",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2090",
+		        positionY : "3243",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4ceea",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10264",
+		        name : "Defesa penal",
+		        descricao : "Condução de defesa de réus com base na desconstrução de argumentos e limitações da lei penal",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_penal",
+		        area : "Direito",
+		        campo : "Direito penal",
+		        categoria : "",
+		        parent : "136",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2548",
+		        positionY : "3303",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4ceeb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10266",
+		        name : "Tipificação de crime",
+		        descricao : "Definição da classificação do crime de acordo com a legislação penal",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito penal",
+		        categoria : "",
+		        parent : "136",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2714",
+		        positionY : "3241",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4ceec",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10267",
+		        name : "Atribuição de culpa",
+		        descricao : "Definição da participação de um indivíduo em um crime",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito penal",
+		        categoria : "",
+		        parent : "136",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2341",
+		        positionY : "3299",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4ceed",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10257",
+		        name : "Condução de processos no Brasil",
+		        descricao : "Conhecimento das instituições brasileiras envolvidas em processos jurídicos e suas jurisdições",
+		        wiki : "https://pt.wikipedia.org/wiki/Teoria_geral_do_processo_civil",
+		        area : "Direito",
+		        campo : "Direito processual",
+		        categoria : "",
+		        parent : "131",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2668",
+		        positionY : "3074",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4ceee",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10258",
+		        name : "Condução de processo civil no Brasil",
+		        descricao : "Condução de um processo pelas instituições brasileiras de acordo com a legislação vigente",
+		        wiki : "https://pt.wikipedia.org/wiki/Teoria_geral_do_processo_civil",
+		        area : "Direito",
+		        campo : "Direito processual",
+		        categoria : "",
+		        parent : "131",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2401",
+		        positionY : "3074",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4ceef",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10259",
+		        name : "Execução de sentenças",
+		        descricao : "Garantir o cumprimento de uma sentença decorrente de um processo",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito processual",
+		        categoria : "",
+		        parent : "131",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2139",
+		        positionY : "3133",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cef0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10260",
+		        name : "Protocolação de recursos",
+		        descricao : "Criação de recursos contra sentenças resultantes de processos",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito processual",
+		        categoria : "",
+		        parent : "131",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2141",
+		        positionY : "3072",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cef1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10261",
+		        name : "Criação de estratégia processual",
+		        descricao : "Criação de estratégias para a maximização da chance de obtenção de resultado favorável em processo",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito processual",
+		        categoria : "",
+		        parent : "131",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2401",
+		        positionY : "3132",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cef2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10268",
+		        name : "Negociações coletivas",
+		        descricao : "Atuação em negociações sindicais para discussão de melhores termos dentro da legislação trabalhista brasileira",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_do_trabalho",
+		        area : "Direito",
+		        campo : "Direito trabalhista",
+		        categoria : "",
+		        parent : "114",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-660",
+		        positionY : "2832",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc7fc66652ca33e4cef3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10269",
+		        name : "Criação de contratos de trabalho",
+		        descricao : "Criação de contratos de trabalho nas modalidades disponíveis em conforme com a legislação trabalhista brasileira",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_do_trabalho",
+		        area : "Direito",
+		        campo : "Direito trabalhista",
+		        categoria : "",
+		        parent : "114",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-660",
+		        positionY : "2882",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cef4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10122",
+		        name : "Criação de relações de trabalho no Brasil",
+		        descricao : "Utilização dos conceitos e princípios das leis trabalhistas brasileiras em vigor na construção de relações de trabalho",
+		        wiki : "https://pt.wikipedia.org/wiki/Consolida%C3%A7%C3%A3o_das_Leis_do_Trabalho",
+		        area : "Direito",
+		        campo : "Direito trabalhista",
+		        categoria : "",
+		        parent : "114",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-906",
+		        positionY : "2828",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "CLT"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cef5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10123",
+		        name : "Cálculo de tributos Municipais",
+		        descricao : "Determinação de base de cálculo e alíquotas de tributos municipais",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_tribut%C3%A1rio",
+		        area : "Direito",
+		        campo : "Direito tributário",
+		        categoria : "Tributação",
+		        parent : "1025",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1525",
+		        positionY : "3402",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cef6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10124",
+		        name : "Cálculo de tributos Estaduais",
+		        descricao : "Determinação de base de cálculo e alíquotas de tributos estaduais",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_tribut%C3%A1rio",
+		        area : "Direito",
+		        campo : "Direito tributário",
+		        categoria : "Tributação",
+		        parent : "1025",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1525",
+		        positionY : "3452",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cef7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10270",
+		        name : "Debate da evolução tributária brasileira",
+		        descricao : "Compreensão da evolução da legislação tributária brasileira",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito tributário",
+		        categoria : "",
+		        parent : "113",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1251",
+		        positionY : "3389",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cef8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10125",
+		        name : "Cálculo de tributos federais",
+		        descricao : "Determinação de base de cálculo e alíquotas de tributos federais",
+		        wiki : "https://pt.wikipedia.org/wiki/Direito_tribut%C3%A1rio",
+		        area : "Direito",
+		        campo : "Direito tributário",
+		        categoria : "Tributação",
+		        parent : "1025",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1525",
+		        positionY : "3502",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cef9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10271",
+		        name : "Elisão fiscal",
+		        descricao : "Criação de estratégias de redução dos tributos a serem pagos de acordo com a legislação vigente",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Direito tributário",
+		        categoria : "Planejamento tributário",
+		        parent : "1057",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1251",
+		        positionY : "3505",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cefa",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10126",
+		        name : "Divulgação de informações regulatórias",
+		        descricao : "Conhecimento das normas de divulgação de informação de bancos para BACEN e outros órgãos reguladores",
+		        wiki : "",
+		        area : "Direito",
+		        campo : "Regulações setoriais",
+		        categoria : "Regulação bancária",
+		        parent : "1047",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1837",
+		        positionY : "3100",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cefb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10209",
+		        name : "Análise econômica básica",
+		        descricao : "Utilização dos conceitos básicos da economia na avaliação de situações",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "",
+		        parent : "116",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-4006",
+		        positionY : "1216",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "PIB", 
+		            "Crescimento", 
+		            "Dívida pública"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cefc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10127",
+		        name : "Análise das contas públicas",
+		        descricao : "Determinação da saúde financeira de uma unidade governamental a partir de suas contas",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3680",
+		        positionY : "1547",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cefd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10128",
+		        name : "Análise das políticas monetárias e fiscais",
+		        descricao : "Determinação de tendências econômicas a partir do conjunto de regras que regem o funcionamento do governo e do banco central",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3681",
+		        positionY : "1496",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cefe",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10129",
+		        name : "Análise macroeconômica",
+		        descricao : "Análise das tendências econômicas de um país ou região a partir de dados econômicos disponíveis",
+		        wiki : "https://pt.wikipedia.org/wiki/Macroeconomia",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3962",
+		        positionY : "1494",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4ceff",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10202",
+		        name : "Análise de regime cambial",
+		        descricao : "Análise dos impactos dos diversos tipos de regime cambial",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3681",
+		        positionY : "1600",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf00",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10203",
+		        name : "Análise de acordos internacionais",
+		        descricao : "Análise do impacto de um acordo de comércio internacional",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3681",
+		        positionY : "1650",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf01",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10205",
+		        name : "Projeções econômicas",
+		        descricao : "Projeção de dados economicos utilizando modelos teóricos e informações de mercado",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3964",
+		        positionY : "1553",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf02",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10336",
+		        name : "Análise regulatória",
+		        descricao : "Análise dos impactos econômicos e setoriais de legislações, estatutos e normas",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3678",
+		        positionY : "1704",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf03",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10390",
+		        name : "Análise de indicadores econômicos",
+		        descricao : "Análise de indicadores economicos (produção e crescimento, renda, desemprego, desigualdade, etc.) para criação de diagnóstico conjuntural",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3963",
+		        positionY : "1606",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "PIB", 
+		            "Gini", 
+		            "Sazonalidade"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf04",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10392",
+		        name : "Análise política",
+		        descricao : "Análise da conjuntura política de um país, identificando tendências, oportunidades e riscos para empresas e cidadãos",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3371",
+		        positionY : "1565",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "riscopolítico", 
+		            "revolução", 
+		            "eleições"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf05",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10391",
+		        name : "Análise de sustentabilidade econômica",
+		        descricao : "Avaliação dos impactos das iniciativas de desenvolvimento sustentável no desenvolvimento econômico de um país",
+		        wiki : "https://pt.wikipedia.org/wiki/Desenvolvimento_sustent%C3%A1vel",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3372",
+		        positionY : "1497",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "sustentabilidade"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf06",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10393",
+		        name : "Análise de política externa",
+		        descricao : "Análise das políticas e relações externas de um governo, identificando tendências e potenciais impactos decorrentes",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3372",
+		        positionY : "1633",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf07",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10394",
+		        name : "Análise política global",
+		        descricao : "Análise das relações entre governos e seus respectivos sistemas políticos, identificando tendências, oportunidades e riscos",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Macroeconomia",
+		        parent : "1010",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3372",
+		        positionY : "1694",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "riscopolítico", 
+		            "revolução", 
+		            "eleições"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf08",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10130",
+		        name : "Análise de custos e lucros",
+		        descricao : "Determinação do preço ótimo para maximização do resultado em função dos custos marginais de produção (teoria da firma)",
+		        wiki : "https://pt.wikipedia.org/wiki/Teoria_da_firma",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Microeconomia",
+		        parent : "1011",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3789",
+		        positionY : "1335",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf09",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10131",
+		        name : "Cálculos de elasticidade",
+		        descricao : "Determinação da sensibilidade da demanda de produtos à variação de preços e avaliação de suas causas e relações",
+		        wiki : "https://pt.wikipedia.org/wiki/Elasticidade_%28economia%29",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Microeconomia",
+		        parent : "1011",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-4002",
+		        positionY : "1333",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf0a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10132",
+		        name : "Análise dos agregados de oferta e demanda",
+		        descricao : "Análise da variação de preços potencial em função da regra de equilíbrio de oferta e demanda",
+		        wiki : "https://pt.wikipedia.org/wiki/Teoria_do_equil%C3%ADbrio_geral",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Microeconomia",
+		        parent : "1011",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3791",
+		        positionY : "1396",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf0b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10208",
+		        name : "Análise econômica de mercados",
+		        descricao : "Identificação e caracterização de mercados em termos de estrutura e competição",
+		        wiki : "https://pt.wikipedia.org/wiki/Mercado",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Microeconomia",
+		        parent : "1011",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3474",
+		        positionY : "1335",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf0c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10206",
+		        name : "Análise de sistemas econômicos",
+		        descricao : "Análise das regras e instituições econômicas de determinado país",
+		        wiki : "https://pt.wikipedia.org/wiki/Economia#Economia_internacional",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Economia internacional",
+		        parent : "1060",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3044",
+		        positionY : "1639",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc80c66652ca33e4cf0d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10207",
+		        name : "Utilização de Incoterms",
+		        descricao : "Avaliação dos termos de uma negociação internacional e suas implicações financeiras",
+		        wiki : "https://pt.wikipedia.org/wiki/Incoterms",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Economia internacional",
+		        parent : "1060",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3044",
+		        positionY : "1689",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "FOB"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf0e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10212",
+		        name : "Criação de modelos lineares",
+		        descricao : "Criação de modelos lineares de explicação de fatores econômicos por variáveis",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Econometria",
+		        parent : "1051",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3044",
+		        positionY : "1485",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf0f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10213",
+		        name : "Criação de modelos de painel",
+		        descricao : "Criação de modelos de explicação de fatores econômicos por variáveis dispostas em um painel balanceado ou não",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Econometria",
+		        parent : "1051",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3044",
+		        positionY : "1535",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf10",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10210",
+		        name : "Análise da formação econômica brasileira",
+		        descricao : "Análise do desenvolvimento econômico brasileiro a partir de sua história",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Teoria do desenvolvimento econômico",
+		        parent : "1012",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3046",
+		        positionY : "1236",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf11",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10211",
+		        name : "Debate da história econômica",
+		        descricao : "Análise do desenvolvimento da ciência econômica humana",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Teoria do desenvolvimento econômico",
+		        parent : "1012",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3046",
+		        positionY : "1286",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf12",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10133",
+		        name : "Análise de modelo de Solow",
+		        descricao : "Avaliação da capacidade de crescimento de uma economia a partir dos componentes de capital, mão de obra e tecnologia",
+		        wiki : "https://pt.wikipedia.org/wiki/Modelo_de_Solow",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Teoria do desenvolvimento econômico",
+		        parent : "1012",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3046",
+		        positionY : "1336",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf13",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10204",
+		        name : "Análise da produtividade dos fatores",
+		        descricao : "Análise do potencial de crescimento econômico a partir dos componentes que o promovem",
+		        wiki : "https://pt.wikipedia.org/wiki/Produtividade",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Teoria do desenvolvimento econômico",
+		        parent : "1012",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3046",
+		        positionY : "1386",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf14",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10134",
+		        name : "Modelagem de jogos",
+		        descricao : "Estruturação de situações conforme a teoria dos jogos e análise dos possíveis resultados",
+		        wiki : "https://pt.wikipedia.org/wiki/Teoria_dos_jogos",
+		        area : "Economia",
+		        campo : "Análise econômica",
+		        categoria : "Teoria dos jogos",
+		        parent : "1013",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-3724",
+		        positionY : "1235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf15",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10135",
+		        name : "Modelagem behaviorista de preços",
+		        descricao : "Determinação de preços de ativos com base em comportamentos de agentes de mercado",
+		        wiki : "https://pt.wikipedia.org/wiki/Economia_comportamental",
+		        area : "Economia",
+		        campo : "Economia comportamental",
+		        categoria : "Finanças comportamentais",
+		        parent : "1026",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2660",
+		        positionY : "1511",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf16",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10214",
+		        name : "Análise de viés comportamental",
+		        descricao : "Análise do impacto de emoções e cultura na tomada de decisão econômica",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Economia comportamental",
+		        categoria : "Finanças comportamentais",
+		        parent : "1026",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2660",
+		        positionY : "1561",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf17",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10216",
+		        name : "Análise da evolução do pensamento econômico",
+		        descricao : "Avaliação da criação das teorias econômicas em seus contextos históricos e culturais",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Pensamento econômico",
+		        categoria : "",
+		        parent : "137",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2664",
+		        positionY : "1216",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf18",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10217",
+		        name : "Economia clássica",
+		        descricao : "Avaliação da economia através do instrumental clássico criado por Adam Smith",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Pensamento econômico",
+		        categoria : "",
+		        parent : "137",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2664",
+		        positionY : "1266",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf19",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10136",
+		        name : "Ética nos negócios",
+		        descricao : "Aplicação de valores éticos na conduta profissional",
+		        wiki : "",
+		        area : "Filosofia",
+		        campo : "Ética",
+		        categoria : "Ética aplicada",
+		        parent : "1031",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1102",
+		        positionY : "324",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf1a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10218",
+		        name : "Economia austríaca",
+		        descricao : "Avaliação da economia através do instrumental desenvolvido pela escola Austríaca de pensamento econômico",
+		        wiki : "",
+		        area : "Economia",
+		        campo : "Pensamento econômico",
+		        categoria : "",
+		        parent : "137",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-2664",
+		        positionY : "1316",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf1b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10273",
+		        name : "Mitigação de conflito de interesses",
+		        descricao : "Atuação com capacidade de discernimento entre os diversos interesses presentes em uma situação e com a tomada das devidas precauções",
+		        wiki : "https://pt.wikipedia.org/wiki/Conflito_de_interesses",
+		        area : "Filosofia",
+		        campo : "Ética",
+		        categoria : "Ética aplicada",
+		        parent : "1031",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1102",
+		        positionY : "374",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf1c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10274",
+		        name : "Responsabilidade com terceiros",
+		        descricao : "Consideração pelo mercado, pelos clientes e pela instituição empregadora na tomada de decisão",
+		        wiki : "",
+		        area : "Filosofia",
+		        campo : "Ética",
+		        categoria : "Ética aplicada",
+		        parent : "1031",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1102",
+		        positionY : "424",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf1d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10275",
+		        name : "Confidencialidade",
+		        descricao : "Não divulgação de informações consideradas confidenciais",
+		        wiki : "",
+		        area : "Filosofia",
+		        campo : "Ética",
+		        categoria : "Ética aplicada",
+		        parent : "1031",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1102",
+		        positionY : "474",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf1e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10277",
+		        name : "Debate sobre a liberdade do indivíduo",
+		        descricao : "Construção de raciocínios com base nos conceitos filosóficos de indivíduo e liberdade",
+		        wiki : "",
+		        area : "Filosofia",
+		        campo : "Filosofia política",
+		        categoria : "",
+		        parent : "138",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1427",
+		        positionY : "292",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf1f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10276",
+		        name : "Debate sobre o indivíduo e o estado",
+		        descricao : "Construção de raciocínios com base nos conceitos filosóficos de indivíduo e estado e seu relacionamento",
+		        wiki : "",
+		        area : "Filosofia",
+		        campo : "Filosofia política",
+		        categoria : "",
+		        parent : "138",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1427",
+		        positionY : "342",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf20",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10389",
+		        name : "Comunicação em Libras",
+		        descricao : "Comunicação em Libras - língua brasileira de sinais",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_brasileira_de_sinais",
+		        area : "Idiomas",
+		        campo : "português",
+		        categoria : "",
+		        parent : "147",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2077",
+		        positionY : "27",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "surdo", 
+		            "mudo"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf21",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10294",
+		        name : "Inglês básico",
+		        descricao : "Capacidade de transmitir ideias simples e fazer perguntas objetivas. Vocabulário de até 900 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_inglesa",
+		        area : "Idiomas",
+		        campo : "Inglês",
+		        categoria : "",
+		        parent : "139",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2035",
+		        positionY : "137",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf22",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10295",
+		        name : "Inglês intermediário",
+		        descricao : "Capacidade de manter uma conversa limitada, com um vocabulário de cerca de 2000 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_inglesa",
+		        area : "Idiomas",
+		        campo : "Inglês",
+		        categoria : "",
+		        parent : "139",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2190",
+		        positionY : "139",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf23",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10297",
+		        name : "Inglês fluente",
+		        descricao : "Capacidade de transmitir ideias complexas e específicas. Vocabulário de mais de 8000 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_inglesa",
+		        area : "Idiomas",
+		        campo : "Inglês",
+		        categoria : "",
+		        parent : "139",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2487",
+		        positionY : "136",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf24",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10296",
+		        name : "Inglês avançado",
+		        descricao : "Capacidade de se comunicar sem grandes problemas sobre questões rotineiras. Vocabulário de cerca de 4000 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_inglesa",
+		        area : "Idiomas",
+		        campo : "Inglês",
+		        categoria : "",
+		        parent : "139",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2348",
+		        positionY : "137",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf25",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10298",
+		        name : "Francês básico",
+		        descricao : "Capacidade de transmitir ideias simples e fazer perguntas objetivas. Vocabulário de até 900 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_francesa",
+		        area : "Idiomas",
+		        campo : "Francês",
+		        categoria : "",
+		        parent : "144",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2037",
+		        positionY : "346",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf26",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10299",
+		        name : "Francês intermediário",
+		        descricao : "Capacidade de manter uma conversa limitada, com um vocabulário de cerca de 2000 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_francesa",
+		        area : "Idiomas",
+		        campo : "Francês",
+		        categoria : "",
+		        parent : "144",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2185",
+		        positionY : "350",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf27",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10300",
+		        name : "Francês avançado",
+		        descricao : "Capacidade de se comunicar sem grandes problemas sobre questões rotineiras. Vocabulário de cerca de 4000 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_francesa",
+		        area : "Idiomas",
+		        campo : "Francês",
+		        categoria : "",
+		        parent : "144",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2349",
+		        positionY : "349",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc81c66652ca33e4cf28",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10301",
+		        name : "Francês fluente",
+		        descricao : "Capacidade de transmitir ideias complexas e específicas. Vocabulário de mais de 8000 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_francesa",
+		        area : "Idiomas",
+		        campo : "Francês",
+		        categoria : "",
+		        parent : "144",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2499",
+		        positionY : "349",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf29",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10302",
+		        name : "Espanhol básico",
+		        descricao : "Capacidade de transmitir ideias simples e fazer perguntas objetivas. Vocabulário de até 900 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_castelhana",
+		        area : "Idiomas",
+		        campo : "Espanhol",
+		        categoria : "",
+		        parent : "145",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2042",
+		        positionY : "449",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf2a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10303",
+		        name : "Espanhol intermediário",
+		        descricao : "Capacidade de manter uma conversa limitada, com um vocabulário de cerca de 2000 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_castelhana",
+		        area : "Idiomas",
+		        campo : "Espanhol",
+		        categoria : "",
+		        parent : "145",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2197",
+		        positionY : "447",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf2b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10304",
+		        name : "Espanhol avançado",
+		        descricao : "Capacidade de se comunicar sem grandes problemas sobre questões rotineiras. Vocabulário de cerca de 4000 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_castelhana",
+		        area : "Idiomas",
+		        campo : "Espanhol",
+		        categoria : "",
+		        parent : "145",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2358",
+		        positionY : "441",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf2c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10305",
+		        name : "Espanhol fluente",
+		        descricao : "Capacidade de transmitir ideias complexas e específicas. Vocabulário de mais de 8000 palavras",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_castelhana",
+		        area : "Idiomas",
+		        campo : "Espanhol",
+		        categoria : "",
+		        parent : "145",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2495",
+		        positionY : "450",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf2d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10278",
+		        name : "Inglês jurídico",
+		        descricao : "Redação de peças jurídicas em inglês com a correta utilização dos termos e construção de lógica",
+		        wiki : "",
+		        area : "Idiomas",
+		        campo : "Inglês",
+		        categoria : "Inglês de negócios",
+		        parent : "1058",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2348",
+		        positionY : "234",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf2e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10285",
+		        name : "Cálculo de sistemas dinâmicos",
+		        descricao : "Cálculo do resultado de sistemas com uma componente variável de tempo",
+		        wiki : "https://pt.wikipedia.org/wiki/Sistema_din%C3%A2mico",
+		        area : "Matemática",
+		        campo : "Álgebra",
+		        categoria : "",
+		        parent : "140",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "339",
+		        positionY : "3106",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf2f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10286",
+		        name : "Cálculo de sistemas lineares",
+		        descricao : "Cálculos e análises de conjuntos de equações lineares",
+		        wiki : "https://pt.wikipedia.org/wiki/Sistema_de_equa%C3%A7%C3%B5es_lineares",
+		        area : "Matemática",
+		        campo : "Álgebra",
+		        categoria : "Álgebra linear",
+		        parent : "1050",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "590",
+		        positionY : "3064",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf30",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10287",
+		        name : "Análise geométrica",
+		        descricao : "Análise de formas geométricas com base em planos cartesianos",
+		        wiki : "https://pt.wikipedia.org/wiki/Geometria_anal%C3%ADtica",
+		        area : "Matemática",
+		        campo : "Álgebra",
+		        categoria : "Álgebra linear",
+		        parent : "1050",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "590",
+		        positionY : "3114",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Geometriaanalítica"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf31",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10139",
+		        name : "Cálculo integral",
+		        descricao : "Cálculo do resultado de operações integrais",
+		        wiki : "https://pt.wikipedia.org/wiki/C%C3%A1lculo",
+		        area : "Matemática",
+		        campo : "Cálculo",
+		        categoria : "",
+		        parent : "119",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "909",
+		        positionY : "3039",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf32",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10138",
+		        name : "Cálculo diferencial",
+		        descricao : "Cálculo do resultado de operações derivadas",
+		        wiki : "https://pt.wikipedia.org/wiki/C%C3%A1lculo",
+		        area : "Matemática",
+		        campo : "Cálculo",
+		        categoria : "",
+		        parent : "119",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "909",
+		        positionY : "3089",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf33",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10283",
+		        name : "Cálculo de equações diferenciais",
+		        descricao : "Cálculo do resultado de uma equação com icógnitas em forma de derivadas",
+		        wiki : "https://pt.wikipedia.org/wiki/Equa%C3%A7%C3%A3o_diferencial",
+		        area : "Matemática",
+		        campo : "Cálculo",
+		        categoria : "",
+		        parent : "119",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "909",
+		        positionY : "3139",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf34",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10284",
+		        name : "Determinação de relação de recorrência",
+		        descricao : "Cálculo de termos anteriores ou seguintes de relações matemáticas a partir de regras particulares",
+		        wiki : "https://pt.wikipedia.org/wiki/Rela%C3%A7%C3%A3o_de_recorr%C3%AAncia",
+		        area : "Matemática",
+		        campo : "Cálculo",
+		        categoria : "",
+		        parent : "119",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "909",
+		        positionY : "3189",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf35",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10137",
+		        name : "Análise estatística básica",
+		        descricao : "Avaliação estatística básica de conjuntos de dados e sua comparação a uma distribuição normal",
+		        wiki : "https://pt.wikipedia.org/wiki/Estat%C3%ADstica",
+		        area : "Matemática",
+		        campo : "Estatística",
+		        categoria : "",
+		        parent : "120",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "313",
+		        positionY : "2883",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Princípiosestatíesticos", 
+		            "moda", 
+		            "média", 
+		            "desvio padrão"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf36",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10140",
+		        name : "Testes de hipótese",
+		        descricao : "Realização de testes de hipótese, significância estatística, análise de resíduos e de variância",
+		        wiki : "https://pt.wikipedia.org/wiki/Testes_de_hip%C3%B3teses",
+		        area : "Matemática",
+		        campo : "Estatística",
+		        categoria : "",
+		        parent : "120",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "523",
+		        positionY : "2828",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf37",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10279",
+		        name : "Análise estatística",
+		        descricao : "Realização de análises estatísticas para identificação de propriedades de conjuntos de dados, incluindo correlações com outros conjuntos",
+		        wiki : "https://pt.wikipedia.org/wiki/Estat%C3%ADstica_descritiva",
+		        area : "Matemática",
+		        campo : "Estatística",
+		        categoria : "",
+		        parent : "120",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "517",
+		        positionY : "2941",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf38",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10280",
+		        name : "Análise exploratória de dados",
+		        descricao : "Aplicação de técnicas de regressão e testes de hipóteses para identificação de padrões e relações estatísticas",
+		        wiki : "",
+		        area : "Matemática",
+		        campo : "Estatística",
+		        categoria : "",
+		        parent : "120",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "740",
+		        positionY : "2885",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf39",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10281",
+		        name : "Criação de regressões",
+		        descricao : "Identificação de relações estatísticas entre duas ou mais variáveis e representação matemática desta relação",
+		        wiki : "",
+		        area : "Matemática",
+		        campo : "Estatística",
+		        categoria : "",
+		        parent : "120",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "516",
+		        positionY : "2883",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf3a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10282",
+		        name : "Análise de resíduos",
+		        descricao : "Análise de dados resultantes de regressões para identificação de padrões que afetem a validade da relação estatística",
+		        wiki : "",
+		        area : "Matemática",
+		        campo : "Estatística",
+		        categoria : "",
+		        parent : "120",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "742",
+		        positionY : "2941",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf3b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10288",
+		        name : "Descrição probabilística",
+		        descricao : "Descrição de fenômenos a partir de probabilidades matemáticas",
+		        wiki : "",
+		        area : "Matemática",
+		        campo : "Probabilidade",
+		        categoria : "",
+		        parent : "141",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "976",
+		        positionY : "2834",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf3c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10060",
+		        name : "Valor do dinheiro no tempo",
+		        descricao : "Cálculo do valor do dinheiro no tempo",
+		        wiki : "https://pt.wikipedia.org/wiki/Matem%C3%A1tica_financeira",
+		        area : "Matemática",
+		        campo : "Matemática financeira",
+		        categoria : "",
+		        parent : "150",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "331",
+		        positionY : "3223",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf3d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10061",
+		        name : "Cálculo de juros",
+		        descricao : "Capitalização de juros simples e juros compostos e variantes internacionais",
+		        wiki : "https://pt.wikipedia.org/wiki/Matem%C3%A1tica_financeira",
+		        area : "Matemática",
+		        campo : "Matemática financeira",
+		        categoria : "",
+		        parent : "150",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "510",
+		        positionY : "3224",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf3e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10381",
+		        name : "Gestão de carreira",
+		        descricao : "Identificação de prioridades para tomada de decisão e planejamento de ações para possibilitar a evolução da carreira de acordo comos valores e interesses pessoais",
+		        wiki : "https://pt.wikipedia.org/wiki/Gest%C3%A3o_de_carreira",
+		        area : "Profissional",
+		        campo : "",
+		        categoria : "",
+		        parent : "13",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1097.4561439783613",
+		        positionY : "60.44955006762172",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "careerservices"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf3f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10428",
+		        name : "Construção de Currículo",
+		        descricao : "Estruturação e listagem de experiências educacionais e profissionais em documento voltado a recrutamento",
+		        wiki : "https://pt.wikipedia.org/wiki/Curriculum_vit%C3%A6",
+		        area : "Profissional",
+		        campo : "",
+		        categoria : "",
+		        parent : "13",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-1098.4561439783613",
+		        positionY : "120.44955006762169",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "CV", 
+		            "Curriculum vitae"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf40",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10141",
+		        name : "Psicologia da Liderança",
+		        descricao : "Aplicação dos conceitos psicológicos da Liderança",
+		        wiki : "",
+		        area : "Psicologia",
+		        campo : "Psicologia do trabalho",
+		        categoria : "Psicologia comportamental",
+		        parent : "1043",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1704",
+		        positionY : "292",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf41",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10142",
+		        name : "Debate sobre trabalho e estresse",
+		        descricao : "Tomada de decisão com base no entendimento do impacto do trabalho e do estresse na psique humana",
+		        wiki : "",
+		        area : "Psicologia",
+		        campo : "Psicologia do trabalho",
+		        categoria : "Psicologia comportamental",
+		        parent : "1043",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1704",
+		        positionY : "342",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf42",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10143",
+		        name : "Análise psicológica da autoridade",
+		        descricao : "Utilização dos conceitos psicológicos da autoridade e suas consequências na tomada de decisão",
+		        wiki : "",
+		        area : "Psicologia",
+		        campo : "Psicologia do trabalho",
+		        categoria : "Psicologia comportamental",
+		        parent : "1043",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1704",
+		        positionY : "392",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc82c66652ca33e4cf43",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10144",
+		        name : "Aplicação do Behaviorismo aos negócios",
+		        descricao : "Aplicação dos conceitos de behaviorismo em situações de trabalho",
+		        wiki : "",
+		        area : "Psicologia",
+		        campo : "Psicologia do trabalho",
+		        categoria : "Psicologia comportamental",
+		        parent : "1043",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1704",
+		        positionY : "442",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf44",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10145",
+		        name : "Análise psicológica Freudiana",
+		        descricao : "Aplicação dos conceitos de Ego, supergo, id em análises psicológicas",
+		        wiki : "",
+		        area : "Psicologia",
+		        campo : "Psicologia Freudiana",
+		        categoria : "",
+		        parent : "121",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1443",
+		        positionY : "85",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf45",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10384",
+		        name : "Aplicação da livre associação",
+		        descricao : "Aplicação de método de investigação psíquica baseado na livre exploração do paciente por tópicos que lhe façam sentido",
+		        wiki : "https://pt.wikipedia.org/wiki/Livre_associa%C3%A7%C3%A3o",
+		        area : "Psicologia",
+		        campo : "Psicanálise",
+		        categoria : "",
+		        parent : "148",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1718",
+		        positionY : "81",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "divã", 
+		            "Freud"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf46",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10385",
+		        name : "Investigação da psique",
+		        descricao : "Identificaçãode desvios de personalidade e traumas a partir de técnicas investigativas",
+		        wiki : "https://pt.wikipedia.org/wiki/Psican%C3%A1lise",
+		        area : "Psicologia",
+		        campo : "Psicanálise",
+		        categoria : "",
+		        parent : "148",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1718",
+		        positionY : "131",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Freud"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf47",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10388",
+		        name : "Análise cultural brasileira",
+		        descricao : "Análise dos componentes culturais brasileiros e suas interações, criando um panomara cultural do país",
+		        wiki : "https://pt.wikipedia.org/wiki/Cultura_do_Brasil",
+		        area : "Sociologia",
+		        campo : "",
+		        categoria : "",
+		        parent : "11",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "764",
+		        positionY : "-27",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Brasilianismo", 
+		            "tupi-guarani"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf48",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10386",
+		        name : "Debate do neoliberalismo",
+		        descricao : "Debate sobre o modelo economico neoliberalista e seus impactos na vida dos indivíduos e na comunidade",
+		        wiki : "https://pt.wikipedia.org/wiki/Neoliberalismo",
+		        area : "Sociologia",
+		        campo : "Sociologia econômica",
+		        categoria : "",
+		        parent : "142",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1057",
+		        positionY : "-15",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "liberalismo"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf49",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10289",
+		        name : "Debate sobre o indivíduo na sociedade",
+		        descricao : "Análise da influência do meio no indivíduo e na construção de identidades",
+		        wiki : "",
+		        area : "Sociologia",
+		        campo : "Sociologia econômica",
+		        categoria : "",
+		        parent : "142",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1057",
+		        positionY : "34",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf4a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10387",
+		        name : "Debate da cultura de consumo",
+		        descricao : "Debate sobre os impactos da cultura do consumo na sociedade",
+		        wiki : "https://pt.wikipedia.org/wiki/Consumo",
+		        area : "Sociologia",
+		        campo : "Sociologia econômica",
+		        categoria : "",
+		        parent : "142",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "1057",
+		        positionY : "84",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "consumismo"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf4b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10290",
+		        name : "Análise sociológica do direito",
+		        descricao : "Compreensão do direito na sociedade atual e seu impacto nas dinâmicas sociais",
+		        wiki : "",
+		        area : "Sociologia",
+		        campo : "Sociologia jurídica",
+		        categoria : "",
+		        parent : "143",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "781",
+		        positionY : "82",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf4c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10425",
+		        name : "Abstração",
+		        descricao : "Exercício intelectual de avaliação de conceitos e experiências separando componentes e os avaliando independentemente",
+		        wiki : "https://pt.wikipedia.org/wiki/Abstra%C3%A7%C3%A3o",
+		        area : "Soft Skills",
+		        campo : "Pensamento abstrato",
+		        categoria : "",
+		        parent : "152",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-335",
+		        positionY : "478",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf4d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10027",
+		        name : "Brainstorming",
+		        descricao : "Geração de ideias livres sobre temas específicos e refinamento dessas em conceitos utilizáveis",
+		        wiki : "https://pt.wikipedia.org/wiki/Brainstorming",
+		        area : "Soft Skills",
+		        campo : "Pensamento abstrato",
+		        categoria : "",
+		        parent : "152",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-9",
+		        positionY : "479",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf4e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10016",
+		        name : "Tomar decisões",
+		        descricao : "Utilização de ferramentas e modelos psicológicos para apoiar a tomada de decisões",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Pensamento crítico",
+		        categoria : "",
+		        parent : "151",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "121",
+		        positionY : "63",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf4f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10382",
+		        name : "Criatividade",
+		        descricao : "Geração de ideias e conceitos autonomos e alternativos, ou aplicação destes de maneira não usual, buscando novas maneiras de se atingir um objetivo",
+		        wiki : "https://pt.wikipedia.org/wiki/Criatividade",
+		        area : "Soft Skills",
+		        campo : "Pensamento abstrato",
+		        categoria : "",
+		        parent : "152",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-161",
+		        positionY : "478",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Criação", 
+		            "inovação"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf50",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10161",
+		        name : "Interpretação de textos",
+		        descricao : "Leitura e compreensão de textos e sua estrutura",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Pensamento crítico",
+		        categoria : "",
+		        parent : "151",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-306",
+		        positionY : "124",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf51",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10165",
+		        name : "Enquadramento de problemas",
+		        descricao : "Utilização de modelos para definir problemas e procurar caminhos para sua solução",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Pensamento crítico",
+		        categoria : "",
+		        parent : "151",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-94",
+		        positionY : "59",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf52",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10329",
+		        name : "Analisar",
+		        descricao : "Coleta e avaliação de informações para construção de uma conclusão sobre determinado assunto",
+		        wiki : "",
+		        area : "Soft skills",
+		        campo : "Pensamento crítico",
+		        categoria : "",
+		        parent : "151",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-91",
+		        positionY : "125",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf53",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10327",
+		        name : "Raciocínio lógico",
+		        descricao : "Avaliar situações utilizando conceitos de lógica",
+		        wiki : "",
+		        area : "Soft skills",
+		        campo : "Pensamento crítico",
+		        categoria : "",
+		        parent : "151",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-304",
+		        positionY : "60",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf54",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10166",
+		        name : "Execução",
+		        descricao : "Capacidade de transformação de ideias em ação com foco na resolução de problemas",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Pensamento crítico",
+		        categoria : "",
+		        parent : "151",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "123",
+		        positionY : "198",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf55",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10163",
+		        name : "Foco em resultado",
+		        descricao : "Identificação e priorização das entregas agregadoras de valor",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Pensamento crítico",
+		        categoria : "",
+		        parent : "151",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "122",
+		        positionY : "125",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf56",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10018",
+		        name : "Apresentação",
+		        descricao : "Condução de apresentações utilizando ferramentas de comunicação",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Comunicação",
+		        categoria : "",
+		        parent : "153",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-568",
+		        positionY : "56",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf57",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10017",
+		        name : "Narrar",
+		        descricao : "Utilização de técnicas de narrativa em comunicações",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Comunicação",
+		        categoria : "",
+		        parent : "153",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-566",
+		        positionY : "119",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf58",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10409",
+		        name : "Entrevistar",
+		        descricao : "Condução de conversa com realização de perguntas pré definidas para obtenção de informações e conhecimento de opiniões de indivíduos",
+		        wiki : "https://pt.wikipedia.org/wiki/Entrevista",
+		        area : "Soft Skills",
+		        campo : "Comunicação",
+		        categoria : "",
+		        parent : "153",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-562",
+		        positionY : "248",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Jornalismo", 
+		            "interview"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf59",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10160",
+		        name : "Argumentação",
+		        descricao : "Construção de raciocínios lógicos ou emocionais com o intuito de se provar determinado ponto de vista",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Comunicação",
+		        categoria : "",
+		        parent : "153",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-564",
+		        positionY : "186",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf5a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10426",
+		        name : "Comunicação escrita",
+		        descricao : "Transmissão efetiva de conceitos e ideias via a utilização de ténicas de comunicação escrita",
+		        wiki : "https://pt.wikipedia.org/wiki/Escrita",
+		        area : "Soft Skills",
+		        campo : "Comunicação",
+		        categoria : "",
+		        parent : "153",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-750",
+		        positionY : "186",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf5b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10020",
+		        name : "Comunicação oral",
+		        descricao : "Transmissão efetiva de conceitos e ideias via a utilização de melhores práticas de comunicação oral",
+		        wiki : "https://pt.wikipedia.org/wiki/L%C3%ADngua_falada",
+		        area : "Soft Skills",
+		        campo : "Comunicação",
+		        categoria : "",
+		        parent : "153",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-750",
+		        positionY : "56",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf5c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10427",
+		        name : "Comunicação corporal",
+		        descricao : "Reforço da transmissão de informações via a utilização de gestos e expressões corporais",
+		        wiki : "https://pt.wikipedia.org/wiki/Linguagem_corporal",
+		        area : "Soft Skills",
+		        campo : "Comunicação",
+		        categoria : "",
+		        parent : "153",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-751",
+		        positionY : "119",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf5d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10272",
+		        name : "Profissionalismo",
+		        descricao : "Conduta pautada pelo conhecimento das normas morais, pela responsabilidade individual e pelo senso de dever",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Postura",
+		        categoria : "",
+		        parent : "154",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-778",
+		        positionY : "416",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf5e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10167",
+		        name : "Organização",
+		        descricao : "Identificação de tarefas a serem realizadas e alocação de tempo e esforço de maneira estruturada e eficiente para sua realização",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Postura",
+		        categoria : "",
+		        parent : "154",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-780",
+		        positionY : "357",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc83c66652ca33e4cf5f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10325",
+		        name : "Empreender",
+		        descricao : "Postura proativa de criação de soluções para problemas não estruturados",
+		        wiki : "",
+		        area : "Soft skills",
+		        campo : "Postura",
+		        categoria : "",
+		        parent : "154",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-496",
+		        positionY : "358",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf60",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10328",
+		        name : "Resiliência",
+		        descricao : "Suportar e superar desafios até que se atinja o resultado esperado",
+		        wiki : "",
+		        area : "Soft skills",
+		        campo : "Postura",
+		        categoria : "",
+		        parent : "154",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-637",
+		        positionY : "418",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf61",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10326",
+		        name : "Agir Proativamente",
+		        descricao : "Antecipação de problemas e situações e tomada de ação para mitigá-los ou resolvê-los",
+		        wiki : "",
+		        area : "Soft skills",
+		        campo : "Postura",
+		        categoria : "",
+		        parent : "154",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-638",
+		        positionY : "356",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf62",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10383",
+		        name : "Tolerância",
+		        descricao : "Aptidão em se colocar na posição de outras pessoas e aceitar diferentes pontos de vista",
+		        wiki : "https://pt.wikipedia.org/wiki/Toler%C3%A2ncia",
+		        area : "Soft Skills",
+		        campo : "Postura",
+		        categoria : "",
+		        parent : "154",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-779",
+		        positionY : "475",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Diversidade"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf63",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10429",
+		        name : "Empatia",
+		        descricao : "Colocar-se no lugar de outros e entender o que eles estão sentido com o intuito de reforço do relacionamento",
+		        wiki : "https://pt.wikipedia.org/wiki/Empatia",
+		        area : "Soft Skills",
+		        campo : "Habilidades sociais",
+		        categoria : "",
+		        parent : "149",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-328",
+		        positionY : "306",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf64",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10430",
+		        name : "Persuasão",
+		        descricao : "Convencimento de pessoas através da comunicação lógica, emocional e simbólica",
+		        wiki : "https://pt.wikipedia.org/wiki/Persuas%C3%A3o",
+		        area : "Soft Skills",
+		        campo : "Habilidades sociais",
+		        categoria : "",
+		        parent : "149",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "40",
+		        positionY : "306",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf65",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10431",
+		        name : "Auto-percepção",
+		        descricao : "Se perceber e a seu impacto num ambiente ou contexto",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Habilidades sociais",
+		        categoria : "",
+		        parent : "149",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-329",
+		        positionY : "373",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf66",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10162",
+		        name : "Trabalho em equipe",
+		        descricao : "Contribuição para o desenvolvimento de uma tarefa com uma parte do trabalho e com apoio ao grupo",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Habilidades sociais",
+		        categoria : "",
+		        parent : "149",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-155",
+		        positionY : "372",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf67",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10014",
+		        name : "Influenciar pessoas",
+		        descricao : "Utilização de técnicas de influência em relacionamentos",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Habilidades sociais",
+		        categoria : "",
+		        parent : "149",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "-157",
+		        positionY : "305",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf68",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10019",
+		        name : "Construção de relacionamentos",
+		        descricao : "Construção de relacionamentos profissionais baseadas em confiança, harmonia e recriprocidade",
+		        wiki : "https://pt.wikipedia.org/wiki/Relacionamento",
+		        area : "Soft Skills",
+		        campo : "Habilidades sociais",
+		        categoria : "",
+		        parent : "149",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "51",
+		        positionY : "374",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Rapport"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf69",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10093",
+		        name : "Liderança",
+		        descricao : "Utilização de técnicas de liderança para facilitação do atingimento de objetivos por equipes",
+		        wiki : "",
+		        area : "Soft Skills",
+		        campo : "Habilidades sociais",
+		        categoria : "",
+		        parent : "149",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "229",
+		        positionY : "375",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf6a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10379",
+		        name : "Articulação política",
+		        descricao : "Construção de grupos de interesse e afinidade para viabilização institucional de interesses",
+		        wiki : "https://pt.wikipedia.org/wiki/Pol%C3%ADtica",
+		        area : "Soft Skills",
+		        campo : "Habilidades sociais",
+		        categoria : "",
+		        parent : "149",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "225",
+		        positionY : "304",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Lobby"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf6b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10155",
+		        name : "Powerpoint avançado",
+		        descricao : "Utilização de Powerpoint em nível avançado - animações, gráficos com links a arquivos, slide mestre",
+		        wiki : "https://pt.wikipedia.org/wiki/Microsoft_Office",
+		        area : "Tecnologia da informação",
+		        campo : "Computação geral",
+		        categoria : "Utilização MS Office",
+		        parent : "1016",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2988.3566257884113",
+		        positionY : "1712.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Apresentação"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf6c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10157",
+		        name : "Excel avançado",
+		        descricao : "Utilização de MS Excel em nível avançado - Tabelas dinâmicas, fórmulas matriciais e gravação de macros",
+		        wiki : "https://pt.wikipedia.org/wiki/Microsoft_Office",
+		        area : "Tecnologia da informação",
+		        campo : "Computação geral",
+		        categoria : "Utilização MS Office",
+		        parent : "1016",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2992.3566257884113",
+		        positionY : "1771.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Planilha"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf6d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10156",
+		        name : "Word avançado",
+		        descricao : "Utilização de MS Word em nível avançado - índices automáticos, objetos com links a arquivos",
+		        wiki : "https://pt.wikipedia.org/wiki/Microsoft_Office",
+		        area : "Tecnologia da informação",
+		        campo : "Computação geral",
+		        categoria : "Utilização MS Office",
+		        parent : "1016",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2991.3566257884113",
+		        positionY : "1647.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Texto"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf6e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10158",
+		        name : "Office Básico",
+		        descricao : "Utilização em nível básico das funcionalidades de MS Excel, powerpoint, Word e outlook",
+		        wiki : "https://pt.wikipedia.org/wiki/Microsoft_Office",
+		        area : "Tecnologia da informação",
+		        campo : "Computação geral",
+		        categoria : "Utilização MS Office",
+		        parent : "1016",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2831.3566257884113",
+		        positionY : "1713.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "MSOffice"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf6f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10330",
+		        name : "Programação em VBA",
+		        descricao : "Programação em Visual Basic",
+		        wiki : "https://pt.wikipedia.org/wiki/Visual_Basic_for_Applications",
+		        area : "Tecnologia da informação",
+		        campo : "Computação geral",
+		        categoria : "Utilização MS Office",
+		        parent : "1016",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3146.3566257884113",
+		        positionY : "1772.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf70",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10334",
+		        name : "Gestão de base de dados",
+		        descricao : "Determinação de campos, tabelas e documentos e gestão de conteúdo de bases de dados",
+		        wiki : "https://pt.wikipedia.org/wiki/Banco_de_dados",
+		        area : "Tecnologia da informação",
+		        campo : "Computação geral",
+		        categoria : "",
+		        parent : "123",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2648.3566257884113",
+		        positionY : "1711.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf71",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10374",
+		        name : "Utilização de Access",
+		        descricao : "Utilização do MS Access para criação, manutenção e utilização da informaçãode bases de dados",
+		        wiki : "https://pt.wikipedia.org/wiki/Microsoft_Access",
+		        area : "Tecnologia da informação",
+		        campo : "Computação geral",
+		        categoria : "Utilização MS Office",
+		        parent : "1016",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2992.3566257884113",
+		        positionY : "1830.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "MSOffice"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf72",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10375",
+		        name : "Criação de formulários",
+		        descricao : "Estruturação e desenho de formulários para captura de informações",
+		        wiki : "https://pt.wikipedia.org/wiki/Formul%C3%A1rio",
+		        area : "Tecnologia da informação",
+		        campo : "Computação geral",
+		        categoria : "",
+		        parent : "123",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2646.3566257884113",
+		        positionY : "1646.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Pesquisa", 
+		            "form"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf73",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10147",
+		        name : "Estruturação de databases em SQL",
+		        descricao : "Desenho e implementação de databases em SQL",
+		        wiki : "https://pt.wikipedia.org/wiki/SQL",
+		        area : "Tecnologia da informação",
+		        campo : "Infra estrutura tecnológica",
+		        categoria : "Implementação de sistemas",
+		        parent : "1037",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3305.3566257884113",
+		        positionY : "2116.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf74",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10335",
+		        name : "Criação de inteligência artificial",
+		        descricao : "Utilização de software para criação e treinamento de algoritmos e redes neurais.",
+		        wiki : "https://pt.wikipedia.org/wiki/Intelig%C3%AAncia_artificial",
+		        area : "Tecnologia da informação",
+		        campo : "Computação geral",
+		        categoria : "",
+		        parent : "123",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2651.3566257884113",
+		        positionY : "1772.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf75",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10293",
+		        name : "Programação básica",
+		        descricao : "Conhecimento sobre a lógica da programação, recursos básicos e limitações da solução de problemas via programação",
+		        wiki : "https://pt.wikipedia.org/wiki/Programa%C3%A7%C3%A3o_de_computadores",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "",
+		        parent : "125",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2666.3566257884113",
+		        positionY : "1978.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf76",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10377",
+		        name : "Criação de arquitetura de sistemas",
+		        descricao : "Definição e documentação de componentes e relacionamentos de um software",
+		        wiki : "https://pt.wikipedia.org/wiki/Arquitetura_de_software",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "",
+		        parent : "125",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2666.3566257884113",
+		        positionY : "2028.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Arquiteturade sotfware"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc84c66652ca33e4cf77",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10378",
+		        name : "Realização de testes de performance",
+		        descricao : "Estruturação e realização de teste da velocidade de processamento de dados de um programa",
+		        wiki : "https://pt.wikipedia.org/wiki/Teste_de_desempenho",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "",
+		        parent : "125",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2666.3566257884113",
+		        positionY : "2078.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Performancetest", 
+		            "Teste de desempenho"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf78",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10150",
+		        name : "Programação em C++",
+		        descricao : "Programação em C+ de nível básico",
+		        wiki : "https://pt.wikipedia.org/wiki/C%2B%2B",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "Linguagens de programação",
+		        parent : "1042",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2983.3566257884113",
+		        positionY : "1981.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf79",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10149",
+		        name : "Programação em Ruby on rails",
+		        descricao : "Programação em Ruby on Rails de nível básico",
+		        wiki : "https://pt.wikipedia.org/wiki/Ruby_on_Rails",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "Linguagens de programação",
+		        parent : "1042",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2983.3566257884113",
+		        positionY : "2031.5036194811235",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf7a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10331",
+		        name : "Programação em Python",
+		        descricao : "Programação em Python em nível básico",
+		        wiki : "https://pt.wikipedia.org/wiki/Python",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "Linguagens de programação",
+		        parent : "1042",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2983.3566257884113",
+		        positionY : "2081.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf7b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10148",
+		        name : "Programação em Json",
+		        descricao : "Programação em Json em nível básico",
+		        wiki : "https://pt.wikipedia.org/wiki/JSON",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "Linguagens de programação",
+		        parent : "1042",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2983.3566257884113",
+		        positionY : "2131.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Javascript object notation"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf7c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10332",
+		        name : "Programação em Javascript",
+		        descricao : "Programação em Javascript em nível básico",
+		        wiki : "https://pt.wikipedia.org/wiki/JavaScript",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "Linguagens de programação",
+		        parent : "1042",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2983.3566257884113",
+		        positionY : "2181.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf7d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10333",
+		        name : "Programação em Unity",
+		        descricao : "Programação em unity em nível básico",
+		        wiki : "https://pt.wikipedia.org/wiki/Unity",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "Linguagens de programação",
+		        parent : "1042",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2983.3566257884113",
+		        positionY : "2231.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf7e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10376",
+		        name : "Desenvolvimento baseado em ASP",
+		        descricao : "Utilização das bibliotecas baseadas em ASP para desenvolvimento de software",
+		        wiki : "https://pt.wikipedia.org/wiki/ASP",
+		        area : "Tecnologia da informação",
+		        campo : "Programação e Desenvolvimento",
+		        categoria : "Linguagens de programação",
+		        parent : "1042",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2983.3566257884113",
+		        positionY : "2281.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "Activeserver pages"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf7f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10146",
+		        name : "Construção de consultas em SQL",
+		        descricao : "Programação de rotinas para consultas a dados em bases de dados SQL",
+		        wiki : "https://pt.wikipedia.org/wiki/SQL",
+		        area : "Tecnologia da informação",
+		        campo : "Sistemas e plataformas",
+		        categoria : "Bases de dados",
+		        parent : "1048",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3051.3566257884113",
+		        positionY : "2431.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf80",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10152",
+		        name : "Utilização de terminal Bloomberg",
+		        descricao : "Utilização da plataforma e terminais Bloomberg de informações e negociação",
+		        wiki : "",
+		        area : "Tecnologia da informação",
+		        campo : "Sistemas e plataformas",
+		        categoria : "Sistemas de negociação",
+		        parent : "1049",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2700.3566257884113",
+		        positionY : "2426.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf81",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10151",
+		        name : "Uso de homebroker",
+		        descricao : "Utilização de plataformas de negociação de ações (homebrokers)",
+		        wiki : "https://pt.wikipedia.org/wiki/Home_Broker",
+		        area : "Tecnologia da informação",
+		        campo : "Sistemas e plataformas",
+		        categoria : "Sistemas de negociação",
+		        parent : "1049",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2700.3566257884113",
+		        positionY : "2476.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf82",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10153",
+		        name : "Consulta a sistemas de informação",
+		        descricao : "Utilização fluente de sistemas de informação de mercado (ex: Factiva)",
+		        wiki : "",
+		        area : "Tecnologia da informação",
+		        campo : "Sistemas e plataformas",
+		        categoria : "Sistemas de negociação",
+		        parent : "1049",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2700.3566257884113",
+		        positionY : "2526.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf83",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10154",
+		        name : "Utilização de Thomson One",
+		        descricao : "Utilização da plataforma Thomson de informações",
+		        wiki : "",
+		        area : "Tecnologia da informação",
+		        campo : "Sistemas e plataformas",
+		        categoria : "Sistemas de negociação",
+		        parent : "1049",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "2700.3566257884113",
+		        positionY : "2576.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf84",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10291",
+		        name : "Utilização de Matlab",
+		        descricao : "Utilização do Eviews para a realização de análises econométricas",
+		        wiki : "https://pt.wikipedia.org/wiki/MATLAB",
+		        area : "Tecnologia da informação",
+		        campo : "Sistemas e plataformas",
+		        categoria : "Software econométrico",
+		        parent : "1059",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3362.3566257884113",
+		        positionY : "2448.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf85",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10292",
+		        name : "Utilização de Eviews",
+		        descricao : "Utilização do Matlab para a realização de análises econométricas",
+		        wiki : "https://pt.wikipedia.org/wiki/EViews",
+		        area : "Tecnologia da informação",
+		        campo : "Sistemas e plataformas",
+		        categoria : "Software econométrico",
+		        parent : "1059",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3362.3566257884113",
+		        positionY : "2498.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf86",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10372",
+		        name : "Construção de bases de dados em SQL",
+		        descricao : "Estruturação e população de bases de dados utilizando a linguagem SQL",
+		        wiki : "https://pt.wikipedia.org/wiki/SQL",
+		        area : "Tecnologia da informação",
+		        campo : "Sistemas e plataformas",
+		        categoria : "Bases de dados",
+		        parent : "1048",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3051.3566257884113",
+		        positionY : "2481.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "DB", 
+		            "Database", 
+		            "Structured Query language"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf87",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "nodes",
+		        idHabilidade : "10373",
+		        name : "Construção de bases de dados em MongoDB",
+		        descricao : "Estruturação e população de bases de dados utilizando MongoDB",
+		        wiki : "https://pt.wikipedia.org/wiki/MongoDB",
+		        area : "Tecnologia da informação",
+		        campo : "Sistemas e plataformas",
+		        categoria : "Bases de dados",
+		        parent : "1048",
+		        classes : "habilidade",
+		        weight : "70",
+		        positionX : "3051.3566257884113",
+		        positionY : "2531.5036194811237",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "",
+		        target : "",
+		        tags : [ 
+		            "DB", 
+		            "Database", 
+		            "Humongous DB"
+		        ]
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf88",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90000",
+		        name : "ApresentaçõesXComunicação",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10020",
+		        target : "10018",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf89",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90001",
+		        name : "Análise de índices financeirosXAnálise de demonstrativos financeiros",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10042",
+		        target : "10043",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf8a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90002",
+		        name : "Análise das contas públicasXAnálise macro econômica",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10129",
+		        target : "10127",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf8b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90004",
+		        name : "Análise fundamentaistaXAvaliação de empresas",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10045",
+		        target : "10054",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf8c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90005",
+		        name : "Análise fundamentaistaXPrecificação de títulos de renda fixa",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10064",
+		        target : "10054",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf8d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90006",
+		        name : "Análise das políticas monetárias e fiscaisXAnálise macro econômica",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10129",
+		        target : "10128",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf8e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90007",
+		        name : "Avaliação de opções reaisXPrecificação de derivativos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10065",
+		        target : "10044",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf8f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90009",
+		        name : "Basiléia - Cálculos de requerimento de capital XContabilização bancária",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10108",
+		        target : "10100",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf90",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90011",
+		        name : "Basiléia - Cálculos de liquidez e estabilidade de captaçãoXContabilização bancária",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10108",
+		        target : "10098",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf91",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90012",
+		        name : "Curva a termo de jurosXCálculo de juros",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10061",
+		        target : "10063",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf92",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90013",
+		        name : "Captação a mercado de dívidaXDeterminação da estrutura de capital",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10046",
+		        target : "10041",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc85c66652ca33e4cf93",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90014",
+		        name : "Captação a mercado via açõesXDeterminação da estrutura de capital",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10046",
+		        target : "10040",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf94",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90015",
+		        name : "Captação a mercado via açõesXAvaliação de empresas",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10045",
+		        target : "10040",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf95",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90017",
+		        name : "Análises estratégicas x decisão estratégica",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "1029",
+		        target : "1030",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf96",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90016",
+		        name : "Construção de estratégias competitivasXAnálises econômicas",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "116",
+		        target : "10036",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf97",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90019",
+		        name : "Contabilização de custosXPrincípios de contabilidade",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10106",
+		        target : "10101",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf98",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90020",
+		        name : "Contabilização bancáriaXContabilização de resultados",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10103",
+		        target : "10108",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf99",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90021",
+		        name : "Consolidação das Leis do trabalhoXprincípios constitucionais do direito",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10121",
+		        target : "10122",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf9a",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90023",
+		        name : "Contabilização de IRPFXPrincípios de contabilidade",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10106",
+		        target : "10111",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf9b",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90024",
+		        name : "Contabilização de receitasXPrincípios de contabilidade",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10106",
+		        target : "10102",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf9c",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90026",
+		        name : "Contabilização de operações de leasingXContabilização de receitas",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10102",
+		        target : "10110",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf9d",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90025",
+		        name : "Contabilização bancáriaXContabilização fiscal",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10105",
+		        target : "10108",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf9e",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90027",
+		        name : "Contabilização fiscalXContabilização de receitas",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10102",
+		        target : "10105",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cf9f",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90028",
+		        name : "Contabilização fiscalXContabilização de custos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10101",
+		        target : "10105",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90029",
+		        name : "Contratação de funcionáriosXNegociação",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10022",
+		        target : "10090",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90030",
+		        name : "Criação de estratégia competitivaXAnálise da concorrência",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10032",
+		        target : "10075",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90031",
+		        name : "Criação de estratégias de hedgeXPrecificação de derivativos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10065",
+		        target : "10066",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90032",
+		        name : "Contabilização de resultadosXContabilização de custos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10101",
+		        target : "10103",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90033",
+		        name : "Criação de estratégia competitivaXSegmentação de mercado",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10083",
+		        target : "10075",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90034",
+		        name : "Criação de estratégias de Recursos humanosXGestão de remuneração e benefícios",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10091",
+		        target : "10088",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90035",
+		        name : "Criação de negócio no modelo Lean Start-upXCriação de novos modelos de negócios",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10030",
+		        target : "10029",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90036",
+		        name : "Desenvolvimento de novos produtosXSegmentação de mercado",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10083",
+		        target : "10081",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90037",
+		        name : "Criação de estratégias de Recursos humanosXTreinamento de recursos humanos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10092",
+		        target : "10088",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfa9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90038",
+		        name : "Definição de pessoa jurídicaXprincípios constitucionais do direito",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10121",
+		        target : "10112",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfaa",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90039",
+		        name : "Desenvolvimento de novos produtosXPesquisa mercadológica",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10073",
+		        target : "10081",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfab",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90040",
+		        name : "Gerência de projetoXPlanejamento de projetos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10005",
+		        target : "10006",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfac",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90041",
+		        name : "Design thinkingXBrainstorming",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10027",
+		        target : "10026",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfad",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90042",
+		        name : "Determinação de níveis de eficiênciaXCriação e revisão de processos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10011",
+		        target : "10012",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc86c66652ca33e4cfae",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90043",
+		        name : "Expertise MS PowerpointXIntrodução ao pacote office",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10158",
+		        target : "10155",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfaf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90044",
+		        name : "Fusões e aquisiçõesXDeterminação da estrutura de capital",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10046",
+		        target : "10047",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90045",
+		        name : "Determinação de níveis de eficiênciaXPlanejamento operacional",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10015",
+		        target : "10012",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90046",
+		        name : "Fusões e aquisiçõesXNegociação",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10022",
+		        target : "10047",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90048",
+		        name : "Expertise MS WordXIntrodução ao pacote office",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10158",
+		        target : "10156",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90049",
+		        name : "Fusões e aquisiçõesXAvaliação de empresas",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10045",
+		        target : "10047",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90050",
+		        name : "Gerência de projetoXGerênciamento de riscos de projetos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10004",
+		        target : "10006",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90051",
+		        name : "Gestão ContábilXPrincípios de contabilidade",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10106",
+		        target : "10104",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90052",
+		        name : "Criação de negócio no modelo Lean Start-upXInovação em produtos e serviços",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10028",
+		        target : "10029",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90056",
+		        name : "Gestão de produtosXPrecificação de produtos e serviços",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10082",
+		        target : "10078",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90057",
+		        name : "Expertise MS ExcelXIntrodução ao pacote office",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10158",
+		        target : "10157",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfb9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90058",
+		        name : "Financiamento de novos negóciosXdeterminação da estrutura de capital",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10046",
+		        target : "10031",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfba",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90059",
+		        name : "Gestão de produtosXAnálise da concorrência",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10032",
+		        target : "10078",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfbb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90060",
+		        name : "Gestão de produtosXDesenvolvimento de novos produtos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10081",
+		        target : "10078",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfbc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90061",
+		        name : "Gestão de caixaXAnálise de demonstrativos financeiros",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10042",
+		        target : "10048",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfbd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90062",
+		        name : "Materiais institucionaisXUtilização MS Office",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "1016",
+		        target : "10084",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfbe",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90065",
+		        name : "Modelagem behaviorista de preçosXPrecificação de títulos de renda fixa",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10064",
+		        target : "10135",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfbf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90066",
+		        name : "Montagem de demonstrativos financeirosXPrincípios de contabilidade",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10106",
+		        target : "10107",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfc0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90069",
+		        name : "Negociação de jurosXPrecificação de derivativos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10065",
+		        target : "10062",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfc1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90070",
+		        name : "Negociação de jurosXCálculo da curva a termo de juros",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10063",
+		        target : "10062",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfc2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90071",
+		        name : "Negociação de moedas estrangeirasXPrecificação de derivativos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10065",
+		        target : "10067",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfc3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90072",
+		        name : "Planejamento estratégicoXAnálises econômicas",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "116",
+		        target : "10037",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfc4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90074",
+		        name : "Planejamento de projetosXAnálise de valor agregado de projetos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10002",
+		        target : "10005",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfc5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90075",
+		        name : "Planejamento de projetosXDesenvolvimento de cronogramas",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10003",
+		        target : "10005",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfc6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90076",
+		        name : "Negociação de moedas estrangeirasXNegociação",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10022",
+		        target : "10067",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfc7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90077",
+		        name : "Reestruturação de passivosXDeterminação da estrutura de capital",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10046",
+		        target : "10038",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc87c66652ca33e4cfc8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90079",
+		        name : "Reestruturação de passivosXGestão de caixa",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10048",
+		        target : "10038",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfc9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90080",
+		        name : "Reestruturação de passivosXNegociação",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10022",
+		        target : "10038",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfca",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90081",
+		        name : "Precificação de títulos de renda fixaXCálculo da curva a termo de juros",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10063",
+		        target : "10064",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfcb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90082",
+		        name : "Reestruturação societáriaXCriação de sociedades",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10117",
+		        target : "10114",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfcc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90083",
+		        name : "Relatórios para investidoresXRelatórios gerenciais",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10049",
+		        target : "10051",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfcd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90086",
+		        name : "Técnicas de liderançaXCoaching",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10089",
+		        target : "10093",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfce",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90087",
+		        name : "Técnicas de liderançaXGestão de recursos humanos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "1044",
+		        target : "10093",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfcf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90089",
+		        name : "Montagem de demonstrativos financeiros x Análise de demonstrativos financeiros",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10107",
+		        target : "10042",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90088",
+		        name : "Valor do dinheiro no tempoXCálculo de juros",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10061",
+		        target : "10060",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90090",
+		        name : "Definição de pessoa jurídica x criação de sociedades",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10112",
+		        target : "10117",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90091",
+		        name : "Princípios processuais brasileiros x Processo civil no Brasil",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10257",
+		        target : "10258",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90092",
+		        name : "Processo civil no Brasil x execução de sentenças",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10258",
+		        target : "10259",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90093",
+		        name : "Processo civil no Brasil x Recursos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10258",
+		        target : "10260",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90094",
+		        name : "Tributação x elisão fiscal",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "1025",
+		        target : "10271",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90095",
+		        name : "Custo de capital x otimização da estrutura de capital",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10052",
+		        target : "10046",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90096",
+		        name : "Emissão de ordem de negociação x negociação em mercado",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10338",
+		        target : "10062",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90097",
+		        name : "Spreads e premios x arbitragem",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10195",
+		        target : "10196",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfd9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90098",
+		        name : "Arbitragem x estratégias de negociação",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10196",
+		        target : "10331",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfda",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90099",
+		        name : "Abstração x criatividade",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10425",
+		        target : "10382",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfdb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90100",
+		        name : "comunicação oral x narrativa",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10020",
+		        target : "10017",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfdc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90102",
+		        name : "pesquisa de mercado x segmentação",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10073",
+		        target : "10083",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfdd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90101",
+		        name : "Comunicação corporal x narrativa",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10427",
+		        target : "10017",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfde",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90103",
+		        name : "análise de mercado x gestão de produto",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "1039",
+		        target : "1038",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfdf",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90104",
+		        name : "Criação plano de negócios -> empreendedorismo social",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10322",
+		        target : "10367",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfe0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90105",
+		        name : "Criação de modelo de negócios -> criação de plano de negócios",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10030",
+		        target : "10322",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfe1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90106",
+		        name : "Criação de plano de negócios -> aceleração de empreendimentos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10322",
+		        target : "10407",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfe2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90107",
+		        name : "Análise da concorrência -> Planejamento estratégico",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10032",
+		        target : "10037",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfe3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90108",
+		        name : "Análise estrutural -> Planejamento estratégico",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10035",
+		        target : "10037",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc88c66652ca33e4cfe4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90109",
+		        name : "Análise SWOT -> Planejamento estratégico",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10417",
+		        target : "10037",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfe5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90110",
+		        name : "Planejamento estratégico -> Criação de estratégia corporativa",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10037",
+		        target : "10036",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfe6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90112",
+		        name : "análise de garantias - > gestão de garantias",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10349",
+		        target : "10312",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfe7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90111",
+		        name : "Criação de estratégia corporativa -> criação de plano de ação",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10036",
+		        target : "10420",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfe8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90113",
+		        name : "Criação de relatórios gerenciais -> criação de relatórios para investidores",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10049",
+		        target : "10051",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfe9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90114",
+		        name : "Contabilidade empresarial -> controladoria",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "1018",
+		        target : "1033",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfea",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90115",
+		        name : "Fusões e aquisições -> criação de estratégia de saída",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10047",
+		        target : "10186",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfeb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90116",
+		        name : "Captação a mercado via ações -> criação de estratégia de saída",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10040",
+		        target : "10186",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfec",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90117",
+		        name : "Avaliação de projetos -> avaliação de opções reais",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10307",
+		        target : "10044",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfed",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90118",
+		        name : "Projeção financeira - > avaliação por desconto",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10352",
+		        target : "10187",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfee",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90119",
+		        name : "Avaliação por desconto -> avaliação de projetos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10187",
+		        target : "10307",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfef",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90120",
+		        name : "Análise da curva a termo -> investimentos alternativos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10063",
+		        target : "10176",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff0",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90121",
+		        name : "Análise de títulos de renda fixa - > investimentos alternativos",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10064",
+		        target : "10176",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff1",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90122",
+		        name : "Avaliação de performance -> gestão de portfólio",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10184",
+		        target : "10057",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff2",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90123",
+		        name : "Avaliação de performance -> gestão institucional",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10184",
+		        target : "10181",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff3",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90124",
+		        name : "Teste de estresse -> Classificação de risco",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10341",
+		        target : "10340",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff4",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90125",
+		        name : "Análise de títulos de renda fixa - > classificação de risco",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10064",
+		        target : "10340",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff5",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90126",
+		        name : "Identificação de impactos -> criação de estratégia sustentável",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10408",
+		        target : "10365",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff6",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90127",
+		        name : "Criação de estratégia sustentável -> gestão sustentável",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10365",
+		        target : "10013",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff7",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90128",
+		        name : "Marketing de sistemas de busca -> criação de campanhas digitais",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10358",
+		        target : "10316",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff8",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90129",
+		        name : "Marketing de redes sociais-> criação de campanhas digitais",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10359",
+		        target : "10316",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cff9",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90130",
+		        name : "Dimensionamento de infraestrutura técnológica - > Planejamento de sistemas",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10399",
+		        target : "10398",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cffa",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90132",
+		        name : "Gestão de estoques -> otimização logística",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10401",
+		        target : "10071",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cffb",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90131",
+		        name : "Determinação de níveis de eficiência -> métricas de performance",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10012",
+		        target : "10314",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cffc",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90133",
+		        name : "Gestão de transportes -> otimização logística",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10402",
+		        target : "10071",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cffd",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90134",
+		        name : "Planejamento de recursos -> otimização logística",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10403",
+		        target : "10071",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cffe",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90135",
+		        name : "Otimização logística -> planejamento de produção global",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10071",
+		        target : "10369",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc89c66652ca33e4cfff",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90136",
+		        name : "Avaliação de performance -> gestão por competências",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10415",
+		        target : "10416",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc8ac66652ca33e4d000",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90137",
+		        name : "Criação de planos de carreiras -> criação de estratégias de atração e retenção",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10088",
+		        target : "10410",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc8ac66652ca33e4d001",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90138",
+		        name : "Gestão de remuneração e benefícios - > criação de estratégias de atração e retenção",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10091",
+		        target : "10410",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc8ac66652ca33e4d002",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90139",
+		        name : "Definição de mandatos e cargos - > definição de estrutura organizacional",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10096",
+		        target : "10171",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc8ac66652ca33e4d003",
+		    documento : {
+		        diagrama : "habilidades",
+		        type : "edges",
+		        idHabilidade : "90140",
+		        name : "Criação de organogramas -> Definição de estrutura organizacional",
+		        descricao : "",
+		        wiki : "",
+		        area : "",
+		        campo : "",
+		        categoria : "",
+		        parent : "",
+		        classes : "",
+		        weight : "70",
+		        positionX : "1",
+		        positionY : "1",
+		        opacity : "0.2",
+		        color : "blue",
+		        shape : "ellipse",
+		        width : "",
+		        lineColor : "blue",
+		        targetArrowColor : "",
+		        targetArrowShape : "",
+		        source : "10097",
+		        target : "10171",
+		        tags : []
+		    }
+		},
+		
+		
+		{
+		    _id : "57dabc8ac66652ca33e4d004",
+		    documento : {
+		        diagrama : "habilidades",
+		        idHabilidade : "",
+		        positionX : "1",
+		        positionY : "1",
+		        tags : []
+		    }
+		}
+	]
+	};
+
+	$.each(jsonBase.data, function( i, element ) {
+		var objJson  = 
+		{
+		    documento : {
+		        diagrama : "habilidades",
+		        type : element.documento.type,
+		        idHabilidade : element.documento.idHabilidade,
+		        name : element.documento.name,
+		        descricao : element.documento.descricao,
+		        wiki : element.documento.wiki,
+		        area : element.documento.area,
+		        campo : element.documento.campo,
+		        categoria : element.documento.categoria,
+		        parent : element.documento.parent,
+		        classes : element.documento.classes,
+		        weight : element.documento.weight,
+		        positionX : element.documento.positionX,
+		        positionY : element.documento.positionY,
+		        opacity : element.documento.opacity,
+		        color : element.documento.color,
+		        shape : element.documento.shape,
+		        width : element.documento.width,
+		        lineColor : element.documento.lineColor,
+		        targetArrowColor : element.documento.targetArrowColor,
+		        targetArrowShape : element.documento.targetArrowShape,
+		        source : element.documento.source,
+		        target : element.documento.target,
+		        tags: []
+		    }	
+		}
+		$.each(element.documento.tags, function(w, tag) {
+			objJson.documento.tags.push(tag);
+		});
+		rest_incluiHabilidades(objJson, semAcao, semAcao)
+	});
+
+};
+
+function carregaHabilidadesTotall (){
 
 var habilidades = 
 

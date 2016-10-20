@@ -1,15 +1,3 @@
-function CompatibilityCheck() {
-    hasWebGL ? mobile ? confirm("Please note that Unity WebGL is not currently supported on mobiles. Press Ok if you wish to continue anyway.") || window.history.back() : -1 == browser.indexOf("Firefox") && -1 == browser.indexOf("Chrome") && -1 == browser.indexOf("Safari") && (confirm("Please note that your browser is not currently supported for this Unity WebGL content. Try installing Firefox, or press Ok if you wish to continue anyway.") || window.history.back()) : (alert("You need a browser which supports WebGL to run this content. Try installing Firefox."), window.history.back())
-}
-
-function SetFullscreen(e) {
-    if ("undefined" == typeof JSEvents) return void console.log("Player not loaded yet.");
-    var t = JSEvents.canPerformEventHandlerRequests;
-    JSEvents.canPerformEventHandlerRequests = function() {
-        return 1
-    }, Module.cwrap("SetFullscreen", "void", ["number"])(e), JSEvents.canPerformEventHandlerRequests = t
-}
-
 function LoadJSCodeBlob(e, t) {
     var n = document.createElement("script");
     n.src = URL.createObjectURL(e), n.onload = t, document.body.appendChild(n)
@@ -112,48 +100,18 @@ function fetchRemotePackageWrapper(e, t, n, o) {
 function SetIndexedDBAndLoadCompressedJS(e) {
     SetIndexedDBAndLoadCompressedJS.called || (SetIndexedDBAndLoadCompressedJS.called = !0, Module.indexedDB = e, LoadCompressedJS(Module.codeUrl))
 }
-var browser = function() {
-        var e, t = navigator.userAgent,
-            n = t.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
-        return /trident/i.test(n[1]) ? (e = /\brv[ :]+(\d+)/g.exec(t) || [], "IE " + (e[1] || "")) : "Chrome" === n[1] && (e = t.match(/\bOPR\/(\d+)/), null != e) ? "Opera " + e[1] : (n = n[2] ? [n[1], n[2]] : [navigator.appName, navigator.appVersion, "-?"], null != (e = t.match(/version\/(\d+)/i)) && n.splice(1, 1, e[1]), n.join(" "))
-    }(),
-    hasWebGL = function() {
-        if (!window.WebGLRenderingContext) return 0;
-        var e = document.createElement("canvas"),
-            t = e.getContext("webgl");
-        return t || (t = e.getContext("experimental-webgl")) ? 1 : 0
-    }(),
-    mobile = function(e) {
-        return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(e) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(e.substr(0, 4))
-    }(navigator.userAgent || navigator.vendor || window.opera);
-Module.compatibilitycheck ? Module.compatibilitycheck() : CompatibilityCheck();
-var didShowErrorMessage = !1;
-"function" != typeof window.onerror && (window.onerror = function(e, t, n) {
-    return Module.errorhandler && Module.errorhandler(e, t, n) || (console.log("Invoking error handler due to\n" + e), "function" == typeof dump && dump("Invoking error handler due to\n" + e), didShowErrorMessage || -1 != e.indexOf("UnknownError") || -1 != e.indexOf("Program terminated with exit(0)")) ? void 0 : (didShowErrorMessage = !0, -1 != e.indexOf("DISABLE_EXCEPTION_CATCHING") ? void alert("An exception has occured, but exception handling has been disabled in this build. If you are the developer of this content, enable exceptions in your project's WebGL player settings to be able to catch the exception or see the stack trace.") : -1 != e.indexOf("Cannot enlarge memory arrays") ? void alert("Out of memory. If you are the developer of this content, try allocating more memory to your WebGL build in the WebGL player settings.") : -1 != e.indexOf("Invalid array buffer length") || -1 != e.indexOf("Invalid typed array length") || -1 != e.indexOf("out of memory") ? void alert("The browser could not allocate enough memory for the WebGL content. If you are the developer of this content, try allocating less memory to your WebGL build in the WebGL player settings.") : void alert("An error occured running the Unity content on this page. See your browser's JavaScript console for more info. The error was:\n" + e))
-}), Module.locateFile = function(e) {
-    return Module.dataUrl
-}, Module.preRun = [], Module.postRun = [], Module.print = function() {
-    return function(e) {
-        console.log(e)
-    }
-}(), Module.printErr = function(e) {
-    console.error(e)
-}, Module.canvas = document.getElementById("canvas"), Module.progress = null, Module.setStatus = function(e) {
-    if (null == this.progress) {
-        if ("function" != typeof UnityProgress) return;
-        this.progress = new UnityProgress(canvas)
-    }
-    if (Module.setStatus.last || (Module.setStatus.last = {
-            time: Date.now(),
-            text: ""
-        }), e !== Module.setStatus.text) {
-        this.progress.SetMessage(e);
-        var t = e.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
-        t && this.progress.SetProgress(parseInt(t[2]) / parseInt(t[4])), "" === e && this.progress.Clear()
-    }
-}, Module.totalDependencies = 0, Module.monitorRunDependencies = function(e) {
-    this.totalDependencies = Math.max(this.totalDependencies, e), Module.setStatus(e ? "Preparing... (" + (this.totalDependencies - e) + "/" + this.totalDependencies + ")" : "All downloads complete.")
-}, Module.setStatus("Downloading (0.0/1)");
+
+function CompatibilityCheck() {
+    hasWebGL ? mobile ? confirm("Please note that Unity WebGL is not currently supported on mobiles. Press Ok if you wish to continue anyway.") || window.history.back() : -1 == browser.indexOf("Firefox") && -1 == browser.indexOf("Chrome") && -1 == browser.indexOf("Safari") && (confirm("Please note that your browser is not currently supported for this Unity WebGL content. Try installing Firefox, or press Ok if you wish to continue anyway.") || window.history.back()) : (alert("You need a browser which supports WebGL to run this content. Try installing Firefox."), window.history.back())
+}
+
+function SetFullscreen(e) {
+    if ("undefined" == typeof JSEvents) return void console.log("Player not loaded yet.");
+    var t = JSEvents.canPerformEventHandlerRequests;
+    JSEvents.canPerformEventHandlerRequests = function() {
+        return 1
+    }, Module.cwrap("SetFullscreen", "void", ["number"])(e), JSEvents.canPerformEventHandlerRequests = t
+}
 var CompressionState = {
     Uninitialized: 0,
     Pending: 1,
@@ -530,7 +488,7 @@ LoadCompressedFile(Module.memUrl, function(e) {
                         Ee = new b.Buf8(4),
                         De = [16, 17, 18, 0, 8, 7, 9, 6, 10, 5, 11, 4, 12, 3, 13, 2, 14, 1, 15];
                     if (!e || !e.state || !e.output || !e.input && 0 !== e.avail_in) return F;
-                    n = e.state, n.mode === W && (n.mode = K), s = e.next_out, a = e.output, l = e.avail_out, r = e.next_in, i = e.input, d = e.avail_in, f = n.hold, h = n.bits, p = d, m = l, Se = D;
+                    n = e.state, n.mode === J && (n.mode = K), s = e.next_out, a = e.output, l = e.avail_out, r = e.next_in, i = e.input, d = e.avail_in, f = n.hold, h = n.bits, p = d, m = l, Se = D;
                     e: for (;;) switch (n.mode) {
                         case U:
                             if (0 === n.wrap) {
@@ -558,7 +516,7 @@ LoadCompressedFile(Module.memUrl, function(e) {
                                 e.msg = "invalid window size", n.mode = ce;
                                 break
                             }
-                            n.dmax = 1 << _e, e.adler = n.check = 1, n.mode = 512 & f ? j : W, f = 0, h = 0;
+                            n.dmax = 1 << _e, e.adler = n.check = 1, n.mode = 512 & f ? j : J, f = 0, h = 0;
                             break;
                         case N:
                             for (; 16 > h;) {
@@ -626,18 +584,18 @@ LoadCompressedFile(Module.memUrl, function(e) {
                                 }
                                 f = 0, h = 0
                             }
-                            n.head && (n.head.hcrc = n.flags >> 9 & 1, n.head.done = !0), e.adler = n.check = 0, n.mode = W;
+                            n.head && (n.head.hcrc = n.flags >> 9 & 1, n.head.done = !0), e.adler = n.check = 0, n.mode = J;
                             break;
                         case j:
                             for (; 32 > h;) {
                                 if (0 === d) break e;
                                 d--, f += i[r++] << h, h += 8
                             }
-                            e.adler = n.check = o(f), f = 0, h = 0, n.mode = J;
-                        case J:
-                            if (0 === n.havedict) return e.next_out = s, e.avail_out = l, e.next_in = r, e.avail_in = d, n.hold = f, n.bits = h, I;
-                            e.adler = n.check = 1, n.mode = W;
+                            e.adler = n.check = o(f), f = 0, h = 0, n.mode = W;
                         case W:
+                            if (0 === n.havedict) return e.next_out = s, e.avail_out = l, e.next_in = r, e.avail_in = d, n.hold = f, n.bits = h, I;
+                            e.adler = n.check = 1, n.mode = J;
+                        case J:
                             if (t === C || t === E) break e;
                         case K:
                             if (n.last) {
@@ -684,7 +642,7 @@ LoadCompressedFile(Module.memUrl, function(e) {
                                 b.arraySet(a, i, r, w, s), d -= w, r += w, l -= w, s += w, n.length -= w;
                                 break
                             }
-                            n.mode = W;
+                            n.mode = J;
                             break;
                         case Q:
                             for (; 14 > h;) {
@@ -772,7 +730,7 @@ LoadCompressedFile(Module.memUrl, function(e) {
                             n.mode = ne;
                         case ne:
                             if (d >= 6 && l >= 258) {
-                                e.next_out = s, e.avail_out = l, e.next_in = r, e.avail_in = d, n.hold = f, n.bits = h, k(e, m), s = e.next_out, a = e.output, l = e.avail_out, r = e.next_in, i = e.input, d = e.avail_in, f = n.hold, h = n.bits, n.mode === W && (n.back = -1);
+                                e.next_out = s, e.avail_out = l, e.next_in = r, e.avail_in = d, n.hold = f, n.bits = h, k(e, m), s = e.next_out, a = e.output, l = e.avail_out, r = e.next_in, i = e.input, d = e.avail_in, f = n.hold, h = n.bits, n.mode === J && (n.back = -1);
                                 break
                             }
                             for (n.back = 0; Ce = n.lencode[f & (1 << n.lenbits) - 1], we = Ce >>> 24, be = Ce >>> 16 & 255, ge = 65535 & Ce, !(h >= we);) {
@@ -791,7 +749,7 @@ LoadCompressedFile(Module.memUrl, function(e) {
                                 break
                             }
                             if (32 & be) {
-                                n.back = -1, n.mode = W;
+                                n.back = -1, n.mode = J;
                                 break
                             }
                             if (64 & be) {
@@ -893,7 +851,7 @@ LoadCompressedFile(Module.memUrl, function(e) {
                         default:
                             return F
                     }
-                    return e.next_out = s, e.avail_out = l, e.next_in = r, e.avail_in = d, n.hold = f, n.bits = h, (n.wsize || m !== e.avail_out && n.mode < ce && (n.mode < de || t !== M)) && c(e, e.output, e.next_out, m - e.avail_out) ? (n.mode = fe, A) : (p -= e.avail_in, m -= e.avail_out, e.total_in += p, e.total_out += m, n.total += m, n.wrap && m && (e.adler = n.check = n.flags ? v(n.check, a, m, e.next_out - m) : g(n.check, a, m, e.next_out - m)), e.data_type = n.bits + (n.last ? 64 : 0) + (n.mode === W ? 128 : 0) + (n.mode === te || n.mode === X ? 256 : 0), (0 === p && 0 === m || t === M) && Se === D && (Se = B), Se)
+                    return e.next_out = s, e.avail_out = l, e.next_in = r, e.avail_in = d, n.hold = f, n.bits = h, (n.wsize || m !== e.avail_out && n.mode < ce && (n.mode < de || t !== M)) && c(e, e.output, e.next_out, m - e.avail_out) ? (n.mode = fe, A) : (p -= e.avail_in, m -= e.avail_out, e.total_in += p, e.total_out += m, n.total += m, n.wrap && m && (e.adler = n.check = n.flags ? v(n.check, a, m, e.next_out - m) : g(n.check, a, m, e.next_out - m)), e.data_type = n.bits + (n.last ? 64 : 0) + (n.mode === J ? 128 : 0) + (n.mode === te || n.mode === X ? 256 : 0), (0 === p && 0 === m || t === M) && Se === D && (Se = B), Se)
                 }
 
                 function h(e) {
@@ -935,8 +893,8 @@ LoadCompressedFile(Module.memUrl, function(e) {
                     G = 8,
                     H = 9,
                     j = 10,
-                    J = 11,
-                    W = 12,
+                    W = 11,
+                    J = 12,
                     K = 13,
                     Y = 14,
                     X = 15,
@@ -1089,8 +1047,7 @@ LoadCompressedFile(Module.memUrl, function(e) {
                     var n, o, i, l, u, c = this.strm,
                         h = this.options.chunkSize;
                     if (this.ended) return !1;
-                    o = t === ~~t ? t : t === !0 ? d.Z_FINISH : d.Z_NO_FLUSH, "string" == typeof e ? c.input = s.binstring2buf(e) : "[object ArrayBuffer]" === f.call(e) ? c.input = new Uint8Array(e) : c.input = e,
-                        c.next_in = 0, c.avail_in = c.input.length;
+                    o = t === ~~t ? t : t === !0 ? d.Z_FINISH : d.Z_NO_FLUSH, "string" == typeof e ? c.input = s.binstring2buf(e) : "[object ArrayBuffer]" === f.call(e) ? c.input = new Uint8Array(e) : c.input = e, c.next_in = 0, c.avail_in = c.input.length;
                     do {
                         if (0 === c.avail_out && (c.output = new r.Buf8(h), c.next_out = 0, c.avail_out = h), n = a.inflate(c, d.Z_NO_FLUSH), n !== d.Z_STREAM_END && n !== d.Z_OK) return this.onEnd(n), this.ended = !0, !1;
                         c.next_out && (0 === c.avail_out || n === d.Z_STREAM_END || 0 === c.avail_in && (o === d.Z_FINISH || o === d.Z_SYNC_FLUSH)) && ("string" === this.options.to ? (i = s.utf8border(c.output, c.next_out), l = c.next_out - i, u = s.buf2string(c.output, i), c.next_out = l, c.avail_out = h - l, l && r.arraySet(c.output, c.output, i, l, 0), this.onData(u)) : this.onData(r.shrinkBuf(c.output, c.next_out)))
@@ -1112,6 +1069,48 @@ LoadCompressedFile(Module.memUrl, function(e) {
             }]
         }, {}, [])("/lib/inflate.js")
     });
+var browser = function() {
+        var e, t = navigator.userAgent,
+            n = t.match(/(opera|chrome|safari|firefox|msie|trident(?=\/))\/?\s*(\d+)/i) || [];
+        return /trident/i.test(n[1]) ? (e = /\brv[ :]+(\d+)/g.exec(t) || [], "IE " + (e[1] || "")) : "Chrome" === n[1] && (e = t.match(/\bOPR\/(\d+)/), null != e) ? "Opera " + e[1] : (n = n[2] ? [n[1], n[2]] : [navigator.appName, navigator.appVersion, "-?"], null != (e = t.match(/version\/(\d+)/i)) && n.splice(1, 1, e[1]), n.join(" "))
+    }(),
+    hasWebGL = function() {
+        if (!window.WebGLRenderingContext) return 0;
+        var e = document.createElement("canvas"),
+            t = e.getContext("webgl");
+        return t || (t = e.getContext("experimental-webgl")) ? 1 : 0
+    }(),
+    mobile = function(e) {
+        return /(android|bb\d+|meego).+mobile|avantgo|bada\/|blazer|compal|elaine|fennec|hiptop|iemobile|ip(hone|od)|iris|kindle|lge |maemo|midp|mmp|mobile.+firefox|netfront|opera m(ob|in)i|palm( os)?|phone|p(ixi|re)\/|plucker|pocket|psp|series(4|6)0|symbian|treo|up\.(browser|link)|vodafone|wap|windows (ce|phone)|xda|xiino/i.test(e) || /1207|6310|6590|3gso|4thp|50[1-6]i|770s|802s|a wa|abac|ac(er|oo|s\-)|ai(ko|rn)|al(av|ca|co)|amoi|an(ex|ny|yw)|aptu|ar(ch|go)|as(te|us)|attw|au(di|\-m|r |s )|avan|be(ck|ll|nq)|bi(lb|rd)|bl(ac|az)|br(e|v)w|bumb|bw\-(n|u)|c55\/|capi|ccwa|cdm\-|cell|chtm|cldc|cmd\-|co(mp|nd)|craw|da(it|ll|ng)|dbte|dc\-s|devi|dica|dmob|do(c|p)o|ds(12|\-d)|el(49|ai)|em(l2|ul)|er(ic|k0)|esl8|ez([4-7]0|os|wa|ze)|fetc|fly(\-|_)|g1 u|g560|gene|gf\-5|g\-mo|go(\.w|od)|gr(ad|un)|haie|hcit|hd\-(m|p|t)|hei\-|hi(pt|ta)|hp( i|ip)|hs\-c|ht(c(\-| |_|a|g|p|s|t)|tp)|hu(aw|tc)|i\-(20|go|ma)|i230|iac( |\-|\/)|ibro|idea|ig01|ikom|im1k|inno|ipaq|iris|ja(t|v)a|jbro|jemu|jigs|kddi|keji|kgt( |\/)|klon|kpt |kwc\-|kyo(c|k)|le(no|xi)|lg( g|\/(k|l|u)|50|54|\-[a-w])|libw|lynx|m1\-w|m3ga|m50\/|ma(te|ui|xo)|mc(01|21|ca)|m\-cr|me(rc|ri)|mi(o8|oa|ts)|mmef|mo(01|02|bi|de|do|t(\-| |o|v)|zz)|mt(50|p1|v )|mwbp|mywa|n10[0-2]|n20[2-3]|n30(0|2)|n50(0|2|5)|n7(0(0|1)|10)|ne((c|m)\-|on|tf|wf|wg|wt)|nok(6|i)|nzph|o2im|op(ti|wv)|oran|owg1|p800|pan(a|d|t)|pdxg|pg(13|\-([1-8]|c))|phil|pire|pl(ay|uc)|pn\-2|po(ck|rt|se)|prox|psio|pt\-g|qa\-a|qc(07|12|21|32|60|\-[2-7]|i\-)|qtek|r380|r600|raks|rim9|ro(ve|zo)|s55\/|sa(ge|ma|mm|ms|ny|va)|sc(01|h\-|oo|p\-)|sdk\/|se(c(\-|0|1)|47|mc|nd|ri)|sgh\-|shar|sie(\-|m)|sk\-0|sl(45|id)|sm(al|ar|b3|it|t5)|so(ft|ny)|sp(01|h\-|v\-|v )|sy(01|mb)|t2(18|50)|t6(00|10|18)|ta(gt|lk)|tcl\-|tdg\-|tel(i|m)|tim\-|t\-mo|to(pl|sh)|ts(70|m\-|m3|m5)|tx\-9|up(\.b|g1|si)|utst|v400|v750|veri|vi(rg|te)|vk(40|5[0-3]|\-v)|vm40|voda|vulc|vx(52|53|60|61|70|80|81|83|85|98)|w3c(\-| )|webc|whit|wi(g |nc|nw)|wmlb|wonu|x700|yas\-|your|zeto|zte\-/i.test(e.substr(0, 4))
+    }(navigator.userAgent || navigator.vendor || window.opera);
+Module.compatibilitycheck ? Module.compatibilitycheck() : CompatibilityCheck();
+var didShowErrorMessage = !1;
+"function" != typeof window.onerror && (window.onerror = function(e, t, n) {
+    return Module.errorhandler && Module.errorhandler(e, t, n) || (console.log("Invoking error handler due to\n" + e), "function" == typeof dump && dump("Invoking error handler due to\n" + e), didShowErrorMessage || -1 != e.indexOf("UnknownError") || -1 != e.indexOf("Program terminated with exit(0)")) ? void 0 : (didShowErrorMessage = !0, -1 != e.indexOf("DISABLE_EXCEPTION_CATCHING") ? void alert("An exception has occured, but exception handling has been disabled in this build. If you are the developer of this content, enable exceptions in your project's WebGL player settings to be able to catch the exception or see the stack trace.") : -1 != e.indexOf("Cannot enlarge memory arrays") ? void alert("Out of memory. If you are the developer of this content, try allocating more memory to your WebGL build in the WebGL player settings.") : -1 != e.indexOf("Invalid array buffer length") || -1 != e.indexOf("Invalid typed array length") || -1 != e.indexOf("out of memory") ? void alert("The browser could not allocate enough memory for the WebGL content. If you are the developer of this content, try allocating less memory to your WebGL build in the WebGL player settings.") : void alert("An error occured running the Unity content on this page. See your browser's JavaScript console for more info. The error was:\n" + e));
+}), Module.locateFile = function(e) {
+    return Module.dataUrl
+}, Module.preRun = [], Module.postRun = [], Module.print = function() {
+    return function(e) {
+        console.log(e)
+    }
+}(), Module.printErr = function(e) {
+    console.error(e)
+}, Module.canvas = document.getElementById("canvas"), Module.progress = null, Module.setStatus = function(e) {
+    if (null == this.progress) {
+        if ("function" != typeof UnityProgress) return;
+        this.progress = new UnityProgress(canvas)
+    }
+    if (Module.setStatus.last || (Module.setStatus.last = {
+            time: Date.now(),
+            text: ""
+        }), e !== Module.setStatus.text) {
+        this.progress.SetMessage(e);
+        var t = e.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
+        t && this.progress.SetProgress(parseInt(t[2]) / parseInt(t[4])), "" === e && this.progress.Clear()
+    }
+}, Module.totalDependencies = 0, Module.monitorRunDependencies = function(e) {
+    this.totalDependencies = Math.max(this.totalDependencies, e), Module.setStatus(e ? "Preparing... (" + (this.totalDependencies - e) + "/" + this.totalDependencies + ")" : "All downloads complete.")
+}, Module.setStatus("Downloading (0.0/1)");
 var Module;
 "undefined" == typeof Module && (Module = eval("(function() { try { return Module || {} } catch(e) { return {} } })()")), Module.expectedDataFileDownloads || (Module.expectedDataFileDownloads = 0, Module.finishedDataFileDownloads = 0), Module.expectedDataFileDownloads++,
     function() {
@@ -1132,7 +1131,7 @@ var Module;
                 function n(n) {
                     Module.finishedDataFileDownloads++, e(n, "Loading data file failed.");
                     var o = new Uint8Array(n);
-                    t.prototype.byteArray = o, t.prototype.requests["/data.unity3d"].onload(), t.prototype.requests["/methods_pointedto_by_uievents.xml"].onload(), t.prototype.requests["/preserved_derived_types.xml"].onload(), t.prototype.requests["/Il2CppData/Metadata/global-metadata.dat"].onload(), t.prototype.requests["/Resources/unity_default_resources"].onload(), t.prototype.requests["/Managed/mono/2.0/machine.config"].onload(), Module.removeRunDependency("datafile_ygg.data")
+                    t.prototype.byteArray = o, t.prototype.requests["/data.unity3d"].onload(), t.prototype.requests["/methods_pointedto_by_uievents.xml"].onload(), t.prototype.requests["/preserved_derived_types.xml"].onload(), t.prototype.requests["/Il2CppData/Metadata/global-metadata.dat"].onload(), t.prototype.requests["/Resources/unity_default_resources"].onload(), t.prototype.requests["/Managed/mono/2.0/machine.config"].onload(), Module.removeRunDependency("datafile_Web.data")
                 }
                 Module.FS_createPath("/", "Il2CppData", !0, !0), Module.FS_createPath("/Il2CppData", "Metadata", !0, !0), Module.FS_createPath("/", "Resources", !0, !0), Module.FS_createPath("/", "Managed", !0, !0), Module.FS_createPath("/Managed", "mono", !0, !0), Module.FS_createPath("/Managed/mono", "2.0", !0, !0), t.prototype = {
                     requests: {},
@@ -1152,7 +1151,7 @@ var Module;
                             t.audio ? Module.removeRunDependency("fp " + t.name) : Module.printErr("Preloading file " + t.name + " failed")
                         }, !1, !0), this.requests[this.name] = null
                     }
-                }, new t(0, 4743573, 0, 0).open("GET", "/data.unity3d"), new t(4743573, 4744329, 0, 0).open("GET", "/methods_pointedto_by_uievents.xml"), new t(4744329, 4747618, 0, 0).open("GET", "/preserved_derived_types.xml"), new t(4747618, 6679066, 0, 0).open("GET", "/Il2CppData/Metadata/global-metadata.dat"), new t(6679066, 7554038, 0, 0).open("GET", "/Resources/unity_default_resources"), new t(7554038, 7581663, 0, 0).open("GET", "/Managed/mono/2.0/machine.config"), Module.addRunDependency("datafile_ygg.data"), Module.preloadResults || (Module.preloadResults = {}), Module.preloadResults[i] = {
+                }, new t(0, 4901903, 0, 0).open("GET", "/data.unity3d"), new t(4901903, 4902372, 0, 0).open("GET", "/methods_pointedto_by_uievents.xml"), new t(4902372, 4905741, 0, 0).open("GET", "/preserved_derived_types.xml"), new t(4905741, 6843369, 0, 0).open("GET", "/Il2CppData/Metadata/global-metadata.dat"), new t(6843369, 7718341, 0, 0).open("GET", "/Resources/unity_default_resources"), new t(7718341, 7745966, 0, 0).open("GET", "/Managed/mono/2.0/machine.config"), Module.addRunDependency("datafile_Web.data"), Module.preloadResults || (Module.preloadResults = {}), Module.preloadResults[i] = {
                     fromCache: !1
                 }, d ? (n(d), d = null) : l = n
             }
@@ -1162,11 +1161,11 @@ var Module;
                 if ("undefined" == typeof location) throw "using preloaded data can only be done on a web page or in a web worker";
                 o = encodeURIComponent(location.pathname.toString().substring(0, location.pathname.toString().lastIndexOf("/")) + "/")
             }
-            var i = "ygg.data",
-                a = "ygg.data";
+            var i = "Web.data",
+                a = "Web.data";
             "function" != typeof Module.locateFilePackage || Module.locateFile || (Module.locateFile = Module.locateFilePackage, Module.printErr("warning: you defined Module.locateFilePackage, that has been renamed to Module.locateFile (using your locateFilePackage for now)"));
             var r = "function" == typeof Module.locateFile ? Module.locateFile(a) : (Module.filePackagePrefixURL || "") + a,
-                s = 7581663,
+                s = 7745966,
                 d = null,
                 l = null;
             fetchRemotePackageWrapper(r, s, function(e) {
