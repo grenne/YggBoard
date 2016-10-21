@@ -21,13 +21,57 @@
     	var totalHabilidades = 0;
         
     	$.each(objJson, function (i, element) {
-        	if (element.documento.classes == "habilidade"){
+			if (localStorage.montacampo && 
+				localStorage.montacategoria && 
+				localStorage.montahabilidade &&
+				localStorage.montaseta
+				){
+				if (element.documento.classes == "area"){
+	            	montaLinhaHabilidade(i, element, objJson);
+	            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
+	            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
+	            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
+		            ++totalHabilidades;
+				}else{
+					if (localStorage.montacampo == "true" && element.documento.classes == "campo"){
+		            	montaLinhaHabilidade(i, element, objJson);
+		            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
+		            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
+		            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
+			            ++totalHabilidades;
+					}else{
+						if (localStorage.montacategoria == "true" && element.documento.classes == "categoria"){
+			            	montaLinhaHabilidade(i, element, objJson);
+			            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
+			            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
+			            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
+				            ++totalHabilidades;
+						}else{
+							if (localStorage.montahabilidade == "true" && element.documento.classes == "habilidade"){
+				            	montaLinhaHabilidade(i, element, objJson);
+				            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
+				            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
+				            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
+					            ++totalHabilidades;
+							}else{
+								if (localStorage.montaseta == "true" && element.documento.type == "edges"){
+					            	montaLinhaHabilidade(i, element, objJson);
+					            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
+					            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
+					            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
+						            ++totalHabilidades;
+								}
+							}
+						}
+					}
+				}
+			}else{
             	montaLinhaHabilidade(i, element, objJson);
             	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
             	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
             	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
 	            ++totalHabilidades;
-        	};
+			};
         });
         
 		$("#qtdeHabilidades").html(totalHabilidades + " habilidades");
@@ -72,6 +116,7 @@
 							'<th data-toggle="true" data-sort-initial="true"></th>' +
 							'<th data-sort-ignore="true"></th>' +
 							'<th data-sort-ignore="true"></th>' +
+							'<th data-sort-ignore="true"></th>' +
 								'<th data-hide="all"></th>' +
 								'<th data-hide="all"></th>' +
 								'<th data-hide="all"></th>' +
@@ -107,7 +152,8 @@
     	habilidade_table_row = 
 			'<tr class="itemHabilidade">' +
 			'<td id="nome_' + i + '"><span class="panel-label" data-tooltip="objetivo"></span>' + element.documento.name + '</td>' +
-			'<td><a id="seiFazerHabilidade_' + i + '" data-tooltip="sei fazer"><i class="fa fa-leanpub"></i></a></td>' +
+			'<td><a id="alterarHabilidade_' + i + '" data-tooltip="sei fazer" href="#habilidadeModal" data-toggle="modal"><i class="fa fa-stack-exchange"></i></a></td>' +
+			'<td><a id="seiFazerHabilidade_' + i + '" data-tooltip="sei fazer" href="#habilidadeModal" data-toggle="modal"><i class="fa fa-leanpub"></i></a></td>' +
 			'<td><a id="queroAprenderHabilidade_' + i + '" data-tooltip="quero aprender"><i class="fa fa-book"></i></a></td>' +
 				'<td ><span class="panel-label">DESCRIÇÃO: </span><br>' + 
 				'<span class="panel-text">' + element.documento.descricao + '</span></td>' + 
@@ -117,6 +163,41 @@
 				'<td>' + cursos + '</td>' +
 			'</tr>';
     	$("#habilidade_tbody" ).append(habilidade_table_row);
+	    $('#queroAprenderHabilidade_' + i).off('click');
+	    $('#queroAprenderHabilidade_' + i).on('click',function(){
+	    });
+	    $('#seiFazerHabilidade_' + i).off('click');
+	    $('#seiFazerHabilidade_' + i).on('click',function(){
+	    	
+	    });
+	    $('#alterarHabilidade_' + i).off('click');
+	    $('#alterarHabilidade_' + i).on('click',function(){
+	    	localStorage.habilidadeExistente = "true";
+	    	$("#diagrama").val(element.documento.diagrama);
+	    	$("#type").val(element.documento.type);
+	    	$("#idHabilidade").val(element.documento.idHabilidade);
+	    	$("#name").val(element.documento.name);
+  			$("#descricao").val(element.documento.descricao);
+			$("#wiki").val(element.documento.wiki);
+			$("#area").val(element.documento.area);
+			$("#campo").val(element.documento.campo);
+			$("#categoria").val(element.documento.categoria);
+			$("#parent").val(element.documento.parent);
+			$("#classes").val(element.documento.classes);
+			$("#weight").val(element.documento.weight);
+			$("#positionX").val(element.documento.positionX);
+			$("#positionY").val(element.documento.positionY);
+			$("#opacity").val(element.documento.opacity);
+			$("#color").val(element.documento.color);
+			$("#shape").val(element.documento.shape);
+			$("#width").val(element.documento.width);
+			$("#lineColor").val(element.documento.lineColor);
+			$("#targetArrowColor").val(element.documento.targetArrowColor);
+			$("#targetArrowShape").val(element.documento.targetArrowShape);
+			$("#source").val(element.documento.source);
+			$("#target").val(element.documento.target);
+			$("#tags").val(stringTags(element.documento.tags));
+	    });
         $('#cursoHabilidadeIn_' + i).bind('click', function () {
         	$(".cursoHabilidade").removeClass("hide");
         	$(".cursoHabilidadeIn").addClass("hide");
@@ -200,4 +281,14 @@
 		}else{
 			montaPerfil(cy, compoeId (element), element);
 		};
+	};
+	
+	function stringTags(tags){
+		var stringTags = "";
+		var virgula = "";
+		$.each( tags, function( i, tag) {
+			stringTags = stringTags + virgula + tag;
+			virgula = ",";
+		});
+		return stringTags;
 	};

@@ -50,7 +50,6 @@
 		$('#userPanel').addClass("hide");
 		$('#tutorial').addClass("hide");
 		$('#unity').removeClass("hide");
-		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
 	});
     // ** ações do menu do user perfil tab interesses
 	$( "#interesse_objetivos_theader_tab" ).on( "click", function() {
@@ -113,11 +112,13 @@
 //		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_theader");
 //	});
 
-	 function GetJson (Json) {
-		    alert(Json);
+	function GetJson (Json) {
+	    alert(Json);
 	};
-	 function gravaDiagrama (){
-		
+	function UnityIsLoaded (msg) {
+		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
+	};
+	function gravaDiagrama (){
 		var objJson = JSON.parse(localStorage.getItem("elements"));
 		
 		$.each( objJson, function( i, element ) {
@@ -144,18 +145,80 @@
 							};
 
 		var x = -2000;
-		
+		var jsonPos = [];
+		$.each(elementos, function( i, element ) {
+			var position = {
+					positionX:element.documento.positionX,
+					positionY:element.documento.positionY,
+					width:0,
+					weight:0,
+					elementos:0,
+					elemento:0
+				};
+			jsonPos.push(position);
+		});
+		$.each(elementos, function( i, element ) {
+			$.each(elementos, function( w, elementParent){
+				if (element.documento.parent == elementParent.documento.idHabilidade){
+					jsonPos[w].elementos = jsonPos[w].elementos + 1;					
+				};
+			});
+		});
 		$.each(elementos, function( i, element ) {
 			var type = 1;
-			if (element.documento.classes == "area" | 
-				element.documento.classes == "campo" |
-				element.documento.classes == "categoria"){
+			maxfade = 0.0;
+			minfade = -0.1;
+			width = element.documento.width;
+			height = element.documento.weight;
+			if (element.documento.classes == "area"){ 
 				type = 0;
+				if (!width){
+					width = 2000;
+					height = 2000;
+				};
+			};
+			if (element.documento.classes == "campo"){ 
+				type = 0;
+				maxfade = 0.7;
+				minfade = 0.6;
+				if (!width){
+					width = 1000;
+					height = 1000;
+				};
+				if (localStorage.calculacampo == "true"){
+					$.each(elementos, function( w, elementParent){
+						if (element.documento.parent == elementParent.documento.idHabilidade){
+							element.documento.positionY == jsonPos[w].positionY;
+							jsonPos[w].positionX = jsonPos[w].positionY + 1100;
+							jsonPos[w].weight = jsonPos[w].weight + 1100;
+							jsonPos[w].elemento = jsonPos[w].elemento + 1;
+							var coluna = (jsonPos[w].elementos / jsonPos[w].elemento).toFixed(0);
+							
+							********************calcular a coluna
+							
+							
+							
+							element.documento.positionX == jsonPos[w].positionX * coluna;
+							jsonPos[w].positionX = jsonPos[w].positionY + 1100;
+							jsonPos[w].width = jsonPos[w].width + 1100;
+							elementos[w].documento.width = jsonPos[w].width;
+							elementos[w].documento.weight = jsonPos[w].weight;
+							jsonPos[w].elemento = jsonPos[w].elemento + 1;
+						};
+					});
+				};
+			};
+			if (element.documento.classes == "categoria"){ 
+				type = 0;
+				if (!width){
+					width = 500;
+					height = 500;
+				};
 			};
 			if (element.documento.type == "edges" ){
 				element.documento.name = "seta"
 				type = 2;
-			}else{
+			}
 			var jsonElement = 
 			{
 				id : element.documento.idHabilidade,
@@ -169,12 +232,12 @@
 				parent : element.documento.parent,
 				positionX : element.documento.positionX,
 				positionY : element.documento.positionY,
-				width : element.documento.width,
-				height : element.documento.height,
-				targetX : element.documento.target,
+				width : width,
+				height : height,
+				targetX : element.documento.source,
 				targetY: element.documento.target,
-				FadeMax:0,
-				FadeMin:-0.1,
+				FadeMax:maxfade,
+				FadeMin:minfade,
 				FadeReverse:false,
 				tags:[],
 				have:0,
@@ -183,8 +246,32 @@
 			$.each(element.documento.tags, function(w, tag) {
 				jsonElement.tags.push(tag);
 			});
-			jsonYggmap.data.push(jsonElement);
-			x = x + 100;
+			if (localStorage.montacampo && 
+				localStorage.montacategoria && 
+				localStorage.montahabilidade &&
+				localStorage.montaseta
+				){
+				if (element.documento.classes == "area"){
+					jsonYggmap.data.push(jsonElement);
+				}else{
+					if (localStorage.montacampo == "true" && element.documento.classes == "campo"){
+						jsonYggmap.data.push(jsonElement);
+					}else{
+						if (localStorage.montacategoria == "true" && element.documento.classes == "categoria"){
+							jsonYggmap.data.push(jsonElement);
+						}else{
+							if (localStorage.montahabilidade == "true" && element.documento.classes == "habilidade"){
+								jsonYggmap.data.push(jsonElement);
+							}else{
+								if (localStorage.montaseta == "true" && element.documento.type == "edges"){
+									jsonYggmap.data.push(jsonElement);
+								}
+							}
+						}
+					}
+				}
+			}else{
+				jsonYggmap.data.push(jsonElement);
 			};
 		});
 		localStorage.setItem("jsonYggmap", JSON.stringify(jsonYggmap));

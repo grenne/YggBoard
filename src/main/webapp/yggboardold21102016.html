@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en-us">
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />        
+        <title>YggBoard</title>
+
+		<!--unify-->
+	    <link rel="stylesheet" href="TemplateData/style.css">
+	    <link rel="shortcut icon" href="TemplateData/favicon.ico" />
+
+        <link rel="icon" href="img/icone-arvore.png">
+        <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+        <link href="css/sistema.css" rel="stylesheet" media="screen">
+        <link href="css/responsivo.css" rel="stylesheet" media="screen">
+         
+	    <!--FooTable [ OPTIONAL ]-->
+	    <link href="plugins/fooTable/css/footable.core.css" rel="stylesheet">
+
+       <!--
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" media="screen"> 
+     -->
+	    <!--Font Awesome [ OPTIONAL ]-->
+   		 <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
+		<!--yggboard-->
+		<link rel="stylesheet" type="text/css" href="css/yggboard.css"  />
+   		 
+   		 
+        <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+        <![endif]--> 
+  </head>
+    
+  <body class="template">
+   
+    <header>
+    	<div class="container">	
+        	<h1 class="pull-left">YggBoard</h1>
+			<ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="imagem-user"><img src="img/user.png" width="45" height="45" class="img-circle"></span> 
+                        <span class="userName"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    	<li><a href=""><i class="fa fa-user"></i>Meu perfil</a></li>
+                    	<li><a href=""><i class="fa fa-cog"></i>Configurações</a></li>
+                        <li class="divider"></li>
+						<li><a href=""><i class="fa fa-sign-out"></i>Sair</a></li>
+                    </ul>
+                </li>
+            </ul>        
+    	</div>
+    </header>
+    
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li class=""><a id="closePainel" href="#" ><i class="fa fa-home"></i>Início</a></li>
+                <li class=""><a id="openUserPainel" href="#" ><i class="fa fa-puzzle-piece"></i>Painel</a></li>
+                <li class=""><a id="openTutorial" href="#"><i class="fa fa-info-circle"></i>Tutorial</a></li>
+                 <li><a id="carregaHabilidadesTotal"  href="#" class="hide tools">C. Habilidades</a></li>
+                 <li><a id="carregaCarreirasTotal"  href="#" class="hide tools">C. Carreiras</a></li>
+                 <li><a id="carregaCursosTotal"  href="#" class="hide tools">C. Cursos</a></li>
+                 <li ><a id="gravaDiagrama"  href="#" class="hide tools">Grava Diagrama</a></li>
+                 <li ><a id="auxiliamontagemdiagrama"  href="#" class="hide tools">Aux. Posicionamento</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    
+    <section id="nome-pagina">
+    	<div class="container">
+    		<h2>Dashboard</h2>
+            <div class="busca-geral pull-right">
+				<div class="input-group">
+                    <input type="text" class=" form-control" placeholder="Procure por algo..." />
+                    <span class="input-group-btn">
+                        <button class="btn btn-busca" type="button">
+                            <span class=" glyphicon glyphicon-search"></span>
+                        </button>
+                    </span>
+                </div>            
+            </div>
+    	</div>
+    </section>
+    
+    <section id="conteudo">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-md-8">
+                  	<div id="userPanel" class="user-panel col-md-12 hide">
+                       	<div class="box-user-name ">
+                       		<span id="completeName" class="completeName"></span>
+                       	</div>
+                       	<div class="box-text-user-panel">
+                       		<span id="text-user-panel" class="text-user-panel">
+                       		Nesta seção voçe poderá determinar seus interesses e objetivos. Escolha um dos itens clicando abaixo. Em caso de dúvida, consulte nosso tutorial.
+                       		</span>
+                       	</div>
+                        <div id="tabs" class="box-user-tabs">	
+                        	<ul class="nav nav-tabs nav-user-panel">
+                            	<li class="tab-user-panel" id="interesses_theader_tab"><a  href="#interesses_theader" data-toggle="tab">Interesses</a></li>
+                                <li class="tab-user-panel" id="conquistas_theader_tab"><a href="#conquistas_theader" data-toggle="tab">Conquistas</a></li>                               
+                            </ul>
+                        	<div class="tab-content">
+                            	<div class="tab-pane active-user-panel" id="interesses_theader">
+		                        	<ul class="nav nav-tabs nav-user-panel nav-user-interesse">
+		                            	<li class="tab-user-panel-interesse" id="interesse_objetivos_theader_tab"><a  href="#interesse_objetivos_theader" data-toggle="tab" ><i class="fa fa-list-ul"></i> Objetivos</a></li>
+		                                <li class="tab-user-panel-interesse" id="interesse_habilidades_theader_tab"><a href="#interesse_habilidades_theader" data-toggle="tab" ><i class="fa fa-wrench"></i> Habilidades</a></li>
+		                            	<li class="tab-user-panel-interesse" id="interesse_cursos_theader_tab"><a href="#interesse_cursos_theader" data-toggle="tab" ><i class="fa fa-mortar-board"></i> Cursos</a></li>
+		                                <li class="tab-user-panel-interesse" id="interesse_premios_theader_tab"><a href="#interesse_premios_theader" data-toggle="tab" ><i class="fa fa-trophy"></i> Premios</a></li>
+		                            </ul>					
+                        			<div class="tab-content" >
+		                            	<div class="tab-pane" id="interesse_objetivos_theader">
+											<div id="carreiras_user_perfil_theader" class="panel-body ">
+											</div>
+		                                </div>
+		                            	<div class="tab-pane" id="interesse_habilidades_theader">
+											<div id="habilidades_user_perfil_theader" class="panel-body ">
+											</div>
+		                                </div>
+		                            	<div class="tab-pane" id="interesse_cursos_theader">
+											<div id="cursos_user_perfil_theader" class="panel-body ">
+											</div>		
+		                                </div>
+		                            	<div class="tab-pane" id="interesse_premios_theader">
+		
+		                                </div>
+		                        	</div>
+                                </div>
+                            	<div class="tab-pane" id="conquistas_theader">
+  		                        	<ul class="nav nav-tabs nav-user-panel nav-user-conquista">
+		                            	<li class="tab-user-panel-conquista" id="conquista_objetivos_theader_tab"><a  href="#conquista_objetivos_theader" data-toggle="tab"><i class="fa fa-list-ul"></i> Objetivos</a></li>
+		                                <li class="tab-user-panel-conquista" id="conquista_habilidades_theader_tab"><a href="#conquista_habilidades_theader" data-toggle="tab"><i class="fa fa-wrench"></i> Habilidades</a></li>
+		                            	<li class="tab-user-panel-conquista" id="conquista_cursos_theader_tab"><a href="#conquista_cursos_theader" data-toggle="tab"><i class="fa fa-mortar-board"></i> Cursos</a></li>
+		                                <li class="tab-user-panel-conquista" id="conquista_premios_theader_tab"><a href="#conquista_premios_theader" data-toggle="tab"><i class="fa fa-trophy"></i> Premios</a></li>
+		                            </ul>					
+                        			<div class="tab-content">
+		                            	<div class="tab-pane" id="conquista_objetivos_theader">
+		
+		                                </div>
+		                            	<div class="tab-pane" id="conquista_habilidades_theader">
+		
+		                                </div>
+		                            	<div class="tab-pane" id="conquista_cursos_theader">
+		
+		                                </div>
+		                            	<div class="tab-pane" id="conquista_premios_theader">
+		
+		                                </div>
+		                       		</div>
+	                            </div>
+                        	</div>
+						</div>                    
+                	</div><!--user panel-->
+					<div id="unity" class=" col-md-12 row">
+					    <div class="template-wrap clear ">
+					      <canvas class="emscripten" id="canvas" oncontextmenu="event.preventDefault()" height="450px" width="720px"></canvas>
+					      <br>
+					      <div class="fullscreen"><img src="TemplateData/fullscreen.png" width="38" height="38" alt="Fullscreen" title="Fullscreen" onclick="SetFullscreen(1);" /></div>
+					    </div>
+					</div>
+				</div>
+            	<div class="col-md-4">
+                	<div class="box-direita">
+                    
+                        <div id="tabs">	
+                        	<ul class="nav nav-tabs">
+                            	<li class="active" id="carreira_theader_tab"><a  href="#carreira_theader" data-toggle="tab"><h4>Objetivos</h4></a></li>
+                                <li id="habilidade_theader_tab"><a href="#habilidade_theader" data-toggle="tab"><h4>Habilidades</h4></a></li>
+                            </ul>
+                            <div class="area-filtro">
+                            	<div class="numero-filtrado numero-objetivos">
+                            		<span id="qtdeObjetivos" class="badge"></span>
+                            		<button id="filterObjetivo" class="icon-filter"><i class="fa fa-filter"></i></button>
+                            	</div>
+                            	<div class="numero-filtrado numero-habilidades hide">
+                            		<span id="qtdeHabilidades" class="badge"></span>
+                            		<button id="filterHabilidade" class="icon-filter"><i class="fa fa-filter"></i></button>
+                            	</div>
+                            </div>
+                        	<div class="tab-content">
+                            	<div class="tab-pane active" id="carreira_theader">
+									<div class="filtro-carreira hide" id="filtro-carreira">
+										<div class="form-group">
+											<input id="searchCarreiras" type="text" placeholder="Search" class="form-control" autocomplete="on">
+										</div>
+										<a class="btn btn-primary" data-toggle="collapse" href="#filtro-industria-list" aria-expanded="false" aria-controls="filtro-industria-list">
+    										Indústria
+  										</a>
+										<ul id="filtro-industria-list" class="list-group collapse" >
+										</ul>									
+									</div>
+                                </div>
+                            	<div class="tab-pane" id="habilidade_theader">
+									<div class="filtro-habilidade hide" id="filtro-habilidade">
+										<div class="form-group">
+											<input id="searchHabilidades" type="text" placeholder="Search" class="form-control" autocomplete="on">
+										</div>
+										<a class="btn btn-primary" data-toggle="collapse" href="#filtro-area-list" aria-expanded="false" aria-controls="filtro-area-list">
+    										Área
+  										</a>
+										<ul id="filtro-area-list" class="list-group collapse" >
+										</ul><br>									
+										<a class="btn btn-primary" data-toggle="collapse" href="#filtro-campo-list" aria-expanded="false" aria-controls="filtro-campo-list">
+    										Campo
+  										</a>
+										<ul id="filtro-campo-list" class="list-group collapse" >
+										</ul><br>									
+										<a class="btn btn-primary" data-toggle="collapse" href="#filtro-categoria-list" aria-expanded="false" aria-controls="filtro-categoria-list">
+    										Categoria
+  										</a>
+										<ul id="filtro-categoria-list" class="list-group collapse" >
+										</ul>									
+									</div>
+                                </div>
+                        	</div>
+						</div>
+                    
+                	</div><!--box-direita-->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--jQuery [ REQUIRED ]-->
+    <script src="js/jquery-2.2.4.min.js"></script>
+
+    <!--BootstrapJS [ RECOMMENDED ]-->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!--FooTable [ OPTIONAL ]-->
+    <script src="plugins/fooTable/dist/footable.all.min.js"></script>
+
+    <!--rest commands-->
+    <script src="js/rest_commands.js"></script>
+
+	<!--DataTables -->
+	<script src="js-datatables/carreiras.js"></script>
+	<script src="js-datatables/cursos.js"></script>
+	<script src="js-datatables/habilidades.js"></script>
+	<script src="js-datatables/carreiras-user-perfil.js"></script>
+	<script src="js-datatables/habilidades-user-perfil.js"></script>
+	<script src="js-datatables/cursos-habilidade-user-perfil.js"></script>
+	<script src="js-datatables/cursos-user-perfil.js"></script>  
+
+
+    <!--Yggboard-->
+    <script src="js/main.js"></script>
+    <script src="js/commons.js"></script>
+    <script src="js/carrega-base-dados.js"></script>
+    <script src="js/yggboard.js"></script>
+    <script src="js/meuPerfil.js"></script>
+    <script type='text/javascript'>
+		  var Module = {
+		   TOTAL_MEMORY: 268435456,
+		    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+		    compatibilitycheck: null,
+		    dataUrl: "Release/ygg.data",
+		    codeUrl: "Release/ygg.js",
+		    memUrl: "Release/ygg.mem",
+		  };
+	</script>
+    <!--unify-->
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="Release/UnityLoader.js"></script>
+  </body>
+</html>

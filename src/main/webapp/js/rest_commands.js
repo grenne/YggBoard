@@ -217,7 +217,7 @@
     	})
     	.always(function(data) {
         	if (data.status == 200) {
-        		action_ok ("Student updated", afterUpdate);
+        		action_ok ("", afterUpdate);
         	}else{
         		action_not_ok()
         	};

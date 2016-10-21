@@ -763,6 +763,12 @@ section#conteudo .nav > li > a {
 
 .unity{
 }
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; } /* Firefox 18- */
+input:focus::-moz-placeholder { color:transparent; } /* Firefox 19+ */
+input:focus:-ms-input-placeholder { color:transparent; } /* oldIE ;) */
+
 /* 
   <p><a href="#" data-tooltip="Iâ€™m the tooltip text.">Iâ€™m a link with a tooltip.</a></p>
 

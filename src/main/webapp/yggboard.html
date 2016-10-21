@@ -36,8 +36,7 @@
         <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
         <![endif]--> 
   </head>
-    
-  <body class="template">
+  <body class="">
    
     <header>
     	<div class="container">	
@@ -70,6 +69,7 @@
                  <li><a id="carregaCursosTotal"  href="#" class="hide tools">C. Cursos</a></li>
                  <li ><a id="gravaDiagrama"  href="#" class="hide tools">Grava Diagrama</a></li>
                  <li ><a id="auxiliamontagemdiagrama"  href="#" class="hide tools">Aux. Posicionamento</a></li>
+                 <li ><a id="testeClick"  href="#" class="hide tools">Teste clique</a></li>
             </ul>
         </div>
     </nav>
@@ -170,7 +170,57 @@
 				</div>
             	<div class="col-md-4">
                 	<div class="box-direita">
-                    
+				        <div class="row auxiliamontagemdiagrama hide">
+				            <div class="col-sm-6 col-lg-12 ">
+				                <div id="montagem" class="panel panel-mint panel-colorful panel-body">
+						            <div class="panel-heading ">
+						                <h3 class="panel-title">Auxilia montagem diagrama</h3>
+						            </div>
+					                <div class="form-group pad-ver">
+					                    <label class="col-md-3 control-label">Carregar</label>
+					                    <div class="col-md-9">
+					                        <div class="checkbox">
+					                            <input id="cargaCampos" class="magic-checkbox" type="checkbox" checked>
+					                            <label for="cargaCampos">Campos</label>
+					                        </div>
+					                        <div class="checkbox">
+					                            <input id=cargaCategorias class="magic-checkbox" type="checkbox" checked>
+					                            <label for="cargaCategorias">Categorias</label>
+					                        </div>
+					                        <div class="checkbox">
+					                            <input id="cargaHabilidades" class="magic-checkbox" type="checkbox" checked>
+					                            <label for="cargaHabilidades">Habilidades</label>
+					                        </div>
+					                        <div class="checkbox">
+					                            <input id="cargaSetas" class="magic-checkbox" type="checkbox" checked>
+					                            <label for="cargaSetas">Setas</label>
+					                        </div>
+					                    </div>
+									</div>
+					                <div class="form-group pad-ver">
+					                    <label class="col-md-3 control-label">Calcular</label>
+					                    <div class="col-md-9">
+					                        <div class="checkbox">
+					                            <input id="calculaPosicao" class="magic-checkbox" type="checkbox">
+					                            <label for="calculaPosicao">Calcula as posições</label>
+					                        </div>
+					                        <div class="checkbox">
+					                            <input id="calculaCampos" class="magic-checkbox" type="checkbox">
+					                            <label for="calculaCampos">Campos</label>
+					                        </div>
+					                        <div class="checkbox">
+					                            <input id="calculaCategorias" class="magic-checkbox" type="checkbox">
+					                            <label for="calculaCategorias">Categorias</label>
+					                        </div>						
+					                        <div class="checkbox">
+					                            <input id="calculaHabilidades" class="magic-checkbox" type="checkbox">
+					                            <label for="calculaHabilidades">Habilidades</label>
+					                        </div>
+					                    </div>
+					                </div>
+					        	</div>
+						    </div>
+				        </div>                
                         <div id="tabs">	
                         	<ul class="nav nav-tabs">
                             	<li class="active" id="carreira_theader_tab"><a  href="#carreira_theader" data-toggle="tab"><h4>Objetivos</h4></a></li>
@@ -229,14 +279,106 @@
             </div>
         </div>
     </section>
+	<!-- Modal -->
+	<div class="modal fade" id="habilidadeModal" tabindex="-1" role="dialog" aria-labelledby="habilidadeModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">
+						&times;
+					</button>
+					<h4 class="modal-title" id="habilidadeModalLabel"></h4>
+				</div>
+				<div class="modal-body">
+						<div class="row">
+							<div class="col-md-11">
+								<form id="habilidadeModal-form" class="smart-form" novalidate="novalidate">
+									<div>
+										<div class="row">
+											<div class="col-md-1"></div>
+											<div class="col-md-11">
+												<label for="name">Nome</label>
+												<input id="name" name="name" type="text" class="" value="" placeholder=""/>
+												<input id="diagrama" name="diagrama" type="text" class="form-control hide"/>
+												<input id="type" name="type" type="text" class="form-control hide"/>
+												<input id="idHabilidade" name="idHabilidade" type="text" class="form-control hide"/>
+												<input id="wiki" name="wiki" type="text" class="form-control hide"/>
+												<input id="area" name="area" type="text" class="form-control hide"/>
+												<input id="campo" name="campo" type="text" class="form-control hide"/>
+												<input id="categoria" name="categoria" type="text" class="form-control hide"/>
+												<input id="parent" name="parent" type="text" class="form-control hide"/>
+												<input id="classes" name="classes" type="text" class="form-control hide"/>
+												<input id="opacity" name="opacity" type="text" class="form-control hide"/>
+												<input id="color" name="color" type="text" class="form-control hide"/>
+												<input id="shape" name="shape" type="text" class="form-control hide"/>
+												<input id="lineColor" name="lineColor" type="text" class="form-control hide"/>
+												<input id="targetArrowColor" name="targetArrowColor" type="text" class="form-control hide"/>
+												<input id="targetArrowShape" name="targetArrowShape" type="text" class="form-control hide"/>
+												<input id="source" name="source" type="text" class="form-control hide"/>
+												<input id="target" name="target" type="text" class="form-control hide"/>
+												<input id="tags" name="tags" type="text" class="form-control hide"/>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-1"></div>
+											<div class="col-md-11">
+												<label for="descricao">Descrição</label>
+												<textarea id="descricao" name="descricao" rows="2" cols="50" class="form-control" value="" placeholder="" required ></textarea>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-1"></div>
+											<div class="col-md-5">
+												<label for="positionX">X</label>
+												<input id="positionX" name="positionX" type="text" class="form-control" value="" placeholder="" required />
+											</div>
+											<div class="col-md-1"></div>
+											<div class="col-md-5">
+												<label for="positionY">Y</label>
+												<input id="positionY" name="positionY" type="text" class="form-control" value="" placeholder="" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-1"></div>
+											<div class="col-md-5">
+												<label for="width">Largura</label>
+												<input id=""width"" name=""width"" type="text" class="form-control" value="" placeholder="" />
+											</div>
+											<div class="col-md-1"></div>
+											<div class="col-md-5">
+												<label for="weight">Altura</label>
+												<input id="weight" name="weight" type="text" class="form-control" value="" placeholder="" />
+											</div>
+										</div>
+										<br><br>
+										<div class="modal-footer col-md-10">
+											<button type="submit" class="btn btn-primary">Submit</button>
+											<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+										</div>
+									</div>
+								</form>
+								<br><br>
+							</div>
+						</div>
+				</div>
+			</div><!-- /.modal-content -->
+		</div><!-- /.modal-dialog -->
+	</div><!-- /.modal -->
+
     <!--jQuery [ REQUIRED ]-->
     <script src="js/jquery-2.2.4.min.js"></script>
 
-    <!--BootstrapJS [ RECOMMENDED ]-->
+    <!--BootstrapJS -->
     <script src="js/bootstrap.min.js"></script>
     
-    <!--FooTable [ OPTIONAL ]-->
+    <!--FooTable -->
     <script src="plugins/fooTable/dist/footable.all.min.js"></script>
+
+    <!--Validate -->
+    <script src="jquery-validate/jquery.validate.min.js"></script>
+
+	<!-- CUSTOM NOTIFICATION -->
+	<script src="js-notification/SmartNotification.min.js"></script>
 
     <!--rest commands-->
     <script src="js/rest_commands.js"></script>
@@ -250,25 +392,29 @@
 	<script src="js-datatables/cursos-habilidade-user-perfil.js"></script>
 	<script src="js-datatables/cursos-user-perfil.js"></script>  
 
-
     <!--Yggboard-->
     <script src="js/main.js"></script>
     <script src="js/commons.js"></script>
     <script src="js/carrega-base-dados.js"></script>
     <script src="js/yggboard.js"></script>
     <script src="js/meuPerfil.js"></script>
+    <script src="js/habilidade-input.js"></script>
+
     <script type='text/javascript'>
-		  var Module = {
-		   TOTAL_MEMORY: 268435456,
-		    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
-		    compatibilitycheck: null,
-		    dataUrl: "Release/ygg.data",
-		    codeUrl: "Release/ygg.js",
-		    memUrl: "Release/ygg.mem",
-		  };
+	  var Module = {
+	    TOTAL_MEMORY: 268435456,
+	    errorhandler: null,			// arguments: err, url, line. This function must return 'true' if the error is handled, otherwise 'false'
+	    compatibilitycheck: null,
+	    dataUrl: "Release/Web.data",
+	    codeUrl: "Release/Web.js",
+	    memUrl: "Release/Web.mem",
+	    
+	  };
+	  
 	</script>
-    <!--unify-->
-    <script src="TemplateData/UnityProgress.js"></script>
-    <script src="Release/UnityLoader.js"></script>
+ 
+	<script src="TemplateData/UnityProgress.js"></script>
+	<script src="Release/UnityLoader.js"></script>
+
   </body>
 </html>
