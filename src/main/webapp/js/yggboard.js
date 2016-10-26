@@ -194,7 +194,7 @@
 							jsonPos[w].elemento = jsonPos[w].elemento + 1;
 							var coluna = (jsonPos[w].elementos / jsonPos[w].elemento).toFixed(0);
 							
-							********************calcular a coluna
+//							********************calcular a coluna
 							
 							
 							
