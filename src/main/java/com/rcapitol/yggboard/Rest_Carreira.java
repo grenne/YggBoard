@@ -156,7 +156,7 @@ public class Rest_Carreira {
 				    jsonDocumento.put("salarioMaximo", jsonObject.get("salarioMaximo"));
 				    jsonDocumento.put("funcao", jsonObject.get("funcao"));
 				    jsonDocumento.put("necessarios", jsonObject.get("necessarios")); 
-				    jsonDocumento.put("recomentados", jsonObject.get("recomentados"));
+				    jsonDocumento.put("recomendados", jsonObject.get("recomentados"));
 				    jsonDocumento.put("tags", jsonObject.get("tags"));
 			    	ArrayList arrayListNecessarios = new ArrayList(); 
 			    	arrayListNecessarios = (ArrayList) jsonObject.get("necessarios");
@@ -180,6 +180,28 @@ public class Rest_Carreira {
 						++w;
 					};
 					jsonDocumento.put("arrayNecessarios", necessariosArray);
+			    	ArrayList arrayListRecomendados = new ArrayList(); 
+			    	arrayListRecomendados = (ArrayList) jsonObject.get("recomendados");
+			    	Object arrayRecomendados[] = arrayListRecomendados.toArray(); 
+					w = 0;
+					JSONArray recomendadosArray = new JSONArray();
+					while (w < arrayRecomendados.length) {
+						Mongo mongoHabilidade = new Mongo();
+						DB dbHabilidade = (DB) mongoHabilidade.getDB("documento");
+						DBCollection collectionHabilidade = dbHabilidade.getCollection("habilidades");
+						BasicDBObject searchQueryHabilidade = new BasicDBObject("documento.idHabilidade", arrayRecomendados[w]);
+						DBObject cursorHabilidade = collectionHabilidade.findOne(searchQueryHabilidade);
+						if (cursorHabilidade != null){
+							BasicDBObject obj = (BasicDBObject) cursorHabilidade.get("documento");
+							JSONObject jsonRecomendados = new JSONObject();
+							jsonRecomendados.put("idHabilidade", arrayRecomendados[w]);
+							jsonRecomendados.put("name", obj.get("name"));
+							recomendadosArray.add (jsonRecomendados);
+						}
+						mongoHabilidade.close();
+						++w;
+					};
+					jsonDocumento.put("arrayRecomendados", recomendadosArray);
 					documentos.add(jsonDocumento);
 				} catch (ParseException e) {
 					e.printStackTrace();

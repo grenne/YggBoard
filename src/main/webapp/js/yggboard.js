@@ -255,7 +255,7 @@
 				FadeReverse : false,
 				tags:[],
 				have:verificaPossuiHabilidade(element.documento.idHabilidade),
-				states:verificaTemInteresseHabilidade(element.documento.idHabilidade)
+				States: 2,
 			};
 			$.each(element.documento.tags, function(w, tag) {
 				jsonElement.tags.push(tag);

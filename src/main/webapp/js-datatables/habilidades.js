@@ -96,7 +96,7 @@
 				$('#searchHabilidades').off('input');
 				$('#searchHabilidades').on('input', function (e) {
 					e.preventDefault();
-					carreira_table.trigger('footable_filter', {filter: $(this).val()});
+					habilidade_table.trigger('footable_filter', {filter: $(this).val()});
 				});
 			}else{
 				$('#searchHabilidades').off('input');

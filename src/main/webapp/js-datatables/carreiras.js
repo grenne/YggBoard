@@ -148,9 +148,14 @@
 	};	
 function montaLinhaCarreira (i, carreira){
 	var habilidades = "";
-	$.each(carreira.arrayNecessarios, function (i, habilidade){
+	$.each(carreira.arrayNecessarios, function (w, habilidade){
 		habilidades = habilidades +
-		'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide habilidadeCarreira_' + i + '" data-idHabilidade="' + habilidade.idHabilidade + '">- ' + habilidade.name + '</span>';
+		'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide habilidadeNecessariaCarreira_' + i + '" data-idHabilidade="' + habilidade.idHabilidade + '">- ' + habilidade.name + '</span>';
+	});
+	var habilidadesRecomendados = "";
+	$.each(carreira.arrayRecomendados, function (w, habilidade){
+		habilidadesRecomendados = habilidadesRecomendados +
+		'<span class="hide habilidadeRecomendadaCarreira_' + i + '" data-idHabilidade="' + habilidade.idHabilidade + '"></span>';
 	});
 	carreira_table_row = 
 		'<tr id="itemCarreira_' + i + '" class="itemCarreira" data-nome-industria="' + carreira.industria + '">' +
@@ -167,18 +172,25 @@ function montaLinhaCarreira (i, carreira){
 				'<span class="panel-text">' + carreira.tarefas + '</span></td>' +
 				'<td><br><button id="habilidadeCarreiraIn_' + i + '" class="panel-button-carreira habilidadeCarreiraIn"><i class="fa fa-chevron-down icon-check-carreira"></i><span>lista de habilidades</span></button>' +
 				'<button id="habilidadeCarreiraOff_' + i + '" class="panel-button-carreira habilidadeCarreira hide"><i class="fa fa-chevron-up icon-check-carreira"></i><span>lista de habilidades</span></button></td>' +
-				'<td>' + habilidades + '</td>' +
+				'<td>' + habilidades + habilidadesRecomendados + '</td>' +
 		'</tr>';
 	$("#carreira_tbody").append(carreira_table_row);
 
 	$('#comparar_' + i).off('click');
     $('#comparar_' + i).on('click',function(){
     	var objJson = JSON.parse(localStorage.getItem("jsonYggmap"));
-		$.each( objJson.data, function(i, element ) {
-			objJson.data[i].states = 0;
-	    	$('.habilidadeCarreira_' + i).each(function( w ) {
-	    		  if ($(this).attr('idHabilidade') == element.id){
-	    			  objJson.data[i].states = 1;
+		$.each( objJson.data, function(w, element ) {
+			objJson.data[w].states = 0;
+	    	$('.habilidadeNecessariaCarreira_' + i).each(function( z ) {
+	    		  if ($(this).attr('data-idhabilidade') == element.id){
+	  	    		console.log ("comparacao necessaria - " + $(this).attr('data-idhabilidade') + " - " + element.id)
+	    			  objJson.data[w].have = 1;
+	    		  };
+	    	});
+	    	$('.habilidadeRecomendadaCarreira_' + i).each(function( z ) {
+	    		  if ($(this).attr('data-idhabilidade') == element.id){
+	  	    		console.log ("comparacao recomendada - " + $(this).attr('data-idhabilidade') + " - " + element.id)
+	    			  objJson.data[w].have = 2;
 	    		  };
 	    	});
 		});
