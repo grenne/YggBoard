@@ -2,7 +2,7 @@
  * 
  */
     
-    function rest_obterHabilidades(action_ok, var1, var2) {
+    function rest_obterHabilidades(action_ok, action_not_ok, var1, var2) {
     	$.ajax({
 	        url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/lista?diagrama=habilidades",
             contentType: "application/json; charset=utf-8",
@@ -50,7 +50,7 @@
     	});
     };
 
-    function rest_obterCarreiras(action_ok, cy) {
+    function rest_obterCarreiras(action_ok, action_not_ok, var1, var2) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/carreiras/lista",
             contentType: "application/json; charset=utf-8",

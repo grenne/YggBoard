@@ -8,7 +8,7 @@
 	 * 	carrega lista de carreiras
 	 */
 	var cy = "";
-	rest_obterCarreiras(carregaCarreiras, cy)
+	rest_obterCarreiras(carregaCarreiras, semAcao);
 		
 	function carregaCarreiras (objJson, cy) {
 		$("#qtdeObjetivos").html(objJson.length + " objetivos");

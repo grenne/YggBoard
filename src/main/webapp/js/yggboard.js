@@ -148,6 +148,14 @@
 							"positionX" : parseFloat(localStorage.positionX),
 							"positionY" : parseFloat(localStorage.positionY),
 							"StartZoom" : parseFloat(localStorage.startZoom),
+							"animationStartArea" : parseFloat(localStorage.animationStartArea),
+							"animationEndArea" : parseFloat(localStorage.animationEndArea),
+							"animationStartCampo" : parseFloat(localStorage.animationStartCampo),
+							"animationEndCampo" : parseFloat(localStorage.animationEndCampo),
+							"animationStartCategoria" : parseFloat(localStorage.animationStartCategoria),
+							"animationEndCategoria" : parseFloat(localStorage.animationEndCategoria),
+							"animationStartHabilidade" : parseFloat(localStorage.animationStartHabilidade),
+							"animationEndHabilidade" : parseFloat(localStorage.animationEndHabilidade),
 							"data" : []
 							};
 
@@ -664,6 +672,94 @@
 		};
 		$("#maxFadeHabilidade" ).on( "blur", function() {
 			localStorage.maxFadeHabilidade = $("#maxFadeHabilidade" ).val();
+		});		
+		if (!localStorage.minFadeSeta){
+			localStorage.minFadeSeta = 0.6;
+		}else{
+			$("#minFadeSeta").val(localStorage.minFadeSeta)
+		};
+		$("#minFadeSeta" ).on( "blur", function() {
+			localStorage.minFadeSeta = $("#minFadeSeta" ).val();
+		});		
+		if (!localStorage.maxFadeSeta){
+			localStorage.maxFadeSeta = 0.8;
+		}else{
+			$("#maxFadeSeta").val(localStorage.maxFadeSeta)
+		};
+		$("#maxFadeSeta" ).on( "blur", function() {
+			localStorage.maxFadeSeta = $("#maxFadeSeta" ).val();
+		});		
+
+		if (!localStorage.animationStartArea){
+			localStorage.animationStartArea = 0.1;
+		}else{
+			$("#animationStartArea").val(localStorage.animationStartArea)
+		};
+		$("#animationStartArea" ).on( "blur", function() {
+			localStorage.animationStartArea = $("#animationStartArea" ).val();
+		});		
+
+		if (!localStorage.animationEndArea){
+			localStorage.animationEndArea = 0.8;
+		}else{
+			$("#animationEndArea").val(localStorage.animationEndArea)
+		};
+		$("#animationEndArea" ).on( "blur", function() {
+			localStorage.animationEndArea = $("#animationEndArea" ).val();
+		});		
+
+		if (!localStorage.animationStartCampo){
+			localStorage.animationStartCampo = 0.1;
+		}else{
+			$("#animationStartCampo").val(localStorage.animationStartCampo)
+		};
+		$("#animationStartCampo" ).on( "blur", function() {
+			localStorage.animationStartCampo = $("#animationStartCampo" ).val();
+		});		
+
+		if (!localStorage.animationEndCampo){
+			localStorage.animationEndCampo = 0.8;
+		}else{
+			$("#animationEndCampo").val(localStorage.animationEndCampo)
+		};
+		$("#animationEndCampo" ).on( "blur", function() {
+			localStorage.animationEndCampo = $("#animationEndCampo" ).val();
+		});		
+
+		if (!localStorage.animationStartCategoria){
+			localStorage.animationStartCategoria = 0.8;
+		}else{
+			$("#animationStartCategoria").val(localStorage.animationStartCategoria)
+		};
+		$("#animationStartCategoria" ).on( "blur", function() {
+			localStorage.animationStartCategoria = $("#animationStartCategoria" ).val();
+		});		
+
+		if (!localStorage.animationEndCategoria){
+			localStorage.animationEndCategoria = 0.8;
+		}else{
+			$("#animationEndCategoria").val(localStorage.animationEndCategoria)
+		};
+		$("#animationEndCategoria" ).on( "blur", function() {
+			localStorage.animationEndCategoria = $("#animationEndCategoria" ).val();
+		});		
+
+		if (!localStorage.animationStartHabilidade){
+			localStorage.animationStartHabilidade = 0.8;
+		}else{
+			$("#animationStartHabilidade").val(localStorage.animationStartHabilidade)
+		};
+		$("#animationStartHabilidade" ).on( "blur", function() {
+			localStorage.animationStartHabilidade = $("#animationStartHabilidade" ).val();
+		});		
+
+		if (!localStorage.animationEndHabilidade){
+			localStorage.animationEndHabilidade = 0.8;
+		}else{
+			$("#animationEndHabilidade").val(localStorage.animationEndHabilidade)
+		};
+		$("#animationEndHabilidade" ).on( "blur", function() {
+			localStorage.animationEndHabilidade = $("#animationEndHabilidade" ).val();
 		});		
 
 		

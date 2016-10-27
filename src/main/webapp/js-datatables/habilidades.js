@@ -8,7 +8,7 @@
 	 * 	carrega lista de carreiras
 	 */
 	var cy = "";
-	rest_obterHabilidades(carregaHabilidadesLista, cy)
+	rest_obterHabilidades(carregaHabilidadesLista, semAcao)
 				
 	function carregaHabilidadesLista (objJson) {
 		
