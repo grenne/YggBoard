@@ -150,7 +150,7 @@ function montaLinhaCarreira (i, carreira){
 	var habilidades = "";
 	$.each(carreira.arrayNecessarios, function (i, habilidade){
 		habilidades = habilidades +
-		'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide">- ' + habilidade.name + '</span>';
+		'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide habilidadeCarreira_' + i + '" data-idHabilidade="' + habilidade.idHabilidade + '">- ' + habilidade.name + '</span>';
 	});
 	carreira_table_row = 
 		'<tr id="itemCarreira_' + i + '" class="itemCarreira" data-nome-industria="' + carreira.industria + '">' +
@@ -170,5 +170,19 @@ function montaLinhaCarreira (i, carreira){
 				'<td>' + habilidades + '</td>' +
 		'</tr>';
 	$("#carreira_tbody").append(carreira_table_row);
+
+	$('#comparar_' + i).off('click');
+    $('#comparar_' + i).on('click',function(){
+    	var objJson = JSON.parse(localStorage.getItem("jsonYggmap"));
+		$.each( objJson.data, function(i, element ) {
+			objJson.data[i].states = 0;
+	    	$('.habilidadeCarreira_' + i).each(function( w ) {
+	    		  if ($(this).attr('idHabilidade') == element.id){
+	    			  objJson.data[i].states = 1;
+	    		  };
+	    	});
+		});
+		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
+    });
 	
 };

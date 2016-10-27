@@ -115,9 +115,11 @@
 	function GetJson (Json) {
 	    alert(Json);
 	};
+
 	function UnityIsLoaded (msg) {
 		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
 	};
+
 	function gravaDiagrama (){
 		var objJson = JSON.parse(localStorage.getItem("elements"));
 		
@@ -141,6 +143,11 @@
 	function montaJsonYggmap (elementos, meuPerfilJson ){
 		
 		var jsonYggmap = {
+							"MaxZoom" : parseFloat(localStorage.maxZoom),
+							"MinZoom" : parseFloat(localStorage.minZoom),
+							"positionX" : parseFloat(localStorage.positionX),
+							"positionY" : parseFloat(localStorage.positionY),
+							"StartZoom" : parseFloat(localStorage.startZoom),
 							"data" : []
 							};
 
@@ -166,11 +173,13 @@
 		});
 		$.each(elementos, function( i, element ) {
 			var type = 1;
-			maxfade = 0.0;
-			minfade = -0.1;
+			maxfade = parseFloat(localStorage.maxFadeHabilidade);
+			minfade = parseFloat(localStorage.minFadeHabilidade);
 			width = element.documento.width;
 			height = element.documento.weight;
 			if (element.documento.classes == "area"){ 
+				maxfade = parseFloat(localStorage.minFadeArea);
+				minfade = parseFloat(localStorage.minFadeArea);
 				type = 0;
 				if (!width){
 					width = 2000;
@@ -179,12 +188,12 @@
 			};
 			if (element.documento.classes == "campo"){ 
 				type = 0;
-				maxfade = 0.7;
-				minfade = 0.6;
-				if (!width){
-					width = 1000;
-					height = 1000;
-				};
+				maxfade = parseFloat(localStorage.minFadeCampo);
+				minfade = parseFloat(localStorage.minFadeCampo);
+//				if (!width){
+					width = 800;
+					height = 800;
+//				};
 				if (localStorage.calculacampo == "true"){
 					$.each(elementos, function( w, elementParent){
 						if (element.documento.parent == elementParent.documento.idHabilidade){
@@ -193,11 +202,6 @@
 							jsonPos[w].weight = jsonPos[w].weight + 1100;
 							jsonPos[w].elemento = jsonPos[w].elemento + 1;
 							var coluna = (jsonPos[w].elementos / jsonPos[w].elemento).toFixed(0);
-							
-//							********************calcular a coluna
-							
-							
-							
 							element.documento.positionX == jsonPos[w].positionX * coluna;
 							jsonPos[w].positionX = jsonPos[w].positionY + 1100;
 							jsonPos[w].width = jsonPos[w].width + 1100;
@@ -210,9 +214,11 @@
 			};
 			if (element.documento.classes == "categoria"){ 
 				type = 0;
+				maxfade = parseFloat(localStorage.minFadeCategoria);
+				minfade = parseFloat(localStorage.minFadeCategoria);
 				if (!width){
-					width = 500;
-					height = 500;
+					width = 400;
+					height = 400;
 				};
 			};
 			if (element.documento.type == "edges" ){
@@ -234,14 +240,14 @@
 				positionY : element.documento.positionY,
 				width : width,
 				height : height,
-				targetX : element.documento.source,
-				targetY: element.documento.target,
-				FadeMax:maxfade,
-				FadeMin:minfade,
-				FadeReverse:false,
+				source : element.documento.source,
+				target: element.documento.target,
+				FadeStart : maxfade,
+				FadeEnd : minfade,
+				FadeReverse : false,
 				tags:[],
-				have:0,
-				states:2
+				have:verificaPossuiHabilidade(element.documento.idHabilidade),
+				states:verificaTemInteresseHabilidade(element.documento.idHabilidade)
 			};
 			$.each(element.documento.tags, function(w, tag) {
 				jsonElement.tags.push(tag);
@@ -281,7 +287,31 @@
 	function GetJson (Json) {
 		alert(Json);
 	};
-	
+	function verificaPossuiHabilidade(id){
+		var possuiHabilidade = 1;
+		var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+		$.each(objJson.documento.habilidades, function(w, idHabilidade) {
+			if (id == idHabilidade){
+				possuiHabilidade = 0;
+			};
+		});
+		$.each(objJson.documento.habilidadesInteresse, function(w, idHabilidade) {
+			if (id == idHabilidade){
+				possuiHabilidade = 2;
+			};
+		});
+		return possuiHabilidade;
+	};	
+	function verificaTemInteresseHabilidade(id){
+		var habilidadeNecessaria = 0;
+		var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+		$.each(objJson.documento.habilidades, function(w, idHabilidade) {
+			if (id == idHabilidade){
+//				habilidadeNecessaria = 0;
+			};
+		});
+		return habilidadeNecessaria;
+	};	
 	function incluiUserPerfil (tipo, elemento){
 		var objJson  = 
 				{
@@ -529,5 +559,115 @@
 			}else{
 				localStorage.calculahabilidade = "false";
 			};
+		});		
+
+		if (!localStorage.startZoom){
+			localStorage.startZoom = 0.8;
+		}else{
+			$("#startZoom").val(localStorage.startZoom)
+		};
+		$("#startZoom" ).on( "blur", function() {
+			localStorage.startZoom = $("#startZoom" ).val();
+		});		
+		if (!localStorage.minZoom){
+			localStorage.minZoom = 0.1;
+		}else{
+			$("#minZoom").val(localStorage.minZoom)
+		};
+		$("#minZoom" ).on( "blur", function() {
+			localStorage.minZoom = $("#minZoom" ).val();
+		});		
+		if (!localStorage.maxZoom){
+			localStorage.maxZoom = 0.8;
+		}else{
+			$("#maxZoom").val(localStorage.maxZoom)
+		};
+		$("#maxZoom" ).on( "blur", function() {
+			localStorage.maxZoom = $("#maxZoom" ).val();
+		});		
+		if (!localStorage.initialPositionX){
+			localStorage.initialPositionX = 0;
+		}else{
+			$("#initialPositionX").val(localStorage.initialPositionX)
+		};
+		$("#initialPositionX" ).on( "blur", function() {
+			localStorage.initialPositionX = $("#initialPositionX" ).val();
+		});		
+		if (!localStorage.initialPositionY){
+			localStorage.initialPositionY = 0;
+		}else{
+			$("#initialPositionY").val(localStorage.initialPositionY)
+		};
+		$("#initialPositionY" ).on( "blur", function() {
+			localStorage.initialPositionY = $("#initialPositionY" ).val();
+		});		
+		if (!localStorage.minFadeArea){
+			localStorage.minFadeArea = 0.1;
+		}else{
+			$("#minFadeArea").val(localStorage.minFadeArea)
+		};
+		$("#minFadeArea" ).on( "blur", function() {
+			localStorage.minFadeArea = $("#minFadeArea" ).val();
+		});		
+		if (!localStorage.maxFadeArea){
+			localStorage.maxFadeArea = 0.8;
+		}else{
+			$("#maxFadeArea").val(localStorage.maxFadeArea)
+		};
+		$("#maxFadeArea" ).on( "blur", function() {
+			localStorage.maxFadeArea = $("#maxFadeArea" ).val();
+		});		
+		if (!localStorage.minFadeCampo){
+			localStorage.minFadeCampo = 0.1;
+		}else{
+			$("#minFadeCampo").val(localStorage.minFadeCampo)
+		};
+		$("#minFadeCampo" ).on( "blur", function() {
+			localStorage.minFadeCampo = $("#minFadeCampo" ).val();
+		});		
+		if (!localStorage.maxFadeCampo){
+			localStorage.maxFadeCampo = 0.8;
+		}else{
+			$("#maxFadeCampo").val(localStorage.maxFadeCampo)
+		};
+		$("#maxFadeCampo" ).on( "blur", function() {
+			localStorage.maxFadeCampo = $("#maxFadeCampo" ).val();
+		});		
+		if (!localStorage.minFadeCategoria){
+			localStorage.minFadeCategoria = 0.5;
+		}else{
+			$("#minFadeCategoria").val(localStorage.minFadeCategoria)
+		};
+		$("#minFadeCategoria" ).on( "blur", function() {
+			localStorage.minFadeCategoria = $("#minFadeCategoria" ).val();
+		});		
+		if (!localStorage.maxFadeCategoria){
+			localStorage.maxFadeCategoria = 0.7;
+		}else{
+			$("#maxFadeCategoria").val(localStorage.maxFadeCategoria)
+		};
+		$("#maxFadeCategoria" ).on( "blur", function() {
+			localStorage.maxFadeCategoria = $("#maxFadeCategoria" ).val();
+		});		
+		if (!localStorage.minFadeHabilidade){
+			localStorage.minFadeHabilidade = 0.6;
+		}else{
+			$("#minFadeHabilidade").val(localStorage.minFadeHabilidade)
+		};
+		$("#minFadeHabilidade" ).on( "blur", function() {
+			localStorage.minFadeHabilidade = $("#minFadeHabilidade" ).val();
+		});		
+		if (!localStorage.maxFadeHabilidade){
+			localStorage.maxFadeHabilidade = 0.8;
+		}else{
+			$("#maxFadeHabilidade").val(localStorage.maxFadeHabilidade)
+		};
+		$("#maxFadeHabilidade" ).on( "blur", function() {
+			localStorage.maxFadeHabilidade = $("#maxFadeHabilidade" ).val();
+		});		
+
+		
+		$("#carregaDiagrama" ).on( "click", function() {
+			SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
 		});		
 	};

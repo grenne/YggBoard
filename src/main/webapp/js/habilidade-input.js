@@ -1,7 +1,7 @@
 	/**
 	 * 		setup dos input do form price table
 	 */
-	var $tablesFormAgency = $("#habilidadeModal-form").validate({
+	var $tablesFormHabilidade = $("#habilidadeModal-form").validate({
 		// Rules for form validation
 		rules : {
 			name : {
@@ -98,14 +98,25 @@ function atualizaHabilidade (elementNew) {
 			objJson.data[i].description = elementNew.documento.descricao;
 			objJson.data[i].positionX = elementNew.documento.positionX;
 			objJson.data[i].positionY = elementNew.documento.positiony;
-//			objJson.data[i].width = elementNew.documento.width;
-//			objJson.data[i].height = elementNew.documento.weight;
-			objJson.data[i].width = 2000;
-			objJson.data[i].height = 2000;
+			objJson.data[i].width = elementNew.documento.width;
+			objJson.data[i].height = elementNew.documento.weight;
 		};
 	});
 	localStorage.setItem("jsonYggmap", JSON.stringify(objJson));
 	SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
+	var objJson = JSON.parse(localStorage.getItem("elements"));
+	$.each( objJson, function( i, element) {
+		if (element.documento.idHabilidade == elementNew.documento.idHabilidade){
+			objJson[i].documento.name = elementNew.documento.name;
+			objJson[i].documento.description = elementNew.documento.descricao;
+			objJson[i].documento.positionX = elementNew.documento.positionX;
+			objJson[i].documento.positionY = elementNew.documento.positionY;
+			objJson[i].documento.width = elementNew.documento.width;
+			objJson[i].documento.weight = elementNew.documento.weight;
+		};
+	});
+	localStorage.setItem("elements", JSON.stringify(objJson));
+	carregaHabilidadesLista (objJson);
 };
 
 function limpaHierarquiaJson () {

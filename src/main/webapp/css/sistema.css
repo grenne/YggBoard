@@ -688,6 +688,13 @@ section#conteudo .nav > li > a {
 	font-size: 80%;
 }
 
+.label-tools{
+	padding : 8px;
+	background-color: #C5E89F;
+	color: #91B56A;
+	font-size: 80%;
+}
+
 .user-panel-label {
 	color: #797979!important;
 	font-weight: bold !important;

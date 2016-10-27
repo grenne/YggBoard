@@ -34,7 +34,6 @@
     	});
     };
 
-
     function rest_obterHabilidadesIdHabilidade(name, action_ok, action_not_ok, var1, var2) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/obter?idHabilidade=" + idHabilidade,
@@ -62,6 +61,22 @@
     	})
     	.fail(function(data) {
     		action_not_ok(null, cy);
+    	})
+    	.always(function(data) {
+    	});
+    };
+
+    function rest_obterCarreira(idCarreira, action_ok, action_not_ok, var1, var2) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/carreiras/obter?idCarreira=" + idCarreira,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+    	})
+    	.done(function( data ) {
+    		action_ok(data, var1, var2);
+    	})
+    	.fail(function(data) {
+    		action_not_ok(null, var1, var2);
     	})
     	.always(function(data) {
     	});

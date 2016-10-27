@@ -198,6 +198,55 @@
 					                    </div>
 									</div>
 					                <div class="form-group pad-ver">
+					                    <label class="col-md-12 control-label">Controle de zoom e fade</label>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="startZoom" class="label-tools col-md-12">Start Zoom</label>
+												<input class="col-md-4" id="startZoom" name="startZoom" type="text" class="form-control" value="" placeholder="" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="minZoom" class="label-tools col-md-12">Zoom -/+</label>
+												<input class="col-md-4" id="minZoom" name="minZoom" type="text" class="form-control" value="" placeholder="" required />
+												<div class="col-md-1"></div>
+												<input class="col-md-4" id="maxZoom" name="maxZoom" type="text" class="form-control" value="" placeholder="" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="minZoom" class="label-tools col-md-12">Fade area -/+</label>
+												<input class="col-md-4" id="minFadeArea" name="minFadeArea" type="text" class="form-control" value="" placeholder="" required />
+												<div class="col-md-1"></div>
+												<input class="col-md-4" id="maxFadeArea" name="maxFadeArea" type="text" class="form-control" value="" placeholder="" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="minZoom" class="label-tools col-md-12">Fade campo -/+</label>
+												<input class="col-md-4" id="minFadeCampo" name="minFadeCampo" type="text" class="form-control" value="" placeholder="" required />
+												<div class="col-md-1"></div>
+												<input class="col-md-4" id="maxFadeCampo" name="maxFadeCampo" type="text" class="form-control" value="" placeholder="" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="minZoom" class="label-tools col-md-12">Fade categoria -/+</label>
+												<input class="col-md-4" id="minFadeCategoria" name="minFadeCategoria" type="text" class="form-control" value="" placeholder="" required />
+												<div class="col-md-1"></div>
+												<input class="col-md-4" id="maxFadeCategoria" name="maxFadeCategoria" type="text" class="form-control" value="" placeholder="" required />
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-12">
+												<label for="minZoom" class="label-tools col-md-12">Fade habilidade -/+</label>
+												<input class="col-md-4" id="minFadeHabilidade" name="minFadeHabiliadade" type="text" class="form-control" value="" placeholder="" required />
+												<div class="col-md-1"></div>
+												<input class="col-md-4" id="maxFadeHabilidade" name="maxFadeHabilidade" type="text" class="form-control" value="" placeholder="" required />
+											</div>
+										</div>
+					                </div>
+					                <div class="form-group pad-ver hide">
 					                    <label class="col-md-3 control-label">Calcular</label>
 					                    <div class="col-md-9">
 					                        <div class="checkbox">
@@ -218,6 +267,9 @@
 					                        </div>
 					                    </div>
 					                </div>
+									<div class="tools-footer col-md-10">
+										<button id="carregaDiagrama" type="button" class="btn btn-primary">Carrega Yggmap</button>
+									</div>
 					        	</div>
 						    </div>
 				        </div>                
@@ -342,7 +394,7 @@
 											<div class="col-md-1"></div>
 											<div class="col-md-5">
 												<label for="width">Largura</label>
-												<input id=""width"" name=""width"" type="text" class="form-control" value="" placeholder="" />
+												<input id="width" name="width" type="text" class="form-control" value="" placeholder="" />
 											</div>
 											<div class="col-md-1"></div>
 											<div class="col-md-5">
