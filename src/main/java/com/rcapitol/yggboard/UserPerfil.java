@@ -35,6 +35,7 @@ public class UserPerfil {
 		public String habilidades[];
 		public String carreirasInteresse[];
 		public String carreiras[];
+		public String cursosInteresse[];
 		public String tags[];
 
 
@@ -50,6 +51,7 @@ public class UserPerfil {
 						String [] habilidades,
 						String [] carreirasInteresse,
 						String [] carreiras,
+						String [] cursosInteresse,
 						String [] tags
 						) {
 						this.usuario = usuario;
@@ -58,6 +60,7 @@ public class UserPerfil {
 						this.habilidades = habilidades; 
 						this.carreirasInteresse = carreirasInteresse; 
 						this.carreiras = carreiras; 
+						this.cursosInteresse = cursosInteresse;
 						this.tags = tags; 
 								}
 		@Override

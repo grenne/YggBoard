@@ -55,7 +55,8 @@
 		$("#" + append).append(carreira_user_perfil_table_header);
 
     	$( ".itemCarreiraUserPerfil" + append).remove();
-        $.each(objJson, function (i, carreira) {
+        
+    	$.each(objJson, function (i, carreira) {
         	calculoPercentual = parseInt(carreira.totalPossuiHabilidades) / parseInt(carreira.totalHabilidades) * 100;
             var percentualHabilidades = calculoPercentual.toFixed(0);
         	if ((append == "carreiras_user_perfil_conquista_theader" && percentualHabilidades == 100) | 
@@ -107,6 +108,11 @@
 	        		$('.habilidade-user-perfil').removeClass("hide");
 					rest_obterUserPerfilItens("habilidades-interesse-carreiras", carregaHabilidadesUserPerfil, semAcao, "habilidades-necessarias-carreira", carreira.nome, "habilidades_user_perfil_theader");
 	            });
+	        	$("#" + $(this).attr('id')).off('click');
+	    		$("#" + $(this).attr('id')).on('click',function(){
+	    	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+	    	    	atualizaUserPerfilElemento (objJson, "cursoInteresse", $(this).attr('data-idcurso'));
+	    	    });
         	};
         });
 

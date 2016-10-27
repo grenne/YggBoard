@@ -183,6 +183,7 @@ public class Rest_Habilidade {
 						JSONObject jsonObject = (JSONObject) parser.parse(documentoCurso);
 						JSONObject jsonCursos = new JSONObject();
 						jsonCursos.put("nome", jsonObject.get("nome"));
+						jsonCursos.put("idCurso", jsonObject.get("idCurso"));
 						jsonCursos.put("descricao", jsonObject.get("descricao"));
 						cursosArray.add (jsonCursos);
 					} catch (ParseException e) {

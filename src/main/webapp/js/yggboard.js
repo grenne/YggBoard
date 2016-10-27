@@ -117,6 +117,7 @@
 	};
 
 	function UnityIsLoaded (msg) {
+		console.log ("json - " + localStorage.getItem("jsonYggmap"));
 		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
 	};
 
@@ -148,14 +149,6 @@
 							"positionX" : parseFloat(localStorage.positionX),
 							"positionY" : parseFloat(localStorage.positionY),
 							"StartZoom" : parseFloat(localStorage.startZoom),
-							"animationStartArea" : parseFloat(localStorage.animationStartArea),
-							"animationEndArea" : parseFloat(localStorage.animationEndArea),
-							"animationStartCampo" : parseFloat(localStorage.animationStartCampo),
-							"animationEndCampo" : parseFloat(localStorage.animationEndCampo),
-							"animationStartCategoria" : parseFloat(localStorage.animationStartCategoria),
-							"animationEndCategoria" : parseFloat(localStorage.animationEndCategoria),
-							"animationStartHabilidade" : parseFloat(localStorage.animationStartHabilidade),
-							"animationEndHabilidade" : parseFloat(localStorage.animationEndHabilidade),
 							"data" : []
 							};
 
@@ -181,13 +174,17 @@
 		});
 		$.each(elementos, function( i, element ) {
 			var type = 1;
-			maxfade = parseFloat(localStorage.maxFadeHabilidade);
-			minfade = parseFloat(localStorage.minFadeHabilidade);
+			var maxfade = parseFloat(localStorage.maxFadeHabilidade);
+			var minfade = parseFloat(localStorage.minFadeHabilidade);
+			var animationStart = parseFloat(localStorage.animationStartHabilidade);
+			var animationEnd = parseFloat(localStorage.animationEndHabilidade);
 			width = element.documento.width;
 			height = element.documento.weight;
 			if (element.documento.classes == "area"){ 
-				maxfade = parseFloat(localStorage.minFadeArea);
+				maxfade = parseFloat(localStorage.maxFadeArea);
 				minfade = parseFloat(localStorage.minFadeArea);
+				animationStart = parseFloat(localStorage.animationStartArea);
+				animationEnd = parseFloat(localStorage.animationEndArea);
 				type = 0;
 				if (!width){
 					width = 2000;
@@ -196,12 +193,14 @@
 			};
 			if (element.documento.classes == "campo"){ 
 				type = 0;
-				maxfade = parseFloat(localStorage.minFadeCampo);
+				maxfade = parseFloat(localStorage.maxFadeCampo);
 				minfade = parseFloat(localStorage.minFadeCampo);
-//				if (!width){
+				animationStart = parseFloat(localStorage.animationStartCampo);
+				animationEnd = parseFloat(localStorage.animationEndCampo);
+				if (!width){
 					width = 800;
 					height = 800;
-//				};
+				};
 				if (localStorage.calculacampo == "true"){
 					$.each(elementos, function( w, elementParent){
 						if (element.documento.parent == elementParent.documento.idHabilidade){
@@ -222,8 +221,10 @@
 			};
 			if (element.documento.classes == "categoria"){ 
 				type = 0;
-				maxfade = parseFloat(localStorage.minFadeCategoria);
+				maxfade = parseFloat(localStorage.maxFadeCategoria);
 				minfade = parseFloat(localStorage.minFadeCategoria);
+				animationStartCategoria = parseFloat(localStorage.animationStartCategoria);
+				animationEndCategoria = parseFloat(localStorage.animationEndCategoria);
 				if (!width){
 					width = 400;
 					height = 400;
@@ -242,7 +243,7 @@
 				wiki : element.documento.wiki,
 				area : element.documento.area,
 				field: element.documento.campo,
-				category : element.documento.category,
+				category : element.documento.categoria,
 				parent : element.documento.parent,
 				positionX : element.documento.positionX,
 				positionY : element.documento.positionY,
@@ -252,10 +253,11 @@
 				target: element.documento.target,
 				FadeStart : maxfade,
 				FadeEnd : minfade,
-				FadeReverse : false,
 				tags:[],
 				have:verificaPossuiHabilidade(element.documento.idHabilidade),
-				States: 2,
+				states: 0,
+				AnimationStart : animationStart,
+				AnimationEnd : animationEnd,
 			};
 			$.each(element.documento.tags, function(w, tag) {
 				jsonElement.tags.push(tag);
@@ -298,14 +300,14 @@
 	function verificaPossuiHabilidade(id){
 		var possuiHabilidade = 1;
 		var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
-		$.each(objJson.documento.habilidades, function(w, idHabilidade) {
-			if (id == idHabilidade){
-				possuiHabilidade = 0;
-			};
-		});
 		$.each(objJson.documento.habilidadesInteresse, function(w, idHabilidade) {
 			if (id == idHabilidade){
 				possuiHabilidade = 2;
+			};
+		});
+		$.each(objJson.documento.habilidades, function(w, idHabilidade) {
+			if (id == idHabilidade){
+				possuiHabilidade = 0;
 			};
 		});
 		return possuiHabilidade;
@@ -331,6 +333,7 @@
 					habilidades : [],
 					carreirasInteresse : [],
 					carreiras : [],
+					cursosInteresse : [],
 					tags : []
 					}
 				};	
@@ -352,6 +355,14 @@
 				atualizarPerfil = true;
 			};
 		};
+		if (tipo == "habilidadeInteresseOff"){
+			$.each( objJson.documento.habilidadesInteresse, function( i, habilidade) {
+				if (elemento == habilidade){
+					objJson.documento.habilidadesInteresse.splice(i,1);
+					atualizarPerfil = true;
+				};
+			});
+		};
 		if (tipo == "habilidades"){
 			var existente = false;
 			$.each( objJson.documento.habilidades, function( i, habilidade) {
@@ -363,6 +374,14 @@
 				objJson.documento.habilidades.push(elemento);
 				atualizarPerfil = true;
 			};
+		};
+		if (tipo == "habilidadesOff"){
+			$.each( objJson.documento.habilidades, function( i, habilidade) {
+				if (elemento == habilidade){
+					objJson.documento.habilidades.splice(i,1);
+					atualizarPerfil = true;
+				};
+			});
 		};
 		if (tipo == "carreiraInteresse"){
 			var existente = false;
@@ -376,6 +395,14 @@
 				atualizarPerfil = true;
 			};
 		};
+		if (tipo == "carreiraInteresseOff"){
+			$.each( objJson.documento.carreirasInteresse, function( i, habilidade) {
+				if (elemento == habilidade){
+					objJson.documento.carreirasInteresse.splice(i,1);
+					atualizarPerfil = true;
+				};
+			});
+		};
 		if (tipo == "carreiras"){
 			var existente = false;
 			$.each( objJson.documento.carreiras, function( i, carreira) {
@@ -387,6 +414,34 @@
 				objJson.documento.carreiras.push(elemento);
 				atualizarPerfil = true;
 			};
+		};
+		if (tipo == "carreirasOff"){
+			$.each( objJson.documento.carreiras, function( i, habilidade) {
+				if (elemento == habilidade){
+					objJson.documento.carreiras.splice(i,1);
+					atualizarPerfil = true;
+				};
+			});
+		};
+		if (tipo == "cursoInteresse"){
+			var existente = false;
+			$.each( objJson.documento.cursosInteresse, function( i, curso) {
+				if (elemento == curso){
+					existente = true;
+				};
+			});
+			if (!existente){
+				objJson.documento.cursosInteresse.push(elemento);
+				atualizarPerfil = true;
+			};
+		};
+		if (tipo == "cursoInteresseOff"){
+			$.each( objJson.documento.cursosInteresse, function( i, habilidade) {
+				if (elemento == habilidade){
+					objJson.documento.cursosInteresse.splice(i,1);
+					atualizarPerfil = true;
+				};
+			});
 		};
 		if (tipo == "tags"){
 			var tags = elemento.split(",");
@@ -762,6 +817,24 @@
 			localStorage.animationEndHabilidade = $("#animationEndHabilidade" ).val();
 		});		
 
+
+		if (!localStorage.positionX){
+			localStorage.positionX = 0;
+		}else{
+			$("#positionX").val(localStorage.positionX)
+		};
+		$("#positionX" ).on( "blur", function() {
+			localStorage.positionX = $("#positionX" ).val();
+		});		
+
+		if (!localStorage.positionY){
+			localStorage.positionY = 0
+		}else{
+			$("#positionY").val(localStorage.positionY)
+		};
+		$("#positionY" ).on( "blur", function() {
+			localStorage.positionY = $("#positionY" ).val();
+		});		
 		
 		$("#carregaDiagrama" ).on( "click", function() {
 			SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));

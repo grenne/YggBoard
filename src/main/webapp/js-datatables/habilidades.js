@@ -144,17 +144,17 @@
 	function montaLinhaHabilidade(i, element, objJson) {
 
     	var cursos = "";
-    	$.each(element.documento.cursos, function (i, curso){
+    	$.each(element.documento.cursos, function (w, curso){
     		cursos = cursos +
-			'<br class="cursoHabilidade hide"><a id="querofazer_' + i + '" data-tooltip="quero fazer"  class="cursoHabilidade hide icon-querofazer"><i class="fa fa-leanpub icon-quefazer"></i></a>' +
+			'<br class="cursoHabilidade hide"><a id="querofazercurso_' + i + w + '" data-tooltip="quero fazer"  class="cursoHabilidade hide querofazercurso icon-querofazer"  data-idCurso="' + curso.idCurso + '"><i class="fa fa-leanpub icon-quefazer"></i></a>' +
 			'<span class="panel-text panel-cursos cursoHabilidade hide ">  ' + curso.nome + '</span>';
     	});
     	habilidade_table_row = 
 			'<tr class="itemHabilidade">' +
-			'<td id="nome_' + i + '"><span class="panel-label" data-tooltip="objetivo"></span>' + element.documento.name + '</td>' +
-			'<td><a id="alterarHabilidade_' + i + '" data-tooltip="sei fazer" href="#habilidadeModal" data-toggle="modal"><i class="fa fa-stack-exchange"></i></a></td>' +
-			'<td><a id="seiFazerHabilidade_' + i + '" data-tooltip="sei fazer" href="#habilidadeModal" data-toggle="modal"><i class="fa fa-leanpub"></i></a></td>' +
-			'<td><a id="queroAprenderHabilidade_' + i + '" data-tooltip="quero aprender"><i class="fa fa-book"></i></a></td>' +
+			'<td id="nome_' + i + '"><span class="panel-label" data-tooltip="objetivo" data-idHabilidade="' + element.documento.idHabilidade + '"></span>' + element.documento.name + '</td>' +
+			'<td><a id="alterarHabilidade_' + i + '" data-tooltip="sei fazer" href="#habilidadeModal" data-toggle="modal" data-idHabilidade="' + element.documento.idHabilidade + '" ><i class="fa fa-stack-exchange"></i></a></td>' +
+			'<td><a id="seiFazerHabilidade_' + i + '" data-tooltip="sei fazer" data-toggle="modal" data-idHabilidade="' + element.documento.idHabilidade + '"><i class="fa fa-leanpub"></i></a></td>' +
+			'<td><a id="queroAprenderHabilidade_' + i + '" data-tooltip="quero aprender" data-idHabilidade="' + element.documento.idHabilidade + '"><i class="fa fa-book"></i></a></td>' +
 				'<td ><span class="panel-label">DESCRIÇÃO: </span><br>' + 
 				'<span class="panel-text">' + element.documento.descricao + '</span></td>' + 
 				'<td><br><button id="cursoHabilidadeIn_' + i + '" class="panel-button-habilidade cursoHabilidadeIn"><i class="fa fa-chevron-down icon-check-habilidade"></i><span>cursos disponíveis</span></button>' +
@@ -163,12 +163,24 @@
 				'<td>' + cursos + '</td>' +
 			'</tr>';
     	$("#habilidade_tbody" ).append(habilidade_table_row);
-	    $('#queroAprenderHabilidade_' + i).off('click');
+
+    	$('.querofazercurso').each(function( z ) {
+    		$("#" + $(this).attr('id')).off('click');
+    		$("#" + $(this).attr('id')).on('click',function(){
+    	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+    	    	atualizaUserPerfilElemento (objJson, "cursoInteresse", $(this).attr('data-idcurso'));
+    	    });
+    	});
+    	
+    	$('#queroAprenderHabilidade_' + i).off('click');
 	    $('#queroAprenderHabilidade_' + i).on('click',function(){
+	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+	    	atualizaUserPerfilElemento (objJson, "habilidadeInteresse", $(this).attr('data-idhabilidade'));
 	    });
 	    $('#seiFazerHabilidade_' + i).off('click');
 	    $('#seiFazerHabilidade_' + i).on('click',function(){
-	    	
+	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+	    	atualizaUserPerfilElemento (objJson, "habilidades", $(this).attr('data-idhabilidade'));	    	
 	    });
 	    $('#alterarHabilidade_' + i).off('click');
 	    $('#alterarHabilidade_' + i).on('click',function(){

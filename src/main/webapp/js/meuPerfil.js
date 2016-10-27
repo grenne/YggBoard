@@ -46,14 +46,19 @@ function carregaMeuPerfil (cy, objJson){
 	if (JSON.parse(localStorage.getItem("meuPerfil"))){
 		var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
 	}else{
-		var objJson  = JSON.parse(
-				'{' +
-				'"documento": {' +
-					'"usuario" : "",' +
-					'"elements" : ' +
-				    	'[' +
-				        ']' +
-		'}}');
+		var objJson  = 
+			{
+			documento : 
+				{
+				usuario : localStorage.usuarioEmail,
+				elementos : [],
+				habilidadesInteresse : [],
+				habilidades : [],
+				carreirasInteresse : [],
+				carreiras : [],
+				tags : []
+				}
+			};
 	};
 	$.each( objJson.documento.elementos, function( i, element ) {
 		var id = compoeId (element);
