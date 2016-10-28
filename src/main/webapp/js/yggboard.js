@@ -117,7 +117,6 @@
 	};
 
 	function UnityIsLoaded (msg) {
-		console.log ("json - " + localStorage.getItem("jsonYggmap"));
 		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
 	};
 
