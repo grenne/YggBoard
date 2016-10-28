@@ -76,7 +76,7 @@
    				'</div>';
         	});
         	habilidade_user_perfil_table_row = 
-				'<tr class="itemHabilidade' + append + '">' +
+				'<tr id="itemHabilidade_' + i + '" class="itemHabilidade' + append + '">' +
 		   			'<td>' + 
 	    				'<span class="user-panel-label">' + element.documento.name + '</span>' +
 					'</td>' +
@@ -86,6 +86,12 @@
 					'</td>' +
 				'</tr>';
         	$("#habilidade_user_perfil_tbody" + append).append(habilidade_user_perfil_table_row);
+        	$("#excluiInteresse_" + i).off('click');
+    		$("#excluiInteresse_" + i).on('click',function(){
+    	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+    	    	atualizaUserPerfilElemento (objJson, "habilidadeInteresseOff", element.documento.idHabilidade);
+	        	$("#itemHabilidade_" + i).addClass('hide');
+    	    });
         });
         
         $('.habilidades').removeClass('hide');

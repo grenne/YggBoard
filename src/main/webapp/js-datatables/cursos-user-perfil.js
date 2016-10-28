@@ -44,7 +44,7 @@
     	$( ".itemCursoUserPerfil" + append ).remove();
         $.each(objJson, function (i, curso) {
         	curso_user_perfil_table_row = 
-				'<tr class="itemCursoUserPerfil' + append + '">' +
+				'<tr id="itemCursoUserPerfil_' + i + '" class="itemCursoUserPerfil' + append + '">' +
 		   			'<td>' + 
 						'<span class="user-panel-label">' + curso.documento.descricao + '</span>' +
 					'</td>' +
@@ -56,6 +56,12 @@
 					'<td><span id="preRequisito' + i + '" class="user-panel-detalhes-curso">' + curso.documento.preRequisito + '</td>' +
 				'</tr>';
         	$( "#curso_user_perfil_tbody" + append).append(curso_user_perfil_table_row);
+        	$("#excluiInteresse_" + i).off('click');
+    		$("#excluiInteresse_" + i).on('click',function(){
+    	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+    	    	atualizaUserPerfilElemento (objJson, "cursoInteresseOff", curso.documento.idCurso);
+	        	$("#itemCursoUserPerfil_" + i).addClass('hide');
+    	    });
         });
 
         var curso_user_perfil_table = $('#curso_user_perfil_list' + append);

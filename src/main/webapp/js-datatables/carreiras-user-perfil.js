@@ -14,6 +14,7 @@
 	};
 		
 	function carregaCarreirasUserPerfil (objJson, tipo, carreira, append) {	
+
 		$("." + append).remove();
 
 		var label = "";
@@ -86,10 +87,10 @@
 	        			'<td class="user-panel-td"><span class="panel-label percentual-box"><span class="percentual-numero">' + percentualHabilidades + '%</span><span class="percentual-texto"> em comum</span></td>';
 	        	};
 	        	carreira_user_perfil_table_row = 
-					'<tr class="itemCarreiraUserPerfil col-xs-12' + append + '">' +
+					'<tr id="itemCarreiraUserPerfil_' + i + '" class="itemCarreiraUserPerfil col-xs-12' + append + '">' +
 			   			'<td id="nome_' + i + '" class="user-panel-td"><span class="user-panel-label">' + carreira.nome + '</span></td>' +
 			   			actions +
-						'<td class="user-panel-td"><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
+						'<td class="user-panel-td"><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse" ><i class="fa fa-trash-o icon-trash"></i></a></td>' +
 						'<td class="col-xs-12">' +
 							'<div class="col-xs-12 lineInvisible">' +
 							'____________________________________________'+
@@ -108,11 +109,12 @@
 	        		$('.habilidade-user-perfil').removeClass("hide");
 					rest_obterUserPerfilItens("habilidades-interesse-carreiras", carregaHabilidadesUserPerfil, semAcao, "habilidades-necessarias-carreira", carreira.nome, "habilidades_user_perfil_theader");
 	            });
-	        	$("#" + $(this).attr('id')).off('click');
-	    		$("#" + $(this).attr('id')).on('click',function(){
+	        	$("#excluiInteresse_" + i).off('click');
+	    		$("#excluiInteresse_" + i).on('click',function(){
 	    	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
-	    	    	atualizaUserPerfilElemento (objJson, "cursoInteresse", $(this).attr('data-idcurso'));
-	    	    });
+	    	    	atualizaUserPerfilElemento (objJson, "carreiraInteresseOff", carreira.nome);
+		        	$("#itemCarreiraUserPerfil_" + i).addClass('hide');
+	    		});
         	};
         });
 

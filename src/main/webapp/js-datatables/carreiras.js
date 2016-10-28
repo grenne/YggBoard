@@ -197,7 +197,6 @@
 			});
 			localStorage.setItem("jsonYggmap", JSON.stringify(objJson));
 			SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
-			console.log ("novo - json - " + localStorage.getItem("jsonYggmap"));
 	    });
 		$('#queroAprender_' + i).off('click');
 	    $('#queroAprender_' + i).on('click',function(){
