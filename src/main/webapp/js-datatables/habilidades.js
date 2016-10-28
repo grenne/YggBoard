@@ -219,8 +219,8 @@
 			$("#parent").val(element.documento.parent);
 			$("#classes").val(element.documento.classes);
 			$("#weight").val(element.documento.weight);
-			$("#positionX").val(element.documento.positionX);
-			$("#positionY").val(element.documento.positionY);
+			$("#positionX_I").val(element.documento.positionX);
+			$("#positionY_I").val(element.documento.positionY);
 			$("#opacity").val(element.documento.opacity);
 			$("#color").val(element.documento.color);
 			$("#shape").val(element.documento.shape);
