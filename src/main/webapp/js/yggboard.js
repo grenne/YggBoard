@@ -464,6 +464,52 @@
 		}
 	};
 
+
+	function checaUserPerfilElemento (tipo, elemento){
+
+    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+
+    	var temElemento = false;
+		if (tipo == "habilidadeInteresse"){
+			$.each( objJson.documento.habilidadesInteresse, function( i, habilidade) {
+				if (elemento == habilidade){
+					temElemento = true;
+				};
+			});
+		};
+		if (tipo == "habilidades"){
+			var existente = false;
+			$.each( objJson.documento.habilidades, function( i, habilidade) {
+				if (elemento == habilidade){
+					temElemento = true;
+				};
+			});
+		};
+		if (tipo == "carreiraInteresse"){
+			$.each( objJson.documento.carreirasInteresse, function( i, carreira) {
+				if (elemento == carreira){
+					temElemento = true;
+				};
+			});
+		};
+		if (tipo == "carreiras"){
+			$.each( objJson.documento.carreiras, function( i, carreira) {
+				if (elemento == carreira){
+					temElemento = true;
+				};
+			});
+		};
+		if (tipo == "cursoInteresse"){
+			$.each( objJson.documento.cursosInteresse, function( i, curso) {
+				if (elemento == curso){
+					temElemento = true;
+				};
+			});
+		};
+
+		return temElemento;
+	};
+
 	function setupTools(){
 		
 		// *** flag de controle da montagem do diagrama para acerto de posicoes

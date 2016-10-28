@@ -158,11 +158,17 @@
 			habilidadesRecomendados = habilidadesRecomendados +
 			'<span class="hide habilidadeRecomendadaCarreira_' + i + '" data-idHabilidade="' + habilidade.idHabilidade + '"></span>';
 		});
+		var disabled = "";
+		var textoTip = "quero aprender";
+		if (checaUserPerfilElemento("carreiraInteresse", carreira.nome)){
+			disabled = 'disabled';
+			textoTip = "marquei interesse";	
+		};
 		carreira_table_row = 
 			'<tr id="itemCarreira_' + i + '" class="itemCarreira" data-nome-industria="' + carreira.industria + '">' +
 				'<td id="nome_' + i + '"><span class="panel-label" data-tooltip="objetivo"></span>' + carreira.nome + '</td>' +
 				'<td><a id="comparar_' + i + '" data-tooltip="comparar" class="icon-logo"><img src="img/icone-arvore.png" alt="compara" height="15" width="15"  class="icon-logo"></i></a></td>' +
-				'<td><a id="queroAprender_' + i + '" data-tooltip="quero aprender"><i class="fa fa-thumbs-o-up"></i></a></td>' +
+				'<td><a id="queroAprender_' + i + '" data-tooltip="' + textoTip + '" class="' + disabled + '"><i class="fa fa-thumbs-o-up"></i></a></td>' +
 					'<td><span class="panel-label">OBJETIVO: </span><br>' +
 					'<span class="panel-text">' + carreira.descricao + '</span></td>' +
 					'<td><br><span class="panel-label">INDÚSTRIA: </span><br>' +

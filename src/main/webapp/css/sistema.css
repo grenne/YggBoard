@@ -762,6 +762,10 @@ section#conteudo .nav > li > a {
 	font-size: 80%;
 }
 
+.disabled{
+	color: #c0c0c0!important;
+	cursor:not-allowed	
+}
 .lineInvisible{
 	color : #fff;
 	backfground-color : #fff;
