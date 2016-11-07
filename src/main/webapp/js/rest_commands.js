@@ -129,6 +129,39 @@
     	.always(function(data) {
     	});
     };
+    
+    function rest_obterUsuario(email, action_ok, action_not_ok, par1, par2) {
+    	$.ajax({
+			url : "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/obter?email=" + email,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            async:false
+    	})
+    	.done(function( data ) {
+    		action_ok (data, par1, par2);
+    	})
+    	.fail(function(data) {
+    		action_not_ok (data, par1, par2);
+    	})
+    	.always(function(data) {
+    	});
+    };
+
+    function rest_obterSetup(setupKey, action_ok, action_not_ok, var1, var2, var3) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/setup/obterSetup?setupKey=" + setupKey,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+    	})
+    	.done(function( data ) {
+       		action_ok(data, var1, var2, var3);
+    	})
+    	.fail(function(data) {
+    		action_not_ok(null, var1, var2, var3)
+    	})
+    	.always(function(data) {
+    	});
+    };
 
     function rest_incluiHabilidades(objJson, action_ok, action_not_ok) {
 		$.ajax({
@@ -216,6 +249,45 @@
        	});
     };
 
+    function rest_incluirUsuario(objJson, action_ok, action_not_ok) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/incluir",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson)
+		})
+	  	.done(function( data ) {
+    		action_ok (data);
+	  	})
+        .fail(function(data) {
+    		action_not_ok(data)
+        })
+       	.always(function(data) {
+       	});
+    };
+
+    function rest_incluiSetup(objJson, action_ok, action_not_ok) {
+    	alert ("aqui");
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/setup/incluir",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson)
+		})
+	  	.done(function( data ) {
+	  	})
+        .fail(function(data) {
+        })
+       	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok ();
+        	}else{
+        		action_not_ok()
+        	};
+       	});
+    };
     function rest_atualizaHabilidade(objJson, action_ok, action_not_ok, afterUpdate) {
 		$.ajax({
 			type: "POST",
@@ -286,38 +358,27 @@
     	});
 
     };
-    
-    function rest_obterUsuario(email, action_ok, action_not_ok, par1, par2) {
-    	$.ajax({
-			url : "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/obter?email=" + email,
-            contentType: "application/json; charset=utf-8",
-            dataType: 'json',
-            async:false
-    	})
-    	.done(function( data ) {
-    		action_ok (data, par1, par2);
-    	})
-    	.fail(function(data) {
-    		action_not_ok (data, par1, par2);
-    	})
-    	.always(function(data) {
-    	});
-    };
 
-    function rest_incluirUsuario(objJson, action_ok, action_not_ok) {
+    function rest_atualizaSetup(objJson, action_ok, action_not_ok, var1, var2) {
 		$.ajax({
 			type: "POST",
-            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/incluir",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/setup/atualizar",
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
-            data : JSON.stringify(objJson)
-		})
-	  	.done(function( data ) {
-    		action_ok (data);
-	  	})
-        .fail(function(data) {
-    		action_not_ok(data)
-        })
-       	.always(function(data) {
-       	});
+            data : JSON.stringify(objJson),
+            async:false
+    	
+		})        	
+		.done(function( data ) {
+    	})
+    	.fail(function(data) {
+    	})
+    	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok (data, var1, var2);
+        	}else{
+        		action_not_ok(data, var1, var2)
+        	};
+    	});
+
     };
