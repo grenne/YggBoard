@@ -290,6 +290,7 @@
 			};
 		});
 		localStorage.setItem("jsonYggmap", JSON.stringify(jsonYggmap));
+		console.log (JSON.stringify(jsonYggmap));
 
 	};
 
