@@ -25,39 +25,44 @@
 	};
 
 	function usuarioOk (data, senha){
-
-		if (data.documento.password == senha){
-			localStorage.usuarioEmail = data.documento.email;
-			localStorage.usuarioFirstName = data.documento.firstName;
-			localStorage.usuarioLastName = data.documento.lastName;
-			localStorage.usuarioPerfil = data.documento.perfil;
-			localStorage.usuarioGender = data.documento.gender;
-			localStorage.loginOk = "true";
-			switch(localStorage.usuarioPerfil) {
-		    case "administrator":
-				$(window.document.location).attr('href','yggboard.html');
-		        break;
-		    case "tools":
-				$(".tools").removeClass ("hide");
-				$(window.document.location).attr('href','yggboard.html');
-		        break;
-		    case "user":
-				localStorage.usuario = "true";
-				$(window.document.location).attr('href','yggboard.html');
-		        break;
-		    default:
-		    	localStorage.usuario = "true";
-				$('.msgErro').removeClass("hide");
-			};			
-			return true;
+		
+		if (data){
+			if (data.documento.password == senha){
+				localStorage.usuarioEmail = data.documento.email;
+				localStorage.usuarioFirstName = data.documento.firstName;
+				localStorage.usuarioLastName = data.documento.lastName;
+				localStorage.usuarioPerfil = data.documento.perfil;
+				localStorage.usuarioGender = data.documento.gender;
+				localStorage.loginOk = "true";
+				switch(localStorage.usuarioPerfil) {
+			    case "administrator":
+					$(window.document.location).attr('href','yggboard.html');
+			        break;
+			    case "tools":
+					$(".tools").removeClass ("hide");
+					$(window.document.location).attr('href','yggboard.html');
+			        break;
+			    case "user":
+					localStorage.usuario = "true";
+					$(window.document.location).attr('href','yggboard.html');
+			        break;
+			    default:
+			    	localStorage.usuario = "true";
+					$('.msgErro').removeClass("hide");
+				};			
+				return true;
+			}else{
+				usuarioFail ();
+			}
 		}else{
 			usuarioFail ();
 		};
-		return false;
+		usuarioFail ();
 	};
 	
 	function usuarioFail (){
 		$('.msgErro').removeClass("hide");
+		localStorage.loginOk = "false";
 	};
 
 	function inclusaoEfetuada(mensagem) {

@@ -53,15 +53,15 @@
 			                <div class="form-group">
 			                    <input id="password" name="password" type="password" class="form-control" placeholder="Senha">
 			                </div>
+			                <div class="col-md-12">
+			                    <label class='hide msgErro'>Usuário ou senha invalidos</label>
+			                </div>
 	   	                	<div class="col-md-6">
 			                    <input id="lembrarLogin" class="btn-link mar-rgt" type="checkbox">
 			                    <label class="btn-link mar-rgt">Lembrar de mim</label>
 			                </div>
 	   	                	<div class="col-md-6">
 					            <a href="password-reminder.html" class="btn-link mar-rgt">Esqueceu a senha?</a>
-			                </div>
-			                <div class="col-md-12">
-			                    <label class='hide msgErro'>Usuário ou senha invalidos</label>
 			                </div>
 			                <div class="col-md-12">
 			                	<button id="btn-submit-login" class="btn btn-primary btn-lg btn-block" >Acessar</button>
@@ -82,8 +82,9 @@
     <!--BootstrapJS -->
     <script src="js/bootstrap.min.js"></script>
 
-    <!--Validate -->
-    <script src="jquery-validate/jquery.validate.min.js"></script>
+    
+    <!--Bootstrap Validator [ OPTIONAL ]-->
+    <script src="plugins/bootstrap-validator/bootstrapValidator.min.js"></script>
 
 	<!-- CUSTOM NOTIFICATION -->
 	<script src="js-notification/SmartNotification.min.js"></script>
@@ -91,11 +92,13 @@
     <!--rest commands-->
     <script src="js/rest_commands.js"></script>
 
-
+    <!--main-->
     <script src="js/main.js"></script>
 
+    <!--index-->
+    <script src="js/index.js"></script>
+
     <script type='text/javascript'>
-	  };
 	  
 	</script>
  

@@ -260,6 +260,13 @@ h6 {
    width: 550px;
  }
  
+ .msgErro {
+	font-size: 12px  !important;
+	font-weight: normal !important; 
+	padding-top: 10px  !important;
+  	padding-bottom: 10px  !important;
+  	color : #f4987d  !important;
+ }
  .form-control{
 	background-color : #fff !important;; 
  }
