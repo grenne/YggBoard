@@ -112,10 +112,6 @@
 //		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_theader");
 //	});
 
-	function GetJson (Json) {
-	    alert(Json);
-	};
-
 	function UnityIsLoaded (msg) {
 		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
 	};
@@ -290,13 +286,16 @@
 			};
 		});
 		localStorage.setItem("jsonYggmap", JSON.stringify(jsonYggmap));
-		console.log (JSON.stringify(jsonYggmap));
+//		console.log (JSON.stringify(jsonYggmap));
 
 	};
+
 
 	function GetJson (Json) {
-		alert(Json);
+		var objJson = JSON.parse(Json);
+//		rest_atualizaHabilidade(objJson, fechaModalHabilidade, semAcao, objJson);
 	};
+
 	function verificaPossuiHabilidade(id){
 		var possuiHabilidade = 1;
 		var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
