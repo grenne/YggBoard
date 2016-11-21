@@ -9,7 +9,11 @@
             dataType: 'json'
     	})
     	.done(function( data ) {
-    		action_ok(data, var1, var2);
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
     	})
     	.fail(function(data) {
     		action_not_ok()
@@ -25,7 +29,11 @@
             dataType: 'json'
     	})
     	.done(function( data ) {
-    		action_ok(data, var1, var2);
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
     	})
     	.fail(function(data) {
     		action_not_ok(null, var1, var2);
@@ -41,7 +49,11 @@
             dataType: 'json'
     	})
     	.done(function( data ) {
-    		action_ok(data, var1, var2);
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
     	})
     	.fail(function(data) {
     		action_not_ok(null, var1, var2)
@@ -57,10 +69,14 @@
             dataType: 'json'
     	})
     	.done(function( data ) {
-    		action_ok(data, cy);
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
     	})
     	.fail(function(data) {
-    		action_not_ok(null, cy);
+			action_not_ok (data, var1, var2);	
     	})
     	.always(function(data) {
     	});
@@ -105,7 +121,11 @@
             dataType: 'json'
     	})
     	.done(function( data ) {
-       		action_ok(data, var1, var2);
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
     	})
     	.fail(function(data) {
     		action_not_ok(null, var1, var2)
@@ -121,7 +141,11 @@
             dataType: 'json'
     	})
     	.done(function( data ) {
-       		action_ok(data, var1, var2, var3);
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
     	})
     	.fail(function(data) {
     		action_not_ok(null, var1, var2, var3)
@@ -130,18 +154,22 @@
     	});
     };
     
-    function rest_obterUsuario(email, action_ok, action_not_ok, par1, par2) {
+    function rest_obterUsuario(email, action_ok, action_not_ok, var1, var2) {
     	$.ajax({
 			url : "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/obter?email=" + email,
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             async:false
     	})
-    	.done(function( data ) {
-    		action_ok (data, par1, par2);
+    	.done(function(data) {
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
     	})
     	.fail(function(data) {
-    		action_not_ok (data, par1, par2);
+    		action_not_ok (data, var1, var2);
     	})
     	.always(function(data) {
     	});
@@ -154,7 +182,11 @@
             dataType: 'json'
     	})
     	.done(function( data ) {
-       		action_ok(data, var1, var2, var3);
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
     	})
     	.fail(function(data) {
     		action_not_ok(null, var1, var2, var3)
@@ -228,7 +260,6 @@
     };
 
     function rest_incluiUserPerfil(objJson, action_ok, action_not_ok) {
-    	alert ("aqui");
 		$.ajax({
 			type: "POST",
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/incluir",
@@ -333,6 +364,29 @@
         		action_not_ok()
         	};
     	});
+    };
+
+    function rest_atualizaUsuario(objJson, action_ok, action_not_ok, var1, var2) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/atualizar",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson),
+            async:false
+		})        	
+		.done(function( data ) {
+    	})
+    	.fail(function(data) {
+    	})
+    	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok (data, var1, var2);
+        	}else{
+        		action_not_ok(data, var1, var2)
+        	};
+    	});
+
     };
 
     function rest_atualizaUserPerfil(objJson, action_ok, action_not_ok, var1, var2) {

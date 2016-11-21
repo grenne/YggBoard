@@ -1,7 +1,8 @@
 //
 //*** 	botão genérico para voltar uma pagina
 //
-	$( ".getback" ).bind( "click", function() {
+	$( ".getback" ).off( "click");
+	$( ".getback" ).on( "click", function() {
 		parent.history.back();
 		return false;
 	});
@@ -16,7 +17,9 @@
 	if (localStorage.usuarioPerfil == "user"){
 	}; 
 	
-	$("#usuarioNome").html(localStorage.usuarioFirstName);
+	// *** carrega nome usuario
+	$('.userName').html(localStorage.usuarioFirstName);
+	$('.completeName').html(localStorage.usuarioFirstName + " " + localStorage.usuarioLastName);
 
 	function executaLogin(email, senha) {
 

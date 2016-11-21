@@ -6,7 +6,7 @@
 		localStorage.loginOk = "false";
 		localStorage.urlServidor = window.location.hostname;
 		if (localStorage.urlServidor == "localhost"){
-			localStorage.mainHost = "52.41.8.225";
+			localStorage.mainHost = "52.41.8.255";
 		}else{
 			localStorage.mainHost = localStorage.urlServidor;
 		};
@@ -70,11 +70,12 @@
 				formValido = false;
 			};	
 		});
-		$("#btn-submit-login").bind('click', function () {
+		$("#btn-submit-login").off('click');
+		$("#btn-submit-login").on('click', function () {
 			if (formValido){
 				console.log ("ok");
 				localStorage.loginOk = "true";
-				executaLogin($('#email').val(), $('#password').val()) 
+				executaLogin($('#email').val(), $('#password').val()); 
 			}else{
 				console.log ("notok");
 			}

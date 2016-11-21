@@ -35,6 +35,10 @@ public class Usuario {
 		public String perfil;
 		public String city;
 		public String password;
+		public String birthDate;
+        public String institution;
+        public String celPhone;
+        public String photo;
 		public String gender;
 
 		public Documento() {
@@ -49,6 +53,10 @@ public class Usuario {
 				String perfil,
 				String city,
 				String password,
+				String birthDate,
+		        String institution,
+		        String celPhone,
+		        String photo,
 				String gender
 						) {
 						this.email = email; 
@@ -57,6 +65,10 @@ public class Usuario {
 						this.perfil = perfil; 
 						this.city = city; 
 						this.password = password; 
+						this.birthDate = birthDate;
+						this.institution = institution;
+						this.celPhone = celPhone;
+						this.photo = photo;
 						this.gender = gender; 
 		}
 

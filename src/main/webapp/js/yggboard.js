@@ -15,15 +15,15 @@
 		$(window.document.location).attr('href','index.html');	
 	};
 	
-	// *** carrega nome usuario
-	$('.userName').html(localStorage.usuarioFirstName);
-	$('.completeName').html(localStorage.usuarioFirstName + " " + localStorage.usuarioLastName);
-
 	// *** reseta para forcar login
 	//localStorage.loginOk = "false";
 	
 	// **** carrega perfil
-	rest_obterUserPerfil(localStorage.usuarioEmail, carregaPerfil, incluiUserPerfil, "elementos", "")
+	if (localStorage.usuarioEmail){
+		rest_obterUserPerfil(localStorage.usuarioEmail, carregaPerfil, incluiUserPerfil, "elementos", "")
+	}else{
+		$(window.document.location).attr('href','index.html');
+	};
 	
 	var largura = 13;
 	if ($(window).width() > 1185){
@@ -298,7 +298,11 @@
 
 	function verificaPossuiHabilidade(id){
 		var possuiHabilidade = 1;
-		var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+		if (localStorage.getItem("meuPerfil") && localStorage.getItem("meuPerfil") != "undefined" ){
+			var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+		}else{
+			return possuiHabilidade;
+		};
 		$.each(objJson.documento.habilidadesInteresse, function(w, idHabilidade) {
 			if (id == idHabilidade){
 				possuiHabilidade = 2;
@@ -322,6 +326,8 @@
 		return habilidadeNecessaria;
 	};	
 	function incluiUserPerfil (tipo, elemento){
+		
+		console.log ("email sem user perfil:" + localStorage.usuarioEmail);
 		var objJson  = 
 				{
 				documento: 
@@ -466,9 +472,13 @@
 
 	function checaUserPerfilElemento (tipo, elemento){
 
-    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
-
     	var temElemento = false;
+		if (localStorage.getItem("meuPerfil") && localStorage.getItem("meuPerfil") != "undefined" ){
+			var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+		}else{
+			return temElemento;
+		};
+
 		if (tipo == "habilidadeInteresse"){
 			$.each( objJson.documento.habilidadesInteresse, function( i, habilidade) {
 				if (elemento == habilidade){

@@ -7,7 +7,7 @@ $(function() {
 	localStorage.loginOk = "false";
 	localStorage.urlServidor = window.location.hostname;
 	if (localStorage.urlServidor == "localhost"){
-		localStorage.mainHost = "52.41.8.225";
+		localStorage.mainHost = "52.41.8.255";
 	}else{
 		localStorage.mainHost = localStorage.urlServidor;
 	};
@@ -79,6 +79,10 @@ $(function() {
 				notEmpty: {
 					message: 'Informe a senha'
 				},
+				identical: {
+					field: 'confirmPassword',
+					message: 'Deve ser igual a senha confirmada'
+				},
 				stringLength: {
 					min: 4,
 					max: 30,
@@ -103,6 +107,7 @@ $(function() {
 					message: 'You have to accept the terms and policies'
 				}
 			}
+		
 		}
 		}
 	}).on('status.field.bv', function(e, data) {
