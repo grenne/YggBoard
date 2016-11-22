@@ -30,6 +30,11 @@
 
 		<!--yggboard-->
 		<link rel="stylesheet" type="text/css" href="css/yggboard.css"  />
+
+		<!-- CSS photos generic page styles -->
+		<link rel="stylesheet" href="cssphoto/style.css">
+		<!-- CSS photos to style the file input field as button and adjust the Bootstrap progress bars -->
+		<link rel="stylesheet" href="cssphoto/jquery.fileupload.css">
    		 
    		 
         <!--[if lt IE 9]>
@@ -45,12 +50,12 @@
 			<ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <span class="imagem-user"><img src="img/user.png" width="45" height="45" class="img-circle"></span> 
+                        <span class="imagem-user"><img id="img-photoHeader" width="45" height="45" class="img-circle"></span> 
                         <span class="userName"></span>
                     </a>
                     <ul class="dropdown-menu">
                     	<li><a href="perfil.html"><i class="fa fa-user"></i>Meu perfil</a></li>
-                    	<li><a href=""><i class="fa fa-cog"></i>Configurações</a></li>
+<!--                   	<li><a href=""><i class="fa fa-cog"></i>Configurações</a></li> -->
                         <li class="divider"></li>
 						<li><a href="index.html"><i class="fa fa-sign-out"></i>Sair</a></li>
                     </ul>
@@ -480,6 +485,30 @@
 
 	<!-- CUSTOM NOTIFICATION -->
 	<script src="js-notification/SmartNotification.min.js"></script>
+
+
+	<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+	<script src="jsphoto/vendor/jquery.ui.widget.js"></script>
+	<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+	<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+
+	<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+	<script src="jsphoto/jquery.iframe-transport.js"></script>
+	<!-- The basic File Upload plugin -->
+	<script src="jsphoto/jquery.fileupload.js"></script>
+	<!-- The File Upload processing plugin -->
+	<script src="jsphoto/jquery.fileupload-process.js"></script>
+	<!-- The File Upload image preview & resize plugin -->
+	<script src="jsphoto/jquery.fileupload-image.js"></script>
+	<!-- The File Upload audio preview plugin -->
+	<script src="jsphoto/jquery.fileupload-audio.js"></script>
+	<!-- The File Upload video preview plugin -->
+	<script src="jsphoto/jquery.fileupload-video.js"></script>
+	<!-- The File Upload validation plugin -->
+	<script src="jsphoto/jquery.fileupload-validate.js"></script>
+	
+	<!-- js de chamada e montagem da tela -->
+	<script src="js-photo/manage-photo.js"></script>
 
     <!--rest commands-->
     <script src="js/rest_commands.js"></script>

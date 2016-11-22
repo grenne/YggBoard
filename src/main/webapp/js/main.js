@@ -36,6 +36,7 @@
 				localStorage.usuarioLastName = data.documento.lastName;
 				localStorage.usuarioPerfil = data.documento.perfil;
 				localStorage.usuarioGender = data.documento.gender;
+				localStorage.usuarioPhoto = data.documento.photo;
 				localStorage.loginOk = "true";
 				switch(localStorage.usuarioPerfil) {
 			    case "administrator":

@@ -22,6 +22,12 @@
 
 		<!--yggboard-->
 		<link rel="stylesheet" type="text/css" href="css/yggboard.css"  />
+
+		<!-- CSS photos generic page styles -->
+		<link rel="stylesheet" href="cssphoto/style.css">
+		<!-- CSS photos to style the file input field as button and adjust the Bootstrap progress bars -->
+		<link rel="stylesheet" href="cssphoto/jquery.fileupload.css">
+
   </head>
   <body class="">
    
@@ -30,7 +36,7 @@
         	<h1 class="pull-left">YggBoard</h1>
 			<ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                     <span class="imagem-user"><img src="img/user.png" width="45" height="45" class="img-circle"></span> 
+                     <span class="imagem-user"><img id="img-photoHeader" width="45" height="45" class="img-circle"></span> 
                      <span class="userName"></span>
                 </li>
             </ul>        
@@ -40,8 +46,8 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li class=""><a id="closePainel" href="#" ><i class="fa fa-home"></i>Início</a></li>
-                <li class=""><a id="openUserPainel" href="#" ><i class="fa fa-puzzle-piece"></i>Painel</a></li>
+                <li class=""><a id="closePainel" href="yggboard.html" ><i class="fa fa-home"></i>Início</a></li>
+                <li class=""><a id="openUserPainel" href="yggboard.html" ><i class="fa fa-puzzle-piece"></i>Painel</a></li>
                 <li class=""><a id="openTutorial" href="#"><i class="fa fa-info-circle"></i>Tutorial</a></li>
             </ul>
         </div>
@@ -137,17 +143,33 @@
 					                </div>
 			                    </div>
 			                    <div class="col-sm-6">
-				                    <div class="col-sm-12">
-				                        <div class="form-group">
-						                    <label class="control-label">Foto:</label>
-				                            <input id="confirmPassword" type="password" class="form-control" placeholder="" name="confirmPassword">
-				                        </div>
+				                    <div class="col-sm-6">
+									    <!-- The global progress bar --> 
+									   <div id="progress-photo" class="progress col-xs-04""> 
+									       <div class="progress-bar progress-bar-success"></div> 
+									    </div> 
+									    <!-- The container for the uploaded files --> 
+									    <div id="files-photo" class="input-value files col-xs-04""> 
+									    	<img id="img-photo" class="imgUpload">
+									    </div>
 				                    </div>
+				                    <div class="col-sm-6">
+				                    	<br><br><br><br>
+				                    	 <!-- The file input field used as target for the file upload widget -->
+									    <span class="fileinput-button nova-imagem"> 
+											<i class="fa fa-camera-retro"></i>  nova imagem 
+									        <input id="upload-img-photo" type="file" name="uploadedFile" class="imgUpload"> 
+											<input class="hide" type="text" id="photo" name="photo" placeholder="" disabled="disabled">
+									    </span> 
+				                   		<br>
+				                   		<a href="#" id="removeImagem" class="remove-imagem"><i class="fa fa fa-trash-o"></i>  apagar imagem</a></li>
+				                   </div>
 			                    </div>
 			                </div>
 		                    <div class="col-sm-12">
 			                    <label class='hide msgErro'></label>
 				            </div>
+				            <br><br>
 			                <div class="col-md-4">
 			                	<button id="btn-submit-perfil" class="btn btn-primary btn-lg btn-block" >ATUALIZAR PERFIL</button>
 			                </div>
@@ -181,6 +203,29 @@
     <!--Bootstrap  datepicker -->
     <script src="plugins/bootstrap-datepicker/bootstrap-datepicker.min.js"></script>
     <script src="plugins/bootstrap-datepicker/locales/bootstrap-datepicker.pt-BR.min.js"></script>
+
+	<!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+	<script src="jsphoto/vendor/jquery.ui.widget.js"></script>
+	<!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+	<script src="//blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+
+	<!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+	<script src="jsphoto/jquery.iframe-transport.js"></script>
+	<!-- The basic File Upload plugin -->
+	<script src="jsphoto/jquery.fileupload.js"></script>
+	<!-- The File Upload processing plugin -->
+	<script src="jsphoto/jquery.fileupload-process.js"></script>
+	<!-- The File Upload image preview & resize plugin -->
+	<script src="jsphoto/jquery.fileupload-image.js"></script>
+	<!-- The File Upload audio preview plugin -->
+	<script src="jsphoto/jquery.fileupload-audio.js"></script>
+	<!-- The File Upload video preview plugin -->
+	<script src="jsphoto/jquery.fileupload-video.js"></script>
+	<!-- The File Upload validation plugin -->
+	<script src="jsphoto/jquery.fileupload-validate.js"></script>
+	
+	<!-- js de chamada e montagem da tela -->
+	<script src="js-photo/manage-photo.js"></script>
 
     <!--rest commands-->
     <script src="js/rest_commands.js"></script>

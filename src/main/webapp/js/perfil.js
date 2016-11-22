@@ -13,6 +13,11 @@ $(function() {
 		localStorage.mainHost = localStorage.urlServidor;
 	};
 
+	//
+	// ** setup carga photo
+	//
+	montaPhoto (localStorage.app, "usuarios", "photosUsuarios", "usuario", localStorage.usuarioEmail, "photo");
+
 
 	// obter dados
 	rest_obterUsuario(localStorage.usuarioEmail, montaTela, semAcao);
@@ -128,6 +133,13 @@ $(function() {
 		});
 	$("#birthDate").mask("99-99-9999",{placeholder:"dd-mm-yyyy"});
 	$("#celPhone").mask("(99)99999.9999",{placeholder:"(99)99999.9999"});
+
+	// *** limpa foto
+	$("#removeImagem").off('click');
+	$("#removeImagem").on('click', function () {
+    	$('#img-photo').remove();
+    	$('#photo').val("");
+	});
 	
 	// *** submit
 	$("#btn-submit-perfil").off('click');
@@ -181,6 +193,12 @@ function montaTela (data){
 	$('#email').val(data.documento.email);
 	$('#celPhone').val(data.documento.celPhone);
 	$('#institution').val(data.documento.institution);
+	$('#photo').val(data.documento.photo);
+	if (data.documento.photo){
+		carregaPhoto (localStorage.app, data.documento.photo, "photo");
+		carregaPhoto (localStorage.app, data.documento.photo, "photoHeader");
+	};
+
 };
 function usuarioAtualizado (data){
 	$(window.document.location).attr('href','yggboard.html');

@@ -24,6 +24,11 @@
 	}else{
 		$(window.document.location).attr('href','index.html');
 	};
+	//
+	// *** carregar photo
+	if (localStorage.usuarioPhoto){
+		carregaPhoto (localStorage.app, localStorage.usuarioPhoto, "photoHeader");
+	};
 	
 	var largura = 13;
 	if ($(window).width() > 1185){

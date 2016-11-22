@@ -274,6 +274,27 @@ h6 {
   	padding-bottom: 10px  !important;
   	color : #808080!important;
  }
+ .nova-imagem {
+	font-size: 14px  !important;
+	font-weight: bold !important; 
+	padding-top: 10px  !important;
+  	padding-bottom: 10px  !important;
+  	color : #AF723E!important;
+ }
+ .remove-imagem {
+	font-size: 14px  !important;
+	font-weight: bold !important; 
+	padding-top: 10px  !important;
+  	padding-bottom: 10px  !important;
+  	color : #ff0000!important;
+ }
+ .info {
+	font-size: 10px  !important;
+	font-weight: normal !important; 
+	padding-top: 10px  !important;
+  	padding-bottom: 10px  !important;
+  	color : #808080!important;
+ }
  .form-control{
 	background-color : #fff !important;; 
  }
