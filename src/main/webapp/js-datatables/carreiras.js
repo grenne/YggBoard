@@ -206,6 +206,7 @@
 	    });
 		$('#queroAprender_' + i).off('click');
 	    $('#queroAprender_' + i).on('click',function(){
+	    	$('#queroAprender_' + i).addClass("disabled");
 	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
 	    	atualizaUserPerfilElemento (objJson, "carreiraInteresse", carreira.nome);
 	    });	

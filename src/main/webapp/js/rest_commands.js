@@ -142,9 +142,9 @@
     	})
     	.done(function( data ) {
     		if (data){
-    			action_ok (data, var1, var2);
+    			action_ok (data, var1, var2, var3);
     		}else{
-    			action_not_ok (data, var1, var2);	
+    			action_not_ok (data, var1, var2, var3);	
     		};
     	})
     	.fail(function(data) {
@@ -183,9 +183,9 @@
     	})
     	.done(function( data ) {
     		if (data){
-    			action_ok (data, var1, var2);
+    			action_ok (data, var1, var2, var3);
     		}else{
-    			action_not_ok (data, var1, var2);	
+    			action_not_ok (data, var1, var2, var3);	
     		};
     	})
     	.fail(function(data) {

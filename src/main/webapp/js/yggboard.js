@@ -121,6 +121,10 @@
 		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
 	};
 
+	function UnityReset () {
+		SendMessage('Main','Reset');
+	};
+
 	function gravaDiagrama (){
 		var objJson = JSON.parse(localStorage.getItem("elements"));
 		

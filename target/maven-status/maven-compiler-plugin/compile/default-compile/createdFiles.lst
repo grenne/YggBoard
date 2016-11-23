@@ -12,6 +12,7 @@ com\rcapitol\yggboard\Carreira$Documento.class
 com\rcapitol\yggboard\Setup.class
 com\rcapitol\yggboard\Curso$Documento.class
 com\rcapitol\yggboard\Usuario$Documento.class
+com\rcapitol\yggboard\Rest_UploadFiles.class
 com\rcapitol\yggboard\ApplicationConfig.class
 com\rcapitol\yggboard\UserPerfil.class
 com\rcapitol\yggboard\Rest_Usuario.class

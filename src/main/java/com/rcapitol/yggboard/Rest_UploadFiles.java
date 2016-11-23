@@ -29,6 +29,7 @@ import com.mongodb.DB;
 import com.mongodb.DBCollection;
 import com.mongodb.DBObject;
 import com.mongodb.Mongo;
+import com.mongodb.MongoException;
 
 	
 @Singleton
@@ -73,13 +74,28 @@ public class Rest_UploadFiles {
         String mt = new MimetypesFileTypeMap().getContentType(target);
         return Response.ok(target, mt).build();
     }
- 
-	private final String UPLOADED_FILE_PATH = "c:/images/yggboard/";
 	
 	@POST
 	@Path("/files")
 	@Consumes("multipart/form-data")
 	public Response uploadFile(MultipartFormDataInput input, @QueryParam("prefix") String prefix) {
+		String tmp = "c:/images/yggboard/";
+		Mongo mongo;
+			try {
+				mongo = new Mongo();
+				DB db = (DB) mongo.getDB("documento");
+				DBCollection collection = db.getCollection("setup");
+				BasicDBObject searchQuery = new BasicDBObject("documento.setupKey", "fotosYggboard");
+				DBObject cursor = collection.findOne(searchQuery);
+				if (cursor != null){
+					BasicDBObject obj = (BasicDBObject) cursor.get("documento");
+					tmp = obj.getString("setupValue");
+				};
+			} catch (UnknownHostException e1) {
+				e1.printStackTrace();
+			} catch (MongoException e1) {
+				e1.printStackTrace();
+			}
 		String fileName = "";
 		Map<String, List<InputPart>> uploadForm = input.getFormDataMap();
 		List<InputPart> inputParts = uploadForm.get("uploadedFile");
@@ -96,7 +112,7 @@ public class Rest_UploadFiles {
 				byte [] bytes = IOUtils.toByteArray(inputStream);
 				
 				//constructs upload file path
-				fileName = UPLOADED_FILE_PATH + fileName;
+				fileName = tmp + fileName;
 				
 				writeFile(bytes,fileName);
 				
