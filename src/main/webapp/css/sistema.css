@@ -135,6 +135,14 @@ p {}
 	color: #1F1F1F;
 }
 
+.legendas-modal 
+{
+	width:850px !important;
+};
+.legendas {
+	width:850px !important;
+	height:1100px !important;
+};
 /***************************************************/
 
 /***  04. TOPO ***/
