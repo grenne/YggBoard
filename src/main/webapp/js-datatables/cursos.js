@@ -46,7 +46,9 @@
         $.each(objJson, function (i, curso) {
         	curso_table_row = 
 				'<tr class="itemCurso">' +
-		   			'<td id="nome_' + i + '">' + montaMaterias(curso.documento.materias) + '</td>' +
+		   			'<td id="nome_' + i + '">' + montaMaterias(curso.documento.materias) + 
+		   				'<a id="wiki_' + i + '" href="' + curso.documento.wiki + '" class="wiki" data-tooltip="wikipédia"><i class="fa fa-wikipedia-w"></i></a></td>' +		   			
+		   			'</td>' +
 //					'<td id="acaoTd_' + i + '"><button id="acaoCurso_' + i + '" class="btn-xs btn-info">Grade</button></td>' +
 					'<td id="curso' + i + '">' + curso.documento.nome + '</td>' +
 					'<td id="descricao_' + i + '">' + curso.documento.descricao + '</td>' +

@@ -47,7 +47,7 @@ var habilidades =
 	'137;campo;Economia;;;Pensamento econômico;5;Análise da evolução dos modelos de pensamento econômico e suas respectivas escolas ;blue;habilidades;blue;0,2;3420;3170;ellipse;;;;;nodes;1260;480;https://pt.wikipedia.org/wiki/Hist%C3%B3ria_do_pensamento_econ%C3%B3mico;;@' +
 	'116;campo;Economia;;;Microeconomia;5;Estudo do comportamento econômico de indivíduos e firmas;blue;habilidades;blue;0,2;3420;3750;ellipse;;;;;nodes;1260;480;https://pt.wikipedia.org/wiki/Microeconomia;;@' +
 	'117;campo;Economia;;;Macroeconomia;5;Estudo do comportamento econômico em nível regional, nacional e global;blue;habilidades;blue;0,2;3640;4430;ellipse;;;;;nodes;1850;600;https://pt.wikipedia.org/wiki/Macroeconomia;;@' +
-	'155;campo;Economia;;;Modelos e ténicas econômicas;5;Ferramentas para o estudo, projeção e tomada de decisão econômicas;blue;habilidades;blue;0,2;4480;3450;ellipse;;;;;nodes;590;1040;https://pt.wikipedia.org/wiki/C%C3%B3digos_de_classifica%C3%A7%C3%A3o_JEL#matem.C3.A1tica_e_m.C3.A9todos_quantitativos_JEL:_C_Subcategorias;;@' +
+	'155;campo;Economia;;;Modelos e ténicas econômicas;5;Ferramentas para o estudo, projeção e tomada de decisão econômicas;blue;habilidades;blue;0,2;4480;3450;ellipse;;;;;nodes;590;1040;https://pt.wikipedia.org/wiki/C%C3%B3digos_de_classifica%C3%A7%C3%A3o_JEL,matem.C3.A1tica_e_m.C3.A9todos_quantitativos_JEL:_C_Subcategorias;;@' +
 	'156;campo;Economia;;;Economia aplicada;5;Aplicação de ferramental econômico para a tomada de decisão específica e criação de regulações;blue;habilidades;blue;0,2;5400;3810;ellipse;;;;;nodes;1010;1720;https://pt.wikipedia.org/wiki/Economia_aplicada;;@' +
 	'158;campo;Engenharia;;;Engenharia Química;15;Aplicação tecnológica para a criação e conversão de substâncias químicas em compostos mais úteis;blue;habilidades;blue;0,2;8750;-1480;ellipse;;;;;nodes;4520;1100;https://pt.wikipedia.org/wiki/Engenharia_qu%C3%ADmica;Químico, alquimia, alquimista;@' +
 	'159;campo;Engenharia;;;Engenharia Elétrica;15;Estudo e aplicação tecnológica da eletricidade e do eletromagnetismo em máquinas e sistemas;blue;habilidades;blue;0,2;10000;-50;ellipse;;;;;nodes;420;120;https://pt.wikipedia.org/wiki/Engenharia_el%C3%A9trica;Tesla, Thomas edison;@' +
@@ -91,8 +91,8 @@ var habilidades =
 	'1065;categoria;Administração de empresas;Comercial;;Transações comerciais;102;Condução de transações comerciais completas, do orçamento à entrega do produto ou serviço;blue;habilidades;blue;0,2;-2450;2680;ellipse;;;;;nodes;420;360;;;@' +
 	'1027;categoria;Administração de empresas;Empreendedorismo;;Inovação;103;Identificação de oportunidades e lacunas de mercado e construção de soluções para suprir esta necessidade;blue;habilidades;blue;0,2;-3000;2160;ellipse;;;;;nodes;420;240;https://pt.wikipedia.org/wiki/Inova%C3%A7%C3%A3o;;@' +
 	'1028;categoria;Administração de empresas;Empreendedorismo;;Novos negócios;103;Criação de modelos de negócios e implantação de organizações para desenvolvê-los;blue;habilidades;blue;0,2;-2240;2040;ellipse;;;;;nodes;840;480;https://pt.wikipedia.org/wiki/Empreendedorismo;;@' +
-	'1029;categoria;Administração de empresas;Estratégia;;Formulação estratégica;104;Análises do mercado, sua conjuntura competitiva, de empresas e produtos para a criação de planos e políticas de ação;blue;habilidades;blue;0,2;-2580;1330;ellipse;;;;;nodes;1260;480;https://pt.wikipedia.org/wiki/Estrat%C3%A9gia#A_intelig.C3.AAncia_e_o_planejamento;;@' +
-	'1030;categoria;Administração de empresas;Estratégia;;Decisão estratégica;104;Criação, seleção e execução de iniciativas estratégicas condicionadas às respostas competitivas observadas;blue;habilidades;blue;0,2;-2580;810;ellipse;;;;;nodes;1260;360;https://pt.wikipedia.org/wiki/Estrat%C3%A9gia#Dire.C3.A7.C3.A3o_Estrat.C3.A9gica;;@' +
+	'1029;categoria;Administração de empresas;Estratégia;;Formulação estratégica;104;Análises do mercado, sua conjuntura competitiva, de empresas e produtos para a criação de planos e políticas de ação;blue;habilidades;blue;0,2;-2580;1330;ellipse;;;;;nodes;1260;480;https://pt.wikipedia.org/wiki/Estrat%C3%A9gia,A_intelig.C3.AAncia_e_o_planejamento;;@' +
+	'1030;categoria;Administração de empresas;Estratégia;;Decisão estratégica;104;Criação, seleção e execução de iniciativas estratégicas condicionadas às respostas competitivas observadas;blue;habilidades;blue;0,2;-2580;810;ellipse;;;;;nodes;1260;360;https://pt.wikipedia.org/wiki/Estrat%C3%A9gia,Dire.C3.A7.C3.A3o_Estrat.C3.A9gica;;@' +
 	'1017;categoria;Administração de empresas;Finanças;;Finanças bancárias;105;Controle e aplicação de recursos financeiros dentro de instituições financeiras;blue;habilidades;blue;0,2;-260;1100;ellipse;;;;;nodes;2100;240;https://pt.wikipedia.org/wiki/Banco;;@' +
 	'1032;categoria;Administração de empresas;Finanças;;Finanças corporativas;105;Análise e otimização da estrutura de capital de uma empresa para maximização do seu valor;blue;habilidades;blue;0,2;530;2500;ellipse;;;;;nodes;2560;720;https://pt.wikipedia.org/wiki/Finan%C3%A7as_corporativas;;@' +
 	'1033;categoria;Administração de empresas;Finanças;;Controladoria;105;Geração de informações financeiras para implementação de controles e realização de planejamento;blue;habilidades;blue;0,2;-1100;2040;ellipse;;;;;nodes;420;720;https://pt.wikipedia.org/wiki/Controladoria;;@' +
@@ -112,7 +112,7 @@ var habilidades =
 	'1063;categoria;Administração de empresas;Operações;;Logística;146;Dimensionamento, armazenamento e movimentação de recursos pela empresa, garantindo o fluxo constante e eficiente de sua operação;blue;habilidades;blue;0,2;-980;-860;ellipse;;;;;nodes;840;360;https://pt.wikipedia.org/wiki/Gest%C3%A3o_da_cadeia_de_suprimentos;Supply chain, SCM, Gestão da cadeia de suprimentos;@' +
 	'1064;categoria;Administração de empresas;Operações;;Técnicas de gestão operacional;146;Técnicas de controle e desenvolvimento de operações;blue;habilidades;blue;0,2;-2580;-1080;ellipse;;;;;nodes;1260;120;;;@' +
 	'1046;categoria;Administração de empresas;Recursos humanos;;Estruturação organizacional;108;Determinação das funções e criação de desenho estrutural da organização baseados no dimensionamento das suas necessidades de recursos humanos;blue;habilidades;blue;0,2;180;-320;ellipse;;;;;nodes;420;360;https://pt.wikipedia.org/wiki/Estrutura_organizacional;Organograma;@' +
-	'1045;categoria;Administração de empresas;Recursos humanos;;Recrutamento e seleção;108;Identificação e triagem de candidatos e condução de processos seletivos para garantir a aderência dos profissionais recrutados às necessidades técnicas e culturais da organização;blue;habilidades;blue;0,2;1360;-720;ellipse;;;;;nodes;840;240;https://pt.wikipedia.org/wiki/Provis%C3%A3o_de_recursos_humanos#Recrutamento_e_sele.C3.A7.C3.A3o;Headhunter;@' +
+	'1045;categoria;Administração de empresas;Recursos humanos;;Recrutamento e seleção;108;Identificação e triagem de candidatos e condução de processos seletivos para garantir a aderência dos profissionais recrutados às necessidades técnicas e culturais da organização;blue;habilidades;blue;0,2;1360;-720;ellipse;;;;;nodes;840;240;https://pt.wikipedia.org/wiki/Provis%C3%A3o_de_recursos_humanos,Recrutamento_e_sele.C3.A7.C3.A3o;Headhunter;@' +
 	'1044;categoria;Administração de empresas;Recursos humanos;;Atração e retenção;108;Desenvolvimento de pacotes de compensação e planos de carreira alinhados às expectativas dos funcionários e ao mercado, maximizando o capital humano da organização;blue;habilidades;blue;0,2;940;-320;ellipse;;;;;nodes;840;360;;Retenção de talentos, talentos, gestão de talentos;@' +
 	'1066;categoria;Administração de empresas;Recursos humanos;;Treinamento e desenvolvimento;108;Estruturação de metas e disponibilização de recursos educacionais para colaboradores de maneira a a garantir a oferta de habilidades para a evolução da organização;blue;habilidades;blue;0,2;390;-780;ellipse;;;;;nodes;840;360;;;@' +
 	'1018;categoria;Ciências contábeis;Contabilidade;;Contabilidade empresarial;109;Contabilidade empresarial;blue;habilidades;blue;0,2;4120;2200;ellipse;;;;;nodes;1240;740;;;@' +
@@ -447,10 +447,10 @@ var habilidades =
 	'10125;habilidade;Direito;Direito tributário;Tributação;Cálculo de tributos federais;1025;Determinação de base de cálculo e alíquotas de tributos federais;blue;habilidades;blue;0,2;-4600;-4240;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Direito_tribut%C3%A1rio;;@' +
 	'10271;habilidade;Direito;Direito tributário;Planejamento tributário;Elisão fiscal;1057;Criação de estratégias de redução dos tributos a serem pagos de acordo com a legislação vigente;blue;habilidades;blue;0,2;-5150;-4120;ellipse;;;;;nodes;;70;;;@' +
 	'10126;habilidade;Direito;Regulações setoriais;Regulação bancária;Divulgação de informações regulatórias;1047;Conhecimento das normas de divulgação de informação de bancos para BACEN e outros órgãos reguladores;blue;habilidades;blue;0,2;-1520;-2200;ellipse;;;;;nodes;;70;;;@' +
-	'10206;habilidade;Economia;Economia aplicada;Economia internacional;Análise de sistemas econômicos;1060;Análise das regras e instituições econômicas de determinado país;blue;habilidades;blue;0,2;5250;4520;ellipse;1720;;;;nodes;;70;https://pt.wikipedia.org/wiki/Economia#Economia_internacional;;@' +
+	'10206;habilidade;Economia;Economia aplicada;Economia internacional;Análise de sistemas econômicos;1060;Análise das regras e instituições econômicas de determinado país;blue;habilidades;blue;0,2;5250;4520;ellipse;1720;;;;nodes;;70;https://pt.wikipedia.org/wiki/Economia,Economia_internacional;;@' +
 	'10207;habilidade;Economia;Economia aplicada;Economia internacional;Utilização de Incoterms;1060;Avaliação dos termos de uma negociação internacional e suas implicações financeiras;blue;habilidades;blue;0,2;5250;4400;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Incoterms;FOB;@' +
 	'10471;habilidade;Economia;Economia aplicada;Economia internacional;Avaliação dos termos de troca;1060;Cálculo e análise do impacto dos termos de troca de uma economia;blue;habilidades;blue;0,2;5250;4280;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Termos_de_troca;;@' +
-	'10472;habilidade;Economia;Economia aplicada;Economia internacional;Análise de estabilidade financeira global;1060;Avaliação de potenciais riscos e bolhas de ativos formadas pela interdependência dos mercados globais;blue;habilidades;blue;0,2;5670;4520;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Economia_internacional#Estabilidade_financeira_internacional;;@' +
+	'10472;habilidade;Economia;Economia aplicada;Economia internacional;Análise de estabilidade financeira global;1060;Avaliação de potenciais riscos e bolhas de ativos formadas pela interdependência dos mercados globais;blue;habilidades;blue;0,2;5670;4520;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Economia_internacional,Estabilidade_financeira_internacional;;@' +
 	'10473;habilidade;Economia;Economia aplicada;Economia internacional;Análise de blocos econômicos;1060;Análise de tratados e relações comerciais nacionais derivadas de acordos comerciais multinacionais;blue;habilidades;blue;0,2;5670;4400;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Bloco_econ%C3%B4mico;;@' +
 	'10474;habilidade;Economia;Economia aplicada;Economia internacional;Análise de acordos comerciais;1060;Análise de tratados e relações comerciais setoriais derivadas de acordos comerciais internacionais;blue;habilidades;blue;0,2;5670;4280;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Acordo_comercial;;@' +
 	'10135;habilidade;Economia;Economia aplicada;Economia comportamental;Modelagem behaviorista de preços;1010;Determinação de preços de ativos com base em comportamentos de agentes de mercado;blue;habilidades;blue;0,2;5670;4060;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Economia_comportamental;;@' +
@@ -525,11 +525,11 @@ var habilidades =
 	'10493;habilidade;Engenharia;Engenharia Química;;Análise fluidodinâmica;158;Avaliação dos efeitos da aplicação de força em fluídos;blue;habilidades;blue;0,2;6700;-1060;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Mec%C3%A2nica_dos_fluidos;;@' +
 	'10494;habilidade;Engenharia;Engenharia Química;;Destilação;158;Separação de compostos baseada na diferença de pontos de ebulição entre as substâncias que os formam;blue;habilidades;blue;0,2;7120;-1060;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Destila%C3%A7%C3%A3o;;@' +
 	'10495;habilidade;Engenharia;Engenharia Química;;Absorção;158;Introdução e fixação de substâncias químicas em outras;blue;habilidades;blue;0,2;7540;-1060;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Absor%C3%A7%C3%A3o_(qu%C3%ADmica);;@' +
-	'10496;habilidade;Engenharia;Engenharia Química;;Extração;158;Remoção de de substâncias de compostos com base nas propriedades químicas destas substâncias;blue;habilidades;blue;0,2;7960;-1060;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Extra%C3%A7%C3%A3o#Qu.C3.ADmica;;@' +
+	'10496;habilidade;Engenharia;Engenharia Química;;Extração;158;Remoção de de substâncias de compostos com base nas propriedades químicas destas substâncias;blue;habilidades;blue;0,2;7960;-1060;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Extra%C3%A7%C3%A3o,Qu.C3.ADmica;;@' +
 	'10497;habilidade;Engenharia;Engenharia Química;;Purificação;158;Obtenção de substâncias puras a patir de processos químicos;blue;habilidades;blue;0,2;6700;-1180;ellipse;;;;;nodes;;70;;;@' +
 	'10498;habilidade;Engenharia;Engenharia Química;;Separação;158;Transformação de compostos químicos em duas ou mais substâncias ou compostos com concentrações diferentes dessas substâncias;blue;habilidades;blue;0,2;7120;-1180;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Separa%C3%A7%C3%A3o_de_misturas;;@' +
 	'10499;habilidade;Engenharia;Engenharia Química;;Cristalização;158;Separação de compostos baseada na aglutinação de sólidos dissolvidos em cristais estáveis;blue;habilidades;blue;0,2;7540;-1180;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Cristaliza%C3%A7%C3%A3o;;@' +
-	'10500;habilidade;Engenharia;Engenharia Química;;Análise de interação química;158;Avaliação e classificação de interações entre substâncias ;blue;habilidades;blue;0,2;7960;-1180;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Intera%C3%A7%C3%A3o#Qu.C3.ADmica;;@' +
+	'10500;habilidade;Engenharia;Engenharia Química;;Análise de interação química;158;Avaliação e classificação de interações entre substâncias ;blue;habilidades;blue;0,2;7960;-1180;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Intera%C3%A7%C3%A3o,Qu.C3.ADmica;;@' +
 	'10501;habilidade;Engenharia;Engenharia Química;;Identificação de catalisadores;158;Avaliação de substância que acelere a velocidade de reações químicas;blue;habilidades;blue;0,2;6700;-1300;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Catalisador;;@' +
 	'10502;habilidade;Engenharia;Engenharia Química;;Análise de ph;158;Avaliação do potencial hidrogeniônico de uma solução;blue;habilidades;blue;0,2;7120;-1300;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/PH;;@' +
 	'10503;habilidade;Engenharia;Engenharia Química;;Desenho de reator químico;158;Concepção de aparelho capaz de gerar reações químicas em larga escala e de maneira controlada;blue;habilidades;blue;0,2;7540;-1300;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Reator_qu%C3%ADmico;;@' +
@@ -732,7 +732,7 @@ var habilidades =
 	'10587;habilidade;Tecnologia da informação;Desenvolvimento e programação;Programação;Programação em PHP;1088;Programação na linguagem PHP;blue;habilidades;blue;0,2;8950;2460;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/PHP;linguagem interpretada, back end;@' +
 	'10588;habilidade;Tecnologia da informação;Desenvolvimento e programação;Programação;Programação em CSS;1088;Programação na linguagem CSS;blue;habilidades;blue;0,2;9370;2460;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Cascading_Style_Sheets;linguagem de marcação, Front end;@' +
 	'10589;habilidade;Tecnologia da informação;Desenvolvimento e programação;Programação;Programação em HTML;1088;Programação na linguagem HTML;blue;habilidades;blue;0,2;9790;2460;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/HTML;linguagem de marcação, Front end;@' +
-	'10590;habilidade;Tecnologia da informação;Desenvolvimento e programação;Programação;Programação em C#;1088;Programação na linguagem C#;blue;habilidades;blue;0,2;8530;2340;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/C_Sharp;Linguagem multi paradigma;@' +
+	'10590;habilidade;Tecnologia da informação;Desenvolvimento e programação;Programação;Programação em C,;1088;Programação na linguagem C,;blue;habilidades;blue;0,2;8530;2340;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/C_Sharp;Linguagem multi paradigma;@' +
 	'10591;habilidade;Tecnologia da informação;Desenvolvimento e programação;Programação;Programação em R;1088;Programação na linguagem R;blue;habilidades;blue;0,2;8950;2340;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/R_(linguagem_de_programa%C3%A7%C3%A3o);Programação estatística;@' +
 	'10592;habilidade;Tecnologia da informação;Desenvolvimento e programação;Programação;Programação em Go;1088;Programação na linguagem Go;blue;habilidades;blue;0,2;9370;2340;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Go_(linguagem_de_programa%C3%A7%C3%A3o);;@' +
 	'10376;habilidade;Tecnologia da informação;Desenvolvimento e programação;Programação;Programação em ASP;1088;Utilização das bibliotecas baseadas em ASP para desenvolvimento de software;blue;habilidades;blue;0,2;8950;2580;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/ASP;Active server pages, back end;@' +
@@ -752,8 +752,8 @@ var habilidades =
 	'10606;habilidade;Tecnologia da informação;Desenvolvimento e programação;Plataformas e bibliotecas;Pandas;1090;Criação de análises com a biblioteca Pandas;blue;habilidades;blue;0,2;11620;2460;ellipse;;;;;nodes;;70;;;@' +
 	'10607;habilidade;Tecnologia da informação;Desenvolvimento e programação;Arquitetura de Sistemas;Criação de arquitetura MVC;1086;Criação de programa baseada na arquitetura modelo-visão-controlador;blue;habilidades;blue;0,2;8950;2000;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/MVC;Model, view, controller;@' +
 	'10608;habilidade;Tecnologia da informação;Desenvolvimento e programação;Arquitetura de Sistemas;Diagramação em UML;1086;Diagramação da arquitetura de programas com base na Unified Modeling Language;blue;habilidades;blue;0,2;9370;2000;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/UML;;@' +
-	'10609;habilidade;Tecnologia da informação;Desenvolvimento e programação;Arquitetura de Sistemas;Criação de arquitetura em GOF;1086;Criação de projeto de sistema baseado no padrão Gang of Four;blue;habilidades;blue;0,2;8530;1880;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Padr%C3%A3o_de_projeto_de_software#Padr.C3.B5es_GoF_.28.27Gang_of_Four.27.29.3B;design pattern, desenho de projeto;@' +
-	'10610;habilidade;Tecnologia da informação;Desenvolvimento e programação;Arquitetura de Sistemas;Criação de arquitetura em GRASP;1086;Criação de projeto de sistema baseado no padrão GRASP;blue;habilidades;blue;0,2;8950;1880;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Padr%C3%A3o_de_projeto_de_software#Padr.C3.B5es_GRASP;design pattern, desenho de projeto;@' +
+	'10609;habilidade;Tecnologia da informação;Desenvolvimento e programação;Arquitetura de Sistemas;Criação de arquitetura em GOF;1086;Criação de projeto de sistema baseado no padrão Gang of Four;blue;habilidades;blue;0,2;8530;1880;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Padr%C3%A3o_de_projeto_de_software,Padr.C3.B5es_GoF_.28.27Gang_of_Four.27.29.3B;design pattern, desenho de projeto;@' +
+	'10610;habilidade;Tecnologia da informação;Desenvolvimento e programação;Arquitetura de Sistemas;Criação de arquitetura em GRASP;1086;Criação de projeto de sistema baseado no padrão GRASP;blue;habilidades;blue;0,2;8950;1880;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Padr%C3%A3o_de_projeto_de_software,Padr.C3.B5es_GRASP;design pattern, desenho de projeto;@' +
 	'10611;habilidade;Tecnologia da informação;Desenvolvimento e programação;Arquitetura de Sistemas;Estruturação de dados;1086;Determinação da estrutura sob a qual os dados gerados por um sistema deverão ser organizados;blue;habilidades;blue;0,2;9370;1880;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Arquitetura_de_dados;Modelagem de dados;@' +
 	'10377;habilidade;Tecnologia da informação;Desenvolvimento e programação;Arquitetura de Sistemas;Criação de arquitetura de sistemas;1086;Definição e documentação de componentes e relacionamentos de um software;blue;habilidades;blue;0,2;8530;2000;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Arquitetura_de_software;Arquitetura de sotfware;@' +
 	'10612;habilidade;Tecnologia da informação;Desenvolvimento e programação;Engenharia de sistemas;Desenvolvimento baseado em comportamento;1087;Desenvolvimento de sistemas baseado na interação entre equipes;blue;habilidades;blue;0,2;10780;2240;ellipse;;;;;nodes;;70;https://pt.wikipedia.org/wiki/Behavior_Driven_Development;;@' +
@@ -987,7 +987,7 @@ function carregaCarreirasTotal (){
 		"Estagiário - Private Banking;Serviços financeiros;Comercial;Apoie a construção do relacionamento com clientes de alta renda, oferencendo serviços e informações customizados.;Atendimento a clientes, cadastramento e operacionalização de contas, gestão de patrimonio, preparação de materiais;1.200;2.200;1.700;wealth management;Inglês, Office, ;10155, 10156, 10157, 10158, 10296, 10019, 10321, 10023;Setor financeiro;10554, 10039, 10057, 10173;@" +
 		"Estagiário - Contabilidade;Serviços financeiros;Contabilidade;Apoie o controle contábil dos negócios, garanta a qualidade e abrangência das informações geradas. ;Conciliação de posições, contabilização de operações, validação de sistemas, ;1.000;1.600;1.300;ciências contábeis;;10155, 10156, 10157, 10158, 10296, 10323, 10101, 10102, 10103, 10227;;10293, 1018, 1019;@" +
 		"Estagiário - Riscos;Serviços financeiros;Administrativo;Avalie e crie mecanismos de avaliação de riscos, desenvolva estudos prospectivos e sugira melhorias de controle.;Análise exploratória, criação de metodologia de análise de riscos, desenvolvimento de estudos, criação de relatórios e controles gerenciais, gestão do processo de crédito, ;1.000;1.700;1.400;Risk, liquidez, casamento taxas;Ferramentas estatísticas, programação básica, inglês espanhol;10155, 10156, 10157, 10158, 10296, 120, 10293;;1059, 10330, 10331, 10590, 10591;@" +
-		"Estagiário - Operações e programação;Serviços financeiros;Administrativo;Avalie, crie e mantenha sistemas estatísticos de análise de dados de investimentos.;Análise exploratória, programação de soluções, análise de investimentos e gestão de riscos, automatização de rotinas;1.000;1.600;1.300;Desenvolvimento, Matlab;programação estatística, ;120, 10293;Python, Matlab, R, Excel, VBA, C#;1059, 10330, 10331, 10590, 10591;@" +
+		"Estagiário - Operações e programação;Serviços financeiros;Administrativo;Avalie, crie e mantenha sistemas estatísticos de análise de dados de investimentos.;Análise exploratória, programação de soluções, análise de investimentos e gestão de riscos, automatização de rotinas;1.000;1.600;1.300;Desenvolvimento, Matlab;programação estatística, ;120, 10293;Python, Matlab, R, Excel, VBA, C,;1059, 10330, 10331, 10590, 10591;@" +
 		"Estagiário - Controladoria;Todas;Finanças;Faça o planejamento financeiro, acompanhe os resultados e gere análises financeiras sobre o negócio.;Planejamento financeiro e orçamentário, criação e consolidação de demonstrativos gerenciais, criação de e relatórios gerenciais, acompanhamento de resultados e condução de análises financeiras.;1.200;1.800;1.500;Controladoria, Orçamento, Planejamento financeiro, FP&A;Inglês, pacote office, raciocínio lógico;10155, 10156, 10157, 10158, 10296, 10049, 10050, 10198, 10327;VBA;10042, 10043, 10330;@" +
 		"Estagiário - Novos negócios;Todas;Finanças;Apoie o crescimento do negócio através de projetos, novas parcerias, captações e aquisições.;Análise econômico-financeira de projetos e empresas, criação de relatórios e apresentações, negociação com bancos e investidores para captação de recursos.;1.000;2.200;1.600;BizDev, Business development, Fundraising, strategy;Inglês,Office;10155, 10156, 10157, 10158, 10296, 10042, 10043, 10022, 10049;Valuation;10187, 10188, 10018;@" +
 		"Estagiário - Relacionamento com Investidores;Todas;Finanças;Seja o interlocutor da empresa com o mercado e apoie a sua transparência.;Consolidação de informações e análise financeira do negócio, criação de apresentações, comunicados e relatórios, atendimento a órgãos reguladores e investidores.;1.200;2.300;1.700;RI, Investor relations, Bolsa de valores, IPO;Inglês, Office;10155, 10156, 10157, 10158, 10296, 10042, 10043, 10049;;10018, 10008;@" +
@@ -1124,297 +1124,312 @@ function carregaCursosTotal (){
 	 */
 	
 	var cursos =
-		'facul;Curso;Pré requsitos;Nome matéria;Habilidades desenvolvidas;Carga horária;custo;@' +
-		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Atividades Planejadas I                ;"10162;10136";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Introdução ao Marketing           ;"10073;10072";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Sociologia I                   ;"10289;10386";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Matemática I               ;"10138;10139";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Introdução à Tecnologia da Informação  ;"10157;10146";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Matemática Financeira                ;"10061;10060;10157";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Gestão de Projetos ;"10002;10003;10005;10006";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Introdução à Gestão                      ;"10010;10005;10096";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Experiência Empreendedora;"10029;10030;10322";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Filosofia;"10136;10274;10275;10276";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Psicologia I;10145;;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Sociologia I;Sociologia II;"10386;10387;10649";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Direito Privado na Empresa;"10246;10117;10249;10112";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Matemática I;Matemática II;"10283;10285;10286";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Contabilidade Financeira;"10106;10107";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Estatística I;10137;;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Estratégia Mercadológica;"10073;10363;10439;10432";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Psicologia I;Psicologia II;"10142;10143;10144";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Ciência Política;"10392;10393;10394";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Controladoria;"10050;10198;10339";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Estatística I;Estatística II;"10140;10279;10281";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Estatística I;Gestão de Operações;"10011;10313;10012;10314";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Análise Estratégica;"10072;10200;10032;10035;10432;10420;10435";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Oficina em Organizações;"10171;10432;10162;10019";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Atividades planejadas I;Atividades Planejadas II;"10162;10136";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Pesquisa de Mercado;"10073;10018;10020;1059";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Matemática I;Microeconomia Intermediária Aplicada;"10132;10208;10451;10364";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Contabilidade Financeira e Controladoria;Finanças Corporativas I;"10042;10043;10352";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Modelagem para apoio à Tomada de Decisão;"10016;10157;10352";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Introdução à Gestão                      ;Organizações;"10171;10315;10096";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Marketing Mix;"10082;10074;10077;10360";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Direito Privado na Empresa;Direito Tributário;"10270;10271;10123;10124;10125";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Microeconomia Intermediária Aplicada;Macroeconomia Intermediária Aplicada;"10456; 10390;10460; 10127";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Finanças Corporativas I;Finanças Corporativas II;"10046;10052;10187;10188;10045 ";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Gestão de Operações e Estatística II;Logística Empresarial e SCM;"10071;10401;10402;10403";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Direito Privado na Empresa;Direito Trabalhista;"10268;10269;10122";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Introdução à Tecnologia da Informação  ;Administração da Tecnologia da Informação;"10398;10399";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Oficina Comunicação;"10018;10020;10427";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gestão de Pessoas;"10088;10095;10092;10094";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Orientação de Trabalho de Conclusão de Curso;"10000;10169";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Atividades Planejadas II;Atividades Planejadas III;"10162;10136";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;Logística Empresarial e SCM;Operações e Competitividade;"10015;10443;10315;10071;10036";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gestão Estratégica;"10037;10432;10036;10419;10420";;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Captação de Recursos para Novo Negocios;10031;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Estratégia Internacional;10366;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Estratégia Politica das Empresas Multinacionais;"10008;10393;10394";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gestão com Pessoas e Literatura;"10088; 10089";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Estratégia e Sustentabilidade em Organizações;"10013;10365";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Geopolítica e Estratégia Organizacional;"10366;10393;10394";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gestão De Carreiras;10381;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Empreendedorismo Social;10367;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Governança Corporativa;"10008;10009;10010;10201";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Fusões E Aquisições;"10045;10046;10047";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gestão De Carteiras E Fundos De Investimentos;"10057;10039;10178;10184";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Governança Corporativa, Controle Interno E Auditoria;"1004;10339";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Microfinanças E Inclusão Financeira;"10371; 10190";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Controladoria Ii;"10049;10050;10051;10198";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Renda Fixa;10064;60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Mercados Financeiros E De Capitais;"10054; 10184";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Mercados Financeiros E De Capitais;"10054; 10184";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Private Equity Venture Capital;"10045; 10178; ";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Avaliação De Empresas E Gestão Baseada Em Valor;"10043;10045";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gestao De Riscos E Derivativos;"10183; 10066";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Psicanálise E Propaganda;10385, 10357;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Interpretações Da Sociedade Contemporânea: O Debate Sobre O Neoliberalismo;10386;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Fundamentos E Tendencias Da Cultura De Consumo;10387;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Vocação E Trabalho;10381;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Corrupção: Conceito, Sistema De Controle E Análise De Casos Na Relação Público Privado;"10238;10324";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Metodos Multivariados Em Administração;10280;60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Modelagem De Risco De Crédito;"10190; 10191";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;VBA;10330;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Tecnicas De Previsão Em Administração E Economia;"10205;10352";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Capacidade Analítica Para Decisões De Marketing;"10080;10423;10083";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gestão De Vendas;"10319;10320;10023";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Marketing Global;"10082; 10037";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Criatividade;"10027; 10382";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Branding;"10363; 10076";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Business Up To Date: Consultoria em Marketing;"10360;10074;10439";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Marketing De Redes Sociais;10359;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gerenciamento De Crises;10172;60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Técnicas De Negociação;10022;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Negociação: Teoria E Pratica;10022;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gvniano Ensina Gvniano: Estratégia, Liderança E Gestão De Pessoas;"10088; 10089; 10093";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Libras: Língua Brasileira De Sinais;10389;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Formação Integrada Para A Sustentabilidade;"10013;10371;10365;10408";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Atividade De Campo – Formaçao Integrada Para A Sustentabilidade;"10013;10371;10365;10409";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Equity Research Challenge;"10054; 10045;10187;10188";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Preparação para Imersão Em Campo – GV Pesquisa;10169;15;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Economia da Gestão dos Recursos Humanos;"10088; 10095";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Teoria dos Jogos e Economia Comportamental;"10135;10214; 10364";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Indicadores Econômicos;10390;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Economia Da Estrategia;"10130; 10208; 10032; 10035; 10128";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Inovação Para Sustentabilidade;10028;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Operação E Logistica Internacional;"10369;10015;10403";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Intraempreendedorismo E Inovação;"10028;10030;10322";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Sustentabilidade: Introdução À Temática Socioambiental;10408;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Diagnóstico Empresarial: Técnicas De Consultoria;"10313; 10042; 10043";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Criação De Negócios Tecnológicos;"10030; 10322";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Modelo De Negócio, Parcerias Em Criação De Valor;"10030; 10323";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Avaliação De Empresas E Gestão Baseada Em Valor;"10043; 10045";60;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;A Conjuntura Politica Brasileira E Seus Impactos No Mundo Dos Negócios;10392;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Oficina Do Pensamento Logico;10327;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Analise De Risco Politico: Como As Empresas Multinacionais Dedidem Onde E Como Investir;"10392; 10394";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Logistica Reversa E A Gestão De Residuos Solidos;10370;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Marketing Para Novos Negócios – Modulo I;"10074; 10078";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Technology Business Models – Modulo I;10030;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Negotiation – Módulo I;10022;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Corporate Social Responsibility In Brazil – Modulo I;10371;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Macroeconomics For Emerging Markets – Modulo I;1010;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Brazilian Economy – Módulo I;10210;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Emerging Powers In Global Political Order – Modulo I;10394;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Cultural Aspects Of Brazilian Society – Módulo I;10388;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Gamification – Modulo I;10361;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Racism And Prejudice: Misbehaviour In The Workplace – Modulo I;10383;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Legal Framework For International Business Modulo Ii;10397;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Simulation Models In Finance – Modulo Ii;10352;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Strategy In International Perspective - Módulo Ii;10366;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Bric Countries: Companies & Labor Laws – Modulo Ii;"10122; 10206";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Cases On Economic Development: China, India And Other Economies – Modulo Ii;"10206; 10211";30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Brazilian Foreign Policy – Modulo Ii;10393;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Marketing For Low Income Consumers – Modulo Ii;10360;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;Graduação em administração de empresas;;Development & Sustainability - Modulo Ii;10391;30;Mensalidade - R$ 3.700;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Pessoas na organização;"10092;10088;10089";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Consumidores e produtos;"10074;10078";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Fontes e aplicações de recursos;"10048;10060";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Processos e sistemas;"10011;10012;10313;10314";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Análise de oportunidades de mercado;"10032; 10035";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Visão economica do mercado;"10129;10205;10319;10458;10459;10460";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Análise mercadológica;"10072;10073;10423;10083";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Ética e sociedade;"10136;10273;10274;10275";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Relações com o Governo;10022;Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;A Empresa e sua cadeia de valor;10072;Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Indicadores de desempenho da empresa;10043;Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Análise de empreendimentos;10045;Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Inteligência de negócios;10080;Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Geração de valor na Empresa;"10038;10046";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Inovação e sustentabilidade;"10028;10365;10371;10408";Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;MBM (Master in business management);Graduação, inglês;TCC - Trabalho de conclusão de curso;10000;Curso total 436 horas, 3 semestres;R$ - 32.160;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Estatística aplicada;"10140;10279;10280;10281;10282";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Matemática financeira;"10060;10061";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Habilidades computacionais;"10155;10156;10157;10158;10146";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Comunicação para gestores;10020;Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Relações interpessoais;10019;Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Negociação Empresarial;10022;Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Contabilidade;"10101;10102;10103;10106;10107";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Gestão de pessoas;"10088;10095;10092;10094";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Gestão de finanças;"10043;10048;10045;10052";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Gestão de operações;"10011;10012;10313;10314";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Gestão de Marketing ;"10080;10363;10081;10440;10439;10070";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Estratégia empresarial;"10072;10200;10032;10035;10432;10420;10435";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Aspectos jurídicos da Empresa;"10113;10114;10115;10116;10117";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Economia aplicada;"10206;10214;10208;10469";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Administração de Tecnologia de Informação;"10155;10156;10157;10158;10146";Curso total 512 horas, 4 semestres;R$ - 49.920;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Mercado de saúde;"10073;10083;10550";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Ética e Aspectos Jurídicos;"10136;10274;10275";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Economia da saúde;"10390;10469;10458;10459;10460;10550";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Comunicação para gestores;10020;Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Negociação Empresarial;10022;Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Processos e sistemas em Saúde;"10011;10012;10313;10314;10550";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Produtos e serviços em Saúde;"10078;10550";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Pessoas na organização de saúde;"10088;10095;10092;10094";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Contabilidade e Matemática financeira;"10101;10102;10103;10106;10107;10060;10061";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Análise exploratória;10280;Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Habilidades computacionais;"10155;10156;10157;10158;10146";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Relações interpessoais e Gestão de pessoas;"10092;10088;10089;10019";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Competitividade na Saúde;"10080;10550";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Resultados na Saúde;"10043;10550";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Operações em Saúde;"10011;10012;10015;10313;10314;10550";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Gestão da Informação em Saúde;"10398;10399;10400;10550";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Marketing para área de saúde;"10073;10083;10085;10363;10082;10440;10439;10074";Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Tópicos Emergentes;;Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);TCC - Trabalho de conclusão de curso;10000;Curso total 528 horas, 3 semestres;R$ - 35.730;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Contabilidade e Análise financeira;"10101;10102;10103;10106;10107;10043";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Análise Estatística;"10140;10279;10280;10281;10282";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Microeconomia;"10130;10131;10132;10449;10450;10451;10452;1053;10454;10455";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Finanças corporativas;"10042;10043;10352;10046;10052;10187;10188;10045 ";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Economia de Empresas;"10206;10214;10208;10469";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Estratégia de Marketing;"10073;10083";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Comportamento Organizacional;"10088;10019";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Estratégia empresarial;"10072;10200;10032;10035;10432;10420;10435";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Gestão de Operações;"10011;10313;10012;10314";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Macroeconomia;"10129;10205;10390;10456;10459;10460";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Investimentos;"10039;10342;10064;10054;10057";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Fusões e Aquisições;"10047;10042;10043;10052";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Mapeando Decisões complexas;10016;Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Negociação;10022;Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Inovação em Tecnologia da Informação;"10028;10398;10399";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Comportamento humano;"10089;10092";Curso total 666 horas, 6 semestres;R$ - 101.256;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;Programação e Resolução de Problemas;10293;30;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;Introdução à Economia;10209;90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;Matemática Financeira;"10060;10061";30;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;PBL;10168;15;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;Matemática I  (Parte I);"10138;10139;10283;10284";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Introdução às Ciências Sociais: Nação, Brasil e Identidade Nacional;10289;45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Probabilidade;10288;45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Formação Economica Do Brasil;10210;45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Matemática I  (Parte II);"10138;10139;10283;10284";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Matemática I;Matemática II  (Parte I);"10138;10139;10283;10284";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Estatística  (Parte I);"10137;10279";60;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Teoria Microeconômica I  (Parte I);"10130;10131;10132;10449;10450";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Metodologia e Técnicas de Pesquisa - Projeto I (Parte I);10169;30;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Matemática I;Matemática II  (Parte II);"10138;10139;10283;10284";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Estatística  (Parte II);10140;60;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Teoria Microeconômica I  (Parte II);"10450;10451;10452;1053;10454;10455";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Metodologia e Técnicas de Pesquisa - Projeto I (Parte II);10169;30;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Matemática II;Matemática III  (Parte I);"10283;10285;10284";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Econometria I (Parte I);10281;90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Teoria Microeconômica I;Teoria Microeconômica II;"10130;10131;10132;10449;10450;10451;10452;1053;10454;10455";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Matemática II;Matemática III  (Parte II);"10283;10285;10284";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Econometria I (Parte II);10281;90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Contabilidade Social e Introdução a Macro;10129;60;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Econometria I;Econometria II (Parte I);"10212;1059";60;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Teoria e Política Macroeconômica I (Parte I);"10129;10205;10390;10456;10459;10460";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Teoria Microeconômica II;Teoria Microeconômica III: Estratégia, Evolução E Complexidade;"10130;10131;10132;10449;10450;10451;10452;1053;10454;10455";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Metodologia e Técnicas de Pesquisa - Projeto I;Metodologia e Técnicas de Pesquisa - Projeto II (Parte I);"10169;10167";15;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Econometria II;Econometria III;10213;60;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Economia Industrial e de Redes;10082;75;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Direito e Economia;10251;15;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;História Econômica Geral (Parte I);10211;45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Finanças I (Parte I);"10039;10042;10043";45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Economia Internacional;"10206;10207;10471;10472;10473;10474";90;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;História Econômica Geral (Parte II);10211;45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Finanças I (Parte II);"10039;10042;10043";45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Teoria e Política Macroeconômica II;"10129;10205;10390;10456;10459;10460";75;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Finanças I;Finanças II (Parte I);"10042;10043;10046";45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Macroeconomia do Desenvolvimento;"10211;10212;10133";60;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Economia Brasileira Contemporânea;10210;45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Tópicos Especiais em Economia;"116;117;119;120";45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;Metodologia e Técnicas de Pesquisa - Projeto II;Metodologia e Técnicas de Pesquisa - Projeto III (Parte I);"10169;1051";15;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;História do Pensamento Econômico (Parte I);"10216;10217;10218;10444;10445;10446;10447;10448";45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Grandes Economistas  - à Distância (Parte I);"10216;10217;10218;10444;10445;10446;10447;10448";30;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Monografia (Parte I);"10000;10169";30;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;História Do Pensamento Econômico (Parte II);"10216;10217;10218;10444;10445;10446;10447;10448";45;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Grandes Economistas  - à Distância (Parte II);"10216;10217;10218;10444;10445;10446;10447;10448";30;Mensalidade - R$ 3.506;@' +
-		'FGV EESP;Curso de graduação em ciências econômicas;;Monografia (Parte II);"10000;10169";30;Mensalidade - R$ 3.506;@' +
-		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Crime e Sociedade;"10230;10262;10263;10264";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Direitos da Pessoa Humana;"10235;10229";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;História do Direito;"10233;10161";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Introdução ao Direito;"10230;10160;10020";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Oficina de Artes e Direito I;10230;30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Oficina de Jurisprudência;"10231;10232";30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Oficina de Prática Jurídica I (Expressão Oral e Textual);"10160;10236";30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Organização das Relações Privadas;"10230;10250";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Política e Instituições Brasileiras;"10162;10121";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Contabilidade;10106;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito Constitucional;10121;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito de Família e Sucessões;"1053;1054";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Filosofia Política;"10161;138";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Oficina de Artes e Direito I;Oficina de Artes e Direito II;10230;30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Oficina de Legislação;"10230;10160;10020";30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica I;Oficina de Prática Jurídica II - Técnicas de Negociação e Mediação;10022;30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Ordem Jurídica Internacional;"10254;10255";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Organização da Justiça e do Processo;10257;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito Administrativo I;"10238;10239;10324";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito da Organização Econômica;"10251;10252";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito da Propriedade I;10246;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito dos Negócios I;"10112;10117";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito Obrigacional e Contratual I;"10249;10022";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito Processual Civil I;"10257;10258;10259;10260;10261";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Microeconomia;"10130;10131;10132;10449;10450;10451;10452";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Oficina de Inglês Jurídico I;10278;30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica II - Técnicas de Negociação e Mediação;Oficina de Prática Jurídica III - Arbitragem;10234;30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito Administrativo I;Direito Administrativo II;"10238;10239;10324";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito da Propriedade I;Direito da Propriedade II;"10247;10248";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito dos Negócios I;Direito dos Negócios II;"10112;10117";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito e Economia;"10453;10455";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito Obrigacional e Contratual I;Direito Obrigacional e Contratual II;10250;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito Processual Civil I;Direito Processual Civil II;"10259;10260";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Macroeconomia;10129;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Oficina de Inglês Jurídico I;Oficina de Inglês Jurídico II;10278;30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica III - Arbitragem;Oficina de Prática Jurídica IV: Redação e Estratégia Processual I;10261;30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito da Responsabilidade I;10237;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito dos Negócios II;Direito dos Negócios III;"10115;10116";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito e Processo do Trabalho;"10268;10269;10122";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito e Processo Penal I;"10266;10267";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito Global;"10253;10254;10255;10256";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito Tributário e Finanças Públicas I;"10270;10271";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Ética e Teoria do Direito;"10273;10274;10275";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica IV: Redação e Estratégia Processual I;Oficina de Prática Jurídica V: Redação e Estratégia Processual II;10261;30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica V: Redação e Estratégia Processual II;Oficina de Prática Jurídica VI Redação e Estratégia Contratual;"10249;10022";30;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Contencioso Empresarial;"10249;10257;10258;10259;10260;10261";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito da Responsabilidade I;Direito da Responsabilidade II;10237;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito dos Negócios III;Direito dos Negócios IV;"10113;10114";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito e Processo Penal I;Direito e Processo Penal II;"10266;10267";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Direito Internacional Econômico;"10253;10254;10255;10256";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Direito Tributário e Finanças Públicas I;Direito Tributário e Finanças Públicas II;"10123;10124;10125";60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Sociologia Jurídica;10290;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Teoria da Constituição;10121;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;;Metodologia da Pesquisa em Direito I;10169;60;Mensalidade - R$ 4.300;@' +
-		'FGV Direito SP;Curso de graduação em direito;Metodologia da Pesquisa em Direito I;Metodologia da Pesquisa em Direito II;10169;60;Mensalidade - R$ 4.300;@';
+		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Atividades Planejadas I                ;10162,10136;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Introdução ao Marketing           ;10073,10072;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Sociologia I                   ;10289,10386;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Matemática I               ;10138,10139;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Introdução à Tecnologia da Informação  ;10157,10146;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Matemática Financeira                ;10061,10060,10157;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Gestão de Projetos ;10002,10003,10005,10006;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Aprovação no vestibular FGV EAESP - Adm. Empresas;Introdução à Gestão                      ;10010,10005,10096;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Experiência Empreendedora;10029,10030,10322;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Filosofia;10136,10274,10275,10276;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Psicologia I;10145;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Sociologia I;Sociologia II;10386,10387,10649;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Direito Privado na Empresa;10246,10117,10249,10112;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Matemática I;Matemática II;10283,10285,10286;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Contabilidade Financeira;10106,10107;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Estatística I;10137;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Estratégia Mercadológica;10073,10363,10439,10432;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Psicologia I;Psicologia II;10142,10143,10144;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Ciência Política;10392,10393,10394;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Controladoria;10050,10198,10339;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Estatística I;Estatística II;10140,10279,10281;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Estatística I;Gestão de Operações;10011,10313,10012,10314;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Análise Estratégica;10072,10200,10032,10035,10432,10420,10435;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Oficina em Organizações;10171,10432,10162,10019;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Atividades planejadas I;Atividades Planejadas II;10162,10136;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Pesquisa de Mercado;10073,10018,10020,1059;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Matemática I;Microeconomia Intermediária Aplicada;10132,10208,10451,10364;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Contabilidade Financeira e Controladoria;Finanças Corporativas I;10042,10043,10352;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Modelagem para apoio à Tomada de Decisão;10016,10157,10352;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Introdução à Gestão                      ;Organizações;10171,10315,10096;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Marketing Mix;10082,10074,10077,10360;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Direito Privado na Empresa;Direito Tributário;10270,10271,10123,10124,10125;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Microeconomia Intermediária Aplicada;Macroeconomia Intermediária Aplicada;10456, 10390,10460, 10127;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Finanças Corporativas I;Finanças Corporativas II;10046,10052,10187,10188,10045 ;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Gestão de Operações e Estatística II;Logística Empresarial e SCM;10071,10401,10402,10403;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Direito Privado na Empresa;Direito Trabalhista;10268,10269,10122;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Introdução à Tecnologia da Informação  ;Administração da Tecnologia da Informação;10398,10399;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Oficina Comunicação;10018,10020,10427;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gestão de Pessoas;10088,10095,10092,10094;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Orientação de Trabalho de Conclusão de Curso;10000,10169;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Atividades Planejadas II;Atividades Planejadas III;10162,10136;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;Logística Empresarial e SCM;Operações e Competitividade;10015,10443,10315,10071,10036;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gestão Estratégica;10037,10432,10036,10419,10420;;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Captação de Recursos para Novo Negocios;10031;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Estratégia Internacional;10366;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Estratégia Politica das Empresas Multinacionais;10008,10393,10394;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gestão com Pessoas e Literatura;10088, 10089;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Estratégia e Sustentabilidade em Organizações;10013,10365;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Geopolítica e Estratégia Organizacional;10366,10393,10394;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gestão De Carreiras;10381;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Empreendedorismo Social;10367;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Governança Corporativa;10008,10009,10010,10201;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Fusões E Aquisições;10045,10046,10047;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gestão De Carteiras E Fundos De Investimentos;10057,10039,10178,10184;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Governança Corporativa, Controle Interno E Auditoria;1004,10339;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Microfinanças E Inclusão Financeira;10371, 10190;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Controladoria Ii;10049,10050,10051,10198;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Renda Fixa;10064;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Mercados Financeiros E De Capitais;10054, 10184;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Mercados Financeiros E De Capitais;10054, 10184;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Private Equity Venture Capital;10045, 10178, ;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Avaliação De Empresas E Gestão Baseada Em Valor;10043,10045;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gestao De Riscos E Derivativos;10183, 10066;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Psicanálise E Propaganda;10385, 10357;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Interpretações Da Sociedade Contemporânea: O Debate Sobre O Neoliberalismo;10386;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Fundamentos E Tendencias Da Cultura De Consumo;10387;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Vocação E Trabalho;10381;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Corrupção: Conceito, Sistema De Controle E Análise De Casos Na Relação Público Privado;10238,10324;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Metodos Multivariados Em Administração;10280;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Modelagem De Risco De Crédito;10190, 10191;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;VBA;10330;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Tecnicas De Previsão Em Administração E Economia;10205,10352;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Capacidade Analítica Para Decisões De Marketing;10080,10423,10083;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gestão De Vendas;10319,10320,10023;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Marketing Global;10082, 10037;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Criatividade;10027, 10382;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Branding;10363, 10076;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Business Up To Date: Consultoria em Marketing;10360,10074,10439;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Marketing De Redes Sociais;10359;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gerenciamento De Crises;10172;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Técnicas De Negociação;10022;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Negociação: Teoria E Pratica;10022;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gvniano Ensina Gvniano: Estratégia, Liderança E Gestão De Pessoas;10088, 10089, 10093;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Libras: Língua Brasileira De Sinais;10389;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Formação Integrada Para A Sustentabilidade;10013,10371,10365,10408;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Atividade De Campo – Formaçao Integrada Para A Sustentabilidade;10013,10371,10365,10409;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Equity Research Challenge;10054, 10045,10187,10188;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Preparação para Imersão Em Campo – GV Pesquisa;10169;15 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Economia da Gestão dos Recursos Humanos;10088, 10095;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Teoria dos Jogos e Economia Comportamental;10135,10214, 10364;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Indicadores Econômicos;10390;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Economia Da Estrategia;10130, 10208, 10032, 10035, 10128;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Inovação Para Sustentabilidade;10028;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Operação E Logistica Internacional;10369,10015,10403;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Intraempreendedorismo E Inovação;10028,10030,10322;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Sustentabilidade: Introdução À Temática Socioambiental;10408;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Diagnóstico Empresarial: Técnicas De Consultoria;10313, 10042, 10043;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Criação De Negócios Tecnológicos;10030, 10322;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Modelo De Negócio, Parcerias Em Criação De Valor;10030, 10323;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Avaliação De Empresas E Gestão Baseada Em Valor;10043, 10045;60 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;A Conjuntura Politica Brasileira E Seus Impactos No Mundo Dos Negócios;10392;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Oficina Do Pensamento Logico;10327;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Analise De Risco Politico: Como As Empresas Multinacionais Dedidem Onde E Como Investir;10392, 10394;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Logistica Reversa E A Gestão De Residuos Solidos;10370;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Marketing Para Novos Negócios – Modulo I;10074, 10078;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Technology Business Models – Modulo I;10030;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Negotiation – Módulo I;10022;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Corporate Social Responsibility In Brazil – Modulo I;10371;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Macroeconomics For Emerging Markets – Modulo I;1010;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Brazilian Economy – Módulo I;10210;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Emerging Powers In Global Political Order – Modulo I;10394;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Cultural Aspects Of Brazilian Society – Módulo I;10388;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Gamification – Modulo I;10361;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Racism And Prejudice: Misbehaviour In The Workplace – Modulo I;10383;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Legal Framework For International Business Modulo Ii;10397;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Simulation Models In Finance – Modulo Ii;10352;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Strategy In International Perspective - Módulo Ii;10366;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Bric Countries: Companies & Labor Laws – Modulo Ii;10122, 10206;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Cases On Economic Development: China, India And Other Economies – Modulo Ii;10206, 10211;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Brazilian Foreign Policy – Modulo Ii;10393;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Marketing For Low Income Consumers – Modulo Ii;10360;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;Graduação em administração de empresas;;Development & Sustainability - Modulo Ii;10391;30 horas aula;Mensalidade - R$ 3.700;http://graduacao.fgv.br/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Pessoas na organização;10092,10088,10089;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Consumidores e produtos;10074,10078;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Fontes e aplicações de recursos;10048,10060;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Processos e sistemas;10011,10012,10313,10314;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Análise de oportunidades de mercado;10032, 10035;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Visão economica do mercado;10129,10205,10319,10458,10459,10460;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Análise mercadológica;10072,10073,10423,10083;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Ética e sociedade;10136,10273,10274,10275;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Relações com o Governo;10022;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;A Empresa e sua cadeia de valor;10072;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Indicadores de desempenho da empresa;10043;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Análise de empreendimentos;10045;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Inteligência de negócios;10080;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Geração de valor na Empresa;10038,10046;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;Inovação e sustentabilidade;10028,10365,10371,10408;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;MBM (Master in business management);Graduação, inglês;TCC - Trabalho de conclusão de curso;10000;Curso total 436 horas, 3 semestres;-R$ 32.160;http://www.fgv.br/eaesp/cursos/mbm/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Estatística aplicada;10140,10279,10280,10281,10282;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Matemática financeira;10060,10061;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Habilidades computacionais;10155,10156,10157,10158,10146;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Comunicação para gestores;10020;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Relações interpessoais;10019;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Negociação Empresarial;10022;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Contabilidade;10101,10102,10103,10106,10107;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Gestão de pessoas;10088,10095,10092,10094;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Gestão de finanças;10043,10048,10045,10052;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Gestão de operações;10011,10012,10313,10314;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Gestão de Marketing ;10080,10363,10081,10440,10439,10070;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Estratégia empresarial;10072,10200,10032,10035,10432,10420,10435;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Aspectos jurídicos da Empresa;10113,10114,10115,10116,10117;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Economia aplicada;10206,10214,10208,10469;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAG (Curso de especialização em administração para graduados);Graduação, 3 anos experiência, inglês;Administração de Tecnologia de Informação;10155,10156,10157,10158,10146;Curso total 512 horas, 4 semestres;-R$ 49.920;http://www.fgv.br/eaesp/cursos/ceag/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Mercado de saúde;10073,10083,10550;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Ética e Aspectos Jurídicos;10136,10274,10275;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Economia da saúde;10390,10469,10458,10459,10460,10550;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Comunicação para gestores;10020;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Negociação Empresarial;10022;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Processos e sistemas em Saúde;10011,10012,10313,10314,10550;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Produtos e serviços em Saúde;10078,10550;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Pessoas na organização de saúde;10088,10095,10092,10094;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Contabilidade e Matemática financeira;10101,10102,10103,10106,10107,10060,10061;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Análise exploratória;10280;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Habilidades computacionais;10155,10156,10157,10158,10146;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Relações interpessoais e Gestão de pessoas;10092,10088,10089,10019;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Competitividade na Saúde;10080,10550;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Resultados na Saúde;10043,10550;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Operações em Saúde;10011,10012,10015,10313,10314,10550;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Gestão da Informação em Saúde;10398,10399,10400,10550;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Marketing para área de saúde;10073,10083,10085,10363,10082,10440,10439,10074;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);Tópicos Emergentes;;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;CEAHS (Curso de Especialização em Administração Hospitalar e de Sistemas de saúde);Graduação, 3 anos experiência (saúde);TCC - Trabalho de conclusão de curso;10000;Curso total 528 horas, 3 semestres;-R$ 35.730;http://www.fgv.br/eaesp/cursos/ceahs/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Contabilidade e Análise financeira;10101,10102,10103,10106,10107,10043;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Análise Estatística;10140,10279,10280,10281,10282;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Microeconomia;10130,10131,10132,10449,10450,10451,10452,1053,10454,10455;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Finanças corporativas;10042,10043,10352,10046,10052,10187,10188,10045 ;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Economia de Empresas;10206,10214,10208,10469;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Estratégia de Marketing;10073,10083;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Comportamento Organizacional;10088,10019;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Estratégia empresarial;10072,10200,10032,10035,10432,10420,10435;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Gestão de Operações;10011,10313,10012,10314;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Macroeconomia;10129,10205,10390,10456,10459,10460;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Investimentos;10039,10342,10064,10054,10057;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Fusões e Aquisições;10047,10042,10043,10052;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Mapeando Decisões complexas;10016;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Negociação;10022;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Inovação em Tecnologia da Informação;10028,10398,10399;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EAESP;MPA (Mestrado Profissional em Administração);Graduação, 5 anos de experiência;Comportamento humano;10089,10092;Curso total 666 horas, 6 semestres;-R$ 101.256;http://www.fgv.br/eaesp/cursos/mpa/;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;Programação e Resolução de Problemas;10293;30 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;Introdução à Economia;10209;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;Matemática Financeira;10060,10061;30 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;PBL;10168;15 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Aprovação em Vestibular FGV EESP;Matemática I  (Parte I);10138,10139,10283,10284;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Introdução às Ciências Sociais: Nação, Brasil e Identidade Nacional;10289;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Probabilidade;10288;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Formação Economica Do Brasil;10210;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Matemática I  (Parte II);10138,10139,10283,10284;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Matemática I;Matemática II  (Parte I);10138,10139,10283,10284;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Estatística  (Parte I);10137,10279;60 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Teoria Microeconômica I  (Parte I);10130,10131,10132,10449,10450;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Metodologia e Técnicas de Pesquisa - Projeto I (Parte I);10169;30 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Matemática I;Matemática II  (Parte II);10138,10139,10283,10284;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Estatística  (Parte II);10140;60 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Teoria Microeconômica I  (Parte II);10450,10451,10452,1053,10454,10455;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Metodologia e Técnicas de Pesquisa - Projeto I (Parte II);10169;30 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Matemática II;Matemática III  (Parte I);10283,10285,10284;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Econometria I (Parte I);10281;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Teoria Microeconômica I;Teoria Microeconômica II;10130,10131,10132,10449,10450,10451,10452,1053,10454,10455;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Matemática II;Matemática III  (Parte II);10283,10285,10284;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Econometria I (Parte II);10281;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Contabilidade Social e Introdução a Macro;10129;60 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Econometria I;Econometria II (Parte I);10212,1059;60 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Teoria e Política Macroeconômica I (Parte I);10129,10205,10390,10456,10459,10460;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Teoria Microeconômica II;Teoria Microeconômica III: Estratégia, Evolução E Complexidade;10130,10131,10132,10449,10450,10451,10452,1053,10454,10455;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Metodologia e Técnicas de Pesquisa - Projeto I;Metodologia e Técnicas de Pesquisa - Projeto II (Parte I);10169,10167;15 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Econometria II;Econometria III;10213;60 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Economia Industrial e de Redes;10082;75 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Direito e Economia;10251;15 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;História Econômica Geral (Parte I);10211;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Finanças I (Parte I);10039,10042,10043;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Economia Internacional;10206,10207,10471,10472,10473,10474;90 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;História Econômica Geral (Parte II);10211;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Finanças I (Parte II);10039,10042,10043;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Teoria e Política Macroeconômica II;10129,10205,10390,10456,10459,10460;75 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Finanças I;Finanças II (Parte I);10042,10043,10046;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Macroeconomia do Desenvolvimento;10211,10212,10133;60 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Economia Brasileira Contemporânea;10210;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Tópicos Especiais em Economia;116,117,119,120;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;Metodologia e Técnicas de Pesquisa - Projeto II;Metodologia e Técnicas de Pesquisa - Projeto III (Parte I);10169,1051;15 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;História do Pensamento Econômico (Parte I);10216,10217,10218,10444,10445,10446,10447,10448;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Grandes Economistas  - à Distância (Parte I);10216,10217,10218,10444,10445,10446,10447,10448;30 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Monografia (Parte I);10000,10169;30 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;História Do Pensamento Econômico (Parte II);10216,10217,10218,10444,10445,10446,10447,10448;45 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Grandes Economistas  - à Distância (Parte II);10216,10217,10218,10444,10445,10446,10447,10448;30 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV EESP;Curso de graduação em ciências econômicas;;Monografia (Parte II);10000,10169;30 horas aula;Mensalidade - R$ 3.506;http://eesp.fgv.br/ensino/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Crime e Sociedade;10230,10262,10263,10264;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Direitos da Pessoa Humana;10235,10229;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;História do Direito;10233,10161;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Introdução ao Direito;10230,10160,10020;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Oficina de Artes e Direito I;10230;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Oficina de Jurisprudência;10231,10232;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Oficina de Prática Jurídica I (Expressão Oral e Textual);10160,10236;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Organização das Relações Privadas;10230,10250;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Aprovação em vestibular FGV Direito;Política e Instituições Brasileiras;10162,10121;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Contabilidade;10106;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito Constitucional;10121;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito de Família e Sucessões;1053,1054;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Filosofia Política;10161,138;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Oficina de Artes e Direito I;Oficina de Artes e Direito II;10230;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Oficina de Legislação;10230,10160,10020;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica I;Oficina de Prática Jurídica II - Técnicas de Negociação e Mediação;10022;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Ordem Jurídica Internacional;10254,10255;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Organização da Justiça e do Processo;10257;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito Administrativo I;10238,10239,10324;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito da Organização Econômica;10251,10252;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito da Propriedade I;10246;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito dos Negócios I;10112,10117;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito Obrigacional e Contratual I;10249,10022;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito Processual Civil I;10257,10258,10259,10260,10261;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Microeconomia;10130,10131,10132,10449,10450,10451,10452;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Oficina de Inglês Jurídico I;10278;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica II - Técnicas de Negociação e Mediação;Oficina de Prática Jurídica III - Arbitragem;10234;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito Administrativo I;Direito Administrativo II;10238,10239,10324;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito da Propriedade I;Direito da Propriedade II;10247,10248;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito dos Negócios I;Direito dos Negócios II;10112,10117;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito e Economia;10453,10455;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito Obrigacional e Contratual I;Direito Obrigacional e Contratual II;10250;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito Processual Civil I;Direito Processual Civil II;10259,10260;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Macroeconomia;10129;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Oficina de Inglês Jurídico I;Oficina de Inglês Jurídico II;10278;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica III - Arbitragem;Oficina de Prática Jurídica IV: Redação e Estratégia Processual I;10261;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito da Responsabilidade I;10237;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito dos Negócios II;Direito dos Negócios III;10115,10116;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito e Processo do Trabalho;10268,10269,10122;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito e Processo Penal I;10266,10267;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito Global;10253,10254,10255,10256;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito Tributário e Finanças Públicas I;10270,10271;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Ética e Teoria do Direito;10273,10274,10275;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica IV: Redação e Estratégia Processual I;Oficina de Prática Jurídica V: Redação e Estratégia Processual II;10261;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Oficina de Prática Jurídica V: Redação e Estratégia Processual II;Oficina de Prática Jurídica VI Redação e Estratégia Contratual;10249,10022;30 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Contencioso Empresarial;10249,10257,10258,10259,10260,10261;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito da Responsabilidade I;Direito da Responsabilidade II;10237;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito dos Negócios III;Direito dos Negócios IV;10113,10114;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito e Processo Penal I;Direito e Processo Penal II;10266,10267;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Direito Internacional Econômico;10253,10254,10255,10256;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Direito Tributário e Finanças Públicas I;Direito Tributário e Finanças Públicas II;10123,10124,10125;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Sociologia Jurídica;10290;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Teoria da Constituição;10121;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;;Metodologia da Pesquisa em Direito I;10169;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV Direito SP;Curso de graduação em direito;Metodologia da Pesquisa em Direito I;Metodologia da Pesquisa em Direito II;10169;60 horas aula;Mensalidade - R$ 4.300;http://direitosp.fgv.br/graduacao;@' +
+		'FGV;PEC - Programas de educação continuada;Envolvimento com projetos e empreendimentos;PEC - Gerenciamento de projetos;10002,10003,10005,10006, 10096, 10097,10315;60 horas aula;R$ 4.800;http://pec.fgv.br/cursos/gerenciamento-de-projetos;@' +
+		'FGV;PEC - Programas de educação continuada;Nenhum;PEC - Gestão de Marketing;10439,10081,10441,10442,10077;60 horas aula;R$ 4.560;http://pec.fgv.br/cursos/gestao-de-marketing-uma-visao-geral;@' +
+		'FGV;PEC - Programas de educação continuada;Nenhum;PEC - Liderança 360;10648,10649,10650;60 horas aula;R$ 5.400;http://pec.fgv.br/cursos/lideranca-360o-abilio-diniz;@' +
+		'FGV;PEC - Programas de educação continuada;Nenhum;PEC - Criatividade;10425,10027,10382;40 horas aula;R$ 3.120;http://pec.fgv.br/cursos/criatividade;@' +
+		'FGV;PEC - Programas de educação continuada;Profissionais formados na área de saúde;PEC - Auditoria nos serviços de saúde;10004,10022,10037,10198;90 horas aula;R$ 6.030;http://pec.fgv.br/cursos/auditoria-em-servicos-e-sistemas-de-saude;@' +
+		'FGV;PEC - Programas de educação continuada;Formação superior completa;PEC - Empreendedorismo e criação de novos negócios;10028,10025,10029,10030,10031,10322;60 horas aula;R$ 4.920;http://pec.fgv.br/cursos/empreendedorismo-e-criacao-de-novos-negocios;@' +
+		'FGV;PEC - Programas de educação continuada;3 anos de experiência na área;PEC - Gestão de processos;10172,10011,10012,10313,10314;60 horas aula;R$ 5.040;http://pec.fgv.br/cursos/gestao-de-processos;@' +
+		'FGV;PEC - Programas de educação continuada;Estar envolvido na estratégia da empresa;PEC - Gestão estratégica de negócios;10072,10200,10032,10035,10432,10420,10435;56 horas aula;R$ 5.220;http://pec.fgv.br/cursos/gestao-estrategica-de-negocios;@' +
+		'FGV;PEC - Programas de educação continuada;2 anos de formação ou 5 anos de experiência em gestão;PEC - Intensivo de administração;10022,10406,10107,10105,10060,10061,10081,10073,10083;132 horas aula;R$ 10.824;http://pec.fgv.br/cursos/intensivo-de-administracao;@' +
+		'FGV;PEC - Programas de educação continuada;Nenhum;PEC - Negociação;10022,10430,10650;60 horas aula;R$ 6.060;http://pec.fgv.br/cursos/negociacao;@' +
+		'FGV;PEC - Programas de educação continuada;Conhecimentos básicos de custo;PEC - Gerência comercial;10022,10023,10024,10319,10320,10321;56 horas aula;R$ 4.320;http://pec.fgv.br/cursos/gerencia-comercial;@' +
+		'FGV;PEC - Programas de educação continuada;1 ano de experiência na área de produto;PEC - Gerência de produto;10073,10081,10424,10440,10082,10356,10361,10073,10423,10080;60 horas aula;R$ 4.500;http://pec.fgv.br/cursos/gerencia-de-produto;@' +
+		'FGV;PEC - Programas de educação continuada;Nenhum;PEC - Mobile marketing;10423,10080,10083,10354,10355,10358,10359;60 horas aula;R$ 4.260;http://pec.fgv.br/cursos/mobile-marketing;@' +
+		'FGV;PEC - Programas de educação continuada;Formação superior completa;PEC - Intensivo de economia;10206,10473,10214,10208,10129,10205,10390,10458,10459,10130,10131,10132;60 horas aula;R$ 4.320;http://pec.fgv.br/cursos/intensivo-de-economia;@' +
+		'FGV;PEC - Programas de educação continuada;Nenhum;PEC - Análise de investimentos em projetos;10042,10391,10013,10043,10346,10052,10185,10187,10307;60 horas aula;R$ 4.380;http://pec.fgv.br/cursos/analise-de-investimentos-em-projetos;@' +
+		'FGV;PEC - Programas de educação continuada;Nenhum;PEC - Contabilidade e finanças para administradores não financeiros;10108,10060,10061,10049,10050,10042,10043,10101,10102,10103,10106,10106,10221;60 horas aula;R$ 5.340;http://pec.fgv.br/cursos/contabilidade-e-financas-para-administradores-nao-financeiros;@';
 	
 	var arrayCursos = cursos.split("@");
 	var i = 0;
@@ -1433,6 +1448,7 @@ function carregaCursosTotal (){
 					    escola : arrayItensCurso[0],
 					    eletiva : "",
 					    preRequisito : arrayItensCurso[2],
+					    wiki : arrayItensCurso[7],
 						materias : [],
 						habilidades : []
 						}

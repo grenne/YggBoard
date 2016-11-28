@@ -213,11 +213,20 @@ p {}
 
 /***  04. TOPO ***/
 
+header h1 {
+	background:url(../img/logo.png) no-repeat;
+	width:183px;
+	height:40px;
+	display:block;
+	margin-top:10px;
+	text-indent:-9999px;
+}
+
 
 .header {
    width:100px; 
    height:150px;
-   background-image:"img/logo-login.png";
+   background:url(../img/logo.png) no-repeat;
    margin:0; 
    padding-left:70px; 
    display: block;

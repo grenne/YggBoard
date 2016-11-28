@@ -42,19 +42,30 @@
 	
     // ** ações do menu do user perfil tab interesses
 	$( "#openUserPainel" ).on( "click", function() {
+		$( ".inactive-tab").removeClass("nav-tab");
+		$( "#openUserPainel").addClass("nav-tab");
 		$('#userPanel').removeClass("hide");
 		$('#tutorial').addClass("hide");
 		$('#unity').addClass("hide");
 	});
 	$( "#openTutorial" ).on( "click", function() {
+		$( ".inactive-tab").removeClass("nav-tab");
+		$( "#openTutorial").addClass("nav-tab");
 		$('#userPanel').addClass("hide");
 		$('#tutorial').removeClass("hide");
 		$('#unity').addClass("hide");
 	});
 	$( "#closePainel" ).on( "click", function() {
+		$( ".inactive-tab").removeClass("nav-tab");
+		$( "#closePainel").addClass("nav-tab");
 		$('#userPanel').addClass("hide");
 		$('#tutorial').addClass("hide");
 		$('#unity').removeClass("hide");
+	});
+    // ** ações do menu do user perfil
+	$( "#interesses_theader_tab" ).on( "click", function() {
+	});
+	$( "#conquistas_theader_tab" ).on( "click", function() {
 	});
     // ** ações do menu do user perfil tab interesses
 	$( "#interesse_objetivos_theader_tab" ).on( "click", function() {
@@ -65,6 +76,8 @@
 	});
 	$( "#interesse_cursos_theader_tab" ).on( "click", function() {
 		obterCursosInteresseUserPerfil ("cursos-interesse", true, "cursos_user_perfil_theader")
+	});
+	$( "#interesse_premios_theader_tab" ).on( "click", function() {
 	});
 	
     // ** ações do menu do user perfil tab conquistas
@@ -81,6 +94,8 @@
 
 	localStorage.carrega = "true";
 	$('#habilidade_theader_tab').on('shown.bs.tab', function (e) {
+		$('.nav-tab-lateral').removeClass("nav-tab");
+		$('#habilidade_theader_tab-h4').addClass("nav-tab");
 		if (localStorage.carrega == "true"){
 			var cy = "";
 			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")), cy);
@@ -90,6 +105,8 @@
 		$('.numero-habilidades').removeClass("hide");
 	});
 	$('#carreira_theader_tab').on('shown.bs.tab', function (e) {
+		$('.nav-tab-lateral').removeClass("nav-tab");
+		$('#carreira_theader_tab-h4').addClass("nav-tab");
 		if (localStorage.carrega == "true"){
 			var cy = "";
 			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")), cy);
@@ -99,6 +116,35 @@
 		$('.numero-habilidades').addClass("hide");
 	});
 
+	$('#filtroArea').html("+ Área");
+	$('#filtroArea').on('click', function () {
+		if ($('#filtroArea').html() == "+ Área"){
+			console.log ($('#filtroArea').html());
+			$('#filtroArea').html("- Área");
+		}else{
+			$('#filtroArea').html("+ Área");
+		};
+    });
+
+	$('#filtroCampo').html("+ Campo");
+	$('#filtroCampo').on('click', function () {
+		if ($('#filtroCampo').html() == "+ Campo"){
+			console.log ($('#filtroArea').html());
+			$('#filtroCampo').html("- Campo");
+		}else{
+			$('#filtroCampo').html("+ Campo");
+		};
+    });
+
+	$('#filtroCategoria').html("+ Categoria");
+	$('#filtroCategoria').on('click', function () {
+		if ($('#filtroCategoria').html() == "+ Categoria"){
+			console.log ($('#filtroArea').html());
+			$('#filtroCategoria').html("- Categoria");
+		}else{
+			$('#filtroCategoria').html("+ Categoria");
+		};
+    });
 //	$( "#conquistasUserPerfilCursos" ).on( "click", function() {
 //		$('.paineis-user-perfil').addClass("hide");
 //		$('.curso-user-perfil').removeClass("hide");
@@ -122,7 +168,7 @@
 	};
 
 	function UnityReset () {
-		SendMessage('Main','Reset');
+//		SendMessage('Main','Reset');
 	};
 
 	function gravaDiagrama (){
@@ -247,7 +293,7 @@
 				wiki : element.documento.wiki,
 				area : element.documento.area,
 				field: element.documento.campo,
-				category : element.documento.categoria,
+				category : element.documento.classes,
 				parent : element.documento.parent,
 				positionX : element.documento.positionX,
 				positionY : element.documento.positionY,
@@ -259,7 +305,7 @@
 				FadeEnd : minfade,
 				tags:[],
 				have:verificaPossuiHabilidade(element.documento.idHabilidade),
-				states: 0,
+				states: 1,
 				AnimationStart : animationStart,
 				AnimationEnd : animationEnd,
 			};
@@ -607,23 +653,33 @@
 		
 		// ** carga de componentes
 		$( "#carregaHabilidadesTotal" ).bind( "click", function() {
+			$( ".inactive-tab").removeClass("nav-tab");
+			$( "#carregaHabilidadesTotal").addClass("nav-tab");
 			carregaHabilidadesTotal();
 		});
 
 		$( "#carregaCarreirasTotal" ).bind( "click", function() {
+			$( ".inactive-tab").removeClass("nav-tab");
+			$( "#carregaCarreirasTotal").addClass("nav-tab");
 			carregaCarreirasTotal();
 		});
 
 		$( "#carregaCursosTotal" ).bind( "click", function() {
+			$( ".inactive-tab").removeClass("nav-tab");
+			$( "#carregaCursosTotal").addClass("nav-tab");
 			carregaCursosTotal();
 		});
 
 		$( "#gravaDiagrama" ).bind( "click", function() {
+			$( ".inactive-tab").removeClass("nav-tab");
+			$( "#gravaDiagrama").addClass("nav-tab");
 			gravaDiagrama();
 		});
 		
 		// *** campos para auxilio da montagem das posiçoes do diagrama
 		$( "#auxiliamontagemdiagrama" ).bind( "click", function() {
+			$( ".inactive-tab").removeClass("nav-tab");
+			$( "#auxiliamontagemdiagrama").addClass("nav-tab");
 			if ($(".auxiliamontagemdiagrama").hasClass("hide")){
 				$(".auxiliamontagemdiagrama").removeClass ("hide")
 			}else{

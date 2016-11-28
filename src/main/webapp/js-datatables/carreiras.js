@@ -152,11 +152,17 @@
 		$.each(carreira.arrayNecessarios, function (w, habilidade){
 			habilidades = habilidades +
 			'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide habilidadeNecessariaCarreira_' + i + '" data-idHabilidade="' + habilidade.idHabilidade + '">- ' + habilidade.name + '</span>';
+			if (habilidade.classes != "habilidade"){
+				habilidades = montaHabilidadesAreas (habilidade, habilidades, true, i);
+			};
 		});
 		var habilidadesRecomendados = "";
 		$.each(carreira.arrayRecomendados, function (w, habilidade){
 			habilidadesRecomendados = habilidadesRecomendados +
 			'<span class="hide habilidadeRecomendadaCarreira_' + i + '" data-idHabilidade="' + habilidade.idHabilidade + '"></span>';
+//			if (habilidade.category != "habilidade"){
+//				habilidadesRecomendados = montaAgrupamento (habilidade, habilidadesRecomendados, false, i);
+//			};
 		});
 		var disabled = "";
 		var textoTip = "quero aprender";
@@ -186,22 +192,38 @@
 		$('#comparar_' + i).off('click');
 	    $('#comparar_' + i).on('click',function(){
 	    	var objJson = JSON.parse(localStorage.getItem("jsonYggmap"));
-			$.each( objJson.data, function(w, element ) {
+/*			$.each( objJson.data, function(w, element ) {
 				objJson.data[w].states = 0;
 		    	$('.habilidadeNecessariaCarreira_' + i).each(function( z ) {
 		    		  if ($(this).attr('data-idhabilidade') == element.id){
-		  	    		console.log ("comparacao necessaria - " + $(this).attr('data-idhabilidade') + " - " + element.id)
 		    			  objJson.data[w].states = 1;
 		    		  };
 		    	});
 		    	$('.habilidadeRecomendadaCarreira_' + i).each(function( z ) {
 		    		  if ($(this).attr('data-idhabilidade') == element.id){
-		  	    		console.log ("comparacao recomendada - " + $(this).attr('data-idhabilidade') + " - " + element.id)
 		    			  objJson.data[w].states = 2;
 		    		  };
 		    	});
 			});
-			localStorage.setItem("jsonYggmap", JSON.stringify(objJson));
+*/
+	    	$('.habilidadeNecessariaCarreira').each(function( z ) {
+	    		var idHabilidade =  $(this).attr('data-idhabilidade');
+				$.each( objJson.data, function(w, element ) {
+	    		  if (idHabilidade == element.id){
+	    			  objJson.data[w].states = 1;
+	    		  };
+				});
+	    	});
+	    	$('.habilidadeRecomendadaCarreira').each(function( z ) {
+	    		var idHabilidade =  $(this).attr('data-idhabilidade');
+				$.each( objJson.data, function(w, element ) {
+					if (idHabilidade == element.id){
+	    			  objJson.data[w].states = 2;
+	    		  };
+				});
+	    	});
+	    	localStorage.setItem("jsonYggmap", JSON.stringify(objJson));
+	    	console.log (JSON.stringify(objJson));
 			SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
 	    });
 		$('#queroAprender_' + i).off('click');
@@ -211,3 +233,87 @@
 	    	atualizaUserPerfilElemento (objJson, "carreiraInteresse", carreira.nome);
 	    });	
 	};
+	
+	function montaHabilidadesAreas (habilidade, habilidades, necessarias, i) {
+		var objJson = JSON.parse(localStorage.getItem("jsonYggmap"));
+		
+		$.each( objJson.data, function(w, element ) {
+			if (element.parent == habilidade.idHabilidade){
+				if (element.category != "habilidade"){
+					habilidades = montaHabilidadesCampos (element, habilidades,necessarias, i)
+				};
+				if (necessarias){
+					habilidades = habilidades +
+					'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide habilidadeNecessariaCarreira habilidadeNecessariaCarreira_' + i + '" data-idHabilidade="' + element.id + '">- ' + element.Label + '</span>';
+				}else{
+					habilidades = habilidades +
+					'<span class="hide habilidadeRecomendadaCarreira habilidadeRecomendadaCarreira_' + i + '" data-idHabilidade="' + element.id + '"></span>';					
+				}
+			};
+		});
+
+		return habilidades;
+	};	
+	
+	function montaHabilidadesCampos (habilidade, habilidades, necessarias, i) {
+		var objJson = JSON.parse(localStorage.getItem("jsonYggmap"));
+		
+		$.each( objJson.data, function(w, element ) {
+			if (element.parent == habilidade.id){
+				if (element.category != "habilidade"){
+					habilidades = montaHabilidadesCategorias (element, habilidades,necessarias, i)
+				};
+				if (necessarias){
+					habilidades = habilidades +
+					'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide habilidadeNecessariaCarreira_' + i + '" data-idHabilidade="' + element.id + '">- ' + element.Label + '</span>';
+				}else{
+					habilidades = habilidades +
+					'<span class="hide habilidadeRecomendadaCarreira_' + i + '" data-idHabilidade="' + element.id + '"></span>';					
+				}
+			};
+		});
+
+		return habilidades;
+	};	
+		
+	function montaHabilidadesCategorias (habilidade, habilidades, necessarias, i) {
+		var objJson = JSON.parse(localStorage.getItem("jsonYggmap"));
+		
+		$.each( objJson.data, function(w, element ) {
+			if (element.parent == habilidade.id){
+				if (element.category != "habilidade"){
+					habilidades = montaHabilidades (element, habilidades,necessarias, i)
+				};
+				if (necessarias){
+					habilidades = habilidades +
+					'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide habilidadeNecessariaCarreira_' + i + '" data-idHabilidade="' + element.id + '">- ' + element.Label + '</span>';
+				}else{
+					habilidades = habilidades +
+					'<span class="hide habilidadeRecomendadaCarreira_' + i + '" data-idHabilidade="' + element.id + '"></span>';					
+				}
+			};
+		});
+
+		return habilidades;
+	};
+	
+	function montaHabilidades (habilidade, habilidades, necessarias, i) {
+		var objJson = JSON.parse(localStorage.getItem("jsonYggmap"));
+		
+		$.each( objJson.data, function(w, element ) {
+			if (element.parent == habilidade.id){
+				if (element.category != "habilidade"){
+					habilidades = montaAgrupamento (element, habilidades,necessarias, i)
+				};
+				if (necessarias){
+					habilidades = habilidades +
+					'<br class="habilidadeCarreira hide"><span class="panel-text habilidadeCarreira hide habilidadeNecessariaCarreira_' + i + '" data-idHabilidade="' + element.id + '">- ' + element.Label + '</span>';
+				}else{
+					habilidades = habilidades +
+					'<span class="hide habilidadeRecomendadaCarreira_' + i + '" data-idHabilidade="' + element.id + '"></span>';					
+				}
+			};
+		});
+
+		return habilidades;
+	};	

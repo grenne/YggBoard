@@ -185,6 +185,7 @@ public class Rest_Habilidade {
 						jsonCursos.put("nome", jsonObject.get("nome"));
 						jsonCursos.put("idCurso", jsonObject.get("idCurso"));
 						jsonCursos.put("descricao", jsonObject.get("descricao"));
+						jsonCursos.put("wiki", jsonObject.get("wiki"));
 						cursosArray.add (jsonCursos);
 					} catch (ParseException e) {
 						e.printStackTrace();

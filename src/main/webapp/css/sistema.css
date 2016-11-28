@@ -64,6 +64,7 @@ h5 {}
 
 p {}
 
+
 .form-control {
     border: 1px solid #EBEBED;
     border-radius: 0px;
@@ -97,7 +98,7 @@ p {}
 
 .btn-default:hover {
 	transition: .2s;
-	background:#9A9AA2;	
+	background:#80ff80;	
 	color:#fff !important;
 }
 
@@ -273,6 +274,10 @@ header .dropdown-menu {
     color: #545454;
 }
 
+.nav-tab{
+    background-color: transparent;
+	border-bottom:2px solid #6D9E38 !important;
+}
 /***  05. TÃTULO DA PÃGINA ***/
     
 section#nome-pagina {
@@ -408,9 +413,11 @@ section#conteudo .nav > li > a:focus, section#conteudo  .nav > li > a:hover {
 
 section#conteudo .nav-tabs > li > a {
     border: none;
-    border-radius: 0;
-    margin-right: 0px;
-		line-height:58px;
+    border-radius: 1px;
+    margin-right: 1px;
+    margin-left: 1px;
+    margin-top: 1px;
+	line-height:58px;
 }
 
 section#conteudo .nav > li > a {
@@ -581,8 +588,9 @@ section#conteudo .nav > li > a {
 }
 
 .tab-user-panel-interesse.active{
-	background-color: #ffffff!important;
+	background-color: #B98355!important;
 	text-transform: capitalize !important;
+	border-color: #ECDDD0 !important;
 }
 
 .tab-user-panel-interesse{
@@ -599,13 +607,13 @@ section#conteudo .nav > li > a {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    border-color: #000000;
+    border-color: #000000;\
     border-image: none;
     border-style: none;
     border-width: 3px;
     cursor: default;
 	background-color: #ffffff !important;
-	color : #EADACC !important;
+	color : #B98355!important;
 	height:38px !important;
 	
 }
@@ -625,20 +633,20 @@ section#conteudo .nav > li > a {
     -moz-border-left-colors: none;
     -moz-border-right-colors: none;
     -moz-border-top-colors: none;
-    border-color: transparent;
+    border-bottom-colors: #bf9166!important;
     border-image: none;
     border-style: none;
-    border-width: 0px;
+    border-width: 2px;
     cursor: default;
 	background-color: #ffffff !important;
-	color : #EADACC !important;
+	color : #d9bda4!important;
 	height:38px !important;
 }
 .box-user-name{
 	padding-top: 15px;
 	padding-bottom: 15px;
-	padding-left: 0px;
-	padding-right: 0px;	
+	padding-left: 0px !important;
+	padding-right: 0px !important;	
     background-color: #fff;
 	color: #000000 !important;
 	font-weight: bold !important;
@@ -652,7 +660,7 @@ section#conteudo .nav > li > a {
 .box-text-user-panel{
 	padding-top: 0px;
 	padding-bottom: 5px;
-	padding-left: 0px;
+	padding-left: 15px;
 	padding-right: 0px;	
     background-color: #fff;
     border-color: transparent;
@@ -666,7 +674,7 @@ section#conteudo .nav > li > a {
 .text-user-panel{
 	padding-top: 0px;
 	padding-bottom: 0px;
-	padding-left: 15px;
+	padding-left: 0px;
 	padding-right: 0x;	
 }
 
@@ -712,6 +720,11 @@ section#conteudo .nav > li > a {
 	font-size: 80%;
 }
 
+.user-panel{
+	padding-left: 0px !important;
+	padding-right: 0px !important;
+}
+
 .user-panel-label {
 	color: #797979!important;
 	font-weight: bold !important;
@@ -749,6 +762,8 @@ section#conteudo .nav > li > a {
 }
 .user-panel-habilidade-nome{
 	color : #6D9E38;
+	padding-left: 0px !important;
+	padding-right: 0px !important;
 	font-weight: normal !important;
 	
 }

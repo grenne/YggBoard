@@ -174,6 +174,8 @@ public class Rest_Carreira {
 							JSONObject jsonNecessarios = new JSONObject();
 							jsonNecessarios.put("idHabilidade", arrayNecessarios[w]);
 							jsonNecessarios.put("name", obj.get("name"));
+							jsonNecessarios.put("classes", obj.get("classes"));
+							jsonNecessarios.put("parent", obj.get("parent"));
 							necessariosArray.add (jsonNecessarios);
 						}
 						mongoHabilidade.close();
@@ -196,6 +198,8 @@ public class Rest_Carreira {
 							JSONObject jsonRecomendados = new JSONObject();
 							jsonRecomendados.put("idHabilidade", arrayRecomendados[w]);
 							jsonRecomendados.put("name", obj.get("name"));
+							jsonRecomendados.put("classes", obj.get("classes"));
+							jsonRecomendados.put("parent", obj.get("parent"));
 							recomendadosArray.add (jsonRecomendados);
 						}
 						mongoHabilidade.close();

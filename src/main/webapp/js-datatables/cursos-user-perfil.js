@@ -49,7 +49,9 @@
 						'<span class="user-panel-label">' + curso.documento.descricao + '</span>' +
 					'</td>' +
 					'<td class="user-panel-td"><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
-					'<td><span id="curso' + i + '" class="user-panel-detalhes-curso">' + curso.documento.nome + '</span></td>' +
+					'<td><span id="curso' + i + '" class="user-panel-detalhes-curso">' + curso.documento.nome + '</span>' + 
+						'<a id="wiki_' + i + '" href="' + curso.documento.wiki + '" class="wiki" data-tooltip="wikipédia" target="_blank"><i class="fa fa-wikipedia-w"></i></a></td>' +		   			
+					'</td>' +
 					'<td><span id="tempo' + i + '" class="user-panel-detalhes-curso">' + curso.documento.tempo + '</span></td>' +
 					'<td><span id="custo' + i + '" class="user-panel-detalhes-curso">' + curso.documento.custo + '</span></td>' +
 					'<td><span id="escola' + i + '" class="user-panel-detalhes-curso">' + curso.documento.escola + '</span></td>' +

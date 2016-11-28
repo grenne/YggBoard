@@ -33,11 +33,19 @@
    
     <header>
     	<div class="container">	
-        	<h1 class="pull-left">YggBoard</h1>
+        	<h1 class="pull-left"></h1>
 			<ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                     <span class="imagem-user"><img id="img-photoHeader" width="45" height="45" class="img-circle"></span> 
-                     <span class="userName"></span>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                        <span class="imagem-user"><img id="img-photoHeader" width="45" height="45" class="img-circle"></span> 
+                        <span class="userName"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                    	<li><a href="perfil.html"><i class="fa fa-user"></i>Meu perfil</a></li>
+<!--                   	<li><a href=""><i class="fa fa-cog"></i>Configurações</a></li> -->
+                        <li class="divider"></li>
+						<li><a href="index.html"><i class="fa fa-sign-out"></i>Sair</a></li>
+                    </ul>
                 </li>
             </ul>        
     	</div>
@@ -94,7 +102,7 @@
 				                    </div>
 				                    <div class="col-sm-12">
 				                        <div class="form-group">
-						                    <label class="control-label">Ultimo nome:</label>
+						                    <label class="control-label">Último nome:</label>
 				                            <input id="lastName" type="text" class="form-control" placeholder="" name="lastName">
 				                        </div>
 				                    </div>
@@ -181,7 +189,7 @@
 				</div>
             	<div class="col-md-4">
 	            	<div class="">
-	             		<img src="img/banner-01.png" alt="" />
+						<a href="#"><img src="img/banner-01.png" alt="" /></a>
 	             	</div>
                 </div>
             </div>

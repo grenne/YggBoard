@@ -72,6 +72,7 @@
    				'<div class="row">' +
    					'<div class="user-panel-curso-div col-xs-12">' +
    						'<span class="user-panel-curso-habilidade-nome cursoHabilidade_' + i + "-" + w + ' ">- ' + curso.documento.descricao + '</span>' +
+   						'<a id="wiki_' + i + '" href="' + curso.documento.wiki + '" class="wiki" data-tooltip="wikipédia"  target="_blank"><i class="fa fa-wikipedia-w"></i></a></td>';
 					'</div>' +
    				'</div>';
         	});

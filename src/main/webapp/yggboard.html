@@ -46,7 +46,7 @@
    
     <header>
     	<div class="container">	
-        	<h1 class="pull-left">YggBoard</h1>
+        	<h1 class="pull-left"></h1>
 			<ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -67,15 +67,14 @@
     <nav class="navbar navbar-default">
         <div class="container">
             <ul class="nav navbar-nav">
-                <li class=""><a id="closePainel" href="#" ><i class="fa fa-home"></i>Início</a></li>
-                <li class=""><a id="openUserPainel" href="#" ><i class="fa fa-puzzle-piece"></i>Painel</a></li>
-                <li class=""><a data-toggle="modal" href="#tutorial"><i class="fa fa-info-circle"></i>Tutorial</a></li>
-                 <li><a id="carregaHabilidadesTotal"  href="#" class="hide tools">C. Habilidades</a></li>
-                 <li><a id="carregaCarreirasTotal"  href="#" class="hide tools">C. Carreiras</a></li>
-                 <li><a id="carregaCursosTotal"  href="#" class="hide tools">C. Cursos</a></li>
-                 <li ><a id="gravaDiagrama"  href="#" class="hide tools">Grava Diagrama</a></li>
-                 <li ><a id="auxiliamontagemdiagrama"  href="#" class="hide tools">Aux. Posicionamento</a></li>
-                 <li ><a id="testeClick"  href="#" class="hide tools">Teste clique</a></li>
+                <li class="inactive-tab"><a id="closePainel" href="#" class="nav-tab inactive-tab"><i class="fa fa-home"></i>Início</a></li>
+                <li class="inactive-tab"><a id="openUserPainel" href="#" class="inactive-tab"><i class="fa fa-puzzle-piece"></i>Painel</a></li>
+                <li class="inactive-tab"><a id="openTutorial" data-toggle="modal" href="#tutorial" class="inactive-tab"><i class="fa fa-info-circle"></i>Tutorial</a></li>
+                 <li class="inactive-tab"><a id="carregaHabilidadesTotal"  href="#" class="hide tools inactive-tab" >C. Habilidades</a></li>
+                 <li class="inactive-tab"><a id="carregaCarreirasTotal"  href="#" class="hide tools inactive-tab">C. Carreiras</a></li>
+                 <li class="inactive-tab"><a id="carregaCursosTotal"  href="#" class="hide tools inactive-tab">C. Cursos</a></li>
+                 <li class="inactive-tab"><a id="gravaDiagrama"  href="#" class="hide tools inactive-tab">Grava Diagrama</a></li>
+                 <li class="inactive-tab"><a id="auxiliamontagemdiagrama"  href="#" class="hide tools inactive-tab">Aux. Posicionamento</a></li>
             </ul>
         </div>
     </nav>
@@ -106,22 +105,21 @@
                        		<span id="completeName" class="completeName"></span>
                        	</div>
                        	<div class="box-text-user-panel">
-                       		<span id="text-user-panel" class="text-user-panel">
-                       		Nesta seção voçe poderá determinar seus interesses e objetivos. Escolha um dos itens clicando abaixo. Em caso de dúvida, consulte nosso tutorial.
+                       		<span id="text-user-panel" class="text-user-panel">Nesta seção voçê poderá determinar seus interesses e objetivos. Escolha um dos itens clicando abaixo. Em caso de dúvida, consulte nosso tutorial.
                        		</span>
                        	</div>
                         <div id="tabs" class="box-user-tabs">	
                         	<ul class="nav nav-tabs nav-user-panel">
-                            	<li class="tab-user-panel" id="interesses_theader_tab"><a  href="#interesses_theader" data-toggle="tab">Interesses</a></li>
-                                <li class="tab-user-panel" id="conquistas_theader_tab"><a href="#conquistas_theader" data-toggle="tab">Conquistas</a></li>                               
+                            	<li class="tab-user-panel inactive-tab-painel active" id="interesses_theader_tab"><a class="" id="interesses_theader_tab-a" href="#interesses_theader" data-toggle="tab">Interesses</a></li>
+                                <li class="tab-user-panel inactive-tab-painel" id="conquistas_theader_tab"><a id="conquistas_theader_tab-a" href="#conquistas_theader" data-toggle="tab">Conquistas</a></li>                               
                             </ul>
                         	<div class="tab-content">
                             	<div class="tab-pane active-user-panel" id="interesses_theader">
 		                        	<ul class="nav nav-tabs nav-user-panel nav-user-interesse">
-		                            	<li class="tab-user-panel-interesse" id="interesse_objetivos_theader_tab"><a  href="#interesse_objetivos_theader" data-toggle="tab" ><i class="fa fa-list-ul"></i> Objetivos</a></li>
-		                                <li class="tab-user-panel-interesse" id="interesse_habilidades_theader_tab"><a href="#interesse_habilidades_theader" data-toggle="tab" ><i class="fa fa-wrench"></i> Habilidades</a></li>
-		                            	<li class="tab-user-panel-interesse" id="interesse_cursos_theader_tab"><a href="#interesse_cursos_theader" data-toggle="tab" ><i class="fa fa-mortar-board"></i> Cursos</a></li>
-		                                <li class="tab-user-panel-interesse" id="interesse_premios_theader_tab"><a href="#interesse_premios_theader" data-toggle="tab" ><i class="fa fa-trophy"></i> Premios</a></li>
+		                            	<li class="tab-user-panel-interesse inactive-tab-interesse active" id="interesse_objetivos_theader_tab"><a  href="#interesse_objetivos_theader" data-toggle="tab" ><i class="fa fa-list-ul"></i> Objetivos</a></li>
+		                                <li class="tab-user-panel-interesse inactive-tab-interesse" id="interesse_habilidades_theader_tab"><a href="#interesse_habilidades_theader" data-toggle="tab" ><i class="fa fa-wrench"></i> Habilidades</a></li>
+		                            	<li class="tab-user-panel-interesse inactive-tab-interesse" id="interesse_cursos_theader_tab"><a href="#interesse_cursos_theader" data-toggle="tab" ><i class="fa fa-mortar-board"></i> Cursos</a></li>
+		                                <li class="tab-user-panel-interesse inactive-tab-interesse" id="interesse_premios_theader_tab"><a href="#interesse_premios_theader" data-toggle="tab" ><i class="fa fa-trophy"></i> Premios</a></li>
 		                            </ul>					
                         			<div class="tab-content" >
 		                            	<div class="tab-pane" id="interesse_objetivos_theader">
@@ -137,16 +135,16 @@
 											</div>		
 		                                </div>
 		                            	<div class="tab-pane" id="interesse_premios_theader">
-		
+				                       		<span id="text-user-panel" class="text-user-panel">Em breve habilitaremos esta seção
 		                                </div>
 		                        	</div>
                                 </div>
                             	<div class="tab-pane" id="conquistas_theader">
-  		                        	<ul class="nav nav-tabs nav-user-panel nav-user-conquista">
-		                            	<li class="tab-user-panel-conquista" id="conquista_objetivos_theader_tab"><a  href="#conquista_objetivos_theader" data-toggle="tab"><i class="fa fa-list-ul"></i> Objetivos</a></li>
-		                                <li class="tab-user-panel-conquista" id="conquista_habilidades_theader_tab"><a href="#conquista_habilidades_theader" data-toggle="tab"><i class="fa fa-wrench"></i> Habilidades</a></li>
-		                            	<li class="tab-user-panel-conquista" id="conquista_cursos_theader_tab"><a href="#conquista_cursos_theader" data-toggle="tab"><i class="fa fa-mortar-board"></i> Cursos</a></li>
-		                                <li class="tab-user-panel-conquista" id="conquista_premios_theader_tab"><a href="#conquista_premios_theader" data-toggle="tab"><i class="fa fa-trophy"></i> Premios</a></li>
+  		                        	<ul class="nav nav-tabs nav-user-panel nav-user-interesse">
+		                            	<li class="tab-user-panel-interesse  active" id="conquista_objetivos_theader_tab"><a  href="#conquista_objetivos_theader" data-toggle="tab"><i class="fa fa-list-ul"></i> Objetivos</a></li>
+		                                <li class="tab-user-panel-interesse" id="conquista_habilidades_theader_tab"><a href="#conquista_habilidades_theader" data-toggle="tab"><i class="fa fa-wrench"></i> Habilidades</a></li>
+		                            	<li class="tab-user-panel-interesse" id="conquista_cursos_theader_tab"><a href="#conquista_cursos_theader" data-toggle="tab"><i class="fa fa-mortar-board"></i> Cursos</a></li>
+		                                <li class="tab-user-panel-interesse" id="conquista_premios_theader_tab"><a href="#conquista_premios_theader" data-toggle="tab"><i class="fa fa-trophy"></i> Premios</a></li>
 		                            </ul>					
                         			<div class="tab-content">
 		                            	<div class="tab-pane" id="conquista_objetivos_theader">
@@ -327,10 +325,10 @@
 					        	</div>
 						    </div>
 				        </div>                
-                        <div id="tabs">	
-                        	<ul class="nav nav-tabs">
-                            	<li class="active" id="carreira_theader_tab"><a  href="#carreira_theader" data-toggle="tab"><h4>Objetivos</h4></a></li>
-                                <li id="habilidade_theader_tab"><a href="#habilidade_theader" data-toggle="tab"><h4>Habilidades</h4></a></li>
+           				<div id="tabs">	
+                        	<ul class="nav nav-tabs navbar-default">                            	
+                        		<li class="active" id="carreira_theader_tab"><a  href="#carreira_theader" data-toggle="tab"><h4 id="carreira_theader_tab-h4" class="nav-tab nav-tab-lateral">Objetivos</h4></a></li>
+                                <li class="" id="habilidade_theader_tab"><a href="#habilidade_theader" data-toggle="tab"><h4 id="habilidade_theader_tab-h4" class="nav-tab-lateral">Habilidades</h4></a></li>
                             </ul>
                             <div class="area-filtro">
                             	<div class="numero-filtrado numero-objetivos">
@@ -360,18 +358,18 @@
 										<div class="form-group">
 											<input id="searchHabilidades" type="text" placeholder="Search" class="form-control" autocomplete="on">
 										</div>
-										<a class="btn btn-primary" data-toggle="collapse" href="#filtro-area-list" aria-expanded="false" aria-controls="filtro-area-list">
-    										Área
+										<a class="btn btn-primary" id = "filtroArea" data-toggle="collapse" href="#filtro-area-list" aria-expanded="false" aria-controls="filtro-area-list">
+    										+ Área
   										</a>
 										<ul id="filtro-area-list" class="list-group collapse" >
 										</ul><br>									
-										<a class="btn btn-primary" data-toggle="collapse" href="#filtro-campo-list" aria-expanded="false" aria-controls="filtro-campo-list">
-    										Campo
+										<a class="btn btn-primary" id = "filtroCampo" data-toggle="collapse" href="#filtro-campo-list" aria-expanded="false" aria-controls="filtro-campo-list">
+    										+ Campo
   										</a>
 										<ul id="filtro-campo-list" class="list-group collapse" >
 										</ul><br>									
-										<a class="btn btn-primary" data-toggle="collapse" href="#filtro-categoria-list" aria-expanded="false" aria-controls="filtro-categoria-list">
-    										Categoria
+										<a class="btn btn-primary" id = "filtroCategoria"data-toggle="collapse" href="#filtro-categoria-list" aria-expanded="false" aria-controls="filtro-categoria-list">
+    										+ Categoria
   										</a>
 										<ul id="filtro-categoria-list" class="list-group collapse" >
 										</ul>									

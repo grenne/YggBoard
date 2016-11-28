@@ -37,6 +37,7 @@ public class Curso {
 		public String escola;
 		public String eletiva;
 		public String preRequisito;
+		public String wiki;
 		public String materias[];
 		public Habilidades habilidades[];
 
@@ -55,6 +56,7 @@ public class Curso {
 						String escola,
 						String eletiva,
 						String preRequisito,
+						String wiki,
 						String [] materias,
 						Habilidades [] habilidades
 						) {
@@ -66,6 +68,7 @@ public class Curso {
 						this.escola = escola; 
 						this.eletiva = eletiva; 
 						this.preRequisito = preRequisito; 
+						this.wiki = wiki; 
 						this.materias = materias; 
 						this.habilidades = habilidades;
 								}

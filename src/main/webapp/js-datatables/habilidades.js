@@ -153,7 +153,8 @@
     		};
     		cursos = cursos +
 			'<br class="cursoHabilidade hide"><a id="querofazercurso_' + i + w + '" data-tooltip="' + textoTip + '"  class="cursoHabilidade hide querofazercurso icon-querofazer ' + disabled + '"  data-idCurso="' + curso.idCurso + '"><i class="fa fa-leanpub icon-quefazer"></i></a>' +
-			'<span class="panel-text panel-cursos cursoHabilidade hide ">  ' + curso.nome + '</span>';
+			'<span class="panel-text panel-cursos cursoHabilidade hide ">  ' + curso.nome + '</span>' +
+			'<a id="wiki_' + i + '" href="' + curso.wiki + '" class="wiki" data-tooltip="wikipédia"  target="_blank"><i class="fa fa-wikipedia-w"></i></a></td>';
     	});
 		var disabled = "";
 		var textoTip = "quero aprender";
@@ -171,13 +172,12 @@
 			'<tr class="itemHabilidade">' +
 			'<td id="nome_' + i + '"><span class="panel-label" data-tooltip="objetivo" data-idHabilidade="' + element.documento.idHabilidade + '"></span>' + element.documento.name + '</td>' +
 			'<td><a id="alterarHabilidade_' + i + '" data-tooltip="alterar" href="#habilidadeModal" data-toggle="modal" data-idHabilidade="' + element.documento.idHabilidade + '" ><i class="fa fa-stack-exchange"></i></a></td>' +
-			'<td><a id="seiFazerHabilidade_' + i + '" data-tooltip="' + textoTip_2 + '" data-toggle="modal" data-idHabilidade="' + element.documento.idHabilidade + '"  class="' + disabled_2 + '"><i class="fa fa-leanpub"></i></a></td>' +
-			'<td><a id="queroAprenderHabilidade_' + i + '" data-tooltip="' + textoTip + '" data-idHabilidade="' + element.documento.idHabilidade + '" class="' + disabled + '"><i class="fa fa-book"></i></a></td>' +
+			'<td><a id="seiFazerHabilidade_' + i + '" data-tooltip="' + textoTip_2 + '" data-toggle="modal" data-idHabilidade="' + element.documento.idHabilidade + '"  class="' + disabled_2 + '"><i class="fa fa-book"></i></a></td>' +
+			'<td><a id="queroAprenderHabilidade_' + i + '" data-tooltip="' + textoTip + '" data-idHabilidade="' + element.documento.idHabilidade + '" class="' + disabled + '"><i class="fa fa-leanpub"></i></a></td>' +
 				'<td ><span class="panel-label">DESCRIÇÃO: </span><br>' + 
 				'<span class="panel-text">' + element.documento.descricao + '</span></td>' + 
 				'<td><br><button id="cursoHabilidadeIn_' + i + '" class="panel-button-habilidade cursoHabilidadeIn"><i class="fa fa-chevron-down icon-check-habilidade"></i><span>cursos disponíveis</span></button>' +
 				'<button id="cursoHabilidadeOff_' + i + '" class="panel-button-habilidade cursoHabilidade hide"><i class="fa fa-chevron-up icon-check-habilidade"></i><span>cursos disponíveis</span></button>' +
-				'<a id="wiki_' + i + '" href="' + element.documento.wiki + '" class="wiki" data-tooltip="wikipédia"><i class="fa fa-wikipedia-w"></i></a></td>' +
 				'<td>' + cursos + '</td>' +
 			'</tr>';
     	$("#habilidade_tbody" ).append(habilidade_table_row);

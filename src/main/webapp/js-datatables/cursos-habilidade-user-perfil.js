@@ -52,7 +52,9 @@
 				'<tr class="itemCursoUserPerfil' + append + '">' +
 		   			'<td id="nome_' + i + '">' + montaMaterias(curso.documento.materias) + '</td>' +
 //					'<td id="acaoTd_' + i + '"><button id="acaoCursoUserPerfil_' + i + '" class="btn-xs btn-info">Grade</button></td>' +
-					'<td id="curso' + i + '">' + curso.documento.nome + '</td>' +
+					'<td id="curso' + i + '">' + curso.documento.nome + 
+						'<a id="wiki_' + i + '" href="' + curso.documento.wiki + '" class="wiki" data-tooltip="wikipédia" target="_blank"><i class="fa fa-wikipedia-w"></i></a></td>' +		   								
+					'</td>' +
 					'<td id="descricao_' + i + '">' + curso.documento.descricao + '</td>' +
 					'<td id="tempo' + i + '">' + curso.documento.tempo + '</td>' +
 					'<td id="custo' + i + '">' + curso.documento.custo + '</td>' +
