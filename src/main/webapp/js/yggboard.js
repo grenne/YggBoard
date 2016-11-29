@@ -119,7 +119,6 @@
 	$('#filtroArea').html("+ Área");
 	$('#filtroArea').on('click', function () {
 		if ($('#filtroArea').html() == "+ Área"){
-			console.log ($('#filtroArea').html());
 			$('#filtroArea').html("- Área");
 		}else{
 			$('#filtroArea').html("+ Área");
@@ -129,7 +128,6 @@
 	$('#filtroCampo').html("+ Campo");
 	$('#filtroCampo').on('click', function () {
 		if ($('#filtroCampo').html() == "+ Campo"){
-			console.log ($('#filtroArea').html());
 			$('#filtroCampo').html("- Campo");
 		}else{
 			$('#filtroCampo').html("+ Campo");
@@ -139,7 +137,6 @@
 	$('#filtroCategoria').html("+ Categoria");
 	$('#filtroCategoria').on('click', function () {
 		if ($('#filtroCategoria').html() == "+ Categoria"){
-			console.log ($('#filtroArea').html());
 			$('#filtroCategoria').html("- Categoria");
 		}else{
 			$('#filtroCategoria').html("+ Categoria");
@@ -168,7 +165,7 @@
 	};
 
 	function UnityReset () {
-//		SendMessage('Main','Reset');
+		SendMessage('Main','Reset');
 	};
 
 	function gravaDiagrama (){
@@ -305,7 +302,7 @@
 				FadeEnd : minfade,
 				tags:[],
 				have:verificaPossuiHabilidade(element.documento.idHabilidade),
-				states: 1,
+				states: 0,
 				AnimationStart : animationStart,
 				AnimationEnd : animationEnd,
 			};
@@ -341,7 +338,6 @@
 			};
 		});
 		localStorage.setItem("jsonYggmap", JSON.stringify(jsonYggmap));
-//		console.log (JSON.stringify(jsonYggmap));
 
 	};
 
@@ -382,7 +378,6 @@
 	};	
 	function incluiUserPerfil (tipo, elemento){
 		
-		console.log ("email sem user perfil:" + localStorage.usuarioEmail);
 		var objJson  = 
 				{
 				documento: 

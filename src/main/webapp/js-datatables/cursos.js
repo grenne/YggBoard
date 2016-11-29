@@ -46,23 +46,18 @@
         $.each(objJson, function (i, curso) {
         	curso_table_row = 
 				'<tr class="itemCurso">' +
-		   			'<td id="nome_' + i + '">' + montaMaterias(curso.documento.materias) + 
-		   				'<a id="wiki_' + i + '" href="' + curso.documento.wiki + '" class="wiki" data-tooltip="wikipédia"><i class="fa fa-wikipedia-w"></i></a></td>' +		   			
+		   			
+					'<td id="nome_' + i + '">' + montaMaterias(curso.documento.materias) + 
 		   			'</td>' +
 //					'<td id="acaoTd_' + i + '"><button id="acaoCurso_' + i + '" class="btn-xs btn-info">Grade</button></td>' +
-					'<td id="curso' + i + '">' + curso.documento.nome + '</td>' +
-					'<td id="descricao_' + i + '">' + curso.documento.descricao + '</td>' +
+					'<td id="curso' + i + '"><a  href="' + curso.documento.wiki + '" class="panel-text panel-cursos cursoHabilidade hide" target="_blank">  ' + curso.documento.nome + '</a></td>' +
+					'<td id="descricao_' + i + '">' + curso.documento.descricao + '</td>' + 
 					'<td id="tempo' + i + '">' + curso.documento.tempo + '</td>' +
 					'<td id="custo' + i + '">' + curso.documento.custo + '</td>' +
 					'<td id="escola' + i + '">' + curso.documento.escola + '</td>' +
 					'<td id="preRequisito' + i + '">' + curso.documento.preRequisito + '</td>' +
 				'</tr>';
         	$( "#curso_tbody" ).append(curso_table_row);
-            $('#acaoCurso_' + i).bind('click', function () {
-            	gradeCurso (cy, curso);
-            	$('.habilidade').addClass('hide');
-            	$('.carreiras').addClass('hide');
-            });
         });
 
         var curso_table = $('#curso_list');
