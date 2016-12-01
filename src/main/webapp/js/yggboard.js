@@ -168,6 +168,27 @@
 		SendMessage('Main','Reset');
 	};
 
+	function GetJson (Json) {
+		var objJson = JSON.parse(Json);
+		
+		$.each( objJson.data, function( i, elementMap ) {
+	    	var objPerfil = JSON.parse(localStorage.getItem("meuPerfil"));
+			if (elementMap.have == "0"){
+		    	atualizaUserPerfilElemento (objPerfil, "habilidades", elementMap.id);	    	
+    	    	atualizaUserPerfilElemento (objPerfil, "habilidadeInteresseOff", elementMap.id);
+			};
+			if (elementMap.have == "1"){
+    	    	atualizaUserPerfilElemento (objPerfil, "habilidadeInteresseOff", elementMap.id);
+		    	atualizaUserPerfilElemento (objPerfil, "habilidadesOff", elementMap.id);
+			};
+			if (elementMap.have == "2"){
+		    	atualizaUserPerfilElemento (objPerfil, "habilidadeInteresse", elementMap.id);
+		    	atualizaUserPerfilElemento (objPerfil, "habilidadesOff", elementMap.id);
+			};
+		});
+
+	};
+
 	function gravaDiagrama (){
 		var objJson = JSON.parse(localStorage.getItem("elements"));
 		
@@ -341,12 +362,6 @@
 
 	};
 
-
-	function GetJson (Json) {
-		var objJson = JSON.parse(Json);
-//		rest_atualizaHabilidade(objJson, fechaModalHabilidade, semAcao, objJson);
-	};
-
 	function verificaPossuiHabilidade(id){
 		var possuiHabilidade = 1;
 		if (localStorage.getItem("meuPerfil") && localStorage.getItem("meuPerfil") != "undefined" ){
@@ -396,104 +411,104 @@
 		rest_incluiUserPerfil (objJson, atualizaUserPerfil, semAcao, tipo, elemento);
 	};
 
-	function atualizaUserPerfilElemento (objJson, tipo, elemento){
+	function atualizaUserPerfilElemento (objPerfil, tipo, elemento){
 		var atualizarPerfil = false;
 		if (tipo == "habilidadeInteresse"){
 			var existente = false;
-			$.each( objJson.documento.habilidadesInteresse, function( i, habilidade) {
+			$.each( objPerfil.documento.habilidadesInteresse, function( i, habilidade) {
 				if (elemento == habilidade){
 					existente = true;
 				};
 			});
 			if (!existente){
-				objJson.documento.habilidadesInteresse.push(elemento);
+				objPerfil.documento.habilidadesInteresse.push(elemento);
 				atualizarPerfil = true;
 			};
 		};
 		if (tipo == "habilidadeInteresseOff"){
-			$.each( objJson.documento.habilidadesInteresse, function( i, habilidade) {
+			$.each( objPerfil.documento.habilidadesInteresse, function( i, habilidade) {
 				if (elemento == habilidade){
-					objJson.documento.habilidadesInteresse.splice(i,1);
+					objPerfil.documento.habilidadesInteresse.splice(i,1);
 					atualizarPerfil = true;
 				};
 			});
 		};
 		if (tipo == "habilidades"){
 			var existente = false;
-			$.each( objJson.documento.habilidades, function( i, habilidade) {
+			$.each( objPerfil.documento.habilidades, function( i, habilidade) {
 				if (elemento == habilidade){
 					existente = true;
 				};
 			});
 			if (!existente){
-				objJson.documento.habilidades.push(elemento);
+				objPerfil.documento.habilidades.push(elemento);
 				atualizarPerfil = true;
 			};
 		};
 		if (tipo == "habilidadesOff"){
-			$.each( objJson.documento.habilidades, function( i, habilidade) {
+			$.each( objPerfil.documento.habilidades, function( i, habilidade) {
 				if (elemento == habilidade){
-					objJson.documento.habilidades.splice(i,1);
+					objPerfil.documento.habilidades.splice(i,1);
 					atualizarPerfil = true;
 				};
 			});
 		};
 		if (tipo == "carreiraInteresse"){
 			var existente = false;
-			$.each( objJson.documento.carreirasInteresse, function( i, carreira) {
+			$.each( objPerfil.documento.carreirasInteresse, function( i, carreira) {
 				if (elemento == carreira){
 					existente = true;
 				};
 			});
 			if (!existente){
-				objJson.documento.carreirasInteresse.push(elemento);
+				objPerfil.documento.carreirasInteresse.push(elemento);
 				atualizarPerfil = true;
 			};
 		};
 		if (tipo == "carreiraInteresseOff"){
-			$.each( objJson.documento.carreirasInteresse, function( i, habilidade) {
+			$.each( objPerfil.documento.carreirasInteresse, function( i, habilidade) {
 				if (elemento == habilidade){
-					objJson.documento.carreirasInteresse.splice(i,1);
+					objPerfil.documento.carreirasInteresse.splice(i,1);
 					atualizarPerfil = true;
 				};
 			});
 		};
 		if (tipo == "carreiras"){
 			var existente = false;
-			$.each( objJson.documento.carreiras, function( i, carreira) {
+			$.each( objPerfil.documento.carreiras, function( i, carreira) {
 				if (elemento == carreira){
 					existente = true;
 				};
 			});
 			if (!existente){
-				objJson.documento.carreiras.push(elemento);
+				objPerfil.documento.carreiras.push(elemento);
 				atualizarPerfil = true;
 			};
 		};
 		if (tipo == "carreirasOff"){
-			$.each( objJson.documento.carreiras, function( i, habilidade) {
+			$.each( objPerfil.documento.carreiras, function( i, habilidade) {
 				if (elemento == habilidade){
-					objJson.documento.carreiras.splice(i,1);
+					objPerfil.documento.carreiras.splice(i,1);
 					atualizarPerfil = true;
 				};
 			});
 		};
 		if (tipo == "cursoInteresse"){
 			var existente = false;
-			$.each( objJson.documento.cursosInteresse, function( i, curso) {
+			$.each( objPerfil.documento.cursosInteresse, function( i, curso) {
 				if (elemento == curso){
 					existente = true;
 				};
 			});
 			if (!existente){
-				objJson.documento.cursosInteresse.push(elemento);
+				objPerfil.documento.cursosInteresse.push(elemento);
 				atualizarPerfil = true;
 			};
 		};
 		if (tipo == "cursoInteresseOff"){
-			$.each( objJson.documento.cursosInteresse, function( i, habilidade) {
+			$.each( objPerfil.documento.cursosInteresse, function( i, habilidade) {
 				if (elemento == habilidade){
-					objJson.documento.cursosInteresse.splice(i,1);
+					objPerfil.documento.cursosInteresse.splice(i,1);
 					atualizarPerfil = true;
 				};
 			});
@@ -502,20 +517,20 @@
 			var tags = elemento.split(",");
 			$.each( tags, function( i, tag) {
 				var existente = false;
-				$.each( objJson.documento.tags, function( i, tagsElemento) {
+				$.each( objPerfil.documento.tags, function( i, tagsElemento) {
 					if (tag == tagsElemento){
 						existente = true;
 					};
 				});
 				if (!existente){
-					objJson.documento.tags.push(tag);
+					objPerfil.documento.tags.push(tag);
 					atualizarPerfil = true;
 				};
 			});
 		};
 		if (atualizarPerfil){
-			localStorage.setItem("meuPerfil", JSON.stringify(objJson));
-			rest_atualizaUserPerfil (objJson, semAcao, semAcao);
+			localStorage.setItem("meuPerfil", JSON.stringify(objPerfil));
+			rest_atualizaUserPerfil (objPerfil, semAcao, semAcao);
 		}
 	};
 
@@ -524,13 +539,13 @@
 
     	var temElemento = false;
 		if (localStorage.getItem("meuPerfil") && localStorage.getItem("meuPerfil") != "undefined" ){
-			var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+			var objPerfil = JSON.parse(localStorage.getItem("meuPerfil"));
 		}else{
 			return temElemento;
 		};
 
 		if (tipo == "habilidadeInteresse"){
-			$.each( objJson.documento.habilidadesInteresse, function( i, habilidade) {
+			$.each( objPerfil.documento.habilidadesInteresse, function( i, habilidade) {
 				if (elemento == habilidade){
 					temElemento = true;
 				};
@@ -538,28 +553,28 @@
 		};
 		if (tipo == "habilidades"){
 			var existente = false;
-			$.each( objJson.documento.habilidades, function( i, habilidade) {
+			$.each( objPerfil.documento.habilidades, function( i, habilidade) {
 				if (elemento == habilidade){
 					temElemento = true;
 				};
 			});
 		};
 		if (tipo == "carreiraInteresse"){
-			$.each( objJson.documento.carreirasInteresse, function( i, carreira) {
+			$.each( objPerfil.documento.carreirasInteresse, function( i, carreira) {
 				if (elemento == carreira){
 					temElemento = true;
 				};
 			});
 		};
 		if (tipo == "carreiras"){
-			$.each( objJson.documento.carreiras, function( i, carreira) {
+			$.each( objPerfil.documento.carreiras, function( i, carreira) {
 				if (elemento == carreira){
 					temElemento = true;
 				};
 			});
 		};
 		if (tipo == "cursoInteresse"){
-			$.each( objJson.documento.cursosInteresse, function( i, curso) {
+			$.each( objPerfil.documento.cursosInteresse, function( i, curso) {
 				if (elemento == curso){
 					temElemento = true;
 				};

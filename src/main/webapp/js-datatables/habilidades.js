@@ -21,57 +21,59 @@
     	var totalHabilidades = 0;
         
     	$.each(objJson, function (i, element) {
-			if (localStorage.montacampo && 
-				localStorage.montacategoria && 
-				localStorage.montahabilidade &&
-				localStorage.montaseta
-				){
-				if (element.documento.classes == "area"){
-	            	montaLinhaHabilidade(i, element, objJson);
-	            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
-	            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
-	            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
-		            ++totalHabilidades;
-				}else{
-					if (localStorage.montacampo == "true" && element.documento.classes == "campo"){
+    		if (element.type != "edges"){
+				if (localStorage.montacampo && 
+					localStorage.montacategoria && 
+					localStorage.montahabilidade &&
+					localStorage.montaseta
+					){
+					if (element.documento.classes == "area"){
 		            	montaLinhaHabilidade(i, element, objJson);
 		            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 		            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 		            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
 			            ++totalHabilidades;
 					}else{
-						if (localStorage.montacategoria == "true" && element.documento.classes == "categoria"){
+						if (localStorage.montacampo == "true" && element.documento.classes == "campo"){
 			            	montaLinhaHabilidade(i, element, objJson);
 			            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 			            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 			            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
 				            ++totalHabilidades;
 						}else{
-							if (localStorage.montahabilidade == "true" && element.documento.classes == "habilidade"){
+							if (localStorage.montacategoria == "true" && element.documento.classes == "categoria"){
 				            	montaLinhaHabilidade(i, element, objJson);
 				            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 				            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 				            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
 					            ++totalHabilidades;
 							}else{
-								if (localStorage.montaseta == "true" && element.documento.type == "edges"){
+								if (localStorage.montahabilidade == "true" && element.documento.classes == "habilidade"){
 					            	montaLinhaHabilidade(i, element, objJson);
 					            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 					            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 					            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
 						            ++totalHabilidades;
+								}else{
+									if (localStorage.montaseta == "true" && element.documento.type == "edges"){
+						            	montaLinhaHabilidade(i, element, objJson);
+						            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
+						            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
+						            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
+							            ++totalHabilidades;
+									}
 								}
 							}
 						}
 					}
-				}
-			}else{
-            	montaLinhaHabilidade(i, element, objJson);
-            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
-            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
-            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
-	            ++totalHabilidades;
-			};
+				}else{
+	            	montaLinhaHabilidade(i, element, objJson);
+	            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
+	            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
+	            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
+		            ++totalHabilidades;
+				};
+    		};
         });
         
 		$("#qtdeHabilidades").html(totalHabilidades + " habilidades");
