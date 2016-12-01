@@ -202,12 +202,14 @@
 			$("#" + $(this).attr('id')).addClass("disabled");
 	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
 	    	atualizaUserPerfilElemento (objJson, "habilidadeInteresse", $(this).attr('data-idhabilidade'));
+	    	atualizaMapa ($(this).attr('data-idhabilidade'), "have", "2");
 	    });
 	    $('#seiFazerHabilidade_' + i).off('click');
 	    $('#seiFazerHabilidade_' + i).on('click',function(){
 			$("#" + $(this).attr('id')).addClass("disabled");
 	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
-	    	atualizaUserPerfilElemento (objJson, "habilidades", $(this).attr('data-idhabilidade'));	    	
+	    	atualizaUserPerfilElemento (objJson, "habilidade", $(this).attr('data-idhabilidade'));
+	    	atualizaMapa ($(this).attr('data-idhabilidade'), "have", "0");
 	    });
 	    $('#alterarHabilidade_' + i).off('click');
 	    $('#alterarHabilidade_' + i).on('click',function(){

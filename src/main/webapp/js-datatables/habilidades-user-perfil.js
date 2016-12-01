@@ -90,7 +90,8 @@
     		$("#excluiInteresse_" + i).on('click',function(){
     	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
     	    	atualizaUserPerfilElemento (objJson, "habilidadeInteresseOff", element.documento.idHabilidade);
-	        	$("#itemHabilidade_" + i).addClass('hide');
+    	    	atualizaMapa (element.documento.idHabilidade, "have", "1");
+    	    	$("#itemHabilidade_" + i).addClass('hide');
     	    });
         });
         

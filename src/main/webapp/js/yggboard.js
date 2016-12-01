@@ -179,11 +179,11 @@
 			};
 			if (elementMap.have == "1"){
     	    	atualizaUserPerfilElemento (objPerfil, "habilidadeInteresseOff", elementMap.id);
-		    	atualizaUserPerfilElemento (objPerfil, "habilidadesOff", elementMap.id);
+		    	atualizaUserPerfilElemento (objPerfil, "habilidadeOff", elementMap.id);
 			};
 			if (elementMap.have == "2"){
 		    	atualizaUserPerfilElemento (objPerfil, "habilidadeInteresse", elementMap.id);
-		    	atualizaUserPerfilElemento (objPerfil, "habilidadesOff", elementMap.id);
+		    	atualizaUserPerfilElemento (objPerfil, "habilidadeOff", elementMap.id);
 			};
 		});
 
@@ -197,6 +197,23 @@
 		});
 	};
 			
+	function atualizaMapa (id, tipo, valor){
+		
+		var objYggmap = JSON.parse(localStorage.getItem("jsonYggmap"));
+		
+		$.each( objYggmap.data, function( i, element ) {
+			if (element.id == id){
+				if (tipo == "have"){
+					element.have = valor;
+				};
+			};
+		});
+		
+		localStorage.setItem("jsonYggmap", JSON.stringify(objYggmap));
+		
+		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
+	};
+
 	function atualizaUserPerfil (tipo, elemento){
 		rest_obterUserPerfil (localStorage.usuarioEmail, atualizaUserPerfilElemento, incluiUserPerfil, tipo, elemento)
 	};
@@ -433,7 +450,7 @@
 				};
 			});
 		};
-		if (tipo == "habilidades"){
+		if (tipo == "habilidade"){
 			var existente = false;
 			$.each( objPerfil.documento.habilidades, function( i, habilidade) {
 				if (elemento == habilidade){
@@ -445,7 +462,7 @@
 				atualizarPerfil = true;
 			};
 		};
-		if (tipo == "habilidadesOff"){
+		if (tipo == "habilidadeOff"){
 			$.each( objPerfil.documento.habilidades, function( i, habilidade) {
 				if (elemento == habilidade){
 					objPerfil.documento.habilidades.splice(i,1);
