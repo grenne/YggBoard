@@ -174,7 +174,7 @@
 		$.each( objJson.data, function( i, elementMap ) {
 	    	var objPerfil = JSON.parse(localStorage.getItem("meuPerfil"));
 			if (elementMap.have == "0"){
-		    	atualizaUserPerfilElemento (objPerfil, "habilidades", elementMap.id);	    	
+		    	atualizaUserPerfilElemento (objPerfil, "habilidade", elementMap.id);	    	
     	    	atualizaUserPerfilElemento (objPerfil, "habilidadeInteresseOff", elementMap.id);
 			};
 			if (elementMap.have == "1"){

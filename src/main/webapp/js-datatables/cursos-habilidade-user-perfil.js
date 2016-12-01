@@ -61,41 +61,19 @@
 					'<td id="escola' + i + '">' + curso.documento.escola + '</td>' +
 					'<td id="preRequisito' + i + '">' + curso.documento.preRequisito + '</td>' +
 				'</tr>';
-        	$( "#curso_user_perfil_tbody" + append).append(curso_user_perfil_table_row);
-        });
 
+        	$( "#curso_user_perfil_tbody" + append).append(curso_user_perfil_table_row);
+           	
+        	$("#excluiInteresse_" + i).off('click');
+    		$("#excluiInteresse_" + i).on('click',function(){
+    	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+    	    	atualizaUserPerfilElemento (objJson, "habilidadeInteresseOff", element.documento.idHabilidade);
+    	    	atualizaMapa (element.documento.idHabilidade, "have", "1");
+    	    	$("#itemHabilidade_" + i).addClass('hide');
+    	    });
+        });
+        
         var curso_user_perfil_table = $('#curso_user_perfil_list' + append);
 		curso_user_perfil_table.footable().trigger('footable_collapse_all');
 
-		$('#collapseCursosUserPerfil').on('click', function(){
-			curso_user_perfil_table.trigger('footable_collapse_all');
-			$( "#collapseCursosUserPerfil").addClass('hide');
-			$( "#expandCursosUserPerfil").removeClass('hide');
-		});
-		$('#expandCursosUserPerfil').on('click', function(){
-			curso_user_perfil_table.trigger('footable_expand_all');
-			$( "#collapseCursosUserPerfil").removeClass('hide');
-			$( "#expandCursosUserPerfil").addClass('hide');
-		})
-		// Search input
-		$('#searchCursosUserPerfil').on('input', function (e) {
-			e.preventDefault();
-			curso_user_perfil_table.trigger('footable_filter', {filter: $(this).val()});
-		});
-
-		$('#collapseCursosUserPerfilConquista').on('click', function(){
-			curso_user_perfil_table.trigger('footable_collapse_all');
-			$( "#collapseCursosUserPerfil").addClass('hide');
-			$( "#expandCursosUserPerfil").removeClass('hide');
-		});
-		$('#expandCursosUserPerfilConquista').on('click', function(){
-			curso_user_perfil_table.trigger('footable_expand_all');
-			$( "#collapseCursosUserPerfil").removeClass('hide');
-			$( "#expandCursosUserPerfil").addClass('hide');
-		})
-		// Search input
-		$('#searchCursosUserPerfilConquista').on('input', function (e) {
-			e.preventDefault();
-			curso_user_perfil_table.trigger('footable_filter', {filter: $(this).val()});
-		});
 	};

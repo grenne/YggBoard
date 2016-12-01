@@ -124,10 +124,7 @@
 							'</div>' +
 						'</td>' +
 					'</tr>';
-	        	console.log ("**********************************************************************");
-	        	console.log ("**********************************************************************");
-	        	console.log ("**********************************************************************");
-	        	console.log (habilidades);
+
 	        	$("#carreira_user_perfil_tbody" + append).append(carreira_user_perfil_table_row);
 
 	        	$('.queroAprenderHabilidade').off('click');

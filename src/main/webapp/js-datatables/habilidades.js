@@ -21,7 +21,7 @@
     	var totalHabilidades = 0;
         
     	$.each(objJson, function (i, element) {
-    		if (element.type != "edges"){
+    		if (element.documento.type != "edges"){
 				if (localStorage.montacampo && 
 					localStorage.montacategoria && 
 					localStorage.montahabilidade &&

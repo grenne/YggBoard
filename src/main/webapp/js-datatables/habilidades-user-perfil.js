@@ -68,10 +68,18 @@
         $.each(objJson, function (i, element) {
         	var cursos = "";
         	$.each(element.cursos, function (w, curso){
+        		var disabled = "";
+        		var textoTip = "quero fazer";
+        		if (checaUserPerfilElemento("cursoInteresse", curso.documento.idCurso)){
+        			disabled = 'disabled';
+        			textoTip = "marquei interesse";	
+        		};
         		cursos = cursos +
    				'<div class="row">' +
    					'<div class="user-panel-curso-div col-xs-12">' +
-   						'<span class="user-panel-curso-habilidade-nome cursoHabilidade_' + i + "-" + w + ' ">- <a  href="' + curso.documento.wiki + '"  target="_blank">  ' + curso.documento.descricao + '</a></span>' +
+   						'<span class="user-panel-curso-habilidade-nome cursoHabilidade_' + i + "-" + w + ' ">- <a  href="' + curso.documento.wiki + '"  target="_blank">  ' + curso.documento.descricao + '</a>' +
+   						'&nbsp;&nbsp;&nbsp;<a id="querofazercursohabilidade_' + i + '-' + w + '" data-tooltip="' + textoTip + '"  class="querofazercursohabilidade icon-querofazer ' + disabled + '"  data-idCurso="' + curso.documento.idCurso + '"><i class="fa fa-leanpub icon-quefazer"></i></a>' +
+   						'</span>' +
 					'</div>' +
    				'</div>';
         	});
@@ -86,6 +94,7 @@
 					'</td>' +
 				'</tr>';
         	$("#habilidade_user_perfil_tbody" + append).append(habilidade_user_perfil_table_row);
+
         	$("#excluiInteresse_" + i).off('click');
     		$("#excluiInteresse_" + i).on('click',function(){
     	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
@@ -98,10 +107,17 @@
         $('.habilidades').removeClass('hide');
         
         var habilidade_user_perfil_table = $('#habilidade_user_perfil_list' + append);
-		habilidade_user_perfil_table.footable().trigger('footable_collapse_all');
+		habilidade_user_perfil_table.footable().trigger('footable_collapse_all');		
 
+    	$('.querofazercursohabilidade').off('click');
+	    $('.querofazercursohabilidade').on('click',function(){
+	    	var a = $(this).attr('id');
+			$("#" + $(this).attr('id')).addClass("disabled");
+	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+	    	atualizaUserPerfilElemento (objJson, "cursoInteresse", $(this).attr('data-idcurso'));
+	    });       	
 
-		$('#collapseHabilidadesUserPerfil').on('click', function(){
+	    $('#collapseHabilidadesUserPerfil').on('click', function(){
 			habilidade_user_perfil_table.trigger('footable_collapse_all');
 			$( "#collapseHabilidadesUserPerfil").addClass('hide');
 			$( "#expandHabilidadesUserPerfil").removeClass('hide');
