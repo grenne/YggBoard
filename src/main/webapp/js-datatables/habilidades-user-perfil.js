@@ -78,7 +78,7 @@
    				'<div class="row">' +
    					'<div class="user-panel-curso-div col-xs-12">' +
    						'<span class="user-panel-curso-habilidade-nome cursoHabilidade_' + i + "-" + w + ' ">- <a  href="' + curso.documento.wiki + '"  target="_blank">  ' + curso.documento.descricao + '</a>' +
-   						'&nbsp;&nbsp;&nbsp;<a id="querofazercursohabilidade_' + i + '-' + w + '" data-tooltip="' + textoTip + '"  class="querofazercursohabilidade icon-querofazer ' + disabled + '"  data-idCurso="' + curso.documento.idCurso + '"><i class="fa fa-leanpub icon-quefazer"></i></a>' +
+   						'&nbsp;&nbsp;&nbsp;<a id="querofazercursohabilidade_' + i + '-' + w + '" data-tooltip="' + textoTip + '"  class="querofazercursohabilidade  icon-querofazer ' + disabled + ' querofazercursohabilidadeclass_' + i + '-' + w + '"  data-idCurso="' + curso.documento.idCurso + '"><i class="fa fa-leanpub icon-quefazer"></i></a>' +
    						'</span>' +
 					'</div>' +
    				'</div>';
@@ -88,15 +88,15 @@
 		   			'<td>' + 
 	    				'<span class="user-panel-label">' + element.documento.name + '</span>' +
 					'</td>' +
-					'<td class="user-panel-td"><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
+					'<td class="user-panel-td"><a id="excluiInteresseHabilidade_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
 					'<td><span class="user-panel-label-curso">Cursos disponíveis</span>' +
 					cursos +
 					'</td>' +
 				'</tr>';
         	$("#habilidade_user_perfil_tbody" + append).append(habilidade_user_perfil_table_row);
 
-        	$("#excluiInteresse_" + i).off('click');
-    		$("#excluiInteresse_" + i).on('click',function(){
+        	$("#excluiInteresseHabilidade_" + i).off('click');
+    		$("#excluiInteresseHabilidade_" + i).on('click',function(){
     	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
     	    	atualizaUserPerfilElemento (objJson, "habilidadeInteresseOff", element.documento.idHabilidade);
     	    	atualizaMapa (element.documento.idHabilidade, "have", "1");
@@ -111,8 +111,9 @@
 
     	$('.querofazercursohabilidade').off('click');
 	    $('.querofazercursohabilidade').on('click',function(){
-	    	var a = $(this).attr('id');
-			$("#" + $(this).attr('id')).addClass("disabled");
+			var id = $(this).attr('id');
+			var i = id.split("_")[1];
+			$(".querofazercursohabilidadeclass_" + i).addClass("disabled");
 	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
 	    	atualizaUserPerfilElemento (objJson, "cursoInteresse", $(this).attr('data-idcurso'));
 	    });       	

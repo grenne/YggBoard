@@ -97,8 +97,7 @@
 		$('.nav-tab-lateral').removeClass("nav-tab");
 		$('#habilidade_theader_tab-h4').addClass("nav-tab");
 		if (localStorage.carrega == "true"){
-			var cy = "";
-			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")), cy);
+			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")));
 		};
 		localStorage.carrega = "false";
 		$('.numero-objetivos').addClass("hide");
@@ -108,8 +107,7 @@
 		$('.nav-tab-lateral').removeClass("nav-tab");
 		$('#carreira_theader_tab-h4').addClass("nav-tab");
 		if (localStorage.carrega == "true"){
-			var cy = "";
-			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")), cy);
+			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")));
 		};
 		localStorage.carrega = "false";
 		$('.numero-objetivos').removeClass("hide");

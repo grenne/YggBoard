@@ -112,7 +112,7 @@
 					'<tr id="itemCarreiraUserPerfil_' + i + '" class="itemCarreiraUserPerfil col-xs-12' + append + '">' +
 			   			'<td id="nome_' + i + '" class="user-panel-td"><span class="user-panel-label">' + carreira.nome + '</span></td>' +
 			   			actions +
-						'<td class="user-panel-td"><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse" ><i class="fa fa-trash-o icon-trash"></i></a></td>' +
+						'<td class="user-panel-td"><a id="excluiInteresseCarreira_' + i + '" data-tooltip="exclui interesse" ><i class="fa fa-trash-o icon-trash"></i></a></td>' +
 						'<td class="col-xs-12">' +
 							'<div class="col-xs-12 lineInvisible">' +
 							'____________________________________________'+
@@ -178,8 +178,8 @@
 	        		$('.habilidade-user-perfil').removeClass("hide");
 					rest_obterUserPerfilItens("habilidades-interesse-carreiras", carregaHabilidadesUserPerfil, semAcao, "habilidades-necessarias-carreira", carreira.nome, "habilidades_user_perfil_theader");
 	            });
-	        	$("#excluiInteresse_" + i).off('click');
-	    		$("#excluiInteresse_" + i).on('click',function(){
+	        	$("#excluiInteresseCarreira_" + i).off('click');
+	    		$("#excluiInteresseCarreira_" + i).on('click',function(){
 	    	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
 	    	    	atualizaUserPerfilElemento (objJson, "carreiraInteresseOff", carreira.nome);
 		        	$("#itemCarreiraUserPerfil_" + i).addClass('hide');

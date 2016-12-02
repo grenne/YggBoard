@@ -52,14 +52,14 @@
 				'<tr class="itemCursoUserPerfil' + append + '">' +
 		   			'<td id="nome_' + i + '">' + montaMaterias(curso.documento.materias) + '</td>' +
 //					'<td id="acaoTd_' + i + '"><button id="acaoCursoUserPerfil_' + i + '" class="btn-xs btn-info">Grade</button></td>' +
-					'<td id="curso' + i + '">' + curso.documento.nome + 
-						'<a id="wiki_' + i + '" href="' + curso.documento.wiki + '" class="wiki" data-tooltip="wikipédia" target="_blank"><i class="fa fa-wikipedia-w"></i></a></td>' +		   								
+					'<td <a  id="curso' + i + '" href="' + curso.documento.wiki + '"  target="_blank">  ' + curso.documento.descricao + '</a>' +
 					'</td>' +
+						'<span class="user-panel-curso-habilidade-nome cursoHabilidade_' + i + "-" + w + ' ">- <a  href="' + curso.documento.wiki + '"  target="_blank">  ' + curso.documento.descricao + '</a>' +
 					'<td id="descricao_' + i + '">' + curso.documento.descricao + '</td>' +
-					'<td id="tempo' + i + '">' + curso.documento.tempo + '</td>' +
-					'<td id="custo' + i + '">' + curso.documento.custo + '</td>' +
-					'<td id="escola' + i + '">' + curso.documento.escola + '</td>' +
-					'<td id="preRequisito' + i + '">' + curso.documento.preRequisito + '</td>' +
+					'<td id="tempo' + i + '">duração: ' + curso.documento.tempo + '</td>' +
+					'<td id="custo' + i + '">custo: ' + curso.documento.custo + '</td>' +
+					'<td id="escola' + i + '">escola: ' + curso.documento.escola + '</td>' +
+					'<td id="preRequisito' + i + '">pré-requisito: ' + curso.documento.preRequisito + '</td>' +
 				'</tr>';
 
         	$( "#curso_user_perfil_tbody" + append).append(curso_user_perfil_table_row);

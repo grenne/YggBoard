@@ -46,18 +46,17 @@
         	curso_user_perfil_table_row = 
 				'<tr id="itemCursoUserPerfil_' + i + '" class="itemCursoUserPerfil' + append + '">' +
 		   			'<td>' + 
-						'<span class="user-panel-label">' + curso.documento.descricao + '</span>' +
+						'<span class="user-panel-curso-habilidade-nome cursoHabilidade_' + i + ' ">- <a  href="' + curso.documento.wiki + '"  target="_blank">  ' + curso.documento.descricao + '</a>' +
 					'</td>' +
-					'<td class="user-panel-td"><a id="excluiInteresse_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
-					'<td><span id="curso' + i + '" class="user-panel-detalhes-curso"><a  href="' + curso.wiki + '" class="panel-text panel-cursos cursoHabilidade hide" target="_blank">  ' + curso.documento.descricao + '</a></span>' + 
-					'<td><span id="tempo' + i + '" class="user-panel-detalhes-curso">' + curso.documento.tempo + '</span></td>' +
-					'<td><span id="custo' + i + '" class="user-panel-detalhes-curso">' + curso.documento.custo + '</span></td>' +
-					'<td><span id="escola' + i + '" class="user-panel-detalhes-curso">' + curso.documento.escola + '</span></td>' +
-					'<td><span id="preRequisito' + i + '" class="user-panel-detalhes-curso">' + curso.documento.preRequisito + '</td>' +
+					'<td class="user-panel-td"><a id="excluiInteresseCurso_' + i + '" data-tooltip="exclui interesse"><i class="fa fa-trash-o icon-trash"></i></a></td>' +
+					'<td><span id="tempo' + i + '" class="user-panel-detalhes-curso">duração: ' + curso.documento.tempo + '</span></td>' +
+					'<td><span id="custo' + i + '" class="user-panel-detalhes-curso">custo: ' + curso.documento.custo + '</span></td>' +
+					'<td><span id="escola' + i + '" class="user-panel-detalhes-curso">escola: ' + curso.documento.escola + '</span></td>' +
+					'<td><span id="preRequisito' + i + '" class="user-panel-detalhes-curso">pré-requisito: ' + curso.documento.preRequisito + '</td>' +
 				'</tr>';
         	$( "#curso_user_perfil_tbody" + append).append(curso_user_perfil_table_row);
-        	$("#excluiInteresse_" + i).off('click');
-    		$("#excluiInteresse_" + i).on('click',function(){
+        	$("#excluiInteresseCurso_" + i).off('click');
+    		$("#excluiInteresseCurso_" + i).on('click',function(){
     	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
     	    	atualizaUserPerfilElemento (objJson, "cursoInteresseOff", curso.documento.idCurso);
 	        	$("#itemCursoUserPerfil_" + i).addClass('hide');
