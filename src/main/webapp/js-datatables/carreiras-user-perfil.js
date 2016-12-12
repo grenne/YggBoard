@@ -58,7 +58,10 @@
     	$( ".itemCarreiraUserPerfil" + append).remove();
         
     	$.each(objJson, function (i, carreira) {
-        	calculoPercentual = parseInt(carreira.totalPossuiHabilidades) / parseInt(carreira.totalHabilidades) * 100;
+        	var calculoPercentual = 0;
+        	if (carreira.totalHabilidades != "0"){
+        		calculoPercentual = parseInt(carreira.totalPossuiHabilidades) / parseInt(carreira.totalHabilidades) * 100;
+        	};
             var percentualHabilidades = calculoPercentual.toFixed(0);
         	if ((append == "carreiras_user_perfil_conquista_theader" && percentualHabilidades == 100) | 
         		(append == "carreiras_user_perfil_theader" && percentualHabilidades != 100)	){
@@ -77,10 +80,10 @@
             			textoTip_2 = "ja possuo";	
             		};
             		habilidades = habilidades +
-       				'<div class="row">' +
-	       				'<div class="user-panel-habilidade-div col-xs-12">' +
+       				'<div  class="row">' +
+	       				'<div id="itemHabilidade_' + i + "-" + z + '" class="user-panel-habilidade-div col-xs-12">' +
 		    				'<span class="user-panel-carreira-habilidade-nome habilidadeCarreira col-xs-9">- ' + habilidade.name + '</span>' +
-		    				'<span><a id="seiFazerHabilidade_' + i + "-" + z + '" data-tooltip="' + textoTip_2 + '" data-toggle="modal" data-idHabilidade="' + habilidade.idHabilidade + '"  class="' + disabled_2 + ' seiFazerHabilidade"><i class="fa fa-book"></i></a></span>' +
+		    				'<span><a id="seiFazerHabilidade_' + i + "-" + z + '" data-tooltip="' + textoTip_2 + '" data-toggle="modal" data-idHabilidade="' + habilidade.idHabilidade + '" class="' + disabled_2 + ' seiFazerHabilidade"><i class="fa fa-book"></i></a></span>' +
 		    				'<span><a id="queroAprenderHabilidade_' + i + "-" + z + '" data-tooltip="' + textoTip + '" data-idHabilidade="' + habilidade.idHabilidade + '" class="' + disabled + ' queroAprenderHabilidade"><i class="fa fa-leanpub"></i></a></span>' +
 							'<button id="cursoHabilidadeIn_' + i + "-" + z + '" class="user-panel-button-curso user-panel-button-curso-item col-xs-2 cursoHabilidadeIn"><span><i class="fa fa-chevron-down "></i> cursos</span></button>' +
 							'<button id="cursoHabilidadeOff_' + i + "-" + z + '" class="user-panel-button-curso col-xs-2 hide cursoHabilidadeOff"><span><i class="fa fa-chevron-up "></i> cursos</span></button>' +
@@ -94,7 +97,7 @@
             			textoTip = "marquei interesse";	
             		};
             		habilidades = habilidades +
-       				'<div class="row">' +
+       				'<div id="itemCurso_' + i + "-" + z +  + "-" + w + ' class="row">' +
        					'<div class="user-panel-curso-div col-xs-12">' +
        						'<span class="user-panel-curso-habilidade-nome cursoHabilidade_' + i + "-" + z + ' col-xs-12 hide">- <a  href="' + curso.documento.wiki + '" target="_blank">  ' + curso.documento.descricao + '</a>' +
        						'&nbsp;&nbsp;&nbsp;<a id="querofazercurso_' + i + "-" + z + "-" + w + '" data-tooltip="' + textoTip + '"  class="hide querofazercurso icon-querofazer ' + disabled + ' cursoHabilidade_' + i + "-" + z + '"  data-idCurso="' + curso.documento.idCurso + '"><i class="fa fa-leanpub icon-quefazer"></i></a>' +
@@ -106,10 +109,10 @@
 	        	actions = "";
 	        	if (append == "carreiras_user_perfil_theader"){
 	        		actions = 
-	        			'<td class="user-panel-td"><span class="panel-label percentual-box"><span class="percentual-numero">' + percentualHabilidades + '%</span><span class="percentual-texto"> em comum</span></td>';
+	        			'<td class="user-panel-td"><span class="panel-label percentual-box"><span id="itemPercentualHabilidades_' + i + '" class="percentual-numero">' + percentualHabilidades + '%</span><span class="percentual-texto"> em comum</span></td>';
 	        	};
 	        	carreira_user_perfil_table_row = 
-					'<tr id="itemCarreiraUserPerfil_' + i + '" class="itemCarreiraUserPerfil col-xs-12' + append + '">' +
+					'<tr id="itemCarreiraUserPerfil_' + i + '" class="itemCarreiraUserPerfil col-xs-12' + append + '"  data-totalHabilidades="' + carreira.totalHabilidades + '"  data-possuiHabilidades="' + carreira.totalPossuiHabilidades + '">' +
 			   			'<td id="nome_' + i + '" class="user-panel-td"><span class="user-panel-label">' + carreira.nome + '</span></td>' +
 			   			actions +
 						'<td class="user-panel-td"><a id="excluiInteresseCarreira_' + i + '" data-tooltip="exclui interesse" ><i class="fa fa-trash-o icon-trash"></i></a></td>' +
@@ -137,7 +140,17 @@
 
         	    $('.seiFazerHabilidade').off('click');
         	    $('.seiFazerHabilidade').on('click',function(){
+        			var id = $(this).attr('id');
+        			var i = id.split("_")[1];
+        			var z = i.split("-")[0];
         			$("#" + $(this).attr('id')).addClass("disabled");
+        			$("#itemHabilidade_" + i).addClass("hide");
+        			var possuiHabilidades = $("#itemCarreiraUserPerfil_" + z).attr('data-possuiHabilidades');
+        			possuiHabilidades = parseInt($("#itemCarreiraUserPerfil_" + z).attr('data-possuiHabilidades')) + 1; 
+        			$("#itemCarreiraUserPerfil_" + z).attr("data-possuiHabilidades",possuiHabilidades);
+                	calculoPercentual = parseInt(possuiHabilidades) / parseInt($("#itemCarreiraUserPerfil_" + z).attr('data-totalHabilidades')) * 100;
+                	var percentualHabilidades = calculoPercentual.toFixed(0);                	
+                	$("#itemPercentualHabilidades_" + z).html(percentualHabilidades + "%");
         	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
         	    	atualizaUserPerfilElemento (objJson, "habilidade", $(this).attr('data-idhabilidade'));
         	    	atualizaMapa ($(this).attr('data-idhabilidade'), "have", "0");

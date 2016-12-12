@@ -110,7 +110,7 @@ public class Rest_UserPerfil {
 				    jsonDocumento.put("recomentados", objCarreiras.get("recomentados"));
 				    jsonDocumento.put("tags", objCarreiras.get("tags"));
 					ArrayList arrayListElementos = new ArrayList(); 
-					arrayListElementos = (ArrayList) jsonObject.get("elementos");
+					arrayListElementos = (ArrayList) jsonObject.get("habilidades");
 			    	Object arrayElementos[] = arrayListElementos.toArray(); 
 					ArrayList <String> arrayListElementosFaltantes = new ArrayList(); 
 				    JSONObject jsonQtdeHabilidades = obterTotalHabilidades(objCarreiras.get("nome"), arrayElementos, arrayListElementosFaltantes);
