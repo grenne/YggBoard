@@ -30,7 +30,9 @@ $(function() {
 		        perfil : "user",
 		        city : "",
 		        password : "",
-		        gender : ""				
+		        gender : "",
+		        acceptTerms : "",
+		        dateTimeAcceptTerms		        
 			}
 		};
 	
@@ -138,7 +140,16 @@ $(function() {
 			loginRegister.documento[data.field] = data.element[0].value;
 		};	
 	});
-	$("#btn-submit-login").bind('click', function () {
+	$("#acceptTerms").off('click');
+	$("#acceptTerms").on('click', function (field) {
+		if ($("#acceptTerms").is(':checked')){
+			loginRegister.documento.dateTimeAcceptTerms = new Date();
+		} else {
+			loginRegister.documento.dateTimeAcceptTerms = "";
+		};
+	});
+	$("#btn-submit-login").off('click');
+	$("#btn-submit-login").on('click', function () {
 		if (formValido){
 			rest_obterUsuario(loginRegister.documento.email, usuarioExistente, incluirUsuario, loginRegister)
 		}else{

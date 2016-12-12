@@ -134,15 +134,20 @@ p {}
     box-shadow: none;
     outline: 0 none;
 	color: #1F1F1F;
-}
+};
 
 .legendas-modal 
 {
 	width:850px !important;
 };
+.modal-content{
+	width:850px !important;
+	height:1100px !important;
+};
 .legendas {
 	width:850px !important;
 	height:1100px !important;
+	padding: 0;
 };
 /***************************************************/
 

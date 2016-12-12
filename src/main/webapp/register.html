@@ -15,6 +15,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="css/login.css" rel="stylesheet" media="screen">
         <link href="css/responsivo.css" rel="stylesheet" media="screen">
+        <link href="css/sistema.css" rel="stylesheet" media="screen">
          
 	    <!--Font Awesome [ OPTIONAL ]-->
    		 <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -66,11 +67,12 @@
 					                </div>
 			                    </div>
 			                </div>
-<!--  			                <div class="checkbox pad-btm text-left info">
+  			                <div class="checkbox pad-btm text-left info">
 			                    <input id="acceptTerms" name="acceptTerms" type="checkbox">
-			                    Concordo com <a href="#" class="btn-link">Termos e Condições</a>
+			                    <input id="dateTimeAcceptTerms" name="dateTimeAcceptTerms" type="text" class="hide">
+			                    Concordo com <a id="openTutorial" data-toggle="modal" href="#tutorial" class="btn-link">Termos e Condições</a>
 			                </div>
--->			                <div class="col-md-12">
+			                <div class="col-md-12">
 			                	<button id="btn-submit-login" class="btn btn-primary btn-lg btn-block" >Cadastrar</button>
 			                </div>
 			                <div class="col-md-12 info">
@@ -82,6 +84,15 @@
 		    </div>
 		</div>
 		<!--===================================================-->
+	<div class="modal fade" id="tutorial" tabindex="-1" role="dialog" aria-labelledby="tutorialModalLabel" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content legendas">
+				<div class="modal-body" class="">
+					<img alt="tutorial" class="" src="img/termo-de-aceite.jpg">
+				</div>
+			</div>
+		</div>
+	</div>
 
     <!--jQuery [ REQUIRED ]-->
     <script src="js/jquery-2.2.4.min.js"></script>

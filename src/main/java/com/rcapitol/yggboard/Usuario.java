@@ -40,6 +40,8 @@ public class Usuario {
         public String celPhone;
         public String photo;
 		public String gender;
+		public String acceptTerms;
+		public String dateTimeAcceptTerms;
 
 		public Documento() {
 
@@ -57,7 +59,9 @@ public class Usuario {
 		        String institution,
 		        String celPhone,
 		        String photo,
-				String gender
+				String gender,
+				String acceptTerms,
+				String dateTimeAcceptTerms
 						) {
 						this.email = email; 
 						this.firstName = firstName;  
@@ -70,6 +74,8 @@ public class Usuario {
 						this.celPhone = celPhone;
 						this.photo = photo;
 						this.gender = gender; 
+						this.acceptTerms = acceptTerms;
+						this.dateTimeAcceptTerms = dateTimeAcceptTerms;
 		}
 
 		@Override
