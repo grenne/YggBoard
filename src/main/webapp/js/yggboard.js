@@ -5,6 +5,8 @@
 	console.log ("$(document).height():" + $(document).height()); 
 	console.log ("$(window).width():" + $(window).width());
 	console.log ("$(document).width():" + $(document).width());
+	var date = new Date();
+	console.log ("Inicio-"  + date)
 
 	localStorage.urlServidor = window.location.hostname;
 
@@ -106,9 +108,9 @@
 	$('#carreira_theader_tab').on('shown.bs.tab', function (e) {
 		$('.nav-tab-lateral').removeClass("nav-tab");
 		$('#carreira_theader_tab-h4').addClass("nav-tab");
-		if (localStorage.carrega == "true"){
-			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")));
-		};
+//		if (localStorage.carrega == "true"){
+			rest_obterCarreiras(carregaCarreiras, semAcao);
+//		};
 		localStorage.carrega = "false";
 		$('.numero-objetivos').removeClass("hide");
 		$('.numero-habilidades').addClass("hide");
@@ -159,7 +161,17 @@
 //	});
 
 	function UnityIsLoaded (msg) {
+		var date = new Date();
+		console.log ("00-"  + date)
 		SendMessage('Main','Load',localStorage.getItem("jsonYggmap"));
+//		$('.nav-tab-lateral').removeClass("nav-tab");
+//		$('#habilidade_theader_tab-h4').addClass("nav-tab");
+//		if (localStorage.carrega == "true"){
+//			carregaHabilidadesLista(JSON.parse(localStorage.getItem("elements")));
+//		};
+//		localStorage.carrega = "false";
+//		$('.numero-objetivos').addClass("hide");
+//		$('.numero-habilidades').removeClass("hide");
 	};
 
 	function UnityReset () {
@@ -225,6 +237,8 @@
 	};	
 	
 	function montaJsonYggmap (elementos, meuPerfilJson ){
+		
+		localStorage.setItem("elements", JSON.stringify(elementos));
 		
 		var jsonYggmap = {
 							"MaxZoom" : parseFloat(localStorage.maxZoom),
@@ -364,16 +378,22 @@
 							}else{
 								if (localStorage.montaseta == "true" && element.documento.type == "edges"){
 									jsonYggmap.data.push(jsonElement);
-								}
-							}
-						}
-					}
-				}
+								};
+							};
+						};
+					};
+				};
 			}else{
 				jsonYggmap.data.push(jsonElement);
 			};
 		});
+
 		localStorage.setItem("jsonYggmap", JSON.stringify(jsonYggmap));
+
+		/**
+		 * 	carrega lista de carreiras
+		 */
+		rest_obterCarreiras(carregaCarreiras, semAcao);
 
 	};
 

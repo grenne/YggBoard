@@ -8,9 +8,12 @@
 	 * 	carrega lista de carreiras
 	 */
 	//rest_obterHabilidades(carregaHabilidadesLista, semAcao)
+	
 				
 	function carregaHabilidadesLista (objJson) {
 		
+		var date = new Date();
+		console.log ("01-"  + date)
 		localStorage.setItem("elements", JSON.stringify(objJson));
 		
 		montaHeaderHabilidade (objJson);
@@ -18,6 +21,7 @@
     	$( ".itemHabilidade" ).remove();
     	
     	var totalHabilidades = 0;
+    	var habilidades = "";
     	$.each(objJson, function (i, element) {
     		if (element.documento.type != "edges"){
 				if (localStorage.montacampo && 
@@ -26,35 +30,35 @@
 					localStorage.montaseta
 					){
 					if (element.documento.classes == "area"){
-		            	montaLinhaHabilidade(i, element, objJson);
+		            	habilidades = habilidades + montaLinhaHabilidade(i, element, objJson);
 		            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 		            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 		            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
 			            ++totalHabilidades;
 					}else{
 						if (localStorage.montacampo == "true" && element.documento.classes == "campo"){
-			            	montaLinhaHabilidade(i, element, objJson);
+							habilidades = habilidades + montaLinhaHabilidade(i, element, objJson);
 			            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 			            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 			            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
 				            ++totalHabilidades;
 						}else{
 							if (localStorage.montacategoria == "true" && element.documento.classes == "categoria"){
-				            	montaLinhaHabilidade(i, element, objJson);
+								habilidades = habilidades + montaLinhaHabilidade(i, element, objJson);
 				            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 				            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 				            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
 					            ++totalHabilidades;
 							}else{
 								if (localStorage.montahabilidade == "true" && element.documento.classes == "habilidade"){
-					            	montaLinhaHabilidade(i, element, objJson);
+									habilidades = habilidades + montaLinhaHabilidade(i, element, objJson);
 					            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 					            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 					            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
 						            ++totalHabilidades;
 								}else{
 									if (localStorage.montaseta == "true" && element.documento.type == "edges"){
-						            	montaLinhaHabilidade(i, element, objJson);
+										habilidades = habilidades + montaLinhaHabilidade(i, element, objJson);
 						            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 						            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 						            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
@@ -65,7 +69,7 @@
 						}
 					}
 				}else{
-	            	montaLinhaHabilidade(i, element, objJson);
+					habilidades = habilidades + montaLinhaHabilidade(i, element, objJson);
 	            	montaFiltro("area_" + i, element, objJson, "area", element.documento.area);
 	            	montaFiltro("campo_" + i, element, objJson, "campo", element.documento.campo);
 	            	montaFiltro("categoria_" + i, element, objJson, "categoria",  element.documento.categoria);
@@ -74,14 +78,23 @@
     		};
         });
 
+		date = new Date();
+		console.log ("02-"  + date)
+
     	$("#qtdeHabilidades").html(totalHabilidades + " habilidades");
 
-        var habilidade_table = $('#habilidade_list');
+		$("#habilidade_tbody").append(habilidades);
+		var habilidade_table = $('#habilidade_list');
+		montaAcoesHabilidades();
+
+		date = new Date();
+		console.log ("03-"  + date)
+
 		habilidade_table.footable().trigger('footable_collapse_all');
 
-//		$('#habilidade_theader_tab').on('shown.bs.tab', function (e) {
-//			habilidade_table.footable().trigger('footable_collapse_all');
-//		});
+		date = new Date();
+		console.log ("04-"  + date)
+
 		
 		// Search input
 		$('#searchHabilidades').on('input', function (e) {
@@ -167,10 +180,36 @@
 			disabled_2 = 'disabled';
 			textoTip_2 = "ja possuo";	
 		};
+		var dadosHabilidade = 
+	    	"data-diagrama='" + element.documento.diagrama + "' " +
+	    	"data-type='" + element.documento.type + "' " +
+	    	"data-idHabilidade='" + element.documento.idHabilidade + "' " +
+	    	"data-name='" + element.documento.name + "' " +
+			"data-descricao='" + element.documento.descricao + "' " +
+			"data-wiki='" + element.documento.wiki + "' " +
+			"data-area='" + element.documento.area + "' " +
+			"data-campo='" + element.documento.campo + "' " +
+			"data-categoria='" + element.documento.categoria + "' " +
+			"data-parent='" + element.documento.parent + "' " +
+			"data-classes='" + element.documento.classes + "' " +
+			"data-weight='" + element.documento.weight + "' " +
+			"data-positionx='" + element.documento.positionX + "' " +
+			"data-positiony='" + element.documento.positionY + "' " +
+			"data-opacity='" + element.documento.opacity + "' " +
+			"data-color='" + element.documento.color + "' " +
+			"data-shape='" + element.documento.shape + "' " +
+			"data-width='" + element.documento.width + "' " +
+			"data-lineColor='" + element.documento.lineColor + "' " +
+			"data-targetArrowColor='" + element.documento.targetArrowColor + "' " +
+			"data-targetArrowShape='" + element.documento.targetArrowShape + "' " +
+			"data-source='" + element.documento.source + "' " +
+			"data-target='" + element.documento.target + "' " +
+			"data-tags='" + stringTags(element.documento.tags) + "' ";
+
 		habilidade_table_row = 
-			'<tr class="itemHabilidade">' +
+			'<tr id="itemHabilidade_' + i + '"  class="itemHabilidade">' +
 			'<td id="nome_' + i + '"><span class="panel-label" data-tooltip="objetivo" data-idHabilidade="' + element.documento.idHabilidade + '"></span>' + element.documento.name + '</td>' +
-			'<td><a id="alterarHabilidade_' + i + '" data-tooltip="alterar" href="#habilidadeModal" data-toggle="modal" data-idHabilidade="' + element.documento.idHabilidade + '" ><i class="fa fa-stack-exchange"></i></a></td>' +
+			'<td><a id="alterarHabilidade_' + i + '" data-tooltip="alterar" href="#habilidadeModal" data-toggle="modal" ' + dadosHabilidade + ' ><i class="fa fa-stack-exchange"></i></a></td>' +
 			'<td><a id="seiFazerHabilidade_' + i + '" data-tooltip="' + textoTip_2 + '" data-toggle="modal" data-idHabilidade="' + element.documento.idHabilidade + '"  class="' + disabled_2 + '"><i class="fa fa-book"></i></a></td>' +
 			'<td><a id="queroAprenderHabilidade_' + i + '" data-tooltip="' + textoTip + '" data-idHabilidade="' + element.documento.idHabilidade + '" class="' + disabled + '"><i class="fa fa-leanpub"></i></a></td>' +
 				'<td ><span class="panel-label">DESCRIÇÃO: </span><br>' + 
@@ -180,13 +219,14 @@
 				'<a id="wiki_' + i + '" href="' + element.documento.wiki + '" class="wiki" data-tooltip="wikipédia" target="_blank"><i class="fa fa-wikipedia-w"></i></a></td>' +
 				'<td>' + cursos + '</td>' +
 			'</tr>';
-    	$("#habilidade_tbody" ).append(habilidade_table_row);
+//    	$("#habilidade_tbody").append(habilidade_table_row);
+        
+        return habilidade_table_row;
+	};
 
-    	if (localStorage.usuarioPerfil != "tools"){
-    		$("#alterarHabilidade_" + i).addClass ("hide");
-    	}; 
+	function montaAcoesHabilidades(){
 
-    	$('.querofazercurso').each(function( z ) {
+    	$('.querofazercurso').each(function(z) {
     		$("#" + $(this).attr('id')).off('click');
     		$("#" + $(this).attr('id')).on('click',function(){
     			$("#" + $(this).attr('id')).addClass("disabled");
@@ -194,69 +234,69 @@
     	    	atualizaUserPerfilElemento (objJson, "cursoInteresse", $(this).attr('data-idcurso'));
     	    });
     	});
-    	
-    	$('#queroAprenderHabilidade_' + i).off('click');
-	    $('#queroAprenderHabilidade_' + i).on('click',function(){
-			$("#" + $(this).attr('id')).addClass("disabled");
-	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
-	    	atualizaUserPerfilElemento (objJson, "habilidadeInteresse", $(this).attr('data-idhabilidade'));
-	    	atualizaMapa ($(this).attr('data-idhabilidade'), "have", "2");
-	    });
-	    $('#seiFazerHabilidade_' + i).off('click');
-	    $('#seiFazerHabilidade_' + i).on('click',function(){
-			$("#" + $(this).attr('id')).addClass("disabled");
-	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
-	    	atualizaUserPerfilElemento (objJson, "habilidade", $(this).attr('data-idhabilidade'));
-	    	atualizaMapa ($(this).attr('data-idhabilidade'), "have", "0");
-	    });
-	    $('#alterarHabilidade_' + i).off('click');
-	    $('#alterarHabilidade_' + i).on('click',function(){
-	    	localStorage.habilidadeExistente = "true";
-	    	$("#diagrama").val(element.documento.diagrama);
-	    	$("#type").val(element.documento.type);
-	    	$("#idHabilidade").val(element.documento.idHabilidade);
-	    	$("#name").val(element.documento.name);
-  			$("#descricao").val(element.documento.descricao);
-			$("#wiki").val(element.documento.wiki);
-			$("#area").val(element.documento.area);
-			$("#campo").val(element.documento.campo);
-			$("#categoria").val(element.documento.categoria);
-			$("#parent").val(element.documento.parent);
-			$("#classes").val(element.documento.classes);
-			$("#weight").val(element.documento.weight);
-			$("#positionX_I").val(element.documento.positionX);
-			$("#positionY_I").val(element.documento.positionY);
-			$("#opacity").val(element.documento.opacity);
-			$("#color").val(element.documento.color);
-			$("#shape").val(element.documento.shape);
-			$("#width").val(element.documento.width);
-			$("#lineColor").val(element.documento.lineColor);
-			$("#targetArrowColor").val(element.documento.targetArrowColor);
-			$("#targetArrowShape").val(element.documento.targetArrowShape);
-			$("#source").val(element.documento.source);
-			$("#target").val(element.documento.target);
-			$("#tags").val(stringTags(element.documento.tags));
-	    });
-        $('#cursoHabilidadeIn_' + i).bind('click', function () {
-        	$(".cursoHabilidade").removeClass("hide");
-        	$(".cursoHabilidadeIn").addClass("hide");
-        });
-        $('#cursoHabilidadeOff_' + i).bind('click', function () {
-        	$(".cursoHabilidade").addClass("hide");
-        	$(".cursoHabilidadeIn").removeClass("hide");
-        });
-    	$('#acaoHabilidade_' + i).on('click');
-        $('#acaoHabilidade_' + i).on('click', function () {
-			$('.cursos').addClass('hide');
-			$('.carreira').addClass('hide');
-			$('.habilidade').addClass('hide');
-        });
-        $('#acaoHabilidadeInteresse_' + i).off('click');
-        $('#acaoHabilidadeInteresse_' + i).on('click', function () {
-        	atualizaUserPerfil ("habilidadeInteresse", element.documento.idHabilidade);
-        });
-	};
+		
+    	$('.itemHabilidade').each(function(z) {
+			var i = $(this).attr('id').split("_")[1];
 
+	    	if (localStorage.usuarioPerfil != "tools"){
+	    		$("#alterarHabilidade_" + i).addClass ("hide");
+	    	}; 
+	    	
+	    	$('#queroAprenderHabilidade_' + i).off('click');
+		    $('#queroAprenderHabilidade_' + i).on('click',function(){
+				$("#" + $(this).attr('id')).addClass("disabled");
+		    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+		    	atualizaUserPerfilElemento (objJson, "habilidadeInteresse", $(this).attr('data-idhabilidade'));
+		    	atualizaMapa ($(this).attr('data-idhabilidade'), "have", "2");
+		    });
+		    $('#seiFazerHabilidade_' + i).off('click');
+		    $('#seiFazerHabilidade_' + i).on('click',function(){
+				$("#" + $(this).attr('id')).addClass("disabled");
+		    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
+		    	atualizaUserPerfilElemento (objJson, "habilidade", $(this).attr('data-idhabilidade'));
+		    	atualizaMapa ($(this).attr('data-idhabilidade'), "have", "0");
+		    });
+		    $('#alterarHabilidade_' + i).off('click');
+		    $('#alterarHabilidade_' + i).on('click',function(){
+		    	localStorage.habilidadeExistente = "true";
+		    	$("#diagrama").val($(this).attr("data-diagrama"));
+		    	$("#type").val($(this).attr("data-type"));
+		    	$("#idHabilidade").val($(this).attr("data-idHabilidade"));
+		    	$("#name").val($(this).attr("data-name"));
+	  			$("#descricao").val($(this).attr("data-descricao"));
+				$("#wiki").val($(this).attr("data-wiki"));
+				$("#area").val($(this).attr("data-area"));
+				$("#campo").val($(this).attr("data-campo"));
+				$("#categoria").val($(this).attr("data-categoria"));
+				$("#parent").val($(this).attr("data-parent"));
+				$("#classes").val($(this).attr("data-classes"));
+				$("#weight").val($(this).attr("data-weight"));
+				$("#positionX_I").val($(this).attr("data-positionx"));
+				$("#positionY_I").val($(this).attr("data-positiony"));
+				$("#opacity").val($(this).attr("data-opacity"));
+				$("#color").val($(this).attr("data-color"));
+				$("#shape").val($(this).attr("data-shape"));
+				$("#width").val($(this).attr("data-width"));
+				$("#lineColor").val($(this).attr("data-lineColor"));
+				$("#targetArrowColor").val($(this).attr("data-targetArrowColor"));
+				$("#targetArrowShape").val($(this).attr("data-targetArrowShape"));
+				$("#source").val($(this).attr("data-source"));
+				$("#target").val($(this).attr("data-target"));
+				$("#tags").val(stringTags($(this).attr("data-tags")));
+		    });
+		    $('#cursoHabilidadeIn_' + i).off('click');
+	        $('#cursoHabilidadeIn_' + i).on('click', function () {
+	        	$(".cursoHabilidade").removeClass("hide");
+	        	$(".cursoHabilidadeIn").addClass("hide");
+	        });
+	        $('#cursoHabilidadeOff_' + i).off('click');
+	        $('#cursoHabilidadeOff_' + i).on('click', function () {
+	        	$(".cursoHabilidade").addClass("hide");
+	        	$(".cursoHabilidadeIn").removeClass("hide");
+	        });
+    	});
+	};
+	
 	function montaFiltro(i, element, objJson, filtro, itemNome){
 		
 		var itemIncluido = false;

@@ -7,8 +7,7 @@
 	/**
 	 * 	carrega lista de carreiras
 	 */
-	var cy = "";
-	rest_obterCarreiras(carregaCarreiras, semAcao);
+	//rest_obterCarreiras(carregaCarreiras, semAcao);
 		
 	function carregaCarreiras (objJson, cy) {
 		$("#qtdeObjetivos").html(objJson.length + " objetivos");
@@ -84,9 +83,6 @@
         var carreira_table = $('#carreira_list');
 		carreira_table.footable().trigger('footable_collapse_all');
 
-//		$('#carreira_theader_tab').on('shown.bs.tab', function (e) {
-//			carreira_table.footable().trigger('footable_collapse_all');
-//		});
 		// Search input
 		$('#searchCarreiras').on('input', function (e) {
 			e.preventDefault();
@@ -192,7 +188,7 @@
 		$('#comparar_' + i).off('click');
 	    $('#comparar_' + i).on('click',function(){
 	    	var objJson = JSON.parse(localStorage.getItem("jsonYggmap"));
-/*			$.each( objJson.data, function(w, element ) {
+			$.each( objJson.data, function(w, element ) {
 				objJson.data[w].states = 0;
 		    	$('.habilidadeNecessariaCarreira_' + i).each(function( z ) {
 		    		  if ($(this).attr('data-idhabilidade') == element.id){
@@ -205,7 +201,7 @@
 		    		  };
 		    	});
 			});
-*/
+
 	    	$('.habilidadeNecessariaCarreira').each(function( z ) {
 	    		var idHabilidade =  $(this).attr('data-idhabilidade');
 				$.each( objJson.data, function(w, element ) {
@@ -235,6 +231,7 @@
 	};
 	
 	function montaHabilidadesAreas (habilidade, habilidades, necessarias, i) {
+
 		var objJson = JSON.parse(localStorage.getItem("jsonYggmap"));
 		
 		$.each( objJson.data, function(w, element ) {
