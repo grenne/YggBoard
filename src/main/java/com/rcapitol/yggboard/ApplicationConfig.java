@@ -15,6 +15,7 @@ public class ApplicationConfig extends Application {
         		Rest_Habilidade.class,
         		Rest_Curso.class,
         		Rest_Carreira.class,
+        		Rest_Badge.class,
         		Rest_Usuario.class,
         		Rest_UserPerfil.class,
         		Rest_Setup.class,

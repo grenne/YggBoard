@@ -36,6 +36,8 @@ public class UserPerfil {
 		public String carreirasInteresse[];
 		public String carreiras[];
 		public String cursosInteresse[];
+		public String badges[];
+		public String badgesInteresse[];
 		public String tags[];
 
 
@@ -52,6 +54,8 @@ public class UserPerfil {
 						String [] carreirasInteresse,
 						String [] carreiras,
 						String [] cursosInteresse,
+						String [] badges,
+						String [] badgesInteresse,
 						String [] tags
 						) {
 						this.usuario = usuario;
@@ -61,6 +65,8 @@ public class UserPerfil {
 						this.carreirasInteresse = carreirasInteresse; 
 						this.carreiras = carreiras; 
 						this.cursosInteresse = cursosInteresse;
+						this.badges = badges; 
+						this.badgesInteresse = badgesInteresse;
 						this.tags = tags; 
 								}
 		@Override

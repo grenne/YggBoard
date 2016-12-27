@@ -1656,4 +1656,62 @@ function carregaCursosTotal (){
 
 		i++;
 	};
+
+};
+
+function carregaBadgesTotal (){
+	/**
+	 * 	carrega lista de badges
+	 */
+	
+	var badges =
+		'CFA candidate I ;Você foi aprovado na prova CFA level I;CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais@' +
+		'CFA candidate II;Você foi aprovado nas provas CFA level I e CFA level II;CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225#10195#10204#10044#10045#10046#10047#10281#10282#10062#10065#10066#10226#10228#10187#10188#10189#10177#10056#10059;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais@' +
+		'CFA candidate III;Você foi aprovado nas provas CFA level I, CFA level II e CFA level III;CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225#10195#10204#10044#10045#10046#10047#10281#10282#10062#10065#10066#10226#10228#10187#10188#10189#10177#10056#10059#10179#10180#10181#10182#10183#10184#10271#10205#10214#10215#10135#10190#10191#10192#10193;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais@' +
+		'CFA;Você conseguiu o título de Chartered Financial Analyst;CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225#10195#10204#10044#10045#10046#10047#10281#10282#10062#10065#10066#10226#10228#10187#10188#10189#10177#10056#10059#10179#10180#10181#10182#10183#10184#10271#10205#10214#10215#10135#10190#10191#10192#10193#10163#10164#10166;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais@' +
+		'MPA (Mestrado Profissional em Administração);Você adquiriu o título de Mestre em Administração;FGV EAESP;1053#10011#10012#10016#10019#10022#10028#10032#10035#10039#10042#10043#10045#10046#10047#10052#10054#10057#10064#10072#10073#10083#10088#10089#10092#10101#10102#10103#10106#10107#10129#10130#10131#10132#10140#10187#10188#10200#10205#10206#10208#10214#10279#10280#10281#10282#10313#10314#10342#10352#10390#10398#10399#10420#10432#10435#10449#10450#10451#10452#10454#10455#10456#10459#10460#10469;Mestrado Profissional, business@' +
+		'MPA (Mestrado Profissional Ênfase em Finanças e Controladoria);Você adquiriu o título de Mestre em Administração, com ênfase em Finanças e controladoria;FGV EAESP;10005#10006#10009#10012#10016#10037#10036#10066#10186#10311#10436#10365#10201#10114#10117#10219#10271#10061#10039#10202#10203#10220#10073#10080#10082#10440#10071#10403#10004#10339#10180#10368#10322#10026#10028;Mestrado Profissional, finance, controller@' +
+		'MPA (Mestrado Profissional Ênfase em Gestão de Saúde);Você adquiriu o título de Mestre em Administração, com ênfase em Gestão da saúde;FGV EAESP;10008#10009#10010#10025#10029#10030#10081#10082#10096#10171#10201#10206#10322#10334#10335#10367#10390#10458#10459#10460#10469#10550#10638;Mestrado Profissional, health care, médico, hospitalar@' +
+		'MPA (Mestrado Profissional Ênfase em Gestão de Supply Chain);Você adquiriu o título de Mestre em Administração, com ênfase em Gestão de supply chain;FGV EAESP;10002#10003#10004#10005#10006#10011#10012#10014#10015#10019#10026#10028#10037#10071#10080#10089#10172#10313#10314#10315#10366#10368#10369#10370#10395#10401#10402#10403#10405#10415#10443#10650;Mestrado Profissional, logística, estoque, operações@' +
+		'MPA (Mestrado Profissional Ênfase em Sustentabilidade);Você adquiriu o título de Mestre em Administração, com ênfase em Sustentabilidade;FGV EAESP;10008#10009#10010#10201#10365#10371#10391#10313#10387#10013#10133#10030#10408;Mestrado Profissional, sustainability, meio ambiente@' +
+		'MPA (Mestrado Profissional Ênfase em Varejo);Você adquiriu o título de Mestre em Administração, com ênfase em Varejo;FGV EAESP;10011#10012#10015#10037#10071#10076#10077#10078#10080#10081#10082#10085#10137#10140#10279#10280#10281#10282#10313#10314#10315#10316#10334#10359#10361#10369#10401#10402#10405#10424#10437#10440#10441#10443#10454;Mestrado Profissional, operações, consumer, consumidor@';
+	
+	var arrayBadges = badges.split("@");
+	var i = 0;
+	while (i < arrayBadges.length) {
+		var arrayItensBadge = arrayBadges[i].split(";");
+		console.log ("carregando badge:" + arrayBadges[i]);
+		var objJson  =
+				{ 
+					documento: 
+					{
+					    nome : arrayItensBadge[0],
+					    badge : "",
+					    descricao : arrayItensBadge[1],
+					    entidadeCertificadora : arrayItensBadge[2],
+						habilidades : [],
+						tags : []
+						}
+					};
+		if (arrayItensBadge[3]){
+			var array = arrayItensBadge[3].split("#");
+			var w = 0;
+			while (w < array.length) {
+				objJson.documento.habilidades.push(array[w].replace (" ",""));
+				w++;
+			};
+		};
+		if (arrayItensBadge[4]){
+			var array = arrayItensBadge[4].split(",");
+			var w = 0;
+			while (w < array.length) {
+				objJson.documento.tags.push(array[w].replace (" ",""));
+				w++;
+			};
+		};
+		
+		rest_incluiBadges(objJson, semAcao, semAcao);
+
+		i++;
+	};
 };

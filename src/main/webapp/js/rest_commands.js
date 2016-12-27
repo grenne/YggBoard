@@ -98,6 +98,42 @@
     	});
     };
 
+    function rest_obterBadges(action_ok, action_not_ok, var1, var2) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/badges/lista",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+    	})
+    	.done(function( data ) {
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
+    	})
+    	.fail(function(data) {
+			action_not_ok (data, var1, var2);	
+    	})
+    	.always(function(data) {
+    	});
+    };
+
+    function rest_obterBadge(idBadge, action_ok, action_not_ok, var1, var2) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/carreiras/obter?idBadge=" + idBadge,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+    	})
+    	.done(function( data ) {
+    		action_ok(data, var1, var2);
+    	})
+    	.fail(function(data) {
+    		action_not_ok(null, var1, var2);
+    	})
+    	.always(function(data) {
+    	});
+    };
+
     function rest_obterCursosHabilidade(habilidade, action_ok, action_not_ok, var1, var2, var3) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/cursos/lista?habilidade=" + habilidade,
@@ -215,12 +251,32 @@
         	};
        	});
     };
-
     
     function rest_incluiCarreiras(objJson, action_ok, action_not_ok) {
 		$.ajax({
 			type: "POST",
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/carreiras/incluir",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson)
+		})
+	  	.done(function( data ) {
+	  	})
+        .fail(function(data) {
+        })
+       	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok ();
+        	}else{
+        		action_not_ok()
+        	};
+       	});
+    };
+        
+    function rest_incluiBadges(objJson, action_ok, action_not_ok) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/badges/incluir",
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             data : JSON.stringify(objJson)

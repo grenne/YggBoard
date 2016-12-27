@@ -43,24 +43,36 @@
 	setupTools();
 	
     // ** ações do menu do user perfil tab interesses
-	$( "#openUserPainel" ).on( "click", function() {
-		$( ".inactive-tab").removeClass("nav-tab");
-		$( "#openUserPainel").addClass("nav-tab");
+	$("#openUserPainel").on( "click", function() {
+		$(".inactive-tab").removeClass("nav-tab");
+		$("#openUserPainel").addClass("nav-tab");
 		$('#userPanel').removeClass("hide");
+		$('#badgePanel').addClass("hide");
 		$('#tutorial').addClass("hide");
 		$('#unity').addClass("hide");
 	});
-	$( "#openTutorial" ).on( "click", function() {
-		$( ".inactive-tab").removeClass("nav-tab");
-		$( "#openTutorial").addClass("nav-tab");
+	$("#openTutorial").on( "click", function() {
+		$(".inactive-tab").removeClass("nav-tab");
+		$("#openTutorial").addClass("nav-tab");
 		$('#userPanel').addClass("hide");
+		$('#badgePanel').addClass("hide");
 		$('#tutorial').removeClass("hide");
 		$('#unity').addClass("hide");
 	});
-	$( "#closePainel" ).on( "click", function() {
-		$( ".inactive-tab").removeClass("nav-tab");
-		$( "#closePainel").addClass("nav-tab");
+	$("#badges").on( "click", function() {
+		$(".inactive-tab").removeClass("nav-tab");
+		$("#badges").addClass("nav-tab");
 		$('#userPanel').addClass("hide");
+		$('#badgePanel').removeClass("hide");
+		$('#tutorial').addClass("hide");
+		$('#unity').addClass("hide");
+		rest_obterBadges(carregaBadges, semAcao);
+	});
+	$("#closePainel").on( "click", function() {
+		$(".inactive-tab").removeClass("nav-tab");
+		$("#closePainel").addClass("nav-tab");
+		$('#userPanel').addClass("hide");
+		$('#badgePanel').addClass("hide");
 		$('#tutorial').addClass("hide");
 		$('#unity').removeClass("hide");
 	});
@@ -439,6 +451,8 @@
 					carreirasInteresse : [],
 					carreiras : [],
 					cursosInteresse : [],
+					badges : [],
+					badgesInteresse : [],
 					tags : []
 					}
 				};	
@@ -501,8 +515,8 @@
 			};
 		};
 		if (tipo == "carreiraInteresseOff"){
-			$.each( objPerfil.documento.carreirasInteresse, function( i, habilidade) {
-				if (elemento == habilidade){
+			$.each( objPerfil.documento.carreirasInteresse, function( i, carreira) {
+				if (elemento == carreira){
 					objPerfil.documento.carreirasInteresse.splice(i,1);
 					atualizarPerfil = true;
 				};
@@ -521,8 +535,8 @@
 			};
 		};
 		if (tipo == "carreirasOff"){
-			$.each( objPerfil.documento.carreiras, function( i, habilidade) {
-				if (elemento == habilidade){
+			$.each( objPerfil.documento.carreiras, function( i, carreira) {
+				if (elemento == carreira){
 					objPerfil.documento.carreiras.splice(i,1);
 					atualizarPerfil = true;
 				};
@@ -541,9 +555,29 @@
 			};
 		};
 		if (tipo == "cursoInteresseOff"){
-			$.each( objPerfil.documento.cursosInteresse, function( i, habilidade) {
-				if (elemento == habilidade){
+			$.each( objPerfil.documento.cursosInteresse, function( i, curso) {
+				if (elemento == curso){
 					objPerfil.documento.cursosInteresse.splice(i,1);
+					atualizarPerfil = true;
+				};
+			});
+		};
+		if (tipo == "badgeInteresse"){
+			var existente = false;
+			$.each( objPerfil.documento.badgesInteresse, function( i, badge) {
+				if (elemento == badge){
+					existente = true;
+				};
+			});
+			if (!existente){
+				objPerfil.documento.badgesInteresse.push(elemento);
+				atualizarPerfil = true;
+			};
+		};
+		if (tipo == "badgeInteresseOff"){
+			$.each( objPerfil.documento.badgesInteresse, function( i, badge) {
+				if (elemento == badge){
+					objPerfil.documento.badgesInteresse.splice(i,1);
 					atualizarPerfil = true;
 				};
 			});
@@ -611,6 +645,13 @@
 		if (tipo == "cursoInteresse"){
 			$.each( objPerfil.documento.cursosInteresse, function( i, curso) {
 				if (elemento == curso){
+					temElemento = true;
+				};
+			});
+		};
+		if (tipo == "badgeInteresse"){
+			$.each( objPerfil.documento.badgesInteresse, function( i, badge) {
+				if (elemento == badge){
 					temElemento = true;
 				};
 			});
@@ -713,6 +754,12 @@
 			$( ".inactive-tab").removeClass("nav-tab");
 			$( "#carregaCursosTotal").addClass("nav-tab");
 			carregaCursosTotal();
+		});
+
+		$( "#carregaBadges" ).bind( "click", function() {
+			$( ".inactive-tab").removeClass("nav-tab");
+			$( "#carregaBadges").addClass("nav-tab");
+			carregaBadgesTotal();
 		});
 
 		$( "#gravaDiagrama" ).bind( "click", function() {

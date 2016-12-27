@@ -7,7 +7,7 @@
 	/**
 	 * 	carrega lista de carreiras
 	 */
-	//rest_obterHabilidades(carregaHabilidadesLista, semAcao)
+//	rest_obterHabilidades(carregaHabilidadesLista, semAcao)
 	
 				
 	function carregaHabilidadesLista (objJson) {
@@ -85,12 +85,13 @@
 
 		$("#habilidade_tbody").append(habilidades);
 		var habilidade_table = $('#habilidade_list');
+		$('#habilidade_list').footable();
 		montaAcoesHabilidades();
 
 		date = new Date();
 		console.log ("03-"  + date)
 
-		habilidade_table.footable().trigger('footable_collapse_all');
+//		habilidade_table.footable().trigger('footable_collapse_all');
 
 		date = new Date();
 		console.log ("04-"  + date)
@@ -212,12 +213,14 @@
 			'<td><a id="alterarHabilidade_' + i + '" data-tooltip="alterar" href="#habilidadeModal" data-toggle="modal" ' + dadosHabilidade + ' ><i class="fa fa-stack-exchange"></i></a></td>' +
 			'<td><a id="seiFazerHabilidade_' + i + '" data-tooltip="' + textoTip_2 + '" data-toggle="modal" data-idHabilidade="' + element.documento.idHabilidade + '"  class="' + disabled_2 + '"><i class="fa fa-book"></i></a></td>' +
 			'<td><a id="queroAprenderHabilidade_' + i + '" data-tooltip="' + textoTip + '" data-idHabilidade="' + element.documento.idHabilidade + '" class="' + disabled + '"><i class="fa fa-leanpub"></i></a></td>' +
-				'<td ><span class="panel-label">DESCRIÇÃO: </span><br>' + 
-				'<span class="panel-text">' + element.documento.descricao + '</span></td>' + 
-				'<td><br><button id="cursoHabilidadeIn_' + i + '" class="panel-button-habilidade cursoHabilidadeIn"><i class="fa fa-chevron-down icon-check-habilidade"></i><span>cursos disponíveis</span></button>' +
-				'<button id="cursoHabilidadeOff_' + i + '" class="panel-button-habilidade cursoHabilidade hide"><i class="fa fa-chevron-up icon-check-habilidade"></i><span>cursos disponíveis</span></button>' +
-				'<a id="wiki_' + i + '" href="' + element.documento.wiki + '" class="wiki" data-tooltip="wikipédia" target="_blank"><i class="fa fa-wikipedia-w"></i></a></td>' +
-				'<td>' + cursos + '</td>' +
+				'<td data-hide="all"><span class="panel-label">DESCRIÇÃO: </span><br>' + 
+					'<span class="panel-text">' + element.documento.descricao + '</span>' + 
+				'</td>' + 
+				'<td data-hide="all"><br><button id="cursoHabilidadeIn_' + i + '" class="panel-button-habilidade cursoHabilidadeIn"><i class="fa fa-chevron-down icon-check-habilidade"></i><span>cursos disponíveis</span></button>' +
+					'<button id="cursoHabilidadeOff_' + i + '" class="panel-button-habilidade cursoHabilidade hide"><i class="fa fa-chevron-up icon-check-habilidade"></i><span>cursos disponíveis</span></button>' +
+					'<a id="wiki_' + i + '" href="' + element.documento.wiki + '" class="wiki" data-tooltip="wikipédia" target="_blank"><i class="fa fa-wikipedia-w"></i></a>' + 
+				'</td>' +
+				'<td data-hide="all">' + cursos + '</td>' +
 			'</tr>';
 //    	$("#habilidade_tbody").append(habilidade_table_row);
         
@@ -315,21 +318,24 @@
 				montaHeaderHabilidade (objJson);
 				$(".itemHabilidade").remove();
 		    	var totalHabilidades = 0;
+		    	var escolheuItem = false;
+		    	var habilidades = "";
             	$(".item-filter").each(function(w, value) {
     				var item = $(this).attr('id');
     				if ($("#filter-check_" + item).prop( "checked" )) {
+    					escolheuItem = true;
     					var nomeItemChecked = $(this).attr("data-nome-filter");
     					$.each(objJson, function (z, habilidade){
                     		if (habilidade.documento.area == nomeItemChecked) {
-                            	montaLinhaHabilidade(z, habilidade, objJson);
+                    			habilidades = habilidades + montaLinhaHabilidade(z, habilidade, objJson);
                 	            ++totalHabilidades;
                     		}else{
 	                    		if (habilidade.documento.campo == nomeItemChecked) {
-	                            	montaLinhaHabilidade(z, habilidade, objJson);
+	                    			habilidades = habilidades + montaLinhaHabilidade(z, habilidade, objJson);
 	                	            ++totalHabilidades;
 	                    		}else{
 		                    		if (habilidade.documento.categoria == nomeItemChecked) {
-		                            	montaLinhaHabilidade(z, habilidade, objJson);
+		                    			habilidades = habilidades + montaLinhaHabilidade(z, habilidade, objJson);
 		                	            ++totalHabilidades;
 		                    		};
 	                    		};
@@ -337,7 +343,11 @@
                     	});
     				};
     			});
+            	if (!escolheuItem){
+            		carregaHabilidadesLista(objJson);
+            	};
                 var habilidade_table = $('#habilidade_list');
+        		$("#habilidade_tbody").append(habilidades);
         		habilidade_table.footable().trigger('footable_collapse_all');
         		$("#qtdeHabilidades").html(totalHabilidades + " habilidades");
            });

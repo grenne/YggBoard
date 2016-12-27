@@ -69,12 +69,13 @@
             <ul class="nav navbar-nav">
                 <li class="inactive-tab"><a id="closePainel" href="#" class="nav-tab inactive-tab"><i class="fa fa-home"></i>Início</a></li>
                 <li class="inactive-tab"><a id="openUserPainel" href="#" class="inactive-tab"><i class="fa fa-puzzle-piece"></i>Painel</a></li>
-                <li class="inactive-tab"><a id="openBadges" href="#" class="inactive-tab"><i class="fa fa-trophy"></i>Badge</a></li>
+                <li class="inactive-tab"><a id="badges" href="#" class="inactive-tab"><i class="fa fa-trophy"></i>Badges</a></li>
                 <li class="inactive-tab"><a id="openTutorial" data-toggle="modal" href="#tutorial" class="inactive-tab"><i class="fa fa-info-circle"></i>Tutorial</a></li>
                  <li class="inactive-tab"><a id="carregaHabilidadesTotal"  href="#" class="hide tools inactive-tab" >C. Habilidades</a></li>
                  <li class="inactive-tab"><a id="carregaCarreirasTotal"  href="#" class="hide tools inactive-tab">C. Carreiras</a></li>
                  <li class="inactive-tab"><a id="carregaCursosTotal"  href="#" class="hide tools inactive-tab">C. Cursos</a></li>
-                 <li class="inactive-tab"><a id="gravaDiagrama"  href="#" class="hide tools inactive-tab">Grava Diagrama</a></li>
+                 <li class="inactive-tab"><a id="carregaBadges"  href="#" class="hide tools inactive-tab">C. Badges</a></li>
+                 <li class="inactive-tab"><a id="gravaDiagrama"  href="#" class="hide toolss inactive-tab">Grava Diagrama</a></li>
                  <li class="inactive-tab"><a id="auxiliamontagemdiagrama"  href="#" class="hide tools inactive-tab">Aux. Posicionamento</a></li>
             </ul>
         </div>
@@ -136,7 +137,6 @@
 											</div>		
 		                                </div>
 		                            	<div class="tab-pane" id="interesse_premios_theader">
-				                       		<span id="text-user-panel" class="text-user-panel">Em breve habilitaremos esta seção
 		                                </div>
 		                        	</div>
                                 </div>
@@ -162,6 +162,19 @@
 		                                </div>
 		                       		</div>
 	                            </div>
+                        	</div>
+						</div>                    
+                	</div><!--user panel-->
+                  	<div id="badgePanel" class="user-panel col-md-12 hide">
+                        <div id="tabs" class="box-user-tabs">	
+                        	<ul class="nav nav-tabs nav-user-panel">
+                            	<li class="tab-user-panel active-tab-painel" id="badge_theader_tab"><a class="" id="badge_theader_tab-a" href="#badge_theader" data-toggle="tab">Badges</a></li>
+                            </ul>
+                        	<div class="tab-content">
+                            	<div class="tab-pane active" id="badges_theader">
+									<div id="badge_theader" class="panel-body">
+									</div>
+                                </div>
                         	</div>
 						</div>                    
                 	</div><!--user panel-->
@@ -220,7 +233,7 @@
 										</div>
 										<div class="row">
 											<div class="col-md-12">
-												<label for="minZoom" class="label-tools col-md-12">Zoom -/+</label>
+												<label for="minZoom" class="label-tools col-md-12">Zoom -/</label>
 												<input class="col-md-4" id="minZoom" name="minZoom" type="text" class="form-control" value="" placeholder="" required />
 												<div class="col-md-1"></div>
 												<input class="col-md-4" id="maxZoom" name="maxZoom" type="text" class="form-control" value="" placeholder="" required />
@@ -539,6 +552,7 @@ habilidade
 	<script src="js-datatables/habilidades-user-perfil.js"></script>
 	<script src="js-datatables/cursos-habilidade-user-perfil.js"></script>
 	<script src="js-datatables/cursos-user-perfil.js"></script>  
+	<script src="js-datatables/badges.js"></script>  
 
     <!--Yggboard-->
     <script src="js/commons.js"></script>
