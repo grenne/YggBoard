@@ -2,37 +2,37 @@
  * 				obter os dados
  */
 
-	function obterCarreirasUserPerfil (tipo, carreira, append) {
+	function obterBadgesUserPerfil (tipo, badge, append) {
 //		
-//		carrega carreiras
+//		carrega badges
 //
 		/**
-		 * 	carrega lista de carreiras
+		 * 	carrega lista de badges
 		 */
 
-		rest_obterUserPerfilItens(tipo, carregaCarreirasUserPerfil, semAcao, tipo, carreira, append);
+		rest_obterUserPerfilItens(tipo, carregaBadgesUserPerfil, semAcao, tipo, badge, append);
 	};
 		
-	function carregaCarreirasUserPerfil (objJson, tipo, carreira, append) {	
+	function carregaBadgesUserPerfil (objJson, tipo, badge, append) {	
 
 		$("." + append).remove();
 
 		var label = "";
-		if (tipo == "carreiras"){
-			label = "Objetivos visitados"
+		if (tipo == "badges"){
+			label = "Badges visitados"
 		}else{
-			label = "Interesse nos objetivos"
+			label = "Interesse nos badges"
 		};
     	var actions = "";
-    	if (append == "carreiras_user_perfil_theader"){
+    	if (append == "badges_user_perfil_theader"){
     		actions = 
 				'<th> % </th>' +
 				'<th>Ação</th>';
     	}else{
     		label = "Objetivos conquistados";    		
     	};
-		var carreira_user_perfil_table_header =
-				'<table id="carreira_user_perfil_list' + append + '" class="' + append + ' user-panel-table">' +
+		var badge_user_perfil_table_header =
+				'<table id="badge_user_perfil_list' + append + '" class="' + append + ' user-panel-table">' +
 					'<thead>' +
 						'<tr>' +
 							'<th data-toggle="true" data-sort-ignore="true"></th>' +
@@ -41,7 +41,7 @@
 							'<th data-hide="all" ></th>' +
 						'</tr>' +
 					'</thead>' +
-					'<tbody id="carreira_user_perfil_tbody' + append + '">' +
+					'<tbody id="badge_user_perfil_tbody' + append + '">' +
 					'</tbody>' +
 					'<tfoot>' +
 						'<tr>' +
@@ -53,20 +53,20 @@
 						'</tr>' +
 					'</tfoot>' +
 				'</table>';
-		$("#" + append).append(carreira_user_perfil_table_header);
+		$("#" + append).append(badge_user_perfil_table_header);
 
-    	$( ".itemCarreiraUserPerfil" + append).remove();
+    	$( ".itemBadgeUserPerfil" + append).remove();
         
-    	$.each(objJson, function (i, carreira) {
+    	$.each(objJson, function (i, badge) {
         	var calculoPercentual = 0;
-        	if (carreira.totalHabilidades != "0"){
-        		calculoPercentual = parseInt(carreira.totalPossuiHabilidades) / parseInt(carreira.totalHabilidades) * 100;
+        	if (badge.totalHabilidades != "0"){
+        		calculoPercentual = parseInt(badge.totalPossuiHabilidades) / parseInt(badge.totalHabilidades) * 100;
         	};
             var percentualHabilidades = calculoPercentual.toFixed(0);
-        	if ((append == "carreiras_user_perfil_conquista_theader" && percentualHabilidades == 100) | 
-        		(append == "carreiras_user_perfil_theader" && percentualHabilidades != 100)	){
+        	if ((append == "badges_user_perfil_conquista_theader" && percentualHabilidades == 100) | 
+        		(append == "badges_user_perfil_theader" && percentualHabilidades != 100)	){
             	var habilidades = "";
-            	$.each(carreira.arrayNecessarios, function (z, habilidade){
+            	$.each(badge.arrayHabilidades, function (z, habilidade){
             		var disabled = "";
             		var textoTip = "quero aprender";
             		if (checaUserPerfilElemento("habilidadeInteresse", habilidade.idHabilidade)){
@@ -82,7 +82,7 @@
             		habilidades = habilidades +
        				'<div  class="row">' +
 	       				'<div id="itemHabilidade_' + i + "-" + z + '" class="user-panel-habilidade-div col-xs-12">' +
-		    				'<span class="user-panel-habilidade-nome habilidadeCarreira col-xs-9">- ' + habilidade.name + '</span>' +
+		    				'<span class="user-panel-habilidade-nome habilidadeBadge col-xs-9">- ' + habilidade.name + '</span>' +
 		    				'<span><a id="seiFazerHabilidade_' + i + "-" + z + '" data-tooltip="' + textoTip_2 + '" data-toggle="modal" data-idHabilidade="' + habilidade.idHabilidade + '" class="' + disabled_2 + ' seiFazerHabilidade"><i class="fa fa-book"></i></a></span>' +
 		    				'<span><a id="queroAprenderHabilidade_' + i + "-" + z + '" data-tooltip="' + textoTip + '" data-idHabilidade="' + habilidade.idHabilidade + '" class="' + disabled + ' queroAprenderHabilidade"><i class="fa fa-leanpub"></i></a></span>' +
 							'<button id="cursoHabilidadeIn_' + i + "-" + z + '" class="user-panel-button-curso user-panel-button-curso-item col-xs-2 cursoHabilidadeIn"><span><i class="fa fa-chevron-down "></i> cursos</span></button>' +
@@ -107,15 +107,15 @@
             	});
             	});
 	        	actions = "";
-	        	if (append == "carreiras_user_perfil_theader"){
+	        	if (append == "badges_user_perfil_theader"){
 	        		actions = 
 	        			'<td class="user-panel-td"><span class="panel-label percentual-box"><span id="itemPercentualHabilidades_' + i + '" class="percentual-numero">' + percentualHabilidades + '%</span><span class="percentual-texto"> em comum</span></td>';
 	        	};
-	        	carreira_user_perfil_table_row = 
-					'<tr id="itemCarreiraUserPerfil_' + i + '" class="itemCarreiraUserPerfil col-xs-12' + append + '"  data-totalHabilidades="' + carreira.totalHabilidades + '"  data-possuiHabilidades="' + carreira.totalPossuiHabilidades + '">' +
-			   			'<td id="nome_' + i + '" class="user-panel-td"><span class="user-panel-label">' + carreira.nome + '</span></td>' +
+	        	badge_user_perfil_table_row = 
+					'<tr id="itemBadgeUserPerfil_' + i + '" class="itemBadgeUserPerfil col-xs-12' + append + '"  data-totalHabilidades="' + badge.totalHabilidades + '"  data-possuiHabilidades="' + badge.totalPossuiHabilidades + '">' +
+			   			'<td id="nome_' + i + '" class="user-panel-td"><span class="user-panel-label">' + badge.nome + '</span></td>' +
 			   			actions +
-						'<td class="user-panel-td"><a id="excluiInteresseCarreira_' + i + '" data-tooltip="exclui interesse" ><i class="fa fa-trash-o icon-trash"></i></a></td>' +
+						'<td class="user-panel-td"><a id="excluiInteresseBadge_' + i + '" data-tooltip="exclui interesse" ><i class="fa fa-trash-o icon-trash"></i></a></td>' +
 						'<td class="col-xs-12">' +
 							'<div class="col-xs-12 lineInvisible">' +
 							'____________________________________________'+
@@ -128,7 +128,7 @@
 						'</td>' +
 					'</tr>';
 
-	        	$("#carreira_user_perfil_tbody" + append).append(carreira_user_perfil_table_row);
+	        	$("#badge_user_perfil_tbody" + append).append(badge_user_perfil_table_row);
 
 	        	$('.queroAprenderHabilidade').off('click');
         	    $('.queroAprenderHabilidade').on('click',function(){
@@ -145,10 +145,10 @@
         			var z = i.split("-")[0];
         			$("#" + $(this).attr('id')).addClass("disabled");
         			$("#itemHabilidade_" + i).addClass("hide");
-        			var possuiHabilidades = $("#itemCarreiraUserPerfil_" + z).attr('data-possuiHabilidades');
-        			possuiHabilidades = parseInt($("#itemCarreiraUserPerfil_" + z).attr('data-possuiHabilidades')) + 1; 
-        			$("#itemCarreiraUserPerfil_" + z).attr("data-possuiHabilidades",possuiHabilidades);
-                	calculoPercentual = parseInt(possuiHabilidades) / parseInt($("#itemCarreiraUserPerfil_" + z).attr('data-totalHabilidades')) * 100;
+        			var possuiHabilidades = $("#itemBadgeUserPerfil_" + z).attr('data-possuiHabilidades');
+        			possuiHabilidades = parseInt($("#itemBadgeUserPerfil_" + z).attr('data-possuiHabilidades')) + 1; 
+        			$("#itemBadgeUserPerfil_" + z).attr("data-possuiHabilidades",possuiHabilidades);
+                	calculoPercentual = parseInt(possuiHabilidades) / parseInt($("#itemBadgeUserPerfil_" + z).attr('data-totalHabilidades')) * 100;
                 	var percentualHabilidades = calculoPercentual.toFixed(0);                	
                 	$("#itemPercentualHabilidades_" + z).html(percentualHabilidades + "%");
         	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
@@ -183,41 +183,41 @@
     				$( "#cursoHabilidadeIn_" + i).removeClass('hide');
     			});
 
-    			$('#acaoCarreiraUserPerfilHabilidades' + i + append).off('click');
-	            $('#acaoCarreiraUserPerfilHabilidades' + i + append).on('click', function () {
+    			$('#acaoBadgeUserPerfilHabilidades' + i + append).off('click');
+	            $('#acaoBadgeUserPerfilHabilidades' + i + append).on('click', function () {
 	    			var id = $(this).attr('id');
 	    			var i = id.split("_")[1];
 	        		$('.paineis-user-perfil').addClass("hide");
 	        		$('.habilidade-user-perfil').removeClass("hide");
-					rest_obterUserPerfilItens("habilidades-interesse-carreiras", carregaHabilidadesUserPerfil, semAcao, "habilidades-necessarias-carreira", carreira.nome, "habilidades_user_perfil_theader");
+					rest_obterUserPerfilItens("habilidades-interesse-badges", carregaHabilidadesUserPerfil, semAcao, "habilidades-necessarias-badge", badge.nome, "habilidades_user_perfil_theader");
 	            });
-	        	$("#excluiInteresseCarreira_" + i).off('click');
-	    		$("#excluiInteresseCarreira_" + i).on('click',function(){
+	        	$("#excluiInteresseBadge_" + i).off('click');
+	    		$("#excluiInteresseBadge_" + i).on('click',function(){
 	    	    	var objJson = JSON.parse(localStorage.getItem("meuPerfil"));
-	    	    	atualizaUserPerfilElemento (objJson, "carreiraInteresseOff", carreira.nome);
-		        	$("#itemCarreiraUserPerfil_" + i).addClass('hide');
+	    	    	atualizaUserPerfilElemento (objJson, "badgeInteresseOff", badge.nome);
+		        	$("#itemBadgeUserPerfil_" + i).addClass('hide');
 	    		});
         	};
         });
 
-        var carreira_user_perfil = $('#carreira_user_perfil_list' + append);
+        var badge_user_perfil = $('#badge_user_perfil_list' + append);
         
-        carreira_user_perfil.footable().trigger('footable_collapse_all');
+        badge_user_perfil.footable().trigger('footable_collapse_all');
 
-		$('#collapseCarreirasUserPerfilConquista').on('click', function(){
-			carreira_user_perfil.trigger('footable_collapse_all');
-			$( "#collapseCarreirasUserPerfilConquista").addClass('hide');
-			$( "#expandCarreirasUserPerfilConquista").removeClass('hide');
+		$('#collapseBadgesUserPerfilConquista').on('click', function(){
+			badge_user_perfil.trigger('footable_collapse_all');
+			$( "#collapseBadgesUserPerfilConquista").addClass('hide');
+			$( "#expandBadgesUserPerfilConquista").removeClass('hide');
 		});
-		$('#expandCarreirasUserPerfilConquista').on('click', function(){
-			carreira_user_perfil.trigger('footable_expand_all');
-			$( "#collapseCarreirasUserPerfilConquista").removeClass('hide');
-			$( "#expandCarreirasUserPerfilConquista").addClass('hide');
+		$('#expandBadgesUserPerfilConquista').on('click', function(){
+			badge_user_perfil.trigger('footable_expand_all');
+			$( "#collapseBadgesUserPerfilConquista").removeClass('hide');
+			$( "#expandBadgesUserPerfilConquista").addClass('hide');
 		})
 		// Search input
-		$('#searchCarreirasUserPerfilConquista').on('input', function (e) {
+		$('#searchBadgesUserPerfilConquista').on('input', function (e) {
 			e.preventDefault();
-			carreira_user_perfil.trigger('footable_filter', {filter: $(this).val()});
+			badge_user_perfil.trigger('footable_filter', {filter: $(this).val()});
 		});
 	
 	};

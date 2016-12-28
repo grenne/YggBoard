@@ -172,7 +172,7 @@
 
     function rest_obterUserPerfilItens(item, action_ok, action_not_ok, var1, var2, var3) {
     	$.ajax({
-            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/obter/itens?usuario=" + localStorage.usuarioEmail + "&item=" + item  + "&carreira=" + var2,
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/obter/itens?usuario=" + localStorage.usuarioEmail + "&item=" + item  + "&elemento=" + var2,
             contentType: "application/json; charset=utf-8",
             dataType: 'json'
     	})

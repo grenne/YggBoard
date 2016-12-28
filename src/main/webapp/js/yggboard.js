@@ -92,6 +92,7 @@
 		obterCursosInteresseUserPerfil ("cursos-interesse", true, "cursos_user_perfil_theader")
 	});
 	$( "#interesse_premios_theader_tab" ).on( "click", function() {
+		obterBadgesUserPerfil ("badges-interesse", null, "badges_user_perfil_theader");
 	});
 	
     // ** ações do menu do user perfil tab conquistas
