@@ -166,6 +166,7 @@ public class Rest_UserPerfil {
 						JSONObject jsonDocumento = new JSONObject();
 						jsonDocumento.put("_id", objBadges.getString("_id"));
 						jsonDocumento.put("nome", objBadges.get("nome"));
+						jsonDocumento.put("badge", objBadges.get("badge"));
 						jsonDocumento.put("entidadeCertificadora", objBadges.get("entidadeCertificadora"));
 					    jsonDocumento.put("descricao", objBadges.get("descricao"));
 					    jsonDocumento.put("habilidades", objBadges.get("habilidades")); 

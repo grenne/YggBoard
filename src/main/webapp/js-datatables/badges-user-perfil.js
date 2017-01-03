@@ -17,20 +17,7 @@
 
 		$("." + append).remove();
 
-		var label = "";
-		if (tipo == "badges"){
-			label = "Badges visitados"
-		}else{
-			label = "Interesse nos badges"
-		};
-    	var actions = "";
-    	if (append == "badges_user_perfil_theader"){
-    		actions = 
-				'<th> % </th>' +
-				'<th>Ação</th>';
-    	}else{
-    		label = "Objetivos conquistados";    		
-    	};
+		var	label = "Interesse nos badges"
 		var badge_user_perfil_table_header =
 				'<table id="badge_user_perfil_list' + append + '" class="' + append + ' user-panel-table">' +
 					'<thead>' +
@@ -63,7 +50,7 @@
         		calculoPercentual = parseInt(badge.totalPossuiHabilidades) / parseInt(badge.totalHabilidades) * 100;
         	};
             var percentualHabilidades = calculoPercentual.toFixed(0);
-        	if ((append == "badges_user_perfil_conquista_theader" && percentualHabilidades == 100) | 
+        	if ((append == "badges_user_conquista_theader") | 
         		(append == "badges_user_perfil_theader" && percentualHabilidades != 100)	){
             	var habilidades = "";
             	$.each(badge.arrayHabilidades, function (z, habilidade){
@@ -107,15 +94,26 @@
             	});
             	});
 	        	actions = "";
-	        	if (append == "badges_user_perfil_theader"){
+	        	if (append == "badges_user_conquista_theader"){
 	        		actions = 
-	        			'<td class="user-panel-td"><span class="panel-label percentual-box"><span id="itemPercentualHabilidades_' + i + '" class="percentual-numero">' + percentualHabilidades + '%</span><span class="percentual-texto"> em comum</span></td>';
+	        			'<td class="user-panel-td"><span class="panel-label"><span id="itemPercentualHabilidades_' + i + '" class=""></span></td>';
+	        	};
+	        	if (append == "badges_user_perfil_theader"){
+		        		actions = 
+		        			'<td class="user-panel-td"><span class="panel-label percentual-box"><span id="itemPercentualHabilidades_' + i + '" class="percentual-numero">' + percentualHabilidades + '%</span><span class="percentual-texto"> em comum</span></td>';
+	        	};
+	        	var compFacebook = badge.badge.split(".")[0];
+	        	var compFaceDiv = "";
+	        	if (append == "badges_user_conquista_theader"){
+	        		compFaceDiv = '<div class="fb-share-button" data-href="http://52.41.8.255:8080/yggboard/' + compFacebook + '.html" data-layout="icon" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore fa fa-facebook-official" color="blue" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F52.41.8.255%3A8080%2Fyggboard%2F' + compFacebook + '.html&amp;src=sdkpreparse">Compartilhar</a></div>';
 	        	};
 	        	badge_user_perfil_table_row = 
 					'<tr id="itemBadgeUserPerfil_' + i + '" class="itemBadgeUserPerfil col-xs-12' + append + '"  data-totalHabilidades="' + badge.totalHabilidades + '"  data-possuiHabilidades="' + badge.totalPossuiHabilidades + '">' +
-			   			'<td id="nome_' + i + '" class="user-panel-td"><span class="user-panel-label">' + badge.nome + '</span></td>' +
+			   			'<td id="nome_' + i + '" class="user-panel-td"><img id="img-badgeInteresse_' + i + append + '" width="60" height="60" class="img-circle"><span class="user-panel-label">   ' + badge.nome + '</span></td>' +
 			   			actions +
-						'<td class="user-panel-td"><a id="excluiInteresseBadge_' + i + '" data-tooltip="exclui interesse" ><i class="fa fa-trash-o icon-trash"></i></a></td>' +
+			   			'<td>' +
+			   			 	compFaceDiv +
+			   			 '</td>' +
 						'<td class="col-xs-12">' +
 							'<div class="col-xs-12 lineInvisible">' +
 							'____________________________________________'+
@@ -201,19 +199,15 @@
         });
 
         var badge_user_perfil = $('#badge_user_perfil_list' + append);
+
+    	$.each(objJson, function (i, badge) {
+			if (badge.badge){
+				carregaPhoto (localStorage.app, badge.badge, "badgeInteresse_" + i + append);
+			};
+		});
         
         badge_user_perfil.footable().trigger('footable_collapse_all');
 
-		$('#collapseBadgesUserPerfilConquista').on('click', function(){
-			badge_user_perfil.trigger('footable_collapse_all');
-			$( "#collapseBadgesUserPerfilConquista").addClass('hide');
-			$( "#expandBadgesUserPerfilConquista").removeClass('hide');
-		});
-		$('#expandBadgesUserPerfilConquista').on('click', function(){
-			badge_user_perfil.trigger('footable_expand_all');
-			$( "#collapseBadgesUserPerfilConquista").removeClass('hide');
-			$( "#expandBadgesUserPerfilConquista").addClass('hide');
-		})
 		// Search input
 		$('#searchBadgesUserPerfilConquista').on('input', function (e) {
 			e.preventDefault();

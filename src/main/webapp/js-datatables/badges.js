@@ -88,9 +88,9 @@
 
 	function montaLinhaBadge (i, badge){
 		var habilidades = "";
-		$.each(badge.arrayNecessarios, function (w, habilidade){
+		$.each(badge.arrayHabilidades, function (w, habilidade){
 			habilidades = habilidades +
-			'<br class="habilidadeBadge hide"><span class="panel-text habilidadeBadge hide habilidadeNecessariaBadge_' + i + '" data-idHabilidade="' + habilidade.idHabilidade + '">- ' + habilidade.name + '</span>';
+			'<br class="habilidadeBadge hide"><span class="panel-text user-panel-habilidade-nome habilidadeBadge hide habilidadeNecessariaBadge_' + i + '" data-idHabilidade="' + habilidade.idHabilidade + '">- ' + habilidade.name + '</span>';
 			if (habilidade.classes != "habilidade"){
 				habilidades = montaHabilidadesAreas (habilidade, habilidades, true, i);
 			};
@@ -103,7 +103,7 @@
 		};
 		badge_table_row = 
 			'<tr id="itemBadge_' + i + '" class="itemBadge" data-nome="' + badge.nome + '">' +
-				'<td id="nome_' + i + '"><img id="img-badge_' + i + '" width="30" height="30" class="img-circle"><span class="panel-label" data-tooltip="objetivo"> ' + badge.nome + '</span></td>' +
+				'<td id="nome_' + i + '"><img id="img-badge_' + i + '" width="60" height="60" class="img-circle"><span class="panel-label" data-tooltip="objetivo"> ' + badge.nome + '</span></td>' +
 				'<td><a id="queroAprender_' + i + '" data-tooltip="' + textoTip + '" class="' + disabled + '"><i class="fa fa-thumbs-o-up"></i></a></td>' +
 				'<td><span class="panel-label">OBJETIVO: </span><br>' +
 					'<span class="panel-text">' + badge.descricao + '</span></td>' +
@@ -135,7 +135,7 @@
 				};
 				if (necessarias){
 					habilidades = habilidades +
-					'<br class="habilidadeBadge hide"><span class="panel-text habilidadeBadge hide habilidadeNecessariaBadge habilidadeNecessariaBadge_' + i + '" data-idHabilidade="' + element.id + '">- ' + element.Label + '</span>';
+					'<br class="habilidadeBadge hide"><span class="panel-text user-panel-habilidade-nome habilidadeBadge hide habilidadeNecessariaBadge habilidadeNecessariaBadge_' + i + '" data-idHabilidade="' + element.id + '">- ' + element.Label + '</span>';
 				}else{
 					habilidades = habilidades +
 					'<span class="hide habilidadeRecomendadaBadge habilidadeRecomendadaBadge_' + i + '" data-idHabilidade="' + element.id + '"></span>';					

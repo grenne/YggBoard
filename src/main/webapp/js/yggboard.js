@@ -96,15 +96,14 @@
 	});
 	
     // ** ações do menu do user perfil tab conquistas
-	$( "#conquistasUserPerfil" ).on( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.carreira-user-perfil').removeClass("hide");
-		obterCarreirasUserPerfil ("carreiras-interesse", null, "carreiras_user_perfil_conquista_theader");
+	$( "#conquista_objetivos_theader_tab" ).on( "click", function() {
+		obterCarreirasUserPerfil ("carreiras", null, "carreiras_user_conquista_theader");
 	});
-	$( "#conquistasUserPerfilHabilidades" ).on( "click", function() {
-		$('.paineis-user-perfil').addClass("hide");
-		$('.habilidade-user-perfil').removeClass("hide");
-		obterHabilidadesUserPerfil ("habilidades-elementos", false, "habilidades_user_perfil_conquista_theader")
+	$( "#conquista_habilidades_theader_tab" ).on( "click", function() {
+		obterHabilidadesUserPerfil ("habilidades-elementos", null, "habilidades_user_conquista_theader")
+	});
+	$( "#conquista_premios_theader_tab" ).on( "click", function() {
+		obterBadgesUserPerfil ("badges-interesse", null, "badges_user_conquista_theader")
 	});
 
 	localStorage.carrega = "true";
