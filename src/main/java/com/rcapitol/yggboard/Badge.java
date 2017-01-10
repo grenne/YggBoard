@@ -33,6 +33,8 @@ public class Badge {
 		public String badge;
 		public String entidadeCertificadora;
 		public String descricao;
+		public String textoCompartilhamento_1;
+		public String textoCompartilhamento_2;
 		public String habilidades[];
 		public String tags[];
 
@@ -46,13 +48,17 @@ public class Badge {
 						String badge,
 						String entidadeCertificadora,
 						String descricao,
+						String textoCompartilhamento_1,
+						String textoCompartilhamento_2,
 						String [] habilidades,
 						String [] tags
 						) {
 						this.nome = nome;  
 						this.badge = badge;  
 						this.entidadeCertificadora = entidadeCertificadora;  
-						this.descricao = descricao; 
+						this.descricao = descricao;
+						this.textoCompartilhamento_1 = textoCompartilhamento_1;
+						this.textoCompartilhamento_2 = textoCompartilhamento_2;
 						this.habilidades = habilidades; 
 						this.tags = tags; 
 		}
