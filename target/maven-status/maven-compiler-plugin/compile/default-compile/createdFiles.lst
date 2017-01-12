@@ -9,6 +9,8 @@ com\rcapitol\yggboard\Usuario$Documento.class
 com\rcapitol\yggboard\Rest_UploadFiles.class
 com\rcapitol\yggboard\Rest_Carreira.class
 com\rcapitol\yggboard\Rest_UserPerfil.class
+com\rcapitol\yggboard\Badge.class
+com\rcapitol\yggboard\Badge$Documento.class
 com\rcapitol\yggboard\Setup$Documento.class
 com\rcapitol\yggboard\Usuario.class
 com\rcapitol\yggboard\UserPerfil$Documento.class
@@ -20,3 +22,4 @@ com\rcapitol\yggboard\UserPerfil.class
 com\rcapitol\yggboard\Rest_Usuario.class
 com\rcapitol\yggboard\Rest_Habilidade.class
 com\rcapitol\yggboard\App.class
+com\rcapitol\yggboard\Rest_Badge.class
