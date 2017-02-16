@@ -1085,6 +1085,14 @@ var habilidades =
 };
 
 function carregaCarreirasTotal (){
+	
+	rest_obterHabilidades(carregaCarreirasProcess, semAcao);
+
+};
+
+function carregaCarreirasProcess (elementos){
+	
+	localStorage.setItem("elements", JSON.stringify(elementos));
 
 	var carreiras = 
 
@@ -1235,7 +1243,16 @@ function carregaCarreirasTotal (){
 				var array = arrayItensCarreira[10].split(",");
 				var w = 0;
 				while (w < array.length) {
-					objJson.documento.necessarios.push(array[w].replace (" ",""));
+					var existente = false;
+					$.each(objJson.documento.necessarios, function( i, habilidade) {
+						if (array[w].replace (" ","") == habilidade){
+							existente = true;
+						};
+					});
+					if (!existente){
+						objJson.documento.necessarios.push(array[w].replace (" ",""));
+						objJson = obterDependencias(objJson, array[w].replace (" ",""), "necessarios");
+					};
 					w++;
 				};
 			};
@@ -1243,7 +1260,16 @@ function carregaCarreirasTotal (){
 				var array = arrayItensCarreira[12].split(",");
 				var w = 0;
 				while (w < array.length) {
-					objJson.documento.recomendados.push(array[w].replace (" ",""));
+					var existente = false;
+					$.each(objJson.documento.recomendados, function( i, habilidade) {
+						if (array[w].replace (" ","") == habilidade){
+							existente = true;
+						};
+					});
+					if (!existente){
+						objJson.documento.recomendados.push(array[w].replace (" ",""));
+						objJson = obterDependencias(objJson, array[w].replace (" ",""), "recomendados");
+					};
 					w++;
 				};
 			};
@@ -1258,8 +1284,42 @@ function carregaCarreirasTotal (){
 			console.log ("carregando carreiras:" + arrayItensCarreira[0]);
 			rest_incluiCarreiras(objJson, semAcao, semAcao)
 			i++;
-		}
+		};
+};
+
+
+function obterDependencias(objJson, habilidadeTarget, tipo){
+	habilidades = JSON.parse(localStorage.getItem("elements"));
+	$.each( habilidades, function( i, habilidadeSource) {
+		if (habilidadeSource.documento.target == habilidadeTarget){
+			if (tipo == "necessarios"){
+				var existente = false;
+				$.each(objJson.documento.necessarios, function( i, habilidade) {
+					if (habilidadeSource.documento.source == habilidade){
+						existente = true;
+					};
+				});
+				if (!existente){
+					objJson.documento.necessarios.push(habilidadeSource.documento.source);
+					objJson = obterDependencias(objJson, habilidadeSource.documento.source, tipo);
+				};
+			};
+			if (tipo == "recomendados"){
+				var existente = false;
+				$.each(objJson.documento.recomendadas, function( i, habilidade) {
+					if (habilidadeSource.documento.source == habilidade){
+						existente = true;
+					};
+				});
+				if (!existente){
+					objJson.documento.recomendados.push(habilidadeSource.documento.source);
+					objJson = obterDependencias(objJson, habilidadeSource.documento.source, tipo);
+				};
+			};
+		};
+	});		
 	
+	return objJson;
 };
 
 function carregaCursosTotal (){
@@ -1694,16 +1754,45 @@ function carregaBadgesTotal (){
 	 */
 	
 	var badges =
-		'CFA candidate I ;Você foi aprovado na prova "CFA level I;CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais;CFA_I.png;Conquistei o título de CFA candidate I ;Mais uma meta alcançada, o CFA Institute me conferiu o título de CFA candidate I @' +
-		'CFA candidate II;Você foi aprovado nas provas "CFA level I" e "CFA level II;CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225#10195#10204#10044#10045#10046#10047#10281#10282#10062#10065#10066#10226#10228#10187#10188#10189#10177#10056#10059;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais;CFA_II.png;Conquistei o título de CFA candidate II;Mais uma meta alcançada, o CFA Institute me conferiu o título de CFA candidate II@' +
-		'CFA candidate III;Você foi aprovado nas provas "CFA level I", "CFA level II" e "CFA level III;CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225#10195#10204#10044#10045#10046#10047#10281#10282#10062#10065#10066#10226#10228#10187#10188#10189#10177#10056#10059#10179#10180#10181#10182#10183#10184#10271#10205#10214#10215#10135#10190#10191#10192#10193;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais;CFA_III.png;Conquistei o título de CFA candidate III;Mais uma meta alcançada, o CFA Institute me conferiu o título de CFA candidate III@' +
-		'CFA;Você conseguiu o título de Chartered Financial Analyst;CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225#10195#10204#10044#10045#10046#10047#10281#10282#10062#10065#10066#10226#10228#10187#10188#10189#10177#10056#10059#10179#10180#10181#10182#10183#10184#10271#10205#10214#10215#10135#10190#10191#10192#10193#10163#10164#10166;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais;CFA.png;Conquistei o título de CFA;Mais uma meta alcançada, o CFA Institute me conferiu o título de CFA@' +
-		'MPA (Mestrado Profissional em Administração);Você adquiriu o título de "Mestre em Administração;FGV EAESP;1053#10011#10012#10016#10019#10022#10028#10032#10035#10039#10042#10043#10045#10046#10047#10052#10054#10057#10064#10072#10073#10083#10088#10089#10092#10101#10102#10103#10106#10107#10129#10130#10131#10132#10140#10187#10188#10200#10205#10206#10208#10214#10279#10280#10281#10282#10313#10314#10342#10352#10390#10398#10399#10420#10432#10435#10449#10450#10451#10452#10454#10455#10456#10459#10460#10469;Mestrado Profissional, business;MPA.png;Concluí o curso MPA (Mestrado Profissional em Administração) pela FGV EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Administração de Empresas@' +
-		'MPA (Mestrado Profissional - Ênfase em Finanças e Controladoria);Você adquiriu o título de "Mestre em Administração", com ênfase em Finanças e controladoria";FGV EAESP;10005#10006#10009#10012#10016#10037#10036#10066#10186#10311#10436#10365#10201#10114#10117#10219#10271#10061#10039#10202#10203#10220#10073#10080#10082#10440#10071#10403#10004#10339#10180#10368#10322#10026#10028;Mestrado Profissional, finance, controller;MPA_Financas_controladoria.png;Concluí o curso MPA (Mestrado Profissional - Ênfase em Finanças e Controladoria) pela FGV EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Administração de Empresas@' +
-		'MPA (Mestrado Profissional - Ênfase em Gestão de Saúde);Você adquiriu o título de "Mestre em Administração", com ênfase em Gestão da saúde";FGV EAESP;10008#10009#10010#10025#10029#10030#10081#10082#10096#10171#10201#10206#10322#10334#10335#10367#10390#10458#10459#10460#10469#10550#10638;Mestrado Profissional, health care, médico, hospitalar;MPA_Gestao_da_Saude.png;Concluí o curso MPA (Mestrado Profissional - Ênfase em Gestão de Saúde) pela FGV EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Administração de Empresas@' +
-		'MPA (Mestrado Profissional - Ênfase em Gestão de Supply Chain);Você adquiriu o título de "Mestre em Administração", com ênfase em Gestão de supply chain";FGV EAESP;10002#10003#10004#10005#10006#10011#10012#10014#10015#10019#10026#10028#10037#10071#10080#10089#10172#10313#10314#10315#10366#10368#10369#10370#10395#10401#10402#10403#10405#10415#10443#10650;Mestrado Profissional, logística, estoque, operações;MPA_Supply_Chain.png;Concluí o curso MPA (Mestrado Profissional - Ênfase em Gestão de Supply Chain) pela FGV EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Administração de Empresas@' +
-		'MPA (Mestrado Profissional - Ênfase em Sustentabilidade);Você adquiriu o título de "Mestre em Administração", com ênfase em Sustentabilidade";FGV EAESP;10008#10009#10010#10201#10365#10371#10391#10313#10387#10013#10133#10030#10408;Mestrado Profissional, sustainability, meio ambiente;MPA_Sustentabilidade.png;Concluí o curso MPA (Mestrado Profissional - Ênfase em Sustentabilidade) pela FGV EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Administração de Empresas@' +
-		'MPA (Mestrado Profissional - Ênfase em Varejo);Você adquiriu o título de "Mestre em Administração", com ênfase em Varejo";FGV EAESP;10011#10012#10015#10037#10071#10076#10077#10078#10080#10081#10082#10085#10137#10140#10279#10280#10281#10282#10313#10314#10315#10316#10334#10359#10361#10369#10401#10402#10405#10424#10437#10440#10441#10443#10454;Mestrado Profissional, operações, consumer, consumidor;MPA_Varejo.png;Concluí o curso MPA (Mestrado Profissional - Ênfase em Varejo) pela FGV EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Administração de Empresas@';
+		'CFA candidate I ;"Você foi aprovado na prova ""CFA level I""";CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais;Certificado;CFA_I.png;Conquistei o título de CFA candidate I ;Mais uma meta alcançada, o CFA Institute me conferiu o título de CFA candidate I ;@' +
+		'CFA candidate II;"Você foi aprovado nas provas ""CFA level I"" e ""CFA level II""";CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225#10195#10204#10044#10045#10046#10047#10281#10282#10062#10065#10066#10226#10228#10187#10188#10189#10177#10056#10059;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais;Certificado;CFA_II.png;Conquistei o título de CFA candidate II;Mais uma meta alcançada, o CFA Institute me conferiu o título de CFA candidate II;@' +
+		'CFA candidate III;"Você foi aprovado nas provas ""CFA level I"", ""CFA level II"" e ""CFA level III""";CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225#10195#10204#10044#10045#10046#10047#10281#10282#10062#10065#10066#10226#10228#10187#10188#10189#10177#10056#10059#10179#10180#10181#10182#10183#10184#10271#10205#10214#10215#10135#10190#10191#10192#10193;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais;Certificado;CFA_III.png;Conquistei o título de CFA candidate III;Mais uma meta alcançada, o CFA Institute me conferiu o título de CFA candidate III;@' +
+		'CFA;Você conseguiu o título de Chartered Financial Analyst;CFA Institute;1031#1035#10137#10140#10055#10042#10043#10048#10052#10185#10039#10064#10063#10174#10175#10176#10178#10194#10196#10197#10070#10131#10199#10200#10201#10208#10209#10132#10128#10202#10203#10101#10102#10103#10220#10227#10222#10223#10224#10225#10195#10204#10044#10045#10046#10047#10281#10282#10062#10065#10066#10226#10228#10187#10188#10189#10177#10056#10059#10179#10180#10181#10182#10183#10184#10271#10205#10214#10215#10135#10190#10191#10192#10193#10163#10164#10166;Financial analyst, Finance, Research, analista financeiro, mercado financeiro, mercado de capitais;Certificado;CFA.png;Conquistei o título de CFA;Mais uma meta alcançada, o CFA Institute me conferiu o título de CFA;@' +
+		'Mestrado Profissional em Administração;"Você adquiriu o título de ""Mestre em Administração""";FGV EAESP;1053#10011#10012#10016#10019#10022#10028#10032#10035#10039#10042#10043#10045#10046#10047#10052#10054#10057#10064#10072#10073#10083#10088#10089#10092#10101#10102#10103#10106#10107#10129#10130#10131#10132#10140#10187#10188#10200#10205#10206#10208#10214#10279#10280#10281#10282#10313#10314#10342#10352#10390#10398#10399#10420#10432#10435#10449#10450#10451#10452#10454#10455#10456#10459#10460#10469;Mestrado Profissional, business;Certificado;MPA.png;Concluí o curso Mestrado Profissional em Administração pela FGV-EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Administração de Empresas;@' +
+		'Mestrado Profissional Gestão para a Competitividade - Linha Finanças e Controladoria;"Você adquiriu o título de ""Mestre em Administração"", na linha de Finanças e Controladoria";FGV EAESP;10005#10006#10009#10012#10016#10037#10036#10066#10186#10311#10436#10365#10201#10114#10117#10219#10271#10061#10039#10202#10203#10220#10073#10080#10082#10440#10071#10403#10004#10339#10180#10368#10322#10026#10028;Mestrado Profissional, finance, controller;Certificado;MPA_Finanças_controladoria.png;Concluí o curso Mestrado Profissional - Linha Finanças e Controladoria pela FGV-EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Gestão para a competitividade na linha de Finanças e Controladoria;@' +
+		'Mestrado Profissional Gestão para a Competitividade - Linha Gestão de Saúde;"Você adquiriu o título de ""Mestre em Administração"", na linha de Gestão da saúde";FGV EAESP;10008#10009#10010#10025#10029#10030#10081#10082#10096#10171#10201#10206#10322#10334#10335#10367#10390#10458#10459#10460#10469#10550#10638;Mestrado Profissional, health care, médico, hospitalar;Certificado;MPA_Gestão_da_Saúde.png;Concluí o curso Mestrado Profissional - Linha Gestão de Saúde pela FGV-EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Gestão para a competitividade na linha de Gestão de Saúde;@' +
+		'Mestrado Profissional Gestão para a Competitividade - Linha Gestão de Supply Chain;"Você adquiriu o título de ""Mestre em Administração"", na linha de Gestão de supply chain";FGV EAESP;10002#10003#10004#10005#10006#10011#10012#10014#10015#10019#10026#10028#10037#10071#10080#10089#10172#10313#10314#10315#10366#10368#10369#10370#10395#10401#10402#10403#10405#10415#10443#10650;Mestrado Profissional, logística, estoque, operações;Certificado;MPA_Supply_Chain.png;Concluí o curso Mestrado Profissional - Linha Gestão de Supply Chain pela FGV-EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Gestão para a competitividade na linha de Gestão de Supply Chain;@' +
+		'Mestrado Profissional Gestão para a Competitividade - Linha Sustentabilidade;"Você adquiriu o título de ""Mestre em Administração"", na linha de Sustentabilidade";FGV EAESP;10008#10009#10010#10201#10365#10371#10391#10313#10387#10013#10133#10030#10408;Mestrado Profissional, sustainability, meio ambiente;Certificado;MPA_Sustentabilidade.png;Concluí o curso Mestrado Profissional - Linha Sustentabilidade pela FGV-EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Gestão para a competitividade na linha de Sustentabilidade;@' +
+		'Mestrado Profissional Gestão para a Competitividade - Linha Varejo;"Você adquiriu o título de ""Mestre em Administração"", na linha de Varejo";FGV EAESP;10011#10012#10015#10037#10071#10076#10077#10078#10080#10081#10082#10085#10137#10140#10279#10280#10281#10282#10313#10314#10315#10316#10334#10359#10361#10369#10401#10402#10405#10424#10437#10440#10441#10443#10454;Mestrado Profissional, operações, consumer, consumidor;Certificado;MPA_Varejo.png;Concluí o curso Mestrado Profissional - Linha Varejo pela FGV-EAESP;Mais uma meta alcançada, a FGV EAESP me conferiu o título de Mestre em Gestão para a competitividade na linha de Varejo;@' +
+		'PEC;Você completou um curso do PEC FGV;FGV EAESP;;Programa de educação continuada;Certificado;FGV_PEC.png;Concluí um PEC na FGV EAESP;Mais uma meta alcançada, Concluí um curso no PEC da FGV EAESP;@' +
+		'YggBoard;Parabéns, você completou seu perfil e agora faz parte da YggBoard;YggBoard;;Perfil, cadastro;Incentivo;Perfil.png;Agora participo da revolução!;Completei meu perfil e já estou aproveitando as vantagens de usar a YggBoard;@' +
+		'Colecionador nível 1;Você conquistou 60 Habilidades;Yggboard;;;Número;Colecionador_1.png;Colecionador nível 1;Conquistei 60  Habilidades em Yggboard;60@' +
+		'Colecionador nível 2;Parabéns você conquistou 100 Habilidades;Yggboard;;;Número;Colecionador_2.png;Colecionador nível 2;Conquistei 100 Habilidades em Yggboard;100@' +
+		'Colecionador nível 3;Foco no crescimento! Conquistou 150 Habilidades;Yggboard;;;Número;Colecionador_3.png;Colecionador nível 3;Conquistei 150 Habilidades em Yggboard;150@' +
+		'Colecionador nível 4;Wow! Você acaba de conquistar 200 Habilidades;Yggboard;;;Número;Colecionador_4.png;Colecionador nível 4;Conquistei 200 Habilidades em Yggboard;200@' +
+		'Colecionador nível 5;Unstoppable! Conquistou 250 Habilidades;Yggboard;;;Número;Colecionador_5.png;Colecionador nível 5;Conquistei 250 Habilidades em Yggboard;250@' +
+		'Colecionador nível 6;Parabéns Mestre, você chegou a 300 Habilidades;Yggboard;;;Número;Colecionador_6.png;Colecionador nível 6;Conquistei 300 Habilidades em Yggboard;300@' +
+		'Fome de conhecimento;Você iniciou um novo caminho ao marcar 35 Habilidades como Interesse;Yggboard;;;Número;Fome_de_conhecimento.png;Fome de conhecimento;Meta estabelecida, aprender 35 novas Habilidades;@' +
+		'Caçador de conhecimento;Continue a caçada por mais conhecimento, marcou 80 Habilidades como Interesse;Yggboard;;;Número;Caçador_de_conhecimento.png;Caçador de conhecimento;Que comece a caçada pela sabedoria, vou aprender 80 novas Habilidades ;80@' +
+		'Mente ambiciosa;Prepare-se para se transformar, você marcou 120 Habilidades como Interesse;Yggboard;;;Número;Mente_ambiciosa.png;Mente ambiciosa;Metamorfose iniciada, mente pronta para aprender 120 novas Habilidades;120@' +
+		'Visão pro futuro;Selecionou seu próximo Objetivo na carreira;Yggboard;;;Referência;Visão_de_futuro.png;Minha visão para o futuro;Selecionei meu próximo objetivo de carreira em Yggboard e agora começam os estudos;@' +
+		'Beta Tester;Participei da faze Beta do Yggboard;Yggboard;;;Data;Beta_Tester.png;Beta Tester Yggboard;Participei da fase Beta do Yggboard;1022017@' +
+		'Contribuidor Ygg;Contribui no conteudo do Yggboard;Yggboard;;;Contribuidor Número;Contribuidor.png;Contribuidor;Contribuí com a evolução do conteúdo do Yggboard;@' +
+		'Ygg Bronze;Consegui qualificar 25% do meu perfil;Yggboard;;;Qualidade Informação;Perfil_qualificado_1.png;Ygg Bronze;Consegui qualificar 25% do meu perfil em Yggboard;25@' +
+		'Ygg Prata;Consegui qualificar 50% do meu perfil;Yggboard;;;Qualidade Informação;Perfil_qualificado_2.png;Ygg Prata;Consegui qualificar 50% do meu perfil em Yggboard;50@' +
+		'Ygg Ouro;Consegui qualificar 75% do meu perfil;Yggboard;;;Qualidade Informação;Perfil_qualificado_3.png;Ygg Ouro;Consegui qualificar 75% do meu perfil em Yggboard;75@' +
+		'Ygg Mestre;Consegui qualificar 100% do meu perfil;Yggboard;;;Qualidade Informação;Perfil_qualificado_4.png;Ygg Mestre;Consegui qualificar 100% do meu perfil em Yggboard;100@' +
+		'Bom amigo;Convidei um amigo para fazer parte da Revolução!;Yggboard;;;Incentivo;Amigo_Ygg.png;Bom amigo;Convidei um amigo para fazer parte da Revolução Yggboard;@' +
+		'MP Finanças e Controladoria 1 Semestre;Você completou a Dimensão Edificar do curso;FGV EAESP;;;Certificado;Finanças_1.png;FGV - MP Finanças e Controladoria 1 Semestre;Primeiro passo dado, completei o primeiro semestre do Mestrado profissional na FGV linha Finaças e Controladoria;@' +
+		'MP Finanças e Controladoria 2 Semestre;Você completou a Dimensão Integrar do curso;FGV EAESP;;;Certificado;Finanças_2.png;FGV - MP Finanças e Controladoria 2 Semestre;Rumo ao objetivo, segundo semestre completo do Mestrado profissional da FGV linha Finanças e Controladoria;@' +
+		'MP Gestão de Saúde 1 semestre;Você completou a Dimensão Global do curso;FGV EAESP;;;Certificado;Saúde_1.png;FGV - MP Gestão de Saúde 1 semestre;Primeiro passo dado, completei o primeiro semestre do Mestrado profissional na FGV linha Gestão de Saúde;@' +
+		'MP Gestão de Saúde 2 semestre;Você completou a Dimensão Decisória do curso;FGV EAESP;;;Certificado;Saúde_2.png;FGV - MP Gestão de Saúde 2 semestre;Rumo ao objetivo, segundo semestre completo do Mestrado profissional da FGV linha Gestão de Saúde;@' +
+		'MP Gestão de Supply Chain 1 semestre;Você completou a Dimensão Configuração do curso;FGV EAESP;;;Certificado;Supply_1.png;FGV - MP Gestão de Supply Chain 1 semestre;Primeiro passo dado, completei o primeiro semestre do Mestrado profissional na FGV linha Gestão de Supply Chain;@' +
+		'MP Gestão de Supply Chain 2 semestre;Você completou a Dimensão Operação do curso;FGV EAESP;;;Certificado;Supply_2.png;FGV - MP Gestão de Supply Chain 2 semestre;Rumo ao objetivo, segundo semestre completo do Mestrado profissional da FGV linha Gestão de Supply Chain;@' +
+		'MP Sustentabilidade 1 semestre;Você completou a Dimensão Global do curso;FGV EAESP;;;Certificado;Sustentabilidade_1.png;FGV - MP Sustentabilidade 1 semestre;Primeiro passo dado, completei o primeiro semestre do curso de Mestrado profissional na FGV linha Sustentabilidade;@' +
+		'MP Sustentabilidade 2 semestre;Você completou a Dimensão Relacional do curso;FGV EAESP;;;Certificado;Sustentabilidade_2.png;FGV - MP Sustentabilidade 2 semestre;Rumo ao objetivo, segundo semestre completo no curso de Mestrado profissional da FGV linha Sustentabilidade;@' +
+		'MP Varejo 1 semestre ;Você completou a Dimensão Investigação do curso;FGV EAESP;;;Certificado;Varejo_1.png;FGV - MP Varejo 1 semestre ;Primeiro passo dado, completei o primeiro semestre do curso de Mestrado profissional na FGV linha Varejo;@' +
+		'MP Varejo 2 semestre ;Você completou a Dimensão Conhecimento do curso;FGV EAESP;;;Certificado;Varejo_2.png;FGV - MP Varejo 2 semestre ;Rumo ao objetivo, segundo semestre completo no curso de Mestrado profissional da FGV linha Varejo;@';
 	var arrayBadges = badges.split("@");
 	var i = 0;
 	while (i < arrayBadges.length) {
@@ -1714,11 +1803,13 @@ function carregaBadgesTotal (){
 					documento: 
 					{
 					    nome : arrayItensBadge[0],
-					    badge : arrayItensBadge[5],
+					    badge : arrayItensBadge[6],
 					    descricao : arrayItensBadge[1],
-					    textoCompartilhamento_1 : arrayItensBadge[6],
-					    textoCompartilhamento_2 : arrayItensBadge[7],
+					    textoCompartilhamento_1 : arrayItensBadge[7],
+					    textoCompartilhamento_2 : arrayItensBadge[8],
 					    entidadeCertificadora : arrayItensBadge[2],
+					    tipo : arrayItensBadge[5],
+					    parametro : arrayItensBadge[9],
 						habilidades : [],
 						tags : []
 						}

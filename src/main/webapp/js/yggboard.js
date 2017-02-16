@@ -461,7 +461,6 @@
 	};
 
 	function atualizaUserPerfilElemento (objPerfil, tipo, elemento){
-		var atualizarPerfil = false;
 		if (tipo == "habilidadeInteresse"){
 			var existente = false;
 			$.each( objPerfil.documento.habilidadesInteresse, function( i, habilidade) {
@@ -471,14 +470,18 @@
 			});
 			if (!existente){
 				objPerfil.documento.habilidadesInteresse.push(elemento);
-				atualizarPerfil = true;
+				atualizaPerfil (objPerfil);
+				atualizaDependencias(objPerfil, elemento, tipo);
+				atualizaParents(objPerfil, elemento, tipo);
 			};
 		};
 		if (tipo == "habilidadeInteresseOff"){
 			$.each( objPerfil.documento.habilidadesInteresse, function( i, habilidade) {
 				if (elemento == habilidade){
 					objPerfil.documento.habilidadesInteresse.splice(i,1);
-					atualizarPerfil = true;
+					atualizaPerfil (objPerfil);
+					atualizaDependencias(objPerfil, elemento, tipo);
+					atualizaParents(objPerfil, elemento, tipo);
 				};
 			});
 		};
@@ -491,14 +494,18 @@
 			});
 			if (!existente){
 				objPerfil.documento.habilidades.push(elemento);
-				atualizarPerfil = true;
+				atualizaPerfil (objPerfil);
+				atualizaDependencias(objPerfil, elemento, tipo);
+				atualizaParents(objPerfil, elemento, tipo);
 			};
 		};
 		if (tipo == "habilidadeOff"){
 			$.each( objPerfil.documento.habilidades, function( i, habilidade) {
 				if (elemento == habilidade){
 					objPerfil.documento.habilidades.splice(i,1);
-					atualizarPerfil = true;
+					atualizaPerfil (objPerfil);
+					atualizaDependencias(objPerfil, elemento, tipo);
+					atualizaParents(objPerfil, elemento, tipo);
 				};
 			});
 		};
@@ -511,14 +518,14 @@
 			});
 			if (!existente){
 				objPerfil.documento.carreirasInteresse.push(elemento);
-				atualizarPerfil = true;
+				atualizaPerfil (objPerfil);
 			};
 		};
 		if (tipo == "carreiraInteresseOff"){
 			$.each( objPerfil.documento.carreirasInteresse, function( i, carreira) {
 				if (elemento == carreira){
 					objPerfil.documento.carreirasInteresse.splice(i,1);
-					atualizarPerfil = true;
+					atualizaPerfil (objPerfil);
 				};
 			});
 		};
@@ -531,14 +538,14 @@
 			});
 			if (!existente){
 				objPerfil.documento.carreiras.push(elemento);
-				atualizarPerfil = true;
+				atualizaPerfil (objPerfil);
 			};
 		};
 		if (tipo == "carreirasOff"){
 			$.each( objPerfil.documento.carreiras, function( i, carreira) {
 				if (elemento == carreira){
 					objPerfil.documento.carreiras.splice(i,1);
-					atualizarPerfil = true;
+					atualizaPerfil (objPerfil);
 				};
 			});
 		};
@@ -551,14 +558,14 @@
 			});
 			if (!existente){
 				objPerfil.documento.cursosInteresse.push(elemento);
-				atualizarPerfil = true;
+				atualizaPerfil (objPerfil);
 			};
 		};
 		if (tipo == "cursoInteresseOff"){
 			$.each( objPerfil.documento.cursosInteresse, function( i, curso) {
 				if (elemento == curso){
 					objPerfil.documento.cursosInteresse.splice(i,1);
-					atualizarPerfil = true;
+					atualizaPerfil (objPerfil);
 				};
 			});
 		};
@@ -571,14 +578,14 @@
 			});
 			if (!existente){
 				objPerfil.documento.badgesInteresse.push(elemento);
-				atualizarPerfil = true;
+				atualizaPerfil (objPerfil);
 			};
 		};
 		if (tipo == "badgeInteresseOff"){
 			$.each( objPerfil.documento.badgesInteresse, function( i, badge) {
 				if (elemento == badge){
 					objPerfil.documento.badgesInteresse.splice(i,1);
-					atualizarPerfil = true;
+					atualizaPerfil (objPerfil);
 				};
 			});
 		};
@@ -593,16 +600,18 @@
 				});
 				if (!existente){
 					objPerfil.documento.tags.push(tag);
-					atualizarPerfil = true;
+					atualizaPerfil (objPerfil);
 				};
 			});
 		};
-		if (atualizarPerfil){
-			localStorage.setItem("meuPerfil", JSON.stringify(objPerfil));
-			rest_atualizaUserPerfil (objPerfil, semAcao, semAcao);
-		}
 	};
-
+	
+	function atualizaPerfil (objPerfil){
+		
+		localStorage.setItem("meuPerfil", JSON.stringify(objPerfil));
+		rest_atualizaUserPerfil (objPerfil, semAcao, semAcao);
+		
+	};
 
 	function checaUserPerfilElemento (tipo, elemento){
 
@@ -658,6 +667,24 @@
 		};
 
 		return temElemento;
+	};
+	
+	function atualizaDependencias(objJson, habilidadeTarget, tipo){
+		habilidades = JSON.parse(localStorage.getItem("elements"));
+		$.each( habilidades, function( i, habilidadeSource) {
+			if (habilidadeSource.documento.target == habilidadeTarget){
+				atualizaUserPerfilElemento (objJson, tipo, habilidadeSource.documento.source);
+			};
+		});		
+	};
+	
+	function atualizaParents(objJson, habilidadeTarget, tipo){
+		habilidades = JSON.parse(localStorage.getItem("elements"));
+		$.each( habilidades, function( i, habilidadeSource) {
+			if (habilidadeSource.documento.parent == habilidadeTarget){
+				atualizaUserPerfilElemento (objJson, tipo, habilidadeSource.documento.idHabilidade);
+			};
+		});		
 	};
 
 	function setupTools(){

@@ -35,6 +35,8 @@ public class Badge {
 		public String descricao;
 		public String textoCompartilhamento_1;
 		public String textoCompartilhamento_2;
+		public String tipo;
+		public String parametro;
 		public String habilidades[];
 		public String tags[];
 
@@ -50,6 +52,8 @@ public class Badge {
 						String descricao,
 						String textoCompartilhamento_1,
 						String textoCompartilhamento_2,
+						String tipo,
+						String parametro,
 						String [] habilidades,
 						String [] tags
 						) {
@@ -59,6 +63,8 @@ public class Badge {
 						this.descricao = descricao;
 						this.textoCompartilhamento_1 = textoCompartilhamento_1;
 						this.textoCompartilhamento_2 = textoCompartilhamento_2;
+						this.tipo = tipo;
+						this.parametro = parametro;
 						this.habilidades = habilidades; 
 						this.tags = tags; 
 		}
