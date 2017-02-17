@@ -41,6 +41,7 @@ public class Usuario {
         public String photo;
 		public String gender;
 		public String acceptTerms;
+		public String status;
 		public String dateTimeAcceptTerms;
 
 		public Documento() {
@@ -61,7 +62,8 @@ public class Usuario {
 		        String photo,
 				String gender,
 				String acceptTerms,
-				String dateTimeAcceptTerms
+				String dateTimeAcceptTerms,
+				String status
 						) {
 						this.email = email; 
 						this.firstName = firstName;  
@@ -75,7 +77,9 @@ public class Usuario {
 						this.photo = photo;
 						this.gender = gender; 
 						this.acceptTerms = acceptTerms;
+						this.status = status;
 						this.dateTimeAcceptTerms = dateTimeAcceptTerms;
+						
 		}
 
 		@Override

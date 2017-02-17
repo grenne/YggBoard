@@ -32,7 +32,8 @@ $(function() {
 		        password : "",
 		        gender : "",
 		        acceptTerms : "",
-		        dateTimeAcceptTerms		        
+		        status : "inscrito",
+		        dateTimeAcceptTerms : ""		        
 			}
 		};
 	
@@ -151,7 +152,7 @@ $(function() {
 	$("#btn-submit-login").off('click');
 	$("#btn-submit-login").on('click', function () {
 		if (formValido){
-			rest_obterUsuario(loginRegister.documento.email, usuarioExistente, incluirUsuario, loginRegister)
+			rest_obterUsuario(loginRegister.documento.email, usuarioExistente, incluirUsuario, loginRegister);
 		}else{
 			console.log ("notok");
 		}
@@ -162,17 +163,17 @@ function usuarioExistente (data){
 	$('.msgErro').html("Usuário existente");
 	$('.msgErro').removeClass("hide");
 };
+
 function incluirUsuario (dataSys, data){
-	rest_incluirUsuario(data, usuarioIncluido, usuarioErroInclusao)
+	rest_incluirUsuario(data, usuarioIncluido, usuarioErroInclusao);
+	//
+	//  ** send email to confirm
+	//
+	rest_sendEmailHtml(localStorage.hostNameEmail, localStorage.userNameEmail , localStorage.passwordEmail, "grenneglr@gmail.com", "eric@yggboard.com", "Solicitação de inscriçao no Yggboard", templateConfirmacaoInscricao(), semAcao, semAcao );
+	
 };
 function usuarioIncluido (data){
-	localStorage.usuarioEmail = data.documento.email;
-	localStorage.usuarioFirstName = data.documento.firstName;
-	localStorage.usuarioLastName = data.documento.lastName;
-	localStorage.usuarioPerfil = data.documento.perfil;
-	localStorage.usuarioGender = data.documento.gender;
-	localStorage.loginOk = "true";
-	$(window.document.location).attr('href','yggboard.html');
+	$(window.document.location).attr('href','bemvindo.html');
 };
 function usuarioErroInclusao (data){
 	$('.msgErro').html("Erro na inclusão, tente novamente");

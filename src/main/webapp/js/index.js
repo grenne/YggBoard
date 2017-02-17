@@ -5,6 +5,9 @@
 		localStorage.app = "yggboard";
 		localStorage.loginOk = "false";
 		localStorage.urlServidor = window.location.hostname;
+		localStorage.hostNameEmail = "smtp.gmail.com";
+		localStorage.userNameEmail = "grenneglr@gmail.com";
+		localStorage.passwordEmail = "H2l2n1#0701";
 		if (localStorage.urlServidor == "localhost"){
 			localStorage.mainHost = "52.41.8.255";
 		}else{

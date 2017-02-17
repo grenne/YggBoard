@@ -30,34 +30,38 @@
 	function usuarioOk (data, senha){
 		
 		if (data){
-			if (data.documento.password == senha){
-				localStorage.usuarioEmail = data.documento.email;
-				localStorage.usuarioFirstName = data.documento.firstName;
-				localStorage.usuarioLastName = data.documento.lastName;
-				localStorage.usuarioPerfil = data.documento.perfil;
-				localStorage.usuarioGender = data.documento.gender;
-				localStorage.usuarioPhoto = data.documento.photo;
-				localStorage.loginOk = "true";
-				switch(localStorage.usuarioPerfil) {
-			    case "administrator":
-					$(window.document.location).attr('href','yggboard.html');
-			        break;
-			    case "tools":
-					$(".tools").removeClass ("hide");
-					$(window.document.location).attr('href','yggboard.html');
-			        break;
-			    case "user":
-					localStorage.usuario = "true";
-					$(window.document.location).attr('href','yggboard.html');
-			        break;
-			    default:
-			    	localStorage.usuario = "true";
-					$('.msgErro').removeClass("hide");
-				};			
-				return true;
+			if (data.documento.status == "inscrito"){
+				$(window.document.location).attr('href','esperandoAprovacao.html');
 			}else{
-				usuarioFail ();
-			}
+				if (data.documento.password == senha){
+					localStorage.usuarioEmail = data.documento.email;
+					localStorage.usuarioFirstName = data.documento.firstName;
+					localStorage.usuarioLastName = data.documento.lastName;
+					localStorage.usuarioPerfil = data.documento.perfil;
+					localStorage.usuarioGender = data.documento.gender;
+					localStorage.usuarioPhoto = data.documento.photo;
+					localStorage.loginOk = "true";
+					switch(localStorage.usuarioPerfil) {
+				    case "administrator":
+						$(window.document.location).attr('href','yggboard.html');
+				        break;
+				    case "tools":
+						$(".tools").removeClass ("hide");
+						$(window.document.location).attr('href','yggboard.html');
+				        break;
+				    case "user":
+						localStorage.usuario = "true";
+						$(window.document.location).attr('href','yggboard.html');
+				        break;
+				    default:
+				    	localStorage.usuario = "true";
+						$('.msgErro').removeClass("hide");
+					};			
+					return true;
+				}else{
+					usuarioFail ();
+				};
+			};
 		}else{
 			usuarioFail ();
 		};
