@@ -102,7 +102,10 @@
 		        		actions = 
 		        			'<td class="user-panel-td"><span class="panel-label percentual-box"><span id="itemPercentualHabilidades_' + i + '" class="percentual-numero">' + percentualHabilidades + '%</span><span class="percentual-texto"> em comum</span></td>';
 	        	};
-	        	var compFacebook = badge.badge.split(".")[0];
+	        	var compFacebook = "badgeYgg";
+	        	if (badge.badge){
+	        		compFacebook = badge.badge.split(".")[0];
+	        	};
 	        	var compFaceDiv = "";
 	        	if (append == "badges_user_conquista_theader"){
 	        		compFaceDiv = '<div class="fb-share-button" data-href="http://52.41.8.255:8080/yggboard/' + compFacebook + '.html" data-layout="icon" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore fa fa-facebook-official" color="blue" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F52.41.8.255%3A8080%2Fyggboard%2F' + compFacebook + '.html&amp;src=sdkpreparse">Compartilhar</a></div>';

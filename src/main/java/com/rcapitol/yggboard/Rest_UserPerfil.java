@@ -76,16 +76,16 @@ public class Rest_UserPerfil {
 		mongo.close();
 		JSONArray documentos = new JSONArray();
 		String docUserPerfil = obj.toString();
-		JSONObject jsonObject; 
+		JSONObject jsonPerfil; 
 		JSONParser parser = new JSONParser(); 
 		try {
-			jsonObject = (JSONObject) parser.parse(docUserPerfil);
+			jsonPerfil = (JSONObject) parser.parse(docUserPerfil);
 			if (item.equals("carreiras") | item.equals("carreiras-interesse")){
 				ArrayList arrayList = new ArrayList(); 
 				if (item.equals("carreiras")){
-					arrayList = (ArrayList) jsonObject.get("carreiras");
+					arrayList = (ArrayList) jsonPerfil.get("carreiras");
 				}else{
-					arrayList = (ArrayList) jsonObject.get("carreirasInteresse");
+					arrayList = (ArrayList) jsonPerfil.get("carreirasInteresse");
 				}
 		    	Object array[] = arrayList.toArray(); 
 				int w = 0;
@@ -110,7 +110,7 @@ public class Rest_UserPerfil {
 				    jsonDocumento.put("recomentados", objCarreiras.get("recomentados"));
 				    jsonDocumento.put("tags", objCarreiras.get("tags"));
 					ArrayList arrayListElementos = new ArrayList(); 
-					arrayListElementos = (ArrayList) jsonObject.get("habilidades");
+					arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");
 			    	Object arrayElementos[] = arrayListElementos.toArray(); 
 					ArrayList <String> arrayListElementosFaltantes = new ArrayList(); 
 				    JSONObject jsonQtdeHabilidades = obterTotalHabilidades(objCarreiras.get("nome"), arrayElementos, arrayListElementosFaltantes);
@@ -149,9 +149,9 @@ public class Rest_UserPerfil {
 			if (item.equals("badges") | item.equals("badges-interesse")){
 				ArrayList arrayList = new ArrayList(); 
 				if (item.equals("badges")){
-					arrayList = (ArrayList) jsonObject.get("badges");
+					arrayList = (ArrayList) jsonPerfil.get("badges");
 				}else{
-					arrayList = (ArrayList) jsonObject.get("badgesInteresse");
+					arrayList = (ArrayList) jsonPerfil.get("badgesInteresse");
 				}
 		    	Object array[] = arrayList.toArray(); 
 				int w = 0;
@@ -172,7 +172,7 @@ public class Rest_UserPerfil {
 					    jsonDocumento.put("habilidades", objBadges.get("habilidades")); 
 					    jsonDocumento.put("tags", objBadges.get("tags"));
 						ArrayList arrayListElementos = new ArrayList(); 
-						arrayListElementos = (ArrayList) jsonObject.get("habilidades");
+						arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");
 				    	Object arrayElementos[] = arrayListElementos.toArray(); 
 						ArrayList <String> arrayListElementosFaltantes = new ArrayList();
 					    JSONObject jsonQtdeHabilidades = obterTotalHabilidadesBadges(objBadges.get("nome"), arrayElementos, arrayListElementosFaltantes);
@@ -208,14 +208,74 @@ public class Rest_UserPerfil {
 					mongoBadges.close();
 					++w;
 				};
+				Mongo mongoBadge;
+				try {
+					mongoBadge = new Mongo();
+					DB dbBadge = (DB) mongoBadge.getDB("documento");
+
+					DBCollection collectionBadge = dbBadge.getCollection("badges");
+					
+					DBCursor cursorBadge = collectionBadge.find();
+					while (((Iterator<DBObject>) cursorBadge).hasNext()) {
+						BasicDBObject objBadges = (BasicDBObject) ((Iterator<DBObject>) cursorBadge).next();
+						String documento = objBadges.getString("documento");
+						try {
+							JSONObject jsonBadge; 
+							jsonBadge = (JSONObject) parser.parse(documento);
+							JSONObject jsonDocumento = new JSONObject();
+							if (jsonBadge.get("tipo").equals("numero")){
+								ArrayList arrayListElementos = new ArrayList(); 
+								arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");
+								if (Integer.valueOf((String) jsonBadge.get("parametro")) < arrayListElementos.size() ){
+									jsonDocumento.put("_id", objBadges.getString("_id"));
+									jsonDocumento.put("nome", jsonBadge.get("nome"));
+									jsonDocumento.put("badge", jsonBadge.get("badge"));
+									jsonDocumento.put("entidadeCertificadora", jsonBadge.get("entidadeCertificadora"));
+								    jsonDocumento.put("descricao", jsonBadge.get("descricao"));
+								    jsonDocumento.put("habilidades", jsonBadge.get("habilidades")); 
+								    jsonDocumento.put("tags", jsonBadge.get("tags"));
+								    jsonDocumento.put("totalHabilidades", "");
+								    jsonDocumento.put("totalPossuiHabilidades", "");
+									jsonDocumento.put("arrayHabilidades", "");
+									documentos.add(jsonDocumento);									
+								};
+							};
+							if (jsonBadge.get("tipo").equals("numero interesse")){
+								ArrayList arrayListElementos = new ArrayList(); 
+								arrayListElementos = (ArrayList) jsonPerfil.get("habilidadesInteresse");
+								if (Integer.valueOf((String) jsonBadge.get("parametro")) < arrayListElementos.size() ){
+									jsonDocumento.put("_id", objBadges.getString("_id"));
+									jsonDocumento.put("nome", jsonBadge.get("nome"));
+									jsonDocumento.put("badge", jsonBadge.get("badge"));
+									jsonDocumento.put("entidadeCertificadora", jsonBadge.get("entidadeCertificadora"));
+								    jsonDocumento.put("descricao", jsonBadge.get("descricao"));
+								    jsonDocumento.put("habilidades", jsonBadge.get("habilidades")); 
+								    jsonDocumento.put("tags", jsonBadge.get("tags"));
+								    jsonDocumento.put("totalHabilidades", "");
+								    jsonDocumento.put("totalPossuiHabilidades", "");
+									jsonDocumento.put("arrayHabilidades", "");
+									documentos.add(jsonDocumento);									
+								};
+							};
+						} catch (ParseException e) {
+							e.printStackTrace();
+						}
+					};
+					mongoBadge.close();
+					return documentos;
+				} catch (UnknownHostException e) {
+					e.printStackTrace();
+				} catch (MongoException e) {
+					e.printStackTrace();
+				}
 			};
 			if (item.equals("habilidades") | item.equals("habilidades-interesse") |
 				item.equals("cursos-necessarias-habilidades") | item.equals("cursos-interesse-habilidades")){
 				ArrayList arrayList = new ArrayList(); 
 				if (item.equals("habilidades")){
-					arrayList = (ArrayList) jsonObject.get("habilidades");
+					arrayList = (ArrayList) jsonPerfil.get("habilidades");
 				}else{
-					arrayList = (ArrayList) jsonObject.get("habilidadesInteresse");
+					arrayList = (ArrayList) jsonPerfil.get("habilidadesInteresse");
 				}
 		    	Object array[] = arrayList.toArray(); 
 				int w = 0;
@@ -244,7 +304,7 @@ public class Rest_UserPerfil {
 			};
 			if (item.equals("habilidades-elementos")){
 				ArrayList arrayList = new ArrayList(); 
-				arrayList = (ArrayList) jsonObject.get("elementos");
+				arrayList = (ArrayList) jsonPerfil.get("habilidades");
 		    	Object array[] = arrayList.toArray(); 
 				int w = 0;
 				while (w < array.length) {
@@ -266,13 +326,13 @@ public class Rest_UserPerfil {
 					item.equals("habilidades-necessarias-carreira")){
 				ArrayList arrayList = new ArrayList(); 
 				if (item.equals("habilidades-necessarias-carreiras") | item.equals("cursos-necessarias-carreiras")){
-					arrayList = (ArrayList) jsonObject.get("carreiras");
+					arrayList = (ArrayList) jsonPerfil.get("carreiras");
 				}else{
-					arrayList = (ArrayList) jsonObject.get("carreirasInteresse");
+					arrayList = (ArrayList) jsonPerfil.get("carreirasInteresse");
 				}
 		    	Object array[] = arrayList.toArray(); 
 				ArrayList arrayListElementos = new ArrayList(); 
-				arrayListElementos = (ArrayList) jsonObject.get("elementos");
+				arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");
 		    	Object arrayElementos[] = arrayListElementos.toArray(); 
 		    	if (!elemento.equals("undefined")){
 		    		obterHabilidadesCursosNecessarias(elemento, arrayElementos, documentos, false);
@@ -293,13 +353,13 @@ public class Rest_UserPerfil {
 					item.equals("habilidades-necessarias-badge")){
 				ArrayList arrayList = new ArrayList(); 
 				if (item.equals("habilidades-necessarias-badges") | item.equals("cursos-necessarias-badges")){
-					arrayList = (ArrayList) jsonObject.get("badges");
+					arrayList = (ArrayList) jsonPerfil.get("badges");
 				}else{
-					arrayList = (ArrayList) jsonObject.get("badgesInteresse");
+					arrayList = (ArrayList) jsonPerfil.get("badgesInteresse");
 				}
 		    	Object array[] = arrayList.toArray(); 
 				ArrayList arrayListElementos = new ArrayList(); 
-				arrayListElementos = (ArrayList) jsonObject.get("elementos");
+				arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");
 		    	Object arrayElementos[] = arrayListElementos.toArray(); 
 		    	if (!elemento.equals("undefined")){
 		    		obterHabilidadesCursosNecessariasBadge(elemento, arrayElementos, documentos, false);
@@ -317,7 +377,7 @@ public class Rest_UserPerfil {
 			};
 			if (item.equals("cursos-interesse")){
 				ArrayList arrayList = new ArrayList(); 
-				arrayList = (ArrayList) jsonObject.get("cursosInteresse");
+				arrayList = (ArrayList) jsonPerfil.get("cursosInteresse");
 		    	Object array[] = arrayList.toArray(); 
 				int w = 0;
 				while (w < array.length) {
