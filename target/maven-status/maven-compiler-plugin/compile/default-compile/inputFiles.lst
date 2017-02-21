@@ -1,10 +1,13 @@
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Rest_Curso.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Setup.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Rest_UploadFiles.java
+C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Rest_Email.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\App.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Rest_Usuario.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Rest_Habilidade.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Rest_UserPerfil.java
+C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\SendEmail.java
+C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\SendEmailHtml.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Usuario.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Badge.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Carreira.java
@@ -15,3 +18,4 @@ C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Rest_Badge.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\UserPerfil.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Rest_Carreira.java
 C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\Curso.java
+C:\desenv\YggBoard\src\main\java\com\rcapitol\yggboard\TemplateEmail.java
