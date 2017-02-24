@@ -1195,4 +1195,10 @@
 	    rest_atualizaSetup(objSetup, semAcao, semAcao)
 
 	
+	    
+	    
+	};
+	
+	function postLinkedin () {
+		
 	};

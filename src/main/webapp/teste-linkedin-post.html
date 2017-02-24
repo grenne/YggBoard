@@ -1,0 +1,111 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+ 
+<html>
+ 
+<head>
+ 
+<title>LinkedIn JavaScript API Hello World</title>
+ 
+<script src="http://code.jquery.com/jquery-1.8.2.js"></script>
+ 
+<!-- 1. Include the LinkedIn JavaScript API and define a onLoad callback function -->
+ 
+<script type="text/javascript" src="//platform.linkedin.com/in.js">
+    api_key:   78x6wqgr2k8fru
+	onLoad: onLinkedInLoad
+	authorize: true
+</script>	
+ 
+<script type="text/javascript">
+ 
+function mandoMensaje(){
+    onLinkedInLoad();
+};
+
+function onLinkedInLoad() {
+  IN.Event.on(IN, "auth", shareContent);
+};
+
+function onSuccess(data) {
+  console.log(data);
+};
+
+function onError(error) {
+  console.log(error);
+};
+function shareContent() {
+	var BODY =  { "content": { "submitted-url": "http://www.yggboard.com", "title": "Yggboard" }, "visibility": {"code": "anyone"}, "comment": "nice link" };
+	IN.API.Raw("/people/~/shares") // Update (PUT) the status
+	.method("POST")
+    .body(JSON.stringify(BODY))
+	.result( function(result) { console.log ("postou") } )
+	.error(  function(error)  { /* do nothing */ } );
+};
+
+function shareContentyyy() {
+	var BODY =  { "content": { "submitted-url": "http://www.google.com", "title": "Yggboard" }, "visibility": {"code": "anyone"}, "comment": "nice link" };
+
+    IN.API.Raw("/people/~/shares")
+         .method("POST")
+         .body(JSON.stringify(BODY))
+		 .result(onSuccess)
+		 .error(onError);
+};
+
+
+function shareContentxx() {
+	 	var url = '/people/~/shares?format=json';
+        var payload = {
+	        "Content-Type": "application/json",
+	        "x-li-format": "json",
+	        "comment": "Hello world...",
+	        "content": {
+	            "title": "Yggboard",
+	            "description": "Aprenda o que realmente importa para você.",
+	            "submitted-url": "http://www.yggboard.com",  
+	            "submitted-image-url": "http://52.41.8.255:8080/yggboard/img/logo-login.png"
+	        },
+	       "visibility": {
+	           "code": "anyone"
+	       	}  
+        };
+  IN.API.Raw('/people/~/shares', $json)
+//		 .url (url)
+		 .method("POST")
+		 .body(JSON.stringify(payload))
+		 .result(onSuccess)
+		 .error(onError);
+}; 
+</script>
+ 
+</head>
+ 
+<body>
+ 
+<!-- need to be logged in to use Search; if not, offer a login button -->
+ 
+<div align="right">
+ 
+<script type="IN/Login"></script>
+ 
+</div>
+ 
+<center>
+ 
+<p>Teste post.</p>
+ 
+First Name: <input type="text" name="firstName" id="firstNameId"/><br/>
+ 
+Last Name: <input type="text" name="lastName" id="lastNameId"/><br/>
+ 
+<input type="button" name="searchLinkedIn" value="Search LinkedIn!" onclick="searchClick();"/>
+ 
+</center>
+ 
+<table id="resulttable">
+ 
+</table>
+ 
+</body>
+ 
+</html>
