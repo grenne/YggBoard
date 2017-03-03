@@ -28,8 +28,7 @@ VERSÃƒÆ’O: 1.0
 
 body {
 	font-family:'Poppins', Arial, Helvetica, sans-serif;
-	background-color: #DCE1D3;
-	background:url(../img/bg-login-cadastro.png) no-repeat; 
+	background-color: #97C466;
 }
 /* Reset de alguns elementos */
 
@@ -100,13 +99,13 @@ p {}
 }
 
 .btn-default {
-	border:1px solid #81818B;
-	background:#fff;
+	border:0;
+	background:#9A9AA2;
 	border-radius:0px;
 	font-size:12px;
 	display:inline-block;
-	padding:0px 25px;
-	color:#1F1F1F;
+	padding:0px;
+	color:#FFFFFF;
 	font-weight:500;
 	text-transform:uppercase;
 	height:40px;
@@ -115,8 +114,9 @@ p {}
 
 .btn-default:hover {
 	transition: .2s;
-	background:#9A9AA2;	
-	color:#fff !important;
+	background:none;
+	border-bottom:2px solid #1F1F1F;
+	color:#1F1F1F;
 }
 
 .btn-primary {
@@ -213,11 +213,20 @@ p {}
 
 /***  04. TOPO ***/
 
+header h1 {
+	background:url(../img/logo.png) no-repeat;
+	width:183px;
+	height:40px;
+	display:block;
+	margin-top:10px;
+	text-indent:-9999px;
+}
+
 
 .header {
    width:100px; 
    height:150px;
-   background-image:"img/logo-login.png";
+   background:url(../img/logo.png) no-repeat;
    margin:0; 
    padding-left:70px; 
    display: block;
@@ -274,8 +283,22 @@ h6 {
   	padding-bottom: 10px  !important;
   	color : #808080!important;
  }
- .info-2 {
-	font-size: 12px  !important;
+ .nova-imagem {
+	font-size: 14px  !important;
+	font-weight: bold !important; 
+	padding-top: 10px  !important;
+  	padding-bottom: 10px  !important;
+  	color : #AF723E!important;
+ }
+ .remove-imagem {
+	font-size: 14px  !important;
+	font-weight: bold !important; 
+	padding-top: 10px  !important;
+  	padding-bottom: 10px  !important;
+  	color : #ff0000!important;
+ }
+ .info {
+	font-size: 10px  !important;
 	font-weight: normal !important; 
 	padding-top: 10px  !important;
   	padding-bottom: 10px  !important;
@@ -736,11 +759,18 @@ section#conteudo .nav > li > a {
 	color: #000000 !important;
 	font-size: 80%;
 }
-.text-user-panel{
+.text-contact-panel{
 	padding-top: 0px;
 	padding-bottom: 0px;
-	padding-left: 15px;
+	padding-left: 0px;
 	padding-right: 0x;	
+}
+.text-contact-2-panel{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+	padding-right: 0x;
+	font-size: 70%;	
 }
 
 .box-user-tabs{

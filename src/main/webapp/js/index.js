@@ -9,7 +9,7 @@
 		localStorage.userNameEmail = "grenneglr@gmail.com";
 		localStorage.passwordEmail = "H2l2n1#0701";
 		if (localStorage.urlServidor == "localhost"){
-			localStorage.mainHost = "52.41.8.255";
+			localStorage.mainHost = "52.67.61.248";
 		}else{
 			localStorage.mainHost = localStorage.urlServidor;
 		};
@@ -83,5 +83,7 @@
 				console.log ("notok");
 			}
 		});
-
+		$(document).keypress(function(e) {
+		    if(e.which == 13) $("#btn-submit-login").click();
+		});
 	});

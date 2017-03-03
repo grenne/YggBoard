@@ -15,7 +15,7 @@
         <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
         <link href="plugins/bootstrap-validator/bootstrapValidator.min.css" rel="stylesheet" media="screen">
         <link href="plugins/bootstrap-datepicker/bootstrap-datepicker.min.css" rel="stylesheet" media="screen">
-        <link href="css/perfil.css" rel="stylesheet" media="screen">
+        <link href="css/contato.css" rel="stylesheet" media="screen">
         <link href="css/responsivo.css" rel="stylesheet" media="screen">
 	    <!--Font Awesome [ OPTIONAL ]-->
    		 <link href="plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet">
@@ -64,7 +64,7 @@
     
     <section id="nome-pagina">
     	<div class="container">
-    		<h2>Meu perfil</h2>
+    		<h2>Contato</h2>
             <div class="busca-geral pull-right">
 				<div class="input-group">
                     <input type="text" class=" form-control" placeholder="Procure por algo..." />
@@ -85,10 +85,10 @@
 		            <div class="col-md-12">
 			            <form id="form-register" >
 			            	<div>
-	                       		<span id="text-user-panel" class="text-user-panel">
-	                       		 Olá
-	                       		 <span class="userName"></span>
-	                       		 ! Aqui você poderá configurar e ajustar seu perfil.
+	                       		<span id="text-contact-panel" class="text-contact-panel">
+	                       		 Sua opinião é muito importante e válida para nós
+	                       		<br><span id="text-contact-2-panel" class="text-contact-2-panel">
+	                       		 Por favor, preencha os campos abaixo e em até 24 horas nós retornaremos.
 	                       		</span>
 			            	</div>
 			                <div class="row">
@@ -96,22 +96,21 @@
 				                <div class="col-sm-6">			                		
 				                    <div class="col-sm-12">
 				                        <div class="form-group">
-				                        	<label class="control-label">Primeiro nome:</label>
-				                            <input id="firstName" type="text" class="form-control" placeholder="" name="firstName">
+				                        	<label class="control-label">Nome:</label>
+				                            <input id="nome" type="text" class="form-control" placeholder="" name="nome">
 				                        </div>
 				                    </div>
 				                    <div class="col-sm-12">
 				                        <div class="form-group">
-						                    <label class="control-label">Último nome:</label>
-				                            <input id="lastName" type="text" class="form-control" placeholder="" name="lastName">
+						                    <label class="control-label">Instituição/Empresa:</label>
+				                            <input id="instituicao" type="text" class="form-control" placeholder="" name="instituicao">
 				                        </div>
 				                    </div>
-				                    <div class="col-sm-8">
+				                    <div class="col-sm-12">
 				                        <div class="form-group">
-						                    <label class="control-label">Data de nascimento:</label>
-				                            <input id="birthDate" data-provide="datepicker" type="text" class="form-control datepicker" placeholder="" name="birthDate">
-				                            <span class="info">(clique no mes/ano para modificar)</span>
-   				                        </div>
+						                    <label class="control-label">Categoria:</label>
+				                            <input id="categoria" type="text" class="form-control" placeholder="" name="categoria">
+				                        </div>
 				                    </div>
 			                    </div>
 			                    <div class="col-sm-6">
@@ -131,55 +130,18 @@
 			                    <div class="col-sm-12">
 				                    <div class="col-sm-12">
 				                        <div class="form-group">
-						                    <label class="control-label">Instituição/Empresa:</label>
-				                            <input id="institution" type="text" class="form-control" placeholder="" name="institution">
+						                    <label class="control-label">Mensagem:</label>
+				                            <textarea id="mensagem"  rows="4" cols="50" class="form-control" placeholder="" name="mensagem">
 				                        </div>
 				                    </div>
 								</div>
-			                    <div class="col-sm-6">
-				                    <div class="col-sm-12">
-				                        <div class="form-group">
-						                    <label class="control-label">Nova senha:</label>
-				                            <input id="password" type="password" class="form-control" placeholder="" name="password">
-				                        </div>
-				                    </div>
-				                    <div class="col-sm-12">
-				                        <div class="form-group">
-						                    <label class="control-label">Repetir nova senha:</label>
-				                            <input id="confirmPassword" type="password" class="form-control" placeholder="" name="confirmPassword">
-				                        </div>
-					                </div>
-			                    </div>
-			                    <div class="col-sm-6">
-				                    <div class="col-sm-6">
-									    <!-- The global progress bar --> 
-									   <div id="progress-photo" class="progress col-xs-04""> 
-									       <div class="progress-bar progress-bar-success"></div> 
-									    </div> 
-									    <!-- The container for the uploaded files --> 
-									    <div id="files-photo" class="input-value files col-xs-04""> 
-									    	<img id="img-photo" class="imgUpload">
-									    </div>
-				                    </div>
-				                    <div class="col-sm-6">
-				                    	<br><br><br><br>
-				                    	 <!-- The file input field used as target for the file upload widget -->
-									    <span class="fileinput-button nova-imagem"> 
-											<i class="fa fa-camera-retro"></i>  nova imagem 
-									        <input id="upload-img-photo" type="file" name="uploadedFile" class="imgUpload"> 
-											<input class="hide" type="text" id="photo" name="photo" placeholder="" disabled="disabled">
-									    </span> 
-				                   		<br>
-				                   		<a href="#" id="removeImagem" class="remove-imagem"><i class="fa fa fa-trash-o"></i>  apagar imagem</a></li>
-				                   </div>
-			                    </div>
 			                </div>
 		                    <div class="col-sm-12">
 			                    <label class='hide msgErro'></label>
 				            </div>
 				            <br><br>
 			                <div class="col-md-4">
-			                	<button id="btn-submit-perfil" class="btn btn-primary btn-lg btn-block" >ATUALIZAR PERFIL</button>
+			                	<button id="btn-submit-contato" class="btn btn-primary btn-lg btn-block" >ENVIAR EMAIL</button>
 			                </div>
 			                <div class="col-md-2">
 			                	<button id="btn-cancel" class="btn btn-default btn-lg btn-block" >CANCELAR</button>
@@ -250,6 +212,10 @@
 	<!-- js de chamada e montagem da tela -->
 	<script src="js-photo/manage-photo.js"></script>
 
+	<!-- send email -->
+	<script src="js-email/sendEmail.js"></script>
+	<script src="js-template-email/contato.js"></script>
+
     <!--rest commands-->
     <script src="js/rest_commands.js"></script>
 
@@ -259,8 +225,8 @@
     <!--Yggboard-->
     <script src="js/commons.js"></script>
 
-   <!--perfil-->
-    <script src="js/perfil.js"></script>
+   <!--contato-->
+    <script src="js/contact.js"></script>
 
     <script type='text/javascript'>
 	</script>

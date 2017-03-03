@@ -37,36 +37,31 @@ $(function() {
 		excluded: [':disabled'],
 		feedbackIcons: faIcon,
 		fields: {
-		firstName: {
+		nome: {
 			validators: {
 				notEmpty: {
-					message: 'Informe seu primeiro nome'
+					message: 'Informe seu nome'
 				},
 				stringLength: {
 					min: 4,
 					max: 30,
 					message: 'Nome tem que ser maior que 4 e menor que 30 caractreres'
-				},
-				regexp: {
-					regexp: /^[a-zA-Z_\.]+$/,
-					message: 'Nome tem que ter somente letras sem espaços'
 				}
 			}
-		},
-		lastName: {
+        },
+		categoria: {
 			validators: {
 				notEmpty: {
-					message: 'Informe seu ultimo nome'
+					message: 'Informe a categoria de sua dúvida'
 				}
 			}
-		},
-        birthDate: {
-            validators: {
-                date: {
-                    format: 'DD-MM-YYYY',
-   					message: 'Data inválida'
-                }
-            }
+        },
+		mensagem: {
+			validators: {
+				notEmpty: {
+					message: 'Informe a mensagem'
+				}
+			}
         },
 		email: {
 			validators: {
@@ -77,31 +72,10 @@ $(function() {
 					message: 'Informe um email valido'
 				}
 			}
-		},
-        password: {
-            validators: {
-				stringLength: {
-					min: 4,
-					max: 30,
-					message: 'Minimo e 4 caracteres'
-                },
-                identical: {
-                    field: 'confirmPassword',
-                    message: 'senha deve ser igual a senha confirmada'
-                }
-            }
-        },
-        confirmPassword: {
-            validators: {
-                identical: {
-                    field: 'password',
-                    message: 'confirmação deve ser igual a senha'
-                }
-            }
         }
 		}
 	}).on('status.field.bv', function(e, data) {
-		$('#btn-submit-perfil').attr("disabled", false);
+		$('#btn-submit-contato').attr("disabled", false);
 		formValido = true;
 		$('.msgErro').addClass("hide");
 		var $form     = $(e.target),
@@ -121,62 +95,46 @@ $(function() {
 			}
 		};
 		if (data.status == "INVALID"){
-			$('#btn-submit-perfil').attr("disabled", true);
+			$('#btn-submit-contato').attr("disabled", true);
 			formValido = false;
 		};	
-	});
-	
-	// *** seta plugins
-	$('#birthDate').datepicker({
-	    format : 'dd-mm-yyyy',
-		language : 'pt-BR'
+		$(document).keypress(function(e) {
+		    if(e.which == 13) $("#btn-submit-contato").click();
 		});
-	$("#birthDate").mask("99-99-9999",{placeholder:"dd-mm-yyyy"});
-	$("#celPhone").mask("(99)99999.9999",{placeholder:"(99)99999.9999"});
-
-	// *** limpa foto
-	$("#removeImagem").off('click');
-	$("#removeImagem").on('click', function () {
-    	$('#img-photo').remove();
-    	$('#photo').val("");
 	});
-	
+		
 	// *** submit
-	$("#btn-submit-perfil").off('click');
-	$("#btn-submit-perfil").on('click', function () {
+	$("#btn-submit-contato").off('click');
+	$("#btn-submit-contato").on('click', function () {
 		if (formValido){
-			jsonPerfil = JSON.parse(localStorage.jsonPerfil);
-			jsonPerfil.documento.email = $("#email").val();
-			jsonPerfil.documento.firstName = $("#firstName").val();
-			jsonPerfil.documento.lastName = $("#lastName").val();
-			if ($("#password").val()){
-				jsonPerfil.documento.password = $("#password").val();
-			};
-			jsonPerfil.documento.birthDate = $("#birthDate").val();
-			jsonPerfil.documento.institution = $("#institution").val();
-			jsonPerfil.documento.celPhone = $("#celPhone").val();
-			jsonPerfil.documento.photo = $("#photo").val();
-			rest_atualizaUsuario(jsonPerfil, usuarioAtualizado, usuarioErroAtualizacao);
+			jsonContato = JSON.parse(localStorage.jsonContato);
+			jsonContato.documento.email = $("#email").val();
+			jsonContato.documento.nome = $("#nome").val();
+			jsonContato.documento.instituicao = $("#intituicao").val();
+			jsonContato.documento.categoria = $("#categoria").val();
+			jsonContato.documento.institution = $("#mensagem").val();
+			jsonContato.documento.celPhone = $("#celPhone").val();
+			//
+			//  ** send email to confirm
+			//
+			rest_sendEmailHtml(localStorage.hostNameEmail, localStorage.userNameEmail , localStorage.passwordEmail, "grenneglr@gmail.com", "grenne@yggboard.com", "Contato - Yggboard", templateContato(), semAcao, semAcao );
 		}else{
 			console.log ("notok");
 		}
-	});
-	$(document).keypress(function(e) {
-	    if(e.which == 13) $("#btn-submit-perfil").click();
 	});
 });
 function montaTela (data){
 	
 	//  *** salva dados 
 	// *** inicializa registro
-	var jsonPerfil = 
+	var jsonContato = 
 		{
 			documento: 
 			{
 		        email : data.documento.email,
 		        firstName : data.documento.firstName,
 		        lastName : data.documento.lastName,
-		        perfil : data.documento.perfil,
+		        contato : data.documento.contato,
 		        city : data.documento.city,
 		        password : data.documento.password,
 		        birthDate : data.documento.birthDate,
@@ -187,7 +145,7 @@ function montaTela (data){
 			}
 		};
 
-	localStorage.jsonPerfil = JSON.stringify(jsonPerfil);
+	localStorage.jsonContato = JSON.stringify(jsonContato);
 	
 	//  *** monta tela
 	$('#firstName').val(data.documento.firstName);

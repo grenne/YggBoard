@@ -7,7 +7,7 @@ $(function() {
 	localStorage.loginOk = "false";
 	localStorage.urlServidor = window.location.hostname;
 	if (localStorage.urlServidor == "localhost"){
-		localStorage.mainHost = "52.41.8.255";
+		localStorage.mainHost = "52.67.61.248";
 	}else{
 		localStorage.mainHost = localStorage.urlServidor;
 	};
@@ -156,6 +156,9 @@ $(function() {
 		}else{
 			console.log ("notok");
 		}
+	});
+	$(document).keypress(function(e) {
+	    if(e.which == 13) $("#btn-submit-login").click();
 	});
 });
 
