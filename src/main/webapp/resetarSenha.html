@@ -35,7 +35,7 @@
 		<!-- LOGIN FORM -->
 		<!--===================================================-->
 		<div class="cls-content">
-		    <div class="cls-content-lg panel">
+		    <div class="cls-content-sm panel">
 		        <div class="panel-body">
 		            <div class="header col-md-12">
 		            	<div class="">
@@ -45,29 +45,23 @@
 		            <div class="col-md-12">
 			            <form id="form-login" >
 			            	<div>
-			            		<h6>Seja bem vindo(a) a nossa revolução!</h6>
+			            		<h6>Informe seu email para resetar a senha</h6>
 			            	</div>
-	   	                	<div class="col-md-12 info-2">
-	   	                		<p>
-									Obrigado por preencher nosso cadastro, é um prazer contar com sua participação!
-								</p>
-	   	                		<p>
-									Estamos atualmente trabalhando em modo Beta, com conteúdo e funcionalidades limitados.
-								</p>
-	   	                		<p>
-									Por este motivo, estamos também limitando o acesso à plataforma para não causar desconforto a nossos usuários.
-								</p>
-	   	                		<p>
-									Iremos analisar seu pedido de inscrição e liberaremos seu acesso o mais breve possível.
-								</p>
-	   	                		<p>
-									Mais uma vez obrigado pelo interesse e esperamos te conhecer melhor em breve!
-								</p>
-								<br>
-	   	                		<p>
-									Equipe YggBoard
-								</p>
-							</div>
+			                <div class="form-group">
+			                    <input id="email" name="email" type="text" class="form-control" placeholder="Login" autofocus>
+			                </div>
+			                <div class="col-md-12">
+			                    <label class='hide msgErro'>Usuário invalido</label>
+			                </div>
+			                <div class="col-md-12">
+			                	<button id="btn-submit-login" class="btn btn-primary btn-lg btn-block" >Resetar senha</button>
+			                </div>
+			                <div class="col-md-12 info">
+					            Voltar para o login? <a href="index.html" class="btn-link mar-lft">Clique aqui.</a>
+			                </div>
+			                <div class="col-md-12 info">
+					            Deixar um mensagem? <a href="contact.html" class="btn-link mar-lft">Deixe aqui.</a>
+			                </div>
 			            </form>
 			    	</div>
 		        </div>		
@@ -87,6 +81,10 @@
 	<!-- CUSTOM NOTIFICATION -->
 	<script src="js-notification/SmartNotification.min.js"></script>
 
+	<!-- send email -->
+	<script src="js-email/sendEmail.js"></script>
+	<script src="js-template-email/senha_provisoria.js"></script>
+
     <!--rest commands-->
     <script src="js/rest_commands.js"></script>
 
@@ -94,7 +92,7 @@
     <script src="js/main.js"></script>
 
     <!--index-->
-    <script src="js/index.js"></script>
+    <script src="js/resetarSenha.js"></script>
 
     <script type='text/javascript'>
 	  

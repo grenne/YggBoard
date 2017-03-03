@@ -2,10 +2,10 @@
  * 
  */
 
-function templateContato (){
+function templateSenhaProvisoria (email, senha){
 
 	
-	var emailContato = 
+	var senhaProvisoria = 
 '		<html>' +
 '		<body>' +
 '		    <table width="650px" cellspacing="0" cellpadding="0" border="0.2" color:"blue">' +
@@ -34,16 +34,13 @@ function templateContato (){
 '	                    <tr>' +
 '	                        <td align="left">' +
 '										<p>' +
-'											<span style="font-style: italic;font-size: 20px;" >O Sr(a).<small id="contato" style="font-style: italic;font-size: 20px;">' + $('#nome').val() + " email " + $('#email').val() + '</small></span>' +
+'											<span style="font-style: italic;font-size: 20px;" >Caro Sr.(a) segue sua senha provisória para o email <small id="contato" style="font-style: italic;font-size: 20px;">' + email + '</small></span>' +
 '										</p>' +
 '										<p >' +
-'											<span >Empresa/Instituição: <small style="font-style: italic;font-size: 20px;">' + $('#instituicao').val() + '</small></span><br>' +
+'											<span >Senha provisória: <small style="font-style: italic;font-size: 20px;">' + senha + '</small></span><br>' +
 '										</p>' +
 '										<p >' +
-'											<span >Assunto: <small style="font-style: italic;font-size: 20px;">' + $('#assunto').val() + '</small></span><br>' +
-'										</p>' +
-'										<p >' +
-'											<span >Mensagem: <small style="font-style: italic;font-size: 20px;">' + $('#mensagem').val() + '</small></span><br>' +
+'											<span >Troque sua senha depois do primeiro acesso em "Meu perfil"<br>' +
 '										</p>' +
 '	                        </td>' +
 '	                    </tr>' +
@@ -53,5 +50,5 @@ function templateContato (){
 '	    </table>' +
 '	</body>' +
 '	</html>';
-	return emailContato;
+	return senhaProvisoria;
 }

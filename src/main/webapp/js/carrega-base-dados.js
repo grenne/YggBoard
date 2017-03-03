@@ -1,7 +1,7 @@
 /**
  * 
  */
-
+Te
 function carregaHabilidadesTotal (){
 
 var habilidades = 

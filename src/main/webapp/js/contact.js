@@ -114,10 +114,11 @@ $(function() {
 			jsonContato.documento.categoria = $("#categoria").val();
 			jsonContato.documento.institution = $("#mensagem").val();
 			jsonContato.documento.celPhone = $("#celPhone").val();
+			jsonContato.documento.assunto = $("#assunto").val();
 			//
 			//  ** send email to confirm
 			//
-			rest_sendEmailHtml(localStorage.hostNameEmail, localStorage.userNameEmail , localStorage.passwordEmail, "grenneglr@gmail.com", "grenne@yggboard.com", "Contato - Yggboard", templateContato(), semAcao, semAcao );
+			rest_sendEmailHtml(localStorage.hostNameEmail, localStorage.userNameEmail , localStorage.passwordEmail, "grenneglr@gmail.com", "eric@yggboard.com", $("#assunto").val(), templateContato(), emailEnviado, semAcao );
 		}else{
 			console.log ("notok");
 		}
@@ -132,40 +133,23 @@ function montaTela (data){
 			documento: 
 			{
 		        email : data.documento.email,
-		        firstName : data.documento.firstName,
+		        nome : data.documento.firstName + " " + data.documento.lastName,
 		        lastName : data.documento.lastName,
-		        contato : data.documento.contato,
-		        city : data.documento.city,
-		        password : data.documento.password,
-		        birthDate : data.documento.birthDate,
 		        institution : data.documento.institution,
 		        celPhone : data.documento.celPhone,
-		        photo : data.documento.photo,
-		        gender : data.documento.gender				
 			}
 		};
 
 	localStorage.jsonContato = JSON.stringify(jsonContato);
 	
 	//  *** monta tela
-	$('#firstName').val(data.documento.firstName);
-	$('#lastName').val(data.documento.lastName);
-	$('#birthDate').val(data.documento.birthDate);
+	$('#nome').val(data.documento.firstName + " " + data.documento.lastName);
 	$('#email').val(data.documento.email);
 	$('#celPhone').val(data.documento.celPhone);
-	$('#institution').val(data.documento.institution);
-	$('#photo').val(data.documento.photo);
-	if (data.documento.photo){
-		carregaPhoto (localStorage.app, data.documento.photo, "photo");
-		carregaPhoto (localStorage.app, data.documento.photo, "photoHeader");
-	};
+	$('#instituicao').val(data.documento.institution);
 
 };
-function usuarioAtualizado (data){
-	$(window.document.location).attr('href','yggboard.html');
-};
-	
-function usuarioErroAtualizacao (data){
-	$('.msgErro').html("Erro na atualização, tente novamente");
-	$('.msgErro').removeClass("hide");
+
+function emailEnviado (){
+	window.history.back();
 };
