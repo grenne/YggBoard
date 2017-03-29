@@ -108,7 +108,13 @@
 	        	};
 	        	var compFaceDiv = "";
 	        	if (append == "badges_user_conquista_theader"){
-	        		compFaceDiv = '<div class="fb-share-button" data-href="http://52.67.61.248:8080/yggboard/' + compFacebook + '.html" data-layout="icon" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore fa fa-facebook-official" color="blue" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F52.67.61.248%3A8080%2Fyggboard%2F' + compFacebook + '.html&amp;src=sdkpreparse">Compartilhar</a></div>';
+	        		compFaceDiv =
+//	        			'<div class="fb-share-button"' + 
+//	        					' data-href="http://52.67.61.248:8080/yggboard/Beta_Tester.html"' + 
+//	        					' data-layout="button">' +
+//						' </div>'; 	
+	        			'<div class="fb-share-button" data-href="http://52.67.61.248:8080/yggboard/img/badges/' + badge.badge + '" data-layout="button" data-size="small" data-mobile-iframe="false"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F52.67.61.248%3A8080%2Fyggboard%2Fimg%2Fbadges%2F' + badge.badge + '&amp;src=sdkpreparse">Compartilhar</a></div>';	        			
+//	        			'<div class="fb-share-button" data-href="http://52.67.61.248:8080/yggboard/' + compFacebook + '.html" data-layout="icon" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore fa fa-facebook-official" color="blue" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2F52.67.61.248%3A8080%2Fyggboard%2F' + compFacebook + '.html&amp;src=sdkpreparse">Compartilhar</a></div>';
 	        	};
 	        	badge_user_perfil_table_row = 
 					'<tr id="itemBadgeUserPerfil_' + i + '" class="itemBadgeUserPerfil col-xs-12' + append + '"  data-totalHabilidades="' + badge.totalHabilidades + '"  data-possuiHabilidades="' + badge.totalPossuiHabilidades + '">' +

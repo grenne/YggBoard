@@ -337,6 +337,7 @@
     };
 
     function rest_incluirUsuario(objJson, action_ok, action_not_ok) {
+    	objJson.documento.email = objJson.documento.email.toLowerCase(); 
 		$.ajax({
 			type: "POST",
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/incluir",
@@ -423,6 +424,7 @@
     };
 
     function rest_atualizaUsuario(objJson, action_ok, action_not_ok, var1, var2) {
+    	objJson.documento.email = objJson.documento.email.toLowerCase();
 		$.ajax({
 			type: "POST",
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/atualizar",

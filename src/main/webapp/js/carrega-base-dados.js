@@ -1621,3 +1621,54 @@ function carregaBadgesTotal (){
 		i++;
 	};
 };
+
+function carregaUsuarios (){
+	/**
+	 * 	carrega usuarios
+	 */
+	
+	var usuarios =
+		'2016-07-12T01:12:39+0001;;;;Bruno;Gouvea;brugou@gmail.com&' +
+		'2016-07-12T01:12:39+0002;;;;André;Bringhenti;Andrebcr@hotmail.com&' +
+		'2016-07-12T01:12:39+0003;;;;Guilherme;Mariotto;guilhermecmf@gmail.com&' +
+		'2016-07-12T01:12:39+0004;;;;Rodrigo ;Machado;rodmachado@hotmail.com&' +
+		'2016-07-12T01:12:39+0005;;;;Rodrigo ;Morosky;rodrigo.morosky@gmail.com&' +
+		'2016-07-12T01:12:39+0006;;;;Vitor ;Gouvea Santos;vitgs0@gmail.com&' +
+		'2016-07-12T01:12:39+0007;;;;Aluizio ;Leal;aluizio.leal@hotmail.com&' +
+		'2016-07-12T01:12:39+0008;;;;Victor ;Grobberio;victor.grobberio@gmail.com&' +
+		'2016-07-12T01:12:39+0009;;;;Adriana ;Oka;adrioka@gmail.com&' +
+		'2016-07-12T01:12:39+0010;;;;Marcela ;Bermudes;marcela_bermudes@hotmail.com&' +
+		'2016-07-12T01:12:39+0011;;;;Luiz Gustavo;Suet Barriel;luizgustavos@yahoo.com.br&' +
+		'2016-07-12T01:12:39+0012;;;;Luiza ;Santos;lukgsantos@gmail.com&' +
+		'2016-07-12T01:12:39+0013;;;;Roberta ;Gagliano;gagliano.roberta@gmail.com&' +
+		'2016-07-12T01:12:39+0014;;;;João ;Prates Correia;joepcorreia@gmail.com&' +
+		'2016-07-12T01:12:39+0015;;;;Francisco;Souza;frasouza@gmail.com&' +
+		'2016-07-12T01:12:39+0016;;;;Thomas;Gouvea;tdgouvea@gmail.com&' +
+		'2016-07-12T01:12:39+0017;;;;Marcela ;Pereira;marcelapignanelli@hotmail.com&';
+	var arrayUsuario = usuarios.split("&");
+	var i = 0;
+	while (i < arrayUsuario.length) {
+		var arrayItensUsuario = arrayUsuario[i].split(";");
+		console.log ("carregando badge:" + arrayUsuario[i]);
+		var objJson  =
+		{
+				documento: 
+				{
+			        email : arrayItensUsuario[6],
+			        firstName : arrayItensUsuario[4],
+			        lastName : arrayItensUsuario[5],
+			        perfil : "user",
+			        city : "São Paulo",
+			        password : "mudar@123",
+			        gender : "",
+			        acceptTerms : "yes",
+			        status : "",
+			        dateTimeAcceptTerms : arrayItensUsuario[0]		        
+				}
+			};
+		
+		rest_incluirUsuario(objJson, semAcao, semAcao);
+
+		i++;
+	};
+};

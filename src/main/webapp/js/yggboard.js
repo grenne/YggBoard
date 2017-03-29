@@ -786,7 +786,7 @@
 		$( "#carregaBadges" ).bind( "click", function() {
 			$( ".inactive-tab").removeClass("nav-tab");
 			$( "#carregaBadges").addClass("nav-tab");
-			carregaBadgesTotal();
+			carregaUsuarios();
 		});
 
 		$( "#gravaDiagrama" ).bind( "click", function() {

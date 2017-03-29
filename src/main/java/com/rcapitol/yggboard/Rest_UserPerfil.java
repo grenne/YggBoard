@@ -152,7 +152,7 @@ public class Rest_UserPerfil {
 					arrayList = (ArrayList) jsonPerfil.get("badges");
 				}else{
 					arrayList = (ArrayList) jsonPerfil.get("badgesInteresse");
-				}
+				};
 		    	Object array[] = arrayList.toArray(); 
 				int w = 0;
 				while (w < array.length) {
@@ -223,6 +223,19 @@ public class Rest_UserPerfil {
 							JSONObject jsonBadge; 
 							jsonBadge = (JSONObject) parser.parse(documento);
 							JSONObject jsonDocumento = new JSONObject();
+							if (jsonBadge.get("tipo").equals("data")){
+								jsonDocumento.put("_id", objBadges.getString("_id"));
+								jsonDocumento.put("nome", jsonBadge.get("nome"));
+								jsonDocumento.put("badge", jsonBadge.get("badge"));
+								jsonDocumento.put("entidadeCertificadora", jsonBadge.get("entidadeCertificadora"));
+							    jsonDocumento.put("descricao", jsonBadge.get("descricao"));
+							    jsonDocumento.put("habilidades", jsonBadge.get("habilidades")); 
+							    jsonDocumento.put("tags", jsonBadge.get("tags"));
+							    jsonDocumento.put("totalHabilidades", "");
+							    jsonDocumento.put("totalPossuiHabilidades", "");
+								jsonDocumento.put("arrayHabilidades", "");
+								documentos.add(jsonDocumento);									
+							};
 							if (jsonBadge.get("tipo").equals("numero")){
 								ArrayList arrayListElementos = new ArrayList(); 
 								arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");

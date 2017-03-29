@@ -45,7 +45,7 @@ public class Rest_Usuario {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
 			DBCollection collection = db.getCollection("usuarios");
-			BasicDBObject searchQuery = new BasicDBObject("documento.email", email);
+			BasicDBObject searchQuery = new BasicDBObject("documento.email", email.toLowerCase());
 			DBObject cursor = collection.findOne(searchQuery);
 			JSONObject documento = new JSONObject();
 			if (cursor != null){
@@ -120,7 +120,7 @@ public class Rest_Usuario {
 				JSONObject documento = new JSONObject();
 				documento.putAll(mapJson);
 				BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(documento));
-				BasicDBObject searchQuery = new BasicDBObject("documento.email", email);
+				BasicDBObject searchQuery = new BasicDBObject("documento.email", email.toLowerCase());
 				@SuppressWarnings("unused")
 				DBObject cursor = collection.findAndModify(searchQuery,
 		                null,
