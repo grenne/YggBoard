@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+  <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="robots" content="index, follow" />
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />        
+		<meta property="og:url"           content="http://52.67.61.248:8080/yggboard/yggboard-new.html" />
+		<meta property="og:type"          content="website" />
+		<meta property="og:title"         content="Yggboard" />
+		<meta property="og:description"   content="Yggboard" />
+		<meta property="og:image"         content="http://52.67.61.248:8080/yggboard/rest/upload/images?image=logo.png" />
+        <title>YggBoard</title>
+
+	    <link rel="shortcut icon" href="img/icone-arvore.png" />
+
+		<!--unify-->
+	    <link rel="stylesheet" href="TemplateData/style.css">
+
+        <link rel="icon" href="img/icone-arvore.png">
+
+		<!--Tether -->
+        <link href="new/css/tether.min.css" rel="stylesheet" media="screen">
+
+		<!--BootstrapJS -->
+        <link href="new/css/bootstrap.min.css" rel="stylesheet" media="screen">
+
+		<!--Body -->
+        <link href="css/body.css" rel="stylesheet" media="screen">
+
+</head>
+<body>
+    <section id="conteudo">
+    	<div class="container">
+        	<div class="row">
+            	<div class="col-md-1 aside"></div>
+            	<div class="col-md-11 aside-nav"></div>
+			</div>
+		</div>
+	</section>
+	
+	<div id="fb-root">
+		<div class="row">
+			<div class="col-md-5">
+			</div>
+			<div class="col-md-2">
+				<label>Versão Beta</label>
+			</div>
+		</div>
+	</div>
+
+		<!--Scripts libs-->
+    	<!--jQuery-->
+    	<script src="new/js/jquery-3.2.0.min.js"></script>
+		<!--Tether-->
+		<script src="new/js/tether.min.js"></script>
+		<!--Bootstrap-->
+		<script src="new/js/bootstrap.min.js"></script>
+		
+		
+		<!--Linkedin 
+		<script type="text/javascript" src="//platform.linkedin.com/in.js">
+		    api_key:   78x6wqgr2k8fru
+		    onLoad:    postLinkedin
+		    authorize: true
+		</script>	
+-->
+		<!--Facebook -->
+		<script>
+		  window.fbAsyncInit = function() {
+		    FB.init({
+		      appId      : '1403788473016482',
+		      xfbml      : true,
+		      version    : 'v2.8'
+		    });
+		    FB.AppEvents.logPageView();
+		  };
+		
+		  (function(d, s, id){
+		     var js, fjs = d.getElementsByTagName(s)[0];
+		     if (d.getElementById(id)) {return;}
+		     js = d.createElement(s); js.id = id;
+		     js.src = "//connect.facebook.net/en_US/sdk.js";
+		     fjs.parentNode.insertBefore(js, fjs);
+		   }(document, 'script', 'facebook-jssdk'));
+		</script>
+</body>
+</html>

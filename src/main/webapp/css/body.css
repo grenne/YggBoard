@@ -1,0 +1,161 @@
+@CHARSET "ISO-8859-1";
+
+aside { 
+    display: block;
+}
+
+/****
+
+SITE: Sistema YggBoard
+DATA: 30/03/2017
+VERSÃO: 1.0
+
+
+/***************************************************/
+
+/***  01. IMPORTAÇOES ***/
+
+@import 'https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700';
+
+/***************************************************/
+
+/***  02. GERAL ***/
+
+body {
+	font-family:'Poppins', Arial, Helvetica, sans-serif;
+	background-color: #f0f0f0;
+}
+
+/* Reset de alguns elementos */
+
+h1, h2, h3, h4, h5, h6, p, ul, li {
+	padding:0;
+	margin:0;
+	line-height:100%;
+	font-weight:normal;
+	list-style:none;
+	border-radius:0;
+	box-shadow:none;
+}
+
+.clear {clear:both;}
+
+
+a {}
+a:hover {}
+
+h1 {}
+
+h2 {}
+
+h3 {}
+
+h4 {}
+
+h5 {}
+
+p {}
+
+
+.form-control {
+    border: 1px solid #EBEBED;
+    border-radius: 0px;
+	box-shadow: none;	
+    color: #9D9D9D;
+    font-size: 16px;
+	font-weight:300;
+	height:40px;
+	line-height:40px;
+}
+
+.form-control:focus {
+    border-color: #7B7B81;
+	color:#505058;
+	box-shadow: none;	
+}
+
+header {
+	background:#6D9E38;
+	height:60px;
+}
+
+header h1 {
+	background:url(../img/logo.png) no-repeat;
+	width:183px;
+	height:40px;
+	display:block;
+	margin-top:10px;
+	text-indent:-9999px;
+}
+
+header .nome-user {
+	color:#fff;
+	font-size:16px;
+	font-weight:500;
+	padding-left:5px;
+}
+
+header > .container > .navbar-nav > li > a {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+header > .container > .navbar-nav > li > a {
+    line-height: 0px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+header > .container > .nav > li > a {
+    display: block;
+    padding: 8px;
+    position: relative;
+	color:#444;
+}
+
+header > .container > .nav > li > a:focus, .nav > li > a:hover {
+    background-color: #c0c0c0;
+    text-decoration: none;
+}
+
+header .nav .open > a, .nav .open > a:focus, .nav .open > a:hover {
+    background-color: #c0c0c0;
+    border-color: transparent;
+}
+
+header .dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+    background-color: transparent;
+    color: #6D9E38;
+    text-decoration: none;
+}
+
+header .dropdown-menu {
+    border: none;
+}
+
+
+/* aside */
+.aside{
+	background-color: #808080;
+	height:100px;
+}
+.aside-nav{
+	background-color: #000000;
+	height:100px;
+}
+.aside-logo{
+	background:url(../img/logo.png) no-repeat;
+	width:50px;
+	height:50px;
+	margin-top:10px;
+}
+.widget{
+}
+.banner-painel-controle{
+	background-color: #408080;
+	height: 100;	
+}
+section {
+	padding:0 !important;
+	maragin:0 !important;
+}
