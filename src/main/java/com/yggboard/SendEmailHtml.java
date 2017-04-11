@@ -1,4 +1,4 @@
-package com.rcapitol.yggboard;
+package com.yggboard;
 
 import org.apache.commons.mail.DefaultAuthenticator;
 import org.apache.commons.mail.EmailException;

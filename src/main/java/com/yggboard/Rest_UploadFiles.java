@@ -1,4 +1,4 @@
-package com.rcapitol.yggboard;
+package com.yggboard;
 
 import java.io.File;
 import java.io.FileOutputStream;

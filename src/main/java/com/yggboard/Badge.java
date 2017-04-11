@@ -1,4 +1,4 @@
-package com.rcapitol.yggboard;
+package com.yggboard;
 
 import org.codehaus.jackson.annotate.JsonCreator;
 

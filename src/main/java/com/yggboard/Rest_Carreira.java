@@ -1,4 +1,4 @@
-package com.rcapitol.yggboard;
+package com.yggboard;
 
 import java.io.IOException;
 import java.net.UnknownHostException;

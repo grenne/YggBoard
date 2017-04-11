@@ -1,10 +1,10 @@
-package com.rcapitol.yggboard;
+package com.yggboard;
 
 import java.io.IOException;
 import java.net.UnknownHostException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 
 import javax.inject.Singleton;
@@ -37,19 +37,19 @@ import com.mongodb.MongoException;
 	
 @Singleton
 // @Lock(LockType.READ)
-@Path("/badges")
+@Path("/cursos")
 
-public class Rest_Badge {
+public class Rest_Curso {
 
 	@SuppressWarnings("unchecked")
 	@Path("/obter")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONObject ObterBadge(@QueryParam("badge") String badge) throws UnknownHostException, MongoException {
+	public JSONObject ObterCurso(@QueryParam("mail") String habilidade) throws UnknownHostException, MongoException {
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
-		DBCollection collection = db.getCollection("badges");
-		BasicDBObject searchQuery = new BasicDBObject("documento.mail", badge);
+		DBCollection collection = db.getCollection("cursos");
+		BasicDBObject searchQuery = new BasicDBObject("documento.habilidade", habilidade);
 		DBObject cursor = collection.findOne(searchQuery);
 		JSONObject documento = new JSONObject();
 		BasicDBObject obj = (BasicDBObject) cursor.get("documento");
@@ -61,14 +61,14 @@ public class Rest_Badge {
 	@Path("/incluir")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response Incluirbadges(Badge badges)  {
+	public Response IncluirCurso(Curso curso)  {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
-			DBCollection collection = db.getCollection("badges");
+			DBCollection collection = db.getCollection("cursos");
 			Gson gson = new Gson();
-			String jsonDocumento = gson.toJson(badges);
+			String jsonDocumento = gson.toJson(curso);
 			Map<String,String> mapJson = new HashMap<String,String>();
 			ObjectMapper mapper = new ObjectMapper();
 			mapJson = mapper.readValue(jsonDocumento, HashMap.class);
@@ -94,15 +94,15 @@ public class Rest_Badge {
 		return Response.status(500).build();
 		
 	};
-	@SuppressWarnings({ "unchecked", "unused" })
+	@SuppressWarnings("unchecked")
 	@Path("/atualizar")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response AtualizarDocumento(Badge doc) throws MongoException, JsonParseException, JsonMappingException, IOException {
-		String nome = doc.documento.nome;
+	public Response AtualizarDocumento(Habilidade doc) throws MongoException, JsonParseException, JsonMappingException, IOException {
+		String name = doc.documento.name;
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
-		DBCollection collection = db.getCollection("badges");
+		DBCollection collection = db.getCollection("cursos");
 		Gson gson = new Gson();
 		String jsonDocumento = gson.toJson(doc);
 		Map<String,String> mapJson = new HashMap<String,String>();
@@ -111,7 +111,8 @@ public class Rest_Badge {
 		JSONObject documento = new JSONObject();
 		documento.putAll(mapJson);
 		BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(documento));
-		BasicDBObject searchQuery = new BasicDBObject("documento.mail", nome);
+		BasicDBObject searchQuery = new BasicDBObject("documento.mail", name);
+		@SuppressWarnings("unused")
 		DBObject cursor = collection.findAndModify(searchQuery,
                 null,
                 null,
@@ -123,60 +124,32 @@ public class Rest_Badge {
 		return Response.status(200).build();
 	};
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@SuppressWarnings("unchecked")
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONArray ObterBadges() {
+	public JSONArray ObterCursos(@QueryParam("habilidade") String habilidade) {
 
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
 
-			DBCollection collection = db.getCollection("badges");
+			BasicDBObject setQuery = new BasicDBObject();
+		    if (habilidade != null){
+		    	setQuery.put("documento.habilidades.habilidade", habilidade);
+		    };
+			DBCollection collection = db.getCollection("cursos");
 			
-			DBCursor cursor = collection.find();
+			DBCursor cursor = collection.find(setQuery);
 			JSONArray documentos = new JSONArray();
 			while (((Iterator<DBObject>) cursor).hasNext()) {
 				JSONParser parser = new JSONParser(); 
-				BasicDBObject objBadges = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
-				String documento = objBadges.getString("documento");
+				BasicDBObject objCurso = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
+				String documento = objCurso.getString("documento");
 				try {
-					JSONObject jsonObject; 
-					jsonObject = (JSONObject) parser.parse(documento);
 					JSONObject jsonDocumento = new JSONObject();
-					jsonDocumento.put("_id", objBadges.getString("_id"));
-					jsonDocumento.put("nome", jsonObject.get("nome"));
-					jsonDocumento.put("badge", jsonObject.get("badge"));
-					jsonDocumento.put("entidadeCertificadora", jsonObject.get("entidadeCertificadora"));
-				    jsonDocumento.put("descricao", jsonObject.get("descricao"));
-				    jsonDocumento.put("habilidades", jsonObject.get("habilidades")); 
-				    jsonDocumento.put("tags", jsonObject.get("tags"));
-			    	ArrayList arrayListHabilidades = new ArrayList(); 
-			    	arrayListHabilidades = (ArrayList) jsonObject.get("habilidades");
-			    	Object arrayHabilidades[] = arrayListHabilidades.toArray(); 
-					int w = 0;
-					JSONArray habilidadesArray = new JSONArray();
-					while (w < arrayHabilidades.length) {
-						Mongo mongoHabilidade = new Mongo();
-						DB dbHabilidade = (DB) mongoHabilidade.getDB("documento");
-						DBCollection collectionHabilidade = dbHabilidade.getCollection("habilidades");
-						BasicDBObject searchQueryHabilidade = new BasicDBObject("documento.idHabilidade", arrayHabilidades[w]);
-						DBObject cursorHabilidade = collectionHabilidade.findOne(searchQueryHabilidade);
-						if (cursorHabilidade != null){
-							BasicDBObject obj = (BasicDBObject) cursorHabilidade.get("documento");
-							JSONObject jsonHabilidades = new JSONObject();
-							jsonHabilidades.put("idHabilidade", arrayHabilidades[w]);
-							jsonHabilidades.put("name", obj.get("name"));
-							jsonHabilidades.put("classes", obj.get("classes"));
-							jsonHabilidades.put("parent", obj.get("parent"));
-							habilidadesArray.add (jsonHabilidades);
-						}
-						mongoHabilidade.close();
-						++w;
-					};
-					jsonDocumento.put("arrayHabilidades", habilidadesArray);
+				    jsonDocumento.put("documento", (JSONObject) parser.parse(documento));
 					documentos.add(jsonDocumento);
 				} catch (ParseException e) {
 					e.printStackTrace();

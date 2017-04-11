@@ -1,4 +1,4 @@
-package com.rcapitol.yggboard;
+package com.yggboard;
 
 import javax.inject.Singleton;
 import javax.ws.rs.GET;
