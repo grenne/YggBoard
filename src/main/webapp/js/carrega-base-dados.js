@@ -1806,4 +1806,15 @@ function limpaTexto (texto){
 	};
 	
 	return "";
+		
+};
+
+function atualizaCursosSugeridos(){
+	var objJson = 
+	{"cursosSugeridos":[
+		  {"email":"grenneglr@gmail.com","cursos":[40,34,56,78]},
+		  {"email":"teste@gmail.com","cursos":[1,2,3,4]}
+		  ]};
+	
+	rest_atualizaCursosSugeridos(objJson, semAcao, semAcao)
 };

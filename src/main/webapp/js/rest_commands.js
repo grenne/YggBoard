@@ -235,7 +235,7 @@
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/obter/itens?usuario=" + localStorage.usuarioEmail + "&item=" + item  + "&elemento=" + var2,
             contentType: "application/json; charset=utf-8",
-            dataType: 'jsonp',
+            dataType: 'json',
             
     	})
     	.done(function( data ) {
@@ -585,7 +585,7 @@
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/obter/itens?characters=" + setupKey,
             contentType: "application/json; charset=utf-8",
-            dataType: 'jsonp',
+            dataType: 'json',
             
     	})
     	.done(function( data ) {
@@ -606,7 +606,8 @@
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/lista?characters=" + characters,
             contentType: "application/json; charset=utf-8",
-            dataType: 'jsonp',
+            dataType: 'json',
+            global: false,
             
     	})
     	.done(function( data ) {
@@ -621,4 +622,25 @@
     	})
     	.always(function(data) {
     	});
+    };
+
+    function rest_atualizaCursosSugeridos(objJson, action_ok, action_not_ok) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/cursosSugeridos",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson)
+		})
+	  	.done(function( data ) {
+	  	})
+        .fail(function(data) {
+        })
+       	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok ();
+        	}else{
+        		action_not_ok()
+        	};
+       	});
     };

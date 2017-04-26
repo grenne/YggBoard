@@ -828,5 +828,50 @@ public class Rest_UserPerfil {
 		}
 		return null;
 	};
+	
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	@Path("/cursosSugeridos")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response cursosSugeridos(JSONObject inputCursosSugeridos)  {
+		
+		Mongo mongo;
+			try {
+				mongo = new Mongo();
+				DB db = (DB) mongo.getDB("documento");
+				DBCollection collection = db.getCollection("userPerfil");
+				List arrayCursosSugeridos = (List) inputCursosSugeridos.get("cursosSugeridos");
+				for (int i = 0; i < arrayCursosSugeridos.size(); i++) {
+					JSONObject cursosSugeridos = new JSONObject();
+					cursosSugeridos.putAll((Map) arrayCursosSugeridos.get(i));
+					String email = (String) cursosSugeridos.get("email");
+					BasicDBObject searchQuery = new BasicDBObject("documento.usuario", email);
+					DBObject cursor = collection.findOne(searchQuery);
+					if (cursor == null){
+						mongo.close();
+						return Response.status(404).build();
+					};
+					BasicDBObject objUserPerfil = (BasicDBObject) cursor.get("documento");
+					objUserPerfil.remove("cursosSugeridos");
+					objUserPerfil.put("cursosSugeridos", cursosSugeridos.get("cursos"));
+					BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(objUserPerfil));
+					searchQuery = new BasicDBObject("documento.usuario", email);
+					cursor = collection.findAndModify(searchQuery,
+			                null,
+			                null,
+			                false,
+			                update,
+			                true,
+			                false);
+				};
+				mongo.close();
+				return Response.status(200).build();
+			} catch (UnknownHostException e) {
+				e.printStackTrace();
+			} catch (MongoException e) {
+				e.printStackTrace();
+			};
+			return null;
+	};
 
 };

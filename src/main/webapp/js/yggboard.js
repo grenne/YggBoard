@@ -791,7 +791,8 @@
 			$( ".inactive-tab").removeClass("nav-tab");
 			$( "#carregaBadges").addClass("nav-tab");
 //			carregaUsuarios();
-			carregaIndex();
+//			carregaIndex();
+			atualizaCursosSugeridos();
 		});
 
 		$( "#gravaDiagrama" ).bind( "click", function() {
