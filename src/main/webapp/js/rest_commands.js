@@ -134,6 +134,67 @@
     	});
     };
 
+    function rest_obterCursos(action_ok, action_not_ok, var1, var2) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/cursos/lista",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+    	})
+    	.done(function( data ) {
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
+    	})
+    	.fail(function(data) {
+			action_not_ok (data, var1, var2);	
+    	})
+    	.always(function(data) {
+    	});
+    };
+
+    function rest_obterAreaAtuacao(action_ok, action_not_ok, var1, var2) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/areaatuacao/lista",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+    	})
+    	.done(function( data ) {
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
+    	})
+    	.fail(function(data) {
+			action_not_ok (data, var1, var2);	
+    	})
+    	.always(function(data) {
+    	});
+    };
+
+
+    function rest_obterAreaConhecimento(action_ok, action_not_ok, var1, var2) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/areaconhecimento/lista",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+    	})
+    	.done(function( data ) {
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
+    	})
+    	.fail(function(data) {
+			action_not_ok (data, var1, var2);	
+    	})
+    	.always(function(data) {
+    	});
+    };
+
     function rest_obterCursosHabilidade(habilidade, action_ok, action_not_ok, var1, var2, var3) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/cursos/lista?habilidade=" + habilidade,
@@ -174,7 +235,8 @@
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/obter/itens?usuario=" + localStorage.usuarioEmail + "&item=" + item  + "&elemento=" + var2,
             contentType: "application/json; charset=utf-8",
-            dataType: 'json'
+            dataType: 'jsonp',
+            
     	})
     	.done(function( data ) {
     		if (data){
@@ -190,6 +252,7 @@
     	});
     };
     
+
     function rest_obterUsuario(email, action_ok, action_not_ok, var1, var2) {
     	$.ajax({
 			url : "http://" + localStorage.urlServidor + ":8080/yggboard/rest/usuario/obter?email=" + email,
@@ -376,6 +439,29 @@
         	};
        	});
     };
+
+    
+    function rest_incluiIndex(objJson, action_ok, action_not_ok) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/incluir",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson)
+		})
+	  	.done(function( data ) {
+	  	})
+        .fail(function(data) {
+        })
+       	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok ();
+        	}else{
+        		action_not_ok()
+        	};
+       	});
+    };
+
     function rest_atualizaHabilidade(objJson, action_ok, action_not_ok, afterUpdate) {
 		$.ajax({
 			type: "POST",
@@ -493,4 +579,46 @@
         	};
     	});
 
+    };
+
+    function rest_obterItensFiltro(item, action_ok, action_not_ok, var1, var2, var3) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/obter/itens?characters=" + setupKey,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'jsonp',
+            
+    	})
+    	.done(function( data ) {
+    		if (data){
+    			action_ok (data, var1, var2, var3);
+    		}else{
+    			action_not_ok (data, var1, var2, var3);	
+    		};
+    	})
+    	.fail(function(data) {
+    		action_not_ok(null, var1, var2, var3)
+    	})
+    	.always(function(data) {
+    	});
+    };
+
+    function rest_obterIndex(characters, action_ok, action_not_ok, var1, var2, var3) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/lista?characters=" + characters,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'jsonp',
+            
+    	})
+    	.done(function( data ) {
+    		if (data){
+    			action_ok (data, var1, var2, var3);
+    		}else{
+    			action_not_ok (data, var1, var2, var3);	
+    		};
+    	})
+    	.fail(function(data) {
+    		action_not_ok(null, var1, var2, var3)
+    	})
+    	.always(function(data) {
+    	});
     };

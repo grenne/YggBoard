@@ -1,5 +1,6 @@
 package com.yggboard;
 
+import java.awt.print.Book;
 import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.bson.BasicBSONObject;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -38,9 +40,9 @@ import com.mongodb.MongoException;
 	
 @Singleton
 // @Lock(LockType.READ)
-@Path("/userPerfil")
+@Path("/index")
 
-public class Rest_UserPerfil {
+public class Rest_Index {
 
 	@SuppressWarnings("unchecked")
 	@Path("/obter")	
@@ -68,7 +70,6 @@ public class Rest_UserPerfil {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public JSONArray ObterCarreiras(@QueryParam("usuario") String usuario, @QueryParam("item") String item, @QueryParam("elemento") String elemento) throws UnknownHostException, MongoException {
-		Commons commons = new Commons();
 		System.out.println("inicio rest");
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
@@ -84,6 +85,20 @@ public class Rest_UserPerfil {
 		try {
 			System.out.println("inicio try");
 			jsonPerfil = (JSONObject) parser.parse(docUserPerfil);
+			
+			// qdo escolhida uma habilidade trazer todos os pré-requisitos, objetivos, cursos, area de atuação da habiidade e área e conhecimento dos objetivos
+			//
+			// qdo escolhida uma objetivo trazer todas habilidades e seus pré-requisitos, objetivos da mesma aréa de atuação , cursos das habilidades, area de atuação das habilidades e área e conhecimento das habilidades
+			//
+			// qdo escolhida uma curso trazer todas habilidades, objetivos das habilidades , cursos só ele, area de atuação dos objetivos e área e conhecimento das habilidades
+			//
+			// qdo escolhida uma area de atuação trazer todos objetivos, as habilidades, cursos das habilidades, area de atuação só a selecionada e área e conhecimento das habilidades
+			//
+			// qdo escolhida uma area de conhecimento trazer todas habilidades, objetivos das habilidades, cursos das habilidades, area de conhecimento só a selecionada e área de atuação de todos os objetivos
+			
+			
+			
+			
 			if (item.equals("carreiras") | item.equals("carreiras-interesse") | item.equals("carreiras-sugeridas")){
 				ArrayList arrayList = new ArrayList(); 
 				if (item.equals("carreiras")){
@@ -425,7 +440,6 @@ public class Rest_UserPerfil {
 						String idCurso = cursoInscrito.get("id").toString();
 						searchQueryCursos.put("documento.idCurso", idCurso);
 						jsonDocumento.put("inscricao", cursoInscrito.get("inscricao").toString());
-						jsonDocumento.put("todaysDate", commons.todaysDate("inv_month_number"));
 					}else{
 						searchQueryCursos = new BasicDBObject("documento.idCurso", array[w]);
 					};
@@ -449,14 +463,14 @@ public class Rest_UserPerfil {
 	@Path("/incluir")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response IncluirCurso(UserPerfil userPerfil)  {
+	public Response IncluirCurso(Index index)  {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
-			DBCollection collection = db.getCollection("userPerfil");
+			DBCollection collection = db.getCollection("index");
 			Gson gson = new Gson();
-			String jsonDocumento = gson.toJson(userPerfil);
+			String jsonDocumento = gson.toJson(index);
 			Map<String,String> mapJson = new HashMap<String,String>();
 			ObjectMapper mapper = new ObjectMapper();
 			mapJson = mapper.readValue(jsonDocumento, HashMap.class);
@@ -512,11 +526,11 @@ public class Rest_UserPerfil {
 		return Response.status(200).build();
 	};
 	
-	@SuppressWarnings({ "unchecked", "unused" })
+	@SuppressWarnings({ "unchecked" })
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONArray ObterCursos(@QueryParam("usuario") String usuario) {
+	public JSONArray ObterCursos(@QueryParam("characters") String characters) {
 
 		Mongo mongo;
 		try {
@@ -524,13 +538,11 @@ public class Rest_UserPerfil {
 			DB db = (DB) mongo.getDB("documento");
 
 			BasicDBObject setQuery = new BasicDBObject();
-		    if (usuario != null){
-		    	setQuery.put("documento.usuario", usuario);
-		    };
-			DBCollection collection = db.getCollection("userPerfil");
-			
+			DBCollection collection = db.getCollection("index");
+			setQuery.put("documento.assunto", "Objetivo");			
 			DBCursor cursor = collection.find(setQuery);
 			JSONArray documentos = new JSONArray();
+			int i = 0;
 			while (((Iterator<DBObject>) cursor).hasNext()) {
 				JSONParser parser = new JSONParser(); 
 				BasicDBObject objUserPerfil = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
@@ -539,8 +551,103 @@ public class Rest_UserPerfil {
 					JSONObject jsonObject; 
 					jsonObject = (JSONObject) parser.parse(documento);
 					JSONObject jsonDocumento = new JSONObject();
-				    jsonDocumento.put("documento", (JSONObject) parser.parse(documento));
-					documentos.add(jsonDocumento);
+					String [] wordsSource = limpaChar (characters).split(" ");
+					@SuppressWarnings("rawtypes")
+					List wordsCompare = (List) jsonObject.get("texto");
+					if (wordsoK (wordsSource, wordsCompare)){
+						jsonDocumento.put("assunto", jsonObject.get("assunto"));
+						jsonDocumento.put("entidade", jsonObject.get("entidade"));
+						documentos.add(jsonDocumento);
+						++i;
+						if (i > 5){
+							mongo.close();
+							return documentos;						
+						};
+					};
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+			};
+			setQuery.put("documento.assunto", "Badge");			
+			cursor = collection.find(setQuery);
+			i = 0;
+			while (((Iterator<DBObject>) cursor).hasNext()) {
+				JSONParser parser = new JSONParser(); 
+				BasicDBObject objUserPerfil = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
+				String documento = objUserPerfil.getString("documento");
+				try {
+					JSONObject jsonObject; 
+					jsonObject = (JSONObject) parser.parse(documento);
+					JSONObject jsonDocumento = new JSONObject();
+					String [] wordsSource = limpaChar (characters).split(" ");
+					@SuppressWarnings("rawtypes")
+					List wordsCompare = (List) jsonObject.get("texto");
+					if (wordsoK (wordsSource, wordsCompare)){
+						jsonDocumento.put("assunto", jsonObject.get("assunto"));
+						jsonDocumento.put("entidade", jsonObject.get("entidade"));
+						documentos.add(jsonDocumento);
+						++i;
+						if (i > 5){
+							mongo.close();
+							return documentos;						
+						};
+					};
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+			};
+			setQuery.put("documento.assunto", "Habilidade");			
+			cursor = collection.find(setQuery);
+			i = 0;
+			while (((Iterator<DBObject>) cursor).hasNext()) {
+				JSONParser parser = new JSONParser(); 
+				BasicDBObject objUserPerfil = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
+				String documento = objUserPerfil.getString("documento");
+				try {
+					JSONObject jsonObject; 
+					jsonObject = (JSONObject) parser.parse(documento);
+					JSONObject jsonDocumento = new JSONObject();
+					String [] wordsSource = limpaChar (characters).split(" ");
+					@SuppressWarnings("rawtypes")
+					List wordsCompare = (List) jsonObject.get("texto");
+					if (wordsoK (wordsSource, wordsCompare)){
+						jsonDocumento.put("assunto", jsonObject.get("assunto"));
+						jsonDocumento.put("entidade", jsonObject.get("entidade"));
+						documentos.add(jsonDocumento);
+						++i;
+						if (i > 5){
+							mongo.close();
+							return documentos;						
+						};
+					};
+				} catch (ParseException e) {
+					e.printStackTrace();
+				}
+			};
+			setQuery.put("documento.assunto", "Curso");			
+			cursor = collection.find(setQuery);
+			i = 0;
+			while (((Iterator<DBObject>) cursor).hasNext()) {
+				JSONParser parser = new JSONParser(); 
+				BasicDBObject objUserPerfil = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
+				String documento = objUserPerfil.getString("documento");
+				try {
+					JSONObject jsonObject; 
+					jsonObject = (JSONObject) parser.parse(documento);
+					JSONObject jsonDocumento = new JSONObject();
+					String [] wordsSource = limpaChar (characters).split(" ");
+					@SuppressWarnings("rawtypes")
+					List wordsCompare = (List) jsonObject.get("texto");
+					if (wordsoK (wordsSource, wordsCompare)){
+						jsonDocumento.put("assunto", jsonObject.get("assunto"));
+						jsonDocumento.put("entidade", jsonObject.get("entidade"));
+						documentos.add(jsonDocumento);
+						++i;
+						if (i > 5){
+							mongo.close();
+							return documentos;						
+						};
+					};
 				} catch (ParseException e) {
 					e.printStackTrace();
 				}
@@ -555,6 +662,108 @@ public class Rest_UserPerfil {
 		return null;
 	};
 
+	private boolean wordsoK(String[] wordsSource, @SuppressWarnings("rawtypes") List wordsCompare) {
+		int i = 0;
+		int palavraIgual = 0;
+		System.out.println(wordsSource.length);
+		System.out.println(i);
+		while (i < wordsSource.length) {
+			char[] letrasSource = wordsSource[i].toCharArray();
+			if (letrasSource.length > 0){
+				int w = 0;
+				Boolean achouPalavra = false;
+				while (w < wordsCompare.size()) {
+					int charIgual = 0;
+					char[] letrasCompare = limpaChar((String) wordsCompare.get(w)).toCharArray();
+					if (letrasCompare.length > 0 && !achouPalavra){
+						int z = 0;
+						int jSalvo = 0;
+						if (letrasSource[0] == letrasCompare[0]){
+							while (z < letrasSource.length) {
+								int j = jSalvo;
+								Boolean letraIgual = false;
+								int pulaLetra = 0;
+								while (j < letrasCompare.length) {
+									if (letrasSource[z] == letrasCompare[j]){
+										if (!letraIgual && pulaLetra < 2){
+											++charIgual;
+											letraIgual = true;
+											jSalvo = j;
+										};
+									}else{
+										++pulaLetra;
+									};
+									++j;
+								};
+								++z;
+							};
+						};
+						if (charIgual != 0 && !achouPalavra) {
+							if (((charIgual / letrasSource.length) * 100) > 70){
+								++palavraIgual;
+								achouPalavra = true;
+								if (palavraIgual >= wordsSource.length){
+									return true;	
+								};
+							};
+						};
+					};
+					++w;
+				};	
+			};
+			++i;
+		};
+		if (palavraIgual >= wordsSource.length){
+			return true;	
+		};
+		return false;
+	}
+	private String limpaChar(String characters) {
+		characters = characters.toLowerCase();
+		switch (characters) {
+		case "ã":
+			characters = "a";
+	        break;
+		case "à":
+			characters = "a";
+	        break;
+		case "á":
+	        characters = "a";
+	        break;
+		case "â":
+	        characters = "a";
+	        break;
+	    case "é":
+	    	characters = "e";
+	        break;
+	    case "ê":
+	    	characters = "e";
+	        break;
+	    case "í":
+	    	characters = "i";
+	        break;
+	    case "ô":
+	    	characters = "o";
+	        break;
+	    case "õ":
+	    	characters = "o";
+	        break;
+	    case "ó":
+	    	characters = "o";
+	        break;
+	    case "ú":
+	    	characters = "u";
+	        break;
+	    case "ç":
+	    	characters = "c";
+	        break;
+		default:
+			break;
+		};
+		return characters;
+
+	};
+	
 	@SuppressWarnings("unchecked")
 	private ArrayList<String> obterHabilidadesCursosNecessarias(Object carreira, Object[] arrayElementos, JSONArray documentos, Boolean obterCursos) {
 		Mongo mongo;

@@ -35,7 +35,11 @@ public class UserPerfil {
 		public String habilidades[];
 		public String carreirasInteresse[];
 		public String carreiras[];
+		public String carreirasSugeridas[];
 		public String cursosInteresse[];
+		public CursosInscritos cursosInscritos[];
+		public String cursosAndamento[];
+		public String cursos[];
 		public String badges[];
 		public String badgesInteresse[];
 		public String tags[];
@@ -51,9 +55,13 @@ public class UserPerfil {
 						String [] elementos,
 						String [] habilidadesInteresse,
 						String [] habilidades,
+						String [] carreirasSugeridas,
 						String [] carreirasInteresse,
+						CursosInscritos [] cursosInscritos,
 						String [] carreiras,
 						String [] cursosInteresse,
+						String [] cursosAndamento,
+						String [] cursos,
 						String [] badges,
 						String [] badgesInteresse,
 						String [] tags
@@ -62,9 +70,13 @@ public class UserPerfil {
 						this.elementos = elementos;
 						this.habilidadesInteresse = habilidadesInteresse; 
 						this.habilidades = habilidades; 
+						this.carreirasSugeridas = carreirasSugeridas; 
 						this.carreirasInteresse = carreirasInteresse; 
 						this.carreiras = carreiras; 
 						this.cursosInteresse = cursosInteresse;
+						this.cursosAndamento = cursosAndamento;
+						this.cursosInscritos = cursosInscritos;
+						this.cursos = cursos;
 						this.badges = badges; 
 						this.badgesInteresse = badgesInteresse;
 						this.tags = tags; 
@@ -73,5 +85,24 @@ public class UserPerfil {
 		public String toString() {
 			return new StringBuffer(" usuario : ").append(this.usuario).append("  nome : ").toString();
 		}
+
+		public static final class CursosInscritos {
+    		public String id;
+    		public String inscricao;
+
+    		public CursosInscritos() {
+
+			}
+   
+            @JsonCreator
+            public CursosInscritos(
+            			String id,
+            			String inscricao
+            			)
+            {
+	    		this.id = id;
+	    		this.inscricao = inscricao;
+            };
+		};
 	}
 } 

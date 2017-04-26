@@ -448,9 +448,13 @@
 					elementos : [],
 					habilidadesInteresse : [],
 					habilidades : [],
+					carreirasSugeridas : [],
 					carreirasInteresse : [],
 					carreiras : [],
 					cursosInteresse : [],
+					cursosInscritos : [],
+					cursosAndamento : [],
+					cursos : [],
 					badges : [],
 					badgesInteresse : [],
 					tags : []
@@ -786,7 +790,8 @@
 		$( "#carregaBadges" ).bind( "click", function() {
 			$( ".inactive-tab").removeClass("nav-tab");
 			$( "#carregaBadges").addClass("nav-tab");
-			carregaUsuarios();
+//			carregaUsuarios();
+			carregaIndex();
 		});
 
 		$( "#gravaDiagrama" ).bind( "click", function() {

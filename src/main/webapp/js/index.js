@@ -13,6 +13,7 @@
 		}else{
 			localStorage.mainHost = localStorage.urlServidor;
 		};
+//		localStorage.urlServidor = "52.67.61.248";
 
 		// FORM VALIDATION FEEDBACK ICONS
 		// =================================================================
