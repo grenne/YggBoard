@@ -841,11 +841,13 @@ public class Rest_UserPerfil {
 				DB db = (DB) mongo.getDB("documento");
 				DBCollection collection = db.getCollection("userPerfil");
 				List arrayCursosSugeridos = (List) inputCursosSugeridos.get("cursosSugeridos");
+				System.out.println("chamou");
 				for (int i = 0; i < arrayCursosSugeridos.size(); i++) {
 					JSONObject cursosSugeridos = new JSONObject();
 					cursosSugeridos.putAll((Map) arrayCursosSugeridos.get(i));
-					String email = (String) cursosSugeridos.get("email");
-					BasicDBObject searchQuery = new BasicDBObject("documento.usuario", email);
+					String usuario = (String) cursosSugeridos.get("usuario");
+					System.out.println("usuario" + usuario);
+					BasicDBObject searchQuery = new BasicDBObject("documento.usuario", usuario);
 					DBObject cursor = collection.findOne(searchQuery);
 					if (cursor == null){
 						mongo.close();
@@ -855,7 +857,7 @@ public class Rest_UserPerfil {
 					objUserPerfil.remove("cursosSugeridos");
 					objUserPerfil.put("cursosSugeridos", cursosSugeridos.get("cursos"));
 					BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(objUserPerfil));
-					searchQuery = new BasicDBObject("documento.usuario", email);
+					searchQuery = new BasicDBObject("documento.usuario", usuario);
 					cursor = collection.findAndModify(searchQuery,
 			                null,
 			                null,

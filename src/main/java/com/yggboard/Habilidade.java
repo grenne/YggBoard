@@ -53,6 +53,7 @@ public class Habilidade {
 		public String source;
 		public String target;
 		public String tags[];
+		public PreRequisitos [] preRequisitos;
 
 
 		public Documento() {
@@ -84,7 +85,8 @@ public class Habilidade {
 				String targetArrowShape,
 				String source,
 				String target,
-				String [] tags
+				String [] tags,
+				PreRequisitos [] preRequisitos
 						) {
 						this.diagrama = diagrama;
 						this.type = type;
@@ -110,12 +112,32 @@ public class Habilidade {
 						this.source = source;
 						this.target = target;
 						this.tags = tags;
-		}
-
+						this.preRequisitos = preRequisitos;
+		};
 
 		@Override
 		public String toString() {
 			return new StringBuffer(" Email : ").append(this.name).append(" Last name : ").append(this.descricao).toString();
-		}
-	}
+		};
+		
+
+		public static final class PreRequisitos {
+    		public String id;
+    		public String inscricao;
+
+    		public PreRequisitos() {
+
+			}
+   
+            @JsonCreator
+            public PreRequisitos(
+            			String id,
+            			String inscricao
+            			)
+            {
+	    		this.id = id;
+	    		this.inscricao = inscricao;
+            };
+		};
+	};
 } 

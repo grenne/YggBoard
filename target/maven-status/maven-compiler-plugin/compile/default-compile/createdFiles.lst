@@ -5,6 +5,7 @@ com\yggboard\AreaAtuacao.class
 com\yggboard\App.class
 com\yggboard\ApplicationConfig.class
 com\yggboard\SendEmailHtml.class
+com\yggboard\Rest_Index.class
 com\yggboard\AreaAtuacao$Documento.class
 com\yggboard\Usuario$Documento.class
 com\yggboard\Rest_UserPerfil.class
@@ -15,6 +16,7 @@ com\yggboard\Index.class
 com\yggboard\UserPerfil$Documento.class
 com\yggboard\AreaConhecimento.class
 com\yggboard\SendEmail.class
+com\yggboard\Commons.class
 com\yggboard\UserPerfil$Documento$CursosInscritos.class
 com\yggboard\Rest_AreaConhecimento.class
 com\yggboard\Badge$Documento.class
@@ -30,6 +32,7 @@ com\yggboard\Curso.class
 com\yggboard\Setup.class
 com\yggboard\Habilidade.class
 com\yggboard\Curso$Documento.class
+com\yggboard\Habilidade$Documento$PreRequisitos.class
 com\yggboard\Index$Documento.class
 com\yggboard\Rest_Carreira.class
 com\yggboard\AreaConhecimento$Documento.class
