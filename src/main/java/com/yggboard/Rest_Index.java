@@ -1,34 +1,22 @@
 package com.yggboard;
 
-import java.awt.print.Book;
-import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import javax.inject.Singleton;
-import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
-import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
-import javax.ws.rs.core.Response;
 
-import org.bson.BasicBSONObject;
-import org.codehaus.jackson.JsonParseException;
-import org.codehaus.jackson.map.JsonMappingException;
-import org.codehaus.jackson.map.ObjectMapper;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -44,7 +32,7 @@ import com.mongodb.MongoException;
 
 public class Rest_Index {
 
-	@SuppressWarnings({ "unchecked", "rawtypes", "unused" })
+	
 	@Path("/obter/itens")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -58,19 +46,19 @@ public class Rest_Index {
 
 		switch (assunto) {
 		case "objetivo":
-			carregaObjetivos(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaObjetivos(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		case "habilidade":
-			carregaHabilidades(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaHabilidades(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		case "curso":
-			carregaCursos(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaCursos(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		case "areaAtuacao":
-			carregaAreaAtuacao(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaAreaAtuacao(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		case "areaConhecimento":
-			carregaAreaConhecimento(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaAreaConhecimento(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		default:
 			break;
@@ -97,8 +85,8 @@ public class Rest_Index {
 			// qdo escolhida uma area de conhecimento trazer todas habilidades, objetivos das habilidades, cursos das habilidades, area de conhecimento só a selecionada e área de atuação de todos os objetivos
 	};
 	
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private void carregaAreaConhecimento(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos2, JSONArray areaAtuacao, JSONArray areaConhecimento) {
+	@SuppressWarnings({ "unchecked" })
+	private void processaObjetivos(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
 
 		Mongo mongo;
 		try {
@@ -107,53 +95,235 @@ public class Rest_Index {
 			DBCollection collection = db.getCollection("carreiras");
 			BasicDBObject searchQuery = new BasicDBObject("documento.nome", entidade);
 			DBObject cursor = collection.findOne(searchQuery);
-			BasicDBObject objetivo = (BasicDBObject) cursor.get("documento");
-			objetivos.add(objetivo);
-			
-			ArrayList arrayListNecessarios = new ArrayList(); 
-	    	arrayListNecessarios = (ArrayList) objetivo.get("necessarios");
-	    	Object arrayNecessarios[] = arrayListNecessarios.toArray(); 
-			int z = 0;
-			while (z < arrayNecessarios.length) {
-				Mongo mongoHabilidade;
-				try {
-					mongoHabilidade = new Mongo();
-					DB dbHabilidade = (DB) mongoHabilidade.getDB("documento");
-					DBCollection collectionHabilidade = dbHabilidade.getCollection("habilidades");
-					BasicDBObject searchQueryHabilidade = new BasicDBObject("documento.idHabilidade", arrayNecessarios[z]);
-					DBObject cursorHabilidade = collectionHabilidade.findOne(searchQueryHabilidade);
-					if (cursorHabilidade != null){
-						habilidades.add (cursorHabilidade.get("documento"));
-					};
-					mongoHabilidade.close();
-				} catch (UnknownHostException | MongoException e) {
-					e.printStackTrace();
-				}
-				++z;
-			};
+			if (cursor != null){
+				BasicDBObject objetivo = (BasicDBObject) cursor.get("documento");
+				objetivos.add(objetivo);
+				//
+				// ***		carrega habilidades
+				//
+				ArrayList<?> arrayListNecessarios = new ArrayList<Object>(); 
+		    	arrayListNecessarios = (ArrayList<?>) objetivo.get("necessarios");
+		    	Object arrayNecessarios[] = arrayListNecessarios.toArray();
+				int z = 0;
+				while (z < arrayNecessarios.length) {
+					carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, (String) arrayNecessarios[z], null);
+					++z;
+				};
+				//
+				// ***		carrega área de atuação
+				//			
+				processaAreaAtuacao(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			};			
 			mongo.close();
 		} catch (UnknownHostException | MongoException e1) {
-			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		};
+	};
+
+	private void processaHabilidades(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("habilidades");
+			BasicDBObject searchQuery = new BasicDBObject("documento.name", entidade);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject habilidade = (BasicDBObject) cursor.get("documento");
+				//
+				// ***		carrega habilidade
+				//			
+				carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, habilidade.getString("idHabilidade"), null);
+			};			
+			mongo.close();
+		} catch (UnknownHostException | MongoException e1) {
+			e1.printStackTrace();
+		};
+	
+	};
+	
+	@SuppressWarnings({ "unchecked" })
+	private void processaCursos(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
+
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("cursos");
+			BasicDBObject searchQuery = new BasicDBObject("documento.nome", entidade);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject curso = (BasicDBObject) cursor.get("documento");
+				cursos.add(curso);
+				//
+				// ***		carrega habilidades
+				//
+				ArrayList<?> arrayListHabilidades = new ArrayList<Object>(); 
+				arrayListHabilidades = (ArrayList<?>) curso.get("habilidades");
+		    	Object arrayHabilidades[] = arrayListHabilidades.toArray();
+				int z = 0;
+				while (z < arrayHabilidades.length) {
+					carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, (String) arrayHabilidades[z], null);
+					++z;
+				};
+			};			
+			mongo.close();
+		} catch (UnknownHostException | MongoException e1) {
 			e1.printStackTrace();
 		}
 	};
-	private void carregaAreaAtuacao(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
-		// TODO Auto-generated method stub
-		
+
+	private void processaAreaConhecimento(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
 	};
-	private void carregaCursos(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
-		// TODO Auto-generated method stub
-		
+	private void processaAreaAtuacao(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {		
 	};
-	private void carregaHabilidades(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
-		// TODO Auto-generated method stub
-		
+
+	@SuppressWarnings("unchecked")
+	private void carregaHabilidade(JSONArray habilidades, JSONArray cursos,JSONArray objetivos, JSONArray areaAtuacao,JSONArray areaConhecimento, String idHabilidade, String nivel) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("habilidades");
+			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", idHabilidade);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject habilidade = (BasicDBObject) cursor.get("documento");
+				habilidade.put ("nivel", "0");
+				habilidades.add (habilidade);
+				ArrayList<?> arrayList = new ArrayList<Object>(); 
+		    	arrayList = (ArrayList<?>) habilidade.get("preRequisitos");
+		    	Object array[] = arrayList.toArray();
+				int z = 0;
+				while (z < array.length) {
+					BasicDBObject preRequisito = (BasicDBObject) array[z];
+					carregaPreRequisitos(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, (String) preRequisito.get("id"), (String) preRequisito.get("nivel") );
+					++z;
+				};
+				//
+				// ***		carrega cursos
+				//
+				ArrayList<?> arrayListCursos = new ArrayList<Object>(); 
+		    	arrayListCursos = (ArrayList<?>) habilidade.get("cursos");
+		    	Object arrayCursos[] = arrayListCursos.toArray();
+				int i = 0;
+				while (i < arrayCursos.length) {
+					BasicDBObject curso = (BasicDBObject) arrayCursos[i];
+					carregaCurso(cursos, (String) curso.get("id"));
+					++i;
+				};
+				//
+				// ***		carrega objetivos
+				//
+				ArrayList<?> arrayListObjetivo = new ArrayList<Object>(); 
+		    	arrayListObjetivo = (ArrayList<?>) habilidade.get("cursos");
+		    	Object arrayObjetivo[] = arrayListObjetivo.toArray();
+				int w = 0;
+				while (w < arrayObjetivo.length) {
+					BasicDBObject objetivo = (BasicDBObject) arrayObjetivo[w];
+					carregaObjetivo(objetivos, (String) objetivo.get("nome"));
+					++w;
+				};
+				//
+				// ***		carrega área do conhecimento
+				//			
+				processaAreaAtuacao(idHabilidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			};			
+			mongo.close();
+		} catch (UnknownHostException | MongoException e) {
+			e.printStackTrace();
+		};
 	};
-	private void carregaObjetivos(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
-		// TODO Auto-generated method stub
+
+	@SuppressWarnings("unchecked")
+	private void carregaPreRequisitos(JSONArray habilidades, JSONArray cursos,JSONArray objetivos, JSONArray areaAtuacao,JSONArray areaConhecimento, String idHabilidade, String nivel) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("habilidades");
+			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", idHabilidade);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject habilidade = (BasicDBObject) cursor.get("documento");
+				habilidade.put ("nivel", nivel);
+				habilidades.add (habilidade);
+				//
+				// ***		carrega cursos
+				//
+				ArrayList<?> arrayListCursos = new ArrayList<Object>(); 
+		    	arrayListCursos = (ArrayList<?>) habilidade.get("cursos");
+		    	Object arrayCursos[] = arrayListCursos.toArray();
+				int z = 0;
+				while (z < arrayCursos.length) {
+					String curso = arrayCursos[z].toString();
+					carregaCurso(cursos, curso);
+					++z;
+				};
+				//
+				// ***		carrega objetivos
+				//
+				ArrayList<?> arrayListObjetivo = new ArrayList<Object>(); 
+		    	arrayListObjetivo = (ArrayList<?>) habilidade.get("objetivos");
+		    	Object arrayObjetivo[] = arrayListObjetivo.toArray();
+				int w = 0;
+				while (w < arrayObjetivo.length) {
+					String objetivo = arrayObjetivo[w].toString();
+					carregaObjetivo(objetivos, objetivo);
+					++w;
+				};
+				//
+				// ***		carrega área do conhecimento
+				//			
+				processaAreaAtuacao(idHabilidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			};			
+			mongo.close();
+		} catch (UnknownHostException | MongoException e) {
+			e.printStackTrace();
+		};
+	};
+
+	@SuppressWarnings("unchecked")
+	private void carregaCurso(JSONArray cursos, Object object) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("cursos");
+			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", object);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject curso = (BasicDBObject) cursor.get("documento");
+				cursos.add (curso);
+			};			
+			mongo.close();
+		} catch (UnknownHostException | MongoException e) {
+			e.printStackTrace();
+		};
 		
 	};
 	
+
+	@SuppressWarnings("unchecked")
+	private void carregaObjetivo(JSONArray objetivos, String idObjetivo) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("carreiras");
+			BasicDBObject searchQuery = new BasicDBObject("documento.nome", idObjetivo);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject curso = (BasicDBObject) cursor.get("documento");
+				objetivos.add (curso);
+			};			
+			mongo.close();
+		} catch (UnknownHostException | MongoException e) {
+			e.printStackTrace();
+		};
+		
+	};
+
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
@@ -168,6 +338,7 @@ public class Rest_Index {
 		return documentos;
 	};
 
+	@SuppressWarnings("unchecked")
 	private void carregaIndex(String assunto, JSONArray documentos, String characters) {
 		Mongo mongo;
 			try {
@@ -187,7 +358,7 @@ public class Rest_Index {
 						jsonObject = (JSONObject) parser.parse(documento);
 						JSONObject jsonDocumento = new JSONObject();
 						String [] wordsSource = limpaChar (characters).split(" ");
-						List wordsCompare = (List) jsonObject.get("texto");
+						List<?> wordsCompare = (List<?>) jsonObject.get("texto");
 						if (wordsoK (wordsSource, wordsCompare)){
 							jsonDocumento.put("assunto", jsonObject.get("assunto"));
 							jsonDocumento.put("entidade", jsonObject.get("entidade"));
@@ -207,7 +378,7 @@ public class Rest_Index {
 			}
 	};
 	
-	private boolean wordsoK(String[] wordsSource, @SuppressWarnings("rawtypes") List wordsCompare) {
+	private boolean wordsoK(String[] wordsSource, List<?> wordsCompare) {
 		int i = 0;
 		int palavraIgual = 0;
 		System.out.println(wordsSource.length);
@@ -307,280 +478,6 @@ public class Rest_Index {
 		};
 		return characters;
 
-	};
-	
-	@SuppressWarnings("unchecked")
-	private ArrayList<String> obterHabilidadesCursosNecessarias(Object carreira, Object[] arrayElementos, JSONArray documentos, Boolean obterCursos) {
-		Mongo mongo;
-		try {
-			mongo = new Mongo();
-			DB db = (DB) mongo.getDB("documento");
-			DBCollection collection = db.getCollection("carreiras");
-			BasicDBObject searchQuery = new BasicDBObject("documento.nome", carreira);
-			DBObject cursor = collection.findOne(searchQuery);
-			BasicDBObject objCarreira = (BasicDBObject) cursor.get("documento");
-			ArrayList<String> arrayListHabilidades = new ArrayList<String>(); 
-			arrayListHabilidades = (ArrayList<String>) objCarreira.get("necessarios");
-	    	Object arrayHabilidades[] = arrayListHabilidades.toArray(); 
-			int w = 0;
-			while (w < arrayHabilidades.length) {
-				Boolean existeHabilidade = false;
-				int z = 0;
-				while (z < arrayElementos.length) {
-					if (arrayHabilidades[w].equals(arrayElementos[z])){
-						existeHabilidade = true;
-					}
-					++z;
-				};
-				if (!obterCursos){
-					int i = 0;
-					while (i < documentos.size()) {
-						JSONObject jsonObject = (JSONObject) documentos.get(i);
-						BasicDBObject objDocumento = (BasicDBObject) jsonObject.get("documento");
-						if (arrayHabilidades[w].equals(objDocumento.getString("idHabilidade"))){
-							existeHabilidade = true;
-						}
-						++i;
-					};
-				};
-				if (!existeHabilidade){
-					Mongo mongoHabilidades = new Mongo();
-					DB dbHabilidade = (DB) mongoHabilidades.getDB("documento");
-					DBCollection collectionHabilidades = dbHabilidade.getCollection("habilidades");
-					BasicDBObject searchQueryHabilidades = new BasicDBObject("documento.idHabilidade", arrayHabilidades[w]);
-					DBObject cursorHabilidades = collectionHabilidades.findOne(searchQueryHabilidades);
-					BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
-					if (obterCursos){
-						obterCursosNecessarios (arrayHabilidades[w], documentos);
-					}else{
-						JSONObject jsonDocumento = new JSONObject();
-					    jsonDocumento.put("documento", objHabilidades);
-						documentos.add(jsonDocumento);
-					}
-					mongoHabilidades.close();					
-				};
-				++w;
-			};
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (MongoException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-
-	@SuppressWarnings("unchecked")
-	private ArrayList<String> obterHabilidadesCursosNecessariasBadge(Object badge, Object[] arrayElementos, JSONArray documentos, Boolean obterCursos) {
-		Mongo mongo;
-		try {
-			mongo = new Mongo();
-			DB db = (DB) mongo.getDB("documento");
-			DBCollection collection = db.getCollection("badges");
-			BasicDBObject searchQuery = new BasicDBObject("documento.nome", badge);
-			DBObject cursor = collection.findOne(searchQuery);
-			BasicDBObject objBadge = (BasicDBObject) cursor.get("documento");
-			ArrayList<String> arrayListHabilidades = new ArrayList<String>(); 
-			arrayListHabilidades = (ArrayList<String>) objBadge.get("habilidades");
-	    	Object arrayHabilidades[] = arrayListHabilidades.toArray(); 
-			int w = 0;
-			while (w < arrayHabilidades.length) {
-				Boolean existeHabilidade = false;
-				int z = 0;
-				while (z < arrayElementos.length) {
-					if (arrayHabilidades[w].equals(arrayElementos[z])){
-						existeHabilidade = true;
-					}
-					++z;
-				};
-				if (!obterCursos){
-					int i = 0;
-					while (i < documentos.size()) {
-						JSONObject jsonObject = (JSONObject) documentos.get(i);
-						BasicDBObject objDocumento = (BasicDBObject) jsonObject.get("documento");
-						if (arrayHabilidades[w].equals(objDocumento.getString("idHabilidade"))){
-							existeHabilidade = true;
-						}
-						++i;
-					};
-				};
-				if (!existeHabilidade){
-					Mongo mongoHabilidades = new Mongo();
-					DB dbHabilidade = (DB) mongoHabilidades.getDB("documento");
-					DBCollection collectionHabilidades = dbHabilidade.getCollection("habilidades");
-					BasicDBObject searchQueryHabilidades = new BasicDBObject("documento.idHabilidade", arrayHabilidades[w]);
-					DBObject cursorHabilidades = collectionHabilidades.findOne(searchQueryHabilidades);
-					BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
-					if (obterCursos){
-						obterCursosNecessarios (arrayHabilidades[w], documentos);
-					}else{
-						JSONObject jsonDocumento = new JSONObject();
-					    jsonDocumento.put("documento", objHabilidades);
-						documentos.add(jsonDocumento);
-					}
-					mongoHabilidades.close();					
-				};
-				++w;
-			};
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (MongoException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
-	@SuppressWarnings("unchecked")
-	private JSONObject obterTotalHabilidades (Object carreira, Object[] arrayElementos, ArrayList<String> arrayListElementosFaltantes) {
-		Mongo mongo;
-		try {
-			mongo = new Mongo();
-			DB db = (DB) mongo.getDB("documento");
-			DBCollection collection = db.getCollection("carreiras");
-			BasicDBObject searchQuery = new BasicDBObject("documento.nome", carreira);
-			DBObject cursor = collection.findOne(searchQuery);
-			if (cursor != null){
-				BasicDBObject objCarreira = (BasicDBObject) cursor.get("documento");
-				ArrayList<String> arrayListHabilidades = new ArrayList<String>(); 
-				arrayListHabilidades = (ArrayList<String>) objCarreira.get("necessarios");
-		    	Object arrayHabilidades[] = arrayListHabilidades.toArray();
-		    	int totalHabilidades = 0;
-		    	int totalPossuiHabilidades = 0;
-				int w = 0;
-				while (w < arrayHabilidades.length) {
-					Boolean temHabilidade = false;
-					int z = 0;
-					while (z < arrayElementos.length) {
-						if (arrayHabilidades[w].equals(arrayElementos[z])){
-							++totalPossuiHabilidades;
-							temHabilidade = true;
-						}
-						++z;
-					};
-					if (!temHabilidade){
-						arrayListElementosFaltantes.add((String) arrayHabilidades[w]); 
-					}
-					++w;
-					++totalHabilidades;
-				};
-				JSONObject jsonQtdeHabilidades = new JSONObject();
-				jsonQtdeHabilidades.put("totalHabilidades", totalHabilidades);
-				jsonQtdeHabilidades.put("totalPossuiHabilidades", totalPossuiHabilidades);
-				mongo.close();
-				return jsonQtdeHabilidades;
-			}else{
-				JSONObject jsonQtdeHabilidades = new JSONObject();
-				jsonQtdeHabilidades.put("totalHabilidades", 0);
-				jsonQtdeHabilidades.put("totalPossuiHabilidades", 0);
-				mongo.close();
-				return jsonQtdeHabilidades;
-			}
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (MongoException e) {
-			e.printStackTrace();
-		}
-		return null;
-	};
-	
-	@SuppressWarnings("unchecked")
-	private JSONObject obterTotalHabilidadesBadges (Object badge, Object[] arrayElementos, ArrayList<String> arrayListElementosFaltantes) {
-		Mongo mongo;
-		try {
-			mongo = new Mongo();
-			DB db = (DB) mongo.getDB("documento");
-			DBCollection collection = db.getCollection("badges");
-			BasicDBObject searchQuery = new BasicDBObject("documento.nome", badge);
-			DBObject cursor = collection.findOne(searchQuery);
-			if (cursor != null){
-				BasicDBObject objBadge = (BasicDBObject) cursor.get("documento");
-				ArrayList<String> arrayListHabilidades = new ArrayList<String>(); 
-				arrayListHabilidades = (ArrayList<String>) objBadge.get("habilidades");
-		    	Object arrayHabilidades[] = arrayListHabilidades.toArray();
-		    	int totalHabilidades = 0;
-		    	int totalPossuiHabilidades = 0;
-				int w = 0;
-				while (w < arrayHabilidades.length) {
-					Boolean temHabilidade = false;
-					int z = 0;
-					while (z < arrayElementos.length) {
-						if (arrayHabilidades[w].equals(arrayElementos[z])){
-							++totalPossuiHabilidades;
-							temHabilidade = true;
-						}
-						++z;
-					};
-					if (!temHabilidade){
-						arrayListElementosFaltantes.add((String) arrayHabilidades[w]); 
-					}
-					++w;
-					++totalHabilidades;
-				};
-				JSONObject jsonQtdeHabilidades = new JSONObject();
-				jsonQtdeHabilidades.put("totalHabilidades", totalHabilidades);
-				jsonQtdeHabilidades.put("totalPossuiHabilidades", totalPossuiHabilidades);
-				mongo.close();
-				return jsonQtdeHabilidades;
-			}else{
-				JSONObject jsonQtdeHabilidades = new JSONObject();
-				jsonQtdeHabilidades.put("totalHabilidades", 0);
-				jsonQtdeHabilidades.put("totalPossuiHabilidades", 0);
-				mongo.close();
-				return jsonQtdeHabilidades;
-			}
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (MongoException e) {
-			e.printStackTrace();
-		}
-		return null;
-	};
-
-	@SuppressWarnings("unchecked")
-	private ArrayList<String> obterCursosNecessarios (Object habilidade, JSONArray documentos) {
-
-		Mongo mongo;
-		try {
-			mongo = new Mongo();
-			DB db = (DB) mongo.getDB("documento");
-
-			BasicDBObject setQuery = new BasicDBObject();
-		    if (habilidade != null){
-		    	setQuery.put("documento.habilidades.habilidade", habilidade);
-		    };
-			DBCollection collection = db.getCollection("cursos");
-			
-			DBCursor cursor = collection.find(setQuery);
-			while (((Iterator<DBObject>) cursor).hasNext()) {
-				JSONParser parser = new JSONParser(); 
-				BasicDBObject objCurso = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
-				String documento = objCurso.getString("documento");
-				try {
-					JSONObject jsonCurso = new JSONObject();
-					jsonCurso.put("documento", (JSONObject) parser.parse(documento));
-					Boolean existeCurso = false;
-					int i = 0;
-					while (i < documentos.size()) {
-						JSONObject jsonElementoArray = (JSONObject) documentos.get(i);
-						if (jsonCurso.get("documento").equals(jsonElementoArray.get("documento"))){
-							existeCurso = true;
-						}
-						++i;
-					};
-					if (!existeCurso){
-						documentos.add(jsonCurso);
-					};
-				} catch (ParseException e) {
-					e.printStackTrace();
-				}
-			};
-			mongo.close();
-			return documentos;
-		} catch (UnknownHostException e) {
-			e.printStackTrace();
-		} catch (MongoException e) {
-			e.printStackTrace();
-		}
-		return null;
 	};
 
 };

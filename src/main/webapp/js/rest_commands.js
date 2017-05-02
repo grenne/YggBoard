@@ -463,6 +463,7 @@
     };
 
     function rest_atualizaHabilidade(objJson, action_ok, action_not_ok, afterUpdate) {
+    	
 		$.ajax({
 			type: "POST",
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/atualizar",
@@ -605,6 +606,28 @@
     function rest_obterIndex(characters, action_ok, action_not_ok, var1, var2, var3) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/lista?characters=" + characters,
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            global: false,
+            
+    	})
+    	.done(function( data ) {
+    		if (data){
+    			action_ok (data, var1, var2, var3);
+    		}else{
+    			action_not_ok (data, var1, var2, var3);	
+    		};
+    	})
+    	.fail(function(data) {
+    		action_not_ok(null, var1, var2, var3)
+    	})
+    	.always(function(data) {
+    	});
+    };
+
+    function rest_obterListasPlanejamento(assunto, entidade, action_ok, action_not_ok, var1, var2, var3) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/obter/itens?assunto=" + assunto + "&entidade=" + entidade ,
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             global: false,

@@ -18,6 +18,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.bson.types.ObjectId;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -122,7 +123,7 @@ public class Rest_UserPerfil {
 					arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");
 			    	Object arrayElementos[] = arrayListElementos.toArray(); 
 					ArrayList <String> arrayListElementosFaltantes = new ArrayList(); 
-				    JSONObject jsonQtdeHabilidades = obterTotalHabilidades(objCarreiras.get("nome"), arrayElementos, arrayListElementosFaltantes);
+				    JSONObject jsonQtdeHabilidades = ObterTotalHabilidades(objCarreiras.get("nome"), arrayElementos, arrayListElementosFaltantes);
 				    jsonDocumento.put("totalHabilidades", jsonQtdeHabilidades.get("totalHabilidades"));
 				    jsonDocumento.put("totalPossuiHabilidades", jsonQtdeHabilidades.get("totalPossuiHabilidades"));
 			    	ArrayList arrayListNecessarios = new ArrayList(); 
@@ -142,7 +143,7 @@ public class Rest_UserPerfil {
 							jsonNecessarios.put("idHabilidade", arrayListElementosFaltantes.get(z));
 							jsonNecessarios.put("name", objCarreira.get("name"));
 							JSONArray cursos = new JSONArray();
-							obterCursosNecessarios (arrayListElementosFaltantes.get(z), cursos);
+							ObterCursosNecessarios (arrayListElementosFaltantes.get(z), cursos);
 							jsonNecessarios.put("cursos", cursos);
 							necessariosArray.add (jsonNecessarios);
 						}
@@ -184,7 +185,7 @@ public class Rest_UserPerfil {
 						arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");
 				    	Object arrayElementos[] = arrayListElementos.toArray(); 
 						ArrayList <String> arrayListElementosFaltantes = new ArrayList();
-					    JSONObject jsonQtdeHabilidades = obterTotalHabilidadesBadges(objBadges.get("nome"), arrayElementos, arrayListElementosFaltantes);
+					    JSONObject jsonQtdeHabilidades = ObterTotalHabilidadesBadges(objBadges.get("nome"), arrayElementos, arrayListElementosFaltantes);
 					    jsonDocumento.put("totalHabilidades", jsonQtdeHabilidades.get("totalHabilidades"));
 					    jsonDocumento.put("totalPossuiHabilidades", jsonQtdeHabilidades.get("totalPossuiHabilidades"));
 				    	ArrayList arrayListHabilidades = new ArrayList(); 
@@ -204,7 +205,7 @@ public class Rest_UserPerfil {
 								jsonHabilidades.put("idHabilidade", arrayListElementosFaltantes.get(z));
 								jsonHabilidades.put("name", objCarreira.get("name"));
 								JSONArray cursos = new JSONArray();
-								obterCursosNecessarios (arrayListElementosFaltantes.get(z), cursos);
+								ObterCursosNecessarios (arrayListElementosFaltantes.get(z), cursos);
 								jsonHabilidades.put("cursos", cursos);
 								habilidadesArray.add (jsonHabilidades);
 							}
@@ -310,12 +311,12 @@ public class Rest_UserPerfil {
 					if (cursorHabilidades != null){
 						BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
 						if (item.equals("cursos-necessarias-habilidades") | item.equals("cursos-interesse-habilidades")){
-							obterCursosNecessarios (objHabilidades.get("idHabilidade"), documentos);
+							ObterCursosNecessarios (objHabilidades.get("idHabilidade"), documentos);
 						}else{
 							JSONObject jsonDocumento = new JSONObject();
 						    jsonDocumento.put("documento", objHabilidades);
 							JSONArray cursos = new JSONArray();
-							obterCursosNecessarios (objHabilidades.get("idHabilidade"), cursos);
+							ObterCursosNecessarios (objHabilidades.get("idHabilidade"), cursos);
 							jsonDocumento.put("cursos", cursos);
 							documentos.add(jsonDocumento);
 						};
@@ -357,14 +358,14 @@ public class Rest_UserPerfil {
 				arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");
 		    	Object arrayElementos[] = arrayListElementos.toArray(); 
 		    	if (!elemento.equals("undefined")){
-		    		obterHabilidadesCursosNecessarias(elemento, arrayElementos, documentos, false);
+		    		ObterHabilidadesCursosNecessarias(elemento, arrayElementos, documentos, false);
 		    	}else{
 					int w = 0;
 					while (w < array.length) {
 						if (item.equals("habilidades-necessarias-carreiras") | item.equals("habilidades-interesse-carreiras")){
-							obterHabilidadesCursosNecessarias(array[w], arrayElementos, documentos, false);
+							ObterHabilidadesCursosNecessarias(array[w], arrayElementos, documentos, false);
 						}else{
-							obterHabilidadesCursosNecessarias(array[w], arrayElementos, documentos, true);
+							ObterHabilidadesCursosNecessarias(array[w], arrayElementos, documentos, true);
 						};
 						++w;
 					};
@@ -384,14 +385,14 @@ public class Rest_UserPerfil {
 				arrayListElementos = (ArrayList) jsonPerfil.get("habilidades");
 		    	Object arrayElementos[] = arrayListElementos.toArray(); 
 		    	if (!elemento.equals("undefined")){
-		    		obterHabilidadesCursosNecessariasBadge(elemento, arrayElementos, documentos, false);
+		    		ObterHabilidadesCursosNecessariasBadge(elemento, arrayElementos, documentos, false);
 		    	}else{
 					int w = 0;
 					while (w < array.length) {
 						if (item.equals("habilidades-necessarias-badges") | item.equals("habilidades-interesse-badges")){
-							obterHabilidadesCursosNecessariasBadge(array[w], arrayElementos, documentos, false);
+							ObterHabilidadesCursosNecessariasBadge(array[w], arrayElementos, documentos, false);
 						}else{
-							obterHabilidadesCursosNecessariasBadge(array[w], arrayElementos, documentos, true);
+							ObterHabilidadesCursosNecessariasBadge(array[w], arrayElementos, documentos, true);
 						};
 						++w;
 					};
@@ -482,7 +483,56 @@ public class Rest_UserPerfil {
 		return Response.status(500).build();
 		
 	};
+
 	@SuppressWarnings("unchecked")
+	@Path("/atualizar")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response AtualizarPerfil(JSONObject newPerfil) throws MongoException, JsonParseException, JsonMappingException, IOException {
+		
+		String usuario = newPerfil.get("usuario").toString();	
+		Mongo mongo = new Mongo();
+		DB db = (DB) mongo.getDB("documento");
+		DBCollection collection = db.getCollection("userPerfil");
+		BasicDBObject objUpdate = new BasicDBObject();
+		BasicDBObject searchQuery = new BasicDBObject("documento.usario", usuario);
+		DBObject cursor = collection.findOne(searchQuery);
+		if (cursor != null){
+			BasicDBObject objUserPerfil = new BasicDBObject();
+			objUserPerfil = (BasicDBObject) cursor.get("documento");
+			String tipo = newPerfil.get("tipo").toString();	
+			String elemento = newPerfil.get("elemento").toString();	
+			String inout = newPerfil.get("inout").toString();	
+			Boolean existente = false;
+			List array = (List) objUserPerfil.get(tipo);
+			for (int i = 0; i < array.size(); i++) {
+				String elementoArray = array.get(i).toString();
+				if (elemento == array.get(i).toString()){
+					existente = true;
+				};
+			};
+			if (!existente){
+				array.add(elemento);
+				objUserPerfil.put(tipo, array);
+				BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(objUserPerfil));
+				searchQuery = new BasicDBObject("documento.usuario", usuario);
+				cursor = collection.findAndModify(searchQuery,
+		                null,
+		                null,
+		                false,
+		                update,
+		                true,
+		                false);
+//				atualizaDependencias(objPerfil, elemento, tipo);
+//				atualizaParents(objPerfil, elemento, tipo);
+			};
+			mongo.close();
+			return Response.status(200).build();
+		};		
+		mongo.close();
+		return Response.status(404).build();
+	};
+		@SuppressWarnings("unchecked")
 	@Path("/atualizar")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
@@ -511,7 +561,7 @@ public class Rest_UserPerfil {
 		mongo.close();
 		return Response.status(200).build();
 	};
-	
+
 	@SuppressWarnings({ "unchecked", "unused" })
 	@Path("/lista")	
 	@GET
@@ -556,7 +606,7 @@ public class Rest_UserPerfil {
 	};
 
 	@SuppressWarnings("unchecked")
-	private ArrayList<String> obterHabilidadesCursosNecessarias(Object carreira, Object[] arrayElementos, JSONArray documentos, Boolean obterCursos) {
+	private ArrayList<String> ObterHabilidadesCursosNecessarias(Object carreira, Object[] arrayElementos, JSONArray documentos, Boolean obterCursos) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
@@ -597,7 +647,7 @@ public class Rest_UserPerfil {
 					DBObject cursorHabilidades = collectionHabilidades.findOne(searchQueryHabilidades);
 					BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
 					if (obterCursos){
-						obterCursosNecessarios (arrayHabilidades[w], documentos);
+						ObterCursosNecessarios (arrayHabilidades[w], documentos);
 					}else{
 						JSONObject jsonDocumento = new JSONObject();
 					    jsonDocumento.put("documento", objHabilidades);
@@ -616,7 +666,7 @@ public class Rest_UserPerfil {
 	}
 
 	@SuppressWarnings("unchecked")
-	private ArrayList<String> obterHabilidadesCursosNecessariasBadge(Object badge, Object[] arrayElementos, JSONArray documentos, Boolean obterCursos) {
+	private ArrayList<String> ObterHabilidadesCursosNecessariasBadge(Object badge, Object[] arrayElementos, JSONArray documentos, Boolean obterCursos) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
@@ -657,7 +707,7 @@ public class Rest_UserPerfil {
 					DBObject cursorHabilidades = collectionHabilidades.findOne(searchQueryHabilidades);
 					BasicDBObject objHabilidades = (BasicDBObject) cursorHabilidades.get("documento");
 					if (obterCursos){
-						obterCursosNecessarios (arrayHabilidades[w], documentos);
+						ObterCursosNecessarios (arrayHabilidades[w], documentos);
 					}else{
 						JSONObject jsonDocumento = new JSONObject();
 					    jsonDocumento.put("documento", objHabilidades);
@@ -676,7 +726,7 @@ public class Rest_UserPerfil {
 	}
 	
 	@SuppressWarnings("unchecked")
-	private JSONObject obterTotalHabilidades (Object carreira, Object[] arrayElementos, ArrayList<String> arrayListElementosFaltantes) {
+	private JSONObject ObterTotalHabilidades (Object carreira, Object[] arrayElementos, ArrayList<String> arrayListElementosFaltantes) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
@@ -729,7 +779,7 @@ public class Rest_UserPerfil {
 	};
 	
 	@SuppressWarnings("unchecked")
-	private JSONObject obterTotalHabilidadesBadges (Object badge, Object[] arrayElementos, ArrayList<String> arrayListElementosFaltantes) {
+	private JSONObject ObterTotalHabilidadesBadges (Object badge, Object[] arrayElementos, ArrayList<String> arrayListElementosFaltantes) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
@@ -782,7 +832,7 @@ public class Rest_UserPerfil {
 	};
 
 	@SuppressWarnings("unchecked")
-	private ArrayList<String> obterCursosNecessarios (Object habilidade, JSONArray documentos) {
+	private ArrayList<String> ObterCursosNecessarios (Object habilidade, JSONArray documentos) {
 
 		Mongo mongo;
 		try {
@@ -833,7 +883,7 @@ public class Rest_UserPerfil {
 	@Path("/cursosSugeridos")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
-	public Response cursosSugeridos(JSONObject inputCursosSugeridos)  {
+	public Response CursosSugeridos(JSONObject inputCursosSugeridos)  {
 		
 		Mongo mongo;
 			try {
@@ -841,12 +891,10 @@ public class Rest_UserPerfil {
 				DB db = (DB) mongo.getDB("documento");
 				DBCollection collection = db.getCollection("userPerfil");
 				List arrayCursosSugeridos = (List) inputCursosSugeridos.get("cursosSugeridos");
-				System.out.println("chamou");
 				for (int i = 0; i < arrayCursosSugeridos.size(); i++) {
 					JSONObject cursosSugeridos = new JSONObject();
 					cursosSugeridos.putAll((Map) arrayCursosSugeridos.get(i));
 					String usuario = (String) cursosSugeridos.get("usuario");
-					System.out.println("usuario" + usuario);
 					BasicDBObject searchQuery = new BasicDBObject("documento.usuario", usuario);
 					DBObject cursor = collection.findOne(searchQuery);
 					if (cursor == null){
@@ -875,5 +923,5 @@ public class Rest_UserPerfil {
 			};
 			return null;
 	};
-
+	
 };

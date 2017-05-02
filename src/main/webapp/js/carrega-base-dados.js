@@ -854,6 +854,8 @@ var habilidades =
 			        source : arrayItensHabilidade[15],
 			        target : arrayItensHabilidade[16],
 			        tags: [],
+			        cursos: [],
+			        objetivos: [],
 			        preRequisitos: []
 			    }	
 			}
@@ -865,7 +867,6 @@ var habilidades =
 				w++;
 			};
 		};
-		obterDependencias(objJson, array[w].replace (" ",""), "habilidades", 1);
 		rest_incluiHabilidades(objJson, semAcao, semAcao)
 		i++;
 	}
@@ -1104,7 +1105,7 @@ function obterDependencias(objJson, habilidadeTarget, tipo, nivel){
 			};
 			if (tipo == "habilidades"){
 				var existente = false;
-				$.each(objJson.documento.recomendadas, function( i, habilidade) {
+				$.each(objJson.documento.preRequisitos, function( i, habilidade) {
 					if (habilidadeSource.documento.source == habilidade){
 						existente = true;
 					};
@@ -1832,5 +1833,80 @@ function atualizaCursosSugeridos(){
 
 	{"cursosSugeridos": [{"cursos": [], "usuario": "adamivilela@gmail.com"}, {"cursos": [37, 141, 17, 327], "usuario": "adilson.prando@gmail.com"}, {"cursos": [], "usuario": "aluizio.leal@hotmail.com"}, {"cursos": [141, 281, 17, 383, 1, 298, 311], "usuario": "andrea@agenciabadaro.com.br"}, {"cursos": [], "usuario": "andrebcr@hotmail.com"}, {"cursos": [141, 376, 1, 281], "usuario": "arielchenker77@gmail.com"}, {"cursos": [], "usuario": "barbara.sgraciola@gmail.com"}, {"cursos": [141, 379], "usuario": "bdardes@gmail.com"}, {"cursos": [], "usuario": "beatriz@agenciabadaro.com.br"}, {"cursos": [], "usuario": "bento.mussnich@gmail.com"}, {"cursos": [], "usuario": "brugou@gmail.com"}, {"cursos": [], "usuario": "buh_mt@hotmail.com"}, {"cursos": [141, 327, 17, 37, 371, 1, 378, 281, 641, 630, 631, 298, 343], "usuario": "camila.koblinsky@gmail.com"}, {"cursos": [141, 379, 281, 17, 37, 383, 373, 377, 374, 384, 1, 378, 311], "usuario": "cesarfontao@hotmail.com"}, {"cursos": [141, 37, 281, 382, 482, 17, 381, 380, 371, 1, 327, 343, 311], "usuario": "cirofsouza@gmail.com"}, {"cursos": [141, 605, 609, 610, 611, 613, 614, 615, 606, 607, 608, 616, 612, 327, 369], "usuario": "douglas@yggboard.com"}, {"cursos": [], "usuario": "douglasprando@yahoo.com.br"}, {"cursos": [141, 298, 327, 605, 609, 610, 611, 613, 614, 615, 37, 606, 607, 608, 616], "usuario": "eric@yggboard.com"}, {"cursos": [], "usuario": "ericprando@gmail.com"}, {"cursos": [141, 37, 376, 1, 298, 281], "usuario": "fabrizio.dardes@gmail.com"}, {"cursos": [], "usuario": "fcesarcamargo@gmail.com"}, {"cursos": [], "usuario": "felipetabacchi@gmail.com"}, {"cursos": [], "usuario": "gabriel.soares.a@hotmail.com"}, {"cursos": [141, 281, 1, 298, 17, 357, 327, 311, 384, 343, 380, 383, 377, 605, 609], "usuario": "giopigatto@hotmail.com"}, {"cursos": [], "usuario": "grenne@grenne.com"}, {"cursos": [], "usuario": "grenne@uol.com.br"}, {"cursos": [374, 311], "usuario": "grenneglr@gmail.com"}, {"cursos": [141, 281, 17, 1, 298, 327, 357, 311, 384, 343, 380, 383, 377, 605, 609], "usuario": "gui.eckstein@hotmail.com"}, {"cursos": [], "usuario": "guilhermecmf@gmail.com"}, {"cursos": [], "usuario": "guiportoflorido@gmail.com"}, {"cursos": [141, 281, 17, 1, 298, 327, 357, 311, 384, 343, 380, 383, 377, 605, 609], "usuario": "jay_kim1996@hotmail.com"}, {"cursos": [], "usuario": "konarthur@gmail.com"}, {"cursos": [], "usuario": "lucanascimento98@gmail.com"}, {"cursos": [], "usuario": "lucasprototipo@gmail.com"}, {"cursos": [281, 141, 1, 384, 17, 383, 37, 377, 298, 483, 399], "usuario": "luizgustavos@yahoo.com.br"}, {"cursos": [], "usuario": "lukgsantos@gmail.com"}, {"cursos": [], "usuario": "marcelo.abib@instorebr.com"}, {"cursos": [], "usuario": "marcelospodolan@hotmail.com"}, {"cursos": [37, 281, 141, 382, 1, 311], "usuario": "paulodinis@terra.com.br"}, {"cursos": [298, 141, 17, 37, 377, 384, 1], "usuario": "pedro.henrique.martins19@gmail.com"}, {"cursos": [141, 281, 1, 17, 383, 384, 379, 298, 37, 377, 327, 357, 375, 641, 630], "usuario": "ppaeslopes@gmail.com"}, {"cursos": [], "usuario": "prando@gmail.com"}, {"cursos": [141, 374, 311, 298, 281, 327, 632, 37, 383, 1, 343, 720], "usuario": "rafael.amado86@gmail.com"}, {"cursos": [], "usuario": "rogassaf@gmail.com"}, {"cursos": [], "usuario": "tdgouvea@gmail.com"}, {"cursos": [141, 298, 327, 605, 609, 610, 611, 613, 614, 615, 37, 606, 607, 608, 616], "usuario": "teste@yggboard.com"}, {"cursos": [141, 281, 17, 1, 357, 298, 327, 37, 380, 384, 311, 343, 383, 381, 377], "usuario": "victor.grobberio@gmail.com"}, {"cursos": [384, 17, 1, 281, 141, 377, 298, 399], "usuario": "viniciusjose3000@gmail.com"}]};
 	
-	rest_atualizaCursosSugeridos(objJson, semAcao, semAcao)
+	rest_atualizaCursosSugeridos(objJson, semAcao, semAcao);
+};
+
+function atualizaPreRequisitos (){
+	
+	rest_obterHabilidades(atualizaPreRequisitosProcess, semAcao);
+
+};
+
+function atualizaPreRequisitosProcess (habilidades){
+	
+	localStorage.setItem("elements", JSON.stringify(habilidades));
+	
+	$.each( habilidades, function( i, habilidade) {		
+		habilidade = obterDependencias(habilidade, habilidade.documento.idHabilidade, "habilidades", 1);
+		console.log ("id - "  + habilidade.documento.idHabilidade);
+		var cursos = [];
+	    $.each(habilidade.documento.cursos, function (i, curso) {
+	    	cursos.push(curso.idCurso);
+	    });
+    	delete habilidade.documento["cursos"];
+    	habilidade.documento.cursos = cursos;
+		rest_atualizaHabilidade(habilidade, semAcao, semAcao);
+	});
+
+};
+
+function atualizaObjetivos (){
+	
+	rest_obterHabilidades(lerObjetivos, semAcao);
+
+};
+
+function lerObjetivos (habilidades){
+	
+	localStorage.setItem("elements", JSON.stringify(habilidades));
+	
+	rest_obterCarreiras(atualizaObjetivosProcess, semAcao);
+};
+
+function atualizaObjetivosProcess (objetivos){
+	
+	localStorage.setItem("objetivos", JSON.stringify(objetivos));
+	
+	habilidades = JSON.parse(localStorage.getItem("elements"));
+
+	$.each( habilidades, function( i, habilidade) {		
+		habilidade = obterObjetivos(habilidade, habilidade.documento.idHabilidade);
+		console.log ("id - "  + habilidade.documento.idHabilidade);
+    	delete habilidade.documento["cursos"];
+		rest_atualizaHabilidade(habilidade, semAcao, semAcao);
+	});
+
+};
+
+function obterObjetivos(objJson, habilidadeTarget){
+
+	objetivos = JSON.parse(localStorage.getItem("objetivos"));
+	
+	$.each( objetivos, function( i, objetivo) {
+		$.each( objetivo.necessarios, function( i, habilidade) {
+			if (habilidade == objJson.documento.idHabilidade){
+				var existente = false;
+				$.each(objJson.documento.objetivos, function( i, objetivoCarregado) {
+					if (objetivoCarregado == objetivo.nome){
+						existente = true;
+					};
+				});
+				if (!existente){
+					objJson.documento.objetivos.push(objetivo.nome);
+				};
+			};
+		});
+	});		
+	
+	return objJson;
 };

@@ -784,7 +784,8 @@
 		$( "#carregaCursosTotal" ).bind( "click", function() {
 			$( ".inactive-tab").removeClass("nav-tab");
 			$( "#carregaCursosTotal").addClass("nav-tab");
-			carregaCursosTotal();
+//			carregaCursosTotal();
+			atualizaPreRequisitos();
 		});
 
 		$( "#carregaBadges" ).bind( "click", function() {
@@ -792,7 +793,7 @@
 			$( "#carregaBadges").addClass("nav-tab");
 //			carregaUsuarios();
 //			carregaIndex();
-			atualizaCursosSugeridos();
+			atualizaObjetivos();
 		});
 
 		$( "#gravaDiagrama" ).bind( "click", function() {

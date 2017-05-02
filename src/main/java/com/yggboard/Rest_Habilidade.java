@@ -192,6 +192,7 @@ public class Rest_Habilidade {
 					}
 				};
 				mongoCurso.close();
+			    obj.remove("cursos");
 			    obj.put("cursos", cursosArray);
 			    jsonDocumento.put("documento", obj);
 				documentos.add(jsonDocumento);

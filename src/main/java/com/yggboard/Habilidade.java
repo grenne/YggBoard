@@ -53,6 +53,8 @@ public class Habilidade {
 		public String source;
 		public String target;
 		public String tags[];
+		public String cursos[];
+		public String objetivos[];
 		public PreRequisitos [] preRequisitos;
 
 
@@ -86,6 +88,8 @@ public class Habilidade {
 				String source,
 				String target,
 				String [] tags,
+				String [] cursos,
+				String [] objetivos,
 				PreRequisitos [] preRequisitos
 						) {
 						this.diagrama = diagrama;
@@ -112,6 +116,8 @@ public class Habilidade {
 						this.source = source;
 						this.target = target;
 						this.tags = tags;
+						this.cursos = cursos;
+						this.objetivos = objetivos;
 						this.preRequisitos = preRequisitos;
 		};
 
@@ -123,7 +129,7 @@ public class Habilidade {
 
 		public static final class PreRequisitos {
     		public String id;
-    		public String inscricao;
+    		public String nivel;
 
     		public PreRequisitos() {
 
@@ -132,11 +138,11 @@ public class Habilidade {
             @JsonCreator
             public PreRequisitos(
             			String id,
-            			String inscricao
+            			String nivel
             			)
             {
 	    		this.id = id;
-	    		this.inscricao = inscricao;
+	    		this.nivel = nivel;
             };
 		};
 	};
