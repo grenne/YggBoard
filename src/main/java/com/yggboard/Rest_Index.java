@@ -154,7 +154,7 @@ public class Rest_Index {
 				while (z < arrayNecessarios.length) {
 					String nomeHabilidade = "";
 					carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, (String) arrayNecessarios[z], true, nomeHabilidade);
-					newNecessarios.add(nomeHabilidade);
+					newNecessarios.add(nomeHabilidade(arrayNecessarios[z].toString()));
 					++z;
 				};
 				//
@@ -237,7 +237,7 @@ public class Rest_Index {
 	};
 
 	@SuppressWarnings("unchecked")
-	private void carregaHabilidade(JSONArray habilidades, JSONArray cursos,JSONArray objetivos, JSONArray areaAtuacao,JSONArray areaConhecimento, String idHabilidade, Boolean carregaPreRequisitos, String nomeHabilidade) {
+	private void carregaHabilidade(JSONArray habilidades, JSONArray cursos,JSONArray objetivos, JSONArray areaAtuacao,JSONArray areaConhecimento, String idHabilidade, Boolean carregaPreRequisitos, Object nomeHabilidade) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
@@ -433,9 +433,7 @@ public class Rest_Index {
 		    	Object arrayNecessarios[] = arrayListNecessarios.toArray();
 				int z = 0;
 				while (z < arrayNecessarios.length) {
-					String nomeHabilidade = "";
-					carregaHabilidade(null, null, null, null, null,arrayNecessarios[z].toString(), false, nomeHabilidade);
-					newNecessarios.add(nomeHabilidade);
+					newNecessarios.add(nomeHabilidade(arrayNecessarios[z].toString()));
 					++z;
 				};
 				//
@@ -453,6 +451,26 @@ public class Rest_Index {
 		};
 		
 	};
+
+	private Object nomeHabilidade(String id) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("habilidades");
+			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", id);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject habilidade = (BasicDBObject) cursor.get("documento");
+				mongo.close();
+				return habilidade.get("name").toString();
+			};			
+			mongo.close();
+		} catch (UnknownHostException | MongoException e) {
+			e.printStackTrace();
+		};
+		return null;
+	}
 
 	private boolean addObjeto(JSONArray array, BasicDBObject elemento) {
 
@@ -571,8 +589,6 @@ public class Rest_Index {
 	private boolean wordsoK(String[] wordsSource, List<?> wordsCompare) {
 		int i = 0;
 		int palavraIgual = 0;
-		System.out.println(wordsSource.length);
-		System.out.println(i);
 		while (i < wordsSource.length) {
 			char[] letrasSource = wordsSource[i].toCharArray();
 			if (letrasSource.length > 0){
