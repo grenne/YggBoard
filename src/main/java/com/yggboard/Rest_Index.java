@@ -1,22 +1,31 @@
 package com.yggboard;
 
+import java.io.IOException;
 import java.net.UnknownHostException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 
 import javax.inject.Singleton;
+import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
+import javax.ws.rs.core.Response;
 
+import org.codehaus.jackson.map.JsonMappingException;
+import org.codehaus.jackson.map.ObjectMapper;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
+import com.google.gson.Gson;
 import com.mongodb.BasicDBObject;
 import com.mongodb.DB;
 import com.mongodb.DBCollection;
@@ -32,11 +41,48 @@ import com.mongodb.MongoException;
 
 public class Rest_Index {
 
+	@SuppressWarnings("unchecked")
+	@Path("/incluir")
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public Response IncluirCarreiras(Index index)  {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("index");
+			Gson gson = new Gson();
+			String jsonDocumento = gson.toJson(index);
+			Map<String,String> mapJson = new HashMap<String,String>();
+			ObjectMapper mapper = new ObjectMapper();
+			mapJson = mapper.readValue(jsonDocumento, HashMap.class);
+			JSONObject documento = new JSONObject();
+			documento.putAll(mapJson);
+			DBObject insert = new BasicDBObject(documento);
+			collection.insert(insert);
+			mongo.close();
+			return Response.status(200).entity(documento).build();
+		} catch (UnknownHostException e) {
+			System.out.println("UnknownHostException");
+			e.printStackTrace();
+		} catch (MongoException e) {
+			System.out.println("MongoException");
+			e.printStackTrace();
+		} catch (JsonMappingException e) {
+			System.out.println("JsonMappingException");
+			e.printStackTrace();
+		} catch (IOException e) {
+			System.out.println("IOException");
+			e.printStackTrace();
+		}
+		return Response.status(500).build();
+		
+	};
 	
 	@Path("/obter/itens")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public BasicDBObject ObterItens(@QueryParam("assunto") String assunto, @QueryParam("entidade") String entidade ) throws UnknownHostException, MongoException {
+	public BasicDBObject ObterItens(@QueryParam("assunto") String assunto, @QueryParam("id") String id ) throws UnknownHostException, MongoException {
 		
 		JSONArray objetivos = new JSONArray();
 		JSONArray habilidades = new JSONArray();
@@ -46,19 +92,19 @@ public class Rest_Index {
 
 		switch (assunto) {
 		case "objetivo":
-			processaObjetivos(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaObjetivos(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		case "habilidade":
-			processaHabilidades(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaHabilidades(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		case "curso":
-			processaCursos(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaCursos(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		case "areaAtuacao":
-			processaAreaAtuacao(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaAreaAtuacao(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		case "areaConhecimento":
-			processaAreaConhecimento(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			processaAreaConhecimento(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			break;
 		default:
 			break;
@@ -86,33 +132,43 @@ public class Rest_Index {
 	};
 	
 	@SuppressWarnings({ "unchecked" })
-	private void processaObjetivos(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
+	private void processaObjetivos(String id, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
 
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
 			DBCollection collection = db.getCollection("carreiras");
-			BasicDBObject searchQuery = new BasicDBObject("documento.nome", entidade);
+			BasicDBObject searchQuery = new BasicDBObject("documento.id", id);
 			DBObject cursor = collection.findOne(searchQuery);
 			if (cursor != null){
-				BasicDBObject objetivo = (BasicDBObject) cursor.get("documento");
-				objetivos.add(objetivo);
+				BasicDBObject objetivo = (BasicDBObject) cursor.get("documento");				
 				//
 				// ***		carrega habilidades
 				//
 				ArrayList<?> arrayListNecessarios = new ArrayList<Object>(); 
+				JSONArray newNecessarios = new JSONArray(); 
 		    	arrayListNecessarios = (ArrayList<?>) objetivo.get("necessarios");
 		    	Object arrayNecessarios[] = arrayListNecessarios.toArray();
 				int z = 0;
 				while (z < arrayNecessarios.length) {
-					carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, (String) arrayNecessarios[z], null);
+					String nomeHabilidade = "";
+					carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, (String) arrayNecessarios[z], true, nomeHabilidade);
+					newNecessarios.add(nomeHabilidade);
 					++z;
 				};
 				//
 				// ***		carrega área de atuação
 				//			
-				processaAreaAtuacao(entidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				processaAreaAtuacao(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				//
+				// ***		carrega objetivo
+				//			
+				if (addObjeto(objetivos, objetivo)){
+					objetivo.remove("necessarios");
+					objetivo.put("necessarios", newNecessarios);
+					objetivos.add(objetivo);
+				};
 			};			
 			mongo.close();
 		} catch (UnknownHostException | MongoException e1) {
@@ -120,20 +176,20 @@ public class Rest_Index {
 		};
 	};
 
-	private void processaHabilidades(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
+	private void processaHabilidades(String id, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
 			DBCollection collection = db.getCollection("habilidades");
-			BasicDBObject searchQuery = new BasicDBObject("documento.name", entidade);
+			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", id);
 			DBObject cursor = collection.findOne(searchQuery);
 			if (cursor != null){
 				BasicDBObject habilidade = (BasicDBObject) cursor.get("documento");
 				//
 				// ***		carrega habilidade
 				//			
-				carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, habilidade.getString("idHabilidade"), null);
+				carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, habilidade.getString("idHabilidade"), true, null);
 			};			
 			mongo.close();
 		} catch (UnknownHostException | MongoException e1) {
@@ -143,18 +199,20 @@ public class Rest_Index {
 	};
 	
 	@SuppressWarnings({ "unchecked" })
-	private void processaCursos(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
+	private void processaCursos(String id, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
 
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
 			DBCollection collection = db.getCollection("cursos");
-			BasicDBObject searchQuery = new BasicDBObject("documento.nome", entidade);
+			BasicDBObject searchQuery = new BasicDBObject("documento.idCurso", id);
 			DBObject cursor = collection.findOne(searchQuery);
 			if (cursor != null){
 				BasicDBObject curso = (BasicDBObject) cursor.get("documento");
-				cursos.add(curso);
+				if (addObjeto(cursos, curso)){
+					cursos.add(curso);
+				};
 				//
 				// ***		carrega habilidades
 				//
@@ -163,7 +221,7 @@ public class Rest_Index {
 		    	Object arrayHabilidades[] = arrayListHabilidades.toArray();
 				int z = 0;
 				while (z < arrayHabilidades.length) {
-					carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, (String) arrayHabilidades[z], null);
+					carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, arrayHabilidades[z].toString(), true, null);
 					++z;
 				};
 			};			
@@ -173,13 +231,13 @@ public class Rest_Index {
 		}
 	};
 
-	private void processaAreaConhecimento(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
+	private void processaAreaConhecimento(String id, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
 	};
-	private void processaAreaAtuacao(String entidade, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {		
+	private void processaAreaAtuacao(String id, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {		
 	};
 
 	@SuppressWarnings("unchecked")
-	private void carregaHabilidade(JSONArray habilidades, JSONArray cursos,JSONArray objetivos, JSONArray areaAtuacao,JSONArray areaConhecimento, String idHabilidade, String nivel) {
+	private void carregaHabilidade(JSONArray habilidades, JSONArray cursos,JSONArray objetivos, JSONArray areaAtuacao,JSONArray areaConhecimento, String idHabilidade, Boolean carregaPreRequisitos, String nomeHabilidade) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
@@ -189,45 +247,50 @@ public class Rest_Index {
 			DBObject cursor = collection.findOne(searchQuery);
 			if (cursor != null){
 				BasicDBObject habilidade = (BasicDBObject) cursor.get("documento");
+				nomeHabilidade = habilidade.get("name").toString();
 				habilidade.put ("nivel", "0");
-				habilidades.add (habilidade);
-				ArrayList<?> arrayList = new ArrayList<Object>(); 
-		    	arrayList = (ArrayList<?>) habilidade.get("preRequisitos");
-		    	Object array[] = arrayList.toArray();
-				int z = 0;
-				while (z < array.length) {
-					BasicDBObject preRequisito = (BasicDBObject) array[z];
-					carregaPreRequisitos(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, (String) preRequisito.get("id"), (String) preRequisito.get("nivel") );
-					++z;
+				if (addObjeto(habilidades, habilidade)){
+					habilidades.add (habilidade);
 				};
-				//
-				// ***		carrega cursos
-				//
-				ArrayList<?> arrayListCursos = new ArrayList<Object>(); 
-		    	arrayListCursos = (ArrayList<?>) habilidade.get("cursos");
-		    	Object arrayCursos[] = arrayListCursos.toArray();
-				int i = 0;
-				while (i < arrayCursos.length) {
-					BasicDBObject curso = (BasicDBObject) arrayCursos[i];
-					carregaCurso(cursos, (String) curso.get("id"));
-					++i;
+				if (carregaPreRequisitos){
+					ArrayList<?> arrayList = new ArrayList<Object>(); 
+			    	arrayList = (ArrayList<?>) habilidade.get("preRequisitos");
+			    	Object array[] = arrayList.toArray();
+					int z = 0;
+					while (z < array.length) {
+						BasicDBObject preRequisito = (BasicDBObject) array[z];
+						carregaPreRequisitos(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, (String) preRequisito.get("id"), (String) preRequisito.get("nivel") );
+						++z;
+					};
+					//
+					// ***		carrega cursos
+					//
+					ArrayList<?> arrayListCursos = new ArrayList<BasicDBObject>(); 
+			    	arrayListCursos = (ArrayList<?>) habilidade.get("cursos");
+			    	Object[] arrayCursos = arrayListCursos.toArray();
+					int i = 0;
+					while (i < arrayCursos.length) {
+						String curso = arrayCursos[i].toString();
+						carregaCurso(cursos, curso);
+						++i;
+					};
+					//
+					// ***		carrega objetivos
+					//
+					ArrayList<Object> arrayListObjetivo = new ArrayList<Object>(); 
+			    	arrayListObjetivo = (ArrayList<Object>) habilidade.get("objetivos");
+			    	Object arrayObjetivo[] = arrayListObjetivo.toArray();
+					int w = 0;
+					while (w < arrayObjetivo.length) {
+						String objetivo = arrayObjetivo[w].toString();
+						carregaObjetivo(objetivos, objetivo);
+						++w;
+					};
+					//
+					// ***		carrega área do conhecimento
+					//			
+					processaAreaAtuacao(idHabilidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 				};
-				//
-				// ***		carrega objetivos
-				//
-				ArrayList<?> arrayListObjetivo = new ArrayList<Object>(); 
-		    	arrayListObjetivo = (ArrayList<?>) habilidade.get("cursos");
-		    	Object arrayObjetivo[] = arrayListObjetivo.toArray();
-				int w = 0;
-				while (w < arrayObjetivo.length) {
-					BasicDBObject objetivo = (BasicDBObject) arrayObjetivo[w];
-					carregaObjetivo(objetivos, (String) objetivo.get("nome"));
-					++w;
-				};
-				//
-				// ***		carrega área do conhecimento
-				//			
-				processaAreaAtuacao(idHabilidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			};			
 			mongo.close();
 		} catch (UnknownHostException | MongoException e) {
@@ -236,18 +299,20 @@ public class Rest_Index {
 	};
 
 	@SuppressWarnings("unchecked")
-	private void carregaPreRequisitos(JSONArray habilidades, JSONArray cursos,JSONArray objetivos, JSONArray areaAtuacao,JSONArray areaConhecimento, String idHabilidade, String nivel) {
+	private void carregaPreRequisitos(JSONArray habilidades, JSONArray cursos,JSONArray objetivos, JSONArray areaAtuacao,JSONArray areaConhecimento, String id, String nivel) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
 			DBCollection collection = db.getCollection("habilidades");
-			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", idHabilidade);
+			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", id);
 			DBObject cursor = collection.findOne(searchQuery);
 			if (cursor != null){
 				BasicDBObject habilidade = (BasicDBObject) cursor.get("documento");
 				habilidade.put ("nivel", nivel);
-				habilidades.add (habilidade);
+				if (addObjeto(habilidades, habilidade)){
+					habilidades.add (habilidade);
+				};
 				//
 				// ***		carrega cursos
 				//
@@ -275,7 +340,7 @@ public class Rest_Index {
 				//
 				// ***		carrega área do conhecimento
 				//			
-				processaAreaAtuacao(idHabilidade, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				processaAreaAtuacao(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 			};			
 			mongo.close();
 		} catch (UnknownHostException | MongoException e) {
@@ -284,17 +349,19 @@ public class Rest_Index {
 	};
 
 	@SuppressWarnings("unchecked")
-	private void carregaCurso(JSONArray cursos, Object object) {
+	private void carregaCurso(JSONArray cursos, String id) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
 			DBCollection collection = db.getCollection("cursos");
-			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", object);
+			BasicDBObject searchQuery = new BasicDBObject("documento.idCurso", id);
 			DBObject cursor = collection.findOne(searchQuery);
 			if (cursor != null){
 				BasicDBObject curso = (BasicDBObject) cursor.get("documento");
-				cursos.add (curso);
+				if (addObjeto(cursos, curso)){
+					cursos.add (curso);
+				};
 			};			
 			mongo.close();
 		} catch (UnknownHostException | MongoException e) {
@@ -303,19 +370,41 @@ public class Rest_Index {
 		
 	};
 	
-
 	@SuppressWarnings("unchecked")
-	private void carregaObjetivo(JSONArray objetivos, String idObjetivo) {
+	private void carregaAreaAtuacao(JSONArray areasAtuacao, String id) {
 		Mongo mongo;
 		try {
 			mongo = new Mongo();
 			DB db = (DB) mongo.getDB("documento");
-			DBCollection collection = db.getCollection("carreiras");
-			BasicDBObject searchQuery = new BasicDBObject("documento.nome", idObjetivo);
+			DBCollection collection = db.getCollection("areaAtuacao");
+			BasicDBObject searchQuery = new BasicDBObject("documento.id", id);
 			DBObject cursor = collection.findOne(searchQuery);
 			if (cursor != null){
-				BasicDBObject curso = (BasicDBObject) cursor.get("documento");
-				objetivos.add (curso);
+				BasicDBObject areaAtuacao = (BasicDBObject) cursor.get("documento");
+				if (addObjeto(areasAtuacao, areaAtuacao)){
+					areasAtuacao.add (areaAtuacao);
+				};
+			};			
+			mongo.close();
+		} catch (UnknownHostException | MongoException e) {
+			e.printStackTrace();
+		};
+		
+	};
+	@SuppressWarnings("unchecked")
+	private void carregaAreaConhecimento(JSONArray areasConhecimento, String id) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("cursos");
+			BasicDBObject searchQuery = new BasicDBObject("documento.id", id);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject areaConhecimento = (BasicDBObject) cursor.get("documento");
+				if (addObjeto(areasConhecimento, areaConhecimento)){
+					areasConhecimento.add (areaConhecimento);
+				};
 			};			
 			mongo.close();
 		} catch (UnknownHostException | MongoException e) {
@@ -324,22 +413,98 @@ public class Rest_Index {
 		
 	};
 
+	@SuppressWarnings("unchecked")
+	private void carregaObjetivo(JSONArray objetivos, String id) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("carreiras");
+			BasicDBObject searchQuery = new BasicDBObject("documento.id", id);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject objetivo = (BasicDBObject) cursor.get("documento");
+				//
+				// ***		pega nome habilidades
+				//
+				ArrayList<?> arrayListNecessarios = new ArrayList<Object>(); 
+				JSONArray newNecessarios = new JSONArray(); 
+		    	arrayListNecessarios = (ArrayList<?>) objetivo.get("necessarios");
+		    	Object arrayNecessarios[] = arrayListNecessarios.toArray();
+				int z = 0;
+				while (z < arrayNecessarios.length) {
+					String nomeHabilidade = "";
+					carregaHabilidade(null, null, null, null, null,arrayNecessarios[z].toString(), false, nomeHabilidade);
+					newNecessarios.add(nomeHabilidade);
+					++z;
+				};
+				//
+				// ***		carrega objetivo
+				//			
+				if (addObjeto(objetivos, objetivo)){
+					objetivo.remove("necessarios");
+					objetivo.put("necessarios", newNecessarios);
+					objetivos.add(objetivo);
+				};
+			};			
+			mongo.close();
+		} catch (UnknownHostException | MongoException e) {
+			e.printStackTrace();
+		};
+		
+	};
+
+	private boolean addObjeto(JSONArray array, BasicDBObject elemento) {
+
+		if (array != null){
+			for (int i = 0; i < array.size(); i++) {
+				if (array.get(i).equals(elemento)){
+					return false;
+				};
+			};
+		}else{
+			return false;
+		};
+		return true;
+	};
+
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONArray ObterCursos(@QueryParam("characters") String characters) {
-
-		JSONArray documentos = new JSONArray();
-		carregaIndex("Objetivo", documentos, characters);
-		carregaIndex("Habilidade", documentos, characters);
-		carregaIndex("Curso", documentos, characters);
-		carregaIndex("Área Atuação", documentos, characters);
-		carregaIndex("Área Conhecimento", documentos, characters);
-		return documentos;
+	public BasicDBObject ObterCursos(@QueryParam("characters") String characters, @QueryParam("planejamentoLista") String planejamentoLista) {
+		
+		
+		BasicDBObject listas = new BasicDBObject();
+		if (planejamentoLista.equals("true")){			
+			JSONArray objetivos = new JSONArray();
+			JSONArray habilidades = new JSONArray();
+			JSONArray cursos = new JSONArray();
+			JSONArray areaAtuacao = new JSONArray();
+			JSONArray areaConhecimento = new JSONArray();
+			carregaIndex("Objetivo", objetivos, characters, true, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			carregaIndex("Habilidade", habilidades, characters, true, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			carregaIndex("Curso", cursos, characters, true, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			carregaIndex("Área Atuação", areaAtuacao, characters, true, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			carregaIndex("Área Conhecimento", areaConhecimento, characters, true, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+			listas.put("objetivos", objetivos);
+			listas.put("habilidades", habilidades);
+			listas.put("cursos", cursos);
+			listas.put("areaAtuacao", areaAtuacao);
+			listas.put("areaConhecimento", areaConhecimento);
+		}else{
+			JSONArray documentos = new JSONArray();
+			carregaIndex("Objetivo", documentos, characters, false, null, null, null, null, null);
+			carregaIndex("Habilidade", documentos, characters, false, null, null, null, null, null);;
+			carregaIndex("Curso", documentos, characters, false, null, null, null, null, null);
+			carregaIndex("Área Atuação", documentos, characters, false, null, null, null, null, null);
+			carregaIndex("Área Conhecimento", documentos, characters, false, null, null, null, null, null);
+			listas.put("pesquisa", documentos);
+		};
+		return listas;			
 	};
 
 	@SuppressWarnings("unchecked")
-	private void carregaIndex(String assunto, JSONArray documentos, String characters) {
+	private void carregaIndex(String assunto, JSONArray documentos, String characters, Boolean lista, JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
 		Mongo mongo;
 			try {
 				mongo = new Mongo();
@@ -360,14 +525,39 @@ public class Rest_Index {
 						String [] wordsSource = limpaChar (characters).split(" ");
 						List<?> wordsCompare = (List<?>) jsonObject.get("texto");
 						if (wordsoK (wordsSource, wordsCompare)){
-							jsonDocumento.put("assunto", jsonObject.get("assunto"));
-							jsonDocumento.put("entidade", jsonObject.get("entidade"));
-							documentos.add(jsonDocumento);
-							++i;
-							if (i > 3){
-								mongo.close();
-								return;
+							if (lista){
+								switch (assunto) {
+								case "Objetivo":
+									carregaObjetivo(objetivos, jsonObject.get("id").toString());
+									break;
+								case "Habilidade":
+									carregaHabilidade(habilidades, cursos, objetivos, areaAtuacao, areaConhecimento, jsonObject.get("id").toString(), false, null);
+								break;
+								case "Curso":
+									carregaCurso(cursos, jsonObject.get("id").toString());								
+								break;
+								case "Área Atuação":
+									carregaAreaAtuacao(areaAtuacao, jsonObject.get("id").toString());
+								break;
+								case "Área Conhecimento":
+									carregaAreaConhecimento(areaConhecimento, jsonObject.get("id").toString());									
+								break;
+
+								default:
+									break;
+								}
+							}else{
+								jsonDocumento.put("assunto", jsonObject.get("assunto"));
+								jsonDocumento.put("entidade", jsonObject.get("entidade"));
+								jsonDocumento.put("id", jsonObject.get("id"));
+								jsonDocumento.put("descricao", jsonObject.get("descricao"));
+								documentos.add(jsonDocumento);
+								if (i > 3){
+									mongo.close();
+									return;
+								};
 							};
+							++i;
 						};
 					} catch (ParseException e) {
 						e.printStackTrace();

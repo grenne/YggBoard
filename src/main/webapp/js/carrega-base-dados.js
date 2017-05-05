@@ -1015,6 +1015,7 @@ function carregaCarreirasProcess (elementos){
 				{
 				    documento : {
 				        nome :  arrayItensCarreira[0],
+				        id :  i,
 				        industria :  arrayItensCarreira[1],
 				        descricao : arrayItensCarreira[3],
 				        tarefas : arrayItensCarreira[4],
@@ -1707,18 +1708,30 @@ function carregaIndexElemento(data, assunto){
 	$.each(data, function (i, index) {
 		var texto = "";
 		if (index){
+			var entidade = "";
+			var id = "";
+			var descricao = "";
 			if (index.documento){
-				var entidade = "";
 				if (index.documento.name){
 					texto  = texto + carregaTextoIndex (index.documento.name);
 					entidade = index.documento.name;
+					id = index.documento.idHabilidade;
+					descricao = index.documento.descricao;
 				};
 				if (index.documento.nome){
 					texto  = texto + carregaTextoIndex (index.documento.nome);
 					entidade = index.documento.nome;
+					id = index.documento.idHabilidade;
+				};
+				if (index.documento.idCurso){
+					id = index.documento.idCurso;
+				};
+				if (index.documento.id){
+					id = index.documento.id;
 				};
 				if (index.documento.descricao) {
 					texto  = texto + "," + carregaTextoIndex (index.documento.descricao);
+					descricao = index.documento.descricao;
 				};
 				if (index.documento.tags){
 					$.each(index.documento.tags, function (i, tag) {
@@ -1726,18 +1739,21 @@ function carregaIndexElemento(data, assunto){
 					});
 				};
 			};
-			var entidade = "";
 			if (index.nome){
 				texto  = texto + carregaTextoIndex (index.nome);
 				entidade = index.nome;
 			};
 			if (index.descricao) {
 				texto  = texto + "," + carregaTextoIndex (index.descricao);
+				descricao = index.descricao;
 			};
 			if (index.tags){
 				$.each(index.tags, function (i, tag) {
 					texto  = texto + "," + carregaTextoIndex (tag);
 				});
+			};
+			if (index.id){
+				id = index.id;
 			};
 		};
 		if (texto != ""){
@@ -1748,8 +1764,9 @@ function carregaIndexElemento(data, assunto){
 					{
 						texto : textoArray,
 						assunto : assunto,
-						entidade : entidade
-				
+						entidade : entidade,
+						id : id,
+						descricao : descricao				
 					}
 				};
 			rest_incluiIndex(objIndex, semAcao, semAcao)
@@ -1862,7 +1879,7 @@ function atualizaPreRequisitosProcess (habilidades){
 
 function atualizaObjetivos (){
 	
-	rest_obterHabilidades(lerObjetivos, semAcao);
+	rest_obterHabilidades(lerObjetivos, semAcao, "false");
 
 };
 
@@ -1882,7 +1899,6 @@ function atualizaObjetivosProcess (objetivos){
 	$.each( habilidades, function( i, habilidade) {		
 		habilidade = obterObjetivos(habilidade, habilidade.documento.idHabilidade);
 		console.log ("id - "  + habilidade.documento.idHabilidade);
-    	delete habilidade.documento["cursos"];
 		rest_atualizaHabilidade(habilidade, semAcao, semAcao);
 	});
 

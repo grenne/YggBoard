@@ -141,7 +141,7 @@ public class Rest_Habilidade {
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONArray ObterHabilidadess(@QueryParam("diagrama") String diagrama, @QueryParam("type") String type, @QueryParam("classes") String classes) {
+	public JSONArray ObterHabilidadess(@QueryParam("diagrama") String diagrama, @QueryParam("type") String type, @QueryParam("classes") String classes, @QueryParam("semCursos") String semCursos) {
 
 		Mongo mongo;
 		try {
@@ -168,32 +168,34 @@ public class Rest_Habilidade {
 				JSONObject jsonDocumento = new JSONObject();
 			    BasicDBObject obj = (BasicDBObject) objHabilidade.get("documento");
 			    String idHabilidade = (String) obj.get("idHabilidade");
-				Mongo mongoCurso;
-				mongoCurso = new Mongo();
-				DB dbCurso = (DB) mongoCurso.getDB("documento");
-				DBCollection collectionCurso = dbCurso.getCollection("cursos");
-				BasicDBObject setQueryCurso = new BasicDBObject();
-				setQueryCurso.put("documento.habilidades.habilidade", idHabilidade);
-				DBCursor cursorCurso = collectionCurso.find(setQueryCurso);
-				JSONArray cursosArray = new JSONArray();
-				while (((Iterator<DBObject>) cursorCurso).hasNext()) {
-					BasicDBObject objCurso = (BasicDBObject) ((Iterator<DBObject>) cursorCurso).next();
-					String documentoCurso = objCurso.getString("documento");
-					try {
-						JSONObject jsonObject = (JSONObject) parser.parse(documentoCurso);
-						JSONObject jsonCursos = new JSONObject();
-						jsonCursos.put("nome", jsonObject.get("nome"));
-						jsonCursos.put("idCurso", jsonObject.get("idCurso"));
-						jsonCursos.put("descricao", jsonObject.get("descricao"));
-						jsonCursos.put("wiki", jsonObject.get("wiki"));
-						cursosArray.add (jsonCursos);
-					} catch (ParseException e) {
-						e.printStackTrace();
-					}
-				};
-				mongoCurso.close();
-			    obj.remove("cursos");
-			    obj.put("cursos", cursosArray);
+			    if (semCursos != "false"){
+					Mongo mongoCurso;
+					mongoCurso = new Mongo();
+					DB dbCurso = (DB) mongoCurso.getDB("documento");
+					DBCollection collectionCurso = dbCurso.getCollection("cursos");
+					BasicDBObject setQueryCurso = new BasicDBObject();
+					setQueryCurso.put("documento.habilidades.habilidade", idHabilidade);
+					DBCursor cursorCurso = collectionCurso.find(setQueryCurso);
+					JSONArray cursosArray = new JSONArray();
+					while (((Iterator<DBObject>) cursorCurso).hasNext()) {
+						BasicDBObject objCurso = (BasicDBObject) ((Iterator<DBObject>) cursorCurso).next();
+						String documentoCurso = objCurso.getString("documento");
+						try {
+							JSONObject jsonObject = (JSONObject) parser.parse(documentoCurso);
+							JSONObject jsonCursos = new JSONObject();
+							jsonCursos.put("nome", jsonObject.get("nome"));
+							jsonCursos.put("idCurso", jsonObject.get("idCurso"));
+							jsonCursos.put("descricao", jsonObject.get("descricao"));
+							jsonCursos.put("wiki", jsonObject.get("wiki"));
+							cursosArray.add (jsonCursos);
+						} catch (ParseException e) {
+							e.printStackTrace();
+						}
+					};
+					mongoCurso.close();
+				    obj.remove("cursos");
+				    obj.put("cursos", cursosArray);
+			    };
 			    jsonDocumento.put("documento", obj);
 				documentos.add(jsonDocumento);
 			};

@@ -147,6 +147,7 @@ public class Rest_Carreira {
 					jsonObject = (JSONObject) parser.parse(documento);
 					JSONObject jsonDocumento = new JSONObject();
 					jsonDocumento.put("_id", objCarreiras.getString("_id"));
+					jsonDocumento.put("id", jsonObject.get("id"));
 					jsonDocumento.put("nome", jsonObject.get("nome"));
 					jsonDocumento.put("industria", jsonObject.get("industria"));
 				    jsonDocumento.put("descricao", jsonObject.get("descricao"));

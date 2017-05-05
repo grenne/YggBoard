@@ -32,6 +32,8 @@ public class Index {
 		public String texto [];
 		public String assunto;
 		public String entidade;
+		public String id;
+		public String descricao;
 
 		public Documento() {
 
@@ -41,11 +43,15 @@ public class Index {
 		public Documento(
 						String [] texto,
 						String assunto,
-						String entidade
+						String entidade,
+						String id,
+						String descricao
 						) {
 						this.texto = texto;  
 						this.assunto = assunto;  
 						this.entidade = entidade;  
+						this.id = id;  
+						this.descricao = descricao;  
 		}
 
 		@Override

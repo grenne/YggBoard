@@ -30,6 +30,7 @@ public class Carreira {
 	public static final class Documento {
 
 		public String nome;
+		public String id;
 		public String industria;
 		public String descricao;
 		public String tarefas;
@@ -48,6 +49,7 @@ public class Carreira {
 		@JsonCreator
 		public Documento(
 						String nome,
+						String id,
 						String industria,
 						String descricao,
 						String tarefas,
@@ -60,6 +62,7 @@ public class Carreira {
 						String [] tags
 						) {
 						this.nome = nome;  
+						this.id = id;  
 						this.industria = industria;  
 						this.descricao = descricao; 
 						this.tarefas = tarefas; 

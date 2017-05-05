@@ -465,6 +465,71 @@
 	};
 
 	function atualizaUserPerfilElemento (objPerfil, tipo, elemento){
+
+		switch (tipo) {
+		case "habilidadeInteresse":
+			tipo = "habilidadesInteresse";
+			inout = "in"
+			break;
+		case "habilidadeInteresseOff":
+			tipo = "habilidadesInteresse";
+			inout = "out"
+			break;
+		case "habilidade":
+			tipo = "habilidades";
+			inout = "in"			
+			break;
+		case "habilidadeOff":
+			tipo = "habilidades";
+			inout = "out"			
+			break;
+		case "carreiraInteresse":
+			tipo = "carreirasInteresse";
+			inout = "in"			
+			break;
+		case "carreiraInteresseOff":
+			tipo = "carreirasInteresse";
+			inout = "out"						
+			break;
+		case "carreiras":
+			tipo = "carreiras";
+			inout = "in"						
+			break;
+		case "carreirasOff":
+			tipo = "carreiras";
+			inout = "out"						
+			break;
+		case "cursoInteresse":
+			tipo = "cursosInteresse";
+			inout = "in"									
+			break;
+		case "cursoInteresseOff":
+			tipo = "cursosInteresse";
+			inout = "out"									
+			break;
+		case "badgeInteresse":
+			tipo = "badgesInteresse";
+			inout = "in"									
+			break;
+		case "badgeInteresseOff":
+			tipo = "badgesInteresse";
+			inout = "out"									
+			break;
+
+		default:
+			break;
+		}
+		
+		var perfil = 
+		{
+				tipo : "tipo",
+				elemento : "elemento",
+				inout : "in"
+		};
+		
+		rest_atualizaUserPerfilElementos (objJson, semAcao, semAcao);
+		
+	/*
 		if (tipo == "habilidadeInteresse"){
 			var existente = false;
 			$.each( objPerfil.documento.habilidadesInteresse, function( i, habilidade) {
@@ -608,6 +673,7 @@
 				};
 			});
 		};
+*/
 	};
 	
 	function atualizaPerfil (objPerfil){
@@ -778,7 +844,8 @@
 		$( "#carregaCarreirasTotal" ).bind( "click", function() {
 			$( ".inactive-tab").removeClass("nav-tab");
 			$( "#carregaCarreirasTotal").addClass("nav-tab");
-			carregaCarreirasTotal();
+//			carregaCarreirasTotal();
+			carregaIndex();
 		});
 
 		$( "#carregaCursosTotal" ).bind( "click", function() {

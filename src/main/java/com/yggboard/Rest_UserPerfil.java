@@ -18,7 +18,6 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
-import org.bson.types.ObjectId;
 import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -485,7 +484,7 @@ public class Rest_UserPerfil {
 	};
 
 	@SuppressWarnings("unchecked")
-	@Path("/atualizar")
+	@Path("/atualizar/perfil")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public Response AtualizarPerfil(JSONObject newPerfil) throws MongoException, JsonParseException, JsonMappingException, IOException {
@@ -494,8 +493,7 @@ public class Rest_UserPerfil {
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
 		DBCollection collection = db.getCollection("userPerfil");
-		BasicDBObject objUpdate = new BasicDBObject();
-		BasicDBObject searchQuery = new BasicDBObject("documento.usario", usuario);
+		BasicDBObject searchQuery = new BasicDBObject("documento.usuario", usuario);
 		DBObject cursor = collection.findOne(searchQuery);
 		if (cursor != null){
 			BasicDBObject objUserPerfil = new BasicDBObject();
@@ -504,35 +502,68 @@ public class Rest_UserPerfil {
 			String elemento = newPerfil.get("elemento").toString();	
 			String inout = newPerfil.get("inout").toString();	
 			Boolean existente = false;
-			List array = (List) objUserPerfil.get(tipo);
+			List<String> array = (List<String>) objUserPerfil.get(tipo);
 			for (int i = 0; i < array.size(); i++) {
-				String elementoArray = array.get(i).toString();
 				if (elemento == array.get(i).toString()){
 					existente = true;
+					if (inout == "out"){
+						array.remove(i);
+					};
 				};
 			};
 			if (!existente){
-				array.add(elemento);
-				objUserPerfil.put(tipo, array);
-				BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(objUserPerfil));
-				searchQuery = new BasicDBObject("documento.usuario", usuario);
-				cursor = collection.findAndModify(searchQuery,
-		                null,
-		                null,
-		                false,
-		                update,
-		                true,
-		                false);
-//				atualizaDependencias(objPerfil, elemento, tipo);
-//				atualizaParents(objPerfil, elemento, tipo);
+				if (inout == "in"){
+					array.add(elemento);
+					atualizaDependencia(elemento, array);
+				};
 			};
+			objUserPerfil.put(tipo, array);
+			BasicDBObject update = new BasicDBObject("$set", new BasicDBObject(objUserPerfil));
+			searchQuery = new BasicDBObject("documento.usuario", usuario);
+			cursor = collection.findAndModify(searchQuery,
+	                null,
+	                null,
+	                false,
+	                update,
+	                true,
+	                false);
 			mongo.close();
 			return Response.status(200).build();
 		};		
 		mongo.close();
 		return Response.status(404).build();
 	};
-		@SuppressWarnings("unchecked")
+	private void atualizaDependencia(String elemento, List<String> array) {
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+			DBCollection collection = db.getCollection("habilidade");
+			BasicDBObject searchQuery = new BasicDBObject("documento.idHabilidade", elemento);
+			DBObject cursor = collection.findOne(searchQuery);
+			if (cursor != null){
+				BasicDBObject objHabilidade = (BasicDBObject) cursor.get("documento");
+				@SuppressWarnings("unchecked")
+				List<String> arrayPreRequisitos = (List<String>) objHabilidade.get("preRequisitos");
+				for (int i = 0; i < arrayPreRequisitos.size(); i++) {
+					Boolean existente = false;
+					for (int w = 0; w < array.size(); w++) {
+						if (arrayPreRequisitos.get(i).toString() == array.get(i).toString()){
+							existente = true;
+						};
+					};
+					if (!existente){
+						array.add(arrayPreRequisitos.get(i).toString());
+					};					
+				};
+			};
+			mongo.close();
+		} catch (UnknownHostException | MongoException e) {
+			e.printStackTrace();
+		};
+	};
+	
+	@SuppressWarnings("unchecked")
 	@Path("/atualizar")
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)

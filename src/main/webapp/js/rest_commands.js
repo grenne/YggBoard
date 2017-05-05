@@ -4,7 +4,7 @@
     
     function rest_obterHabilidades(action_ok, action_not_ok, var1, var2) {
     	$.ajax({
-	        url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/lista?diagrama=habilidades",
+	        url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/habilidades/lista?diagrama=habilidades&semCursos=" + var1,
             contentType: "application/json; charset=utf-8",
             dataType: 'json'
     	})
@@ -605,7 +605,7 @@
 
     function rest_obterIndex(characters, action_ok, action_not_ok, var1, var2, var3) {
     	$.ajax({
-            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/lista?characters=" + characters,
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/lista?characters=" + characters + "&planejamentoLista=true",
             contentType: "application/json; charset=utf-8",
             dataType: 'json',
             global: false,
