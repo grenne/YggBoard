@@ -68,8 +68,10 @@ public class Rest_UserPerfil {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public JSONArray ObterCarreiras(@QueryParam("usuario") String usuario, @QueryParam("item") String item, @QueryParam("elemento") String elemento) throws UnknownHostException, MongoException {
+		if (item == null || usuario == null){
+			return null;
+		};
 		Commons commons = new Commons();
-		System.out.println("inicio rest");
 		Mongo mongo = new Mongo();
 		DB db = (DB) mongo.getDB("documento");
 		DBCollection collection = db.getCollection("userPerfil");
@@ -82,7 +84,6 @@ public class Rest_UserPerfil {
 		JSONObject jsonPerfil; 
 		JSONParser parser = new JSONParser(); 
 		try {
-			System.out.println("inicio try");
 			jsonPerfil = (JSONObject) parser.parse(docUserPerfil);
 			if (item.equals("carreiras") | item.equals("carreiras-interesse") | item.equals("carreiras-sugeridas")){
 				ArrayList arrayList = new ArrayList(); 
@@ -94,7 +95,6 @@ public class Rest_UserPerfil {
 				};
 				if (item.equals("carreiras-sugeridas")){				
 					arrayList = (ArrayList) jsonPerfil.get("carreirasSugeridas");
-					System.out.println("sugeridas" + arrayList.toString());
 				};
 		    	Object array[] = arrayList.toArray(); 
 				int w = 0;
@@ -499,20 +499,20 @@ public class Rest_UserPerfil {
 			BasicDBObject objUserPerfil = new BasicDBObject();
 			objUserPerfil = (BasicDBObject) cursor.get("documento");
 			String tipo = newPerfil.get("tipo").toString();	
-			String elemento = newPerfil.get("elemento").toString();	
+			String elemento = newPerfil.get("id").toString();	
 			String inout = newPerfil.get("inout").toString();	
 			Boolean existente = false;
 			List<String> array = (List<String>) objUserPerfil.get(tipo);
 			for (int i = 0; i < array.size(); i++) {
 				if (elemento == array.get(i).toString()){
 					existente = true;
-					if (inout == "out"){
+					if (inout.equals("out")){
 						array.remove(i);
 					};
 				};
 			};
 			if (!existente){
-				if (inout == "in"){
+				if (inout.equals("in")){
 					array.add(elemento);
 					atualizaDependencia(elemento, array);
 				};

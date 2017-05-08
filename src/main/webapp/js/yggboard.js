@@ -844,8 +844,7 @@
 		$( "#carregaCarreirasTotal" ).bind( "click", function() {
 			$( ".inactive-tab").removeClass("nav-tab");
 			$( "#carregaCarreirasTotal").addClass("nav-tab");
-//			carregaCarreirasTotal();
-			carregaIndex();
+			carregaCarreirasTotal();
 		});
 
 		$( "#carregaCursosTotal" ).bind( "click", function() {
@@ -871,13 +870,15 @@
 		
 		// *** campos para auxilio da montagem das posiçoes do diagrama
 		$( "#auxiliamontagemdiagrama" ).bind( "click", function() {
-			$( ".inactive-tab").removeClass("nav-tab");
-			$( "#auxiliamontagemdiagrama").addClass("nav-tab");
-			if ($(".auxiliamontagemdiagrama").hasClass("hide")){
-				$(".auxiliamontagemdiagrama").removeClass ("hide")
-			}else{
-				$(".auxiliamontagemdiagrama").addClass ("hide")
-			}
+			testaAtualizacaoPerfil();
+//			carregaIndex();
+//			$( ".inactive-tab").removeClass("nav-tab");
+//			$( "#auxiliamontagemdiagrama").addClass("nav-tab");
+//			if ($(".auxiliamontagemdiagrama").hasClass("hide")){
+//				$(".auxiliamontagemdiagrama").removeClass ("hide")
+//			}else{
+//				$(".auxiliamontagemdiagrama").addClass ("hide")
+//			}
 		});
 		
 		$( "#cargaCampos" ).bind( "click", function() {

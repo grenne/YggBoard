@@ -558,6 +558,31 @@
 
     };
 
+    function rest_atualizaUserPerfilElementos(objJson, action_ok, action_not_ok, var1, var2) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/atualizar/perfil",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson),
+            global: false,
+            async:false
+    	
+		})        	
+		.done(function( data ) {
+    	})
+    	.fail(function(data) {
+    	})
+    	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok (data, var1, var2);
+        	}else{
+        		action_not_ok(data, var1, var2)
+        	};
+    	});
+
+    };
+
     function rest_atualizaSetup(objJson, action_ok, action_not_ok, var1, var2) {
 		$.ajax({
 			type: "POST",

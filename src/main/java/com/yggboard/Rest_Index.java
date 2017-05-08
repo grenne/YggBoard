@@ -18,6 +18,7 @@ import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.codehaus.jackson.JsonParseException;
 import org.codehaus.jackson.map.JsonMappingException;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.json.simple.JSONArray;
@@ -108,6 +109,62 @@ public class Rest_Index {
 			break;
 		default:
 			break;
+		};
+		
+		BasicDBObject listas = new BasicDBObject();
+		
+		listas.put("objetivos", objetivos);
+		listas.put("habilidades", habilidades);
+		listas.put("cursos", cursos);
+		listas.put("areaAtuacao", areaAtuacao);
+		listas.put("areaConhecimento", areaConhecimento);
+		
+		return listas;
+			
+			// qdo escolhida uma habilidade trazer todos os pré-requisitos, objetivos, cursos, area de atuação da habiidade e área e conhecimento dos objetivos
+			//
+			// qdo escolhida uma objetivo trazer todas habilidades e seus pré-requisitos, objetivos da mesma aréa de atuação , cursos das habilidades, area de atuação das habilidades e área e conhecimento das habilidades
+			//
+			// qdo escolhida uma curso trazer todas habilidades, objetivos das habilidades , cursos só ele, area de atuação dos objetivos e área e conhecimento das habilidades
+			//
+			// qdo escolhida uma area de atuação trazer todos objetivos, as habilidades, cursos das habilidades, area de atuação só a selecionada e área e conhecimento das habilidades
+			//
+			// qdo escolhida uma area de conhecimento trazer todas habilidades, objetivos das habilidades, cursos das habilidades, area de conhecimento só a selecionada e área de atuação de todos os objetivos
+	};
+	
+	@Path("/obter/filtro")	
+	@POST
+	@Consumes(MediaType.APPLICATION_JSON)
+	public BasicDBObject ObterItensFiltro(JSONArray objFiltros) throws MongoException, JsonParseException, JsonMappingException, IOException {
+		
+		JSONArray objetivos = new JSONArray();
+		JSONArray habilidades = new JSONArray();
+		JSONArray cursos = new JSONArray();
+		JSONArray areaAtuacao = new JSONArray();
+		JSONArray areaConhecimento = new JSONArray();
+
+		Boolean primeiraVez = true;
+		for (int i = 0; i < objFiltros.size(); i++) {
+			BasicDBObject objItemFiltro = (BasicDBObject) objFiltros.get(i);
+			switch (objItemFiltro.get("assunto").toString()) {
+			case "objetivo":
+				processaObjetivos(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			case "habilidade":
+				processaHabilidades(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			case "curso":
+				processaCursos(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			case "areaAtuacao":
+				processaAreaAtuacao(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			case "areaConhecimento":
+				processaAreaConhecimento(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			default:
+				break;
+			};			
 		};
 		
 		BasicDBObject listas = new BasicDBObject();

@@ -168,7 +168,8 @@ public class Rest_Habilidade {
 				JSONObject jsonDocumento = new JSONObject();
 			    BasicDBObject obj = (BasicDBObject) objHabilidade.get("documento");
 			    String idHabilidade = (String) obj.get("idHabilidade");
-			    if (semCursos != "false"){
+			    if (semCursos.equals("false")){
+			    }else{
 					Mongo mongoCurso;
 					mongoCurso = new Mongo();
 					DB dbCurso = (DB) mongoCurso.getDB("documento");

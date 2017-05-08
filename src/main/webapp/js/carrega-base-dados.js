@@ -1853,6 +1853,87 @@ function atualizaCursosSugeridos(){
 	rest_atualizaCursosSugeridos(objJson, semAcao, semAcao);
 };
 
+function testaAtualizacaoPerfil(){
+	var objJson = 
+
+		{
+			usuario : "grenneglr@gmail.com",
+			tipo : "habilidadesInteresse",
+			id : "9999",
+			inout : "in"
+		};
+	
+	rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
+	var objJson = 
+
+	{
+		usuario : "grenneglr@gmail.com",
+		tipo : "habilidades",
+		id : "9999",
+		inout : "in"
+	};
+
+rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
+var objJson = 
+
+{
+	usuario : "grenneglr@gmail.com",
+	tipo : "carreirasInteresse",
+	id : "9999",
+	inout : "in"
+};
+
+rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
+var objJson = 
+
+{
+	usuario : "grenneglr@gmail.com",
+	tipo : "carreiras",
+	id : "9999",
+	inout : "in"
+};
+
+rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
+var objJson = 
+
+{
+	usuario : "grenneglr@gmail.com",
+	tipo : "cursosInteresse",
+	id : "9999",
+	inout : "in"
+};
+
+rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
+var objJson = 
+
+{
+	usuario : "grenneglr@gmail.com",
+	tipo : "cursos",
+	id : "9999",
+	inout : "in"
+};
+var objJson = 
+
+{
+	usuario : "grenneglr@gmail.com",
+	tipo : "badgesInteresse",
+	id : "9999",
+	inout : "in"
+};
+
+rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
+var objJson = 
+
+{
+	usuario : "grenneglr@gmail.com",
+	tipo : "badges",
+	id : "9999",
+	inout : "in"
+};
+
+rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
+};
+
 function atualizaPreRequisitos (){
 	
 	rest_obterHabilidades(atualizaPreRequisitosProcess, semAcao);
