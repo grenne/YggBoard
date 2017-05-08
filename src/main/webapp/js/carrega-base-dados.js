@@ -2007,3 +2007,44 @@ function obterObjetivos(objJson, habilidadeTarget){
 	
 	return objJson;
 };
+
+function atualizaPerfilCarreira (){
+	
+	rest_obterUsersPerfil(obterCarreiras, semAcao);
+
+};
+
+function obterCarreiras (perfis){
+	
+	rest_obterCarreiras(atualizaCarreiraPerfil, semAcao, perfis);
+
+};
+
+function atualizaCarreiraPerfil (carreiras, perfis){
+	
+	
+	$.each( perfis, function( i, perfil) {
+		var carreirasNew = [];
+	    $.each(perfil.documento.carreiras, function (i, carreira) {
+		    $.each(carreiras, function (i, carreiraSource) {
+		    	if (carreira == carreiraSource.nome){
+		    		carreirasNew.push(carreiraSource.id);
+		    	};
+		    });
+	    });
+	    delete perfil.documento.carreiras;
+	    perfil.documento.carreiras = carreirasNew;
+		var carreirasInteresseNew = [];
+	    $.each(perfil.documento.carreirasInteresse, function (i, carreira) {
+		    $.each(carreiras, function (i, carreiraSource) {
+		    	if (carreira == carreiraSource.nome){
+		    		carreirasInteresseNew.push(carreiraSource.id);
+		    	};
+		    });
+	    });
+	    delete perfil.documento.carreirasInteresse;
+	    perfil.documento.carreirasInteresse = carreirasInteresseNew;
+	    rest_atualizaUserPerfil(perfil, semAcao, semAcao);
+	});
+
+};

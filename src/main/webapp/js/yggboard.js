@@ -870,7 +870,8 @@
 		
 		// *** campos para auxilio da montagem das posiçoes do diagrama
 		$( "#auxiliamontagemdiagrama" ).bind( "click", function() {
-			testaAtualizacaoPerfil();
+			atualizaPerfilCarreira();
+//			testaAtualizacaoPerfil();
 //			carregaIndex();
 //			$( ".inactive-tab").removeClass("nav-tab");
 //			$( "#auxiliamontagemdiagrama").addClass("nav-tab");

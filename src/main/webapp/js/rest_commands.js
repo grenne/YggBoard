@@ -174,7 +174,6 @@
     	});
     };
 
-
     function rest_obterAreaConhecimento(action_ok, action_not_ok, var1, var2) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/areaconhecimento/lista",
@@ -226,6 +225,26 @@
     	})
     	.fail(function(data) {
     		action_not_ok(null, var1, var2)
+    	})
+    	.always(function(data) {
+    	});
+    };
+
+    function rest_obterUsersPerfil(action_ok, action_not_ok, var1, var2) {
+    	$.ajax({
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/userPerfil/lista",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json'
+    	})
+    	.done(function( data ) {
+    		if (data){
+    			action_ok (data, var1, var2);
+    		}else{
+    			action_not_ok (data, var1, var2);	
+    		};
+    	})
+    	.fail(function(data) {
+			action_not_ok (data, var1, var2);	
     	})
     	.always(function(data) {
     	});

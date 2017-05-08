@@ -597,7 +597,7 @@ public class Rest_UserPerfil {
 	@Path("/lista")	
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
-	public JSONArray ObterCursos(@QueryParam("usuario") String usuario) {
+	public JSONArray ObterUsersPerfil() {
 
 		Mongo mongo;
 		try {
@@ -605,11 +605,7 @@ public class Rest_UserPerfil {
 			DB db = (DB) mongo.getDB("documento");
 
 			BasicDBObject setQuery = new BasicDBObject();
-		    if (usuario != null){
-		    	setQuery.put("documento.usuario", usuario);
-		    };
-			DBCollection collection = db.getCollection("userPerfil");
-			
+			DBCollection collection = db.getCollection("userPerfil");			
 			DBCursor cursor = collection.find(setQuery);
 			JSONArray documentos = new JSONArray();
 			while (((Iterator<DBObject>) cursor).hasNext()) {
