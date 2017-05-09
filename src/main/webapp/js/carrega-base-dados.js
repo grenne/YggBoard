@@ -1853,85 +1853,26 @@ function atualizaCursosSugeridos(){
 	rest_atualizaCursosSugeridos(objJson, semAcao, semAcao);
 };
 
-function testaAtualizacaoPerfil(){
+function testaFiltro(){
 	var objJson = 
 
-		{
-			usuario : "grenneglr@gmail.com",
-			tipo : "habilidadesInteresse",
-			id : "9999",
-			inout : "in"
-		};
+		[
+				{
+					assunto : "objetivo",
+					id : "1"
+				},
+				{
+					assunto : "objetivo",
+					id : "2"
+				}
+			];
 	
-	rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
-	var objJson = 
-
-	{
-		usuario : "grenneglr@gmail.com",
-		tipo : "habilidades",
-		id : "9999",
-		inout : "in"
-	};
-
-rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
-var objJson = 
-
-{
-	usuario : "grenneglr@gmail.com",
-	tipo : "carreirasInteresse",
-	id : "9999",
-	inout : "in"
+	rest_obterIndexFiltro(objJson, consoleDisplay, semAcao);
+	
 };
 
-rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
-var objJson = 
-
-{
-	usuario : "grenneglr@gmail.com",
-	tipo : "carreiras",
-	id : "9999",
-	inout : "in"
-};
-
-rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
-var objJson = 
-
-{
-	usuario : "grenneglr@gmail.com",
-	tipo : "cursosInteresse",
-	id : "9999",
-	inout : "in"
-};
-
-rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
-var objJson = 
-
-{
-	usuario : "grenneglr@gmail.com",
-	tipo : "cursos",
-	id : "9999",
-	inout : "in"
-};
-var objJson = 
-
-{
-	usuario : "grenneglr@gmail.com",
-	tipo : "badgesInteresse",
-	id : "9999",
-	inout : "in"
-};
-
-rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
-var objJson = 
-
-{
-	usuario : "grenneglr@gmail.com",
-	tipo : "badges",
-	id : "9999",
-	inout : "in"
-};
-
-rest_atualizaUserPerfilElementos(objJson, semAcao, semAcao);
+function consoleDisplay (data){
+	console.log ("data:" + JSON.stringify(data));
 };
 
 function atualizaPreRequisitos (){
@@ -2024,7 +1965,7 @@ function atualizaCarreiraPerfil (carreiras, perfis){
 	
 	
 	$.each( perfis, function( i, perfil) {
-		var carreirasNew = [];
+	var carreirasNew = [];
 	    $.each(perfil.documento.carreiras, function (i, carreira) {
 		    $.each(carreiras, function (i, carreiraSource) {
 		    	if (carreira == carreiraSource.nome){
@@ -2044,6 +1985,16 @@ function atualizaCarreiraPerfil (carreiras, perfis){
 	    });
 	    delete perfil.documento.carreirasInteresse;
 	    perfil.documento.carreirasInteresse = carreirasInteresseNew;
+		var carreirasSugeridasNew = [];
+	    $.each(perfil.documento.carreirasSugeridas, function (i, carreira) {
+		    $.each(carreiras, function (i, carreiraSource) {
+		    	if (carreira == carreiraSource.nome){
+		    		carreirasSugeridasNew.push(carreiraSource.id);
+		    	};
+		    });
+	    });
+	    delete perfil.documento.carreirasSugeridas;
+	    perfil.documento.carreirasSugeridas = carreirasSugeridasNew;
 	    rest_atualizaUserPerfil(perfil, semAcao, semAcao);
 	});
 

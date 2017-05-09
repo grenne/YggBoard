@@ -143,28 +143,35 @@ public class Rest_Index {
 		JSONArray areaAtuacao = new JSONArray();
 		JSONArray areaConhecimento = new JSONArray();
 
-		Boolean primeiraVez = true;
 		for (int i = 0; i < objFiltros.size(); i++) {
-			BasicDBObject objItemFiltro = (BasicDBObject) objFiltros.get(i);
-			switch (objItemFiltro.get("assunto").toString()) {
-			case "objetivo":
-				processaObjetivos(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-				break;
-			case "habilidade":
-				processaHabilidades(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-				break;
-			case "curso":
-				processaCursos(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-				break;
-			case "areaAtuacao":
-				processaAreaAtuacao(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-				break;
-			case "areaConhecimento":
-				processaAreaConhecimento(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-				break;
-			default:
-				break;
-			};			
+			JSONParser parser = new JSONParser(); 
+			@SuppressWarnings("rawtypes")
+			String documento = JSONObject.toJSONString((Map) objFiltros.get(i));
+			JSONObject objItemFiltro;
+			try {
+				objItemFiltro = (JSONObject) parser.parse(documento);
+				switch (objItemFiltro.get("assunto").toString()) {
+				case "objetivo":
+					processaObjetivos(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+					break;
+				case "habilidade":
+					processaHabilidades(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+					break;
+				case "curso":
+					processaCursos(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+					break;
+				case "areaAtuacao":
+					processaAreaAtuacao(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+					break;
+				case "areaConhecimento":
+					processaAreaConhecimento(objItemFiltro.get("id").toString(), objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+					break;
+				default:
+					break;
+				};			
+			} catch (ParseException e) {
+				e.printStackTrace();
+			}
 		};
 		
 		BasicDBObject listas = new BasicDBObject();

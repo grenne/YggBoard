@@ -669,6 +669,37 @@
     	});
     };
 
+    function rest_obterIndexFiltro(objJson, action_ok, action_not_ok, var1, var2, var3) {
+		$.ajax({
+			type: "POST",
+            url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/obter/filtro",
+            contentType: "application/json; charset=utf-8",
+            dataType: 'json',
+            data : JSON.stringify(objJson),
+            global: false,
+            async:false
+    	
+		})        	
+		.done(function( data ) {
+    		if (data){
+    			action_ok (data, var1, var2, var3);
+    		}else{
+    			action_not_ok (data, var1, var2, var3);	
+    		};
+    	})
+    	.fail(function(data) {
+    		action_not_ok(null, var1, var2, var3)
+    	})
+    	.always(function(data) {
+        	if (data.status == 200) {
+        		action_ok (data, var1, var2);
+        	}else{
+        		action_not_ok(data, var1, var2)
+        	};
+    	});
+
+    };
+
     function rest_obterListasPlanejamento(assunto, entidade, action_ok, action_not_ok, var1, var2, var3) {
     	$.ajax({
             url: "http://" + localStorage.urlServidor + ":8080/yggboard/rest/index/obter/itens?assunto=" + assunto + "&entidade=" + entidade ,

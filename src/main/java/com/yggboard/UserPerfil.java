@@ -37,7 +37,7 @@ public class UserPerfil {
 		public String carreiras[];
 		public String carreirasSugeridas[];
 		public String cursosInteresse[];
-		public CursosInscritos cursosInscritos[];
+		public CursosInscritos cursosInscrito[];
 		public String cursosAndamento[];
 		public String cursos[];
 		public String badges[];
@@ -57,7 +57,7 @@ public class UserPerfil {
 						String [] habilidades,
 						String [] carreirasSugeridas,
 						String [] carreirasInteresse,
-						CursosInscritos [] cursosInscritos,
+						CursosInscritos [] cursosInscrito,
 						String [] carreiras,
 						String [] cursosInteresse,
 						String [] cursosAndamento,
@@ -75,7 +75,7 @@ public class UserPerfil {
 						this.carreiras = carreiras; 
 						this.cursosInteresse = cursosInteresse;
 						this.cursosAndamento = cursosAndamento;
-						this.cursosInscritos = cursosInscritos;
+						this.cursosInscrito = cursosInscrito;
 						this.cursos = cursos;
 						this.badges = badges; 
 						this.badgesInteresse = badgesInteresse;
