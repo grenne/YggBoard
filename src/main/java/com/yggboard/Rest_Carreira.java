@@ -218,7 +218,7 @@ public class Rest_Carreira {
 			e.printStackTrace();
 		} catch (MongoException e) {
 			e.printStackTrace();
-		}
+		};
 		return null;
 	};
 

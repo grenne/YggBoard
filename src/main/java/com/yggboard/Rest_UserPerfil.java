@@ -68,7 +68,7 @@ public class Rest_UserPerfil {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public JSONArray ObterCarreiras(@QueryParam("usuario") String usuario, @QueryParam("item") String item, @QueryParam("elemento") String elemento) throws UnknownHostException, MongoException {
-		if (item == null || usuario == null){
+		if (item == null ){
 			return null;
 		};
 		Commons commons = new Commons();
@@ -500,9 +500,32 @@ public class Rest_UserPerfil {
 		if (cursor != null){
 			BasicDBObject objUserPerfil = new BasicDBObject();
 			objUserPerfil = (BasicDBObject) cursor.get("documento");
-			String tipo = newPerfil.get("tipo").toString();	
-			String elemento = newPerfil.get("id").toString();	
-			String inout = newPerfil.get("inout").toString();	
+			Boolean origemErro = false;
+			String tipo = "";
+			if (newPerfil.get("tipo").toString() != null){
+				tipo = newPerfil.get("tipo").toString();
+			}else{
+				origemErro = true;
+			};
+			String elemento = "";
+			if (newPerfil.get("tipo").toString() != null){
+				elemento = newPerfil.get("id").toString();
+			}else{
+				origemErro = true;
+			};
+			String inout = "in";
+			if (newPerfil.get("tipo").toString() != null){
+				inout = newPerfil.get("inout").toString();
+				if (!inout.equals("in") && !inout.equals("out")){
+					origemErro = true;	
+				};
+			}else{
+				origemErro = true;
+			}
+			if (origemErro){
+				mongo.close();
+				return Response.status(400).build();
+			};
 			Boolean existente = false;
 			List<String> array = (List<String>) objUserPerfil.get(tipo);
 			for (int i = 0; i < array.size(); i++) {

@@ -1859,11 +1859,7 @@ function testaFiltro(){
 		[
 				{
 					assunto : "objetivo",
-					id : "1"
-				},
-				{
-					assunto : "objetivo",
-					id : "2"
+					id : "0"
 				}
 			];
 	

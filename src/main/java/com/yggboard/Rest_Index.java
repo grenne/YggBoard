@@ -91,24 +91,28 @@ public class Rest_Index {
 		JSONArray areaAtuacao = new JSONArray();
 		JSONArray areaConhecimento = new JSONArray();
 
-		switch (assunto) {
-		case "objetivo":
-			processaObjetivos(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-			break;
-		case "habilidade":
-			processaHabilidades(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-			break;
-		case "curso":
-			processaCursos(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-			break;
-		case "areaAtuacao":
-			processaAreaAtuacao(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-			break;
-		case "areaConhecimento":
-			processaAreaConhecimento(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
-			break;
-		default:
-			break;
+		if (!assunto.equals("todos")){
+			switch (assunto) {
+			case "objetivo":
+				processaObjetivos(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			case "habilidade":
+				processaHabilidades(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			case "curso":
+				processaCursos(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			case "areaAtuacao":
+				processaAreaAtuacao(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			case "areaConhecimento":
+				processaAreaConhecimento(id, objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
+				break;
+			default:
+				break;
+			};
+		}else{
+			carregaTudo(objetivos, habilidades, cursos, areaAtuacao, areaConhecimento);
 		};
 		
 		BasicDBObject listas = new BasicDBObject();
@@ -132,6 +136,171 @@ public class Rest_Index {
 			// qdo escolhida uma area de conhecimento trazer todas habilidades, objetivos das habilidades, cursos das habilidades, area de conhecimento só a selecionada e área de atuação de todos os objetivos
 	};
 	
+	private BasicDBObject carregaTudo(JSONArray objetivos, JSONArray habilidades, JSONArray cursos, JSONArray areaAtuacao, JSONArray areaConhecimento) {
+		
+		carregaObjetivos(objetivos);
+		carregaHabilidades(habilidades);
+		carregaCursos(cursos);
+		carregaAreasAtuacao(areaAtuacao);
+		carregaAreasConhecimento(areaConhecimento);
+		
+		BasicDBObject listas = new BasicDBObject();
+		
+		listas.put("objetivos", objetivos);
+		listas.put("habilidades", habilidades);
+		listas.put("cursos", cursos);
+		listas.put("areaAtuacao", areaAtuacao);
+		listas.put("areaConhecimento", areaConhecimento);
+		
+		return listas;
+		
+	};
+
+	@SuppressWarnings("unchecked")
+	private void carregaAreasConhecimento(JSONArray areasConhecimento) {
+
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+
+			DBCollection collection = db.getCollection("areaAtuacao");
+			
+			DBCursor cursor = collection.find();
+			while (((Iterator<DBObject>) cursor).hasNext()) {
+				BasicDBObject objAreaConhecimento = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
+				//
+				// ***		carrega areas atuacao
+				//			
+				if (addObjeto(areasConhecimento, objAreaConhecimento)){
+					areasConhecimento.add(objAreaConhecimento);
+				};
+			};
+			mongo.close();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (MongoException e) {
+			e.printStackTrace();
+		};
+		
+	}
+
+	@SuppressWarnings("unchecked")
+	private void carregaAreasAtuacao(JSONArray areasAtuacao) {
+
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+
+			DBCollection collection = db.getCollection("areaAtuacao");
+			
+			DBCursor cursor = collection.find();
+			while (((Iterator<DBObject>) cursor).hasNext()) {
+				BasicDBObject objAreaAtuacao = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
+				//
+				// ***		carrega areas atuacao
+				//			
+				if (addObjeto(areasAtuacao, objAreaAtuacao)){
+					areasAtuacao.add(objAreaAtuacao.get("documento"));
+				};
+			};
+			mongo.close();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (MongoException e) {
+			e.printStackTrace();
+		};
+		
+	};
+
+	@SuppressWarnings("unchecked")
+	private void carregaCursos(JSONArray cursos) {
+
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+
+			DBCollection collection = db.getCollection("cursos");
+			
+			DBCursor cursor = collection.find();
+			while (((Iterator<DBObject>) cursor).hasNext()) {
+				BasicDBObject objCursos = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
+				//
+				// ***		carrega cursos
+				//			
+				if (addObjeto(cursos, objCursos)){
+					cursos.add(objCursos.get("documento"));
+				};
+			};
+			mongo.close();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (MongoException e) {
+			e.printStackTrace();
+		};
+		
+	};
+
+	@SuppressWarnings("unchecked")
+	private void carregaHabilidades(JSONArray habilidades) {
+
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+
+			DBCollection collection = db.getCollection("habilidades");
+			
+			DBCursor cursor = collection.find();
+			while (((Iterator<DBObject>) cursor).hasNext()) {
+				BasicDBObject objHabilidades = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
+				//
+				// ***		carrega habilidades
+				//			
+				if (addObjeto(habilidades, objHabilidades)){
+					habilidades.add(objHabilidades.get("documento"));
+				};
+			};
+			mongo.close();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (MongoException e) {
+			e.printStackTrace();
+		};
+		
+	};
+
+	@SuppressWarnings("unchecked")
+	private void carregaObjetivos(JSONArray objetivos) {
+
+		Mongo mongo;
+		try {
+			mongo = new Mongo();
+			DB db = (DB) mongo.getDB("documento");
+
+			DBCollection collection = db.getCollection("carreiras");
+			
+			DBCursor cursor = collection.find();
+			while (((Iterator<DBObject>) cursor).hasNext()) {
+				BasicDBObject objCarreiras = (BasicDBObject) ((Iterator<DBObject>) cursor).next();
+				//
+				// ***		carrega objetivo
+				//			
+				if (addObjeto(objetivos, objCarreiras)){
+					objetivos.add(objCarreiras.get("documento"));
+				};
+			};
+			mongo.close();
+		} catch (UnknownHostException e) {
+			e.printStackTrace();
+		} catch (MongoException e) {
+			e.printStackTrace();
+		};
+		
+	};
+
 	@Path("/obter/filtro")	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
